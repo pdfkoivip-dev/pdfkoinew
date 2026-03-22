@@ -1,4 +1,4 @@
-﻿# PDFkoi
+# PDFkoi
 
 <div align="center">
   <img src="public/images/logo.png" alt="PDFkoi Logo" width="120" height="120" />

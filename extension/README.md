@@ -1,4 +1,4 @@
-﻿# PDFkoi Chrome Extension
+# PDFkoi Chrome Extension
 
 A simple Chrome extension for quick access to PDFkoi's 72+ PDF tools.
 

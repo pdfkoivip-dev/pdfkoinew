@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Site configuration
  */
 export const siteConfig = {
