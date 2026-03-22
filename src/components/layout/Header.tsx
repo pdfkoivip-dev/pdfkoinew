@@ -148,7 +148,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
     const icons: Record<string, string> = {
       'edit-annotate': '✏️',
       'convert-to-pdf': '📄',
-      'convert-from-pdf': '🖼�?,
+      'convert-from-pdf': '🖼️',
       'organize-manage': '📁',
       'optimize-repair': '🔧',
       'secure-pdf': '🔒',
@@ -250,7 +250,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
                             {searchResults.map((result, index) => {
                               const localized = localizedTools[result.tool.id];
                               const toolName = localized?.title || result.tool.id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-                              const toolDescription = localized?.description || result.tool.features.slice(0, 3).join(' �?');
+                              const toolDescription = localized?.description || result.tool.features.slice(0, 3).join(' • ');
 
                               return (
                                 <li key={result.tool.id}>
