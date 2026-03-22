@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   title: 'PDFkoi - Professional PDF Tools',
   description: 'Free online PDF tools for merging, splitting, compressing, and converting PDF files. All processing happens in your browser for maximum privacy.',
   icons: {
-    icon: '/images/logo.png',
-    shortcut: '/images/logo.png',
-    apple: '/images/logo.png',
+    icon: '/images/1.png',
+    shortcut: '/images/1.png',
+    apple: '/images/1.png',
   },
 };
 
