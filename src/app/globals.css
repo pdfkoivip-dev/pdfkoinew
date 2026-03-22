@@ -1,6 +1,6 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
-/* PDFCraft Design System - CSS Variables for Theming */
+/* PDFkoi Design System - CSS Variables for Theming */
 :root {
   /* Primary Colors - Deep Blue/Indigo for trust and modern tech feel */
   --color-primary: 226 71% 55%; /* #3b82f6 - slightly more vibrant */
@@ -295,3 +295,4 @@ body {
 .scroll-smooth { scroll-behavior: smooth; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
+

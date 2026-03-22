@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Web App Manifest Generation
  * Configures PWA settings for the application
  * 
@@ -14,7 +14,7 @@ export const dynamic = 'force-static';
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,
-    short_name: 'PDFCraft',
+    short_name: 'PDFkoi',
     description: siteConfig.description,
     start_url: '/',
     display: 'standalone',
@@ -74,3 +74,4 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
   };
 }
+

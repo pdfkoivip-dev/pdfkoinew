@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -317,7 +317,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
 
             {/* GitHub Repository Link */}
             <a
-              href="https://github.com/PDFCraftTool/pdfcraft"
+              href="https://github.com/PDFkoiTool/PDFkoi"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center justify-center h-9 w-9 rounded-lg text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))/0.5] transition-all"
@@ -371,7 +371,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
               {/* GitHub Link in Mobile Menu */}
               <li>
                 <a
-                  href="https://github.com/PDFCraftTool/pdfcraft"
+                  href="https://github.com/PDFkoiTool/PDFkoi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-4 py-3 text-base font-medium text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))] rounded-lg transition-colors"
@@ -390,3 +390,4 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
 };
 
 export default Header;
+

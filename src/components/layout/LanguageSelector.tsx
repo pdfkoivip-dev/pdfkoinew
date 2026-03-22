@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
@@ -12,7 +12,7 @@ export interface LanguageSelectorProps {
 }
 
 // Storage key for language preference
-const LANGUAGE_PREFERENCE_KEY = 'pdfcraft-language-preference';
+const LANGUAGE_PREFERENCE_KEY = 'PDFkoi-language-preference';
 
 /**
  * Save language preference to localStorage
@@ -222,3 +222,4 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
 };
 
 export default LanguageSelector;
+

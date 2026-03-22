@@ -1,8 +1,8 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, useCallback } from 'react';
 
-const FAVORITES_STORAGE_KEY = 'pdfcraft-favorite-tools';
+const FAVORITES_STORAGE_KEY = 'PDFkoi-favorite-tools';
 
 /**
  * Custom hook to manage favorite tools
@@ -103,3 +103,4 @@ export function useFavorites() {
 }
 
 export default useFavorites;
+

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
@@ -33,21 +33,21 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
       title: t('methods.email.title'),
       description: t('methods.email.description'),
       action: t('methods.email.action'),
-      href: 'mailto:contact@pdfcraft.gitu.net',
+      href: 'mailto:contact@PDFkoi.gitu.net',
     },
     {
       icon: Github,
       title: t('methods.github.title'),
       description: t('methods.github.description'),
       action: t('methods.github.action'),
-      href: 'https://github.com/PDFCraftTool/pdfcraft',
+      href: 'https://github.com/PDFkoiTool/PDFkoi',
     },
     {
       icon: Twitter,
       title: t('methods.twitter.title'),
       description: t('methods.twitter.description'),
       action: t('methods.twitter.action'),
-      href: 'https://x.com/PDFCraftTool',
+      href: 'https://x.com/PDFkoiTool',
     },
   ];
 
@@ -286,3 +286,4 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
     </div>
   );
 }
+

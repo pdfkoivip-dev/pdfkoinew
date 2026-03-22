@@ -1,11 +1,11 @@
-/**
+﻿/**
  * Workflow Storage Utilities
  * Handle saving and loading workflows from localStorage
  */
 
 import { SavedWorkflow, WorkflowNode, WorkflowEdge } from '@/types/workflow';
 
-const STORAGE_KEY = 'pdfcraft_workflows';
+const STORAGE_KEY = 'PDFkoi_workflows';
 const MAX_WORKFLOWS = 50;
 
 /**
@@ -204,3 +204,4 @@ export function searchWorkflows(query: string): SavedWorkflow[] {
         (w.description && w.description.toLowerCase().includes(lowerQuery))
     );
 }
+

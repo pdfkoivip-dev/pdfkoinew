@@ -1,4 +1,4 @@
-import { setRequestLocale } from 'next-intl/server';
+﻿import { setRequestLocale } from 'next-intl/server';
 import { locales, type Locale } from '@/lib/i18n/config';
 import { TOOL_CATEGORIES, type ToolCategory } from '@/types/tool';
 import CategoryPageClient from './CategoryPageClient';
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         .join(' ');
 
     return {
-        title: `${formattedCategory} Tools - PDFCraft`,
+        title: `${formattedCategory} Tools - PDFkoi`,
         description: `Free online ${formattedCategory} tools. Secure, fast, and easy to use.`,
     };
 }
@@ -61,3 +61,4 @@ export default async function CategoryPage({ params }: { params: Promise<{ local
         />
     );
 }
+

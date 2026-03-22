@@ -1,7 +1,7 @@
-/**
+﻿/**
  * Tools configuration file
  * Contains all 67 PDF tools with their properties, categories, and related tools
- * Migrated from BentoPDF and enhanced for PDFCraft
+ * Migrated from BentoPDF and enhanced for PDFkoi
  */
 
 import { Tool, ToolCategory } from '@/types/tool';
@@ -1256,4 +1256,5 @@ export function getPopularTools(): Tool[] {
     .map(id => getToolById(id))
     .filter((tool): tool is Tool => tool !== undefined);
 }
+
 

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Text to PDF Processor
  * Requirements: 5.1
  * 
@@ -129,7 +129,7 @@ const fontCache: Map<string, ArrayBuffer> = new Map();
 /**
  * IndexedDB font cache
  */
-const DB_NAME = 'pdfcraft-fonts';
+const DB_NAME = 'PDFkoi-fonts';
 const DB_VERSION = 1;
 const STORE_NAME = 'fonts';
 
@@ -471,3 +471,4 @@ export async function textToPDF(
     onProgress
   );
 }
+

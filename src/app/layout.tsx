@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import '@/app/globals.css';
 
 export const metadata: Metadata = {
-  title: 'PDFCraft - Professional PDF Tools',
+  title: 'PDFkoi - Professional PDF Tools',
   description: 'Free online PDF tools for merging, splitting, compressing, and converting PDF files. All processing happens in your browser for maximum privacy.',
   icons: {
     icon: '/favicon.svg',
@@ -30,3 +30,4 @@ export default function RootLayout({
     </html>
   );
 }
+

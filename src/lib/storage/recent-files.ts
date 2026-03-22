@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Recent Files Storage
  * Requirements: 10.4
  * 
@@ -14,7 +14,7 @@ export interface RecentFile {
   toolName?: string;
 }
 
-const STORAGE_KEY = 'pdfcraft_recent_files';
+const STORAGE_KEY = 'PDFkoi_recent_files';
 const MAX_RECENT_FILES = 10;
 
 /**
@@ -157,3 +157,4 @@ export function formatDate(isoString: string): string {
     return '';
   }
 }
+

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Project Database Storage using IndexedDB
  * Requirements: 10.2
  * 
@@ -25,7 +25,7 @@ export interface ProjectFileMetadata {
   lastModified: number;
 }
 
-const DB_NAME = 'pdfcraft_projects';
+const DB_NAME = 'PDFkoi_projects';
 const DB_VERSION = 1;
 const STORE_NAME = 'projects';
 
@@ -317,3 +317,4 @@ export function isIndexedDBAvailable(): boolean {
   if (typeof window === 'undefined') return false;
   return !!window.indexedDB;
 }
+

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Accessibility Tests
  * Requirements: 9.1-9.5
  * 
@@ -78,7 +78,7 @@ describe('Accessibility - Color Contrast (Requirements: 9.3)', () => {
   });
 
   describe('verifyColorContrast', () => {
-    it('should verify all PDFCraft color combinations meet WCAG AA', () => {
+    it('should verify all PDFkoi color combinations meet WCAG AA', () => {
       const { passed, results } = verifyColorContrast();
       
       // Log any failures for debugging
@@ -240,3 +240,4 @@ describe('Accessibility - Screen Reader Announcements (Requirements: 9.4)', () =
     expect(liveRegionPatterns.alert.role).toBe('alert');
   });
 });
+

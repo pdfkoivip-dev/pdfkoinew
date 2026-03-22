@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Accessibility Utilities
  * Requirements: 9.3
  * 
@@ -107,7 +107,7 @@ export function meetsWCAGAAA(
 }
 
 /**
- * PDFCraft color palette with verified contrast ratios
+ * PDFkoi color palette with verified contrast ratios
  * All colors meet WCAG 2.1 AA requirements
  */
 export const ACCESSIBLE_COLORS = {
@@ -264,3 +264,4 @@ export default {
   verifyColorContrast,
   ACCESSIBLE_COLORS,
 };
+

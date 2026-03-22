@@ -1,16 +1,16 @@
-/**
+﻿/**
  * Site configuration
  */
 export const siteConfig = {
-  name: 'PDFCraft',
+  name: 'PDFkoi',
   description: 'Professional PDF Tools - Free, Private & Browser-Based. Merge, split, compress, convert, and edit PDF files online without uploading to servers.',
-  url: 'https://pdfcraft.devtoolcafe.com',
+  url: 'https://PDFkoi.devtoolcafe.com',
   ogImage: '/images/og-image.png',
   links: {
-    github: 'https://github.com/PDFCraftTool/pdfcraft',
-    twitter: 'https://twitter.com/pdfcraft',
+    github: 'https://github.com/PDFkoiTool/PDFkoi',
+    twitter: 'https://twitter.com/PDFkoi',
   },
-  creator: 'PDFCraft Team',
+  creator: 'PDFkoi Team',
   keywords: [
     'PDF tools',
     'PDF editor',
@@ -25,9 +25,9 @@ export const siteConfig = {
   ],
   // SEO-related settings
   seo: {
-    titleTemplate: '%s | PDFCraft',
-    defaultTitle: 'PDFCraft - Professional PDF Tools',
-    twitterHandle: '@pdfcraft',
+    titleTemplate: '%s | PDFkoi',
+    defaultTitle: 'PDFkoi - Professional PDF Tools',
+    twitterHandle: '@PDFkoi',
     locale: 'en_US',
   },
 };
@@ -48,3 +48,4 @@ export const navConfig = {
     { title: 'Contact', href: '/contact' },
   ],
 };
+

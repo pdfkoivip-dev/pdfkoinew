@@ -1,4 +1,4 @@
-/**
+﻿/**
  * PDF Sanitize Processor
  * Requirements: 5.1
  * 
@@ -186,7 +186,7 @@ export class SanitizePDFProcessor extends BasePDFProcessor {
           pdfDoc.setSubject('');
           pdfDoc.setKeywords([]);
           pdfDoc.setCreator('');
-          pdfDoc.setProducer('PDFCraft');
+          pdfDoc.setProducer('PDFkoi');
 
           // Remove XMP metadata
           try {
@@ -424,3 +424,4 @@ export async function sanitizePDF(
     onProgress
   );
 }
+
