@@ -249,6 +249,51 @@ body {
   box-shadow: 0 14px 34px hsl(var(--color-primary) / 0.38);
 }
 
+/* Button loading morph + completion particles */
+.btn-loading-morph {
+  animation: button-morph-pulse 1.15s ease-in-out infinite;
+  box-shadow:
+    0 10px 24px hsl(var(--color-primary) / 0.24),
+    inset 0 0 0 1px hsl(0 0% 100% / 0.08);
+}
+
+.btn-loading-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 20%, hsl(0 0% 100% / 0.35) 50%, transparent 80%);
+  animation: button-sheen 1.2s ease-in-out infinite;
+}
+
+.btn-spinner-pop {
+  filter: drop-shadow(0 0 8px hsl(var(--color-primary) / 0.38));
+}
+
+.btn-particle-layer {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.btn-particle {
+  --particle-angle: 0deg;
+  --particle-delay: 0ms;
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, hsl(0 0% 100%) 0%, hsl(var(--color-primary)) 78%, transparent 100%);
+  box-shadow: 0 0 10px hsl(var(--color-primary) / 0.68);
+  animation: button-particle-burst 560ms ease-out forwards;
+  animation-delay: var(--particle-delay);
+}
+
 /* Circular progress visual */
 .progress-ring {
   --ring-size: 76px;
@@ -295,6 +340,32 @@ body {
 @keyframes pulse-soft {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.06); opacity: 0.82; }
+}
+
+@keyframes button-morph-pulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(0.985); }
+  100% { transform: scale(1); }
+}
+
+@keyframes button-sheen {
+  0% { transform: translateX(-140%); opacity: 0; }
+  18% { opacity: 0.45; }
+  100% { transform: translateX(160%); opacity: 0; }
+}
+
+@keyframes button-particle-burst {
+  0% {
+    transform: rotate(var(--particle-angle)) translateX(0) scale(0.6);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--particle-angle)) translateX(18px) scale(0.2);
+    opacity: 0;
+  }
 }
 
 .animate-pulse-soft {
