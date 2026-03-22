@@ -27,7 +27,7 @@ export const siteConfig = {
   seo: {
     titleTemplate: '%s | PDFkoi',
     defaultTitle: 'PDFkoi - Professional PDF Tools',
-    twitterHandle: '@PDFkoi',
+    twitterHandle: '@pdfkoi',
     locale: 'en_US',
   },
 };
