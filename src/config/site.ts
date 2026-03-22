@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Site configuration
  */
 export const siteConfig = {
@@ -7,7 +7,7 @@ export const siteConfig = {
   url: 'https://PDFkoi.devtoolcafe.com',
   ogImage: '/images/og-image.png',
   links: {
-    github: 'https://github.com/PDFkoiTool/PDFkoi',
+    github: 'https://github.com/pdfkoi/pdfkoi',
     twitter: 'https://twitter.com/PDFkoi',
   },
   creator: 'PDFkoi Team',
@@ -48,4 +48,5 @@ export const navConfig = {
     { title: 'Contact', href: '/contact' },
   ],
 };
+
 

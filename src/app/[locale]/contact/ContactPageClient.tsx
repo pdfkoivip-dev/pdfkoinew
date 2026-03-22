@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
@@ -40,7 +40,7 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
       title: t('methods.github.title'),
       description: t('methods.github.description'),
       action: t('methods.github.action'),
-      href: 'https://github.com/PDFkoiTool/PDFkoi',
+      href: 'https://github.com/pdfkoi/pdfkoi',
     },
     {
       icon: Twitter,
@@ -286,4 +286,5 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
     </div>
   );
 }
+
 

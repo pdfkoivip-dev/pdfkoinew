@@ -1,4 +1,4 @@
-# PDFkoi Chrome Extension
+﻿# PDFkoi Chrome Extension
 
 A simple Chrome extension for quick access to PDFkoi's 72+ PDF tools.
 
@@ -49,9 +49,10 @@ This extension:
 ## Links
 
 - Website: [PDFkoi.gitu.net](https://PDFkoi.gitu.net)
-- GitHub: [github.com/PDFkoiTool/PDFkoi](https://github.com/PDFkoiTool/PDFkoi)
+- GitHub: [github.com/PDFkoiTool/PDFkoi](https://github.com/pdfkoi/pdfkoi)
 
 ## License
 
 MIT License - see the main project for details.
+
 

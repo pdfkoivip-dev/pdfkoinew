@@ -1,4 +1,4 @@
-# PDFkoi
+﻿# PDFkoi
 
 <div align="center">
   <img src="public/images/logo.png" alt="PDFkoi Logo" width="120" height="120" />
@@ -211,7 +211,7 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/PDFkoiTool/PDFkoi.git
+    git clone https://github.com/pdfkoi/pdfkoi.git
     cd PDFkoi
     ```
 
@@ -363,4 +363,5 @@ This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE)
 <div align="center">
   Built with ❤️ by the PDFkoi Team
 </div>
+
 
