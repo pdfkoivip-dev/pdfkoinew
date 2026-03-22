@@ -130,7 +130,9 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
               {/* Search Bar */}
               <div className="relative max-w-2xl mx-auto">
                 <div className="relative group">
-                  <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-[hsl(var(--color-primary))] group-focus-within:text-[hsl(var(--color-primary))] transition-colors z-10" aria-hidden="true" />
+                  <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none z-10">
+                    <Search className="h-5 w-5 text-[hsl(var(--color-primary))] group-focus-within:text-[hsl(var(--color-primary))] transition-colors" aria-hidden="true" />
+                  </div>
                   <input
                     type="search"
                     value={searchQuery}

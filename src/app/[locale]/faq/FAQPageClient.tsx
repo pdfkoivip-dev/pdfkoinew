@@ -113,7 +113,9 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
 
               {/* Search Bar */}
               <div className="relative max-w-xl mx-auto">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[hsl(var(--color-muted-foreground))]" />
+                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                  <Search className="h-5 w-5 text-[hsl(var(--color-muted-foreground))]" />
+                </div>
                 <input
                   type="search"
                   value={searchQuery}
