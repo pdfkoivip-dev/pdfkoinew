@@ -18,6 +18,7 @@ const variantStyles: Record<ButtonVariant, string> = {
     text-[hsl(var(--color-primary-foreground))] 
     hover:bg-[hsl(var(--color-primary-hover))]
     focus-visible:ring-[hsl(var(--color-ring))]
+    hover:shadow-[0_10px_28px_hsl(var(--color-primary)/0.30)]
   `,
   secondary: `
     bg-[hsl(var(--color-secondary))] 
@@ -94,6 +95,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       font-medium rounded-[var(--radius-md)]
       transition-all duration-[var(--transition-normal)]
       focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+      active:scale-[0.98]
       disabled:opacity-50 disabled:cursor-not-allowed
     `;
 

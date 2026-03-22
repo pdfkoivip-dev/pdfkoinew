@@ -88,7 +88,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
       <main id="main-content" className="flex-1 relative" tabIndex={-1}>
         {/* Hero Section */}
         <section
-          className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28"
+          className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28 bg-aurora"
           aria-labelledby="hero-title"
         >
           {/* Animated Background Blobs */}
@@ -122,14 +122,27 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link href={`/${locale}/tools`}>
-                  <Button variant="primary" size="lg" className="h-11 px-8 text-base shadow-lg hover:shadow-primary/25 transition-all hover:-translate-y-0.5">
+                  <Button variant="primary" size="lg" className="btn-gradient h-11 px-8 text-base border border-white/20">
                     {t('home.hero.cta')}
                     <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                   </Button>
                 </Link>
-                <div className="flex items-center gap-2 text-sm text-[hsl(var(--color-muted-foreground))] bg-[hsl(var(--color-background)/0.5)] px-4 py-2 rounded-full border border-[hsl(var(--color-border))] backdrop-blur-sm">
+                <div className="flex items-center gap-2 text-sm text-[hsl(var(--color-muted-foreground))] bg-[hsl(var(--color-background)/0.55)] px-4 py-2 rounded-full border border-[hsl(var(--color-border))] backdrop-blur-sm interactive-lift">
                   <Lock className="h-4 w-4 text-green-500" aria-hidden="true" />
                   <span>{t('common.footer.privacyBadge')}</span>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
+                <div className="progress-ring" style={{ ['--progress' as string]: 0.92 }} aria-hidden="true">
+                  <span className="text-xs font-bold text-[hsl(var(--color-primary))]">92%</span>
+                </div>
+                <div className="progress-ring animate-pulse-soft" style={{ ['--progress' as string]: 0.78 }} aria-hidden="true">
+                  <span className="text-xs font-bold text-[hsl(var(--color-primary))]">78%</span>
+                </div>
+                <div className="text-left">
+                  <p className="text-sm font-semibold text-[hsl(var(--color-foreground))]">Fast processing feedback</p>
+                  <p className="text-xs text-[hsl(var(--color-muted-foreground))]">Smooth circular progress and instant interaction response</p>
                 </div>
               </div>
             </div>

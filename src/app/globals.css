@@ -2,18 +2,18 @@
 
 /* PDFkoi Design System - CSS Variables for Theming */
 :root {
-  /* Primary Colors - Deep Blue/Indigo for trust and modern tech feel */
-  --color-primary: 226 71% 55%; /* #3b82f6 - slightly more vibrant */
+  /* Primary Colors - Apple-inspired vibrant blue */
+  --color-primary: 211 100% 50%; /* #0A84FF */
   --color-primary-foreground: 0 0% 100%;
-  --color-primary-hover: 226 71% 45%;
+  --color-primary-hover: 211 100% 44%;
   
   /* Secondary Colors - Slate for neutral elements */
   --color-secondary: 215 20% 90%;
   --color-secondary-foreground: 215 25% 15%;
   --color-secondary-hover: 215 20% 80%;
   
-  /* Accent Colors - Teal/Cyan for highlights */
-  --color-accent: 172 66% 50%;
+  /* Accent Colors - Apple-inspired purple for gradient depth */
+  --color-accent: 280 86% 62%;
   --color-accent-foreground: 0 0% 100%;
   
   /* Background Colors */
@@ -80,15 +80,15 @@
 
 /* Dark Mode Theme */
 .dark {
-  --color-primary: 226 71% 60%;
+  --color-primary: 211 100% 60%;
   --color-primary-foreground: 222 47% 11%;
-  --color-primary-hover: 226 71% 70%;
+  --color-primary-hover: 211 100% 68%;
   
   --color-secondary: 215 20% 20%;
   --color-secondary-foreground: 210 40% 98%;
   --color-secondary-hover: 215 20% 30%;
   
-  --color-accent: 172 66% 50%;
+  --color-accent: 280 86% 68%;
   --color-accent-foreground: 222 47% 11%;
   
   --color-background: 222 47% 7%; /* Darker background for more contrast */
@@ -224,7 +224,81 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, hsl(var(--color-primary)), hsl(var(--color-accent)));
+  background-image: linear-gradient(120deg, hsl(var(--color-primary)) 0%, hsl(var(--color-accent)) 45%, hsl(195 100% 58%) 100%);
+}
+
+/* Apple-like aurora backgrounds */
+.bg-aurora {
+  background:
+    radial-gradient(1200px 500px at 10% -10%, hsl(var(--color-primary) / 0.25), transparent 60%),
+    radial-gradient(900px 500px at 95% 0%, hsl(var(--color-accent) / 0.22), transparent 55%),
+    radial-gradient(800px 450px at 50% 110%, hsl(195 100% 58% / 0.18), transparent 60%),
+    linear-gradient(180deg, hsl(var(--color-background)) 0%, hsl(var(--color-muted) / 0.65) 100%);
+}
+
+/* Premium interactive CTA */
+.btn-gradient {
+  background-image: linear-gradient(120deg, hsl(var(--color-primary)) 0%, hsl(var(--color-accent)) 60%, hsl(195 100% 58%) 100%);
+  background-size: 180% 180%;
+  box-shadow: 0 10px 30px hsl(var(--color-primary) / 0.28);
+}
+
+.btn-gradient:hover {
+  animation: gradient-shift 1.8s ease infinite;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px hsl(var(--color-primary) / 0.38);
+}
+
+/* Circular progress visual */
+.progress-ring {
+  --ring-size: 76px;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  border-radius: 9999px;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  background:
+    radial-gradient(closest-side, hsl(var(--color-card)) 74%, transparent 76% 100%),
+    conic-gradient(hsl(var(--color-primary)) calc(var(--progress, 0.78) * 1turn), hsl(var(--color-border)) 0);
+  box-shadow:
+    inset 0 0 0 1px hsl(var(--color-border) / 0.7),
+    0 8px 24px hsl(var(--color-primary) / 0.18);
+}
+
+.progress-ring::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  background: radial-gradient(circle, hsl(var(--color-primary) / 0.32), transparent 62%);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+/* Magnetic subtle hover */
+.interactive-lift {
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+}
+
+.interactive-lift:hover {
+  transform: translateY(-3px) scale(1.01);
+}
+
+/* Micro animations */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); opacity: 0.82; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2.4s ease-in-out infinite;
 }
 
 /* Screen reader only utility */
