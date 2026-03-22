@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Home, Wrench, HelpCircle, FileText, GitBranch } from 'lucide-react';
@@ -40,20 +41,14 @@ export default function WorkflowPageClient({ locale }: WorkflowPageClientProps) 
                         href={`/${locale}`}
                         className="flex items-center gap-2 text-[hsl(var(--color-foreground))] hover:text-[hsl(var(--color-primary))] transition-colors"
                     >
-                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] shadow-sm">
-                            <svg
-                                className="h-4 w-4 text-white"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            >
-                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                        </div>
+                        <Image
+                            src="/images/logo.png"
+                            alt={`${t('brand')} logo`}
+                            width={28}
+                            height={28}
+                            className="h-7 w-7 rounded-lg object-contain"
+                            priority
+                        />
                         <span className="font-semibold text-sm hidden sm:inline">{t('brand')}</span>
                     </Link>
 
