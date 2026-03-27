@@ -328,9 +328,17 @@ server {
 2. Set build command: `npm run build`
 3. Set publish directory: `out`
 
+#### E. Cloudflare Pages
+1. Connect your GitHub repository to Cloudflare Pages.
+2. Set build command: `npm run build`
+3. Set build output directory: `out`
+4. Use Node.js 22 in the Cloudflare build environment.
+5. Keep the `public/_headers` and `public/_redirects` files in the repo so Cloudflare can apply cache headers and redirects after the static export is published.
+
 ### 3. Important Notes
-- **Headers Configuration**: The `headers` configuration in `next.config.js` does not automatically take effect in static export mode. You need to configure HTTP headers separately depending on your hosting platform (e.g., `vercel.json` for Vercel or Nginx configuration).
+- **Headers Configuration**: The `headers` configuration in `next.config.js` does not automatically take effect in static export mode. You need to configure HTTP headers separately depending on your hosting platform (for example `public/_headers` on Cloudflare Pages or platform-specific config files elsewhere).
 - **Image Optimization**: Since static export does not support Next.js's default image optimization server, the project is configured with `images: { unoptimized: true }`.
+- **Middleware**: Next.js middleware is not available in static export deployments. This project is structured so localized routes are generated at build time and Cloudflare handles the `/en` to `/` redirect via `public/_redirects`.
 
 ### 4. Verify Deployment
 After deployment, please check the following features to ensure everything is working correctly:
