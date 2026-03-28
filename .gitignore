@@ -59,6 +59,7 @@ ehthumbs.db
 *.tmp
 *.temp
 .cache
+.npm-cache
 *.log
 nul
 test_output.json
