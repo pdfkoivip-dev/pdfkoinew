@@ -6,6 +6,8 @@
  */
 
 import { MetadataRoute } from 'next';
+import { existsSync, readdirSync, statSync } from 'node:fs';
+import path from 'node:path';
 import { siteConfig } from '@/config/site';
 import { locales, type Locale, getPublicPath } from '@/lib/i18n/config';
 import { getAllTools } from '@/config/tools';
@@ -49,17 +51,140 @@ const STATIC_PAGES = [
   { path: '/terms', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static },
 ];
 
+const PROJECT_ROOT = process.cwd();
+const LASTMOD_CACHE = new Map<string, Date>();
+
+const PAGE_LASTMOD_SOURCES = {
+  home: [
+    'src/app/(default)',
+    'src/app/(localized)/[locale]/HomePageClient.tsx',
+    'src/config/tools.ts',
+    'src/config/tool-content',
+    'messages',
+  ],
+  tools: [
+    'src/app/(localized)/[locale]/tools/page.tsx',
+    'src/app/(localized)/[locale]/tools/ToolsPageClient.tsx',
+    'src/config/tools.ts',
+    'src/config/tool-content',
+    'messages',
+  ],
+  workflow: [
+    'src/app/(localized)/[locale]/workflow',
+    'src/config/workflow-templates.ts',
+    'messages',
+  ],
+  about: [
+    'src/app/(localized)/[locale]/about',
+    'messages',
+  ],
+  faq: [
+    'src/app/(localized)/[locale]/faq',
+    'messages',
+  ],
+  privacy: [
+    'src/app/(localized)/[locale]/privacy',
+    'messages',
+  ],
+  cookies: [
+    'src/app/(localized)/[locale]/cookies',
+    'messages',
+  ],
+  contact: [
+    'src/app/(localized)/[locale]/contact',
+    'messages',
+  ],
+  terms: [
+    'src/app/(localized)/[locale]/terms',
+    'messages',
+  ],
+  toolPage: [
+    'src/app/(localized)/[locale]/tools/[tool]',
+    'src/config/tools.ts',
+    'src/config/tool-content',
+    'src/lib/seo',
+    'messages',
+  ],
+  toolCategory: [
+    'src/app/(localized)/[locale]/tools/category',
+    'src/config/tools.ts',
+    'src/config/tool-content',
+    'messages',
+  ],
+} as const;
+
+type LastModKey = keyof typeof PAGE_LASTMOD_SOURCES;
+
+function getLatestMtimeForAbsolutePath(absolutePath: string): Date | null {
+  if (!existsSync(absolutePath)) {
+    return null;
+  }
+
+  const stats = statSync(absolutePath);
+
+  if (stats.isFile()) {
+    return stats.mtime;
+  }
+
+  if (!stats.isDirectory()) {
+    return null;
+  }
+
+  let latest = stats.mtime;
+
+  for (const entry of readdirSync(absolutePath, { withFileTypes: true })) {
+    const childLatest = getLatestMtimeForAbsolutePath(path.join(absolutePath, entry.name));
+    if (childLatest && childLatest > latest) {
+      latest = childLatest;
+    }
+  }
+
+  return latest;
+}
+
+function getLastModifiedForGroup(group: LastModKey): Date {
+  const cached = LASTMOD_CACHE.get(group);
+  if (cached) {
+    return cached;
+  }
+
+  let latest = new Date(0);
+
+  for (const relativePath of PAGE_LASTMOD_SOURCES[group]) {
+    const absolutePath = path.join(PROJECT_ROOT, relativePath);
+    const candidate = getLatestMtimeForAbsolutePath(absolutePath);
+    if (candidate && candidate > latest) {
+      latest = candidate;
+    }
+  }
+
+  const resolved = latest.getTime() > 0 ? latest : new Date();
+  LASTMOD_CACHE.set(group, resolved);
+  return resolved;
+}
+
 /**
  * Generate sitemap entries for a specific locale
  */
-function generateLocaleEntries(locale: Locale, lastModified: Date): MetadataRoute.Sitemap {
+function generateLocaleEntries(locale: Locale): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
+  const staticPageLastModifiedByPath: Record<string, Date> = {
+    '': getLastModifiedForGroup('home'),
+    '/tools': getLastModifiedForGroup('tools'),
+    '/workflow': getLastModifiedForGroup('workflow'),
+    '/about': getLastModifiedForGroup('about'),
+    '/faq': getLastModifiedForGroup('faq'),
+    '/privacy': getLastModifiedForGroup('privacy'),
+    '/cookies': getLastModifiedForGroup('cookies'),
+    '/contact': getLastModifiedForGroup('contact'),
+    '/terms': getLastModifiedForGroup('terms'),
+  };
   
   // Add static pages
   for (const page of STATIC_PAGES) {
     entries.push({
       url: `${siteConfig.url}${getPublicPath(page.path || '/', locale)}`,
-      lastModified,
+      lastModified: staticPageLastModifiedByPath[page.path],
       changeFrequency: page.changeFrequency as 'daily' | 'weekly' | 'monthly',
       priority: page.priority,
     });
@@ -67,20 +192,22 @@ function generateLocaleEntries(locale: Locale, lastModified: Date): MetadataRout
   
   // Add tool pages
   const tools = getAllTools();
+  const toolPageLastModified = getLastModifiedForGroup('toolPage');
   for (const tool of tools) {
     entries.push({
       url: `${siteConfig.url}${getPublicPath(`/tools/${tool.slug}`, locale)}`,
-      lastModified,
+      lastModified: toolPageLastModified,
       changeFrequency: CHANGE_FREQUENCY.toolPage,
       priority: PRIORITY.toolPage,
     });
   }
 
   // Add tool category pages
+  const toolCategoryLastModified = getLastModifiedForGroup('toolCategory');
   for (const category of TOOL_CATEGORIES) {
     entries.push({
       url: `${siteConfig.url}${getPublicPath(`/tools/category/${category}`, locale)}`,
-      lastModified,
+      lastModified: toolCategoryLastModified,
       changeFrequency: CHANGE_FREQUENCY.tools,
       priority: PRIORITY.static,
     });
@@ -93,12 +220,11 @@ function generateLocaleEntries(locale: Locale, lastModified: Date): MetadataRout
  * Generate the complete sitemap
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
   const allEntries: MetadataRoute.Sitemap = [];
   
   // Generate entries for each locale
   for (const locale of locales) {
-    const localeEntries = generateLocaleEntries(locale, lastModified);
+    const localeEntries = generateLocaleEntries(locale);
     allEntries.push(...localeEntries);
   }
   
