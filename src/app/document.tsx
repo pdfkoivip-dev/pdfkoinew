@@ -5,9 +5,9 @@ import '@/app/globals.css';
 
 export const baseMetadata: Metadata = {
   icons: {
-    icon: '/images/1.jpg',
-    shortcut: '/images/1.jpg',
-    apple: '/images/1.jpg',
+    icon: [{ url: '/images/logo.png', type: 'image/png', sizes: '128x128' }],
+    shortcut: '/images/logo.png',
+    apple: [{ url: '/images/logo.png', type: 'image/png', sizes: '128x128' }],
   },
 };
 

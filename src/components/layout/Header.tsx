@@ -183,7 +183,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
               aria-label={`${t('brand')} - ${t('navigation.home')}`}
             >
               <Image
-                src="/images/1.jpg"
+                src="/images/logo.png"
                 alt={`${t('brand')} logo`}
                 width={36}
                 height={36}

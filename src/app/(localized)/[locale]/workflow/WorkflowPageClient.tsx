@@ -42,7 +42,7 @@ export default function WorkflowPageClient({ locale }: WorkflowPageClientProps) 
                         className="flex items-center gap-2 text-[hsl(var(--color-foreground))] hover:text-[hsl(var(--color-primary))] transition-colors"
                     >
                         <Image
-                            src="/images/1.jpg"
+                            src="/images/logo.png"
                             alt={`${t('brand')} logo`}
                             width={28}
                             height={28}

@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
               aria-label={`${t('brand')} - ${t('navigation.home')}`}
             >
               <Image
-                src="/images/1.jpg"
+                src="/images/logo.png"
                 alt={`${t('brand')} logo`}
                 width={32}
                 height={32}

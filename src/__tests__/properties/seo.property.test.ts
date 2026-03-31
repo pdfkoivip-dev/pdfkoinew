@@ -359,7 +359,7 @@ describe('SEO Property Tests', () => {
         `${siteConfig.url}${getPublicPath('/tools', defaultLocale)}?q={search_term_string}`
       );
       expect(organization.url).toBe(`${siteConfig.url}`);
-      expect(organization.logo).toBe(`${siteConfig.url}/images/1.jpg`);
+      expect(organization.logo).toBe(`${siteConfig.url}/images/logo.png`);
     });
   });
 

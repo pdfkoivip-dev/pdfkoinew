@@ -310,7 +310,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
     '@type': 'Organization',
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/images/1.jpg`,
+    logo: `${siteConfig.url}/images/logo.png`,
     sameAs: sameAs.length > 0 ? sameAs : undefined,
   };
 }
