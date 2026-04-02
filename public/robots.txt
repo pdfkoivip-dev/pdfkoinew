@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://pdfkoi.com/sitemap.xml
-LLMS: https://pdfkoi.com/llms.txt
-LLMS-Full: https://pdfkoi.com/llms-full.txt
