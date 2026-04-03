@@ -9,6 +9,7 @@ import { Footer } from '@/components/layout/Footer';
 import { getLocalizedPath, getPublicPath, type Locale } from '@/lib/i18n/config';
 import { ToolProvider } from '@/lib/contexts/ToolContext';
 import { getToolIcon } from '@/config/icons';
+import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
 import Link from 'next/link';
 import { Home, ChevronRight } from 'lucide-react';
 import { FavoriteButton } from '@/components/ui/FavoriteButton';
@@ -417,6 +418,7 @@ function RelatedToolsSection({ tools, locale, localizedRelatedTools }: RelatedTo
             .split('-')
             .map(word => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ');
+          const anchorText = getPreferredToolAnchorText(locale as Locale, tool.id, toolName);
 
           const IconComponent = getToolIcon(tool.icon);
           const categoryName = t(`home.categories.${categoryTranslationKeys[tool.category]}`);
@@ -437,7 +439,7 @@ function RelatedToolsSection({ tools, locale, localizedRelatedTools }: RelatedTo
                   </div>
                   <div>
                     <span className="font-semibold text-[hsl(var(--color-foreground))] block mb-1">
-                      {toolName}
+                      {anchorText}
                     </span>
                     <span className="text-xs text-[hsl(var(--color-muted-foreground))]">
                       {categoryName}

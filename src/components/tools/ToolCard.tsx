@@ -8,6 +8,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { getToolIcon } from '@/config/icons';
 import { FavoriteButton } from '@/components/ui/FavoriteButton';
 import { getLocalizedPath, type Locale } from '@/lib/i18n/config';
+import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
 
 export interface ToolCardProps {
   /** Tool data to display */
@@ -43,6 +44,7 @@ export function ToolCard({ tool, locale, className = '', localizedContent }: Too
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
+  const anchorText = getPreferredToolAnchorText(locale as Locale, tool.id, toolName);
 
   // Generate a description from features
   // Use localized description (metaDescription) if available
@@ -90,7 +92,7 @@ export function ToolCard({ tool, locale, className = '', localizedContent }: Too
               className="text-lg font-bold text-[hsl(var(--color-card-foreground))] truncate mb-2 group-hover/card:text-[#0052FF] transition-colors duration-300"
               data-testid="tool-card-name"
             >
-              {toolName}
+              {anchorText}
             </h3>
             <p
               className="text-sm text-[hsl(var(--color-muted-foreground))] line-clamp-2 leading-relaxed"

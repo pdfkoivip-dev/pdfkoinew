@@ -13,6 +13,7 @@ import { LanguageSelector } from './LanguageSelector';
 import { searchTools, SearchResult } from '@/lib/utils/search';
 import { getToolContent } from '@/config/tool-content';
 import { getAllTools } from '@/config/tools';
+import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
 
 export interface HeaderProps {
   locale: Locale;
@@ -253,6 +254,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
                             {searchResults.map((result, index) => {
                               const localized = localizedTools[result.tool.id];
                               const toolName = localized?.title || result.tool.id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+                              const anchorText = getPreferredToolAnchorText(locale, result.tool.id, toolName);
                               const toolDescription = localized?.description || result.tool.features.slice(0, 3).join(' • ');
 
                               return (
@@ -273,7 +275,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
                                     <span className="text-xl filter grayscale group-hover:grayscale-0">{getToolIcon(result.tool.category)}</span>
                                     <div className="flex-1 min-w-0">
                                       <div className="font-semibold text-sm truncate">
-                                        {toolName}
+                                        {anchorText}
                                       </div>
                                       <div className="text-xs text-[hsl(var(--color-muted-foreground))] truncate">
                                         {toolDescription}

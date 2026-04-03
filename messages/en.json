@@ -452,12 +452,12 @@
       "toolsCount": "{count} tools"
     },
     "categoriesDescription": {
-      "editAnnotate": "Edit, annotate, and modify PDF content",
-      "convertToPdf": "Convert various formats to PDF",
-      "convertFromPdf": "Convert PDF to other formats",
-      "organizeManage": "Organize, merge, split, and manage PDF pages",
-      "optimizeRepair": "Compress, optimize, and repair PDF files",
-      "securePdf": "Encrypt, decrypt, and secure PDF files"
+      "editAnnotate": "Tools for annotating, filling, and refining PDF documents",
+      "convertToPdf": "Tools for turning documents, images, and other files into PDF",
+      "convertFromPdf": "Tools for exporting PDFs into editable or shareable formats",
+      "organizeManage": "Tools for arranging pages and restructuring PDF documents",
+      "optimizeRepair": "Tools for compressing, repairing, and cleaning up PDF files",
+      "securePdf": "Tools for protecting, unlocking, and sanitizing PDF files"
     },
     "stats": {
       "pdfTools": "PDF Tools",

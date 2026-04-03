@@ -1,5 +1,6 @@
 'use client';
 
+import { Fragment } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { ArrowRight, Zap, Wrench, Lock, Sparkles, Edit, FileImage, FolderOpen, Settings, ShieldCheck, Star } from 'lucide-react';
@@ -11,6 +12,7 @@ import { Card } from '@/components/ui/Card';
 import { getAllTools, getToolsByCategory, getPopularTools } from '@/config/tools';
 import { getLocalizedPath, type Locale } from '@/lib/i18n/config';
 import { type ToolCategory } from '@/types/tool';
+import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
 
 interface HomePageClientProps {
   locale: Locale;
@@ -80,6 +82,24 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
     'optimize-repair',
     'secure-pdf',
   ];
+
+  const homepageAnchorTargets = [
+    { toolId: 'merge-pdf', slug: 'merge-pdf' },
+    { toolId: 'pdf-to-docx', slug: 'pdf-to-docx' },
+    { toolId: 'word-to-pdf', slug: 'word-to-pdf' },
+    { toolId: 'compress-pdf', slug: 'compress-pdf' },
+    { toolId: 'sign-pdf', slug: 'sign-pdf' },
+    { toolId: 'encrypt-pdf', slug: 'encrypt-pdf' },
+  ].map((target) => {
+    const fallbackTitle =
+      localizedToolContent?.[target.toolId]?.title ||
+      target.toolId.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+    return {
+      ...target,
+      anchorText: getPreferredToolAnchorText(locale, target.toolId, fallbackTitle),
+    };
+  });
 
   return (
     <div className="min-h-screen flex flex-col bg-[hsl(var(--color-background))]">
@@ -165,6 +185,47 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
               <p className="text-[hsl(var(--color-muted-foreground))] max-w-2xl mx-auto text-base">
                 {t('home.popularTools.description')}
               </p>
+              <div className="mt-5 flex justify-center">
+                <div className="w-full max-w-[30rem] rounded-[1.75rem] border border-[hsl(var(--color-border))/0.65] bg-white/72 px-4 py-3 shadow-[0_14px_36px_hsl(211_100%_50%/0.08)] backdrop-blur-md sm:max-w-[34rem] lg:hidden">
+                  <div className="grid grid-cols-4 items-center justify-items-center gap-x-2 gap-y-3">
+                    <span className="col-span-1 rounded-full bg-[linear-gradient(135deg,hsl(var(--color-primary))/0.12,hsl(var(--color-accent))/0.1)] px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--color-primary))] shadow-sm">
+                      {t('home.popularTools.badge')}
+                    </span>
+                    {homepageAnchorTargets.map((target) => (
+                      <Link
+                        key={target.toolId}
+                        href={getLocalizedPath(`/tools/${target.slug}`, locale)}
+                        className="rounded-full px-1 py-0.5 text-center text-[0.95rem] font-medium text-[hsl(var(--color-primary))] underline decoration-[hsl(var(--color-primary))/0.24] underline-offset-4 transition-all hover:text-[#0052FF] hover:decoration-[#0052FF]/0.45"
+                      >
+                        {target.anchorText}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="hidden w-full max-w-6xl justify-center lg:flex">
+                  <div className="inline-flex flex-nowrap items-center justify-center gap-x-3 rounded-full border border-[hsl(var(--color-border))/0.65] bg-white/72 px-5 py-3 shadow-[0_14px_36px_hsl(211_100%_50%/0.08)] backdrop-blur-md xl:gap-x-4 xl:px-6">
+                    <span className="shrink-0 rounded-full bg-[linear-gradient(135deg,hsl(var(--color-primary))/0.12,hsl(var(--color-accent))/0.1)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[hsl(var(--color-primary))] shadow-sm">
+                      {t('home.popularTools.badge')}
+                    </span>
+                    {homepageAnchorTargets.map((target, index) => (
+                      <Fragment key={target.toolId}>
+                        <Link
+                          href={getLocalizedPath(`/tools/${target.slug}`, locale)}
+                          className="shrink-0 rounded-full px-2 py-0.5 text-[0.95rem] font-medium text-[hsl(var(--color-primary))] underline decoration-[hsl(var(--color-primary))/0.24] underline-offset-4 transition-all hover:bg-[hsl(var(--color-primary))/0.06] hover:text-[#0052FF] hover:decoration-[#0052FF]/0.45"
+                        >
+                          {target.anchorText}
+                        </Link>
+                        {index < homepageAnchorTargets.length - 1 ? (
+                          <span aria-hidden="true" className="shrink-0 text-sm text-[hsl(var(--color-border))]">
+                            •
+                          </span>
+                        ) : null}
+                      </Fragment>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
             <ToolGrid
               tools={popularTools}
@@ -221,7 +282,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                 return (
                   <Link
                     key={category}
-                    href={getLocalizedPath(`/tools?category=${category}`, locale)}
+                    href={getLocalizedPath(`/tools/category/${category}`, locale)}
                     className="group"
                   >
                     <Card className="p-5 h-full glass-card hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-[hsl(var(--color-border)/0.6)]">

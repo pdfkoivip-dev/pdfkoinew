@@ -9,6 +9,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { getLocalizedPath, type Locale } from '@/lib/i18n/config';
+import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
 
 interface FAQPageClientProps {
   locale: Locale;
@@ -27,6 +28,22 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+
+  const faqHelpfulLinks = [
+    { toolId: 'merge-pdf', slug: 'merge-pdf' },
+    { toolId: 'pdf-to-docx', slug: 'pdf-to-docx' },
+    { toolId: 'word-to-pdf', slug: 'word-to-pdf' },
+    { toolId: 'compress-pdf', slug: 'compress-pdf' },
+    { toolId: 'sign-pdf', slug: 'sign-pdf' },
+    { toolId: 'encrypt-pdf', slug: 'encrypt-pdf' },
+  ].map((item) => ({
+    ...item,
+    anchorText: getPreferredToolAnchorText(
+      locale,
+      item.toolId,
+      item.toolId.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+    ),
+  }));
 
   // Helper to get FAQs for a category
   const getCategoryFaqs = (categoryKey: string, categoryLabel: string): FAQItem[] => {
@@ -201,6 +218,34 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
             </div>
           </div>
         </section>
+
+        {locale === 'en' ? (
+          <section className="pb-4">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto">
+                <Card className="p-6">
+                  <h2 className="text-xl font-bold text-[hsl(var(--color-foreground))] mb-3">
+                    Direct links to common PDF tasks
+                  </h2>
+                  <p className="text-sm text-[hsl(var(--color-muted-foreground))] mb-4">
+                    If you already know the task you need, use one of these direct links instead of browsing the full FAQ.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {faqHelpfulLinks.map((link) => (
+                      <Link
+                        key={link.toolId}
+                        href={getLocalizedPath(`/tools/${link.slug}`, locale)}
+                        className="rounded-full border border-[hsl(var(--color-border))/0.6] bg-[hsl(var(--color-background))] px-4 py-2 text-sm font-medium text-[hsl(var(--color-primary))] underline decoration-[hsl(var(--color-primary))/0.35] underline-offset-4 transition-colors hover:text-[#0052FF]"
+                      >
+                        {link.anchorText}
+                      </Link>
+                    ))}
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         {/* Contact CTA */}
         <section className="py-12 bg-[hsl(var(--color-muted)/0.3)]">

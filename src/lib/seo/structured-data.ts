@@ -66,7 +66,7 @@ export interface HowToSchema {
  */
 export interface WebPageSchema {
   '@context': 'https://schema.org';
-  '@type': 'WebPage';
+  '@type': 'WebPage' | 'CollectionPage';
   name: string;
   description: string;
   url: string;
@@ -84,6 +84,26 @@ export interface WebPageSchema {
     '@type': string;
     name: string;
   };
+}
+
+/**
+ * ItemList schema for curated lists of links or resources
+ * @see https://schema.org/ItemList
+ */
+export interface ItemListSchema {
+  '@context': 'https://schema.org';
+  '@type': 'ItemList';
+  name: string;
+  description?: string;
+  itemListOrder?: 'https://schema.org/ItemListOrderAscending';
+  numberOfItems: number;
+  itemListElement: Array<{
+    '@type': 'ListItem';
+    position: number;
+    name: string;
+    url: string;
+    description?: string;
+  }>;
 }
 
 /**
@@ -261,6 +281,54 @@ export function generateWebPageSchema(
 }
 
 /**
+ * Generate CollectionPage schema for category hub pages
+ */
+export function generateCollectionPageSchema(options: {
+  locale: Locale;
+  title: string;
+  description: string;
+  path: string;
+  about: string;
+  mainEntityName: string;
+}): WebPageSchema {
+  const { locale, title, description, path, about, mainEntityName } = options;
+
+  const languageMap: Record<Locale, string> = {
+    en: 'en-US',
+    ja: 'ja-JP',
+    ko: 'ko-KR',
+    es: 'es-ES',
+    fr: 'fr-FR',
+    de: 'de-DE',
+    zh: 'zh-CN',
+    'zh-TW': 'zh-TW',
+    pt: 'pt-BR',
+  };
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: title,
+    description,
+    url: `${siteConfig.url}${getPublicPath(path, locale)}`,
+    inLanguage: languageMap[locale] || 'en-US',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: siteConfig.name,
+      url: `${siteConfig.url}${getPublicPath('/', locale)}`,
+    },
+    about: {
+      '@type': 'Thing',
+      name: about,
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      name: mainEntityName,
+    },
+  };
+}
+
+/**
  * Generate FAQPage schema from FAQ items
  */
 export function generateFAQPageSchema(faqs: FAQ[]): FAQPageSchema {
@@ -330,6 +398,36 @@ export function generateBreadcrumbSchema(
       position: index + 1,
       name: item.name,
       item: `${siteConfig.url}${getPublicPath(item.path || '/', locale)}`,
+    })),
+  };
+}
+
+/**
+ * Generate ItemList schema for category hub links
+ */
+export function generateItemListSchema(
+  options: {
+    locale: Locale;
+    title: string;
+    description?: string;
+    items: Array<{ name: string; path: string; description?: string }>;
+  }
+): ItemListSchema {
+  const { locale, title, description, items } = options;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: title,
+    description,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: `${siteConfig.url}${getPublicPath(item.path, locale)}`,
+      description: item.description,
     })),
   };
 }
