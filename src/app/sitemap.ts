@@ -68,10 +68,6 @@ const SITEMAP_MODE: SitemapMode = process.env.PDFKOI_SITEMAP_MODE === 'full' ? '
 const CORE_STATIC_PAGE_PATHS = new Set([
   '',
   '/tools',
-  '/about',
-  '/faq',
-  '/privacy',
-  '/contact',
 ]);
 
 const CORE_TOOL_SLUGS = new Set([
@@ -79,14 +75,10 @@ const CORE_TOOL_SLUGS = new Set([
   'split-pdf',
   'compress-pdf',
   'jpg-to-pdf',
-  'image-to-pdf',
   'pdf-to-jpg',
   'edit-pdf',
   'sign-pdf',
-  'organize-pdf',
   'extract-pages',
-  'delete-pages',
-  'page-numbers',
 ]);
 
 const PROJECT_ROOT = process.cwd();
