@@ -59,6 +59,7 @@ const PAGE_LASTMOD_SOURCES = {
     'src/app/(default)',
     'src/app/(localized)/[locale]/HomePageClient.tsx',
     'src/config/tools.ts',
+    'src/config/homepage-popular-tool-content.ts',
     'src/config/tool-content',
     'messages',
   ],
