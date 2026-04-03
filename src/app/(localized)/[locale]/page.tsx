@@ -38,6 +38,8 @@ export default async function HomePage({ params }: HomePageProps) {
   // Get localized content for tools
   const { tools } = await import('@/config/tools');
   const { getToolContent } = await import('@/config/tool-content');
+  const { getHomepagePopularToolContent } = await import('@/config/homepage-popular-tool-content');
+  const homepagePopularToolContent = getHomepagePopularToolContent(validLocale);
 
   const localizedToolContent = tools.reduce((acc, tool) => {
     const content = getToolContent(validLocale, tool.id);
@@ -51,6 +53,10 @@ export default async function HomePage({ params }: HomePageProps) {
     }
     return acc;
   }, {} as Record<string, { title: string; description: string }>);
+
+  Object.entries(homepagePopularToolContent).forEach(([toolId, content]) => {
+    localizedToolContent[toolId] = content;
+  });
 
   return (
     <>

@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { getAllTools, getToolsByCategory, getPopularTools } from '@/config/tools';
 import { getLocalizedPath, type Locale } from '@/lib/i18n/config';
-import { CATEGORY_INFO, type ToolCategory } from '@/types/tool';
+import { type ToolCategory } from '@/types/tool';
 
 interface HomePageClientProps {
   locale: Locale;
@@ -88,7 +88,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
       <main id="main-content" className="flex-1 relative" tabIndex={-1}>
         {/* Hero Section */}
         <section
-          className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28 bg-aurora"
+          className="relative overflow-hidden pt-14 pb-8 lg:pt-16 lg:pb-10 bg-aurora"
           aria-labelledby="hero-title"
         >
           {/* Animated Background Blobs */}
@@ -101,7 +101,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               {/* Brand Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-[hsl(var(--color-background)/0.8)] border border-[hsl(var(--color-primary)/0.2)] shadow-sm backdrop-blur-md transition-all hover:bg-[hsl(var(--color-background))]">
+              <div className="inline-flex items-center gap-2 px-4 py-2 mt-2 mb-1 rounded-full bg-[hsl(var(--color-background)/0.8)] border border-[hsl(var(--color-primary)/0.2)] shadow-sm backdrop-blur-md transition-all hover:bg-[hsl(var(--color-background))]">
                 <Sparkles className="h-4 w-4 text-[hsl(var(--color-primary))]" aria-hidden="true" />
                 <span className="text-sm font-medium text-[hsl(var(--color-primary))]">
                   {t('common.brand')}
@@ -109,20 +109,20 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
               </div>
 
               {/* Hero Title */}
-              <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              <h1 id="hero-title" className="text-[2.85rem] md:text-[3.15rem] lg:text-[4rem] font-bold tracking-tight leading-[0.98] mb-2">
                 <span className="text-[hsl(var(--color-foreground))]">{t('home.hero.title')} </span>
-                <span className="text-gradient block mt-1 pb-2">{t('home.hero.highlight')}</span>
+                <span className="text-gradient block mt-1 pb-2 leading-[1.05]">{t('home.hero.highlight')}</span>
               </h1>
 
               {/* Hero Subtitle */}
-              <p className="text-lg text-[hsl(var(--color-muted-foreground))] mb-8 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base md:text-lg text-[hsl(var(--color-muted-foreground))] mb-4 max-w-xl mx-auto leading-relaxed">
                 {t('home.hero.subtitle')}
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <Link href={getLocalizedPath('/tools', locale)}>
-                  <Button variant="primary" size="lg" className="btn-gradient h-11 px-8 text-base border border-white/20">
+                  <Button variant="primary" size="lg" className="btn-gradient h-10 px-6 text-base border border-white/20">
                     {t('home.hero.cta')}
                     <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                   </Button>
@@ -133,42 +133,18 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
-                <div className="progress-ring" style={{ ['--progress' as string]: 0.92 }} aria-hidden="true">
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                <div className="progress-ring scale-[0.82] md:scale-[0.88]" style={{ ['--progress' as string]: 0.92 }} aria-hidden="true">
                   <span className="text-xs font-bold text-[hsl(var(--color-primary))]">92%</span>
                 </div>
-                <div className="progress-ring animate-pulse-soft" style={{ ['--progress' as string]: 0.78 }} aria-hidden="true">
+                <div className="progress-ring animate-pulse-soft scale-[0.82] md:scale-[0.88]" style={{ ['--progress' as string]: 0.78 }} aria-hidden="true">
                   <span className="text-xs font-bold text-[hsl(var(--color-primary))]">78%</span>
                 </div>
-                <div className="text-left">
+                <div className="text-left max-w-[210px]">
                   <p className="text-sm font-semibold text-[hsl(var(--color-foreground))]">Fast processing feedback</p>
-                  <p className="text-xs text-[hsl(var(--color-muted-foreground))]">Smooth circular progress and instant interaction response</p>
+                  <p className="text-xs text-[hsl(var(--color-muted-foreground))] leading-relaxed">Smooth circular progress and instant interaction response</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-12 relative z-20" aria-label="Features">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {features.map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <Card key={index} className="p-6 text-center glass-card border-0 hover:-translate-y-1 transition-transform duration-300" hover={false}>
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[hsl(var(--color-primary)/0.1)] mb-4 text-[hsl(var(--color-primary))]">
-                      <Icon className={`h-6 w-6 ${feature.color}`} aria-hidden="true" />
-                    </div>
-                    <h3 className="text-lg font-bold text-[hsl(var(--color-foreground))] mb-2">
-                      {t(feature.titleKey)}
-                    </h3>
-                    <p className="text-sm text-[hsl(var(--color-muted-foreground))] leading-relaxed">
-                      {t(feature.descriptionKey)}
-                    </p>
-                  </Card>
-                );
-              })}
             </div>
           </div>
         </section>
@@ -193,34 +169,33 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
             <ToolGrid
               tools={popularTools}
               locale={locale}
+              className="max-w-5xl mx-auto lg:grid-cols-3 xl:grid-cols-3"
               localizedToolContent={localizedToolContent}
             />
           </div>
         </section>
 
-        <section className="py-16" aria-labelledby="featured-tools-heading">
+        {/* Features Section */}
+        <section className="py-12 relative z-20" aria-label="Features">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-              <div className="max-w-2xl">
-                <h2 id="featured-tools-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-2">
-                  {t(`home.categories.${categoryTranslationKeys['organize-manage']}`)}
-                </h2>
-                <p className="text-[hsl(var(--color-muted-foreground))] text-base">
-                  {t(`home.categoriesDescription.${categoryTranslationKeys['organize-manage']}`)}
-                </p>
-              </div>
-              <Link href={getLocalizedPath('/tools', locale)}>
-                <Button variant="outline" size="sm" className="group">
-                  {t('common.navigation.tools')}
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </Button>
-              </Link>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <Card key={index} className="p-6 text-center glass-card border-0 hover:-translate-y-1 transition-transform duration-300" hover={false}>
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[hsl(var(--color-primary)/0.1)] mb-4 text-[hsl(var(--color-primary))]">
+                      <Icon className={`h-6 w-6 ${feature.color}`} aria-hidden="true" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[hsl(var(--color-foreground))] mb-2">
+                      {t(feature.titleKey)}
+                    </h3>
+                    <p className="text-sm text-[hsl(var(--color-muted-foreground))] leading-relaxed">
+                      {t(feature.descriptionKey)}
+                    </p>
+                  </Card>
+                );
+              })}
             </div>
-            <ToolGrid
-              tools={getToolsByCategory('organize-manage').slice(0, 8)}
-              locale={locale}
-              localizedToolContent={localizedToolContent}
-            />
           </div>
         </section>
 

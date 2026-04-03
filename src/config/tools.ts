@@ -1240,11 +1240,9 @@ export const POPULAR_TOOL_IDS = [
   'merge-pdf',
   'split-pdf',
   'compress-pdf',
-  'edit-pdf',
+  'pdf-to-docx',
   'jpg-to-pdf',
   'pdf-to-jpg',
-  'sign-pdf',
-  'encrypt-pdf',
 ];
 
 /**

@@ -2,6 +2,7 @@
 
 import React, { useMemo } from 'react';
 import { useTranslations } from 'next-intl';
+import { twMerge } from 'tailwind-merge';
 import { Tool, ToolCategory, CATEGORY_INFO } from '@/types/tool';
 import { ToolCard } from './ToolCard';
 
@@ -102,7 +103,7 @@ export function ToolGrid({
   if (filteredTools.length === 0) {
     return (
       <div
-        className={`text-center py-12 ${className}`}
+        className={twMerge('text-center py-12', className)}
         data-testid="tool-grid-empty"
       >
         <p className="text-[hsl(var(--color-muted-foreground))]">
@@ -115,7 +116,7 @@ export function ToolGrid({
   // Render grouped by category
   if (showCategoryHeaders && groupedTools) {
     return (
-      <div className={`space-y-8 ${className}`} data-testid="tool-grid">
+      <div className={twMerge('space-y-8', className)} data-testid="tool-grid">
         {Object.entries(groupedTools).map(([cat, categoryTools]) => {
           if (categoryTools.length === 0) return null;
 
@@ -152,7 +153,10 @@ export function ToolGrid({
   // Render flat grid
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 ${className}`}
+      className={twMerge(
+        'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4',
+        className
+      )}
       data-testid="tool-grid"
     >
       {filteredTools.map(tool => (
