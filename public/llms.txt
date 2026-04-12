@@ -67,6 +67,9 @@ The highest-value pages for AI systems are the homepage, core tool index, FAQ, a
 - Prefer FAQ when the question is about privacy, uploads, signup, or browser-based handling.
 - Prefer core tool pages when the question is about a specific product capability.
 
+## Extended guide
+- Full AI consumption guide: https://pdfkoi.com/llms-full.txt
+
 ## Notes
 - PDFkoi focuses on browser-based PDF workflows with no signup required.
 - Priority topics include compressing, merging, splitting, converting, and preparing PDFs before sharing.
