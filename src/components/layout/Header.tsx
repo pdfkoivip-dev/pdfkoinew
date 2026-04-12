@@ -11,8 +11,6 @@ import { Button } from '@/components/ui/Button';
 import { RecentFilesDropdown } from '@/components/common/RecentFilesDropdown';
 import { LanguageSelector } from './LanguageSelector';
 import { searchTools, SearchResult } from '@/lib/utils/search';
-import { getToolContent } from '@/config/tool-content';
-import { getAllTools } from '@/config/tools';
 import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
 
 export interface HeaderProps {
@@ -36,26 +34,53 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [localizedTools, setLocalizedTools] = useState<Record<string, { title: string; description: string }>>({});
+  const [hasLoadedSearchData, setHasLoadedSearchData] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
-  // Load localized tool content on mount
+  // Load localized search content only when search is first opened.
   useEffect(() => {
-    const allTools = getAllTools();
-    const contentMap: Record<string, { title: string; description: string }> = {};
+    if (!isSearchOpen || hasLoadedSearchData) {
+      return;
+    }
 
-    allTools.forEach(tool => {
-      const content = getToolContent(locale, tool.id);
-      if (content) {
-        contentMap[tool.id] = {
-          title: content.title,
-          description: content.metaDescription
-        };
+    let isCancelled = false;
+
+    const loadSearchData = async () => {
+      const [{ getToolContent }, { getAllTools }] = await Promise.all([
+        import('@/config/tool-content'),
+        import('@/config/tools'),
+      ]);
+
+      if (isCancelled) {
+        return;
       }
-    });
 
-    setLocalizedTools(contentMap);
-  }, [locale]);
+      const contentMap: Record<string, { title: string; description: string }> = {};
+      const allTools = getAllTools();
+
+      allTools.forEach((tool) => {
+        const content = getToolContent(locale, tool.id);
+        if (content) {
+          contentMap[tool.id] = {
+            title: content.title,
+            description: content.metaDescription,
+          };
+        }
+      });
+
+      if (!isCancelled) {
+        setLocalizedTools(contentMap);
+        setHasLoadedSearchData(true);
+      }
+    };
+
+    void loadSearchData();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [hasLoadedSearchData, isSearchOpen, locale]);
 
   // Handle scroll effect
   useEffect(() => {

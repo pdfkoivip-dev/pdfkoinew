@@ -18,14 +18,15 @@ describe('Card', () => {
     it('renders with default variant', () => {
       render(<Card>Default</Card>);
       const card = screen.getByText('Default');
-      expect(card).toHaveClass('bg-[hsl(var(--color-card))]');
+      expect(card).toHaveClass('bg-white/80');
       expect(card).toHaveClass('border');
     });
 
     it('renders elevated variant', () => {
       render(<Card variant="elevated">Elevated</Card>);
       const card = screen.getByText('Elevated');
-      expect(card).toHaveClass('shadow-[var(--shadow-md)]');
+      expect(card).toHaveClass('shadow-lg');
+      expect(card).toHaveClass('shadow-[#0052FF]/8');
     });
 
     it('renders outlined variant', () => {
@@ -60,8 +61,8 @@ describe('Card', () => {
     it('applies hover styles when hover prop is true', () => {
       render(<Card hover>Hoverable</Card>);
       const card = screen.getByText('Hoverable');
-      expect(card).toHaveClass('hover:shadow-[var(--shadow-lg)]');
-      expect(card).toHaveClass('hover:-translate-y-0.5');
+      expect(card).toHaveClass('hover:shadow-[0_20px_50px_hsl(211_100%_50%/0.15)]');
+      expect(card).toHaveClass('hover:-translate-y-2');
     });
 
     it('does not apply hover styles by default', () => {

@@ -334,11 +334,13 @@ server {
 3. Set build output directory: `out`
 4. Use Node.js 22 in the Cloudflare build environment.
 5. Keep the `public/_headers` and `public/_redirects` files in the repo so Cloudflare can apply cache headers and redirects after the static export is published.
+6. Query-string category redirects such as `/tools?category=edit-annotate` are handled by Cloudflare Pages Functions because `_redirects` does not support query-parameter matching.
 
 ### 3. Important Notes
 - **Headers Configuration**: The `headers` configuration in `next.config.js` does not automatically take effect in static export mode. You need to configure HTTP headers separately depending on your hosting platform (for example `public/_headers` on Cloudflare Pages or platform-specific config files elsewhere).
 - **Image Optimization**: Since static export does not support Next.js's default image optimization server, the project is configured with `images: { unoptimized: true }`.
 - **Middleware**: Next.js middleware is not available in static export deployments. This project is structured so localized routes are generated at build time and Cloudflare handles the `/en` to `/` redirect via `public/_redirects`.
+- **Legacy category filters**: Old category URLs that use `?category=` are redirected at the hosting layer. Netlify uses `netlify.toml`, Vercel uses `vercel.json`, Nginx uses `nginx.conf`, and Cloudflare Pages uses route-specific Functions because `public/_redirects` cannot match query parameters.
 
 ### 4. Verify Deployment
 After deployment, please check the following features to ensure everything is working correctly:

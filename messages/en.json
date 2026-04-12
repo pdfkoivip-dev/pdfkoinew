@@ -484,6 +484,40 @@
       "optimizeRepair": "Tools for compressing, repairing, and cleaning up PDF files",
       "securePdf": "Tools for protecting, unlocking, and sanitizing PDF files"
     },
+    "contentModules": {
+      "browserSafety": {
+        "eyebrow": "Privacy-first workflow",
+        "heading": "Why Browser-Based PDF Tools Are Safer",
+        "body": "Many online PDF tools ask you to upload files to a remote server before you can merge, split, compress, or convert them. PDFkoi works differently. Your files are processed in your browser, which makes it a better fit for contracts, resumes, forms, IDs, scans, and other documents you may not want to send elsewhere. If you want a faster workflow with no signup and more control over your files, browser-based PDF processing is often the simpler choice."
+      },
+      "everydayTasks": {
+        "eyebrow": "Search-friendly coverage",
+        "heading": "Popular PDF Tools for Everyday Tasks",
+        "body": "Most people come to PDF tools with a practical goal: merge PDF files, split pages, compress large documents, convert PDF to Word, or turn images into PDF files. PDFkoi brings those common tasks together in one place. You can handle everyday document work quickly, without creating an account or going through a traditional upload flow.",
+        "cardTitle": "Common tasks people look for",
+        "items": {
+          "merge": "Merge PDF files online",
+          "split": "Split PDF pages",
+          "compress": "Compress PDF for email",
+          "convert": "Convert PDF to Word",
+          "images": "Turn images into PDF",
+          "organize": "Organize files before sharing"
+        }
+      },
+      "localProcessing": {
+        "eyebrow": "Real document scenarios",
+        "heading": "When Local PDF Processing Makes Sense",
+        "body": "Local PDF processing is especially useful when your document includes personal, academic, financial, or business information. That can include contracts, job applications, invoices, school forms, scanned records, and identity documents. If you need to organize, reduce, or convert a file before sharing it, a browser-based workflow helps you finish the job without adding an unnecessary extra step.",
+        "cardTitle": "Good fit for documents like",
+        "items": {
+          "contracts": "Contracts and quotes",
+          "resumes": "Resumes and job applications",
+          "invoices": "Invoices and business forms",
+          "scanned": "Scanned records and school paperwork",
+          "id": "ID-related documents before submission"
+        }
+      }
+    },
     "stats": {
       "pdfTools": "PDF Tools",
       "freeToUse": "Free to Use",

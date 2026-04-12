@@ -1,9 +1,73 @@
 # pdfkoi.com | LLMS Content Index
 
-Generated (UTC): 2026-03-28 08:53:26Z
+Generated (UTC): 2026-04-12T01:05:09.398Z
 Base URL: https://pdfkoi.com
-Source URLs discovered: 0
-Included high-value URLs: 1
+Primary language for GEO landing pages: English
+Preferred audience: users looking for browser-based PDF workflows with no signup
+Included high-value URLs: 6
+Included core tools: 6
+Included category hubs: 6
+
+## Site summary
+PDFkoi is a browser-based PDF tool site focused on privacy-first, no-signup workflows.
+The highest-value pages for AI systems are the homepage, core tool index, FAQ, and targeted long-tail pages that explain specific user tasks.
+
+## Preferred reading order for AI systems
+1. Homepage - https://pdfkoi.com/
+2. All Tools - https://pdfkoi.com/en/tools/
+3. FAQ - https://pdfkoi.com/en/faq/
+4. Compress PDF for Email - https://pdfkoi.com/en/compress-pdf-for-email/
+5. Compress PDF Without Upload - https://pdfkoi.com/en/compress-pdf-without-upload/
+6. Merge PDF Without Signup - https://pdfkoi.com/en/merge-pdf-no-signup/
 
 ## High-value pages
 - Homepage - https://pdfkoi.com/
+- All Tools - https://pdfkoi.com/en/tools/
+- FAQ - https://pdfkoi.com/en/faq/
+- Compress PDF for Email - https://pdfkoi.com/en/compress-pdf-for-email/
+- Compress PDF Without Upload - https://pdfkoi.com/en/compress-pdf-without-upload/
+- Merge PDF Without Signup - https://pdfkoi.com/en/merge-pdf-no-signup/
+
+## Long-tail GEO pages
+- compress-pdf-for-email - https://pdfkoi.com/en/compress-pdf-for-email/
+- compress-pdf-without-upload - https://pdfkoi.com/en/compress-pdf-without-upload/
+- merge-pdf-no-signup - https://pdfkoi.com/en/merge-pdf-no-signup/
+
+## Task-to-page guide
+- Need a general PDF tool overview? Use https://pdfkoi.com/en/tools/
+- Need help with email attachment limits? Use https://pdfkoi.com/en/compress-pdf-for-email/
+- Need a browser-based workflow without a traditional upload path? Use https://pdfkoi.com/en/compress-pdf-without-upload/
+- Need a merge workflow with low friction? Use https://pdfkoi.com/en/merge-pdf-no-signup/
+- Need direct product answers about privacy, file handling, or supported workflows? Use https://pdfkoi.com/en/faq/
+
+## Core tool pages
+- Compress Pdf - https://pdfkoi.com/en/tools/compress-pdf/
+- Jpg To Pdf - https://pdfkoi.com/en/tools/jpg-to-pdf/
+- Pdf To Jpg - https://pdfkoi.com/en/tools/pdf-to-jpg/
+- Split Pdf - https://pdfkoi.com/en/tools/split-pdf/
+- Merge Pdf - https://pdfkoi.com/en/tools/merge-pdf/
+- Pdf To Docx - https://pdfkoi.com/en/tools/pdf-to-docx/
+
+## Category hubs
+- Edit Annotate - https://pdfkoi.com/en/tools/category/edit-annotate/
+- Convert To Pdf - https://pdfkoi.com/en/tools/category/convert-to-pdf/
+- Convert From Pdf - https://pdfkoi.com/en/tools/category/convert-from-pdf/
+- Organize Manage - https://pdfkoi.com/en/tools/category/organize-manage/
+- Optimize Repair - https://pdfkoi.com/en/tools/category/optimize-repair/
+- Secure Pdf - https://pdfkoi.com/en/tools/category/secure-pdf/
+
+## How to interpret the site
+- Homepage: broad positioning, trust signals, popular tools, and category entry points.
+- Long-tail pages: best for direct answers tied to a specific use case or user constraint.
+- Core tool pages: best for product capability details and actual task execution.
+- Category hubs: best for understanding the tool taxonomy and related actions.
+
+## Citation guidance
+- Prefer long-tail pages when the question is about a specific workflow or constraint.
+- Prefer FAQ when the question is about privacy, uploads, signup, or browser-based handling.
+- Prefer core tool pages when the question is about a specific product capability.
+
+## Notes
+- PDFkoi focuses on browser-based PDF workflows with no signup required.
+- Priority topics include compressing, merging, splitting, converting, and preparing PDFs before sharing.
+- Core trust signals on the site emphasize privacy-first document handling and local browser processing.

@@ -29,7 +29,6 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
   const t = useTranslations();
   const allTools = getAllTools();
   const popularTools = getPopularTools();
-
   // Feature highlights (same as before)
   const features = [
     {
@@ -91,17 +90,10 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
           className="relative overflow-hidden pt-14 pb-8 lg:pt-16 lg:pb-10 bg-aurora"
           aria-labelledby="hero-title"
         >
-          {/* Animated Background Blobs */}
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-[hsl(var(--color-primary)/0.2)] rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
-            <div className="absolute top-0 right-1/4 w-96 h-96 bg-[hsl(var(--color-accent)/0.2)] rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
-            <div className="absolute -bottom-32 left-1/2 w-96 h-96 bg-[hsl(var(--color-secondary)/0.3)] rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
-          </div>
-
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               {/* Brand Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 mt-2 mb-1 rounded-full bg-[hsl(var(--color-background)/0.8)] border border-[hsl(var(--color-primary)/0.2)] shadow-sm backdrop-blur-md transition-all hover:bg-[hsl(var(--color-background))]">
+              <div className="inline-flex items-center gap-2 px-4 py-2 mt-2 mb-1 rounded-full bg-[hsl(var(--color-background))] border border-[hsl(var(--color-primary)/0.2)] shadow-sm transition-all hover:bg-[hsl(var(--color-background))]">
                 <Sparkles className="h-4 w-4 text-[hsl(var(--color-primary))]" aria-hidden="true" />
                 <span className="text-sm font-medium text-[hsl(var(--color-primary))]">
                   {t('common.brand')}
@@ -137,22 +129,9 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                     <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                   </Button>
                 </Link>
-                <div className="flex items-center gap-2 text-sm text-[hsl(var(--color-muted-foreground))] bg-[hsl(var(--color-background)/0.55)] px-4 py-2 rounded-full border border-[hsl(var(--color-border))] backdrop-blur-sm interactive-lift">
+                <div className="flex items-center gap-2 text-sm text-[hsl(var(--color-muted-foreground))] bg-[hsl(var(--color-background))] px-4 py-2 rounded-full border border-[hsl(var(--color-border))] interactive-lift">
                   <Lock className="h-4 w-4 text-green-500" aria-hidden="true" />
                   <span>{t('common.footer.privacyBadge')}</span>
-                </div>
-              </div>
-
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-                <div className="progress-ring scale-[0.82] md:scale-[0.88]" style={{ ['--progress' as string]: 0.92 }} aria-hidden="true">
-                  <span className="text-xs font-bold text-[hsl(var(--color-primary))]">92%</span>
-                </div>
-                <div className="progress-ring animate-pulse-soft scale-[0.82] md:scale-[0.88]" style={{ ['--progress' as string]: 0.78 }} aria-hidden="true">
-                  <span className="text-xs font-bold text-[hsl(var(--color-primary))]">78%</span>
-                </div>
-                <div className="text-left max-w-[210px]">
-                  <p className="text-sm font-semibold text-[hsl(var(--color-foreground))]">Fast processing feedback</p>
-                  <p className="text-xs text-[hsl(var(--color-muted-foreground))] leading-relaxed">Smooth circular progress and instant interaction response</p>
                 </div>
               </div>
             </div>
@@ -185,6 +164,24 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
           </div>
         </section>
 
+        <section className="py-14" aria-labelledby="browser-safety">
+          <div className="container mx-auto px-4">
+            <Card className="max-w-4xl mx-auto p-8 md:p-10 glass-card border-[hsl(var(--color-border)/0.65)]">
+              <div className="max-w-3xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-primary))] mb-3">
+                  {t('home.contentModules.browserSafety.eyebrow')}
+                </p>
+                <h2 id="browser-safety" className="text-3xl font-bold text-[hsl(var(--color-foreground))] mb-4">
+                  {t('home.contentModules.browserSafety.heading')}
+                </h2>
+                <p className="text-base md:text-lg leading-relaxed text-[hsl(var(--color-muted-foreground))]">
+                  {t('home.contentModules.browserSafety.body')}
+                </p>
+              </div>
+            </Card>
+          </div>
+        </section>
+
         {/* Features Section */}
         <section className="py-12 relative z-20" aria-label="Features">
           <div className="container mx-auto px-4">
@@ -205,6 +202,37 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                   </Card>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-14 bg-[hsl(var(--color-muted)/0.28)]" aria-labelledby="everyday-tasks">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto grid gap-6 lg:grid-cols-[1.15fr_0.85fr] items-start">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-primary))] mb-3">
+                  {t('home.contentModules.everydayTasks.eyebrow')}
+                </p>
+                <h2 id="everyday-tasks" className="text-3xl font-bold text-[hsl(var(--color-foreground))] mb-4">
+                  {t('home.contentModules.everydayTasks.heading')}
+                </h2>
+                <p className="text-base md:text-lg leading-relaxed text-[hsl(var(--color-muted-foreground))]">
+                  {t('home.contentModules.everydayTasks.body')}
+                </p>
+              </div>
+              <Card className="p-6 h-full bg-[hsl(var(--color-background)/0.9)] border-[hsl(var(--color-border)/0.7)]">
+                <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))] mb-4">
+                  {t('home.contentModules.everydayTasks.cardTitle')}
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-[hsl(var(--color-muted-foreground))]">
+                  <div className="rounded-2xl bg-[hsl(var(--color-primary)/0.08)] px-4 py-3">{t('home.contentModules.everydayTasks.items.merge')}</div>
+                  <div className="rounded-2xl bg-[hsl(var(--color-primary)/0.08)] px-4 py-3">{t('home.contentModules.everydayTasks.items.split')}</div>
+                  <div className="rounded-2xl bg-[hsl(var(--color-primary)/0.08)] px-4 py-3">{t('home.contentModules.everydayTasks.items.compress')}</div>
+                  <div className="rounded-2xl bg-[hsl(var(--color-primary)/0.08)] px-4 py-3">{t('home.contentModules.everydayTasks.items.convert')}</div>
+                  <div className="rounded-2xl bg-[hsl(var(--color-primary)/0.08)] px-4 py-3">{t('home.contentModules.everydayTasks.items.images')}</div>
+                  <div className="rounded-2xl bg-[hsl(var(--color-primary)/0.08)] px-4 py-3">{t('home.contentModules.everydayTasks.items.organize')}</div>
+                </div>
+              </Card>
             </div>
           </div>
         </section>
@@ -257,6 +285,36 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                   </Link>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-14" aria-labelledby="local-processing">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto grid gap-6 lg:grid-cols-3">
+              <Card className="lg:col-span-2 p-8 md:p-10 glass-card border-[hsl(var(--color-border)/0.65)]">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-primary))] mb-3">
+                  {t('home.contentModules.localProcessing.eyebrow')}
+                </p>
+                <h2 id="local-processing" className="text-3xl font-bold text-[hsl(var(--color-foreground))] mb-4">
+                  {t('home.contentModules.localProcessing.heading')}
+                </h2>
+                <p className="text-base md:text-lg leading-relaxed text-[hsl(var(--color-muted-foreground))]">
+                  {t('home.contentModules.localProcessing.body')}
+                </p>
+              </Card>
+              <Card className="p-6 bg-[hsl(var(--color-background)/0.92)] border-[hsl(var(--color-border)/0.7)]">
+                <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))] mb-4">
+                  {t('home.contentModules.localProcessing.cardTitle')}
+                </h3>
+                <ul className="space-y-3 text-sm text-[hsl(var(--color-muted-foreground))]">
+                  <li>{t('home.contentModules.localProcessing.items.contracts')}</li>
+                  <li>{t('home.contentModules.localProcessing.items.resumes')}</li>
+                  <li>{t('home.contentModules.localProcessing.items.invoices')}</li>
+                  <li>{t('home.contentModules.localProcessing.items.scanned')}</li>
+                  <li>{t('home.contentModules.localProcessing.items.id')}</li>
+                </ul>
+              </Card>
             </div>
           </div>
         </section>

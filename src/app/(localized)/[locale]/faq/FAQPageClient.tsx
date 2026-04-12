@@ -10,16 +10,10 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { getLocalizedPath, type Locale } from '@/lib/i18n/config';
 import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
+import { buildFaqPageItems, getFeaturedFaqItems } from './faq-data';
 
 interface FAQPageClientProps {
   locale: Locale;
-}
-
-interface FAQItem {
-  question: string;
-  answer: string;
-  category: string;
-  categoryLabel: string; // Display label
 }
 
 export default function FAQPageClient({ locale }: FAQPageClientProps) {
@@ -45,35 +39,8 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
     ),
   }));
 
-  // Helper to get FAQs for a category
-  const getCategoryFaqs = (categoryKey: string, categoryLabel: string): FAQItem[] => {
-    const items = ['whatIs', 'isFree', 'account', 'uploaded', 'safe', 'storage', 'operations', 'merge', 'images', 'edit', 'browsers', 'sizeLimit', 'slow', 'offline', 'supported', 'change'];
-    const categoryMapping: Record<string, string[]> = {
-      'general': ['whatIs', 'isFree', 'account'],
-      'privacy': ['uploaded', 'safe', 'storage'],
-      'features': ['operations', 'merge', 'images', 'edit'],
-      'technical': ['browsers', 'sizeLimit', 'slow', 'offline'],
-      'languages': ['supported', 'change']
-    };
-
-    const keys = categoryMapping[categoryKey] || [];
-
-    return keys.map(key => ({
-      category: categoryKey,
-      categoryLabel: categoryLabel,
-      question: t(`sections.${categoryKey}.${key}.question`),
-      answer: t(`sections.${categoryKey}.${key}.answer`)
-    }));
-  };
-
-  // Construct FAQ data dynamically
-  const faqs: FAQItem[] = [
-    ...getCategoryFaqs('general', t('categories.general')),
-    ...getCategoryFaqs('privacy', t('categories.privacy')),
-    ...getCategoryFaqs('features', t('categories.features')),
-    ...getCategoryFaqs('technical', t('categories.technical')),
-    ...getCategoryFaqs('languages', t('categories.languages')),
-  ];
+  const faqs = buildFaqPageItems(t);
+  const featuredFaqs = getFeaturedFaqItems(faqs);
 
   // Get unique categories for filter buttons
   const categories = [
@@ -128,6 +95,40 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
                 {t('subtitle', { brand: tCommon('brand') })}
               </p>
 
+              <div className="grid gap-4 md:grid-cols-3 text-left mb-8">
+                {featuredFaqs.map((faq) => (
+                  <Card key={faq.id} className="p-5 border-[hsl(var(--color-border)/0.65)]">
+                    <div className="text-xs font-semibold uppercase tracking-[0.14em] text-[hsl(var(--color-primary))] mb-2">
+                      {faq.categoryLabel}
+                    </div>
+                    <h2 className="text-lg font-semibold text-[hsl(var(--color-foreground))] mb-2">
+                      {faq.question}
+                    </h2>
+                    <p className="text-sm text-[hsl(var(--color-muted-foreground))] leading-relaxed">
+                      {faq.answer}
+                    </p>
+                    {faq.sourceHref && faq.sourceLabel ? (
+                      <Link
+                        href={faq.sourceHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-flex text-xs font-medium text-[hsl(var(--color-primary))] hover:underline"
+                      >
+                        Source: {faq.sourceLabel}
+                      </Link>
+                    ) : null}
+                    {faq.relatedPageHref && faq.relatedPageLabel ? (
+                      <Link
+                        href={getLocalizedPath(faq.relatedPageHref, locale)}
+                        className="mt-2 inline-flex text-xs font-medium text-[hsl(var(--color-foreground))] hover:text-[hsl(var(--color-primary))] hover:underline"
+                      >
+                        Related page: {faq.relatedPageLabel}
+                      </Link>
+                    ) : null}
+                  </Card>
+                ))}
+              </div>
+
               {/* Search Bar */}
               <div className="relative max-w-xl mx-auto">
                 <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
@@ -178,7 +179,7 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
               {filteredFaqs.length > 0 ? (
                 <div className="space-y-4">
                   {filteredFaqs.map((faq, index) => (
-                    <Card key={index} className="overflow-hidden">
+                    <Card key={faq.id} id={faq.id} className="overflow-hidden scroll-mt-28">
                       <button
                         className="w-full px-6 py-4 text-left flex items-center justify-between gap-4 hover:bg-[hsl(var(--color-muted)/0.5)] transition-colors"
                         onClick={() => toggleItem(index)}
@@ -203,6 +204,24 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
                           <p className="text-[hsl(var(--color-muted-foreground))] leading-relaxed">
                             {faq.answer}
                           </p>
+                          {faq.sourceHref && faq.sourceLabel ? (
+                            <Link
+                              href={faq.sourceHref}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mt-3 inline-flex text-xs font-medium text-[hsl(var(--color-primary))] hover:underline"
+                            >
+                              Source: {faq.sourceLabel}
+                            </Link>
+                          ) : null}
+                          {faq.relatedPageHref && faq.relatedPageLabel ? (
+                            <Link
+                              href={getLocalizedPath(faq.relatedPageHref, locale)}
+                              className="mt-2 inline-flex text-xs font-medium text-[hsl(var(--color-foreground))] hover:text-[hsl(var(--color-primary))] hover:underline"
+                            >
+                              Related page: {faq.relatedPageLabel}
+                            </Link>
+                          ) : null}
                         </div>
                       )}
                     </Card>

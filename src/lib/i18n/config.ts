@@ -109,7 +109,7 @@ export function getLocalizedPath(path: string, locale: Locale): string {
   const normalizedBasePath = cleanPath === '/' ? '/' : cleanPath.replace(/^\/+/, '/');
   const basePathWithSlash = normalizedBasePath.endsWith('/') ? normalizedBasePath : `${normalizedBasePath}/`;
   const localizedBasePath = locale === defaultLocale
-    ? basePathWithSlash
+    ? (basePathWithSlash === '/' ? '/' : `/${getLocaleSlug(locale)}${basePathWithSlash}`)
     : `/${getLocaleSlug(locale)}${basePathWithSlash === '/' ? '/' : basePathWithSlash}`;
   const querySuffix = query ? `?${query}` : '';
   const hashSuffix = hash ? `#${hash}` : '';

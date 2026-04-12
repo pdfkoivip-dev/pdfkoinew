@@ -482,6 +482,40 @@
       "organizeManage": "Organizar y Gestionar",
       "optimizeRepair": "Optimizar y Reparar",
       "securePdf": "PDF Seguro"
+    },
+    "contentModules": {
+      "browserSafety": {
+        "eyebrow": "Flujo de trabajo centrado en la privacidad",
+        "heading": "Por qué las herramientas PDF en el navegador son más seguras",
+        "body": "Muchas herramientas PDF en línea te piden subir archivos a un servidor remoto antes de poder combinarlos, dividirlos, comprimirlos o convertirlos. PDFkoi funciona de otra manera. Tus archivos se procesan directamente en tu navegador, lo que suele ser una mejor opción para contratos, currículums, formularios, identificaciones, escaneos y otros documentos que quizá no quieras enviar a terceros. Si buscas un flujo más rápido, sin registro y con más control sobre tus archivos, el procesamiento PDF en el navegador suele ser la opción más simple."
+      },
+      "everydayTasks": {
+        "eyebrow": "Cobertura pensada para buscadores",
+        "heading": "Herramientas PDF populares para tareas cotidianas",
+        "body": "La mayoría de las personas llega a las herramientas PDF con un objetivo práctico: unir archivos PDF, dividir páginas, comprimir documentos grandes, convertir PDF a Word o transformar imágenes en archivos PDF. PDFkoi reúne esas tareas habituales en un solo lugar. Así puedes resolver el trabajo diario con documentos rápidamente, sin crear una cuenta ni pasar por un flujo de subida tradicional.",
+        "cardTitle": "Tareas que la gente suele buscar",
+        "items": {
+          "merge": "Unir archivos PDF en línea",
+          "split": "Dividir páginas PDF",
+          "compress": "Comprimir PDF para correo",
+          "convert": "Convertir PDF a Word",
+          "images": "Convertir imágenes en PDF",
+          "organize": "Organizar archivos antes de compartir"
+        }
+      },
+      "localProcessing": {
+        "eyebrow": "Escenarios reales de documentos",
+        "heading": "Cuándo tiene sentido el procesamiento local de PDF",
+        "body": "El procesamiento local de PDF es especialmente útil cuando tu documento incluye información personal, académica, financiera o empresarial. Eso puede incluir contratos, solicitudes de empleo, facturas, formularios escolares, registros escaneados y documentos de identidad. Si necesitas organizar, reducir o convertir un archivo antes de compartirlo, un flujo de trabajo en el navegador te ayuda a terminarlo sin añadir un paso innecesario.",
+        "cardTitle": "Buena opción para documentos como",
+        "items": {
+          "contracts": "Contratos y presupuestos",
+          "resumes": "Currículums y solicitudes de empleo",
+          "invoices": "Facturas y formularios empresariales",
+          "scanned": "Registros escaneados y documentos escolares",
+          "id": "Documentos de identidad antes de enviarlos"
+        }
+      }
     }
   },
   "workflow": {

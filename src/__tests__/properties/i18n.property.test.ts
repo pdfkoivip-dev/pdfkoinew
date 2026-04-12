@@ -230,8 +230,11 @@ describe('i18n Property Tests', () => {
         (locale, path) => {
           const localizedPath = getLocalizedPath(path, locale);
           if (locale === DEFAULT_LOCALE) {
-            expect(localizedPath.startsWith('/en/')).toBe(false);
-            expect(localizedPath === '/' || localizedPath.startsWith('/')).toBe(true);
+            if (path === '/') {
+              expect(localizedPath).toBe('/');
+            } else {
+              expect(localizedPath).toMatch(/^\/en(\/|$)/);
+            }
           } else {
             const expectedSlug = getLocaleSlug(locale);
 
@@ -270,8 +273,11 @@ describe('i18n Property Tests', () => {
           const result = getLocalizedPath(pathWithLocale, newLocale);
 
           if (newLocale === DEFAULT_LOCALE) {
-            expect(result.startsWith('/en/')).toBe(false);
-            expect(result).toBe(getPublicPath(basePath, newLocale));
+            if (basePath === '/') {
+              expect(result).toBe('/');
+            } else {
+              expect(result).toBe(`/en${basePath}`);
+            }
           } else {
             const expectedSlug = getLocaleSlug(newLocale);
 

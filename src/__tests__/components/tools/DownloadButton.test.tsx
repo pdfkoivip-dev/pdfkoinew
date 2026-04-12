@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, waitFor, cleanup } from '@testing-library/react';
+import { render, screen, fireEvent, cleanup, act } from '@testing-library/react';
 import { DownloadButton } from '@/components/tools/DownloadButton';
 
 // Mock next-intl
@@ -15,20 +15,24 @@ vi.mock('next-intl', () => ({
 // Store original URL methods
 const originalCreateObjectURL = URL.createObjectURL;
 const originalRevokeObjectURL = URL.revokeObjectURL;
+const originalAnchorClick = HTMLAnchorElement.prototype.click;
 
 // Mock URL methods
 const mockCreateObjectURL = vi.fn(() => 'blob:mock-url');
 const mockRevokeObjectURL = vi.fn();
+const mockAnchorClick = vi.fn();
 
 beforeEach(() => {
   URL.createObjectURL = mockCreateObjectURL;
   URL.revokeObjectURL = mockRevokeObjectURL;
+  HTMLAnchorElement.prototype.click = mockAnchorClick;
   vi.clearAllMocks();
 });
 
 afterEach(() => {
   URL.createObjectURL = originalCreateObjectURL;
   URL.revokeObjectURL = originalRevokeObjectURL;
+  HTMLAnchorElement.prototype.click = originalAnchorClick;
   cleanup();
 });
 
@@ -167,8 +171,10 @@ describe('DownloadButton', () => {
       fireEvent.click(screen.getByRole('button'));
       
       // Fast-forward timers
-      vi.advanceTimersByTime(600);
-      
+      act(() => {
+        vi.advanceTimersByTime(600);
+      });
+
       expect(mockOnDownloadComplete).toHaveBeenCalled();
       
       vi.useRealTimers();
@@ -181,7 +187,9 @@ describe('DownloadButton', () => {
       render(<DownloadButton file={mockBlob} filename="test.pdf" />);
       
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-[hsl(var(--color-primary))]');
+      expect(button).toHaveClass('bg-gradient-to-r');
+      expect(button).toHaveClass('from-[#0052FF]');
+      expect(button).toHaveClass('to-[#0052FF]');
     });
 
     it('renders with secondary variant', () => {

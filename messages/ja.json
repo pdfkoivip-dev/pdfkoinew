@@ -86,18 +86,18 @@
       "add": "追加"
     },
     "categoryPage": {
-      "helperText": "\u3053\u306e\u30cf\u30d6\u304b\u3089\u3001\u3044\u307e\u306e\u4f5c\u696d\u306b\u6700\u3082\u5408\u3063\u305f\u30c4\u30fc\u30eb\u30da\u30fc\u30b8\u3078\u3059\u3050\u79fb\u52d5\u3067\u304d\u307e\u3059\u3002",
-      "introTitle": "\u3053\u306e\u30cf\u30d6\u3067\u9069\u5207\u306a\u30c4\u30fc\u30eb\u3092\u3088\u308a\u65e9\u304f\u898b\u3064\u3051\u308b",
-      "introParagraph1": "\u3053\u306e\u30ab\u30c6\u30b4\u30ea\u306b\u306f\u3001{category} \u306e\u30ef\u30fc\u30af\u30d5\u30ed\u30fc\u306b\u95a2\u9023\u3059\u308b\u91cd\u8981\u306a\u30c4\u30fc\u30eb\u304c\u307e\u3068\u307e\u3063\u3066\u3044\u307e\u3059\u3002",
-      "introParagraph2": "\u5fc5\u8981\u306a\u64cd\u4f5c\u304c\u65e2\u306b\u6c7a\u307e\u3063\u3066\u3044\u308b\u5834\u5408\u306f\u3001\u5bfe\u5fdc\u3059\u308b\u30c4\u30fc\u30eb\u30da\u30fc\u30b8\u3092\u76f4\u63a5\u958b\u304f\u306e\u304c\u6700\u77ed\u3067\u3059\u3002",
-      "anchorSectionTitle": "\u3053\u306e\u30ab\u30c6\u30b4\u30ea\u306e\u4eba\u6c17\u30c0\u30a4\u30ec\u30af\u30c8\u30ea\u30f3\u30af",
-      "anchorSectionDescription": "\u3053\u308c\u3089\u306e\u30ea\u30f3\u30af\u3067\u3001\u3053\u306e\u30ab\u30c6\u30b4\u30ea\u3067\u3088\u304f\u4f7f\u308f\u308c\u308b\u4f5c\u696d\u306b\u3059\u3050\u79fb\u52d5\u3067\u304d\u307e\u3059\u3002",
-      "anchorNote": "{tool} \u304c\u5fc5\u8981\u306a\u4f5c\u696d\u306a\u3089\u3001\u3053\u3053\u304b\u3089\u76f4\u63a5\u958b\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
-      "featuredSectionTitle": "\u4f5c\u696d\u306b\u5408\u3063\u305f\u30c4\u30fc\u30eb\u304b\u3089\u59cb\u3081\u308b",
-      "featuredSectionDescription": "\u3084\u308b\u3053\u3068\u304c\u65e2\u306b\u6c7a\u307e\u3063\u3066\u3044\u308b\u3068\u304d\u306e\u6709\u529b\u306a\u51fa\u767a\u70b9\u3067\u3059\u3002",
-      "featuredLabel": "{tool} \u306b\u6700\u9069",
-      "featuredReason": "{tool} \u304c\u4e3b\u306a\u4f5c\u696d\u306a\u3089\u3001\u3053\u306e\u30c4\u30fc\u30eb\u3092\u958b\u3044\u3066\u304f\u3060\u3055\u3044\u3002",
-      "openTool": "{tool} \u3092\u958b\u304f"
+      "helperText": "このハブから、いまの作業に最も合ったツールページへすぐ移動できます。",
+      "introTitle": "このハブで適切なツールをより早く見つける",
+      "introParagraph1": "このカテゴリには、{category} のワークフローに関連する重要なツールがまとまっています。",
+      "introParagraph2": "必要な操作が既に決まっている場合は、対応するツールページを直接開くのが最短です。",
+      "anchorSectionTitle": "このカテゴリの人気ダイレクトリンク",
+      "anchorSectionDescription": "これらのリンクで、このカテゴリでよく使われる作業にすぐ移動できます。",
+      "anchorNote": "{tool} が必要な作業なら、ここから直接開いてください。",
+      "featuredSectionTitle": "作業に合ったツールから始める",
+      "featuredSectionDescription": "やることが既に決まっているときの有力な出発点です。",
+      "featuredLabel": "{tool} に最適",
+      "featuredReason": "{tool} が主な作業なら、このツールを開いてください。",
+      "openTool": "{tool} を開く"
     },
     "status": {
       "idle": "準備完了",
@@ -482,6 +482,40 @@
       "organizeManage": "整理・管理",
       "optimizeRepair": "最適化・修復",
       "securePdf": "PDFセキュリティ"
+    },
+    "contentModules": {
+      "browserSafety": {
+        "eyebrow": "プライバシー重視のワークフロー",
+        "heading": "ブラウザベースのPDFツールがより安全な理由",
+        "body": "多くのオンラインPDFツールでは、結合、分割、圧縮、変換を行う前にファイルを外部サーバーへアップロードする必要があります。PDFkoiは異なります。ファイルはブラウザ内で処理されるため、契約書、履歴書、フォーム、身分証、スキャン文書など、外部に送りたくない書類に向いています。登録なしでより速く、ファイルの扱いを自分でコントロールしたい場合、ブラウザ内でのPDF処理はよりシンプルな選択肢になりやすいです。"
+      },
+      "everydayTasks": {
+        "eyebrow": "検索を意識したカバー範囲",
+        "heading": "日常業務でよく使う人気のPDFツール",
+        "body": "多くの人がPDFツールを使う目的は明確です。PDFの結合、ページ分割、大きな文書の圧縮、PDFからWordへの変換、画像のPDF化などです。PDFkoiはこうしたよくある作業をひとつの場所にまとめています。アカウント作成や従来のアップロード手順なしで、日常的な文書作業をすばやく進められます。",
+        "cardTitle": "よく探される作業",
+        "items": {
+          "merge": "PDFをオンラインで結合",
+          "split": "PDFページを分割",
+          "compress": "メール向けにPDFを圧縮",
+          "convert": "PDFをWordに変換",
+          "images": "画像をPDFに変換",
+          "organize": "共有前にファイルを整理"
+        }
+      },
+      "localProcessing": {
+        "eyebrow": "実際の文書シナリオ",
+        "heading": "ローカルPDF処理が向いている場面",
+        "body": "ローカルでのPDF処理は、個人情報、学業情報、財務情報、業務情報を含む文書で特に役立ちます。たとえば契約書、応募書類、請求書、学校の書類、スキャン記録、身分証明書などです。共有前にファイルを整理したり、軽量化したり、変換したりする必要があるなら、ブラウザベースのワークフローなら余計な手順を増やさずに作業を終えられます。",
+        "cardTitle": "次のような文書に適しています",
+        "items": {
+          "contracts": "契約書や見積書",
+          "resumes": "履歴書や応募書類",
+          "invoices": "請求書や業務用フォーム",
+          "scanned": "スキャン記録や学校書類",
+          "id": "提出前の身分証関連書類"
+        }
+      }
     }
   },
   "workflow": {

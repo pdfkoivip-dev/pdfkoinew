@@ -53,6 +53,12 @@ const STATIC_PAGES = [
   { path: '/terms', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static },
 ];
 
+const LANDING_PAGES = [
+  { path: '/compress-pdf-for-email', priority: 0.82, changeFrequency: 'weekly' as const },
+  { path: '/compress-pdf-without-upload', priority: 0.82, changeFrequency: 'weekly' as const },
+  { path: '/merge-pdf-no-signup', priority: 0.82, changeFrequency: 'weekly' as const },
+];
+
 type SitemapMode = 'core' | 'full';
 
 /**
@@ -136,6 +142,13 @@ const PAGE_LASTMOD_SOURCES = {
     'src/config/tools.ts',
     'src/config/tool-content',
     'messages',
+  ],
+  landingPages: [
+    'src/app/(localized)/[locale]/compress-pdf-for-email',
+    'src/app/(localized)/[locale]/compress-pdf-without-upload',
+    'src/app/(localized)/[locale]/merge-pdf-no-signup',
+    'src/content/seo/landing-pages.ts',
+    'src/components/marketing/LongTailLandingPage.tsx',
   ],
 } as const;
 
@@ -235,6 +248,9 @@ function generateLocaleEntries(locale: Locale): MetadataRoute.Sitemap {
     '/cookies': getLastModifiedForGroup('cookies'),
     '/contact': getLastModifiedForGroup('contact'),
     '/terms': getLastModifiedForGroup('terms'),
+    '/compress-pdf-for-email': getLastModifiedForGroup('landingPages'),
+    '/compress-pdf-without-upload': getLastModifiedForGroup('landingPages'),
+    '/merge-pdf-no-signup': getLastModifiedForGroup('landingPages'),
   };
   
   // Add static pages
@@ -268,6 +284,15 @@ function generateLocaleEntries(locale: Locale): MetadataRoute.Sitemap {
       lastModified: toolCategoryLastModified,
       changeFrequency: CHANGE_FREQUENCY.toolCategory,
       priority: PRIORITY.toolCategory,
+    });
+  }
+
+  for (const page of LANDING_PAGES) {
+    entries.push({
+      url: `${siteConfig.url}${getPublicPath(page.path, locale)}`,
+      lastModified: staticPageLastModifiedByPath[page.path],
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
     });
   }
   

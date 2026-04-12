@@ -66,10 +66,10 @@ describe('ProcessingProgress', () => {
         />
       );
       
-      expect(screen.getByText('75%')).toBeInTheDocument();
+      expect(screen.getAllByText('75%')).toHaveLength(2);
     });
 
-    it('does not display percentage when showPercentage is false', () => {
+    it('hides the header percentage when showPercentage is false', () => {
       render(
         <ProcessingProgress 
           progress={75} 
@@ -78,7 +78,7 @@ describe('ProcessingProgress', () => {
         />
       );
       
-      expect(screen.queryByText('75%')).not.toBeInTheDocument();
+      expect(screen.queryAllByText('75%')).toHaveLength(1);
     });
 
     it('clamps progress to 0-100 range', () => {
@@ -86,16 +86,16 @@ describe('ProcessingProgress', () => {
         <ProcessingProgress progress={-10} status="processing" />
       );
       
-      expect(screen.getByText('0%')).toBeInTheDocument();
+      expect(screen.getAllByText('0%')).toHaveLength(2);
       
       rerender(<ProcessingProgress progress={150} status="processing" />);
-      expect(screen.getByText('100%')).toBeInTheDocument();
+      expect(screen.getAllByText('100%')).toHaveLength(2);
     });
 
     it('rounds progress to nearest integer', () => {
       render(<ProcessingProgress progress={75.7} status="processing" />);
       
-      expect(screen.getByText('76%')).toBeInTheDocument();
+      expect(screen.getAllByText('76%')).toHaveLength(2);
     });
   });
 

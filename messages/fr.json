@@ -482,6 +482,40 @@
       "organizeManage": "Organiser et Gérer",
       "optimizeRepair": "Optimiser et Réparer",
       "securePdf": "PDF Sécurisé"
+    },
+    "contentModules": {
+      "browserSafety": {
+        "eyebrow": "Flux de travail axé sur la confidentialité",
+        "heading": "Pourquoi les outils PDF dans le navigateur sont plus sûrs",
+        "body": "De nombreux outils PDF en ligne vous demandent de téléverser vos fichiers vers un serveur distant avant de pouvoir les fusionner, les diviser, les compresser ou les convertir. PDFkoi fonctionne autrement. Vos fichiers sont traités directement dans votre navigateur, ce qui convient souvent mieux aux contrats, CV, formulaires, pièces d'identité, scans et autres documents que vous ne souhaitez pas envoyer ailleurs. Si vous voulez un flux plus rapide, sans inscription et avec davantage de contrôle sur vos fichiers, le traitement PDF dans le navigateur est souvent l'option la plus simple."
+      },
+      "everydayTasks": {
+        "eyebrow": "Couverture pensée pour la recherche",
+        "heading": "Outils PDF populaires pour les tâches du quotidien",
+        "body": "La plupart des gens utilisent des outils PDF avec un objectif concret : fusionner des fichiers PDF, séparer des pages, compresser de gros documents, convertir un PDF en Word ou transformer des images en PDF. PDFkoi réunit ces tâches fréquentes au même endroit. Vous pouvez ainsi gérer vos documents du quotidien rapidement, sans créer de compte ni passer par un parcours d'envoi traditionnel.",
+        "cardTitle": "Tâches souvent recherchées",
+        "items": {
+          "merge": "Fusionner des PDF en ligne",
+          "split": "Séparer des pages PDF",
+          "compress": "Compresser un PDF pour l'e-mail",
+          "convert": "Convertir un PDF en Word",
+          "images": "Transformer des images en PDF",
+          "organize": "Organiser des fichiers avant partage"
+        }
+      },
+      "localProcessing": {
+        "eyebrow": "Cas d'usage concrets",
+        "heading": "Quand le traitement local des PDF est pertinent",
+        "body": "Le traitement local des PDF est particulièrement utile lorsque votre document contient des informations personnelles, scolaires, financières ou professionnelles. Cela peut inclure des contrats, candidatures, factures, formulaires scolaires, dossiers numérisés et pièces d'identité. Si vous devez organiser, réduire ou convertir un fichier avant de le partager, un flux de travail dans le navigateur vous permet de terminer la tâche sans ajouter d'étape inutile.",
+        "cardTitle": "Bien adapté à des documents comme",
+        "items": {
+          "contracts": "Contrats et devis",
+          "resumes": "CV et candidatures",
+          "invoices": "Factures et formulaires d'entreprise",
+          "scanned": "Dossiers numérisés et papiers scolaires",
+          "id": "Pièces d'identité avant envoi"
+        }
+      }
     }
   },
   "workflow": {

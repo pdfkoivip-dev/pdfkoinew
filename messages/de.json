@@ -482,6 +482,40 @@
       "organizeManage": "Organisieren & Verwalten",
       "optimizeRepair": "Optimieren & Reparieren",
       "securePdf": "PDF-Sicherheit"
+    },
+    "contentModules": {
+      "browserSafety": {
+        "eyebrow": "Datenschutzorientierter Workflow",
+        "heading": "Warum browserbasierte PDF-Tools sicherer sind",
+        "body": "Viele Online-PDF-Tools verlangen, dass Sie Dateien auf einen entfernten Server hochladen, bevor Sie sie zusammenführen, teilen, komprimieren oder konvertieren können. PDFkoi funktioniert anders. Ihre Dateien werden direkt im Browser verarbeitet. Das ist oft besser geeignet für Verträge, Lebensläufe, Formulare, Ausweise, Scans und andere Dokumente, die Sie nicht an Dritte senden möchten. Wenn Sie einen schnelleren Ablauf ohne Registrierung und mehr Kontrolle über Ihre Dateien möchten, ist die browserbasierte PDF-Verarbeitung oft die einfachere Wahl."
+      },
+      "everydayTasks": {
+        "eyebrow": "Suchfreundliche Abdeckung",
+        "heading": "Beliebte PDF-Tools für alltägliche Aufgaben",
+        "body": "Die meisten Menschen nutzen PDF-Tools mit einem klaren Ziel: PDF-Dateien zusammenführen, Seiten teilen, große Dokumente komprimieren, PDF in Word umwandeln oder Bilder in PDF-Dateien konvertieren. PDFkoi bündelt diese häufigen Aufgaben an einem Ort. So erledigen Sie alltägliche Dokumentarbeit schnell, ohne ein Konto anzulegen oder einen klassischen Upload-Ablauf zu durchlaufen.",
+        "cardTitle": "Häufig gesuchte Aufgaben",
+        "items": {
+          "merge": "PDF-Dateien online zusammenführen",
+          "split": "PDF-Seiten teilen",
+          "compress": "PDF für E-Mail komprimieren",
+          "convert": "PDF in Word umwandeln",
+          "images": "Bilder in PDF umwandeln",
+          "organize": "Dateien vor dem Teilen organisieren"
+        }
+      },
+      "localProcessing": {
+        "eyebrow": "Reale Dokument-Szenarien",
+        "heading": "Wann lokale PDF-Verarbeitung sinnvoll ist",
+        "body": "Die lokale PDF-Verarbeitung ist besonders nützlich, wenn Ihr Dokument persönliche, schulische, finanzielle oder geschäftliche Informationen enthält. Dazu zählen Verträge, Bewerbungen, Rechnungen, Schulformulare, eingescannte Unterlagen und Ausweisdokumente. Wenn Sie eine Datei vor dem Teilen organisieren, verkleinern oder konvertieren müssen, hilft Ihnen ein browserbasierter Workflow dabei, die Aufgabe ohne unnötigen zusätzlichen Schritt zu erledigen.",
+        "cardTitle": "Gut geeignet für Dokumente wie",
+        "items": {
+          "contracts": "Verträge und Angebote",
+          "resumes": "Lebensläufe und Bewerbungen",
+          "invoices": "Rechnungen und Geschäftsformulare",
+          "scanned": "Scans und Schulunterlagen",
+          "id": "Ausweisdokumente vor der Einreichung"
+        }
+      }
     }
   },
   "workflow": {

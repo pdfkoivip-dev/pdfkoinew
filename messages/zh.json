@@ -498,6 +498,40 @@
       "organizeManage": "合并拆分和整理",
       "optimizeRepair": "压缩修复 PDF",
       "securePdf": "PDF 加密和解锁"
+    },
+    "contentModules": {
+      "browserSafety": {
+        "eyebrow": "以隐私为先的工作流",
+        "heading": "为什么浏览器内 PDF 工具更安全",
+        "body": "很多在线 PDF 工具会要求你先把文件上传到远程服务器，才能进行合并、拆分、压缩或转换。PDFkoi 的方式不同。你的文件会直接在浏览器中处理，这通常更适合合同、简历、表单、证件、扫描件以及其他你不想发送到外部服务器的文档。如果你想要更快的流程、无需注册，并且更好地掌控文件处理方式，那么在浏览器中处理 PDF 往往是更简单的选择。"
+      },
+      "everydayTasks": {
+        "eyebrow": "更贴近搜索需求的覆盖",
+        "heading": "适合日常任务的热门 PDF 工具",
+        "body": "大多数人使用 PDF 工具时目标都很明确：合并 PDF、拆分页面、压缩大文件、把 PDF 转成 Word，或者把图片整理成 PDF。PDFkoi 把这些常见任务集中在一个地方，让你无需创建账号，也不用走传统上传流程，就能更快完成日常文档处理。",
+        "cardTitle": "大家常找的处理任务",
+        "items": {
+          "merge": "在线合并 PDF",
+          "split": "拆分 PDF 页面",
+          "compress": "压缩 PDF 以便邮件发送",
+          "convert": "PDF 转 Word",
+          "images": "把图片转成 PDF",
+          "organize": "分享前整理文件"
+        }
+      },
+      "localProcessing": {
+        "eyebrow": "真实文档场景",
+        "heading": "什么时候更适合本地处理 PDF",
+        "body": "当文档里包含个人、学业、财务或业务信息时，本地处理 PDF 会特别有价值。这类文件包括合同、求职申请、发票、学校表单、扫描档案以及证件材料。如果你需要在分享前先整理、压缩或转换文件，那么基于浏览器的工作流可以帮你少走一步，直接把事情做完。",
+        "cardTitle": "比较适合这类文档",
+        "items": {
+          "contracts": "合同和报价单",
+          "resumes": "简历和求职申请",
+          "invoices": "发票和业务表单",
+          "scanned": "扫描档案和学校资料",
+          "id": "提交前的证件相关文件"
+        }
+      }
     }
   },
   "workflow": {

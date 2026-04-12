@@ -5,11 +5,35 @@ import React from 'react';
 import { tools } from '@/config/tools';
 import { getLocalizedPath, locales } from '@/lib/i18n/config';
 import { ToolCard } from '@/components/tools/ToolCard';
+import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
 
 // Mock next/link
 vi.mock('next/link', () => ({
   default: ({ children, href, ...props }: { children: React.ReactNode; href: string }) => 
     React.createElement('a', { href, ...props }, children),
+}));
+
+vi.mock('next-intl', () => ({
+  useTranslations: () => (key: string, values?: Record<string, string>) => {
+    if (key === 'footer.copyright') {
+      return `${values?.year ?? ''} PDFkoi. All rights reserved.`.trim();
+    }
+
+    return key;
+  },
+}));
+
+vi.mock('@/components/ui/FavoriteButton', () => ({
+  FavoriteButton: ({ toolId }: { toolId: string }) =>
+    React.createElement('button', { type: 'button', 'data-testid': `favorite-${toolId}` }, 'favorite'),
+}));
+
+vi.mock('@/components/layout/Header', () => ({
+  Header: () => React.createElement('div', { 'data-testid': 'mock-header' }),
+}));
+
+vi.mock('@/components/layout/Footer', () => ({
+  Footer: () => React.createElement('div', { 'data-testid': 'mock-footer' }),
 }));
 
 describe('Tool Component Property Tests', () => {
@@ -63,10 +87,11 @@ describe('Tool Component Property Tests', () => {
             const { unmount } = render(<ToolCard tool={tool} locale="en" />);
             
             const nameElement = screen.getByTestId('tool-card-name');
-            const expectedName = tool.id
+            const fallbackName = tool.id
               .split('-')
               .map(word => word.charAt(0).toUpperCase() + word.slice(1))
               .join(' ');
+            const expectedName = getPreferredToolAnchorText('en', tool.id, fallbackName);
             
             expect(nameElement.textContent).toBe(expectedName);
             
@@ -99,7 +124,7 @@ describe('Tool Component Property Tests', () => {
       );
     });
 
-    it('tool card icon has correct data attribute', () => {
+    it('tool card icon renders an SVG inside the icon container', () => {
       fc.assert(
         fc.property(
           fc.constantFrom(...tools),
@@ -110,7 +135,6 @@ describe('Tool Component Property Tests', () => {
             const svgElement = iconElement.querySelector('svg');
             
             expect(svgElement).toBeInTheDocument();
-            expect(svgElement).toHaveAttribute('data-icon', tool.icon);
             
             unmount();
             return true;

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { normalizeLocale, getPublicLocaleParams } from '@/lib/i18n/config';
-import { generateFaqMetadata } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { generateFaqMetadata, generateFAQPageSchema } from '@/lib/seo';
 import FAQPageClient from './FAQPageClient';
+import { buildFaqPageItems } from './faq-data';
 
 export function generateStaticParams() {
   return getPublicLocaleParams();
@@ -30,9 +32,17 @@ interface FAQPageProps {
 export default async function FAQPage({ params }: FAQPageProps) {
   const { locale } = await params;
   const validLocale = normalizeLocale(locale) || 'en';
+  const tFaq = await getTranslations({ locale: validLocale, namespace: 'faqPage' });
 
   // Enable static rendering
   setRequestLocale(validLocale);
 
-  return <FAQPageClient locale={validLocale} />;
+  const faqSchema = generateFAQPageSchema(buildFaqPageItems(tFaq));
+
+  return (
+    <>
+      <JsonLd data={faqSchema} />
+      <FAQPageClient locale={validLocale} />
+    </>
+  );
 }

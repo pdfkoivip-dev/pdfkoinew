@@ -497,6 +497,40 @@
       "organizeManage": "合併拆分與整理",
       "optimizeRepair": "壓縮與修復 PDF",
       "securePdf": "PDF 加密與解鎖"
+    },
+    "contentModules": {
+      "browserSafety": {
+        "eyebrow": "以隱私為優先的工作流程",
+        "heading": "為什麼在瀏覽器內處理 PDF 更安全",
+        "body": "許多線上 PDF 工具會要求你先把檔案上傳到遠端伺服器，才能進行合併、分割、壓縮或轉換。PDFkoi 的做法不同。你的檔案會直接在瀏覽器中處理，通常更適合合約、履歷、表單、證件、掃描檔，以及其他你不想傳送到外部伺服器的文件。如果你想要更快的流程、免註冊，並且更能掌握檔案的處理方式，那麼在瀏覽器中處理 PDF 往往是更簡單的選擇。"
+      },
+      "everydayTasks": {
+        "eyebrow": "更貼近搜尋需求的覆蓋",
+        "heading": "適合日常工作的熱門 PDF 工具",
+        "body": "大多數人使用 PDF 工具時，目的都很明確：合併 PDF、分割頁面、壓縮大型文件、把 PDF 轉成 Word，或把圖片整理成 PDF。PDFkoi 把這些常見任務集中在同一個地方，讓你不需要建立帳號，也不用走傳統上傳流程，就能更快完成日常文件處理。",
+        "cardTitle": "大家常找的處理任務",
+        "items": {
+          "merge": "線上合併 PDF",
+          "split": "分割 PDF 頁面",
+          "compress": "壓縮 PDF 以便寄送郵件",
+          "convert": "PDF 轉 Word",
+          "images": "把圖片轉成 PDF",
+          "organize": "分享前整理檔案"
+        }
+      },
+      "localProcessing": {
+        "eyebrow": "真實文件情境",
+        "heading": "什麼時候更適合本機處理 PDF",
+        "body": "當文件中包含個人、學業、財務或商務資訊時，本機處理 PDF 會特別有幫助。這類文件包括合約、求職申請、發票、學校表單、掃描檔案以及證件資料。如果你需要在分享前先整理、縮小或轉換檔案，那麼基於瀏覽器的工作流程可以幫助你少做一步，直接完成工作。",
+        "cardTitle": "較適合這類文件",
+        "items": {
+          "contracts": "合約與報價單",
+          "resumes": "履歷與求職申請",
+          "invoices": "發票與商務表單",
+          "scanned": "掃描檔案與學校資料",
+          "id": "提交前的證件相關文件"
+        }
+      }
     }
   },
   "workflow": {
