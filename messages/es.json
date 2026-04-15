@@ -189,100 +189,100 @@
     }
   },
   "faqPage": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Find answers to common questions about {brand}",
-    "searchPlaceholder": "Search FAQs...",
-    "noResults": "No FAQs found matching your search.",
-    "expandAll": "Expand All",
-    "collapseAll": "Collapse All",
+    "title": "Preguntas frecuentes",
+    "subtitle": "Encuentra respuestas a preguntas comunes sobre {brand}",
+    "searchPlaceholder": "Buscar en las FAQ...",
+    "noResults": "No se encontraron preguntas frecuentes que coincidan con tu b?squeda.",
+    "expandAll": "Expandir todo",
+    "collapseAll": "Contraer todo",
     "categories": {
-      "all": "All",
+      "all": "Todas",
       "general": "General",
-      "privacy": "Privacy & Security",
-      "features": "Features",
-      "technical": "Technical",
-      "languages": "Languages"
+      "privacy": "Privacidad y seguridad",
+      "features": "Funciones",
+      "technical": "T?cnico",
+      "languages": "Idiomas"
     },
     "sections": {
       "general": {
         "whatIs": {
-          "question": "What is PDFkoi?",
+          "question": "?Qu? es PDFkoi?",
           "answer": "PDFkoi es un kit de herramientas PDF gratis, privado y basado en el navegador que funciona completamente en tu navegador. Ofrece m?s de 95 herramientas PDF para editar, convertir, unir, dividir y proteger archivos PDF sin subirlos a ning?n servidor."
         },
         "isFree": {
-          "question": "Is PDFkoi really free?",
-          "answer": "Yes, PDFkoi is completely free to use. There are no hidden costs, no premium tiers, and no registration required. All features are available to everyone."
+          "question": "?PDFkoi es realmente gratis?",
+          "answer": "S?. PDFkoi es completamente gratis. No hay costes ocultos, planes premium ni registro obligatorio. Todas las funciones est?n disponibles para todo el mundo."
         },
         "account": {
-          "question": "Do I need to create an account?",
-          "answer": "No, you don't need to create an account or register to use PDFkoi. Simply visit the website and start using any tool immediately."
+          "question": "?Necesito crear una cuenta?",
+          "answer": "No. No necesitas crear una cuenta ni registrarte para usar PDFkoi. Solo entra en la web y empieza a usar cualquier herramienta."
         }
       },
       "privacy": {
         "uploaded": {
-          "question": "Are my files uploaded to a server?",
-          "answer": "No, your files are never uploaded to any server. All PDF processing happens locally in your browser using JavaScript and WebAssembly. Your files never leave your device."
+          "question": "?Mis archivos se suben a un servidor?",
+          "answer": "No. Tus archivos nunca se suben a ning?n servidor. Todo el procesamiento de PDF ocurre localmente en tu navegador y los archivos no salen de tu dispositivo."
         },
         "safe": {
-          "question": "Is it safe to use PDFkoi with sensitive documents?",
-          "answer": "Yes, PDFkoi is designed with privacy in mind. Since all processing happens locally in your browser, your sensitive documents remain on your device and are never transmitted over the internet."
+          "question": "?Es seguro usar PDFkoi con documentos sensibles?",
+          "answer": "S?. PDFkoi est? dise?ado pensando en la privacidad. Como todo se procesa en tu navegador, tus documentos sensibles permanecen en tu dispositivo y no se transmiten por internet."
         },
         "storage": {
-          "question": "What happens to my files after processing?",
-          "answer": "Your files are stored temporarily in your browser's memory during processing. Once you close the browser tab or navigate away, all file data is automatically cleared. We don't store any of your files."
+          "question": "?Qu? pasa con mis archivos despu?s del procesamiento?",
+          "answer": "Tus archivos se guardan temporalmente en la memoria del navegador mientras se procesan. Cuando cierras la pesta?a o sales de la p?gina, esos datos se eliminan autom?ticamente. No almacenamos tus archivos."
         }
       },
       "features": {
         "operations": {
-          "question": "What PDF operations can I perform?",
+          "question": "?Qu? operaciones PDF puedo realizar?",
           "answer": "PDFkoi ofrece m?s de 95 herramientas, entre ellas: unir, dividir, comprimir, convertir (desde/hacia im?genes, texto y JSON), editar, anotar, firmar, a?adir marcas de agua, cifrar/descifrar, OCR y mucho m?s."
         },
         "merge": {
-          "question": "Can I merge multiple PDF files?",
-          "answer": "Yes, you can merge multiple PDF files into one. Simply use the Merge PDF tool, upload your files, arrange them in the desired order, and click merge."
+          "question": "?Puedo unir varios archivos PDF?",
+          "answer": "S?. Puedes unir varios archivos PDF en uno solo. Solo usa la herramienta de unir PDF, sube los archivos, ord?nalos como quieras y pulsa unir."
         },
         "images": {
-          "question": "Can I convert images to PDF?",
-          "answer": "Yes, PDFkoi supports converting various image formats (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) to PDF. You can convert single or multiple images at once."
+          "question": "?Puedo convertir im?genes a PDF?",
+          "answer": "S?. PDFkoi admite la conversi?n de JPG, PNG, WebP, BMP, TIFF, SVG y HEIC a PDF. Puedes convertir una sola imagen o varias a la vez."
         },
         "edit": {
-          "question": "Can I edit text in a PDF?",
-          "answer": "PDFkoi provides annotation and editing tools including highlighting, adding text, shapes, images, and signatures. For full text editing, the PDF Editor tool offers comprehensive annotation capabilities."
+          "question": "?Puedo editar texto en un PDF?",
+          "answer": "PDFkoi ofrece herramientas de anotaci?n y edici?n como resaltado, texto, formas, im?genes y firmas. Para una edici?n m?s completa, puedes usar la herramienta de edici?n de PDF."
         }
       },
       "technical": {
         "browsers": {
-          "question": "What browsers are supported?",
-          "answer": "PDFkoi works on all modern browsers including Chrome, Firefox, Safari, and Edge. We recommend using the latest version of your browser for the best experience."
+          "question": "?Qu? navegadores son compatibles?",
+          "answer": "PDFkoi funciona en navegadores modernos como Chrome, Firefox, Safari y Edge. Recomendamos usar la versi?n m?s reciente para obtener la mejor experiencia."
         },
         "sizeLimit": {
-          "question": "Is there a file size limit?",
-          "answer": "Most tools support files up to 100MB, with some tools like merge and compress supporting up to 500MB. These limits are in place to ensure smooth performance in your browser."
+          "question": "?Hay l?mite de tama?o de archivo?",
+          "answer": "La mayor?a de herramientas admiten archivos de hasta 100 MB, y algunas como unir o comprimir PDF admiten hasta 500 MB. Estos l?mites ayudan a mantener un rendimiento fluido en el navegador."
         },
         "slow": {
-          "question": "Why is processing slow for large files?",
-          "answer": "Since all processing happens in your browser, performance depends on your device's capabilities. Large files require more memory and processing power. For best results, close other browser tabs and applications."
+          "question": "?Por qu? el procesamiento es lento con archivos grandes?",
+          "answer": "Como todo se procesa en tu navegador, el rendimiento depende de la potencia de tu dispositivo. Los archivos grandes requieren m?s memoria y m?s procesamiento."
         },
         "offline": {
-          "question": "Does PDFkoi work offline?",
-          "answer": "Currently, PDFkoi requires an internet connection to load the application. However, once loaded, the PDF processing itself happens locally and doesn't require a connection."
+          "question": "?PDFkoi funciona sin conexi?n?",
+          "answer": "Actualmente se necesita conexi?n para cargar la aplicaci?n. Una vez cargada, el procesamiento del PDF se realiza localmente y no requiere subir el archivo."
         }
       },
       "languages": {
         "supported": {
-          "question": "What languages are supported?",
-          "answer": "PDFkoi is available in 9 languages: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
+          "question": "?Qu? idiomas est?n disponibles?",
+          "answer": "PDFkoi est? disponible en 9 idiomas: ingl?s, japon?s, coreano, espa?ol, franc?s, alem?n, chino, portugu?s y ?rabe (con compatibilidad RTL)."
         },
         "change": {
-          "question": "How do I change the language?",
-          "answer": "You can change the language using the language selector in the header. Your preference will be saved for future visits."
+          "question": "?C?mo cambio el idioma?",
+          "answer": "Puedes cambiar el idioma desde el selector de idioma del encabezado. Tu preferencia se guardar? para futuras visitas."
         }
       }
     },
     "cta": {
-      "title": "Still have questions?",
-      "description": "Can't find the answer you're looking for? Feel free to reach out to us.",
-      "button": "Contact Us"
+      "title": "?Todav?a tienes preguntas?",
+      "description": "Si no encuentras la respuesta que buscas, no dudes en ponerte en contacto con nosotros.",
+      "button": "Contactar"
     }
   },
   "aboutPage": {
@@ -817,59 +817,59 @@
       "reorderHint": "Arrastra para cambiar el orden. Las imágenes aparecerán en el PDF en la secuencia mostrada.",
       "convertButton": "Convertir a PDF",
       "optionsTitle": "Opciones de PDF",
-      "pageSize": "Page Size",
-      "orientation": "Orientation",
-      "orientationAuto": "Auto (match image)",
-      "orientationPortrait": "Portrait",
-      "orientationLandscape": "Landscape",
-      "margin": "Margin",
-      "marginNone": "None",
-      "marginSmall": "Small (0.25\")",
-      "marginMedium": "Medium (0.5\")",
-      "marginLarge": "Large (1\")",
-      "centerImage": "Center images on page",
-      "scaleToFit": "Scale images to fit page",
-      "imageQuality": "Image Quality",
-      "fitMode": "Fit Mode",
-      "fitPage": "Fit to Page",
-      "fillPage": "Fill Page",
-      "originalSize": "Original Size",
-      "svgQuality": "SVG Export Quality",
-      "svgQualityLow": "Low (1x - smaller file)",
-      "svgQualityMedium": "Medium (2x - balanced)",
-      "svgQualityHigh": "High (3x - better quality)",
-      "svgQualityVeryHigh": "Very High (4x - best quality)",
-      "svgQualityHint": "Higher quality produces sharper images but larger file sizes.",
+      "pageSize": "Tama?o de p?gina",
+      "orientation": "Orientaci?n",
+      "orientationAuto": "Autom?tica (seg?n la imagen)",
+      "orientationPortrait": "Vertical",
+      "orientationLandscape": "Horizontal",
+      "margin": "Margen",
+      "marginNone": "Sin margen",
+      "marginSmall": "Peque?o (0.25\")",
+      "marginMedium": "Medio (0.5\")",
+      "marginLarge": "Grande (1\")",
+      "centerImage": "Centrar im?genes en la p?gina",
+      "scaleToFit": "Ajustar im?genes a la p?gina",
+      "imageQuality": "Calidad de imagen",
+      "fitMode": "Modo de ajuste",
+      "fitPage": "Ajustar a la p?gina",
+      "fillPage": "Rellenar p?gina",
+      "originalSize": "Tama?o original",
+      "svgQuality": "Calidad de exportaci?n SVG",
+      "svgQualityLow": "Baja (1x - archivo m?s peque?o)",
+      "svgQualityMedium": "Media (2x - equilibrada)",
+      "svgQualityHigh": "Alta (3x - mejor calidad)",
+      "svgQualityVeryHigh": "Muy alta (4x - m?xima calidad)",
+      "svgQualityHint": "Una mayor calidad produce im?genes m?s n?tidas pero tambi?n archivos m?s grandes.",
       "batchMode": "Dividir en múltiples PDFs",
       "imagesPerPdf": "Imágenes por PDF",
       "batchModeHint": "Se crearán {pdfCount} archivo(s) PDF, empaquetados como un archivo ZIP.",
       "batchSuccessMessage": "¡Se crearon exitosamente {pdfCount} archivos PDF a partir de {imageCount} imágenes! Haga clic en el botón de descarga para guardar su archivo ZIP.",
-      "successMessage": "Images converted to PDF successfully! Click the download button to save your file."
+      "successMessage": "?Las im?genes se convirtieron a PDF correctamente! Haz clic en el bot?n de descarga para guardar el archivo."
     },
     "compressPdf": {
-      "uploadLabel": "Upload PDF Files",
-      "uploadDescription": "Drag and drop a PDF file here, or click to browse.",
-      "batchUploadDescription": "Drag and drop PDF files here. You can compress up to 10 files at once.",
-      "filesTitle": "Files to Compress",
-      "optionsTitle": "Compression Options",
-      "qualityLabel": "Compression Quality",
-      "qualityLow": "Low",
-      "qualityLowDesc": "Maximum compression with object stream optimization",
-      "qualityMedium": "Medium",
-      "qualityMediumDesc": "Balanced compression with structure optimization",
-      "qualityHigh": "High",
-      "qualityHighDesc": "Moderate compression, preserves more structure",
-      "qualityMaximum": "Maximum",
-      "qualityMaximumDesc": "Minimal compression, preserves original quality",
-      "optimizeImages": "Optimize embedded images",
-      "removeMetadata": "Remove metadata (title, author, etc.)",
-      "compressButton": "Compress PDFs",
-      "successMessage": "PDF compressed successfully!",
-      "batchSuccessMessage": "Successfully compressed all PDF files!",
-      "downloadAllZip": "Download All as ZIP",
+      "uploadLabel": "Subir archivos PDF",
+      "uploadDescription": "Arrastra un archivo PDF aqu? o haz clic para buscarlo.",
+      "batchUploadDescription": "Arrastra archivos PDF aqu?. Puedes comprimir hasta 10 archivos a la vez.",
+      "filesTitle": "Archivos para comprimir",
+      "optionsTitle": "Opciones de compresi?n",
+      "qualityLabel": "Calidad de compresi?n",
+      "qualityLow": "Baja",
+      "qualityLowDesc": "Compresi?n m?xima con optimizaci?n de flujos de objetos",
+      "qualityMedium": "Media",
+      "qualityMediumDesc": "Compresi?n equilibrada con optimizaci?n de estructura",
+      "qualityHigh": "Alta",
+      "qualityHighDesc": "Compresi?n moderada que conserva m?s estructura",
+      "qualityMaximum": "M?xima",
+      "qualityMaximumDesc": "Compresi?n m?nima para preservar la calidad original",
+      "optimizeImages": "Optimizar im?genes incrustadas",
+      "removeMetadata": "Eliminar metadatos (t?tulo, autor, etc.)",
+      "compressButton": "Comprimir PDF",
+      "successMessage": "?PDF comprimido correctamente!",
+      "batchSuccessMessage": "?Todos los archivos PDF se comprimieron correctamente!",
+      "downloadAllZip": "Descargar todo en ZIP",
       "originalSize": "Original:",
-      "compressedSize": "Compressed:",
-      "saved": "Saved:"
+      "compressedSize": "Comprimido:",
+      "saved": "Ahorrado:"
     },
     "signPdf": {
       "uploadLabel": "Upload PDF File",
@@ -1866,11 +1866,11 @@
       "successMessage": "Fonts outlined!"
     },
     "extractTables": {
-      "uploadLabel": "Upload PDF",
-      "uploadDescription": "Upload to extract tables.",
-      "optionsTitle": "Options",
-      "extractButton": "Extract",
-      "successMessage": "Extracted!"
+      "uploadLabel": "Subir PDF",
+      "uploadDescription": "Sube el PDF del que quieras extraer tablas.",
+      "optionsTitle": "Opciones de extracci?n",
+      "extractButton": "Extraer",
+      "successMessage": "?Extracci?n completada!"
     },
     "ocgManager": {
       "uploadLabel": "Upload PDF",
