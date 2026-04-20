@@ -110,3 +110,25 @@ For every indexation or canonical fix, add a new entry with:
   After deploy, resubmit validation for the remaining `Crawled - currently not indexed` issue set and monitor whether untranslated locale URLs drop out of the report while canonical English tool URLs resolve directly.
 - Notes:
   This keeps localized URLs accessible for users while preventing fallback-English duplicates from competing for indexation.
+
+## 2026-04-20 - Localized category hubs restored as index targets
+
+- Trigger:
+  Google Search Console reported `Excluded by 'noindex' tag` for localized URLs including `/de/tools/category/secure-pdf/`.
+- Affected URLs:
+  `/tools/category/:category/`, `/:locale/tools/category/:category/`
+- Root cause:
+  The site was intentionally emitting `noindex, nofollow` on category hubs outside a limited locale allowlist, while those pages still existed as crawlable HTML with self-canonicals and full hreflang clusters.
+- Changes:
+  Restored category hubs as indexable URLs for every supported locale.
+- Files:
+  `src/lib/seo/indexing-policy.ts`
+  `src/app/sitemap.ts`
+  `src/__tests__/properties/seo.property.test.ts`
+  `src/__tests__/properties/sitemap.property.test.ts`
+- Verification:
+  Pending local test and export verification.
+- GSC follow-up:
+  After deploy, request validation for the new `Excluded by 'noindex' tag` issue set and inspect live URLs for the affected paths.
+- Notes:
+  Legal pages remain `noindex` and excluded from sitemaps by design. Tools directory pages also remain excluded from the sitemap and `noindex`.

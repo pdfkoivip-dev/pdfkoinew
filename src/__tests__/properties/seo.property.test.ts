@@ -236,7 +236,7 @@ describe('SEO Property Tests', () => {
       }
     });
 
-    it('category hubs are noindex outside the core indexable locales', () => {
+    it('category hubs remain indexable across locales', () => {
       for (const locale of locales) {
         const metadata = generateCategoryMetadata(locale, 'convert-to-pdf', {
           title: 'Convert to PDF Tools',
@@ -245,11 +245,8 @@ describe('SEO Property Tests', () => {
           noIndex: !shouldIndexCategoryHub(locale),
         });
 
-        if (shouldIndexCategoryHub(locale)) {
-          expect(metadata.robots).toMatchObject({ index: true, follow: true });
-        } else {
-          expect(metadata.robots).toMatchObject({ index: false, follow: false });
-        }
+        expect(shouldIndexCategoryHub(locale)).toBe(true);
+        expect(metadata.robots).toMatchObject({ index: true, follow: true });
       }
     });
 

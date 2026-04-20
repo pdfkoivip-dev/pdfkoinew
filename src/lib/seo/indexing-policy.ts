@@ -1,6 +1,6 @@
-import { defaultLocale, type Locale } from '@/lib/i18n/config';
+import { locales, type Locale } from '@/lib/i18n/config';
 
-const CATEGORY_HUB_INDEXABLE_LOCALES = new Set<Locale>([defaultLocale, 'zh']);
+const CATEGORY_HUB_INDEXABLE_LOCALES = new Set<Locale>(locales);
 
 export function shouldIndexToolsDirectory(): boolean {
   return false;
