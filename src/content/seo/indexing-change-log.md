@@ -132,3 +132,26 @@ For every indexation or canonical fix, add a new entry with:
   After deploy, request validation for the new `Excluded by 'noindex' tag` issue set and inspect live URLs for the affected paths.
 - Notes:
   Legal pages remain `noindex` and excluded from sitemaps by design. Tools directory pages also remain excluded from the sitemap and `noindex`.
+
+## 2026-04-20 - Tool-page rich-text links normalized to canonical public URLs
+
+- Trigger:
+  Google Search Console still reported `Page with redirect` for live tool URLs such as `/zh/tools/remove-metadata`, `/zh-tw/tools/pdf-to-jpg`, `/zh-tw/tools/pdf-to-docx`, `/tools/pdf-to-jpg`, and `/tools/compress-pdf`.
+- Affected URLs:
+  Internal links emitted from rich-text tool descriptions, plus manifest shortcut URLs that still used non-canonical path variants.
+- Root cause:
+  Tool descriptions were rendered from raw HTML content blocks, and some embedded `<a href="...">` values still pointed to non-canonical internal URLs without trailing slashes or with legacy locale prefixes such as `/en/` and `/zh-TW/`.
+- Changes:
+  Added a shared internal-link normalizer for rich-text HTML so rendered tool descriptions now emit canonical public URLs with the correct locale slug and trailing slash.
+  Updated manifest shortcut URLs to canonical trailing-slash paths.
+- Files:
+  `src/lib/seo/normalize-internal-links.ts`
+  `src/components/tools/ToolPage.tsx`
+  `src/app/manifest.ts`
+  `src/__tests__/lib/normalize-internal-links.test.ts`
+- Verification:
+  Pending local test and production build verification.
+- GSC follow-up:
+  After deploy, request validation again for the `Page with redirect` issue set and monitor whether redirected tool URLs stop being rediscovered from internal links.
+- Notes:
+  Redirects for `http`, `www`, legacy `/en/`, uppercase `zh-TW`, and legacy `?category=` URLs remain in place intentionally as compatibility rules. This change focuses on stopping canonical pages from linking to those variants.

@@ -10,6 +10,7 @@ import { getPublicPath, type Locale } from '@/lib/i18n/config';
 import { ToolProvider } from '@/lib/contexts/ToolContext';
 import { getToolIcon } from '@/config/icons';
 import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
+import { normalizeInternalHtmlLinks } from '@/lib/seo/normalize-internal-links';
 import Link from 'next/link';
 import { Home, ChevronRight } from 'lucide-react';
 import { FavoriteButton } from '@/components/ui/FavoriteButton';
@@ -273,6 +274,7 @@ interface DescriptionSectionProps {
 function DescriptionSection({ description }: DescriptionSectionProps) {
   const t = useTranslations();
   if (!description) return null;
+  const normalizedDescription = normalizeInternalHtmlLinks(description);
 
   return (
     <section
@@ -289,7 +291,7 @@ function DescriptionSection({ description }: DescriptionSectionProps) {
       <Card variant="outlined" size="lg" className="glass-card">
         <div
           className="prose prose-sm max-w-none text-[hsl(var(--color-foreground))/0.8]"
-          dangerouslySetInnerHTML={{ __html: description }}
+          dangerouslySetInnerHTML={{ __html: normalizedDescription }}
         />
       </Card>
     </section>
