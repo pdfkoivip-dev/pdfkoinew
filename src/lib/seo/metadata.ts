@@ -8,6 +8,7 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import { locales, type Locale, localeConfig, defaultLocale, getPublicPath } from '@/lib/i18n/config';
+import { getToolContentLocales, hasLocalizedToolContent } from '@/config/tool-content';
 import type { Tool, ToolContent } from '@/types/tool';
 
 /**
@@ -49,9 +50,16 @@ export function getCanonicalUrl(locale: Locale, path: string = ''): string {
  * Generate alternate language URLs for hreflang tags
  */
 export function getAlternateUrls(path: string = ''): Record<string, string> {
+  return getAlternateUrlsForLocales(path, locales);
+}
+
+export function getAlternateUrlsForLocales(
+  path: string = '',
+  alternateLocales: readonly Locale[] = locales
+): Record<string, string> {
   const alternates: Record<string, string> = {};
 
-  for (const locale of locales) {
+  for (const locale of alternateLocales) {
     alternates[locale] = `${siteConfig.url}${getPublicPath(path || '/', locale)}`;
   }
 
@@ -155,6 +163,10 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
 export function generateToolMetadata(options: ToolMetadataOptions): Metadata {
   const { locale, tool, content } = options;
   const path = `/tools/${tool.slug}`;
+  const localizedContentExists = hasLocalizedToolContent(locale, tool.id);
+  const shouldIndexLocalizedPage = locale === defaultLocale || localizedContentExists;
+  const canonicalLocale = shouldIndexLocalizedPage ? locale : defaultLocale;
+  const alternateLocales = getToolContentLocales(tool.id);
 
   // Enhance keywords with common PDF-related terms
   const enhancedKeywords = [
@@ -167,13 +179,28 @@ export function generateToolMetadata(options: ToolMetadataOptions): Metadata {
     'private',
   ];
 
-  return generateBaseMetadata({
+  const metadata = generateBaseMetadata({
     locale,
     path,
     title: content.title,
     description: content.metaDescription,
     keywords: enhancedKeywords,
+    noIndex: !shouldIndexLocalizedPage,
   });
+
+  metadata.alternates = {
+    canonical: getCanonicalUrl(canonicalLocale, path),
+    languages: getAlternateUrlsForLocales(path, alternateLocales),
+  };
+
+  if (!shouldIndexLocalizedPage && metadata.openGraph) {
+    metadata.openGraph = {
+      ...metadata.openGraph,
+      url: getCanonicalUrl(defaultLocale, path),
+    };
+  }
+
+  return metadata;
 }
 
 /**

@@ -33,6 +33,7 @@ import { locales, type Locale, defaultLocale, getPublicPath } from '@/lib/i18n/c
 import { shouldIndexCategoryHub, shouldIndexToolsDirectory } from '@/lib/seo/indexing-policy';
 import { tools, getAllTools } from '@/config/tools';
 import { siteConfig } from '@/config/site';
+import { getToolContentLocales, hasLocalizedToolContent } from '@/config/tool-content';
 import { toolContentEn } from '@/config/tool-content/en';
 import { toolContentZhTw } from '@/config/tool-content/zh-TW';
 import type { Tool, ToolContent, FAQ } from '@/types/tool';
@@ -473,6 +474,34 @@ describe('SEO Property Tests', () => {
 
       expect(serializedContent).not.toContain('/en/tools/');
       expect(serializedContent).toContain('/tools/');
+    });
+
+    it('tool metadata noindexes untranslated locale fallbacks and canonicalizes them to english', () => {
+      const tool = tools.find((candidate) => candidate.id === 'email-to-pdf');
+      expect(tool).toBeDefined();
+      expect(hasLocalizedToolContent('pt', 'email-to-pdf')).toBe(false);
+
+      const metadata = generateToolMetadata({
+        locale: 'pt',
+        tool: tool!,
+        content: toolContentEn['email-to-pdf'],
+      });
+
+      expect(metadata.robots).toMatchObject({ index: false, follow: false });
+      expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}/tools/email-to-pdf/`);
+
+      const languages = metadata.alternates?.languages as Record<string, string>;
+      expect(languages.en).toBe(`${siteConfig.url}/tools/email-to-pdf/`);
+      expect(languages.pt).toBeUndefined();
+      expect(languages['x-default']).toBe(`${siteConfig.url}/tools/email-to-pdf/`);
+    });
+
+    it('tool metadata only emits hreflang alternates for locales with real tool content', () => {
+      const alternates = getToolContentLocales('extract-images');
+
+      expect(alternates).toContain('en');
+      expect(alternates).toContain('zh');
+      expect(alternates).not.toContain('es');
     });
   });
 });

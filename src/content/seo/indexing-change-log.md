@@ -82,3 +82,31 @@ For every indexation or canonical fix, add a new entry with:
   After deployment, monitor the Duplicate and Alternate page reports for `/:locale/tools/` and category-hub URLs.
 - Notes:
   Tool detail pages remain the primary index targets. This change intentionally shifts crawl/index equity away from browse pages and toward tool pages.
+
+## 2026-04-20 - Tool-page locale fallbacks removed from index targets and English canonical paths mirrored
+
+- Trigger:
+  Google Search Console validation for `Crawled - currently not indexed` still reported tool URLs such as `/zh/tools/heic-to-pdf/`, `/pt/tools/email-to-pdf/`, `/es/tools/extract-images/`, and `/en/tools/jpg-to-pdf`.
+- Affected URLs:
+  `/:locale/tools/:tool/` for locales where the tool content falls back to English, plus the default-locale canonical English paths under `/tools/`.
+- Root cause:
+  The sitemap and hreflang graph exposed locale/tool combinations that were not actually localized and therefore rendered English fallback content on non-English URLs. In parallel, canonical English URLs such as `/tools/jpg-to-pdf/` depended on host-level rewrites because the static export only emitted `/en/tools/jpg-to-pdf/`.
+- Changes:
+  Tool pages now become indexable only when that locale has real tool content.
+  Untranslated locale fallbacks now canonicalize to English and emit `noindex, nofollow`.
+  Tool-page hreflang alternates now include only locales with real content for that tool.
+  The production build now mirrors `out/en/*` into canonical root-level English paths after export so `/tools/...` resolves to actual static files.
+- Files:
+  `src/config/tool-content/index.ts`
+  `src/lib/seo/metadata.ts`
+  `src/app/sitemap.ts`
+  `scripts/mirror-default-locale-export.mjs`
+  `package.json`
+  `src/__tests__/properties/seo.property.test.ts`
+  `src/__tests__/properties/sitemap.property.test.ts`
+- Verification:
+  Pending local build and test run.
+- GSC follow-up:
+  After deploy, resubmit validation for the remaining `Crawled - currently not indexed` issue set and monitor whether untranslated locale URLs drop out of the report while canonical English tool URLs resolve directly.
+- Notes:
+  This keeps localized URLs accessible for users while preventing fallback-English duplicates from competing for indexation.

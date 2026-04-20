@@ -23,31 +23,45 @@ import { toolContentZh } from './zh';
 import { toolContentZhTw } from './zh-TW';
 import { toolContentPt } from './pt';
 import { ToolContent } from '@/types/tool';
-import type { Locale } from '@/lib/i18n/config';
+import { defaultLocale, type Locale } from '@/lib/i18n/config';
+
+const toolContentByLocale: Record<Locale, Record<string, ToolContent>> = {
+  en: toolContentEn,
+  ja: toolContentJa,
+  ko: toolContentKo,
+  es: toolContentEs,
+  fr: toolContentFr,
+  de: toolContentDe,
+  zh: toolContentZh,
+  'zh-TW': toolContentZhTw,
+  pt: toolContentPt,
+};
 
 /**
  * Get tool content for a specific locale
  * Falls back to English if translation not found
  */
 export function getToolContent(locale: Locale, toolId: string): ToolContent | undefined {
-  const contentMap: Record<Locale, Record<string, ToolContent>> = {
-    en: toolContentEn,
-    ja: toolContentJa,
-    ko: toolContentKo,
-    es: toolContentEs,
-    fr: toolContentFr,
-    de: toolContentDe,
-    zh: toolContentZh,
-    'zh-TW': toolContentZhTw,
-    pt: toolContentPt,
-  };
-
-  const localeContent = contentMap[locale];
+  const localeContent = toolContentByLocale[locale];
   if (localeContent && localeContent[toolId]) {
     return localeContent[toolId];
   }
 
   // Fallback to English
   return toolContentEn[toolId];
+}
+
+export function hasLocalizedToolContent(locale: Locale, toolId: string): boolean {
+  if (locale === defaultLocale) {
+    return Boolean(toolContentEn[toolId]);
+  }
+
+  return Boolean(toolContentByLocale[locale]?.[toolId]);
+}
+
+export function getToolContentLocales(toolId: string): Locale[] {
+  return Object.entries(toolContentByLocale)
+    .filter(([, contentMap]) => Boolean(contentMap[toolId]))
+    .map(([locale]) => locale as Locale);
 }
 

@@ -18,6 +18,7 @@ import {
   type Locale,
 } from '@/lib/i18n/config';
 import { getAllTools } from '@/config/tools';
+import { getToolContentLocales, hasLocalizedToolContent } from '@/config/tool-content';
 import { landingPageSlugs } from '@/content/seo/landing-pages';
 import { TOOL_CATEGORIES } from '@/types/tool';
 import { getCategoryHubIndexableLocales, shouldIndexCategoryHub } from '@/lib/seo/indexing-policy';
@@ -216,11 +217,17 @@ export function generateLocaleEntries(locale: Locale): MetadataRoute.Sitemap {
   }
 
   for (const tool of tools) {
+    const toolIndexableLocales = getToolContentLocales(tool.id);
+
+    if (locale !== defaultLocale && !hasLocalizedToolContent(locale, tool.id)) {
+      continue;
+    }
+
     entries.push(
       createSitemapEntry({
         path: `/tools/${tool.slug}`,
         locale,
-        alternateLocales: locales,
+        alternateLocales: toolIndexableLocales,
         lastModified: toolPageLastModified,
         changeFrequency: CHANGE_FREQUENCY.toolPage,
         priority: PRIORITY.toolPage,

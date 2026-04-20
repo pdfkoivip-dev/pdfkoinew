@@ -5,6 +5,7 @@ import { getLocaleSlug, getPublicPath, defaultLocale, locales } from '@/lib/i18n
 import { shouldIndexCategoryHub } from '@/lib/seo/indexing-policy';
 import { TOOL_CATEGORIES } from '@/types/tool';
 import { getAllTools } from '@/config/tools';
+import { hasLocalizedToolContent } from '@/config/tool-content';
 import { landingPageSlugs } from '@/content/seo/landing-pages';
 
 describe('Sitemap property tests', () => {
@@ -110,6 +111,26 @@ describe('Sitemap property tests', () => {
 
       expect(getSitemapUrlCount(locale)).toBe(entries.length);
     }
+  });
+
+  it('excludes untranslated localized tool pages from non-english sitemaps', async () => {
+    const ptEntries = await sitemap({ id: Promise.resolve('pt') });
+    const esEntries = await sitemap({ id: Promise.resolve('es') });
+
+    expect(hasLocalizedToolContent('pt', 'email-to-pdf')).toBe(false);
+    expect(hasLocalizedToolContent('es', 'extract-images')).toBe(false);
+
+    expect(ptEntries).not.toContainEqual(
+      expect.objectContaining({
+        url: `${siteConfig.url}/pt/tools/email-to-pdf/`,
+      })
+    );
+
+    expect(esEntries).not.toContainEqual(
+      expect.objectContaining({
+        url: `${siteConfig.url}/es/tools/extract-images/`,
+      })
+    );
   });
 
   it('keeps each locale sitemap limited to its own locale paths', async () => {
