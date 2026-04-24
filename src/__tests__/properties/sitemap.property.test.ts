@@ -2,7 +2,11 @@ import { describe, expect, it } from 'vitest';
 import sitemap, { generateSitemaps, getSitemapUrlCount } from '@/app/sitemap';
 import { siteConfig } from '@/config/site';
 import { getLocaleSlug, getPublicPath, defaultLocale, locales } from '@/lib/i18n/config';
-import { shouldIndexCategoryHub } from '@/lib/seo/indexing-policy';
+import {
+  getToolIndexableLocales,
+  shouldGenerateLocalizedToolPage,
+  shouldIndexCategoryHub,
+} from '@/lib/seo/indexing-policy';
 import { TOOL_CATEGORIES } from '@/types/tool';
 import { getAllTools } from '@/config/tools';
 import { hasLocalizedToolContent } from '@/config/tool-content';
@@ -31,6 +35,10 @@ describe('Sitemap property tests', () => {
     );
 
     for (const tool of getAllTools()) {
+      if (!shouldGenerateLocalizedToolPage(defaultLocale, tool.id)) {
+        continue;
+      }
+
       expect(entries).toContainEqual(
         expect.objectContaining({
           url: `${siteConfig.url}${getPublicPath(`/tools/${tool.slug}`, defaultLocale)}`,
@@ -113,12 +121,14 @@ describe('Sitemap property tests', () => {
     }
   });
 
-  it('excludes untranslated localized tool pages from non-english sitemaps', async () => {
+  it('excludes tool locales that fail the generation policy from non-english sitemaps', async () => {
     const ptEntries = await sitemap({ id: Promise.resolve('pt') });
     const esEntries = await sitemap({ id: Promise.resolve('es') });
 
     expect(hasLocalizedToolContent('pt', 'email-to-pdf')).toBe(false);
     expect(hasLocalizedToolContent('es', 'extract-images')).toBe(false);
+    expect(shouldGenerateLocalizedToolPage('pt', 'email-to-pdf')).toBe(false);
+    expect(shouldGenerateLocalizedToolPage('es', 'extract-images')).toBe(false);
 
     expect(ptEntries).not.toContainEqual(
       expect.objectContaining({

@@ -8,7 +8,8 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import { locales, type Locale, localeConfig, defaultLocale, getPublicPath } from '@/lib/i18n/config';
-import { getToolContentLocales, hasLocalizedToolContent } from '@/config/tool-content';
+import { hasLocalizedToolContent } from '@/config/tool-content';
+import { getToolIndexableLocales, getToolPublicLocale, shouldIndexLocalizedToolPage } from '@/lib/seo/indexing-policy';
 import type { Tool, ToolContent } from '@/types/tool';
 
 /**
@@ -163,10 +164,9 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
 export function generateToolMetadata(options: ToolMetadataOptions): Metadata {
   const { locale, tool, content } = options;
   const path = `/tools/${tool.slug}`;
-  const localizedContentExists = hasLocalizedToolContent(locale, tool.id);
-  const shouldIndexLocalizedPage = locale === defaultLocale || localizedContentExists;
-  const canonicalLocale = shouldIndexLocalizedPage ? locale : defaultLocale;
-  const alternateLocales = getToolContentLocales(tool.id);
+  const shouldIndexLocalizedPage = shouldIndexLocalizedToolPage(locale, tool.id);
+  const canonicalLocale = getToolPublicLocale(locale, tool.id);
+  const alternateLocales = getToolIndexableLocales(tool.id);
 
   // Enhance keywords with common PDF-related terms
   const enhancedKeywords = [

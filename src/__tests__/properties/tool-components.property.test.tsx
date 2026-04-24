@@ -3,9 +3,10 @@ import * as fc from 'fast-check';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { tools } from '@/config/tools';
-import { getLocalizedPath, locales } from '@/lib/i18n/config';
+import { getPublicPath, locales } from '@/lib/i18n/config';
 import { ToolCard } from '@/components/tools/ToolCard';
 import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
+import { getToolPublicLocale } from '@/lib/seo/indexing-policy';
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -103,19 +104,20 @@ describe('Tool Component Property Tests', () => {
       );
     });
 
-    it('tool card links to correct tool page URL', () => {
+    it('tool card links to the public tool page URL for that locale-tool combination', () => {
       fc.assert(
         fc.property(
           fc.constantFrom(...tools),
           fc.constantFrom(...locales),
           (tool, locale) => {
             const { unmount } = render(<ToolCard tool={tool} locale={locale} />);
-            
+
             const linkElement = screen.getByTestId('tool-card');
-            const expectedUrl = getLocalizedPath(`/tools/${tool.slug}`, locale);
-            
+            const publicLocale = getToolPublicLocale(locale, tool.id);
+            const expectedUrl = getPublicPath(`/tools/${tool.slug}`, publicLocale);
+
             expect(linkElement).toHaveAttribute('href', expectedUrl);
-            
+
             unmount();
             return true;
           }

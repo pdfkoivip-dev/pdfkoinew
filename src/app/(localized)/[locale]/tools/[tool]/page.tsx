@@ -7,6 +7,7 @@ import { getRelatedToolDescriptionOverride } from '@/config/related-tool-copy';
 import { ToolPage } from '@/components/tools/ToolPage';
 import { generateToolMetadata } from '@/lib/seo/metadata';
 import { normalizeLocale, getPublicLocaleParams, type Locale } from '@/lib/i18n/config';
+import { getToolPublicLocale, shouldGenerateLocalizedToolPage } from '@/lib/seo/indexing-policy';
 import { JsonLd } from '@/components/seo/JsonLd';
 import {
   generateSoftwareApplicationSchema,
@@ -111,12 +112,16 @@ interface ToolPageParams {
  */
 export async function generateStaticParams() {
   const tools = getAllTools();
-  return getPublicLocaleParams().flatMap(({ locale }) =>
-    tools.map((tool) => ({
-      locale,
-      tool: tool.slug,
-    }))
-  );
+  return getPublicLocaleParams().flatMap(({ locale }) => {
+    const normalizedLocale = normalizeLocale(locale) || 'en';
+
+    return tools
+      .filter((tool) => shouldGenerateLocalizedToolPage(normalizedLocale, tool.id))
+      .map((tool) => ({
+        locale,
+        tool: tool.slug,
+      }));
+  });
 }
 
 /**
@@ -193,7 +198,8 @@ export default async function ToolPageRoute({ params }: ToolPageParams) {
   // Prepare localized content for related tools
   const localizedRelatedTools = tool.relatedTools.reduce(
     (acc, relatedId) => {
-      const relatedContent = getToolContent(locale, relatedId);
+      const relatedLocale = getToolPublicLocale(locale, relatedId);
+      const relatedContent = getToolContent(relatedLocale, relatedId);
       if (relatedContent) {
         acc[relatedId] = {
           title: relatedContent.title,

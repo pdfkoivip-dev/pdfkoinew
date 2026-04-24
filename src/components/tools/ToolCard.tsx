@@ -9,6 +9,7 @@ import { getToolIcon } from '@/config/icons';
 import { FavoriteButton } from '@/components/ui/FavoriteButton';
 import { getPublicPath, type Locale } from '@/lib/i18n/config';
 import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
+import { getToolPublicLocale } from '@/lib/seo/indexing-policy';
 
 export interface ToolCardProps {
   /** Tool data to display */
@@ -36,7 +37,8 @@ const categoryTranslationKeys: Record<ToolCategory, string> = {
  */
 export function ToolCard({ tool, locale, className = '', localizedContent }: ToolCardProps) {
   const t = useTranslations();
-  const toolUrl = getPublicPath(`/tools/${tool.slug}`, locale as Locale);
+  const publicLocale = getToolPublicLocale(locale as Locale, tool.id);
+  const toolUrl = getPublicPath(`/tools/${tool.slug}`, publicLocale);
 
   // Get a human-readable name from the tool ID
   // Use localized title if available, otherwise fallback to formatting the ID

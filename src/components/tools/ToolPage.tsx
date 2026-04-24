@@ -8,6 +8,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { getPublicPath, type Locale } from '@/lib/i18n/config';
 import { ToolProvider } from '@/lib/contexts/ToolContext';
+import { getToolPublicLocale } from '@/lib/seo/indexing-policy';
 import { getToolIcon } from '@/config/icons';
 import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
 import { normalizeInternalHtmlLinks } from '@/lib/seo/normalize-internal-links';
@@ -529,7 +530,7 @@ function SectionLinkHint({ tool, locale, localizedRelatedTools, sectionKey }: Se
         return (
           <span key={relatedTool.id}>
             <Link
-              href={getPublicPath(`/tools/${relatedTool.slug}`, localeKey)}
+              href={getPublicPath(`/tools/${relatedTool.slug}`, getToolPublicLocale(localeKey, relatedTool.id))}
               className="text-[hsl(var(--color-primary))] underline decoration-[hsl(var(--color-primary))/0.35] underline-offset-4 hover:text-[#0052FF]"
             >
               {anchorText}
@@ -585,7 +586,7 @@ function RelatedToolsSection({ tools, locale, localizedRelatedTools }: RelatedTo
           return (
             <a
               key={tool.id}
-              href={getPublicPath(`/tools/${tool.slug}`, locale as Locale)}
+              href={getPublicPath(`/tools/${tool.slug}`, getToolPublicLocale(locale as Locale, tool.id))}
               className="block group"
             >
               <Card hover clickable className="h-full glass-card transition-all duration-300 group-hover:-translate-y-1">

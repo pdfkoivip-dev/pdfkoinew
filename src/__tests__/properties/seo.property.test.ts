@@ -30,7 +30,12 @@ import {
   validateFAQPageSchema,
 } from '@/lib/seo/structured-data';
 import { locales, type Locale, defaultLocale, getPublicPath } from '@/lib/i18n/config';
-import { shouldIndexCategoryHub, shouldIndexToolsDirectory } from '@/lib/seo/indexing-policy';
+import {
+  getToolIndexableLocales,
+  shouldIndexCategoryHub,
+  shouldIndexLocalizedToolPage,
+  shouldIndexToolsDirectory,
+} from '@/lib/seo/indexing-policy';
 import { tools, getAllTools } from '@/config/tools';
 import { siteConfig } from '@/config/site';
 import { getToolContentLocales, hasLocalizedToolContent } from '@/config/tool-content';
@@ -493,12 +498,13 @@ describe('SEO Property Tests', () => {
       expect(languages['x-default']).toBe(`${siteConfig.url}/tools/email-to-pdf/`);
     });
 
-    it('tool metadata only emits hreflang alternates for locales with real tool content', () => {
-      const alternates = getToolContentLocales('extract-images');
+    it('tool metadata only emits hreflang alternates for locales allowed by the indexability policy', () => {
+      const alternates = getToolIndexableLocales('extract-images');
 
       expect(alternates).toContain('en');
       expect(alternates).toContain('zh');
       expect(alternates).not.toContain('es');
+      expect(shouldIndexLocalizedToolPage('es', 'extract-images')).toBe(false);
     });
   });
 });

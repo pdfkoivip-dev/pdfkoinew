@@ -1,6 +1,8 @@
 const DEFAULT_TOOL_CANONICAL_PATHS = new Set([
   '/tools/merge-pdf',
   '/tools/split-pdf',
+  '/tools/jpg-to-pdf',
+  '/tools/pdf-to-docx',
 ]);
 
 function buildRedirectPath(pathname, search) {
