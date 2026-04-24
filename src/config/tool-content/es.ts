@@ -1043,6 +1043,33 @@ export const toolContentEs: Record<string, ToolContent> = {
     ],
   },
 
+  'extract-images': {
+    title: 'Extraer Imágenes de PDF',
+    metaDescription: 'Extrae las imágenes incrustadas de archivos PDF y descárgalas por separado o en ZIP. Filtra iconos e imágenes pequeñas por tamaño.',
+    keywords: ['extraer imágenes pdf', 'sacar imágenes de pdf', 'imágenes incrustadas pdf', 'descargar imágenes pdf', 'extraer fotos de pdf'],
+    description: `
+      <p>Extraer Imágenes de PDF recupera las imágenes ya incrustadas dentro de tus documentos PDF para que puedas descargarlas por separado o en un archivo ZIP. Es una opción útil cuando necesitas reutilizar fotos, gráficos o recursos visuales sin volver a crear el documento.</p>
+      <p>A diferencia de herramientas como PDF a JPG, esta función no convierte cada página completa en una imagen. Aquí se extraen los recursos gráficos originales que ya están dentro del PDF, y además puedes filtrar iconos o elementos pequeños definiendo un ancho, alto o tamaño mínimo.</p>
+      <p>Todo el procesamiento se realiza localmente en tu navegador. Puedes trabajar con varios PDFs a la vez y conservar la privacidad de dossiers, presentaciones, informes o folletos con material gráfico sensible.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube uno o varios PDFs', description: 'Arrastra tus archivos PDF o selecciónalos desde tu dispositivo para analizar sus imágenes incrustadas.' },
+      { step: 2, title: 'Ajusta los filtros', description: 'Define ancho, alto o tamaño mínimo si quieres excluir iconos, logos pequeños o elementos decorativos.' },
+      { step: 3, title: 'Extrae las imágenes', description: 'Haz clic en Extraer para localizar las imágenes originales incluidas dentro del PDF.' },
+      { step: 4, title: 'Descarga el resultado', description: 'Descarga cada imagen por separado o reúne todas en un archivo ZIP para trabajar más rápido.' },
+    ],
+    useCases: [
+      { title: 'Recuperar recursos de diseño', description: 'Extrae fotos, gráficos y elementos visuales de brochures, catálogos o dossieres sin exportar página por página.', icon: 'image' },
+      { title: 'Reutilizar imágenes en presentaciones', description: 'Obtén las imágenes incrustadas en informes o presentaciones PDF para volver a usarlas en otros materiales.', icon: 'folder' },
+      { title: 'Separar activos de documentos recibidos', description: 'Recupera imágenes de PDFs de clientes, proveedores o equipos internos para archivarlas o revisarlas.', icon: 'refresh-cw' },
+    ],
+    faq: [
+      { question: '¿Qué tipo de imágenes puede extraer?', answer: 'La herramienta intenta recuperar las imágenes incrustadas en su formato nativo, como JPEG o PNG. Cuando eso no es posible, exporta los datos de imagen en un formato compatible.' },
+      { question: '¿Por qué faltan algunas imágenes?', answer: 'Es posible que se estén filtrando por el tamaño mínimo configurado. Reduce los valores de ancho, alto o tamaño si también quieres extraer iconos o gráficos pequeños.' },
+      { question: '¿Sirve para PDFs escaneados?', answer: 'En muchos PDFs escaneados cada página entera se guarda como una sola imagen grande. Si lo que necesitas es convertir cada página en imagen, usa mejor la herramienta PDF a JPG o PDF a imagen.' },
+    ],
+  },
+
   'edit-attachments': {
     title: 'Editar Adjuntos',
     metaDescription: 'Gestiona los archivos adjuntos en documentos PDF.',

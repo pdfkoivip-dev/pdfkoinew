@@ -121,14 +121,14 @@ describe('Sitemap property tests', () => {
     }
   });
 
-  it('excludes tool locales that fail the generation policy from non-english sitemaps', async () => {
+  it('excludes only tool locales that fail the generation policy from non-english sitemaps', async () => {
     const ptEntries = await sitemap({ id: Promise.resolve('pt') });
     const esEntries = await sitemap({ id: Promise.resolve('es') });
 
     expect(hasLocalizedToolContent('pt', 'email-to-pdf')).toBe(false);
-    expect(hasLocalizedToolContent('es', 'extract-images')).toBe(false);
+    expect(hasLocalizedToolContent('es', 'extract-images')).toBe(true);
     expect(shouldGenerateLocalizedToolPage('pt', 'email-to-pdf')).toBe(false);
-    expect(shouldGenerateLocalizedToolPage('es', 'extract-images')).toBe(false);
+    expect(shouldGenerateLocalizedToolPage('es', 'extract-images')).toBe(true);
 
     expect(ptEntries).not.toContainEqual(
       expect.objectContaining({
@@ -136,7 +136,7 @@ describe('Sitemap property tests', () => {
       })
     );
 
-    expect(esEntries).not.toContainEqual(
+    expect(esEntries).toContainEqual(
       expect.objectContaining({
         url: `${siteConfig.url}/es/tools/extract-images/`,
       })

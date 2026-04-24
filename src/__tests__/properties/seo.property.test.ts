@@ -503,8 +503,8 @@ describe('SEO Property Tests', () => {
 
       expect(alternates).toContain('en');
       expect(alternates).toContain('zh');
-      expect(alternates).not.toContain('es');
-      expect(shouldIndexLocalizedToolPage('es', 'extract-images')).toBe(false);
+      expect(alternates).toContain('es');
+      expect(shouldIndexLocalizedToolPage('es', 'extract-images')).toBe(true);
     });
   });
 });
