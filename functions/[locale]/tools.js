@@ -1,9 +1,8 @@
-import { getLegacyCategoryRedirectPath } from '../_lib/legacy-category-redirect.js';
+import { getQueryRedirectPath } from '../_lib/legacy-category-redirect.js';
 
 export function onRequest(context) {
   const url = new URL(context.request.url);
-  const category = url.searchParams.get('category');
-  const destination = getLegacyCategoryRedirectPath(url.pathname, category);
+  const destination = getQueryRedirectPath(url.pathname, url.searchParams);
 
   if (!destination) {
     return context.next();

@@ -37,6 +37,42 @@
       "permanent": true
     },
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "ref",
+          "value": "producthunt"
+        }
+      ],
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tools",
+      "has": [
+        {
+          "type": "query",
+          "key": "q",
+          "value": "\\{search_term_string\\}"
+        }
+      ],
+      "destination": "/tools",
+      "permanent": true
+    },
+    {
+      "source": "/:locale/tools",
+      "has": [
+        {
+          "type": "query",
+          "key": "q",
+          "value": "\\{search_term_string\\}"
+        }
+      ],
+      "destination": "/:locale/tools",
+      "permanent": true
+    },
+    {
       "source": "/en",
       "destination": "/",
       "permanent": true
