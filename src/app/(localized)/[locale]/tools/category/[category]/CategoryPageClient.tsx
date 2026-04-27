@@ -6,7 +6,8 @@ import { Footer } from '@/components/layout/Footer';
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { Card } from '@/components/ui/Card';
 import { getToolsByCategory } from '@/config/tools';
-import { getLocalizedPath, type Locale } from '@/lib/i18n/config';
+import { getLocalizedPath, getPublicPath, type Locale } from '@/lib/i18n/config';
+import { getToolPublicLocale } from '@/lib/seo/indexing-policy';
 import { type ToolCategory } from '@/types/tool';
 import Link from 'next/link';
 import { ArrowRight, ChevronRight, Home } from 'lucide-react';
@@ -157,7 +158,7 @@ export default function CategoryPageClient({
                                         className="border-[hsl(var(--color-border))/0.6] bg-white/80 backdrop-blur-sm"
                                     >
                                         <Link
-                                            href={getLocalizedPath(`/tools/${link.slug}`, locale)}
+                                            href={getPublicPath(`/tools/${link.slug}`, getToolPublicLocale(locale, link.toolId))}
                                             className="text-base font-semibold text-[hsl(var(--color-primary))] underline decoration-[hsl(var(--color-primary))/0.35] underline-offset-4 transition-colors hover:text-[#0052FF] focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 rounded-sm"
                                         >
                                             {link.anchorText}
@@ -189,7 +190,7 @@ export default function CategoryPageClient({
                                 {featuredTasks.map((task) => (
                                     <Link
                                         key={task.toolId}
-                                        href={getLocalizedPath(`/tools/${task.slug}`, locale)}
+                                        href={getPublicPath(`/tools/${task.slug}`, getToolPublicLocale(locale, task.toolId))}
                                         className="group block rounded-[var(--radius-lg)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2"
                                     >
                                         <Card

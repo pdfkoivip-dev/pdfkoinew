@@ -8,8 +8,9 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
-import { getLocalizedPath, type Locale } from '@/lib/i18n/config';
+import { getLocalizedPath, getPublicPath, type Locale } from '@/lib/i18n/config';
 import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
+import { getToolPublicLocale } from '@/lib/seo/indexing-policy';
 import { buildFaqPageItems, getFeaturedFaqItems } from './faq-data';
 
 interface FAQPageClientProps {
@@ -253,7 +254,7 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
                     {faqHelpfulLinks.map((link) => (
                       <Link
                         key={link.toolId}
-                        href={getLocalizedPath(`/tools/${link.slug}`, locale)}
+                        href={getPublicPath(`/tools/${link.slug}`, getToolPublicLocale(locale, link.toolId))}
                         className="rounded-full border border-[hsl(var(--color-border))/0.6] bg-[hsl(var(--color-background))] px-4 py-2 text-sm font-medium text-[hsl(var(--color-primary))] underline decoration-[hsl(var(--color-primary))/0.35] underline-offset-4 transition-colors hover:text-[#0052FF]"
                       >
                         {link.anchorText}

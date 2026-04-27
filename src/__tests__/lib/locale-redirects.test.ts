@@ -42,6 +42,10 @@ describe('locale redirect helpers', () => {
     expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/zh-TW/tools/merge-pdf'))).toBe('/zh-tw/tools/merge-pdf');
   });
 
+  it('preserves query strings when redirecting /zh-TW/ variants', () => {
+    expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/zh-TW/?via=gsc'))).toBe('/zh-tw/?via=gsc');
+  });
+
   it('returns null when no locale redirect is needed', () => {
     expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/ja/tools'))).toBeNull();
   });

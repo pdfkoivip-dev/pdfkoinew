@@ -151,6 +151,30 @@ describe('Sitemap property tests', () => {
     );
   });
 
+  it('keeps reported GSC 404 locale-tool combinations out of localized sitemaps', async () => {
+    const cases = [
+      { locale: 'es', toolId: 'pdf-to-pdfa', slug: 'pdf-to-pdfa' },
+      { locale: 'pt', toolId: 'djvu-to-pdf', slug: 'djvu-to-pdf' },
+      { locale: 'ko', toolId: 'pdf-reader', slug: 'pdf-reader' },
+      { locale: 'pt', toolId: 'pdf-to-pptx', slug: 'pdf-to-pptx' },
+      { locale: 'pt', toolId: 'pdf-to-zip', slug: 'pdf-to-zip' },
+      { locale: 'fr', toolId: 'djvu-to-pdf', slug: 'djvu-to-pdf' },
+    ] as const;
+
+    for (const { locale, toolId, slug } of cases) {
+      const entries = await sitemap({ id: Promise.resolve(locale) });
+
+      expect(hasLocalizedToolContent(locale, toolId)).toBe(false);
+      expect(shouldGenerateLocalizedToolPage(locale, toolId)).toBe(false);
+      expect(getToolIndexableLocales(toolId)).not.toContain(locale);
+      expect(entries).not.toContainEqual(
+        expect.objectContaining({
+          url: `${siteConfig.url}${getPublicPath(`/tools/${slug}`, locale)}`,
+        })
+      );
+    }
+  });
+
   it('keeps each locale sitemap limited to its own locale paths', async () => {
     for (const locale of locales) {
       const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });

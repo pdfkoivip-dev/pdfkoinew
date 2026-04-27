@@ -14,7 +14,8 @@ import { useProjectStorage } from '@/lib/hooks/useProjectStorage';
 import { formatDate } from '@/lib/storage/recent-files';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
-import { getLocalizedPath, type Locale } from '@/lib/i18n/config';
+import { getPublicPath, type Locale } from '@/lib/i18n/config';
+import { getToolPublicLocale } from '@/lib/seo/indexing-policy';
 
 export interface SavedProjectsPanelProps {
   locale: Locale;
@@ -202,7 +203,7 @@ export const SavedProjectsPanel: React.FC<SavedProjectsPanelProps> = ({
 
                 <div className="flex items-center gap-1">
                   {project.status !== 'completed' && (
-                    <Link href={getLocalizedPath(`/tools/${project.toolId}`, locale)}>
+                    <Link href={getPublicPath(`/tools/${project.toolId}`, getToolPublicLocale(locale, project.toolId))}>
                       <Button
                         variant="ghost"
                         size="sm"

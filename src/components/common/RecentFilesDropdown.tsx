@@ -13,7 +13,8 @@ import { Clock, X, Trash2, FileText, ChevronDown } from 'lucide-react';
 import { useRecentFiles } from '@/lib/hooks/useRecentFiles';
 import { formatFileSize, formatDate } from '@/lib/storage/recent-files';
 import { Button } from '@/components/ui/Button';
-import { getLocalizedPath, type Locale } from '@/lib/i18n/config';
+import { getPublicPath, type Locale } from '@/lib/i18n/config';
+import { getToolPublicLocale } from '@/lib/seo/indexing-policy';
 
 export interface RecentFilesDropdownProps {
   locale: Locale;
@@ -187,7 +188,7 @@ export const RecentFilesDropdown: React.FC<RecentFilesDropdownProps> = ({
                   <div className="flex items-start justify-between gap-2">
                     <Link
                       ref={(el) => { itemRefs.current[index] = el; }}
-                      href={getLocalizedPath(`/tools/${file.toolUsed}`, locale)}
+                      href={getPublicPath(`/tools/${file.toolUsed}`, getToolPublicLocale(locale, file.toolUsed))}
                       className="flex-1 min-w-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] rounded-sm"
                       tabIndex={focusedIndex === index ? 0 : -1}
                       onClick={() => {

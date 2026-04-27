@@ -3,8 +3,10 @@ import * as fc from 'fast-check';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { tools } from '@/config/tools';
-import { getPublicPath, locales } from '@/lib/i18n/config';
+import { getPublicPath, locales, type Locale } from '@/lib/i18n/config';
+import { getToolContent } from '@/config/tool-content';
 import { ToolCard } from '@/components/tools/ToolCard';
+import { ToolPage } from '@/components/tools/ToolPage';
 import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
 import { getToolPublicLocale } from '@/lib/seo/indexing-policy';
 
@@ -313,20 +315,44 @@ describe('Tool Page Property Tests', () => {
                 <div>Interface</div>
               </ToolPage>
             );
-            
+
             // Related tools section should be present (all tools have at least 2 related tools)
             const relatedTools = screen.getByTestId('tool-page-related-tools');
             expect(relatedTools).toBeInTheDocument();
-            
+
             const relatedToolsGrid = screen.getByTestId('related-tools-grid');
             expect(relatedToolsGrid.children.length).toBeGreaterThanOrEqual(2);
-            
+
             unmount();
             return true;
           }
         ),
         { numRuns: 100 }
       );
+    });
+
+    it('tool page related tool links fall back to the public locale for untranslated tools', () => {
+      const locale = 'pt' as Locale;
+      const tool = tools.find((candidate) => candidate.id === 'extract-attachments');
+      const untranslatedRelatedId = 'pdf-to-zip';
+
+      expect(tool).toBeDefined();
+      expect(getToolPublicLocale(locale, untranslatedRelatedId)).toBe('en');
+
+      const content = getToolContent(locale, tool!.id);
+      expect(content).toBeDefined();
+
+      render(
+        <ToolPage tool={tool!} content={content!} locale={locale}>
+          <div>Interface</div>
+        </ToolPage>
+      );
+
+      const expectedHref = getPublicPath('/tools/pdf-to-zip', 'en');
+      const relatedLinks = screen.getAllByRole('link');
+
+      expect(relatedLinks.some((link) => link.getAttribute('href') === expectedHref)).toBe(true);
+      expect(relatedLinks.some((link) => link.getAttribute('href') === getPublicPath('/tools/pdf-to-zip', locale))).toBe(false);
     });
 
     it('tool page how-to steps are numbered correctly', () => {

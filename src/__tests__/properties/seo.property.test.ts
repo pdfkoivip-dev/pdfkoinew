@@ -511,6 +511,22 @@ describe('SEO Property Tests', () => {
       expect(pdfBookletAlternates).toContain('pt');
       expect(shouldIndexLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
     });
+
+    it('reported GSC 404 locale-tool combinations stay out of hreflang alternates', () => {
+      const cases = [
+        ['es', 'pdf-to-pdfa'],
+        ['pt', 'djvu-to-pdf'],
+        ['ko', 'pdf-reader'],
+        ['pt', 'pdf-to-pptx'],
+        ['pt', 'pdf-to-zip'],
+        ['fr', 'djvu-to-pdf'],
+      ] as const;
+
+      for (const [locale, toolId] of cases) {
+        expect(shouldIndexLocalizedToolPage(locale, toolId)).toBe(false);
+        expect(getToolIndexableLocales(toolId)).not.toContain(locale);
+      }
+    });
   });
 });
 

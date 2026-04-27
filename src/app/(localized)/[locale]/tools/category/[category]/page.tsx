@@ -8,7 +8,7 @@ import {
     generateCollectionPageSchema,
     generateItemListSchema,
 } from '@/lib/seo';
-import { shouldIndexCategoryHub } from '@/lib/seo/indexing-policy';
+import { shouldGenerateLocalizedToolPage, shouldIndexCategoryHub } from '@/lib/seo/indexing-policy';
 import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
 import { getToolById } from '@/config/tools';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -734,7 +734,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ local
             const tool = getToolById(task.toolId);
             const content = localizedToolContent[task.toolId];
 
-            if (!tool || !content) {
+            if (!tool || !content || !shouldGenerateLocalizedToolPage(validLocale, task.toolId)) {
                 return null;
             }
 
@@ -764,7 +764,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ local
         .map((target) => {
             const tool = getToolById(target.toolId);
 
-            if (!tool) {
+            if (!tool || !shouldGenerateLocalizedToolPage(validLocale, target.toolId)) {
                 return null;
             }
 
@@ -802,7 +802,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ local
         items: (featuredTasks.length > 0 ? featuredTasks : Object.entries(localizedToolContent)
             .filter(([toolId]) => {
                 const tool = getToolById(toolId);
-                return tool?.category === categoryId;
+                return tool?.category === categoryId && shouldGenerateLocalizedToolPage(validLocale, toolId);
             })
             .slice(0, 6)
             .map(([toolId, content]) => {
