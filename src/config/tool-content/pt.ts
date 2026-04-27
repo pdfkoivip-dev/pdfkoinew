@@ -984,4 +984,31 @@ export const toolContentPt: Record<string, ToolContent> = {
       { question: 'É compatível com Google Docs?', answer: 'Sim, o arquivo DOCX gerado funciona perfeitamente no Microsoft Word, Google Docs e LibreOffice.' },
     ],
   },
+
+  'pdf-booklet': {
+    title: 'Criador de Livreto em PDF',
+    metaDescription: 'Crie layouts de livreto a partir de PDFs para impressão. Organize as páginas na ordem correta para dobra e grampeamento.',
+    keywords: ['livreto pdf', 'criar livreto pdf', 'imprimir livreto', 'encadernação canoa', 'imposição de páginas'],
+    description: `
+      <p>O Criador de Livreto em PDF reorganiza as páginas do seu documento na sequência correta para impressão frente e verso, dobra e montagem em formato de livreto. É uma opção prática para folhetos, apostilas curtas, zines, programas de evento e materiais distribuídos em mão.</p>
+      <p>Você pode escolher diferentes modos de grade, tamanhos de papel, orientação e rotação para adaptar o resultado ao seu tipo de impressão. A ferramenta cuida automaticamente da imposição das páginas para que a ordem final fique correta depois da dobra.</p>
+      <p>Todo o processamento acontece localmente no navegador. Assim, você pode preparar materiais internos, comerciais ou educacionais sem enviar o PDF para servidores externos.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Envie o PDF', description: 'Selecione o arquivo PDF que você quer transformar em livreto para impressão e dobra.' },
+      { step: 2, title: 'Escolha o layout', description: 'Defina o modo de grade, o tamanho do papel, a orientação e a rotação conforme sua impressora e o formato desejado.' },
+      { step: 3, title: 'Gere o livreto', description: 'Crie a nova imposição com as páginas organizadas na sequência correta para montagem.' },
+      { step: 4, title: 'Baixe para imprimir', description: 'Baixe o PDF final e use-o para impressão frente e verso, dobra e grampeamento.' },
+    ],
+    useCases: [
+      { title: 'Folhetos e brochuras', description: 'Transforme um PDF comum em um livreto pronto para dobrar e distribuir em feiras, recepções ou campanhas.', icon: 'book-open' },
+      { title: 'Apostilas e materiais de curso', description: 'Monte apostilas compactas para aulas, workshops e treinamentos com páginas na ordem certa para encadernação simples.', icon: 'book' },
+      { title: 'Programas e livretos de evento', description: 'Prepare programas de cerimônia, agendas de evento ou catálogos curtos em formato dobrável.', icon: 'calendar' },
+    ],
+    faq: [
+      { question: 'O que é encadernação tipo canoa?', answer: 'É o formato em que folhas dobradas são encaixadas umas nas outras e grampeadas no centro, muito usado em livretos curtos.' },
+      { question: 'Qual layout devo escolher?', answer: 'O formato 1x2 costuma ser o padrão para livreto tradicional. Grades maiores podem ser úteis para economizar papel ou combinar com um fluxo de impressão específico.' },
+      { question: 'Isto é igual a reorganizar páginas ou usar N-up?', answer: 'Não. O Criador de Livreto reorganiza as páginas para dobra e montagem final. Ferramentas como N-up ou grade colocam várias páginas na mesma folha, mas não necessariamente na ordem correta de livreto.' },
+    ],
+  },
 };

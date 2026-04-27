@@ -499,12 +499,17 @@ describe('SEO Property Tests', () => {
     });
 
     it('tool metadata only emits hreflang alternates for locales allowed by the indexability policy', () => {
-      const alternates = getToolIndexableLocales('extract-images');
+      const extractImagesAlternates = getToolIndexableLocales('extract-images');
+      const pdfBookletAlternates = getToolIndexableLocales('pdf-booklet');
 
-      expect(alternates).toContain('en');
-      expect(alternates).toContain('zh');
-      expect(alternates).toContain('es');
+      expect(extractImagesAlternates).toContain('en');
+      expect(extractImagesAlternates).toContain('zh');
+      expect(extractImagesAlternates).toContain('es');
       expect(shouldIndexLocalizedToolPage('es', 'extract-images')).toBe(true);
+
+      expect(pdfBookletAlternates).toContain('en');
+      expect(pdfBookletAlternates).toContain('pt');
+      expect(shouldIndexLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
     });
   });
 });

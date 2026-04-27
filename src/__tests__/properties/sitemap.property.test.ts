@@ -126,13 +126,21 @@ describe('Sitemap property tests', () => {
     const esEntries = await sitemap({ id: Promise.resolve('es') });
 
     expect(hasLocalizedToolContent('pt', 'email-to-pdf')).toBe(false);
+    expect(hasLocalizedToolContent('pt', 'pdf-booklet')).toBe(true);
     expect(hasLocalizedToolContent('es', 'extract-images')).toBe(true);
     expect(shouldGenerateLocalizedToolPage('pt', 'email-to-pdf')).toBe(false);
+    expect(shouldGenerateLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
     expect(shouldGenerateLocalizedToolPage('es', 'extract-images')).toBe(true);
 
     expect(ptEntries).not.toContainEqual(
       expect.objectContaining({
         url: `${siteConfig.url}/pt/tools/email-to-pdf/`,
+      })
+    );
+
+    expect(ptEntries).toContainEqual(
+      expect.objectContaining({
+        url: `${siteConfig.url}/pt/tools/pdf-booklet/`,
       })
     );
 
