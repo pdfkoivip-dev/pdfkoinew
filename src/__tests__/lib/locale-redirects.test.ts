@@ -22,6 +22,18 @@ describe('locale redirect helpers', () => {
     expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/en/tools/split-pdf?via=gsc'))).toBe('/tools/split-pdf/?via=gsc');
   });
 
+  it('redirects /en/tools/jpg-to-pdf to the trailing-slash canonical URL', () => {
+    expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/en/tools/jpg-to-pdf'))).toBe('/tools/jpg-to-pdf/');
+  });
+
+  it('redirects /en/tools/pdf-to-docx to the trailing-slash canonical URL', () => {
+    expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/en/tools/pdf-to-docx'))).toBe('/tools/pdf-to-docx/');
+  });
+
+  it('redirects /en/terms/ to the default-language canonical URL', () => {
+    expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/en/terms/'))).toBe('/terms/');
+  });
+
   it('redirects /zh-TW/ to the lowercase locale slug', () => {
     expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/zh-TW/'))).toBe('/zh-tw/');
   });

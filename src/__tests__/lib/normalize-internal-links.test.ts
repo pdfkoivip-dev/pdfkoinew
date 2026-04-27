@@ -12,6 +12,7 @@ describe('normalize internal links helpers', () => {
 
   it('canonicalizes locale-prefixed variants to public slugs', () => {
     expect(normalizeInternalHref('/en/tools/merge-pdf/')).toBe('/tools/merge-pdf/');
+    expect(normalizeInternalHref('/en/terms/')).toBe('/terms/');
     expect(normalizeInternalHref('/zh-TW/tools/pdf-to-docx')).toBe('/zh-tw/tools/pdf-to-docx/');
   });
 

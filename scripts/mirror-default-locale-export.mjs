@@ -1,4 +1,4 @@
-import { cpSync, existsSync, readdirSync } from 'node:fs';
+import { cpSync, existsSync, readdirSync, rmSync } from 'node:fs';
 import path from 'node:path';
 
 const projectRoot = process.cwd();
@@ -22,3 +22,5 @@ for (const entry of readdirSync(defaultLocaleDir, { withFileTypes: true })) {
     force: true,
   });
 }
+
+rmSync(defaultLocaleDir, { recursive: true, force: true });
