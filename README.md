@@ -288,15 +288,9 @@ After the build is complete, all static files will be located in the `out` direc
 
 ### 2. Deployment Options
 
-You can deploy the contents of the `out` directory to any of the following platforms:
+The project is designed to deploy the contents of the `out` directory to static hosting, with Cloudflare Pages as the production path and Nginx/Docker available for production-like local validation.
 
-#### A. Vercel (Recommended)
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run the `vercel` command.
-3. Follow the prompts to set the build command to `npm run build` and the output directory to `out`.
-4. Alternatively, connect directly to your GitHub repository, and Vercel will automatically detect Next.js and configure it.
-
-#### B. Nginx / Apache
+#### A. Nginx / Apache
 Copy the contents of the `out` directory to the root directory of your web server.
 
 **Nginx Configuration Example:**
@@ -318,17 +312,12 @@ server {
 }
 ```
 
-#### C. GitHub Pages
+#### B. GitHub Pages
 1. Push the `out` directory to the `gh-pages` branch of your repository.
 2. Enable GitHub Pages in your repository settings.
 3. Note: If you are not using a custom domain, you might need to modify `basePath` in `next.config.js`.
 
-#### D. Netlify
-1. Connect your repository to Netlify.
-2. Set build command: `npm run build`
-3. Set publish directory: `out`
-
-#### E. Cloudflare Pages
+#### C. Cloudflare Pages
 1. Connect your GitHub repository to Cloudflare Pages.
 2. Set build command: `npm run build`
 3. Set build output directory: `out`
@@ -337,10 +326,10 @@ server {
 6. Query-string category redirects such as `/tools?category=edit-annotate` are handled by Cloudflare Pages Functions because `_redirects` does not support query-parameter matching.
 
 ### 3. Important Notes
-- **Headers Configuration**: The `headers` configuration in `next.config.js` does not automatically take effect in static export mode. You need to configure HTTP headers separately depending on your hosting platform (for example `public/_headers` on Cloudflare Pages or platform-specific config files elsewhere).
+- **Headers Configuration**: The `headers` configuration in `next.config.js` does not automatically take effect in static export mode. In production, this project relies on `public/_headers` for Cloudflare Pages, while other hosts need their own header configuration.
 - **Image Optimization**: Since static export does not support Next.js's default image optimization server, the project is configured with `images: { unoptimized: true }`.
 - **Middleware**: Next.js middleware is not available in static export deployments. This project is structured so localized routes are generated at build time and Cloudflare handles the `/en` to `/` redirect via `public/_redirects`.
-- **Legacy category filters**: Old category URLs that use `?category=` are redirected at the hosting layer. Netlify uses `netlify.toml`, Vercel uses `vercel.json`, Nginx uses `nginx.conf`, and Cloudflare Pages uses route-specific Functions because `public/_redirects` cannot match query parameters.
+- **Legacy category filters**: Old category URLs that use `?category=` are redirected at the hosting layer. Cloudflare Pages uses route-specific Functions because `public/_redirects` cannot match query parameters, and the local production-like Nginx path keeps its own redirect rules in `nginx.conf`.
 
 ### 4. Verify Deployment
 After deployment, please check the following features to ensure everything is working correctly:

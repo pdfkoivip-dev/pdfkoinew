@@ -1,7 +1,7 @@
 # Cache Control Headers for Static Assets
 # Requirements: 8.5 - Configure caching headers
 # 
-# This file is used by Netlify and Cloudflare Pages
+# This file is used by Cloudflare Pages for the static export
 # For other platforms, configure headers in their respective config files
 
 # Default headers for all pages
