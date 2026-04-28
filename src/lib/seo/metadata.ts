@@ -9,7 +9,14 @@ import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import { locales, type Locale, localeConfig, defaultLocale, getPublicPath } from '@/lib/i18n/config';
 import { hasLocalizedToolContent } from '@/config/tool-content';
-import { getToolIndexableLocales, getToolPublicLocale, shouldIndexLocalizedToolPage } from '@/lib/seo/indexing-policy';
+import {
+  getCategoryHubIndexableLocales,
+  getToolIndexableLocales,
+  getToolPublicLocale,
+  shouldIndexCategoryHub,
+  shouldIndexLocalizedToolPage,
+  shouldIndexStaticPage,
+} from '@/lib/seo/indexing-policy';
 import type { Tool, ToolContent } from '@/types/tool';
 
 /**
@@ -29,6 +36,7 @@ export interface PageMetadataOptions extends BaseMetadataOptions {
   keywords?: string[];
   image?: string;
   noIndex?: boolean;
+  followWhenNoIndex?: boolean;
   appendDefaultKeywords?: boolean;
 }
 
@@ -82,6 +90,7 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
     keywords = [],
     image,
     noIndex = false,
+    followWhenNoIndex = false,
     appendDefaultKeywords = true,
   } = options;
 
@@ -108,7 +117,7 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
     creator: siteConfig.creator,
     publisher: siteConfig.name,
     robots: noIndex
-      ? { index: false, follow: false }
+      ? { index: false, follow: followWhenNoIndex }
       : {
         index: true,
         follow: true,
@@ -262,13 +271,32 @@ export function generateToolsListMetadata(locale: Locale, translations?: { title
  * Generate metadata for the about page
  */
 export function generateAboutMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
-  return generateBaseMetadata({
+  const shouldIndexPage = shouldIndexStaticPage(locale, '/about');
+  const metadata = generateBaseMetadata({
     locale,
     path: '/about',
     title: translations?.title || 'About',
     description: translations?.description || `Learn about ${siteConfig.name} and our free, private, browser-based PDF tools. All processing happens in your browser.`,
     keywords: ['about', 'PDF tools', 'privacy', 'browser-based'],
+    noIndex: !shouldIndexPage,
+    followWhenNoIndex: true,
   });
+
+  if (!shouldIndexPage) {
+    metadata.alternates = {
+      canonical: getCanonicalUrl(defaultLocale, '/about'),
+      languages: getAlternateUrlsForLocales('/about', locales.filter((candidateLocale) => shouldIndexStaticPage(candidateLocale, '/about'))),
+    };
+
+    if (metadata.openGraph) {
+      metadata.openGraph = {
+        ...metadata.openGraph,
+        url: getCanonicalUrl(defaultLocale, '/about'),
+      };
+    }
+  }
+
+  return metadata;
 }
 
 /**
@@ -364,15 +392,33 @@ export function generateCategoryMetadata(
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
-
-  return generateBaseMetadata({
+  const shouldIndexPage = shouldIndexCategoryHub(locale);
+  const path = `/tools/category/${category}`;
+  const metadata = generateBaseMetadata({
     locale,
-    path: `/tools/category/${category}`,
+    path,
     title: translations?.title || `${formattedCategory} Tools`,
     description: translations?.description || `Browse free online ${formattedCategory} PDF tools. Secure, fast, and easy to use in your browser.`,
     keywords: ['PDF tools', formattedCategory, `${formattedCategory} PDF tools`, 'online PDF tools', 'free PDF tools'],
-    noIndex: options?.noIndex ?? false,
+    noIndex: options?.noIndex ?? !shouldIndexPage,
+    followWhenNoIndex: true,
   });
+
+  if (!shouldIndexPage) {
+    metadata.alternates = {
+      canonical: getCanonicalUrl(defaultLocale, path),
+      languages: getAlternateUrlsForLocales(path, getCategoryHubIndexableLocales()),
+    };
+
+    if (metadata.openGraph) {
+      metadata.openGraph = {
+        ...metadata.openGraph,
+        url: getCanonicalUrl(defaultLocale, path),
+      };
+    }
+  }
+
+  return metadata;
 }
 
 /**

@@ -13,6 +13,10 @@ describe('legacy category redirect helper', () => {
     expect(getLegacyCategoryRedirectPath('/zh/tools', 'secure-pdf')).toBe('/zh/tools/category/secure-pdf/');
   });
 
+  it('maps query-based organize-manage URLs to the canonical localized category hub', () => {
+    expect(getLegacyCategoryRedirectPath('/zh/tools', 'organize-manage')).toBe('/zh/tools/category/organize-manage/');
+  });
+
   it('normalizes the English locale back to the default canonical path', () => {
     expect(getLegacyCategoryRedirectPath('/en/tools', 'convert-to-pdf')).toBe('/tools/category/convert-to-pdf/');
   });

@@ -6,6 +6,7 @@ import {
   getToolIndexableLocales,
   shouldGenerateLocalizedToolPage,
   shouldIndexCategoryHub,
+  shouldIndexStaticPage,
 } from '@/lib/seo/indexing-policy';
 import { TOOL_CATEGORIES } from '@/types/tool';
 import { getAllTools } from '@/config/tools';
@@ -23,7 +24,7 @@ describe('Sitemap property tests', () => {
     );
   });
 
-  it('english sitemap includes the english homepage, all tool pages, all category hubs, and all long-tail pages', async () => {
+  it('english sitemap includes the homepage, all indexable tool pages, and all long-tail pages', async () => {
     const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(defaultLocale)) });
 
     expect(entries).toContainEqual(
@@ -49,11 +50,9 @@ describe('Sitemap property tests', () => {
     }
 
     for (const category of TOOL_CATEGORIES) {
-      expect(entries).toContainEqual(
+      expect(entries).not.toContainEqual(
         expect.objectContaining({
           url: `${siteConfig.url}${getPublicPath(`/tools/category/${category}`, defaultLocale)}`,
-          changeFrequency: 'weekly',
-          priority: 0.85,
         })
       );
     }
@@ -110,6 +109,28 @@ describe('Sitemap property tests', () => {
           expect(entries).not.toContainEqual(matcher);
         }
       }
+    }
+  });
+
+  it('keeps non-english about pages out of localized sitemaps while preserving english about', async () => {
+    const englishEntries = await sitemap({ id: Promise.resolve(getLocaleSlug(defaultLocale)) });
+
+    expect(shouldIndexStaticPage(defaultLocale, '/about')).toBe(true);
+    expect(englishEntries).toContainEqual(
+      expect.objectContaining({
+        url: `${siteConfig.url}/about/`,
+      })
+    );
+
+    for (const locale of locales.filter((candidate) => candidate !== defaultLocale)) {
+      const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });
+
+      expect(shouldIndexStaticPage(locale, '/about')).toBe(false);
+      expect(entries).not.toContainEqual(
+        expect.objectContaining({
+          url: `${siteConfig.url}${getPublicPath('/about', locale)}`,
+        })
+      );
     }
   });
 

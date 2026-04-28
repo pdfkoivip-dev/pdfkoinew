@@ -19,6 +19,7 @@ import {
   validateMetadata,
   getCanonicalUrl,
   getAlternateUrls,
+  getAlternateUrlsForLocales,
 } from '@/lib/seo/metadata';
 import {
   generateSoftwareApplicationSchema,
@@ -31,9 +32,11 @@ import {
 } from '@/lib/seo/structured-data';
 import { locales, type Locale, defaultLocale, getPublicPath } from '@/lib/i18n/config';
 import {
+  getCategoryHubIndexableLocales,
   getToolIndexableLocales,
   shouldIndexCategoryHub,
   shouldIndexLocalizedToolPage,
+  shouldIndexStaticPage,
   shouldIndexToolsDirectory,
 } from '@/lib/seo/indexing-policy';
 import { tools, getAllTools } from '@/config/tools';
@@ -241,7 +244,29 @@ describe('SEO Property Tests', () => {
       }
     });
 
-    it('category hubs remain indexable across locales', () => {
+    it('non-english about pages are intentionally noindex with english canonical fallback', () => {
+      const englishCanonical = `${siteConfig.url}/about/`;
+
+      expect(shouldIndexStaticPage('en', '/about')).toBe(true);
+
+      for (const locale of locales.filter((candidate) => candidate !== defaultLocale)) {
+        const metadata = generateAboutMetadata(locale);
+
+        expect(shouldIndexStaticPage(locale, '/about')).toBe(false);
+        expect(metadata.robots).toMatchObject({ index: false, follow: true });
+        expect(metadata.alternates?.canonical).toBe(englishCanonical);
+        expect(metadata.openGraph?.url).toBe(englishCanonical);
+
+        const languages = metadata.alternates?.languages as Record<string, string>;
+        expect(languages.en).toBe(englishCanonical);
+        expect(languages['x-default']).toBe(englishCanonical);
+        expect(languages[locale]).toBeUndefined();
+      }
+    });
+
+    it('category hubs are intentionally noindex with english canonical fallback across locales', () => {
+      const englishCanonical = `${siteConfig.url}/tools/category/convert-to-pdf/`;
+
       for (const locale of locales) {
         const metadata = generateCategoryMetadata(locale, 'convert-to-pdf', {
           title: 'Convert to PDF Tools',
@@ -250,8 +275,13 @@ describe('SEO Property Tests', () => {
           noIndex: !shouldIndexCategoryHub(locale),
         });
 
-        expect(shouldIndexCategoryHub(locale)).toBe(true);
-        expect(metadata.robots).toMatchObject({ index: true, follow: true });
+        expect(shouldIndexCategoryHub(locale)).toBe(false);
+        expect(metadata.robots).toMatchObject({ index: false, follow: true });
+        expect(metadata.alternates?.canonical).toBe(englishCanonical);
+        expect(metadata.openGraph?.url).toBe(englishCanonical);
+        expect(metadata.alternates?.languages).toEqual(
+          getAlternateUrlsForLocales('/tools/category/convert-to-pdf', getCategoryHubIndexableLocales())
+        );
       }
     });
 

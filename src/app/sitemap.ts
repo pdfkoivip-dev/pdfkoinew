@@ -23,8 +23,10 @@ import { TOOL_CATEGORIES } from '@/types/tool';
 import {
   getCategoryHubIndexableLocales,
   getToolIndexableLocales,
+  INDEXABLE_STATIC_PAGE_PATHS,
   shouldGenerateLocalizedToolPage,
   shouldIndexCategoryHub,
+  shouldIndexStaticPage,
 } from '@/lib/seo/indexing-policy';
 
 export const dynamic = 'force-static';
@@ -52,7 +54,12 @@ const INDEXABLE_STATIC_PAGES = [
   { path: '/faq', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static, lastModKey: 'faq' },
   { path: '/contact', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static, lastModKey: 'contact' },
   { path: '/terms', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static, lastModKey: 'terms' },
-] as const;
+] as const satisfies ReadonlyArray<{
+  path: '' | (typeof INDEXABLE_STATIC_PAGE_PATHS)[number] | '/about';
+  priority: number;
+  changeFrequency: SitemapFrequency;
+  lastModKey: LastModKey;
+}>;
 
 const PROJECT_ROOT = process.cwd();
 const LASTMOD_CACHE = new Map<string, Date>();
@@ -208,11 +215,17 @@ export function generateLocaleEntries(locale: Locale): MetadataRoute.Sitemap {
   const categoryHubLocales = getCategoryHubIndexableLocales();
 
   for (const page of INDEXABLE_STATIC_PAGES) {
+    const publicPath = page.path || '/';
+
+    if (!shouldIndexStaticPage(locale, publicPath)) {
+      continue;
+    }
+
     entries.push(
       createSitemapEntry({
         path: page.path,
         locale,
-        alternateLocales: locales,
+        alternateLocales: locales.filter((candidateLocale) => shouldIndexStaticPage(candidateLocale, publicPath)),
         lastModified: getLastModifiedForGroup(page.lastModKey),
         changeFrequency: page.changeFrequency,
         priority: page.priority,
