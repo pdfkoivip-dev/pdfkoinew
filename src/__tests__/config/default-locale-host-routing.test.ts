@@ -5,6 +5,7 @@ import path from 'node:path';
 const projectRoot = process.cwd();
 const vercelConfigPath = path.join(projectRoot, 'vercel.json');
 const netlifyConfigPath = path.join(projectRoot, 'netlify.toml');
+const cloudflareRedirectsPath = path.join(projectRoot, 'public', '_redirects');
 
 const staleRootToEnglishTargets = [
   '/en/tools',
@@ -50,6 +51,18 @@ describe('default locale host routing config', () => {
 
     for (const target of staleRootToEnglishTargets) {
       expect(config).not.toContain(`to = "${target}`);
+    }
+  });
+
+  it('keeps Cloudflare Pages redirects for /en canonicalization but removes root-to-/en 200 proxies', () => {
+    const config = readFileSync(cloudflareRedirectsPath, 'utf8');
+
+    expect(config).toContain('/en    /     301!');
+    expect(config).toContain('/en/   /     301!');
+    expect(config).toContain('/en/*  /:splat 301!');
+
+    for (const target of staleRootToEnglishTargets) {
+      expect(config).not.toContain(` ${target}`);
     }
   });
 });
