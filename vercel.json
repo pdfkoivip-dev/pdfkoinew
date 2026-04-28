@@ -103,52 +103,7 @@
       "permanent": true
     }
   ],
-  "rewrites": [
-    {
-      "source": "/tools/:path*",
-      "destination": "/en/tools/:path*"
-    },
-    {
-      "source": "/workflow/:path*",
-      "destination": "/en/workflow/:path*"
-    },
-    {
-      "source": "/about/:path*",
-      "destination": "/en/about/:path*"
-    },
-    {
-      "source": "/faq/:path*",
-      "destination": "/en/faq/:path*"
-    },
-    {
-      "source": "/privacy/:path*",
-      "destination": "/en/privacy/:path*"
-    },
-    {
-      "source": "/cookies/:path*",
-      "destination": "/en/cookies/:path*"
-    },
-    {
-      "source": "/contact/:path*",
-      "destination": "/en/contact/:path*"
-    },
-    {
-      "source": "/terms/:path*",
-      "destination": "/en/terms/:path*"
-    },
-    {
-      "source": "/compress-pdf-for-email/:path*",
-      "destination": "/en/compress-pdf-for-email/:path*"
-    },
-    {
-      "source": "/compress-pdf-without-upload/:path*",
-      "destination": "/en/compress-pdf-without-upload/:path*"
-    },
-    {
-      "source": "/merge-pdf-no-signup/:path*",
-      "destination": "/en/merge-pdf-no-signup/:path*"
-    }
-  ],
+  "rewrites": [],
   "headers": [
     {
       "source": "/(.*)",
