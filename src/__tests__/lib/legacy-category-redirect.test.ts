@@ -31,6 +31,21 @@ describe('legacy category redirect helper', () => {
     expect(getQueryRedirectPath('/', new URLSearchParams('ref=producthunt'))).toBe('/');
   });
 
+  it('maps reported GSC query category redirects to static category hubs', () => {
+    const cases = [
+      ['/ja/tools/', 'category=edit-annotate', '/ja/tools/category/edit-annotate/'],
+      ['/zh/tools/', 'category=convert-from-pdf', '/zh/tools/category/convert-from-pdf/'],
+      ['/zh/tools/', 'category=optimize-repair', '/zh/tools/category/optimize-repair/'],
+      ['/en/tools/', 'category=convert-to-pdf', '/tools/category/convert-to-pdf/'],
+      ['/zh/tools/', 'category=edit-annotate', '/zh/tools/category/edit-annotate/'],
+      ['/ja/tools/', 'category=optimize-repair', '/ja/tools/category/optimize-repair/'],
+    ] as const;
+
+    for (const [pathname, query, destination] of cases) {
+      expect(getQueryRedirectPath(pathname, new URLSearchParams(query))).toBe(destination);
+    }
+  });
+
   it('ignores supported search state and unrelated paths', () => {
     expect(getQueryRedirectPath('/tools', new URLSearchParams('q=merge'))).toBeNull();
     expect(getQueryRedirectPath('/', new URLSearchParams('ref=other'))).toBeNull();

@@ -46,6 +46,36 @@ describe('locale redirect helpers', () => {
     expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/zh-TW/?via=gsc'))).toBe('/zh-tw/?via=gsc');
   });
 
+  it('keeps reported GSC default-locale redirect samples pointed at root English canonicals', () => {
+    const cases = [
+      ['https://pdfkoi.com/en/', '/'],
+      ['https://pdfkoi.com/en/compress-pdf-without-upload/', '/compress-pdf-without-upload/'],
+      ['https://pdfkoi.com/en/tools/organize-pdf/', '/tools/organize-pdf/'],
+      ['https://pdfkoi.com/en/merge-pdf-no-signup/', '/merge-pdf-no-signup/'],
+      ['https://pdfkoi.com/en/compress-pdf-for-email/', '/compress-pdf-for-email/'],
+      ['https://pdfkoi.com/en/tools/text-color/', '/tools/text-color/'],
+      ['https://pdfkoi.com/en/tools/edit-metadata/', '/tools/edit-metadata/'],
+      ['https://pdfkoi.com/en/tools/heic-to-pdf/', '/tools/heic-to-pdf/'],
+      ['https://pdfkoi.com/en/tools/pdf-to-docx/', '/tools/pdf-to-docx/'],
+      ['https://pdfkoi.com/en/terms/', '/terms/'],
+      ['https://pdfkoi.com/en/tools/split-pdf/', '/tools/split-pdf/'],
+      ['https://pdfkoi.com/en/tools/pdf-to-jpg/', '/tools/pdf-to-jpg/'],
+      ['https://pdfkoi.com/en/tools/merge-pdf/', '/tools/merge-pdf/'],
+      ['https://pdfkoi.com/en/tools/compress-pdf/', '/tools/compress-pdf/'],
+      ['https://pdfkoi.com/en/tools/jpg-to-pdf/', '/tools/jpg-to-pdf/'],
+      ['https://pdfkoi.com/en/tools/merge-pdf', '/tools/merge-pdf/'],
+      ['https://pdfkoi.com/en/tools/split-pdf', '/tools/split-pdf/'],
+    ] as const;
+
+    for (const [source, destination] of cases) {
+      expect(getLocaleRedirectPath(new URL(source))).toBe(destination);
+    }
+  });
+
+  it('keeps reported GSC uppercase zh-TW redirect samples pointed at lowercase locale canonicals', () => {
+    expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/zh-TW/tools/pdf-to-docx'))).toBe('/zh-tw/tools/pdf-to-docx');
+  });
+
   it('returns null when no locale redirect is needed', () => {
     expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/ja/tools'))).toBeNull();
   });

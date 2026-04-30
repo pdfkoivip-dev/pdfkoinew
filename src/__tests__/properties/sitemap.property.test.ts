@@ -193,6 +193,65 @@ describe('Sitemap property tests', () => {
     }
   });
 
+  it('keeps reported GSC redirect samples out of all sitemaps', async () => {
+    const redirectingUrls = [
+      `${siteConfig.url}/en/`,
+      `${siteConfig.url}/en/compress-pdf-without-upload/`,
+      `${siteConfig.url}/en/tools/organize-pdf/`,
+      `${siteConfig.url}/tools/organize-pdf`,
+      `${siteConfig.url}/en/merge-pdf-no-signup/`,
+      `${siteConfig.url}/faq`,
+      `${siteConfig.url}/en/compress-pdf-for-email/`,
+      `${siteConfig.url}/en/tools/text-color/`,
+      `${siteConfig.url}/zh-tw/tools/jpg-to-pdf`,
+      `${siteConfig.url}/zh/tools/pdf-to-docx`,
+      `${siteConfig.url}/ja/tools/?category=edit-annotate`,
+      `${siteConfig.url}/en/tools/edit-metadata/`,
+      `${siteConfig.url}/zh/tools/?category=convert-from-pdf`,
+      `${siteConfig.url}/zh/tools/?category=optimize-repair`,
+      `${siteConfig.url}/en/tools/?category=convert-to-pdf`,
+      `${siteConfig.url}/en/tools/category/edit-annotate/`,
+      `${siteConfig.url}/es/tools/compress-pdf`,
+      `${siteConfig.url}/en/tools/heic-to-pdf/`,
+      `${siteConfig.url}/en/tools/pdf-to-docx/`,
+      `${siteConfig.url}/zh/tools/remove-metadata`,
+      `${siteConfig.url}/en/terms/`,
+      'https://www.pdfkoi.com/',
+      `${siteConfig.url}/en/tools/split-pdf/`,
+      `${siteConfig.url}/zh-tw/tools/pdf-to-jpg`,
+      `${siteConfig.url}/zh/tools/?category=edit-annotate`,
+      `${siteConfig.url}/en/tools/category/convert-from-pdf/`,
+      `${siteConfig.url}/en/tools/pdf-to-jpg/`,
+      `${siteConfig.url}/tools/pdf-to-jpg`,
+      `${siteConfig.url}/en/tools/merge-pdf/`,
+      `${siteConfig.url}/tools/merge-pdf`,
+      `${siteConfig.url}/en/tools/compress-pdf/`,
+      `${siteConfig.url}/tools/compress-pdf`,
+      `${siteConfig.url}/en/tools/jpg-to-pdf/`,
+      `${siteConfig.url}/tools/jpg-to-pdf`,
+      'http://pdfkoi.com/',
+      `${siteConfig.url}/zh-TW/tools/pdf-to-docx`,
+      `${siteConfig.url}/zh-tw/tools/pdf-to-docx`,
+      `${siteConfig.url}/ja/tools/?category=optimize-repair`,
+      'http://www.pdfkoi.com/',
+      `${siteConfig.url}/en/tools/merge-pdf`,
+      `${siteConfig.url}/en/tools/split-pdf`,
+    ] as const;
+
+    const sitemapUrls = new Set<string>();
+
+    for (const locale of locales) {
+      const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });
+      for (const entry of entries) {
+        sitemapUrls.add(entry.url);
+      }
+    }
+
+    for (const url of redirectingUrls) {
+      expect(sitemapUrls.has(url)).toBe(false);
+    }
+  });
+
   it('keeps reported GSC 404 locale-tool combinations out of localized sitemaps', async () => {
     const cases = [
       { locale: 'es', toolId: 'pdf-to-pdfa', slug: 'pdf-to-pdfa' },
