@@ -11,6 +11,9 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
 
+/manifest.webmanifest
+  X-Robots-Tag: noindex
+
 # HTML pages - no cache, always revalidate
 /*.html
   Cache-Control: public, max-age=0, must-revalidate

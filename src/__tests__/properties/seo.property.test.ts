@@ -41,7 +41,7 @@ import {
 } from '@/lib/seo/indexing-policy';
 import { tools, getAllTools } from '@/config/tools';
 import { siteConfig } from '@/config/site';
-import { getToolContentLocales, hasLocalizedToolContent } from '@/config/tool-content';
+import { getToolContent, getToolContentLocales, hasLocalizedToolContent } from '@/config/tool-content';
 import { toolContentEn } from '@/config/tool-content/en';
 import { toolContentZhTw } from '@/config/tool-content/zh-TW';
 import type { Tool, ToolContent, FAQ } from '@/types/tool';
@@ -540,6 +540,36 @@ describe('SEO Property Tests', () => {
       expect(pdfBookletAlternates).toContain('en');
       expect(pdfBookletAlternates).toContain('pt');
       expect(shouldIndexLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
+    });
+
+    it('reported GSC indexable samples remain self-canonical index targets', () => {
+      const toolCases = [
+        ['zh', 'pdf-to-excel', '/zh/tools/pdf-to-excel/'],
+        ['en', 'header-footer', '/tools/header-footer/'],
+        ['en', 'reverse-pages', '/tools/reverse-pages/'],
+        ['ja', 'rtf-to-pdf', '/ja/tools/rtf-to-pdf/'],
+        ['es', 'extract-images', '/es/tools/extract-images/'],
+      ] as const satisfies ReadonlyArray<readonly [Locale, string, string]>;
+
+      for (const [locale, toolId, canonicalPath] of toolCases) {
+        const tool = tools.find((candidate) => candidate.id === toolId);
+        const content = getToolContent(locale, toolId);
+
+        expect(tool).toBeDefined();
+        expect(content).toBeDefined();
+        expect(shouldIndexLocalizedToolPage(locale, toolId)).toBe(true);
+
+        const metadata = generateToolMetadata({ locale, tool: tool!, content: content! });
+
+        expect(metadata.robots).toMatchObject({ index: true, follow: true });
+        expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}${canonicalPath}`);
+      }
+
+      const faqMetadata = generateFaqMetadata('zh-TW');
+
+      expect(shouldIndexStaticPage('zh-TW', '/faq')).toBe(true);
+      expect(faqMetadata.robots).toMatchObject({ index: true, follow: true });
+      expect(faqMetadata.alternates?.canonical).toBe(`${siteConfig.url}/zh-tw/faq/`);
     });
 
     it('reported GSC 404 locale-tool combinations stay out of hreflang alternates', () => {

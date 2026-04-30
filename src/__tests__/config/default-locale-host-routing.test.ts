@@ -4,6 +4,7 @@ import path from 'node:path';
 
 const projectRoot = process.cwd();
 const cloudflareRedirectsPath = path.join(projectRoot, 'public', '_redirects');
+const cloudflareHeadersPath = path.join(projectRoot, 'public', '_headers');
 
 const staleRootToEnglishTargets = [
   '/en/tools',
@@ -30,5 +31,14 @@ describe('default locale host routing config', () => {
     for (const target of staleRootToEnglishTargets) {
       expect(config).not.toContain(` ${target}`);
     }
+  });
+
+  it('marks the web app manifest as a non-indexable asset without affecting HTML pages', () => {
+    const config = readFileSync(cloudflareHeadersPath, 'utf8');
+
+    expect(config).toContain('/manifest.webmanifest');
+    expect(config).toContain('X-Robots-Tag: noindex');
+    expect(config).not.toContain('/*.xml\n  X-Robots-Tag: noindex');
+    expect(config).not.toContain('/*.html\n  X-Robots-Tag: noindex');
   });
 });

@@ -172,6 +172,27 @@ describe('Sitemap property tests', () => {
     );
   });
 
+  it('keeps reported GSC indexable samples in their canonical sitemaps', async () => {
+    const cases = [
+      { locale: 'zh', url: `${siteConfig.url}/zh/tools/pdf-to-excel/` },
+      { locale: 'en', url: `${siteConfig.url}/tools/header-footer/` },
+      { locale: 'zh-TW', url: `${siteConfig.url}/zh-tw/faq/` },
+      { locale: 'en', url: `${siteConfig.url}/tools/reverse-pages/` },
+      { locale: 'en', url: `${siteConfig.url}/tools/pdf-to-docx/` },
+      { locale: 'en', url: `${siteConfig.url}/tools/jpg-to-pdf/` },
+      { locale: 'ja', url: `${siteConfig.url}/ja/tools/rtf-to-pdf/` },
+      { locale: 'es', url: `${siteConfig.url}/es/tools/extract-images/` },
+    ] as const;
+
+    for (const { locale, url } of cases) {
+      const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });
+
+      expect(entries).toContainEqual(
+        expect.objectContaining({ url })
+      );
+    }
+  });
+
   it('keeps reported GSC 404 locale-tool combinations out of localized sitemaps', async () => {
     const cases = [
       { locale: 'es', toolId: 'pdf-to-pdfa', slug: 'pdf-to-pdfa' },
