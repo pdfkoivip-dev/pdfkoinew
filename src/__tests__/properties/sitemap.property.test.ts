@@ -193,6 +193,51 @@ describe('Sitemap property tests', () => {
     }
   });
 
+  it('keeps reported GSC noindex samples out of sitemaps while preserving fixed indexable samples', async () => {
+    const noindexUrls = [
+      `${siteConfig.url}/pt/compress-pdf-without-upload/`,
+      `${siteConfig.url}/ko/compress-pdf-for-email/`,
+      `${siteConfig.url}/zh-tw/merge-pdf-no-signup/`,
+      `${siteConfig.url}/pt/compress-pdf-for-email/`,
+      `${siteConfig.url}/ko/compress-pdf-without-upload/`,
+      `${siteConfig.url}/pt/merge-pdf-no-signup/`,
+      `${siteConfig.url}/de/compress-pdf-without-upload/`,
+      `${siteConfig.url}/de/merge-pdf-no-signup/`,
+      `${siteConfig.url}/fr/merge-pdf-no-signup/`,
+      `${siteConfig.url}/fr/privacy/`,
+      `${siteConfig.url}/es/compress-pdf-without-upload/`,
+      `${siteConfig.url}/ja/compress-pdf-without-upload/`,
+      `${siteConfig.url}/ja/compress-pdf-for-email/`,
+      `${siteConfig.url}/es/compress-pdf-for-email/`,
+      `${siteConfig.url}/ja/merge-pdf-no-signup/`,
+      `${siteConfig.url}/es/merge-pdf-no-signup/`,
+      `${siteConfig.url}/de/tools/`,
+      `${siteConfig.url}/en/tools/?q=(search_term_string}`,
+      `${siteConfig.url}/ko/tools/`,
+      `${siteConfig.url}/ja/tools/`,
+      `${siteConfig.url}/pt/cookies/`,
+      `${siteConfig.url}/cookies/`,
+      `${siteConfig.url}/en/cookies/`,
+      `${siteConfig.url}/de/tools/category/secure-pdf/`,
+      `${siteConfig.url}/ko/cookies/`,
+    ] as const;
+
+    const sitemapUrls = new Set<string>();
+
+    for (const locale of locales) {
+      const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });
+      for (const entry of entries) {
+        sitemapUrls.add(entry.url);
+      }
+    }
+
+    for (const url of noindexUrls) {
+      expect(sitemapUrls.has(url)).toBe(false);
+    }
+
+    expect(sitemapUrls.has(`${siteConfig.url}/pt/tools/pdf-booklet/`)).toBe(true);
+  });
+
   it('keeps reported GSC redirect samples out of all sitemaps', async () => {
     const redirectingUrls = [
       `${siteConfig.url}/en/`,

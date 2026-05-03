@@ -232,6 +232,8 @@ describe('SEO Property Tests', () => {
 
         expect(privacyMetadata.robots).toMatchObject({ index: false, follow: false });
         expect(cookiesMetadata.robots).toMatchObject({ index: false, follow: false });
+        expect(privacyMetadata.alternates?.languages).toBeUndefined();
+        expect(cookiesMetadata.alternates?.languages).toBeUndefined();
       }
     });
 
@@ -241,6 +243,7 @@ describe('SEO Property Tests', () => {
       for (const locale of locales) {
         const toolsMetadata = generateToolsListMetadata(locale);
         expect(toolsMetadata.robots).toMatchObject({ index: false, follow: false });
+        expect(toolsMetadata.alternates?.languages).toBeUndefined();
       }
     });
 
@@ -540,6 +543,64 @@ describe('SEO Property Tests', () => {
       expect(pdfBookletAlternates).toContain('en');
       expect(pdfBookletAlternates).toContain('pt');
       expect(shouldIndexLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
+    });
+
+    it('reported GSC noindex samples keep their intended indexability signals', () => {
+      const nonEnglishLongTailCases = [
+        ['pt', '/compress-pdf-without-upload'],
+        ['ko', '/compress-pdf-for-email'],
+        ['zh-TW', '/merge-pdf-no-signup'],
+        ['pt', '/compress-pdf-for-email'],
+        ['ko', '/compress-pdf-without-upload'],
+        ['pt', '/merge-pdf-no-signup'],
+        ['de', '/compress-pdf-without-upload'],
+        ['de', '/merge-pdf-no-signup'],
+        ['fr', '/merge-pdf-no-signup'],
+        ['es', '/compress-pdf-without-upload'],
+        ['ja', '/compress-pdf-without-upload'],
+        ['ja', '/compress-pdf-for-email'],
+        ['es', '/compress-pdf-for-email'],
+        ['ja', '/merge-pdf-no-signup'],
+        ['es', '/merge-pdf-no-signup'],
+      ] as const satisfies ReadonlyArray<readonly [Locale, string]>;
+
+      for (const [locale, path] of nonEnglishLongTailCases) {
+        const metadata = generateLongTailLandingMetadata(locale, {
+          path,
+          title: 'Long-tail landing page',
+          description: 'Long-tail landing page description.',
+          keywords: ['pdf'],
+        });
+
+        expect(metadata.robots).toMatchObject({ index: false, follow: false });
+        expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}${getPublicPath(path, defaultLocale)}`);
+      }
+
+      for (const locale of ['fr', 'pt', 'en', 'ko'] as const) {
+        const metadata = locale === 'fr'
+          ? generatePrivacyMetadata(locale)
+          : generateCookiesMetadata(locale);
+
+        expect(metadata.robots).toMatchObject({ index: false, follow: false });
+      }
+
+      for (const locale of ['de', 'ko', 'ja'] as const) {
+        expect(generateToolsListMetadata(locale).robots).toMatchObject({ index: false, follow: false });
+      }
+
+      const categoryMetadata = generateCategoryMetadata('de', 'secure-pdf');
+      expect(categoryMetadata.robots).toMatchObject({ index: false, follow: true });
+      expect(categoryMetadata.alternates?.canonical).toBe(`${siteConfig.url}/tools/category/secure-pdf/`);
+
+      const tool = tools.find((candidate) => candidate.id === 'pdf-booklet');
+      const content = getToolContent('pt', 'pdf-booklet');
+      expect(tool).toBeDefined();
+      expect(content).toBeDefined();
+      expect(shouldIndexLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
+
+      const metadata = generateToolMetadata({ locale: 'pt', tool: tool!, content: content! });
+      expect(metadata.robots).toMatchObject({ index: true, follow: true });
+      expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}/pt/tools/pdf-booklet/`);
     });
 
     it('reported GSC indexable samples remain self-canonical index targets', () => {

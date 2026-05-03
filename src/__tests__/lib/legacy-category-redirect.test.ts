@@ -25,6 +25,7 @@ describe('legacy category redirect helper', () => {
     expect(getQueryRedirectPath('/tools', new URLSearchParams('q={search_term_string}'))).toBe('/tools/');
     expect(getQueryRedirectPath('/ja/tools', new URLSearchParams('q={search_term_string}'))).toBe('/ja/tools/');
     expect(getQueryRedirectPath('/en/tools', new URLSearchParams('q={search_term_string}'))).toBe('/tools/');
+    expect(getQueryRedirectPath('/en/tools', new URLSearchParams('q=(search_term_string}'))).toBe('/tools/');
   });
 
   it('redirects the producthunt tracking homepage URL to the clean homepage', () => {

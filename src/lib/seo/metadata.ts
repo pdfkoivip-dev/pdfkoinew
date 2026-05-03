@@ -130,10 +130,14 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
       shortcut: '/images/logo.png',
       apple: [{ url: '/images/logo.png', type: 'image/png', sizes: '128x128' }],
     },
-    alternates: {
-      canonical: canonicalUrl,
-      languages: getAlternateUrls(path),
-    },
+    alternates: noIndex
+      ? {
+        canonical: canonicalUrl,
+      }
+      : {
+        canonical: canonicalUrl,
+        languages: getAlternateUrls(path),
+      },
     openGraph: {
       type: 'website',
       locale: ogLocale,

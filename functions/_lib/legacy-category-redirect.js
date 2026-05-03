@@ -7,7 +7,10 @@ const LEGACY_CATEGORY_SET = new Set([
   'secure-pdf',
 ]);
 
-const PLACEHOLDER_SEARCH_QUERY = '{search_term_string}';
+const PLACEHOLDER_SEARCH_QUERIES = new Set([
+  '{search_term_string}',
+  '(search_term_string}',
+]);
 
 function normalizePathname(pathname) {
   return pathname.replace(/\/+$/, '') || '/';
@@ -36,7 +39,7 @@ function getCategoryRedirectPath(normalizedPath, category) {
 }
 
 function getPlaceholderSearchRedirectPath(normalizedPath, query) {
-  if (query !== PLACEHOLDER_SEARCH_QUERY) {
+  if (!PLACEHOLDER_SEARCH_QUERIES.has(query)) {
     return null;
   }
 
