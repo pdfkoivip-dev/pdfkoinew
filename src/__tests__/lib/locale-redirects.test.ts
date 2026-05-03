@@ -76,6 +76,26 @@ describe('locale redirect helpers', () => {
     expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/zh-TW/tools/pdf-to-docx'))).toBe('/zh-tw/tools/pdf-to-docx');
   });
 
+  it('redirects reported missing localized tool URLs to default-language canonicals', () => {
+    const cases = [
+      ['https://pdfkoi.com/de/tools/flatten-pdf/', '/tools/flatten-pdf/'],
+      ['https://pdfkoi.com/pt/tools/pdf-to-zip/', '/tools/pdf-to-zip/'],
+      ['https://pdfkoi.com/ja/tools/ocg-manager/', '/tools/ocg-manager/'],
+      ['https://pdfkoi.com/de/tools/edit-attachments/', '/tools/edit-attachments/'],
+      ['https://pdfkoi.com/ko/tools/ocg-manager/', '/tools/ocg-manager/'],
+      ['https://pdfkoi.com/es/tools/pdf-to-pdfa/', '/tools/pdf-to-pdfa/'],
+      ['https://pdfkoi.com/pt/tools/djvu-to-pdf/', '/tools/djvu-to-pdf/'],
+      ['https://pdfkoi.com/ko/tools/pdf-reader/', '/tools/pdf-reader/'],
+      ['https://pdfkoi.com/pt/tools/pdf-to-pptx/', '/tools/pdf-to-pptx/'],
+      ['https://pdfkoi.com/fr/tools/djvu-to-pdf/', '/tools/djvu-to-pdf/'],
+      ['https://pdfkoi.com/de/tools/flatten-pdf?via=gsc', '/tools/flatten-pdf/?via=gsc'],
+    ] as const;
+
+    for (const [source, destination] of cases) {
+      expect(getLocaleRedirectPath(new URL(source))).toBe(destination);
+    }
+  });
+
   it('returns null when no locale redirect is needed', () => {
     expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/ja/tools'))).toBeNull();
   });

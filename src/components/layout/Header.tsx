@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Search, Menu, X } from 'lucide-react';
 import { getPublicPath, type Locale } from '@/lib/i18n/config';
+import { getToolPublicLocale } from '@/lib/seo/indexing-policy';
+import type { Tool } from '@/types/tool';
 import { Button } from '@/components/ui/Button';
 import { RecentFilesDropdown } from '@/components/common/RecentFilesDropdown';
 import { LanguageSelector } from './LanguageSelector';
@@ -119,6 +121,13 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
     }
   }, [isSearchOpen]);
 
+  const navigateToTool = useCallback((tool: Tool) => {
+    router.push(getPublicPath(`/tools/${tool.slug}`, getToolPublicLocale(locale, tool.id)));
+    setIsSearchOpen(false);
+    setSearchQuery('');
+    setSearchResults([]);
+  }, [locale, router]);
+
   // Handle keyboard navigation
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
@@ -130,23 +139,16 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
     } else if (e.key === 'Enter') {
       e.preventDefault();
       if (selectedIndex >= 0 && searchResults[selectedIndex]) {
-        navigateToTool(searchResults[selectedIndex].tool.slug);
+        navigateToTool(searchResults[selectedIndex].tool);
       } else if (searchResults.length > 0) {
-        navigateToTool(searchResults[0].tool.slug);
+        navigateToTool(searchResults[0].tool);
       }
     } else if (e.key === 'Escape') {
       setIsSearchOpen(false);
       setSearchQuery('');
       setSearchResults([]);
     }
-  }, [searchResults, selectedIndex]);
-
-  const navigateToTool = useCallback((slug: string) => {
-    router.push(getPublicPath(`/tools/${slug}`, locale));
-    setIsSearchOpen(false);
-    setSearchQuery('');
-    setSearchResults([]);
-  }, [locale, router]);
+  }, [navigateToTool, searchResults, selectedIndex]);
 
   const handleSearchToggle = useCallback(() => {
     setIsSearchOpen((prev) => !prev);
@@ -292,7 +294,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
                               return (
                                 <li key={result.tool.id}>
                                   <button
-                                    onClick={() => navigateToTool(result.tool.slug)}
+                                    onClick={() => navigateToTool(result.tool)}
                                     onMouseEnter={() => setSelectedIndex(index)}
                                     className={`
                                       w-full px-4 py-2.5 text-left flex items-center gap-3 transition-colors

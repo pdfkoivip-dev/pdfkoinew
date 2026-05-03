@@ -299,11 +299,15 @@ describe('Sitemap property tests', () => {
 
   it('keeps reported GSC 404 locale-tool combinations out of localized sitemaps', async () => {
     const cases = [
+      { locale: 'de', toolId: 'flatten-pdf', slug: 'flatten-pdf' },
+      { locale: 'pt', toolId: 'pdf-to-zip', slug: 'pdf-to-zip' },
+      { locale: 'ja', toolId: 'ocg-manager', slug: 'ocg-manager' },
+      { locale: 'de', toolId: 'edit-attachments', slug: 'edit-attachments' },
+      { locale: 'ko', toolId: 'ocg-manager', slug: 'ocg-manager' },
       { locale: 'es', toolId: 'pdf-to-pdfa', slug: 'pdf-to-pdfa' },
       { locale: 'pt', toolId: 'djvu-to-pdf', slug: 'djvu-to-pdf' },
       { locale: 'ko', toolId: 'pdf-reader', slug: 'pdf-reader' },
       { locale: 'pt', toolId: 'pdf-to-pptx', slug: 'pdf-to-pptx' },
-      { locale: 'pt', toolId: 'pdf-to-zip', slug: 'pdf-to-zip' },
       { locale: 'fr', toolId: 'djvu-to-pdf', slug: 'djvu-to-pdf' },
     ] as const;
 

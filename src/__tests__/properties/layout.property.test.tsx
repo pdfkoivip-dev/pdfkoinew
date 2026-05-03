@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import * as fc from 'fast-check';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import { getLocalizedPath, locales, type Locale } from '@/lib/i18n/config';
 import { 
@@ -29,10 +29,14 @@ vi.mock('next-intl', () => ({
   },
 }));
 
+const { routerPush } = vi.hoisted(() => ({
+  routerPush: vi.fn(),
+}));
+
 // Mock next/navigation
 vi.mock('next/navigation', () => ({
   useRouter: () => ({
-    push: vi.fn(),
+    push: routerPush,
     replace: vi.fn(),
   }),
   usePathname: () => '/tools',
@@ -52,6 +56,7 @@ describe('Layout Property Tests', () => {
   beforeEach(() => {
     // Clear localStorage before each test
     localStorage.clear();
+    routerPush.mockClear();
   });
 
   /**
@@ -131,22 +136,34 @@ describe('Layout Property Tests', () => {
             const headerBrand = screen.getByTestId('brand-name');
             const headerBrandText = headerBrand.textContent;
             unmountHeader();
-            
+
             // Render Footer
             const { unmount: unmountFooter } = render(<Footer locale={locale} />);
             const footerBrand = screen.getByTestId('footer-brand-name');
             const footerBrandText = footerBrand.textContent;
             unmountFooter();
-            
+
             // Brand should be consistent
             expect(headerBrandText).toBe(footerBrandText);
             expect(headerBrandText).toBe('PDFkoi');
-            
+
             return true;
           }
         ),
         { numRuns: 100 }
       );
+    });
+
+    it('Header search routes unavailable localized tools to their public canonical URL', async () => {
+      render(<Header locale="de" />);
+
+      fireEvent.click(screen.getByLabelText('Open search'));
+      fireEvent.change(screen.getByLabelText('Search tools'), { target: { value: 'flatten pdf' } });
+
+      await waitFor(() => expect(screen.getByText('Flatten PDF')).toBeInTheDocument());
+      fireEvent.click(screen.getByText('Flatten PDF'));
+
+      expect(routerPush).toHaveBeenCalledWith('/tools/flatten-pdf/');
     });
   });
 
