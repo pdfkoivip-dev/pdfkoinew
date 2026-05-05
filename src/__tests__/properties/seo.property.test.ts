@@ -216,6 +216,26 @@ describe('SEO Property Tests', () => {
       );
     });
 
+    it('default locale public paths use root English canonicals instead of /en/ URLs', () => {
+      const paths = [
+        '/',
+        '/tools',
+        '/tools/merge-pdf',
+        '/tools/category/convert-from-pdf',
+        '/contact',
+        '/terms',
+        '/compress-pdf-for-email',
+      ];
+
+      for (const path of paths) {
+        const publicPath = getPublicPath(path, defaultLocale);
+
+        expect(publicPath).not.toContain('/en/');
+        expect(publicPath).not.toBe('/en');
+        expect(publicPath === '/' || publicPath.endsWith('/')).toBe(true);
+      }
+    });
+
     it('default homepage metadata uses the root URL as canonical and x-default', () => {
       const metadata = generateHomeMetadata(defaultLocale);
       const languages = metadata.alternates?.languages as Record<string, string>;

@@ -1,10 +1,3 @@
-const DEFAULT_TOOL_CANONICAL_PATHS = new Set([
-  '/tools/merge-pdf',
-  '/tools/split-pdf',
-  '/tools/jpg-to-pdf',
-  '/tools/pdf-to-docx',
-]);
-
 const MISSING_LOCALIZED_TOOL_CANONICALS = new Map([
   ['/de/tools/flatten-pdf', '/tools/flatten-pdf/'],
   ['/pt/tools/pdf-to-zip', '/tools/pdf-to-zip/'],
@@ -18,6 +11,14 @@ const MISSING_LOCALIZED_TOOL_CANONICALS = new Map([
   ['/fr/tools/djvu-to-pdf', '/tools/djvu-to-pdf/'],
 ]);
 
+function ensureTrailingSlash(pathname) {
+  if (pathname === '/' || /\/[^/]+\.[a-z0-9]+$/i.test(pathname)) {
+    return pathname;
+  }
+
+  return pathname.endsWith('/') ? pathname : `${pathname}/`;
+}
+
 function buildRedirectPath(pathname, search) {
   const normalizedPath = pathname || '/';
   const pathWithoutTrailingSlash = normalizedPath.length > 1 && normalizedPath.endsWith('/')
@@ -30,10 +31,7 @@ function buildRedirectPath(pathname, search) {
 
   if (normalizedPath.startsWith('/en/')) {
     const nextPath = normalizedPath.slice('/en'.length) || '/';
-    if (DEFAULT_TOOL_CANONICAL_PATHS.has(nextPath)) {
-      return `${nextPath}/${search}`;
-    }
-    return `${nextPath}${search}`;
+    return `${ensureTrailingSlash(nextPath)}${search}`;
   }
 
   if (normalizedPath === '/zh-TW') {

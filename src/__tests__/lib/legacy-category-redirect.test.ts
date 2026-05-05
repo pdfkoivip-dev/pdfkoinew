@@ -38,6 +38,7 @@ describe('legacy category redirect helper', () => {
       ['/zh/tools/', 'category=convert-from-pdf', '/zh/tools/category/convert-from-pdf/'],
       ['/zh/tools/', 'category=optimize-repair', '/zh/tools/category/optimize-repair/'],
       ['/en/tools/', 'category=convert-to-pdf', '/tools/category/convert-to-pdf/'],
+      ['/en/tools', 'category=convert-to-pdf', '/tools/category/convert-to-pdf/'],
       ['/zh/tools/', 'category=edit-annotate', '/zh/tools/category/edit-annotate/'],
       ['/ja/tools/', 'category=optimize-repair', '/ja/tools/category/optimize-repair/'],
     ] as const;

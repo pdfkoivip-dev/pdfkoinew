@@ -8,7 +8,8 @@ export const routing = defineRouting({
   // Used when no locale matches
   defaultLocale,
 
-  // Always use locale prefix in URL for static export compatibility.
+  // Localized App Router pages are generated under locale prefixes.
+  // Production mirrors English pages to root canonical URLs after export.
   // `zh-TW` uses a lowercase public slug (`/zh-tw`), so tell next-intl
   // explicitly to avoid self-redirects in development.
   localePrefix: {

@@ -119,7 +119,7 @@ export function getLocalizedPath(path: string, locale: Locale): string {
 
 /**
  * Generate the canonical public path used by sitemap/metadata.
- * Keep the English homepage at `/`, while all other localized pages stay prefixed.
+ * English pages use root URLs; non-English pages keep their locale prefix.
  */
 export function getPublicPath(path: string, locale: Locale): string {
   return getLocalizedPath(path, locale);

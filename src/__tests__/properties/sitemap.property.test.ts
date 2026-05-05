@@ -333,6 +333,7 @@ describe('Sitemap property tests', () => {
       for (const entry of entries) {
         if (locale === defaultLocale) {
           expect(entry.url.startsWith(`${siteConfig.url}/`)).toBe(true);
+          expect(entry.url.includes(`${siteConfig.url}/en/`)).toBe(false);
           expect(entry.url.includes(`${siteConfig.url}/zh/`)).toBe(false);
           expect(entry.url.includes(`${siteConfig.url}/zh-tw/`)).toBe(false);
           expect(entry.url.includes(`${siteConfig.url}/ko/`)).toBe(false);
@@ -341,6 +342,116 @@ describe('Sitemap property tests', () => {
           expect(entry.url.startsWith(expectedPrefix)).toBe(true);
         }
       }
+    }
+  });
+
+  it('emits only clean production canonical URLs in every sitemap', async () => {
+    const sitemapUrls = new Set<string>();
+
+    for (const locale of locales) {
+      const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });
+
+      for (const entry of entries) {
+        sitemapUrls.add(entry.url);
+        const parsed = new URL(entry.url);
+
+        expect(parsed.origin).toBe(siteConfig.url);
+        expect(parsed.search).toBe('');
+        expect(parsed.hash).toBe('');
+        expect(parsed.hostname).toBe('pdfkoi.com');
+        expect(parsed.protocol).toBe('https:');
+        expect(parsed.pathname === '/' || parsed.pathname.endsWith('/')).toBe(true);
+        expect(parsed.pathname).not.toContain('/en/');
+        expect(parsed.pathname).not.toContain('/zh-TW/');
+      }
+    }
+
+    const expectedCanonicalUrls = [
+      `${siteConfig.url}/`,
+      `${siteConfig.url}/contact/`,
+      `${siteConfig.url}/terms/`,
+      `${siteConfig.url}/compress-pdf-for-email/`,
+      `${siteConfig.url}/compress-pdf-without-upload/`,
+      `${siteConfig.url}/merge-pdf-no-signup/`,
+      `${siteConfig.url}/tools/organize-pdf/`,
+      `${siteConfig.url}/tools/pdf-to-jpg/`,
+      `${siteConfig.url}/tools/merge-pdf/`,
+      `${siteConfig.url}/tools/split-pdf/`,
+      `${siteConfig.url}/tools/compress-pdf/`,
+      `${siteConfig.url}/tools/jpg-to-pdf/`,
+      `${siteConfig.url}/es/tools/compress-pdf/`,
+      `${siteConfig.url}/zh/tools/pdf-to-docx/`,
+      `${siteConfig.url}/zh-tw/tools/pdf-to-docx/`,
+      `${siteConfig.url}/zh-tw/tools/jpg-to-pdf/`,
+      `${siteConfig.url}/zh-tw/tools/pdf-to-jpg/`,
+    ];
+
+    for (const url of expectedCanonicalUrls) {
+      expect(sitemapUrls.has(url)).toBe(true);
+    }
+  });
+
+  it('classifies every latest GSC sample as a redirect/noindex URL or a clean canonical target', async () => {
+    const sitemapUrls = new Set<string>();
+
+    for (const locale of locales) {
+      const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });
+      for (const entry of entries) {
+        sitemapUrls.add(entry.url);
+      }
+    }
+
+    const redirectOnlyUrls = [
+      `${siteConfig.url}/en/tools/split-pdf/`,
+      'http://www.pdfkoi.com/',
+      `${siteConfig.url}/en/contact/`,
+      `${siteConfig.url}/en/`,
+      `${siteConfig.url}/en/compress-pdf-without-upload/`,
+      `${siteConfig.url}/en/tools/organize-pdf/`,
+      `${siteConfig.url}/tools/organize-pdf`,
+      `${siteConfig.url}/en/merge-pdf-no-signup/`,
+      `${siteConfig.url}/faq`,
+      `${siteConfig.url}/en/compress-pdf-for-email/`,
+      `${siteConfig.url}/en/tools/text-color/`,
+      `${siteConfig.url}/zh-tw/tools/jpg-to-pdf`,
+      `${siteConfig.url}/zh/tools/pdf-to-docx`,
+      `${siteConfig.url}/ja/tools/?category=edit-annotate`,
+      `${siteConfig.url}/en/tools/edit-metadata/`,
+      `${siteConfig.url}/zh/tools/?category=convert-from-pdf`,
+      `${siteConfig.url}/zh/tools/?category=optimize-repair`,
+      `${siteConfig.url}/en/tools/?category=convert-to-pdf`,
+      `${siteConfig.url}/es/tools/compress-pdf`,
+      `${siteConfig.url}/en/tools/heic-to-pdf/`,
+      `${siteConfig.url}/en/tools/pdf-to-docx/`,
+      `${siteConfig.url}/zh/tools/remove-metadata`,
+      `${siteConfig.url}/en/terms/`,
+      'https://www.pdfkoi.com/',
+      `${siteConfig.url}/zh-tw/tools/pdf-to-jpg`,
+      `${siteConfig.url}/zh/tools/?category=edit-annotate`,
+      `${siteConfig.url}/en/tools/pdf-to-jpg/`,
+      `${siteConfig.url}/tools/pdf-to-jpg`,
+      `${siteConfig.url}/en/tools/merge-pdf/`,
+      `${siteConfig.url}/tools/merge-pdf`,
+      `${siteConfig.url}/en/tools/compress-pdf/`,
+      `${siteConfig.url}/tools/compress-pdf`,
+      `${siteConfig.url}/en/tools/jpg-to-pdf/`,
+      `${siteConfig.url}/tools/jpg-to-pdf`,
+      'http://pdfkoi.com/',
+      `${siteConfig.url}/zh-TW/tools/pdf-to-docx`,
+      `${siteConfig.url}/zh-tw/tools/pdf-to-docx`,
+      `${siteConfig.url}/ja/tools/?category=optimize-repair`,
+      `${siteConfig.url}/en/tools/merge-pdf`,
+      `${siteConfig.url}/en/tools/split-pdf`,
+    ];
+
+    const noindexUrls = [
+      `${siteConfig.url}/en/tools/category/edit-annotate/`,
+      `${siteConfig.url}/en/tools/category/convert-from-pdf/`,
+      `${siteConfig.url}/en/tools/category/optimize-repair/`,
+    ];
+
+    for (const url of [...redirectOnlyUrls, ...noindexUrls]) {
+      expect(sitemapUrls.has(url)).toBe(false);
     }
   });
 

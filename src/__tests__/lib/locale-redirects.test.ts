@@ -7,11 +7,11 @@ describe('locale redirect helpers', () => {
   });
 
   it('redirects /en/tools to the default-language tools URL', () => {
-    expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/en/tools'))).toBe('/tools');
+    expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/en/tools'))).toBe('/tools/');
   });
 
   it('preserves query strings when redirecting English-prefixed URLs', () => {
-    expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/en/tools?foo=bar'))).toBe('/tools?foo=bar');
+    expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/en/tools?foo=bar'))).toBe('/tools/?foo=bar');
   });
 
   it('redirects /en/tools/merge-pdf to the trailing-slash canonical URL', () => {
@@ -65,6 +65,10 @@ describe('locale redirect helpers', () => {
       ['https://pdfkoi.com/en/tools/jpg-to-pdf/', '/tools/jpg-to-pdf/'],
       ['https://pdfkoi.com/en/tools/merge-pdf', '/tools/merge-pdf/'],
       ['https://pdfkoi.com/en/tools/split-pdf', '/tools/split-pdf/'],
+      ['https://pdfkoi.com/en/tools/text-color', '/tools/text-color/'],
+      ['https://pdfkoi.com/en/tools/heic-to-pdf', '/tools/heic-to-pdf/'],
+      ['https://pdfkoi.com/en/contact', '/contact/'],
+      ['https://pdfkoi.com/en/terms', '/terms/'],
     ] as const;
 
     for (const [source, destination] of cases) {

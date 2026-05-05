@@ -24,9 +24,14 @@ describe('default locale host routing config', () => {
   it('keeps Cloudflare Pages redirects for /en canonicalization but removes root-to-/en 200 proxies', () => {
     const config = readFileSync(cloudflareRedirectsPath, 'utf8');
 
+    expect(config).toContain('http://www.pdfkoi.com/*   https://pdfkoi.com/:splat   301!');
+    expect(config).toContain('https://www.pdfkoi.com/*  https://pdfkoi.com/:splat   301!');
+    expect(config).toContain('http://pdfkoi.com/*       https://pdfkoi.com/:splat   301!');
     expect(config).toContain('/en    /     301!');
     expect(config).toContain('/en/   /     301!');
     expect(config).toContain('/en/*  /:splat 301!');
+    expect(config).not.toContain('/tools    /en/tools');
+    expect(config).not.toContain('/tools/*  /en/tools/:splat');
 
     for (const target of staleRootToEnglishTargets) {
       expect(config).not.toContain(` ${target}`);
