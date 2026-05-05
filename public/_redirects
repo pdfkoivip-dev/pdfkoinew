@@ -9,3 +9,4 @@ http://pdfkoi.com/*       https://pdfkoi.com/:splat   301!
 /en/*  /:splat 301!
 /tools/merge-pdf   /tools/merge-pdf/   301!
 /tools/split-pdf   /tools/split-pdf/   301!
+/tools/pdf-to-docx /tools/pdf-to-docx/ 301!

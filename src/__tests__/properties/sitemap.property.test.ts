@@ -180,8 +180,13 @@ describe('Sitemap property tests', () => {
       { locale: 'en', url: `${siteConfig.url}/tools/reverse-pages/` },
       { locale: 'en', url: `${siteConfig.url}/tools/pdf-to-docx/` },
       { locale: 'en', url: `${siteConfig.url}/tools/jpg-to-pdf/` },
+      { locale: 'fr', url: `${siteConfig.url}/fr/tools/background-color/` },
+      { locale: 'en', url: `${siteConfig.url}/tools/page-dimensions/` },
+      { locale: 'en', url: `${siteConfig.url}/tools/add-attachments/` },
+      { locale: 'es', url: `${siteConfig.url}/es/tools/organize-pdf/` },
       { locale: 'ja', url: `${siteConfig.url}/ja/tools/rtf-to-pdf/` },
       { locale: 'es', url: `${siteConfig.url}/es/tools/extract-images/` },
+      { locale: 'es', url: `${siteConfig.url}/es/tools/pdf-to-bmp/` },
     ] as const;
 
     for (const { locale, url } of cases) {
@@ -281,6 +286,9 @@ describe('Sitemap property tests', () => {
       'http://www.pdfkoi.com/',
       `${siteConfig.url}/en/tools/merge-pdf`,
       `${siteConfig.url}/en/tools/split-pdf`,
+      `${siteConfig.url}/tools/pdf-to-docx`,
+      `${siteConfig.url}/en/tools/jpg-to-pdf`,
+      `${siteConfig.url}/es/tools/rtf-to-pdf/`,
     ] as const;
 
     const sitemapUrls = new Set<string>();
@@ -305,6 +313,7 @@ describe('Sitemap property tests', () => {
       { locale: 'de', toolId: 'edit-attachments', slug: 'edit-attachments' },
       { locale: 'ko', toolId: 'ocg-manager', slug: 'ocg-manager' },
       { locale: 'es', toolId: 'pdf-to-pdfa', slug: 'pdf-to-pdfa' },
+      { locale: 'es', toolId: 'rtf-to-pdf', slug: 'rtf-to-pdf' },
       { locale: 'pt', toolId: 'djvu-to-pdf', slug: 'djvu-to-pdf' },
       { locale: 'ko', toolId: 'pdf-reader', slug: 'pdf-reader' },
       { locale: 'pt', toolId: 'pdf-to-pptx', slug: 'pdf-to-pptx' },
@@ -455,8 +464,8 @@ describe('Sitemap property tests', () => {
     }
   });
 
-  it('keeps privacy and cookies pages out of every sitemap', async () => {
-    const blockedPathFragments = ['/privacy/', '/cookies/'];
+  it('keeps privacy, cookies, and manifest URLs out of every sitemap', async () => {
+    const blockedPathFragments = ['/privacy/', '/cookies/', '/manifest.webmanifest'];
 
     for (const locale of locales) {
       const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });

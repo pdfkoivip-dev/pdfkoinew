@@ -44,6 +44,7 @@ import { siteConfig } from '@/config/site';
 import { getToolContent, getToolContentLocales, hasLocalizedToolContent } from '@/config/tool-content';
 import { toolContentEn } from '@/config/tool-content/en';
 import { toolContentZhTw } from '@/config/tool-content/zh-TW';
+import robots from '@/app/robots';
 import type { Tool, ToolContent, FAQ } from '@/types/tool';
 
 /**
@@ -565,6 +566,13 @@ describe('SEO Property Tests', () => {
       expect(shouldIndexLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
     });
 
+    it('keeps the web app manifest out of crawlable page candidates', () => {
+      const rules = robots().rules;
+      const firstRule = Array.isArray(rules) ? rules[0] : rules;
+
+      expect(firstRule.disallow).toContain('/manifest.webmanifest');
+    });
+
     it('reported GSC noindex samples keep their intended indexability signals', () => {
       const nonEnglishLongTailCases = [
         ['pt', '/compress-pdf-without-upload'],
@@ -628,8 +636,13 @@ describe('SEO Property Tests', () => {
         ['zh', 'pdf-to-excel', '/zh/tools/pdf-to-excel/'],
         ['en', 'header-footer', '/tools/header-footer/'],
         ['en', 'reverse-pages', '/tools/reverse-pages/'],
+        ['fr', 'background-color', '/fr/tools/background-color/'],
+        ['en', 'page-dimensions', '/tools/page-dimensions/'],
+        ['en', 'add-attachments', '/tools/add-attachments/'],
+        ['es', 'organize-pdf', '/es/tools/organize-pdf/'],
         ['ja', 'rtf-to-pdf', '/ja/tools/rtf-to-pdf/'],
         ['es', 'extract-images', '/es/tools/extract-images/'],
+        ['es', 'pdf-to-bmp', '/es/tools/pdf-to-bmp/'],
       ] as const satisfies ReadonlyArray<readonly [Locale, string, string]>;
 
       for (const [locale, toolId, canonicalPath] of toolCases) {
@@ -656,6 +669,7 @@ describe('SEO Property Tests', () => {
     it('reported GSC 404 locale-tool combinations stay out of hreflang alternates', () => {
       const cases = [
         ['es', 'pdf-to-pdfa'],
+        ['es', 'rtf-to-pdf'],
         ['pt', 'djvu-to-pdf'],
         ['ko', 'pdf-reader'],
         ['pt', 'pdf-to-pptx'],

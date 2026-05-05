@@ -5,6 +5,7 @@ const MISSING_LOCALIZED_TOOL_CANONICALS = new Map([
   ['/de/tools/edit-attachments', '/tools/edit-attachments/'],
   ['/ko/tools/ocg-manager', '/tools/ocg-manager/'],
   ['/es/tools/pdf-to-pdfa', '/tools/pdf-to-pdfa/'],
+  ['/es/tools/rtf-to-pdf', '/tools/rtf-to-pdf/'],
   ['/pt/tools/djvu-to-pdf', '/tools/djvu-to-pdf/'],
   ['/ko/tools/pdf-reader', '/tools/pdf-reader/'],
   ['/pt/tools/pdf-to-pptx', '/tools/pdf-to-pptx/'],

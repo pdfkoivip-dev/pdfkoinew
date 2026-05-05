@@ -30,6 +30,7 @@ describe('default locale host routing config', () => {
     expect(config).toContain('/en    /     301!');
     expect(config).toContain('/en/   /     301!');
     expect(config).toContain('/en/*  /:splat 301!');
+    expect(config).toContain('/tools/pdf-to-docx /tools/pdf-to-docx/ 301!');
     expect(config).not.toContain('/tools    /en/tools');
     expect(config).not.toContain('/tools/*  /en/tools/:splat');
 

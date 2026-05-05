@@ -88,6 +88,7 @@ describe('locale redirect helpers', () => {
       ['https://pdfkoi.com/de/tools/edit-attachments/', '/tools/edit-attachments/'],
       ['https://pdfkoi.com/ko/tools/ocg-manager/', '/tools/ocg-manager/'],
       ['https://pdfkoi.com/es/tools/pdf-to-pdfa/', '/tools/pdf-to-pdfa/'],
+      ['https://pdfkoi.com/es/tools/rtf-to-pdf/', '/tools/rtf-to-pdf/'],
       ['https://pdfkoi.com/pt/tools/djvu-to-pdf/', '/tools/djvu-to-pdf/'],
       ['https://pdfkoi.com/ko/tools/pdf-reader/', '/tools/pdf-reader/'],
       ['https://pdfkoi.com/pt/tools/pdf-to-pptx/', '/tools/pdf-to-pptx/'],
