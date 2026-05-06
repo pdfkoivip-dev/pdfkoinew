@@ -26,6 +26,11 @@ export function RootDocument({
     <html lang={lang} dir={dir} suppressHydrationWarning>
       <head>
         <meta name="color-scheme" content="light dark" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517933870939152"
+          crossOrigin="anonymous"
+        />
         <style dangerouslySetInnerHTML={{ __html: 'html{scrollbar-gutter:stable}' }} />
       </head>
       <body className={`${fontVariables} min-h-screen bg-background text-foreground antialiased`}>
