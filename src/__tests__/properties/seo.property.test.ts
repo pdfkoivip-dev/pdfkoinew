@@ -675,6 +675,11 @@ describe('SEO Property Tests', () => {
         ['pt', 'pdf-to-pptx'],
         ['pt', 'pdf-to-zip'],
         ['fr', 'djvu-to-pdf'],
+        ['pt', 'jpg-to-pdf'],
+        ['zh', 'font-to-outline'],
+        ['zh', 'cbz-to-pdf'],
+        ['ko', 'compare-pdfs'],
+        ['ko', 'rtf-to-pdf'],
       ] as const;
 
       for (const [locale, toolId] of cases) {

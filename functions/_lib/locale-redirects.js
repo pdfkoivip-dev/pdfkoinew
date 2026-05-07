@@ -10,6 +10,11 @@ const MISSING_LOCALIZED_TOOL_CANONICALS = new Map([
   ['/ko/tools/pdf-reader', '/tools/pdf-reader/'],
   ['/pt/tools/pdf-to-pptx', '/tools/pdf-to-pptx/'],
   ['/fr/tools/djvu-to-pdf', '/tools/djvu-to-pdf/'],
+  ['/pt/tools/jpg-to-pdf', '/tools/jpg-to-pdf/'],
+  ['/zh/tools/font-to-outline', '/tools/font-to-outline/'],
+  ['/zh/tools/cbz-to-pdf', '/tools/cbz-to-pdf/'],
+  ['/ko/tools/compare-pdfs', '/tools/compare-pdfs/'],
+  ['/ko/tools/rtf-to-pdf', '/tools/rtf-to-pdf/'],
 ]);
 
 function ensureTrailingSlash(pathname) {

@@ -286,6 +286,7 @@ describe('Sitemap property tests', () => {
       'http://www.pdfkoi.com/',
       `${siteConfig.url}/en/tools/merge-pdf`,
       `${siteConfig.url}/en/tools/split-pdf`,
+      `${siteConfig.url}/zh-TW/`,
       `${siteConfig.url}/tools/pdf-to-docx`,
       `${siteConfig.url}/en/tools/jpg-to-pdf`,
       `${siteConfig.url}/es/tools/rtf-to-pdf/`,
@@ -318,6 +319,11 @@ describe('Sitemap property tests', () => {
       { locale: 'ko', toolId: 'pdf-reader', slug: 'pdf-reader' },
       { locale: 'pt', toolId: 'pdf-to-pptx', slug: 'pdf-to-pptx' },
       { locale: 'fr', toolId: 'djvu-to-pdf', slug: 'djvu-to-pdf' },
+      { locale: 'pt', toolId: 'jpg-to-pdf', slug: 'jpg-to-pdf' },
+      { locale: 'zh', toolId: 'font-to-outline', slug: 'font-to-outline' },
+      { locale: 'zh', toolId: 'cbz-to-pdf', slug: 'cbz-to-pdf' },
+      { locale: 'ko', toolId: 'compare-pdfs', slug: 'compare-pdfs' },
+      { locale: 'ko', toolId: 'rtf-to-pdf', slug: 'rtf-to-pdf' },
     ] as const;
 
     for (const { locale, toolId, slug } of cases) {

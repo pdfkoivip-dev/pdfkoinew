@@ -94,6 +94,11 @@ describe('locale redirect helpers', () => {
       ['https://pdfkoi.com/pt/tools/pdf-to-pptx/', '/tools/pdf-to-pptx/'],
       ['https://pdfkoi.com/fr/tools/djvu-to-pdf/', '/tools/djvu-to-pdf/'],
       ['https://pdfkoi.com/de/tools/flatten-pdf?via=gsc', '/tools/flatten-pdf/?via=gsc'],
+      ['https://pdfkoi.com/pt/tools/jpg-to-pdf/', '/tools/jpg-to-pdf/'],
+      ['https://pdfkoi.com/zh/tools/font-to-outline/', '/tools/font-to-outline/'],
+      ['https://pdfkoi.com/zh/tools/cbz-to-pdf/', '/tools/cbz-to-pdf/'],
+      ['https://pdfkoi.com/ko/tools/compare-pdfs/', '/tools/compare-pdfs/'],
+      ['https://pdfkoi.com/ko/tools/rtf-to-pdf/', '/tools/rtf-to-pdf/'],
     ] as const;
 
     for (const [source, destination] of cases) {
