@@ -25,6 +25,18 @@ export function RootDocument({
   return (
     <html lang={lang} dir={dir} suppressHydrationWarning>
       <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC0W1F8BTD" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-ZC0W1F8BTD');
+            `,
+          }}
+        />
         <meta name="color-scheme" content="light dark" />
         <script
           async
