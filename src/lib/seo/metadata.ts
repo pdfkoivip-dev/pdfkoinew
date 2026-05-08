@@ -16,6 +16,7 @@ import {
   shouldIndexCategoryHub,
   shouldIndexLocalizedToolPage,
   shouldIndexStaticPage,
+  shouldIndexToolsDirectory,
 } from '@/lib/seo/indexing-policy';
 import type { Tool, ToolContent } from '@/types/tool';
 
@@ -267,7 +268,7 @@ export function generateToolsListMetadata(locale: Locale, translations?: { title
     title: translations?.title || 'Free, Private, Browser-Based PDF Tools',
     description: translations?.description || 'Browse free, private, browser-based PDF tools for merging, splitting, compressing, converting, editing, and securing PDF files online.',
     keywords: ['PDF tools', 'all PDF tools', 'PDF editor', 'PDF converter', 'PDF merger', 'PDF splitter'],
-    noIndex: true,
+    noIndex: !shouldIndexToolsDirectory(),
   });
 }
 
@@ -320,28 +321,70 @@ export function generateFaqMetadata(locale: Locale, translations?: { title: stri
  * Generate metadata for the privacy page
  */
 export function generatePrivacyMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
-  return generateBaseMetadata({
+  const shouldIndexPage = locale === defaultLocale;
+  const metadata = generateBaseMetadata({
     locale,
     path: '/privacy',
     title: translations?.title || 'Privacy Policy',
     description: translations?.description || `${siteConfig.name} privacy policy. Your files never leave your device - all processing happens locally in your browser.`,
     keywords: ['privacy', 'security', 'data protection', 'local processing'],
-    noIndex: true,
+    noIndex: !shouldIndexPage,
+    followWhenNoIndex: true,
   });
+
+  if (!shouldIndexPage) {
+    metadata.alternates = {
+      canonical: getCanonicalUrl(defaultLocale, '/privacy'),
+      languages: {
+        en: getCanonicalUrl(defaultLocale, '/privacy'),
+        'x-default': getCanonicalUrl(defaultLocale, '/privacy'),
+      },
+    };
+
+    if (metadata.openGraph) {
+      metadata.openGraph = {
+        ...metadata.openGraph,
+        url: getCanonicalUrl(defaultLocale, '/privacy'),
+      };
+    }
+  }
+
+  return metadata;
 }
 
 /**
  * Generate metadata for the cookies page
  */
 export function generateCookiesMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
-  return generateBaseMetadata({
+  const shouldIndexPage = locale === defaultLocale;
+  const metadata = generateBaseMetadata({
     locale,
     path: '/cookies',
     title: translations?.title || 'Cookies Policy',
     description: translations?.description || `${siteConfig.name} Cookies Policy. Learn which cookies and local storage features are used for essential site functionality and preferences.`,
     keywords: ['cookies', 'cookies policy', 'local storage', 'privacy', 'website preferences'],
-    noIndex: true,
+    noIndex: !shouldIndexPage,
+    followWhenNoIndex: true,
   });
+
+  if (!shouldIndexPage) {
+    metadata.alternates = {
+      canonical: getCanonicalUrl(defaultLocale, '/cookies'),
+      languages: {
+        en: getCanonicalUrl(defaultLocale, '/cookies'),
+        'x-default': getCanonicalUrl(defaultLocale, '/cookies'),
+      },
+    };
+
+    if (metadata.openGraph) {
+      metadata.openGraph = {
+        ...metadata.openGraph,
+        url: getCanonicalUrl(defaultLocale, '/cookies'),
+      };
+    }
+  }
+
+  return metadata;
 }
 
 /**

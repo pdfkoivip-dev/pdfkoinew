@@ -50,9 +50,11 @@ describe('Sitemap property tests', () => {
     }
 
     for (const category of TOOL_CATEGORIES) {
-      expect(entries).not.toContainEqual(
+      expect(entries).toContainEqual(
         expect.objectContaining({
           url: `${siteConfig.url}${getPublicPath(`/tools/category/${category}`, defaultLocale)}`,
+          changeFrequency: 'weekly',
+          priority: 0.85,
         })
       );
     }
@@ -82,13 +84,15 @@ describe('Sitemap property tests', () => {
     }
   });
 
-  it('keeps tools directory pages out of every sitemap', async () => {
+  it('includes tools directory pages in every locale sitemap', async () => {
     for (const locale of locales) {
       const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });
 
-      expect(entries).not.toContainEqual(
+      expect(entries).toContainEqual(
         expect.objectContaining({
           url: `${siteConfig.url}${getPublicPath('/tools', locale)}`,
+          changeFrequency: 'weekly',
+          priority: 0.78,
         })
       );
     }
@@ -216,14 +220,9 @@ describe('Sitemap property tests', () => {
       `${siteConfig.url}/es/compress-pdf-for-email/`,
       `${siteConfig.url}/ja/merge-pdf-no-signup/`,
       `${siteConfig.url}/es/merge-pdf-no-signup/`,
-      `${siteConfig.url}/de/tools/`,
       `${siteConfig.url}/en/tools/?q=(search_term_string}`,
-      `${siteConfig.url}/ko/tools/`,
-      `${siteConfig.url}/ja/tools/`,
       `${siteConfig.url}/pt/cookies/`,
-      `${siteConfig.url}/cookies/`,
       `${siteConfig.url}/en/cookies/`,
-      `${siteConfig.url}/de/tools/category/secure-pdf/`,
       `${siteConfig.url}/ko/cookies/`,
     ] as const;
 
@@ -385,6 +384,10 @@ describe('Sitemap property tests', () => {
       `${siteConfig.url}/`,
       `${siteConfig.url}/contact/`,
       `${siteConfig.url}/terms/`,
+      `${siteConfig.url}/privacy/`,
+      `${siteConfig.url}/cookies/`,
+      `${siteConfig.url}/tools/`,
+      `${siteConfig.url}/tools/category/convert-from-pdf/`,
       `${siteConfig.url}/compress-pdf-for-email/`,
       `${siteConfig.url}/compress-pdf-without-upload/`,
       `${siteConfig.url}/merge-pdf-no-signup/`,
@@ -459,28 +462,29 @@ describe('Sitemap property tests', () => {
       `${siteConfig.url}/en/tools/split-pdf`,
     ];
 
-    const noindexUrls = [
-      `${siteConfig.url}/en/tools/category/edit-annotate/`,
-      `${siteConfig.url}/en/tools/category/convert-from-pdf/`,
-      `${siteConfig.url}/en/tools/category/optimize-repair/`,
-    ];
-
-    for (const url of [...redirectOnlyUrls, ...noindexUrls]) {
+    for (const url of redirectOnlyUrls) {
       expect(sitemapUrls.has(url)).toBe(false);
     }
   });
 
-  it('keeps privacy, cookies, and manifest URLs out of every sitemap', async () => {
-    const blockedPathFragments = ['/privacy/', '/cookies/', '/manifest.webmanifest'];
+  it('keeps localized privacy, localized cookies, and manifest URLs out of every sitemap while indexing root legal pages', async () => {
+    const sitemapUrls = new Set<string>();
 
     for (const locale of locales) {
       const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });
 
       for (const entry of entries) {
-        for (const blockedPathFragment of blockedPathFragments) {
-          expect(entry.url).not.toContain(blockedPathFragment);
+        sitemapUrls.add(entry.url);
+        expect(entry.url).not.toContain('/manifest.webmanifest');
+
+        if (locale !== defaultLocale) {
+          expect(entry.url).not.toContain(`${getPublicPath('/privacy', locale)}`);
+          expect(entry.url).not.toContain(`${getPublicPath('/cookies', locale)}`);
         }
       }
     }
+
+    expect(sitemapUrls.has(`${siteConfig.url}/privacy/`)).toBe(true);
+    expect(sitemapUrls.has(`${siteConfig.url}/cookies/`)).toBe(true);
   });
 });

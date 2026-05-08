@@ -246,25 +246,35 @@ describe('SEO Property Tests', () => {
       expect(languages['x-default']).toBe(`${siteConfig.url}/`);
     });
 
-    it('privacy and cookies pages are intentionally noindex across locales', () => {
+    it('default privacy and cookies pages are indexable while localized variants canonicalize to english', () => {
+      const privacyCanonical = `${siteConfig.url}/privacy/`;
+      const cookiesCanonical = `${siteConfig.url}/cookies/`;
+
       for (const locale of locales) {
         const privacyMetadata = generatePrivacyMetadata(locale);
         const cookiesMetadata = generateCookiesMetadata(locale);
 
-        expect(privacyMetadata.robots).toMatchObject({ index: false, follow: false });
-        expect(cookiesMetadata.robots).toMatchObject({ index: false, follow: false });
-        expect(privacyMetadata.alternates?.languages).toBeUndefined();
-        expect(cookiesMetadata.alternates?.languages).toBeUndefined();
+        if (locale === defaultLocale) {
+          expect(privacyMetadata.robots).toMatchObject({ index: true, follow: true });
+          expect(cookiesMetadata.robots).toMatchObject({ index: true, follow: true });
+          expect(privacyMetadata.alternates?.canonical).toBe(privacyCanonical);
+          expect(cookiesMetadata.alternates?.canonical).toBe(cookiesCanonical);
+        } else {
+          expect(privacyMetadata.robots).toMatchObject({ index: false, follow: true });
+          expect(cookiesMetadata.robots).toMatchObject({ index: false, follow: true });
+          expect(privacyMetadata.alternates?.canonical).toBe(privacyCanonical);
+          expect(cookiesMetadata.alternates?.canonical).toBe(cookiesCanonical);
+        }
       }
     });
 
-    it('tools directory is intentionally noindex across locales', () => {
-      expect(shouldIndexToolsDirectory()).toBe(false);
+    it('tools directory is indexable across locales', () => {
+      expect(shouldIndexToolsDirectory()).toBe(true);
 
       for (const locale of locales) {
         const toolsMetadata = generateToolsListMetadata(locale);
-        expect(toolsMetadata.robots).toMatchObject({ index: false, follow: false });
-        expect(toolsMetadata.alternates?.languages).toBeUndefined();
+        expect(toolsMetadata.robots).toMatchObject({ index: true, follow: true });
+        expect(toolsMetadata.alternates?.languages).toBeDefined();
       }
     });
 
@@ -288,9 +298,7 @@ describe('SEO Property Tests', () => {
       }
     });
 
-    it('category hubs are intentionally noindex with english canonical fallback across locales', () => {
-      const englishCanonical = `${siteConfig.url}/tools/category/convert-to-pdf/`;
-
+    it('category hubs are indexable with localized canonicals across locales', () => {
       for (const locale of locales) {
         const metadata = generateCategoryMetadata(locale, 'convert-to-pdf', {
           title: 'Convert to PDF Tools',
@@ -299,10 +307,10 @@ describe('SEO Property Tests', () => {
           noIndex: !shouldIndexCategoryHub(locale),
         });
 
-        expect(shouldIndexCategoryHub(locale)).toBe(false);
-        expect(metadata.robots).toMatchObject({ index: false, follow: true });
-        expect(metadata.alternates?.canonical).toBe(englishCanonical);
-        expect(metadata.openGraph?.url).toBe(englishCanonical);
+        expect(shouldIndexCategoryHub(locale)).toBe(true);
+        expect(metadata.robots).toMatchObject({ index: true, follow: true });
+        expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}${getPublicPath('/tools/category/convert-to-pdf', locale)}`);
+        expect(metadata.openGraph?.url).toBe(`${siteConfig.url}${getPublicPath('/tools/category/convert-to-pdf', locale)}`);
         expect(metadata.alternates?.languages).toEqual(
           getAlternateUrlsForLocales('/tools/category/convert-to-pdf', getCategoryHubIndexableLocales())
         );
@@ -604,21 +612,22 @@ describe('SEO Property Tests', () => {
         expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}${getPublicPath(path, defaultLocale)}`);
       }
 
-      for (const locale of ['fr', 'pt', 'en', 'ko'] as const) {
-        const metadata = locale === 'fr'
-          ? generatePrivacyMetadata(locale)
-          : generateCookiesMetadata(locale);
+      const privacyMetadata = generatePrivacyMetadata('en');
+      const cookiesMetadata = generateCookiesMetadata('en');
+      const localizedCookiesMetadata = generateCookiesMetadata('ko');
 
-        expect(metadata.robots).toMatchObject({ index: false, follow: false });
-      }
+      expect(privacyMetadata.robots).toMatchObject({ index: true, follow: true });
+      expect(cookiesMetadata.robots).toMatchObject({ index: true, follow: true });
+      expect(localizedCookiesMetadata.robots).toMatchObject({ index: false, follow: true });
+      expect(localizedCookiesMetadata.alternates?.canonical).toBe(`${siteConfig.url}/cookies/`);
 
       for (const locale of ['de', 'ko', 'ja'] as const) {
-        expect(generateToolsListMetadata(locale).robots).toMatchObject({ index: false, follow: false });
+        expect(generateToolsListMetadata(locale).robots).toMatchObject({ index: true, follow: true });
       }
 
       const categoryMetadata = generateCategoryMetadata('de', 'secure-pdf');
-      expect(categoryMetadata.robots).toMatchObject({ index: false, follow: true });
-      expect(categoryMetadata.alternates?.canonical).toBe(`${siteConfig.url}/tools/category/secure-pdf/`);
+      expect(categoryMetadata.robots).toMatchObject({ index: true, follow: true });
+      expect(categoryMetadata.alternates?.canonical).toBe(`${siteConfig.url}/de/tools/category/secure-pdf/`);
 
       const tool = tools.find((candidate) => candidate.id === 'pdf-booklet');
       const content = getToolContent('pt', 'pdf-booklet');

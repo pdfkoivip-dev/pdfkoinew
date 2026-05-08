@@ -1,3 +1,22 @@
+const CANONICAL_DEFAULT_LOCALE_PAGE_PATHS = new Set([
+  '/compress-pdf-for-email',
+  '/compress-pdf-without-upload',
+  '/merge-pdf-no-signup',
+  '/privacy',
+  '/cookies',
+]);
+
+const NON_DEFAULT_LOCALE_SLUGS = new Set([
+  'ja',
+  'ko',
+  'es',
+  'fr',
+  'de',
+  'zh',
+  'zh-tw',
+  'pt',
+]);
+
 const MISSING_LOCALIZED_TOOL_CANONICALS = new Map([
   ['/de/tools/flatten-pdf', '/tools/flatten-pdf/'],
   ['/pt/tools/pdf-to-zip', '/tools/pdf-to-zip/'],
@@ -23,6 +42,20 @@ function ensureTrailingSlash(pathname) {
   }
 
   return pathname.endsWith('/') ? pathname : `${pathname}/`;
+}
+
+function getDefaultLocalePageRedirectPath(pathWithoutTrailingSlash) {
+  const match = pathWithoutTrailingSlash.match(/^\/([^/]+)(\/.*)$/);
+  if (!match) {
+    return null;
+  }
+
+  const [, localeSlug, pagePath] = match;
+  if (!NON_DEFAULT_LOCALE_SLUGS.has(localeSlug.toLowerCase())) {
+    return null;
+  }
+
+  return CANONICAL_DEFAULT_LOCALE_PAGE_PATHS.has(pagePath) ? ensureTrailingSlash(pagePath) : null;
 }
 
 function buildRedirectPath(pathname, search) {
@@ -51,6 +84,11 @@ function buildRedirectPath(pathname, search) {
   if (normalizedPath.startsWith('/zh-TW/')) {
     const nextPath = normalizedPath.slice('/zh-TW'.length) || '/';
     return `/zh-tw${nextPath}${search}`;
+  }
+
+  const defaultLocalePageRedirect = getDefaultLocalePageRedirectPath(pathWithoutTrailingSlash);
+  if (defaultLocalePageRedirect) {
+    return `${defaultLocalePageRedirect}${search}`;
   }
 
   const missingLocalizedToolCanonical = MISSING_LOCALIZED_TOOL_CANONICALS.get(pathWithoutTrailingSlash);

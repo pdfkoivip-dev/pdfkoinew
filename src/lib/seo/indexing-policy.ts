@@ -1,13 +1,13 @@
 import { defaultLocale, locales, type Locale } from '@/lib/i18n/config';
 import { hasLocalizedToolContent } from '@/config/tool-content';
 
-export const INDEXABLE_STATIC_PAGE_PATHS = ['/', '/workflow', '/faq', '/contact', '/terms'] as const;
+export const INDEXABLE_STATIC_PAGE_PATHS = ['/', '/workflow', '/faq', '/contact', '/terms', '/privacy', '/cookies'] as const;
 
-const CATEGORY_HUB_INDEXABLE_LOCALES = new Set<Locale>();
+const CATEGORY_HUB_INDEXABLE_LOCALES = new Set<Locale>(locales);
 const INDEXABLE_STATIC_PAGE_SET = new Set<string>(INDEXABLE_STATIC_PAGE_PATHS);
 
 export function shouldIndexToolsDirectory(): boolean {
-  return false;
+  return true;
 }
 
 export function shouldIndexCategoryHub(locale: Locale): boolean {
@@ -19,7 +19,7 @@ export function getCategoryHubIndexableLocales(): Locale[] {
 }
 
 export function shouldIndexStaticPage(locale: Locale, path: string): boolean {
-  if (path === '/about') {
+  if (path === '/about' || path === '/privacy' || path === '/cookies') {
     return locale === defaultLocale;
   }
 

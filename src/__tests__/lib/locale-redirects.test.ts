@@ -80,6 +80,39 @@ describe('locale redirect helpers', () => {
     expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/zh-TW/tools/pdf-to-docx'))).toBe('/zh-tw/tools/pdf-to-docx');
   });
 
+  it('redirects localized default-language landing and legal pages to root English canonicals', () => {
+    const cases = [
+      ['https://pdfkoi.com/ko/merge-pdf-no-signup/', '/merge-pdf-no-signup/'],
+      ['https://pdfkoi.com/zh-tw/compress-pdf-for-email/', '/compress-pdf-for-email/'],
+      ['https://pdfkoi.com/fr/compress-pdf-for-email/', '/compress-pdf-for-email/'],
+      ['https://pdfkoi.com/fr/compress-pdf-without-upload/', '/compress-pdf-without-upload/'],
+      ['https://pdfkoi.com/pt/compress-pdf-without-upload/', '/compress-pdf-without-upload/'],
+      ['https://pdfkoi.com/ko/compress-pdf-for-email/', '/compress-pdf-for-email/'],
+      ['https://pdfkoi.com/zh-tw/merge-pdf-no-signup/', '/merge-pdf-no-signup/'],
+      ['https://pdfkoi.com/pt/compress-pdf-for-email/', '/compress-pdf-for-email/'],
+      ['https://pdfkoi.com/ko/compress-pdf-without-upload/', '/compress-pdf-without-upload/'],
+      ['https://pdfkoi.com/pt/merge-pdf-no-signup/', '/merge-pdf-no-signup/'],
+      ['https://pdfkoi.com/de/compress-pdf-without-upload/', '/compress-pdf-without-upload/'],
+      ['https://pdfkoi.com/de/merge-pdf-no-signup/', '/merge-pdf-no-signup/'],
+      ['https://pdfkoi.com/fr/merge-pdf-no-signup/', '/merge-pdf-no-signup/'],
+      ['https://pdfkoi.com/es/compress-pdf-without-upload/', '/compress-pdf-without-upload/'],
+      ['https://pdfkoi.com/ja/compress-pdf-without-upload/', '/compress-pdf-without-upload/'],
+      ['https://pdfkoi.com/ja/compress-pdf-for-email/', '/compress-pdf-for-email/'],
+      ['https://pdfkoi.com/es/compress-pdf-for-email/', '/compress-pdf-for-email/'],
+      ['https://pdfkoi.com/ja/merge-pdf-no-signup/', '/merge-pdf-no-signup/'],
+      ['https://pdfkoi.com/es/merge-pdf-no-signup?via=gsc', '/merge-pdf-no-signup/?via=gsc'],
+      ['https://pdfkoi.com/ja/privacy/', '/privacy/'],
+      ['https://pdfkoi.com/fr/privacy/', '/privacy/'],
+      ['https://pdfkoi.com/zh/cookies/', '/cookies/'],
+      ['https://pdfkoi.com/pt/cookies/', '/cookies/'],
+      ['https://pdfkoi.com/ko/cookies?via=gsc', '/cookies/?via=gsc'],
+    ] as const;
+
+    for (const [source, destination] of cases) {
+      expect(getLocaleRedirectPath(new URL(source))).toBe(destination);
+    }
+  });
+
   it('redirects reported missing localized tool URLs to default-language canonicals', () => {
     const cases = [
       ['https://pdfkoi.com/de/tools/flatten-pdf/', '/tools/flatten-pdf/'],

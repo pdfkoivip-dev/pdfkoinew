@@ -27,6 +27,7 @@ import {
   shouldGenerateLocalizedToolPage,
   shouldIndexCategoryHub,
   shouldIndexStaticPage,
+  shouldIndexToolsDirectory,
 } from '@/lib/seo/indexing-policy';
 
 export const dynamic = 'force-static';
@@ -34,6 +35,7 @@ export const dynamic = 'force-static';
 const PRIORITY = {
   home: 1.0,
   toolCategory: 0.85,
+  toolsDirectory: 0.78,
   toolPage: 0.8,
   static: 0.6,
   landingPage: 0.82,
@@ -54,6 +56,8 @@ const INDEXABLE_STATIC_PAGES = [
   { path: '/faq', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static, lastModKey: 'faq' },
   { path: '/contact', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static, lastModKey: 'contact' },
   { path: '/terms', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static, lastModKey: 'terms' },
+  { path: '/privacy', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static, lastModKey: 'privacy' },
+  { path: '/cookies', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static, lastModKey: 'cookies' },
 ] as const satisfies ReadonlyArray<{
   path: '' | (typeof INDEXABLE_STATIC_PAGE_PATHS)[number] | '/about';
   priority: number;
@@ -92,6 +96,14 @@ const PAGE_LASTMOD_SOURCES = {
   ],
   terms: [
     'src/app/(localized)/[locale]/terms',
+    'messages',
+  ],
+  privacy: [
+    'src/app/(localized)/[locale]/privacy',
+    'messages',
+  ],
+  cookies: [
+    'src/app/(localized)/[locale]/cookies',
     'messages',
   ],
   toolPage: [
@@ -229,6 +241,19 @@ export function generateLocaleEntries(locale: Locale): MetadataRoute.Sitemap {
         lastModified: getLastModifiedForGroup(page.lastModKey),
         changeFrequency: page.changeFrequency,
         priority: page.priority,
+      })
+    );
+  }
+
+  if (shouldIndexToolsDirectory()) {
+    entries.push(
+      createSitemapEntry({
+        path: '/tools',
+        locale,
+        alternateLocales: locales,
+        lastModified: toolPageLastModified,
+        changeFrequency: CHANGE_FREQUENCY.toolPage,
+        priority: PRIORITY.toolsDirectory,
       })
     );
   }
