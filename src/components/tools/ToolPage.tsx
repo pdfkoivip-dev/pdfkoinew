@@ -13,7 +13,7 @@ import { getToolIcon } from '@/config/icons';
 import { getPreferredToolAnchorText } from '@/lib/seo/internal-linking';
 import { normalizeInternalHtmlLinks } from '@/lib/seo/normalize-internal-links';
 import Link from 'next/link';
-import { Home, ChevronRight } from 'lucide-react';
+import { Home, ChevronRight, HelpCircle, MessageSquare } from 'lucide-react';
 import { FavoriteButton } from '@/components/ui/FavoriteButton';
 
 export interface ToolPageProps {
@@ -230,6 +230,7 @@ function ToolHeader({ tool, content }: ToolHeaderProps) {
     .join(' ');
 
   const IconComponent = getToolIcon(tool.icon);
+  const t = useTranslations();
 
   return (
     <header className="text-center" data-testid="tool-page-header" itemScope itemType="https://schema.org/SoftwareApplication">
@@ -258,8 +259,24 @@ function ToolHeader({ tool, content }: ToolHeaderProps) {
       >
         {content.metaDescription}
       </p>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center gap-3 mb-4">
         <FavoriteButton toolId={tool.id} size="lg" showLabel />
+      </div>
+      <div className="flex items-center justify-center gap-3">
+        <Link
+          href={getPublicPath('/faq', 'en' as Locale)}
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-primary))] transition-colors rounded-lg hover:bg-[hsl(var(--color-muted)/0.3)]"
+        >
+          <HelpCircle className="w-4 h-4" />
+          <span>{t('tools.helpLink')}</span>
+        </Link>
+        <Link
+          href={getPublicPath('/contact', 'en' as Locale)}
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-primary))] transition-colors rounded-lg hover:bg-[hsl(var(--color-muted)/0.3)]"
+        >
+          <MessageSquare className="w-4 h-4" />
+          <span>{t('tools.feedbackLink')}</span>
+        </Link>
       </div>
     </header>
   );

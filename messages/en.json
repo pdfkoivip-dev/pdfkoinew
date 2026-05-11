@@ -223,7 +223,7 @@
       "general": {
         "whatIs": {
           "question": "What is PDFkoi?",
-          "answer": "PDFkoi is a free, private, browser-based PDF toolkit that runs entirely in your browser. It offers 95+ PDF tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server."
+          "answer": "PDFkoi is a free, privacy-first PDF toolkit that runs entirely in your browser. It offers 95+ PDF tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server.\n\nKey features:\n• 95+ professional PDF tools covering all common tasks\n• Browser-based processing - your files stay on your device\n• No registration or account required\n• Completely free with no hidden costs or premium tiers\n• Works on any device with a modern browser\n• Available in 9 languages\n\nUnlike traditional PDF services that require file uploads, PDFkoi processes everything locally using WebAssembly technology. This means faster processing, better privacy, and no file size limits imposed by server restrictions."
         },
         "isFree": {
           "question": "Is PDFkoi really free?",
@@ -237,11 +237,11 @@
       "privacy": {
         "uploaded": {
           "question": "Are my files uploaded to a server?",
-          "answer": "No, your files are never uploaded to any server. All PDF processing happens locally in your browser using JavaScript and WebAssembly. Your files never leave your device."
+          "answer": "No, your files are never uploaded to any server. All PDF processing happens locally in your browser using JavaScript and WebAssembly technology.\n\nThis means:\n• Faster processing - no upload/download wait time\n• Better privacy - no server storage or access logs\n• Works offline - once the page loads, you can process files without internet\n• No file size limits from server restrictions\n\nThis approach is ideal for sensitive documents like contracts, tax forms, medical records, or any confidential files you don't want to leave your device."
         },
         "safe": {
           "question": "Is it safe to use PDFkoi with sensitive documents?",
-          "answer": "Yes, PDFkoi is designed with privacy in mind. Since all processing happens locally in your browser, your sensitive documents remain on your device and are never transmitted over the internet."
+          "answer": "Yes, PDFkoi is designed with privacy as the top priority. Since all processing happens locally in your browser, your sensitive documents remain on your device and are never transmitted over the internet.\n\nSecurity benefits:\n• Zero server exposure - files never leave your computer\n• No data collection - we don't track or store your documents\n• No account required - no personal information needed\n• Open source - our code is transparent and verifiable\n\nThis makes PDFkoi particularly suitable for:\n• Legal contracts and agreements\n• Financial statements and tax documents\n• Medical records and health information\n• Personal identification documents\n• Confidential business files"
         },
         "storage": {
           "question": "What happens to my files after processing?",
@@ -251,7 +251,7 @@
       "features": {
         "operations": {
           "question": "What PDF operations can I perform?",
-          "answer": "PDFkoi offers 95+ tools including: merge, split, compress, convert (to/from images, text, JSON), edit, annotate, sign, add watermarks, encrypt/decrypt, OCR, and many more."
+          "answer": "PDFkoi offers 95+ tools covering all common PDF tasks. Here are the main categories:\n\nEditing & Annotation:\n• Add text, images, signatures, and watermarks\n• Highlight, redact, and annotate documents\n• Fill PDF forms and add page numbers\n\nConversion:\n• Convert to PDF: Word, Excel, PowerPoint, images (JPG, PNG, HEIC), ebooks\n• Convert from PDF: Word, Excel, images, text, JSON\n\nOrganization:\n• Merge multiple PDFs into one\n• Split PDFs by page or range\n• Reorder, rotate, and delete pages\n• Extract specific pages\n\nOptimization:\n• Compress PDFs for email and web\n• Repair corrupted files\n• Remove metadata and hidden data\n• Convert to PDF/A for archiving\n\nSecurity:\n• Encrypt with password protection\n• Remove passwords and restrictions\n• Change document permissions\n• Sanitize sensitive information\n\nAll tools work directly in your browser with no uploads required."
         },
         "merge": {
           "question": "Can I merge multiple PDF files?",
@@ -273,7 +273,7 @@
         },
         "sizeLimit": {
           "question": "Is there a file size limit?",
-          "answer": "Most tools support files up to 100MB, with some tools like merge and compress supporting up to 500MB. These limits are in place to ensure smooth performance in your browser."
+          "answer": "Most tools support files up to 100MB, with some tools like merge and compress supporting up to 500MB. These limits exist to ensure smooth performance in your browser.\n\nWhy these limits?\n• Browser memory constraints - processing happens in your device's RAM\n• Performance optimization - larger files take longer to process\n• Device compatibility - ensures the tools work on most computers and tablets\n\nTips for large files:\n• Close other browser tabs to free up memory\n• Use the compress tool first to reduce file size\n• Split large PDFs into smaller sections, process them separately, then merge\n• For files over 500MB, consider using desktop PDF software\n\nNote: Unlike server-based tools that impose artificial limits for business reasons, our limits are purely technical and based on browser capabilities."
         },
         "slow": {
           "question": "Why is processing slow for large files?",
@@ -423,24 +423,24 @@
     }
   },
   "errors": {
-    "fileTooLarge": "File is too large. Maximum size is {maxSize}MB.",
-    "fileTypeInvalid": "Invalid file type. Please upload a {acceptedTypes} file.",
-    "fileCorrupted": "The file appears to be corrupted or unreadable.",
-    "fileEmpty": "The file is empty.",
-    "fileNotPdf": "The file is not a valid PDF.",
-    "processingFailed": "Processing failed. Please try again.",
-    "processingCancelled": "Operation was cancelled.",
-    "invalidPassword": "The password you entered is incorrect. Please check and try again.",
-    "networkError": "Network error. Please check your connection.",
-    "pdfEncrypted": "This PDF is password protected. Please decrypt it first.",
-    "pdfMalformed": "The PDF structure is invalid. Try the repair tool first.",
-    "processingTimeout": "Operation took too long. Try with a smaller file.",
-    "memoryExceeded": "Browser ran out of memory. Close other tabs and try again.",
-    "workerFailed": "Processing worker crashed. Please refresh and try again.",
-    "browserNotSupported": "Your browser does not support this feature.",
-    "invalidPageRange": "Invalid page range specified.",
-    "invalidOptions": "Invalid options provided.",
-    "unknown": "An unexpected error occurred. Please try again.",
+    "fileTooLarge": "File is too large. Maximum size is {maxSize}MB. Try compressing the file first or splitting it into smaller parts.",
+    "fileTypeInvalid": "Invalid file type. Please upload a {acceptedTypes} file. Check that your file has the correct extension and is not corrupted.",
+    "fileCorrupted": "The file appears to be corrupted or unreadable. Try opening it in another program first, or use our repair tool if it's a PDF.",
+    "fileEmpty": "The file is empty or contains no readable content. Please check the file and try again.",
+    "fileNotPdf": "The file is not a valid PDF. If you're trying to convert to PDF, use the appropriate conversion tool first.",
+    "processingFailed": "Processing failed. This could be due to file complexity or browser limitations. Try with a simpler file or refresh the page and try again.",
+    "processingCancelled": "Operation was cancelled by you or the system. You can start over by uploading your file again.",
+    "invalidPassword": "The password you entered is incorrect. Please check for typos, caps lock, and try again. If you've forgotten the password, you'll need the original source.",
+    "networkError": "Network error occurred. Please check your internet connection and try again. If the problem persists, try refreshing the page.",
+    "pdfEncrypted": "This PDF is password protected. Please use our unlock tool first, or if you know the password, enter it when prompted.",
+    "pdfMalformed": "The PDF structure is invalid or damaged. Try using our PDF repair tool first to fix structural issues before processing.",
+    "processingTimeout": "Operation took too long and was stopped. Try with a smaller file, reduce quality settings, or close other browser tabs to free up resources.",
+    "memoryExceeded": "Browser ran out of memory. Close other tabs and applications, then try again. For very large files, consider splitting them first.",
+    "workerFailed": "Processing worker crashed unexpectedly. Please refresh the page and try again. If the problem persists, try a different browser.",
+    "browserNotSupported": "Your browser does not support this feature. Please update to the latest version of Chrome, Firefox, Safari, or Edge.",
+    "invalidPageRange": "Invalid page range specified. Use formats like '1-5' for ranges, '1,3,5' for specific pages, or 'all' for the entire document.",
+    "invalidOptions": "Invalid options provided. Please check your settings and ensure all required fields are filled correctly.",
+    "unknown": "An unexpected error occurred. Please try again. If the problem persists, try refreshing the page or contact support.",
     "toolNotFound": "Tool Not Found"
   },
   "home": {
@@ -710,6 +710,8 @@
     "howToUse": "How to Use",
     "useCases": "Use Cases",
     "faq": "Frequently Asked Questions",
+    "helpLink": "Help",
+    "feedbackLink": "Feedback",
     "comingSoon": "This tool is coming soon.",
     "favorite": {
       "add": "Add to Favorites",

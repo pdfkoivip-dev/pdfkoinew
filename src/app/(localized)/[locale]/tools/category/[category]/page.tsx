@@ -59,6 +59,10 @@ const englishCategoryHubCopy: Record<
             label: string;
             reason: string;
         }>;
+        useCasesSectionTitle: string;
+        useCasesSectionItems: string[];
+        precautionsSectionTitle: string;
+        precautionsSectionItems: string[];
     }
 > = {
     'edit-annotate': {
@@ -76,34 +80,34 @@ const englishCategoryHubCopy: Record<
         browseSectionTitle: 'All editing and annotation tools',
         browseSectionDescription:
             'If your job is not listed above, browse the full set of editing and markup tools below.',
-        introTitle: 'Use this hub when your PDF needs changes, not a format conversion',
+        introTitle: 'When to use these editing tools',
         introParagraphs: [
-            'This category is built for documents that stay in PDF format while you add information, polish the layout, or prepare the file for signing and review.',
-            'If the real goal is a specific action like signing, filling, or adding page numbers, jump into that exact tool page first. It gives the clearest relevance signal for both users and search engines.',
+            'This category is for documents that stay in PDF format while you add information, polish the layout, or prepare the file for signing and review.',
+            'If you already know the specific action you need (like signing, filling forms, or adding page numbers), go directly to that tool page for the fastest path to your goal.',
         ],
-        anchorSectionTitle: 'Best direct links in this category',
+        anchorSectionTitle: 'Quick access to popular tools',
         anchorSectionDescription:
-            'These exact-match links help concentrate users and internal link signals on the editing tasks with the clearest intent.',
+            'These are the most commonly used tools in this category. Click to go directly to the tool page.',
         anchorTargets: [
             {
                 toolId: 'edit-pdf',
                 anchorText: 'Edit PDF',
-                note: 'Best anchor when the job is general PDF editing or markup.',
+                note: 'Use this for general PDF editing, annotations, and markup tasks.',
             },
             {
                 toolId: 'sign-pdf',
                 anchorText: 'Sign PDF',
-                note: 'Best anchor for document signing and approval workflows.',
+                note: 'Use this for adding signatures to documents and approval workflows.',
             },
             {
                 toolId: 'form-filler',
                 anchorText: 'Fill PDF Form',
-                note: 'Best anchor when the user needs to complete an existing form.',
+                note: 'Use this when you need to complete fields in an existing form.',
             },
             {
                 toolId: 'add-watermark',
                 anchorText: 'Add Watermark',
-                note: 'Best anchor for ownership, draft, or branding overlays.',
+                note: 'Use this to add ownership marks, draft labels, or branding to your PDFs.',
             },
         ],
         featuredTasks: [
@@ -123,6 +127,22 @@ const englishCategoryHubCopy: Record<
                 reason: 'This is the clearest path when the file already has fields and you just need to fill them in.',
             },
         ],
+        useCasesSectionTitle: 'Common use cases',
+        useCasesSectionItems: [
+            'Reviewing and approving contracts with comments and signatures',
+            'Filling out application forms, tax documents, or registration paperwork',
+            'Adding watermarks to protect intellectual property or mark document status',
+            'Annotating research papers, legal briefs, or technical specifications for collaboration',
+            'Adding page numbers and headers to finalize document formatting before distribution',
+        ],
+        precautionsSectionTitle: 'Important notes',
+        precautionsSectionItems: [
+            'All editing happens in your browser - files are never uploaded to any server',
+            'Save your work frequently when making multiple edits to avoid losing changes',
+            'Digital signatures added here are visual only - for legally binding signatures, use certified signature tools',
+            'Some PDF features like form field validation or JavaScript actions may not be preserved after editing',
+            'For best results, work with PDFs that are not password-protected or have editing restrictions',
+        ],
     },
     'convert-to-pdf': {
         metadataTitle: 'Convert Files to PDF',
@@ -139,34 +159,34 @@ const englishCategoryHubCopy: Record<
         browseSectionTitle: 'All file-to-PDF tools',
         browseSectionDescription:
             'Need a different source format? Browse the full list of converters below.',
-        introTitle: 'Use this hub when you are starting from a non-PDF file',
+        introTitle: 'When to use these conversion tools',
         introParagraphs: [
             'This category is for source files that need to become PDFs, including Office documents, images, ebooks, and text-based formats.',
-            'The best path is to choose the exact source format first. That keeps users on the most relevant conversion page instead of making the category page compete with higher-intent tool pages.',
+            'For the best experience, choose the exact source format first. This takes you directly to the most relevant conversion tool for your file type.',
         ],
-        anchorSectionTitle: 'Best direct links in this category',
+        anchorSectionTitle: 'Quick access to popular tools',
         anchorSectionDescription:
-            'These exact anchors keep the strongest file-to-PDF terms pointed at the tool pages that should rank for them.',
+            'These are the most commonly used file-to-PDF converters. Click to go directly to the tool page.',
         anchorTargets: [
             {
                 toolId: 'word-to-pdf',
                 anchorText: 'Word to PDF',
-                note: 'Best anchor for DOCX conversion intent.',
+                note: 'Use this to convert Word documents (DOCX) to PDF format.',
             },
             {
                 toolId: 'jpg-to-pdf',
                 anchorText: 'Combine JPG Images into One PDF',
-                note: 'Best anchor for JPG-to-PDF jobs tied to submissions, scanned photos, and bundled images.',
+                note: 'Use this to combine multiple JPG images into a single PDF file.',
             },
             {
                 toolId: 'excel-to-pdf',
                 anchorText: 'Excel to PDF',
-                note: 'Best anchor for spreadsheet export intent.',
+                note: 'Use this to convert Excel spreadsheets to PDF format.',
             },
             {
                 toolId: 'png-to-pdf',
                 anchorText: 'PNG to PDF',
-                note: 'Best anchor for image conversion pages beyond JPG.',
+                note: 'Use this to convert PNG images to PDF format.',
             },
         ],
         featuredTasks: [
@@ -186,6 +206,22 @@ const englishCategoryHubCopy: Record<
                 reason: 'Go here when your source file is an Excel sheet that needs a shareable PDF output.',
             },
         ],
+        useCasesSectionTitle: 'Common use cases',
+        useCasesSectionItems: [
+            'Converting Word documents to PDF for professional distribution and consistent formatting',
+            'Creating PDF portfolios from multiple images for presentations or photo albums',
+            'Converting Excel reports to PDF for sharing financial data with stakeholders',
+            'Turning PowerPoint presentations into PDF handouts for meetings or training',
+            'Converting text files and ebooks to PDF for easier reading and archiving',
+        ],
+        precautionsSectionTitle: 'Important notes',
+        precautionsSectionItems: [
+            'All conversions happen locally in your browser - no files are uploaded to servers',
+            'Complex formatting in source documents may require manual adjustment after conversion',
+            'Image quality in the output PDF depends on the quality of your source files',
+            'Large files or batch conversions may take longer depending on your device performance',
+            'Some advanced features like macros, animations, or embedded media may not transfer to PDF',
+        ],
     },
     'convert-from-pdf': {
         metadataTitle: 'Convert PDF to Other Formats',
@@ -202,34 +238,34 @@ const englishCategoryHubCopy: Record<
         browseSectionTitle: 'All PDF export tools',
         browseSectionDescription:
             'If you need a different output format, browse the full set of PDF conversion tools below.',
-        introTitle: 'Use this hub when the PDF is only the starting point',
+        introTitle: 'When to use these export tools',
         introParagraphs: [
             'This category is for exporting PDF content into a format that is easier to edit, reuse, analyze, or publish elsewhere.',
-            'The strongest intent usually lives on the exact destination page, such as PDF to Word or PDF to Excel, so this hub should guide users there quickly instead of trying to rank for every export term itself.',
+            'For the best experience, choose the exact output format you need. This takes you directly to the most relevant export tool for your next step.',
         ],
-        anchorSectionTitle: 'Best direct links in this category',
+        anchorSectionTitle: 'Quick access to popular tools',
         anchorSectionDescription:
-            'These exact anchors route the highest-intent PDF export queries to the tool pages that should own them.',
+            'These are the most commonly used PDF export tools. Click to go directly to the tool page.',
         anchorTargets: [
             {
                 toolId: 'pdf-to-docx',
                 anchorText: 'Convert PDF to Editable Word',
-                note: 'Best anchor for editable Word conversion intent and document revision workflows.',
+                note: 'Use this to convert PDFs to Word format for editing and revision.',
             },
             {
                 toolId: 'pdf-to-jpg',
                 anchorText: 'Convert PDF Pages to JPG',
-                note: 'Best anchor for page-to-image export intent and image-sharing workflows.',
+                note: 'Use this to export PDF pages as JPG images for sharing or design work.',
             },
             {
                 toolId: 'pdf-to-excel',
                 anchorText: 'PDF to Excel',
-                note: 'Best anchor for table and spreadsheet extraction intent.',
+                note: 'Use this to extract tables and data from PDFs into Excel spreadsheets.',
             },
             {
                 toolId: 'pdf-to-png',
                 anchorText: 'PDF to PNG',
-                note: 'Best anchor when users need cleaner image output with transparency support.',
+                note: 'Use this to export PDF pages as PNG images with transparency support.',
             },
         ],
         featuredTasks: [
@@ -249,6 +285,22 @@ const englishCategoryHubCopy: Record<
                 reason: 'Go here when the PDF contains tables or data you want to keep working with in Excel.',
             },
         ],
+        useCasesSectionTitle: 'Common use cases',
+        useCasesSectionItems: [
+            'Converting PDF contracts to Word for editing terms and clauses',
+            'Extracting PDF pages as images for use in presentations or web content',
+            'Converting PDF tables to Excel for data analysis and reporting',
+            'Exporting PDF documents to PowerPoint for creating slide decks',
+            'Converting scanned PDFs to text files for content reuse and editing',
+        ],
+        precautionsSectionTitle: 'Important notes',
+        precautionsSectionItems: [
+            'All conversions are processed locally in your browser - files never leave your device',
+            'Conversion accuracy depends on the PDF structure - scanned PDFs may require OCR for best results',
+            'Complex layouts with multiple columns or embedded graphics may need manual formatting adjustments',
+            'Password-protected or restricted PDFs must be unlocked before conversion',
+            'Image quality in exported files depends on the resolution of content in the original PDF',
+        ],
     },
     'organize-manage': {
         metadataTitle: 'PDF Organization Tools',
@@ -265,34 +317,34 @@ const englishCategoryHubCopy: Record<
         browseSectionTitle: 'All PDF organization tools',
         browseSectionDescription:
             'Looking for a more specific page action? Browse the full list below.',
-        introTitle: 'Use this hub when the file structure is the problem',
+        introTitle: 'When to use these organization tools',
         introParagraphs: [
             'This category is for page-level operations like merging files, splitting sections, reordering pages, and cleaning up document structure.',
-            'Users who know the exact action they need should land on the matching tool page first. The category page works best as a routing layer that helps them choose between those actions.',
+            'If you already know the exact action you need, go directly to that tool page. This category helps you choose between different page management tasks.',
         ],
-        anchorSectionTitle: 'Best direct links in this category',
+        anchorSectionTitle: 'Quick access to popular tools',
         anchorSectionDescription:
-            'These exact anchors focus internal linking on the page-management terms most likely to convert.',
+            'These are the most commonly used page management tools. Click to go directly to the tool page.',
         anchorTargets: [
             {
                 toolId: 'merge-pdf',
                 anchorText: 'Merge PDF Files Online',
-                note: 'Best anchor for combining multiple documents into one file in the correct order.',
+                note: 'Use this to combine multiple PDF documents into one file in the correct order.',
             },
             {
                 toolId: 'split-pdf',
                 anchorText: 'Split PDF Pages Online',
-                note: 'Best anchor for extracting pages, page ranges, or splitting a PDF into separate files.',
+                note: 'Use this to extract specific pages or split a PDF into separate files.',
             },
             {
                 toolId: 'organize-pdf',
                 anchorText: 'Organize PDF',
-                note: 'Best anchor for reordering, deleting, and restructuring pages.',
+                note: 'Use this to reorder, delete, or restructure pages within your PDF.',
             },
             {
                 toolId: 'extract-pages',
                 anchorText: 'Extract Pages',
-                note: 'Best anchor for pulling out selected sections without fully splitting the document.',
+                note: 'Use this to pull out selected pages without splitting the entire document.',
             },
         ],
         featuredTasks: [
@@ -312,6 +364,22 @@ const englishCategoryHubCopy: Record<
                 reason: 'Go here when your PDF structure is the problem and you need hands-on page control.',
             },
         ],
+        useCasesSectionTitle: 'Common use cases',
+        useCasesSectionItems: [
+            'Merging multiple contract sections or appendices into one complete document',
+            'Splitting large reports into individual chapters for easier distribution',
+            'Reordering presentation slides or removing duplicate pages from scanned documents',
+            'Extracting specific pages from lengthy manuals or reference materials',
+            'Combining invoices, receipts, or statements into organized monthly archives',
+        ],
+        precautionsSectionTitle: 'Important notes',
+        precautionsSectionItems: [
+            'All operations are performed locally in your browser - no files are uploaded',
+            'When merging PDFs, ensure files are in the correct order before processing',
+            'Splitting or extracting pages creates new files - original files remain unchanged',
+            'Bookmarks and table of contents may need to be recreated after reorganizing pages',
+            'For best results with large files, close unnecessary browser tabs to free up memory',
+        ],
     },
     'optimize-repair': {
         metadataTitle: 'PDF Optimization and Repair Tools',
@@ -328,34 +396,34 @@ const englishCategoryHubCopy: Record<
         browseSectionTitle: 'All optimization and repair tools',
         browseSectionDescription:
             'If your issue is different, browse the rest of the optimization tools below.',
-        introTitle: 'Use this hub when the PDF needs cleanup, repair, or quality improvements',
+        introTitle: 'When to use these optimization tools',
         introParagraphs: [
             'This category is for maintenance tasks that make PDFs lighter, cleaner, more stable, or easier to archive and distribute.',
-            'Search intent is usually strongest on precise fixes like Compress PDF, so the category page should guide users into the exact maintenance workflow instead of acting like a generic landing page.',
+            'For the best experience, choose the specific maintenance task you need. This takes you directly to the right tool for fixing your file.',
         ],
-        anchorSectionTitle: 'Best direct links in this category',
+        anchorSectionTitle: 'Quick access to popular tools',
         anchorSectionDescription:
-            'These exact anchors keep cleanup and repair intent concentrated on the maintenance pages that should rank.',
+            'These are the most commonly used optimization and repair tools. Click to go directly to the tool page.',
         anchorTargets: [
             {
                 toolId: 'compress-pdf',
                 anchorText: 'Compress PDF for Email',
-                note: 'Best anchor for size-reduction intent tied to email, uploads, and sharing.',
+                note: 'Use this to reduce file size for email attachments, uploads, and sharing.',
             },
             {
                 toolId: 'repair-pdf',
                 anchorText: 'Repair PDF',
-                note: 'Best anchor for damaged or unreadable files.',
+                note: 'Use this to fix damaged or corrupted PDF files that won\'t open properly.',
             },
             {
                 toolId: 'pdf-to-pdfa',
                 anchorText: 'PDF to PDF/A',
-                note: 'Best anchor for archive and compliance use cases.',
+                note: 'Use this to create archive-ready PDFs for long-term storage and compliance.',
             },
             {
                 toolId: 'remove-metadata',
                 anchorText: 'Remove Metadata',
-                note: 'Best anchor for cleanup workflows before sharing.',
+                note: 'Use this to clean hidden information from PDFs before sharing.',
             },
         ],
         featuredTasks: [
@@ -375,6 +443,22 @@ const englishCategoryHubCopy: Record<
                 reason: 'This is the best destination when long-term storage and standards compliance matter.',
             },
         ],
+        useCasesSectionTitle: 'Common use cases',
+        useCasesSectionItems: [
+            'Compressing large PDFs to meet email attachment size limits or upload restrictions',
+            'Repairing corrupted PDFs that won\'t open or display correctly',
+            'Converting PDFs to PDF/A format for legal archiving and regulatory compliance',
+            'Removing metadata and hidden information before sharing sensitive documents',
+            'Optimizing scanned documents to reduce storage space while maintaining readability',
+        ],
+        precautionsSectionTitle: 'Important notes',
+        precautionsSectionItems: [
+            'All processing happens in your browser - files are never uploaded to external servers',
+            'Compression may reduce image quality - preview the result before replacing your original',
+            'Repair tools can fix many issues but cannot recover content from severely damaged files',
+            'PDF/A conversion removes interactive elements like forms, JavaScript, and multimedia',
+            'Always keep a backup of important documents before performing optimization or repair',
+        ],
     },
     'secure-pdf': {
         metadataTitle: 'PDF Security and Protection Tools',
@@ -391,34 +475,34 @@ const englishCategoryHubCopy: Record<
         browseSectionTitle: 'All PDF security tools',
         browseSectionDescription:
             'Need a different protection workflow? Browse the rest of the security tools below.',
-        introTitle: 'Use this hub when access, permissions, or document hygiene matter most',
+        introTitle: 'When to use these security tools',
         introParagraphs: [
             'This category is for protecting PDFs, unlocking them when you have permission, and removing hidden or unwanted information before sharing.',
-            'The most useful experience is to route users directly into the exact security action they need, because terms like protect, unlock, and sanitize each map to different workflows.',
+            'For the best experience, choose the specific security action you need. Each tool is designed for a different protection workflow.',
         ],
-        anchorSectionTitle: 'Best direct links in this category',
+        anchorSectionTitle: 'Quick access to popular tools',
         anchorSectionDescription:
-            'These exact anchors sharpen internal linking around the security actions with the clearest commercial and search intent.',
+            'These are the most commonly used security and protection tools. Click to go directly to the tool page.',
         anchorTargets: [
             {
                 toolId: 'encrypt-pdf',
                 anchorText: 'Protect PDF',
-                note: 'Best anchor for password protection intent.',
+                note: 'Use this to add password protection to your PDF files.',
             },
             {
                 toolId: 'remove-restrictions',
                 anchorText: 'Unlock PDF',
-                note: 'Best anchor for access and restriction-removal intent.',
+                note: 'Use this to remove restrictions and unlock password-protected PDFs.',
             },
             {
                 toolId: 'sanitize-pdf',
                 anchorText: 'Sanitize PDF',
-                note: 'Best anchor for cleanup before sharing sensitive files.',
+                note: 'Use this to remove hidden data and metadata before sharing sensitive files.',
             },
             {
                 toolId: 'change-permissions',
                 anchorText: 'Change PDF Permissions',
-                note: 'Best anchor for permission-management workflows.',
+                note: 'Use this to control who can view, edit, print, or copy your PDF content.',
             },
         ],
         featuredTasks: [
@@ -437,6 +521,22 @@ const englishCategoryHubCopy: Record<
                 label: 'Need to clean sensitive data before sharing?',
                 reason: 'Use this page when metadata, hidden content, or document residue is the bigger risk.',
             },
+        ],
+        useCasesSectionTitle: 'Common use cases',
+        useCasesSectionItems: [
+            'Password-protecting confidential contracts, financial reports, or personal documents',
+            'Unlocking PDFs you own but can\'t edit due to forgotten passwords or restrictions',
+            'Sanitizing documents to remove author information, comments, and revision history before public release',
+            'Setting permissions to prevent unauthorized copying, printing, or editing of proprietary content',
+            'Removing security from old archived files to enable modern workflow integration',
+        ],
+        precautionsSectionTitle: 'Important notes',
+        precautionsSectionItems: [
+            'All security operations are performed locally - passwords and files never leave your browser',
+            'Strong passwords are essential - use a mix of letters, numbers, and symbols for best protection',
+            'Unlocking PDFs requires the correct password - these tools cannot crack or bypass unknown passwords',
+            'Sanitization removes metadata permanently - keep original files if you need to preserve document history',
+            'Password protection is not encryption - for highly sensitive data, consider additional security measures',
         ],
     },
 };
@@ -700,6 +800,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ local
                   anchorSectionTitle: localizedCategoryCopy?.anchorSectionTitle ?? tCategoryPage('anchorSectionTitle'),
                   anchorSectionDescription:
                       localizedCategoryCopy?.anchorSectionDescription ?? tCategoryPage('anchorSectionDescription'),
+                  useCasesSectionTitle: englishHubCopy.useCasesSectionTitle,
+                  useCasesSectionItems: englishHubCopy.useCasesSectionItems,
+                  precautionsSectionTitle: englishHubCopy.precautionsSectionTitle,
+                  precautionsSectionItems: englishHubCopy.precautionsSectionItems,
                   anchorTargets: englishHubCopy.anchorTargets.map((target) => {
                       const toolLabel = getToolLabel(target.toolId, target.anchorText);
 
@@ -849,6 +953,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ local
                 browseSectionTitle={heroCopy.browseSectionTitle}
                 browseSectionDescription={heroCopy.browseSectionDescription}
                 featuredTasks={featuredTasks}
+                useCasesSectionTitle={heroCopy.useCasesSectionTitle}
+                useCasesSectionItems={heroCopy.useCasesSectionItems}
+                precautionsSectionTitle={heroCopy.precautionsSectionTitle}
+                precautionsSectionItems={heroCopy.precautionsSectionItems}
                 localizedToolContent={localizedToolContent}
             />
         </>

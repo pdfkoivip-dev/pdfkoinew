@@ -40,6 +40,10 @@ interface CategoryPageClientProps {
         label: string;
         reason: string;
     }>;
+    useCasesSectionTitle: string;
+    useCasesSectionItems: string[];
+    precautionsSectionTitle: string;
+    precautionsSectionItems: string[];
     localizedToolContent?: Record<string, { title: string; description: string }>;
 }
 
@@ -59,6 +63,10 @@ export default function CategoryPageClient({
     browseSectionTitle,
     browseSectionDescription,
     featuredTasks,
+    useCasesSectionTitle,
+    useCasesSectionItems,
+    precautionsSectionTitle,
+    precautionsSectionItems,
     localizedToolContent,
 }: CategoryPageClientProps) {
     const t = useTranslations();
@@ -220,6 +228,48 @@ export default function CategoryPageClient({
                                     </Link>
                                 ))}
                             </div>
+                        </section>
+                    ) : null}
+
+                    {useCasesSectionItems.length > 0 ? (
+                        <section className="mb-10" aria-labelledby="category-use-cases">
+                            <Card className="border-[hsl(var(--color-border))/0.6] bg-white/75 backdrop-blur-sm">
+                                <h2
+                                    id="category-use-cases"
+                                    className="text-xl font-semibold text-[hsl(var(--color-foreground))]"
+                                >
+                                    {useCasesSectionTitle}
+                                </h2>
+                                <ul className="mt-4 space-y-2 text-sm leading-7 text-[hsl(var(--color-muted-foreground))]">
+                                    {useCasesSectionItems.map((item, index) => (
+                                        <li key={index} className="flex items-start gap-2">
+                                            <span className="text-[hsl(var(--color-primary))] mt-1">•</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </Card>
+                        </section>
+                    ) : null}
+
+                    {precautionsSectionItems.length > 0 ? (
+                        <section className="mb-10" aria-labelledby="category-precautions">
+                            <Card className="border-[hsl(var(--color-border))/0.6] bg-white/75 backdrop-blur-sm">
+                                <h2
+                                    id="category-precautions"
+                                    className="text-xl font-semibold text-[hsl(var(--color-foreground))]"
+                                >
+                                    {precautionsSectionTitle}
+                                </h2>
+                                <ul className="mt-4 space-y-2 text-sm leading-7 text-[hsl(var(--color-muted-foreground))]">
+                                    {precautionsSectionItems.map((item, index) => (
+                                        <li key={index} className="flex items-start gap-2">
+                                            <span className="text-[hsl(var(--color-primary))] mt-1">•</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </Card>
                         </section>
                     ) : null}
 
