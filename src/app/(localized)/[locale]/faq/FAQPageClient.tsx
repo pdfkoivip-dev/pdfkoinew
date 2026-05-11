@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { ChevronDown, ChevronUp, Search, ArrowRight } from 'lucide-react';
+import { ChevronDown, ChevronUp, Search, ArrowRight, Shield, Lock, Zap, Globe } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
@@ -92,6 +92,27 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
               <h1 className="text-3xl md:text-4xl font-bold text-[hsl(var(--color-foreground))] mb-4">
                 {t('title')}
               </h1>
+
+              {/* Trust Badges */}
+              <div className="flex flex-wrap justify-center gap-3 mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--color-background))] border border-[hsl(var(--color-border))] text-sm font-medium text-[hsl(var(--color-foreground))]">
+                  <Shield className="h-4 w-4 text-[hsl(var(--color-primary))]" />
+                  <span>Browser-based processing</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--color-background))] border border-[hsl(var(--color-border))] text-sm font-medium text-[hsl(var(--color-foreground))]">
+                  <Lock className="h-4 w-4 text-[hsl(var(--color-primary))]" />
+                  <span>Files never uploaded</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--color-background))] border border-[hsl(var(--color-border))] text-sm font-medium text-[hsl(var(--color-foreground))]">
+                  <Zap className="h-4 w-4 text-[hsl(var(--color-primary))]" />
+                  <span>No signup required</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--color-background))] border border-[hsl(var(--color-border))] text-sm font-medium text-[hsl(var(--color-foreground))]">
+                  <Globe className="h-4 w-4 text-[hsl(var(--color-primary))]" />
+                  <span>Works offline</span>
+                </div>
+              </div>
+
               <p className="text-[hsl(var(--color-muted-foreground))] mb-8">
                 {t('subtitle', { brand: tCommon('brand') })}
               </p>
