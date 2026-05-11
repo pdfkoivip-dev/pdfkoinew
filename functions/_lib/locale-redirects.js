@@ -34,6 +34,12 @@ const MISSING_LOCALIZED_TOOL_CANONICALS = new Map([
   ['/zh/tools/cbz-to-pdf', '/tools/cbz-to-pdf/'],
   ['/ko/tools/compare-pdfs', '/tools/compare-pdfs/'],
   ['/ko/tools/rtf-to-pdf', '/tools/rtf-to-pdf/'],
+  ['/ko/tools/extract-images', '/tools/extract-images/'],
+  ['/pt/tools/rasterize-pdf', '/tools/rasterize-pdf/'],
+  ['/zh-tw/tools/markdown-to-pdf', '/tools/markdown-to-pdf/'],
+  ['/ko/tools/pdf-to-svg', '/tools/pdf-to-svg/'],
+  ['/ko/tools/extract-attachments', '/tools/extract-attachments/'],
+  ['/ja/tools/markdown-to-pdf', '/tools/markdown-to-pdf/'],
 ]);
 
 function ensureTrailingSlash(pathname) {

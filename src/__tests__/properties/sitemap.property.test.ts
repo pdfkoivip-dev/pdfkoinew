@@ -323,6 +323,12 @@ describe('Sitemap property tests', () => {
       { locale: 'zh', toolId: 'cbz-to-pdf', slug: 'cbz-to-pdf' },
       { locale: 'ko', toolId: 'compare-pdfs', slug: 'compare-pdfs' },
       { locale: 'ko', toolId: 'rtf-to-pdf', slug: 'rtf-to-pdf' },
+      { locale: 'ko', toolId: 'extract-images', slug: 'extract-images' },
+      { locale: 'pt', toolId: 'rasterize-pdf', slug: 'rasterize-pdf' },
+      { locale: 'zh-TW', toolId: 'markdown-to-pdf', slug: 'markdown-to-pdf' },
+      { locale: 'ko', toolId: 'pdf-to-svg', slug: 'pdf-to-svg' },
+      { locale: 'ko', toolId: 'extract-attachments', slug: 'extract-attachments' },
+      { locale: 'ja', toolId: 'markdown-to-pdf', slug: 'markdown-to-pdf' },
     ] as const;
 
     for (const { locale, toolId, slug } of cases) {

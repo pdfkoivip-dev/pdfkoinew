@@ -689,6 +689,12 @@ describe('SEO Property Tests', () => {
         ['zh', 'cbz-to-pdf'],
         ['ko', 'compare-pdfs'],
         ['ko', 'rtf-to-pdf'],
+        ['ko', 'extract-images'],
+        ['pt', 'rasterize-pdf'],
+        ['zh-TW', 'markdown-to-pdf'],
+        ['ko', 'pdf-to-svg'],
+        ['ko', 'extract-attachments'],
+        ['ja', 'markdown-to-pdf'],
       ] as const;
 
       for (const [locale, toolId] of cases) {

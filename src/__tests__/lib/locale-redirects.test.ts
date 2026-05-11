@@ -132,6 +132,12 @@ describe('locale redirect helpers', () => {
       ['https://pdfkoi.com/zh/tools/cbz-to-pdf/', '/tools/cbz-to-pdf/'],
       ['https://pdfkoi.com/ko/tools/compare-pdfs/', '/tools/compare-pdfs/'],
       ['https://pdfkoi.com/ko/tools/rtf-to-pdf/', '/tools/rtf-to-pdf/'],
+      ['https://pdfkoi.com/ko/tools/extract-images/', '/tools/extract-images/'],
+      ['https://pdfkoi.com/pt/tools/rasterize-pdf/', '/tools/rasterize-pdf/'],
+      ['https://pdfkoi.com/zh-tw/tools/markdown-to-pdf/', '/tools/markdown-to-pdf/'],
+      ['https://pdfkoi.com/ko/tools/pdf-to-svg/', '/tools/pdf-to-svg/'],
+      ['https://pdfkoi.com/ko/tools/extract-attachments/', '/tools/extract-attachments/'],
+      ['https://pdfkoi.com/ja/tools/markdown-to-pdf/', '/tools/markdown-to-pdf/'],
     ] as const;
 
     for (const [source, destination] of cases) {
