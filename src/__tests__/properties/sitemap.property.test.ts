@@ -6,6 +6,7 @@ import {
   getToolIndexableLocales,
   shouldGenerateLocalizedToolPage,
   shouldIndexCategoryHub,
+  shouldIndexLocalizedToolPage,
   shouldIndexStaticPage,
 } from '@/lib/seo/indexing-policy';
 import { TOOL_CATEGORIES } from '@/types/tool';
@@ -153,9 +154,12 @@ describe('Sitemap property tests', () => {
     expect(hasLocalizedToolContent('pt', 'email-to-pdf')).toBe(false);
     expect(hasLocalizedToolContent('pt', 'pdf-booklet')).toBe(true);
     expect(hasLocalizedToolContent('es', 'extract-images')).toBe(true);
-    expect(shouldGenerateLocalizedToolPage('pt', 'email-to-pdf')).toBe(false);
+    expect(shouldGenerateLocalizedToolPage('pt', 'email-to-pdf')).toBe(true);
     expect(shouldGenerateLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
     expect(shouldGenerateLocalizedToolPage('es', 'extract-images')).toBe(true);
+    expect(shouldIndexLocalizedToolPage('pt', 'email-to-pdf')).toBe(false);
+    expect(shouldIndexLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
+    expect(shouldIndexLocalizedToolPage('es', 'extract-images')).toBe(true);
 
     expect(ptEntries).not.toContainEqual(
       expect.objectContaining({
@@ -335,7 +339,8 @@ describe('Sitemap property tests', () => {
       const entries = await sitemap({ id: Promise.resolve(locale) });
 
       expect(hasLocalizedToolContent(locale, toolId)).toBe(false);
-      expect(shouldGenerateLocalizedToolPage(locale, toolId)).toBe(false);
+      expect(shouldGenerateLocalizedToolPage(locale, toolId)).toBe(true);
+      expect(shouldIndexLocalizedToolPage(locale, toolId)).toBe(false);
       expect(getToolIndexableLocales(toolId)).not.toContain(locale);
       expect(entries).not.toContainEqual(
         expect.objectContaining({

@@ -113,14 +113,10 @@ interface ToolPageParams {
 export async function generateStaticParams() {
   const tools = getAllTools();
   return getPublicLocaleParams().flatMap(({ locale }) => {
-    const normalizedLocale = normalizeLocale(locale) || 'en';
-
-    return tools
-      .filter((tool) => shouldGenerateLocalizedToolPage(normalizedLocale, tool.id))
-      .map((tool) => ({
-        locale,
-        tool: tool.slug,
-      }));
+    return tools.map((tool) => ({
+      locale,
+      tool: tool.slug,
+    }));
   });
 }
 

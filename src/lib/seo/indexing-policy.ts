@@ -27,11 +27,16 @@ export function shouldIndexStaticPage(locale: Locale, path: string): boolean {
 }
 
 export function shouldGenerateLocalizedToolPage(locale: Locale, toolId: string): boolean {
-  return locale === defaultLocale || hasLocalizedToolContent(locale, toolId);
+  void locale;
+  void toolId;
+  // Always generate localized tool routes so missing-localization variants
+  // can return 200 with English fallback content + noindex canonical behavior.
+  // Indexability is controlled separately by shouldIndexLocalizedToolPage.
+  return true;
 }
 
 export function shouldIndexLocalizedToolPage(locale: Locale, toolId: string): boolean {
-  return shouldGenerateLocalizedToolPage(locale, toolId);
+  return locale === defaultLocale || hasLocalizedToolContent(locale, toolId);
 }
 
 export function getToolIndexableLocales(toolId: string): Locale[] {
@@ -39,5 +44,5 @@ export function getToolIndexableLocales(toolId: string): Locale[] {
 }
 
 export function getToolPublicLocale(locale: Locale, toolId: string): Locale {
-  return shouldGenerateLocalizedToolPage(locale, toolId) ? locale : defaultLocale;
+  return shouldIndexLocalizedToolPage(locale, toolId) ? locale : defaultLocale;
 }

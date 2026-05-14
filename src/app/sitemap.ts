@@ -26,6 +26,7 @@ import {
   INDEXABLE_STATIC_PAGE_PATHS,
   shouldGenerateLocalizedToolPage,
   shouldIndexCategoryHub,
+  shouldIndexLocalizedToolPage,
   shouldIndexStaticPage,
   shouldIndexToolsDirectory,
 } from '@/lib/seo/indexing-policy';
@@ -261,7 +262,7 @@ export function generateLocaleEntries(locale: Locale): MetadataRoute.Sitemap {
   for (const tool of tools) {
     const toolIndexableLocales = getToolIndexableLocales(tool.id);
 
-    if (!shouldGenerateLocalizedToolPage(locale, tool.id)) {
+    if (!shouldGenerateLocalizedToolPage(locale, tool.id) || !shouldIndexLocalizedToolPage(locale, tool.id)) {
       continue;
     }
 
