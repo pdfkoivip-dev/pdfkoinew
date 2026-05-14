@@ -31,6 +31,7 @@ export const gscIndexingSamples: readonly GscIndexingSample[] = [
   // Pending: canonical redirects
   { url: `${siteConfig.url}/tools/pdf-to-docx`, category: 'canonical_redirect' },
   { url: `${siteConfig.url}/en/tools/jpg-to-pdf`, category: 'canonical_redirect' },
+  { url: `${siteConfig.url}/zh-TW/`, category: 'canonical_redirect' },
 
   // Pending: intentional 404s for non-indexable locale-tool combos
   { url: `${siteConfig.url}/ko/tools/sanitize-pdf/`, category: 'intentional_404' },
