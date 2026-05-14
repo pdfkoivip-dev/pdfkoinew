@@ -14,6 +14,15 @@
 /manifest.webmanifest
   X-Robots-Tag: noindex
 
+# Sitemap files - no cache to ensure search engines get fresh content
+/sitemap.xml
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
+
+/sitemap/*.xml
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
+
 # HTML pages - no cache, always revalidate
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
