@@ -702,6 +702,37 @@ describe('SEO Property Tests', () => {
         expect(getToolIndexableLocales(toolId)).not.toContain(locale);
       }
     });
+
+    it('former redirect-only samples now resolve as noindex english-canonical metadata targets', () => {
+      const cases = [
+        ['zh-TW', 'markdown-to-pdf'],
+        ['ja', 'markdown-to-pdf'],
+        ['ko', 'pdf-to-svg'],
+      ] as const satisfies ReadonlyArray<readonly [Locale, string]>;
+
+      for (const [locale, toolId] of cases) {
+        const tool = tools.find((candidate) => candidate.id === toolId);
+        const fallbackContent = getToolContent(locale, toolId);
+
+        expect(tool).toBeDefined();
+        expect(fallbackContent).toBeDefined();
+        expect(hasLocalizedToolContent(locale, toolId)).toBe(false);
+        expect(shouldIndexLocalizedToolPage(locale, toolId)).toBe(false);
+
+        const metadata = generateToolMetadata({
+          locale,
+          tool: tool!,
+          content: fallbackContent!,
+        });
+
+        expect(metadata.robots).toMatchObject({ index: false, follow: false });
+        expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}/tools/${tool!.slug}/`);
+
+        const languages = metadata.alternates?.languages as Record<string, string>;
+        expect(languages.en).toBe(`${siteConfig.url}/tools/${tool!.slug}/`);
+        expect(languages[locale]).toBeUndefined();
+      }
+    });
   });
 });
 

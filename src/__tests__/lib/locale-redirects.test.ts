@@ -113,35 +113,35 @@ describe('locale redirect helpers', () => {
     }
   });
 
-  it('redirects reported missing localized tool URLs to default-language canonicals', () => {
+  it('does not redirect reported missing localized tool URLs and lets page metadata handle canonical/noindex', () => {
     const cases = [
-      ['https://pdfkoi.com/de/tools/flatten-pdf/', '/tools/flatten-pdf/'],
-      ['https://pdfkoi.com/pt/tools/pdf-to-zip/', '/tools/pdf-to-zip/'],
-      ['https://pdfkoi.com/ja/tools/ocg-manager/', '/tools/ocg-manager/'],
-      ['https://pdfkoi.com/de/tools/edit-attachments/', '/tools/edit-attachments/'],
-      ['https://pdfkoi.com/ko/tools/ocg-manager/', '/tools/ocg-manager/'],
-      ['https://pdfkoi.com/es/tools/pdf-to-pdfa/', '/tools/pdf-to-pdfa/'],
-      ['https://pdfkoi.com/es/tools/rtf-to-pdf/', '/tools/rtf-to-pdf/'],
-      ['https://pdfkoi.com/pt/tools/djvu-to-pdf/', '/tools/djvu-to-pdf/'],
-      ['https://pdfkoi.com/ko/tools/pdf-reader/', '/tools/pdf-reader/'],
-      ['https://pdfkoi.com/pt/tools/pdf-to-pptx/', '/tools/pdf-to-pptx/'],
-      ['https://pdfkoi.com/fr/tools/djvu-to-pdf/', '/tools/djvu-to-pdf/'],
-      ['https://pdfkoi.com/de/tools/flatten-pdf?via=gsc', '/tools/flatten-pdf/?via=gsc'],
-      ['https://pdfkoi.com/pt/tools/jpg-to-pdf/', '/tools/jpg-to-pdf/'],
-      ['https://pdfkoi.com/zh/tools/font-to-outline/', '/tools/font-to-outline/'],
-      ['https://pdfkoi.com/zh/tools/cbz-to-pdf/', '/tools/cbz-to-pdf/'],
-      ['https://pdfkoi.com/ko/tools/compare-pdfs/', '/tools/compare-pdfs/'],
-      ['https://pdfkoi.com/ko/tools/rtf-to-pdf/', '/tools/rtf-to-pdf/'],
-      ['https://pdfkoi.com/ko/tools/extract-images/', '/tools/extract-images/'],
-      ['https://pdfkoi.com/pt/tools/rasterize-pdf/', '/tools/rasterize-pdf/'],
-      ['https://pdfkoi.com/zh-tw/tools/markdown-to-pdf/', '/tools/markdown-to-pdf/'],
-      ['https://pdfkoi.com/ko/tools/pdf-to-svg/', '/tools/pdf-to-svg/'],
-      ['https://pdfkoi.com/ko/tools/extract-attachments/', '/tools/extract-attachments/'],
-      ['https://pdfkoi.com/ja/tools/markdown-to-pdf/', '/tools/markdown-to-pdf/'],
+      'https://pdfkoi.com/de/tools/flatten-pdf/',
+      'https://pdfkoi.com/pt/tools/pdf-to-zip/',
+      'https://pdfkoi.com/ja/tools/ocg-manager/',
+      'https://pdfkoi.com/de/tools/edit-attachments/',
+      'https://pdfkoi.com/ko/tools/ocg-manager/',
+      'https://pdfkoi.com/es/tools/pdf-to-pdfa/',
+      'https://pdfkoi.com/es/tools/rtf-to-pdf/',
+      'https://pdfkoi.com/pt/tools/djvu-to-pdf/',
+      'https://pdfkoi.com/ko/tools/pdf-reader/',
+      'https://pdfkoi.com/pt/tools/pdf-to-pptx/',
+      'https://pdfkoi.com/fr/tools/djvu-to-pdf/',
+      'https://pdfkoi.com/de/tools/flatten-pdf?via=gsc',
+      'https://pdfkoi.com/pt/tools/jpg-to-pdf/',
+      'https://pdfkoi.com/zh/tools/font-to-outline/',
+      'https://pdfkoi.com/zh/tools/cbz-to-pdf/',
+      'https://pdfkoi.com/ko/tools/compare-pdfs/',
+      'https://pdfkoi.com/ko/tools/rtf-to-pdf/',
+      'https://pdfkoi.com/ko/tools/extract-images/',
+      'https://pdfkoi.com/pt/tools/rasterize-pdf/',
+      'https://pdfkoi.com/zh-tw/tools/markdown-to-pdf/',
+      'https://pdfkoi.com/ko/tools/pdf-to-svg/',
+      'https://pdfkoi.com/ko/tools/extract-attachments/',
+      'https://pdfkoi.com/ja/tools/markdown-to-pdf/',
     ] as const;
 
-    for (const [source, destination] of cases) {
-      expect(getLocaleRedirectPath(new URL(source))).toBe(destination);
+    for (const source of cases) {
+      expect(getLocaleRedirectPath(new URL(source))).toBeNull();
     }
   });
 
