@@ -2,8 +2,6 @@ const CANONICAL_DEFAULT_LOCALE_PAGE_PATHS = new Set([
   '/compress-pdf-for-email',
   '/compress-pdf-without-upload',
   '/merge-pdf-no-signup',
-  '/privacy',
-  '/cookies',
 ]);
 
 const NON_DEFAULT_LOCALE_SLUGS = new Set([
