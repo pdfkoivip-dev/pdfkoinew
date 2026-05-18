@@ -200,6 +200,7 @@ export function generateToolMetadata(options: ToolMetadataOptions): Metadata {
     description: content.metaDescription,
     keywords: enhancedKeywords,
     noIndex: !shouldIndexLocalizedPage,
+    followWhenNoIndex: true,
   });
 
   metadata.alternates = {
