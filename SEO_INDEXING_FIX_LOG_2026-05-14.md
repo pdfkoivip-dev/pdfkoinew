@@ -95,5 +95,78 @@ GSC 报告“已抓取 - 尚未编入索引”样本 19 条，其中包含：
 
 ### 4) GSC 操作建议（本轮）
 1. 对 30 条中的典型 URL 先做 URL 检查，确认 Google 看到的是最新首跳状态。
-2. 对已是 200 的 URL 走“请求编入索引”；对 `/zh-TW/` 走“验证修复”（其本质是 canonical 规范化）。
+2. 对已是 200 的 URL 走”请求编入索引”；对 `/zh-TW/` 走”验证修复”（其本质是 canonical 规范化）。
 3. 观察 7~14 天，仅按分类看收敛，不按总量做即时结论。
+
+---
+
+## 八、noindex 问题修复（2026-05-28）
+
+### 1) 问题背景
+GSC 新报告”被'noindex'标记排除了”97 条（85 pending + 12 failed），包括：
+- `/es/about/`
+- `/pt/tools/xps-to-pdf/`
+- `/ko/tools/extract-images/`
+- 等高价值语言的工具页和静态页
+
+根本原因：当前策略仅对”有本地化内容”的工具页可索引，导致大量高价值语言页面被 noindex。
+
+### 2) 解决方案：方案C - 选择性扩大
+**策略**：将所有支持的语言（es, de, fr, pt, ja, ko, zh, zh-TW）定义为高价值语言，允许工具页即使没有本地化内容也可索引。静态页（about/privacy/cookies）保持仅英文可索引。
+
+### 3) 代码改动
+
+#### a) 定义高价值语言列表
+文件：`src/lib/seo/indexing-policy.ts`
+```typescript
+const HIGH_VALUE_TOOL_LOCALES = new Set<Locale>(['es', 'de', 'fr', 'pt', 'ja', 'ko', 'zh', 'zh-TW']);
+```
+
+#### b) 修改索引策略
+```typescript
+export function shouldIndexLocalizedToolPage(locale: Locale, toolId: string): boolean {
+  if (locale === defaultLocale) {
+    return true;
+  }
+  // 高价值语言即使没有本地化内容也可索引
+  if (HIGH_VALUE_TOOL_LOCALES.has(locale)) {
+    return true;
+  }
+  return hasLocalizedToolContent(locale, toolId);
+}
+
+export function getToolPublicLocale(locale: Locale, toolId: string): Locale {
+  // 高价值语言保持自身作为公开语言（自引用 canonical）
+  if (locale === defaultLocale || HIGH_VALUE_TOOL_LOCALES.has(locale)) {
+    return locale;
+  }
+  return hasLocalizedToolContent(locale, toolId) ? locale : defaultLocale;
+}
+```
+
+#### c) 更新测试期望
+- `src/__tests__/properties/seo.property.test.ts`：
+  - 更新”tool metadata noindexes untranslated locale fallbacks”测试，期望 pt 可索引
+  - 拆分”reported GSC 404 locale-tool combinations”测试为高价值和非高价值两部分
+  - 重命名”former redirect-only samples”测试，期望高价值语言自引用 canonical
+
+- `src/__tests__/properties/sitemap.property.test.ts`：
+  - 更新”excludes only tool locales”测试，期望 pt/email-to-pdf 包含在 sitemap
+  - 从”keeps reported GSC redirect samples”中移除 es/tools/rtf-to-pdf（现在可索引）
+  - 重命名”keeps reported GSC 404”测试为”includes high-value locale-tool combinations”
+
+### 4) 验证结果
+- ✅ SEO 属性测试：28 个测试全部通过
+- ✅ Sitemap 属性测试：16 个测试全部通过
+- ✅ 生产构建：成功生成 1032 个静态页面（包括 855 个工具页）
+
+### 5) 预期效果
+1. 12 条失败 URL 将变为可索引（robots: index, follow）
+2. 85 条待定 URL 中的高价值语言页面将被 Google 索引
+3. Sitemap 将包含所有高价值语言的工具页
+4. 静态页（about/privacy/cookies）继续保持仅英文可索引
+
+### 6) 后续操作
+1. 部署后在 GSC 对 12 条失败 URL 执行”请求编入索引”
+2. 7~14 天后观察索引收录情况
+3. 监控 GSC 报告中 noindex 排除数量的下降趋势

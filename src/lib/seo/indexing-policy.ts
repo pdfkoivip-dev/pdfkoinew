@@ -3,6 +3,13 @@ import { hasLocalizedToolContent } from '@/config/tool-content';
 
 export const INDEXABLE_STATIC_PAGE_PATHS = ['/', '/workflow', '/faq', '/contact', '/terms', '/privacy', '/cookies'] as const;
 
+/**
+ * High-value locales that are allowed to index tool pages even without localized content.
+ * These locales have significant traffic potential and justify the SEO investment.
+ * Static pages (about/privacy/cookies) remain English-only regardless of this list.
+ */
+const HIGH_VALUE_TOOL_LOCALES = new Set<Locale>(['es', 'de', 'fr', 'pt', 'ja', 'ko', 'zh', 'zh-TW']);
+
 const CATEGORY_HUB_INDEXABLE_LOCALES = new Set<Locale>(locales);
 const INDEXABLE_STATIC_PAGE_SET = new Set<string>(INDEXABLE_STATIC_PAGE_PATHS);
 
@@ -36,7 +43,19 @@ export function shouldGenerateLocalizedToolPage(locale: Locale, toolId: string):
 }
 
 export function shouldIndexLocalizedToolPage(locale: Locale, toolId: string): boolean {
-  return locale === defaultLocale || hasLocalizedToolContent(locale, toolId);
+  // Default locale (English) is always indexable
+  if (locale === defaultLocale) {
+    return true;
+  }
+
+  // High-value locales can index tool pages even without localized content
+  // to capture international traffic while canonical still points to English
+  if (HIGH_VALUE_TOOL_LOCALES.has(locale)) {
+    return true;
+  }
+
+  // Other locales require localized content to be indexable
+  return hasLocalizedToolContent(locale, toolId);
 }
 
 export function getToolIndexableLocales(toolId: string): Locale[] {
@@ -44,5 +63,12 @@ export function getToolIndexableLocales(toolId: string): Locale[] {
 }
 
 export function getToolPublicLocale(locale: Locale, toolId: string): Locale {
-  return shouldIndexLocalizedToolPage(locale, toolId) ? locale : defaultLocale;
+  // For high-value locales, keep them as the public locale even without localized content
+  // This allows them to be indexed while still providing canonical guidance
+  if (locale === defaultLocale || HIGH_VALUE_TOOL_LOCALES.has(locale)) {
+    return locale;
+  }
+
+  // For other locales, fall back to English if no localized content exists
+  return hasLocalizedToolContent(locale, toolId) ? locale : defaultLocale;
 }

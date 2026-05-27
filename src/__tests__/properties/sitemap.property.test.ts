@@ -157,11 +157,13 @@ describe('Sitemap property tests', () => {
     expect(shouldGenerateLocalizedToolPage('pt', 'email-to-pdf')).toBe(true);
     expect(shouldGenerateLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
     expect(shouldGenerateLocalizedToolPage('es', 'extract-images')).toBe(true);
-    expect(shouldIndexLocalizedToolPage('pt', 'email-to-pdf')).toBe(false);
+    // pt is a high-value locale, so it's indexable even without localized content
+    expect(shouldIndexLocalizedToolPage('pt', 'email-to-pdf')).toBe(true);
     expect(shouldIndexLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
     expect(shouldIndexLocalizedToolPage('es', 'extract-images')).toBe(true);
 
-    expect(ptEntries).not.toContainEqual(
+    // High-value locales are now included in sitemap even without localized content
+    expect(ptEntries).toContainEqual(
       expect.objectContaining({
         url: `${siteConfig.url}/pt/tools/email-to-pdf/`,
       })
@@ -292,7 +294,6 @@ describe('Sitemap property tests', () => {
       `${siteConfig.url}/zh-TW/`,
       `${siteConfig.url}/tools/pdf-to-docx`,
       `${siteConfig.url}/en/tools/jpg-to-pdf`,
-      `${siteConfig.url}/es/tools/rtf-to-pdf/`,
     ] as const;
 
     const sitemapUrls = new Set<string>();
@@ -309,7 +310,7 @@ describe('Sitemap property tests', () => {
     }
   });
 
-  it('keeps reported GSC 404 locale-tool combinations out of localized sitemaps', async () => {
+  it('includes high-value locale-tool combinations in localized sitemaps even without localized content', async () => {
     const cases = [
       { locale: 'de', toolId: 'flatten-pdf', slug: 'flatten-pdf' },
       { locale: 'pt', toolId: 'pdf-to-zip', slug: 'pdf-to-zip' },
@@ -340,9 +341,11 @@ describe('Sitemap property tests', () => {
 
       expect(hasLocalizedToolContent(locale, toolId)).toBe(false);
       expect(shouldGenerateLocalizedToolPage(locale, toolId)).toBe(true);
-      expect(shouldIndexLocalizedToolPage(locale, toolId)).toBe(false);
-      expect(getToolIndexableLocales(toolId)).not.toContain(locale);
-      expect(entries).not.toContainEqual(
+      // High-value locales are now indexable even without localized content
+      expect(shouldIndexLocalizedToolPage(locale, toolId)).toBe(true);
+      expect(getToolIndexableLocales(toolId)).toContain(locale);
+      // High-value locales should be included in sitemap
+      expect(entries).toContainEqual(
         expect.objectContaining({
           url: `${siteConfig.url}${getPublicPath(`/tools/${slug}`, locale)}`,
         })

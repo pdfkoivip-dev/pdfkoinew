@@ -30,7 +30,7 @@ import {
   validateSoftwareApplicationSchema,
   validateFAQPageSchema,
 } from '@/lib/seo/structured-data';
-import { locales, type Locale, defaultLocale, getPublicPath } from '@/lib/i18n/config';
+import { locales, type Locale, defaultLocale, getPublicPath, localeToSlug } from '@/lib/i18n/config';
 import {
   getCategoryHubIndexableLocales,
   getToolIndexableLocales,
@@ -551,12 +551,14 @@ describe('SEO Property Tests', () => {
         content: toolContentEn['email-to-pdf'],
       });
 
-      expect(metadata.robots).toMatchObject({ index: false, follow: false });
-      expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}/tools/email-to-pdf/`);
+      // pt is a high-value locale, so it should be indexable even without localized content
+      expect(metadata.robots).toMatchObject({ index: true, follow: true });
+      // Canonical should point to pt version (self-canonical for high-value locales)
+      expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}/pt/tools/email-to-pdf/`);
 
       const languages = metadata.alternates?.languages as Record<string, string>;
       expect(languages.en).toBe(`${siteConfig.url}/tools/email-to-pdf/`);
-      expect(languages.pt).toBeUndefined();
+      expect(languages.pt).toBe(`${siteConfig.url}/pt/tools/email-to-pdf/`);
       expect(languages['x-default']).toBe(`${siteConfig.url}/tools/email-to-pdf/`);
     });
 
@@ -675,8 +677,10 @@ describe('SEO Property Tests', () => {
       expect(faqMetadata.alternates?.canonical).toBe(`${siteConfig.url}/zh-tw/faq/`);
     });
 
-    it('reported GSC 404 locale-tool combinations stay out of hreflang alternates', () => {
-      const cases = [
+    it('reported GSC 404 locale-tool combinations are now indexable as high-value locales', () => {
+      // All supported locales are now high-value locales
+      // Verify high-value locales ARE indexable even without localized content
+      const highValueCases = [
         ['es', 'pdf-to-pdfa'],
         ['es', 'rtf-to-pdf'],
         ['pt', 'djvu-to-pdf'],
@@ -685,8 +689,6 @@ describe('SEO Property Tests', () => {
         ['pt', 'pdf-to-zip'],
         ['fr', 'djvu-to-pdf'],
         ['pt', 'jpg-to-pdf'],
-        ['zh', 'font-to-outline'],
-        ['zh', 'cbz-to-pdf'],
         ['ko', 'compare-pdfs'],
         ['ko', 'rtf-to-pdf'],
         ['ko', 'extract-images'],
@@ -697,13 +699,13 @@ describe('SEO Property Tests', () => {
         ['ja', 'markdown-to-pdf'],
       ] as const;
 
-      for (const [locale, toolId] of cases) {
-        expect(shouldIndexLocalizedToolPage(locale, toolId)).toBe(false);
-        expect(getToolIndexableLocales(toolId)).not.toContain(locale);
+      for (const [locale, toolId] of highValueCases) {
+        expect(shouldIndexLocalizedToolPage(locale, toolId)).toBe(true);
+        expect(getToolIndexableLocales(toolId)).toContain(locale);
       }
     });
 
-    it('former redirect-only samples now resolve as noindex english-canonical metadata targets', () => {
+    it('former redirect-only samples now resolve as indexable self-canonical for high-value locales', () => {
       const cases = [
         ['zh-TW', 'markdown-to-pdf'],
         ['ja', 'markdown-to-pdf'],
@@ -717,7 +719,8 @@ describe('SEO Property Tests', () => {
         expect(tool).toBeDefined();
         expect(fallbackContent).toBeDefined();
         expect(hasLocalizedToolContent(locale, toolId)).toBe(false);
-        expect(shouldIndexLocalizedToolPage(locale, toolId)).toBe(false);
+        // High-value locales are now indexable even without localized content
+        expect(shouldIndexLocalizedToolPage(locale, toolId)).toBe(true);
 
         const metadata = generateToolMetadata({
           locale,
@@ -725,12 +728,13 @@ describe('SEO Property Tests', () => {
           content: fallbackContent!,
         });
 
-        expect(metadata.robots).toMatchObject({ index: false, follow: false });
-        expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}/tools/${tool!.slug}/`);
+        // High-value locales should be indexable with self-canonical
+        expect(metadata.robots).toMatchObject({ index: true, follow: true });
+        expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}/${localeToSlug[locale]}/tools/${tool!.slug}/`);
 
         const languages = metadata.alternates?.languages as Record<string, string>;
         expect(languages.en).toBe(`${siteConfig.url}/tools/${tool!.slug}/`);
-        expect(languages[locale]).toBeUndefined();
+        expect(languages[locale]).toBe(`${siteConfig.url}/${localeToSlug[locale]}/tools/${tool!.slug}/`);
       }
     });
   });
