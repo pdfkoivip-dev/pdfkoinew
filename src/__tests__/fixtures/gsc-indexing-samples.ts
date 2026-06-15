@@ -14,9 +14,8 @@ export interface GscIndexingSample {
 export const gscIndexingSamples: readonly GscIndexingSample[] = [
   // Failed samples
   { url: `${siteConfig.url}/tools/rasterize-pdf/`, category: 'indexable_200' },
-  { url: `${siteConfig.url}/pt/tools/rasterize-pdf/`, category: 'intentional_404' },
 
-  // Pending: indexable pages
+  // Pending: indexable pages (including high-value locales without localized content after Option C)
   { url: `${siteConfig.url}/zh/tools/add-attachments/`, category: 'indexable_200' },
   { url: `${siteConfig.url}/zh-tw/tools/merge-pdf/`, category: 'indexable_200' },
   { url: `${siteConfig.url}/zh-tw/tools/alternate-merge/`, category: 'indexable_200' },
@@ -27,17 +26,15 @@ export const gscIndexingSamples: readonly GscIndexingSample[] = [
   { url: `${siteConfig.url}/es/tools/pdf-to-bmp/`, category: 'indexable_200' },
   { url: `${siteConfig.url}/ko/tools/pdf-to-greyscale/`, category: 'indexable_200' },
   { url: `${siteConfig.url}/zh-tw/`, category: 'indexable_200' },
+  { url: `${siteConfig.url}/pt/tools/rasterize-pdf/`, category: 'indexable_200' },
+  { url: `${siteConfig.url}/ko/tools/sanitize-pdf/`, category: 'indexable_200' },
+  { url: `${siteConfig.url}/es/tools/rtf-to-pdf/`, category: 'indexable_200' },
+  { url: `${siteConfig.url}/ko/tools/markdown-to-pdf/`, category: 'indexable_200' },
+  { url: `${siteConfig.url}/zh-tw/tools/font-to-outline/`, category: 'indexable_200' },
 
-  // Pending: canonical redirects
-  { url: `${siteConfig.url}/tools/pdf-to-docx`, category: 'canonical_redirect' },
+  // Pending: canonical redirects (only /en/* and locale normalization remain)
   { url: `${siteConfig.url}/en/tools/jpg-to-pdf`, category: 'canonical_redirect' },
   { url: `${siteConfig.url}/zh-TW/`, category: 'canonical_redirect' },
-
-  // Pending: intentional 404s for non-indexable locale-tool combos
-  { url: `${siteConfig.url}/ko/tools/sanitize-pdf/`, category: 'intentional_404' },
-  { url: `${siteConfig.url}/es/tools/rtf-to-pdf/`, category: 'intentional_404' },
-  { url: `${siteConfig.url}/ko/tools/markdown-to-pdf/`, category: 'intentional_404' },
-  { url: `${siteConfig.url}/zh-tw/tools/font-to-outline/`, category: 'intentional_404' },
 
   // Pending: non-html resource
   { url: `${siteConfig.url}/manifest.webmanifest`, category: 'non_html_resource' },

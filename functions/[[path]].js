@@ -8,5 +8,11 @@ export function onRequest(context) {
     return context.next();
   }
 
-  return Response.redirect(new URL(destination, url.origin), 301);
+  return new Response(null, {
+    status: 301,
+    headers: {
+      'Location': `${url.origin}${destination}`,
+      'Cache-Control': 'public, max-age=31536000', // Cache redirect for 1 year
+    },
+  });
 }

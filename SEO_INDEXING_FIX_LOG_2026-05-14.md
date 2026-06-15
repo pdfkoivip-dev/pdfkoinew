@@ -170,3 +170,58 @@ export function getToolPublicLocale(locale: Locale, toolId: string): Locale {
 1. 部署后在 GSC 对 12 条失败 URL 执行”请求编入索引”
 2. 7~14 天后观察索引收录情况
 3. 监控 GSC 报告中 noindex 排除数量的下降趋势
+
+---
+
+## 九、重定向问题修复（2026-06-16）
+
+### 1) 问题背景
+GSC 报告”网页会自动重定向”问题，受影响网页数：84 条
+
+根本原因：`public/_redirects` 文件中包含多余的尾斜杠规范化重定向规则：
+```
+/tools/merge-pdf   /tools/merge-pdf/   301!
+/tools/split-pdf   /tools/split-pdf/   301!
+/tools/pdf-to-docx /tools/pdf-to-docx/ 301!
+```
+
+这些规则是**多余的**，因为：
+- Next.js 配置了 `trailingSlash: true`，构建时已生成带尾斜杠的页面
+- Cloudflare Pages 静态托管会自动处理尾斜杠（访问 `/tools/merge-pdf` 自动查找 `/tools/merge-pdf/index.html`）
+- 显式的 301 重定向被 GSC 识别为”网页会自动重定向”问题
+
+### 2) 解决方案
+移除 `_redirects` 文件中的多余尾斜杠重定向规则，仅保留必要的重定向：
+- www 到非 www 的规范化
+- http 到 https 的升级
+- `/en/*` 到根路径的重定向（英文是默认语言）
+- 查询参数清理
+
+### 3) 代码改动
+
+#### a) 清理 `_redirects` 文件
+文件：`public/_redirects`
+- 移除第 10-13 行的工具页尾斜杠重定向规则
+- 保留域名规范化和语言路径重定向
+
+#### b) 更新 GSC 样本分类
+文件：`src/__tests__/fixtures/gsc-indexing-samples.ts`
+- 将 `/tools/pdf-to-docx` 从 `canonical_redirect` 重新分类为不再收录（已移除）
+- 将所有原 `intentional_404` 样本重新分类为 `indexable_200`（方案C后都变成高价值语言）
+- 仅保留真正的重定向样本：`/en/tools/jpg-to-pdf` 和 `/zh-TW/`
+
+### 4) 验证结果
+- ✅ GSC 分类测试：4/4 通过
+- ✅ SEO 属性测试：28/28 通过
+- ✅ Sitemap 属性测试：16/16 通过
+- ✅ 生产构建：成功生成 1032 个静态页面
+
+### 5) 预期效果
+1. 84 条”网页会自动重定向”问题将解决
+2. 工具页的无尾斜杠 URL 将通过 Cloudflare 自动处理，不再产生 301 重定向
+3. GSC 将这些页面识别为正常可索引页面，而不是重定向
+
+### 6) 后续操作
+1. 部署后在 GSC 对受影响的 84 条 URL 执行”验证修复”
+2. 7~14 天后观察”网页会自动重定向”问题数量的下降
+3. 确认 GSC 不再报告工具页的重定向问题
