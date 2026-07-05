@@ -2,35 +2,27 @@
 // These are the "canonical default-locale landing pages" that have no localized
 // counterpart and must always resolve to the root English version.
 //
-// Note: "/tools" and "/tools/" are intentionally excluded from this set.
-// When a user (or crawler) lands on /ja/tools or /zh-tw/tools they should be
-// allowed to fall through to the page handler – the page itself decides
-// whether to show a localized tools listing or the English version.
-// That decision lives in the page component / metadata layer, NOT in the
-// redirect layer.
+// IMPORTANT: Only include pages that should REDIRECT (301) to English version.
+// Pages with full localized content should NOT be in this set - they should
+// return 200 with noindex+canonical meta tags instead.
+//
+// Current strategy (2026-07-06):
+// - Landing pages (marketing content) → 301 redirect to English
+// - Trust pages (legal, help) → 200 + noindex + canonical to English
+// - Tools pages → 200 + localized or noindex as needed
+//
+// This fixes Google Search Console "page redirects" errors for localized pages
+// that have real translated content but were being force-redirected.
 const CANONICAL_DEFAULT_LOCALE_PATHS = new Set([
+  // Landing pages: only English has full marketing content
   '/compress-pdf-for-email',
   '/compress-pdf-for-email/',
   '/compress-pdf-without-upload',
   '/compress-pdf-without-upload/',
   '/merge-pdf-no-signup',
   '/merge-pdf-no-signup/',
-  '/about',
-  '/about/',
-  '/faq',
-  '/faq/',
-  '/privacy',
-  '/privacy/',
-  '/cookies',
-  '/cookies/',
-  '/contact',
-  '/contact/',
-  '/terms',
-  '/terms/',
-  '/workflow',
-  '/workflow/',
-  '/tools',
-  '/tools/',
+  // Removed from redirect set (have localized content, return 200):
+  // - /about, /faq, /privacy, /cookies, /contact, /terms, /workflow, /tools
 ]);
 
 /**
