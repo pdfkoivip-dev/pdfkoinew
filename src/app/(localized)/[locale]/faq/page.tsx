@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { normalizeLocale, getPublicLocaleParams } from '@/lib/i18n/config';
-import { generateFaqMetadata } from '@/lib/seo';
+import { generateFaqMetadata, generateFAQPageSchema, generateWebSiteSchema, generateOrganizationSchema } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { buildFaqPageItems } from './faq-data';
 import FAQPageClient from './FAQPageClient';
 
 export function generateStaticParams() {
@@ -34,5 +36,17 @@ export default async function FAQPage({ params }: FAQPageProps) {
   // Enable static rendering
   setRequestLocale(validLocale);
 
-  return <FAQPageClient locale={validLocale} />;
+  // Build machine-readable FAQ schema so AI engines and search features can
+  // cite PDFkoi's privacy/no-signup/browser-based answers directly.
+  const t = await getTranslations({ locale: validLocale, namespace: 'faqPage' });
+  const translate = (key: string, values?: Record<string, string | number>) => t(key, values);
+  const faqItems = buildFaqPageItems(translate);
+  const faqSchema = generateFAQPageSchema(faqItems);
+
+  return (
+    <>
+      <JsonLd data={[generateWebSiteSchema(validLocale), generateOrganizationSchema(), faqSchema]} />
+      <FAQPageClient locale={validLocale} />
+    </>
+  );
 }

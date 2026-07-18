@@ -151,6 +151,15 @@ export interface OrganizationSchema {
   url: string;
   logo?: string;
   sameAs?: string[];
+  description?: string;
+  alternateName?: string;
+  slogan?: string;
+  areaServed?: string;
+  contactPoint?: {
+    '@type': 'ContactPoint';
+    contactType: string;
+    url: string;
+  };
 }
 
 /**
@@ -353,6 +362,11 @@ export function generateWebSiteSchema(locale: Locale): WebSiteSchema {
     name: siteConfig.name,
     url: `${siteConfig.url}${getPublicPath('/', locale)}`,
     description: siteConfig.description,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteConfig.url}/tools?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
   };
 }
 
@@ -366,9 +380,19 @@ export function generateOrganizationSchema(): OrganizationSchema {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: siteConfig.name,
+    alternateName: 'PDFkoi.com',
     url: siteConfig.url,
     logo: `${siteConfig.url}/images/logo.png`,
+    description:
+      'PDFkoi is a free, browser-based PDF toolkit that processes documents locally in the user\'s browser. Files are never uploaded to a server, making it a privacy-first alternative to upload-based PDF tools.',
+    slogan: 'Private, free PDF tools that run entirely in your browser.',
+    areaServed: 'Worldwide',
     sameAs: sameAs.length > 0 ? sameAs : undefined,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      url: `${siteConfig.url}/contact`,
+    },
   };
 }
 

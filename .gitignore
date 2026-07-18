@@ -67,3 +67,7 @@ out.txt
 bentopdf-main
 # Comparison/debug files
 comparisons.txt
+
+# Diagnostic output
+diag-output/
+.workbuddy/

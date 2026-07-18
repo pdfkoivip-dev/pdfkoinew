@@ -484,9 +484,17 @@ describe('SEO Property Tests', () => {
       const organization = generateOrganizationSchema();
 
       expect(website.url).toBe(`${siteConfig.url}/`);
-      expect(website.potentialAction).toBeUndefined();
+      // WebSite exposes a SearchAction so AI engines and search UIs can query the tool index.
+      expect(website.potentialAction).toBeDefined();
+      expect(website.potentialAction?.['@type']).toBe('SearchAction');
+      expect(website.potentialAction?.target).toBe(`${siteConfig.url}/tools?q={search_term_string}`);
       expect(organization.url).toBe(`${siteConfig.url}`);
       expect(organization.logo).toBe(`${siteConfig.url}/images/logo.png`);
+      // Organization carries entity-clarity fields for generative engines.
+      expect(organization.description).toBeTruthy();
+      expect(organization.alternateName).toBe('PDFkoi.com');
+      expect(organization.areaServed).toBe('Worldwide');
+      expect(organization.contactPoint?.['@type']).toBe('ContactPoint');
     });
   });
 
