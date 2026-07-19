@@ -89,7 +89,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto prose prose-lg">
               <p className="text-sm text-[hsl(var(--color-muted-foreground))] mb-8">
-                Last updated: December 2024
+                Last updated: July 2026
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
@@ -159,31 +159,64 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
                 5. Cookies
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                We use minimal cookies for essential functionality:
+                We use the following types of cookies:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[hsl(var(--color-muted-foreground))] mb-4">
                 <li><strong>Essential cookies:</strong> Required for the website to function properly</li>
                 <li><strong>Preference cookies:</strong> Remember your settings like language preference</li>
+                <li><strong>Advertising cookies:</strong> Used by Google AdSense and its partners to display relevant advertisements (see Advertising section below)</li>
               </ul>
+
+              <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
+                6. Advertising
+              </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                We do not use tracking cookies or advertising cookies.
+                We use Google AdSense to display advertisements on our website. Google AdSense and its advertising
+                partners may use cookies and web beacons to serve ads based on your prior visits to this website
+                and other websites on the Internet.
+              </p>
+              <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
+                These advertising cookies allow Google and its partners to show you ads based on your interests.
+                You can opt out of personalized advertising by visiting{' '}
+                <a
+                  href="https://www.aboutads.info/choices/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[hsl(var(--color-primary))] hover:underline"
+                >
+                  www.aboutads.info/choices/
+                </a>
+                {' '}or{' '}
+                <a
+                  href="https://adssettings.google.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[hsl(var(--color-primary))] hover:underline"
+                >
+                  Google Ads Settings
+                </a>.
+              </p>
+              <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
+                <strong>Important:</strong> Your PDF files are never shared with Google or any advertising
+                network. All file processing happens locally in your browser. Advertising cookies only relate
+                to ad delivery and do not have access to your documents.
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                6. Third-Party Services
+                7. Third-Party Services
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                {t('common.brand')} does not share your data with third parties. We do not use:
+                Beyond the advertising services mentioned above, {t('common.brand')} does not share your file
+                data with any third parties. We do not use:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[hsl(var(--color-muted-foreground))] mb-4">
                 <li>Third-party analytics that track individual users</li>
-                <li>Advertising networks</li>
                 <li>Social media tracking pixels</li>
                 <li>External file processing services</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                7. Data Security
+                8. Data Security
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
                 Since your files never leave your device, they are protected by your own device&apos;s 
@@ -196,7 +229,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
               </ul>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                8. Your Rights
+                9. Your Rights
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
                 Since we don&apos;t collect personal data, there is no personal data to access, correct, 
@@ -205,7 +238,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                9. Children&apos;s Privacy
+                10. Children&apos;s Privacy
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
                 {t('common.brand')} is not directed at children under 13. We do not knowingly collect 
@@ -213,7 +246,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                10. Changes to This Policy
+                11. Changes to This Policy
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
                 We may update this Privacy Policy from time to time. We will notify you of any changes 
@@ -221,7 +254,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                11. Contact Us
+                12. Contact Us
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
                 If you have any questions about this Privacy Policy, please contact us through our 

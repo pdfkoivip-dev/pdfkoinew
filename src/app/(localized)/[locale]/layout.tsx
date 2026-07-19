@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { localeConfig, locales, normalizeLocale, getPublicLocaleParams } from '@/lib/i18n/config';
 import { baseMetadata, RootDocument } from '@/app/document';
 import { SkipLink } from '@/components/common/SkipLink';
+import { CookieConsent } from '@/components/CookieConsent';
 
 export const metadata = baseMetadata;
 
@@ -55,6 +56,7 @@ export default async function LocaleLayout({
 
           <SkipLink targetId="main-content">Skip to main content</SkipLink>
           {children}
+          <CookieConsent />
         </div>
       </NextIntlClientProvider>
     </RootDocument>

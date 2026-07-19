@@ -1,1 +1,20 @@
-填入你自己的谷歌ads
+# Google AdSense Publisher Authorization
+# Replace the placeholder below with your actual AdSense publisher ID
+# Format: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+#
+# To get your publisher ID:
+# 1. Sign up for Google AdSense at https://www.google.com/adsense/
+# 2. Complete the application process
+# 3. Find your publisher ID in AdSense dashboard (format: pub-XXXXXXXXXXXXXXXX)
+# 4. Replace the line below with your actual ID
+
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# INSTRUCTIONS:
+# 1. Uncomment the line above (remove the # at the beginning)
+# 2. Replace XXXXXXXXXXXXXXXX with your actual 16-digit AdSense publisher ID
+# 3. Do NOT modify f08c47fec0942fa0 - this is Google's certification authority ID
+# 4. Save this file
+#
+# Example (DO NOT USE THIS - it's not your real ID):
+# google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0
