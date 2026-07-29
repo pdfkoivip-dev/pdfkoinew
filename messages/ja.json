@@ -455,6 +455,11 @@
       "title": "人気のPDFツール",
       "description": "作業を効率化するために最も使用されているツール。"
     },
+    "categoryBrowse": {
+      "title": "カテゴリ別にツールを閲覧",
+      "description": "整理されたコレクションから、タスクに最適なツールを見つけましょう。",
+      "viewAll": "すべて表示"
+    },
     "categoriesSection": {
       "title": "すべてのツールカテゴリを見る",
       "description": "カテゴリ別に整理された{count}以上のプロフェッショナルPDFツール",

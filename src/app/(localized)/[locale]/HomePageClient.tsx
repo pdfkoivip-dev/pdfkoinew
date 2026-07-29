@@ -11,6 +11,7 @@ import { Card } from '@/components/ui/Card';
 import { getAllTools, getToolsByCategory, getPopularTools } from '@/config/tools';
 import { getPublicPath, type Locale } from '@/lib/i18n/config';
 import { type ToolCategory } from '@/types/tool';
+import { CategoryBrowseSection } from '@/components/homepage/CategoryBrowseSection';
 
 interface HomePageClientProps {
   locale: Locale;
@@ -163,6 +164,12 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
             />
           </div>
         </section>
+
+        {/* Category Browse Section */}
+        <CategoryBrowseSection
+          locale={locale}
+          localizedToolContent={localizedToolContent}
+        />
 
         <section className="py-14" aria-labelledby="browser-safety">
           <div className="container mx-auto px-4">

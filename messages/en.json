@@ -471,6 +471,11 @@
       "title": "Popular PDF Tools",
       "description": "Our most used tools to help you get your work done faster."
     },
+    "categoryBrowse": {
+      "title": "Browse Tools by Category",
+      "description": "Find the perfect tool for your task from our organized collection.",
+      "viewAll": "View all"
+    },
     "categoriesSection": {
       "title": "Explore All Tool Categories",
       "description": "{count}+ professional PDF tools organized by category",
