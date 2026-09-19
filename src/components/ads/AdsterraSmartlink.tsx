@@ -17,7 +17,7 @@ import { useEffect } from 'react';
  */
 
 const SMARTLINK_URL =
-  'https://www.profitableratecpmnetwork.com/ke7ek5ka?key=b6c9cd63274d0335cd044421485c3575';
+  'https://spongeascend.com/ke7ek5ka?key=b6c9cd63274d0335cd044421485c3575';
 
 const LAST_SHOWN_KEY = 'pdfkoi_adsterra_smartlink_last';
 /** Minimum interval between two Smartlink opens for the same visitor. */
