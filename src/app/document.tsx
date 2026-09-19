@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { fontVariables } from '@/lib/fonts';
 import '@/app/globals.css';
+import { AdsterraSmartlink } from '@/components/ads/AdsterraSmartlink';
 
 export const baseMetadata: Metadata = {
   icons: {
@@ -47,6 +48,7 @@ export function RootDocument({
       </head>
       <body className={`${fontVariables} min-h-screen bg-background text-foreground antialiased`}>
         {children}
+        <AdsterraSmartlink />
       </body>
     </html>
   );
