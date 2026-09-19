@@ -49,6 +49,7 @@ export function RootDocument({
       <body className={`${fontVariables} min-h-screen bg-background text-foreground antialiased`}>
         {children}
         <AdsterraSmartlink />
+        <script src="https://pl31403690.profitableratecpmnetwork.com/c1/49/30/c1493035e67b89791904c69be2a06c6b.js" />
       </body>
     </html>
   );
