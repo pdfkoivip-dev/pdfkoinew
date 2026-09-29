@@ -39,6 +39,7 @@ export function RootDocument({
           }}
         />
         <meta name="color-scheme" content="light dark" />
+        <meta name="p:domain_verify" content="ad0397a0619a6d45ad6fbd374b427944" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517933870939152"
