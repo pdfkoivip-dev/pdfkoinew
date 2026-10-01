@@ -1,0 +1,13 @@
+# Cloudflare Pages 构建配置
+
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
+
+# 确保构建包含所有必要的步骤
+[build.processing]
+  skip_processing = false

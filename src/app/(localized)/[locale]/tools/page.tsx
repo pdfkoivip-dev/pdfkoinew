@@ -10,42 +10,21 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-  searchParams,
 }: {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }): Promise<Metadata> {
   const { locale } = await params;
   const validLocale = normalizeLocale(locale) || 'en';
   const t = await getTranslations({ locale: validLocale, namespace: 'metadata' });
-  const resolvedSearchParams = await searchParams;
 
-  // If search query parameter exists, add noindex to prevent indexing search result pages
-  // This fixes GSC "网页会自动重定向" issue for search parameter pages
-  const hasSearchQuery = resolvedSearchParams.q !== undefined ||
-                        resolvedSearchParams.category !== undefined;
-
-  const baseMetadata = generateToolsListMetadata(validLocale, {
+  return generateToolsListMetadata(validLocale, {
     title: t('tools.title'),
     description: t('tools.description'),
   });
-
-  if (hasSearchQuery) {
-    return {
-      ...baseMetadata,
-      robots: {
-        index: false,
-        follow: true,
-      },
-    };
-  }
-
-  return baseMetadata;
 }
 
 interface ToolsPageProps {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export default async function ToolsPage({ params }: ToolsPageProps) {
