@@ -1,22 +1,9 @@
-/**
- * Robots.txt Generation
- * Configures crawling rules for search engines
- * 
- * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots
- */
-
-import { MetadataRoute } from 'next';
-import { siteConfig } from '@/config/site';
-import { getLocaleSlug, locales } from '@/lib/i18n/config';
+import type { MetadataRoute } from 'next';
 
 // Required for static export
 export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
-  const localeSitemaps = locales.map(
-    (locale) => `${siteConfig.url}/sitemap/${getLocaleSlug(locale)}.xml`
-  );
-
   return {
     rules: [
       {
@@ -25,9 +12,25 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           '/api/',
           '/manifest.webmanifest',
+          // Block search parameter pages to prevent duplicate content
+          // Fixes GSC "网页会自动重定向" issue
+          '/*/tools/?q=*',
+          '/tools/?q=*',
+          '/*/tools/?category=*',
         ],
       },
     ],
-    sitemap: [`${siteConfig.url}/sitemap.xml`, ...localeSitemaps],
+    sitemap: [
+      'https://pdfkoi.com/sitemap.xml',
+      'https://pdfkoi.com/sitemap/en.xml',
+      'https://pdfkoi.com/sitemap/ja.xml',
+      'https://pdfkoi.com/sitemap/ko.xml',
+      'https://pdfkoi.com/sitemap/es.xml',
+      'https://pdfkoi.com/sitemap/fr.xml',
+      'https://pdfkoi.com/sitemap/de.xml',
+      'https://pdfkoi.com/sitemap/zh.xml',
+      'https://pdfkoi.com/sitemap/zh-tw.xml',
+      'https://pdfkoi.com/sitemap/pt.xml',
+    ],
   };
 }
