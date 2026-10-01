@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { fontVariables } from '@/lib/fonts';
 import '@/app/globals.css';
-import { AdsterraSmartlink } from '@/components/ads/AdsterraSmartlink';
+import { AdManager } from '@/components/ads/AdManager';
+import { ConditionalAdsterra } from '@/components/ads/ConditionalAdsterra';
 
 export const baseMetadata: Metadata = {
   icons: {
@@ -41,12 +42,7 @@ export function RootDocument({
         <meta name="color-scheme" content="light dark" />
         <meta name="p:domain_verify" content="ad0397a0619a6d45ad6fbd374b427944" />
         <meta name="monetag" content="9bd7d3ca07b698529832efe50fda74b2" />
-        <script
-          src="https://quge5.com/88/tag.min.js"
-          data-zone="289334"
-          async
-          data-cfasync="false"
-        />
+        {/* Monetag 由 AdManager 组件按页面类型动态加载 */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517933870939152"
@@ -56,7 +52,16 @@ export function RootDocument({
       </head>
       <body className={`${fontVariables} min-h-screen bg-background text-foreground antialiased`}>
         {children}
-        <AdsterraSmartlink />
+        {/* 智能广告管理 - 按页面类型自动选择广告平台 */}
+        <AdManager
+          monetag={{
+            verificationCode: '9bd7d3ca07b698529832efe50fda74b2',
+            zoneId: '289334',
+          }}
+        />
+        {/* Adsterra Smartlink 仅在工具详情页启用 */}
+        <ConditionalAdsterra />
+        {/* Adsterra 底部脚本 - 全站保留 */}
         <script src="https://pl31403690.profitableratecpmnetwork.com/c1/49/30/c1493035e67b89791904c69be2a06c6b.js" />
       </body>
     </html>
