@@ -183,6 +183,18 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             <Link href={getPublicPath('/cookies', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]">Cookies</Link>
           </div>
         </div>
+
+        {/* Featured on TinyShelf */}
+        <div className="mt-8 flex justify-center">
+          <a href="https://www.tinyshelf.co/?ref=pdfkoi.com" title="Featured on TinyShelf">
+            <Image
+              src="https://www.tinyshelf.co/badge/tinyshelf-badge-light-5ca4026a.svg"
+              alt="Featured on TinyShelf"
+              width={216}
+              height={64}
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );
