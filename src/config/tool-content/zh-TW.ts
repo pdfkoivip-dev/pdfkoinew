@@ -78,9 +78,9 @@ export const toolContentZhTw: Record<string, ToolContent> = {
   },
   'jpg-to-pdf': {
     ...toolContentZh['jpg-to-pdf'],
-    title: '將多張 JPG 圖片合併為一個 PDF',
-    metaDescription: '將多張 JPG 圖片合併為單一 PDF，適合文件提交、照片整理、截圖彙整與證件資料上傳。',
-    keywords: ['將多張jpg合併為pdf', 'jpg圖片轉pdf', '多張圖片合成pdf', '文件照片轉pdf', '截圖整理成pdf'],
+    title: 'JPG轉PDF線上工具【免費無浮水印】批次轉換超快速',
+    metaDescription: '最強JPG轉PDF工具！支援批次上傳、拖放操作、5秒完成轉換。100%免費無浮水印，無需註冊，保護您的隱私。立即試用 →',
+    keywords: ['jpg轉pdf', 'jpg轉pdf線上', 'jpg轉pdf免費', 'jpg轉pdf無浮水印', 'jpg轉pdf批次', '圖片轉pdf', 'jpg to pdf', '照片轉pdf'],
     description: `
       <p>將多張 JPG 圖片合併為一個 PDF，適合把多張照片整理成更方便上傳、提交或分享的單一檔案。</p>
       <p>不論是證件照片、截圖、掃描圖片，還是手機拍攝的紙本資料，都能先排序再匯出成一份 PDF。這比傳送多張零散圖片更方便審核、列印與保存。如果之後還想把 PDF 頁面重新匯出成圖片，也可以繼續<a href="/zh-tw/tools/pdf-to-jpg">把 PDF 頁面轉成 JPG</a>。</p>
@@ -141,9 +141,9 @@ export const toolContentZhTw: Record<string, ToolContent> = {
   },
   'page-dimensions': {
     ...toolContentZh['page-dimensions'],
-    title: '查看 PDF 頁面尺寸與紙張大小',
-    metaDescription: '查看 PDF 每一頁的尺寸、方向與紙張大小，適合列印前檢查、版面比對與找出不一致頁面。',
-    keywords: ['pdf頁面尺寸', '查看pdf紙張大小', 'pdf每頁尺寸查詢', 'pdf頁面方向', 'pdf列印前檢查'],
+    title: 'PDF頁面尺寸查詢工具 | 一鍵查看A4/Letter/自訂尺寸',
+    metaDescription: '快速查詢PDF每頁的尺寸大小。支援A4、Letter、Legal等標準尺寸識別，顯示寬高尺寸（mm/英吋/點）。免費線上工具，立即查詢 →',
+    keywords: ['pdf尺寸', 'pdf頁面大小', 'pdf尺寸查詢', 'pdf page size', 'pdf dimensions', 'pdf 尺寸檢查', 'a4 pdf 尺寸', 'pdf 頁面尺寸'],
     description: `
       <p>查看 PDF 頁面尺寸與紙張大小，適合在列印、提交或重新整理文件前，先確認每一頁是不是同樣規格。你可以快速看到頁面寬高、方向，以及是否混用了 A4、Letter 或其他非標準尺寸。</p>
       <p>這類需求常見於掃描文件、報告附件、表單彙整與印刷稿檢查。當文件裡有幾頁尺寸特別不一樣時，先找出問題頁面，後續再調整會快很多。如果你接下來要把不一致的頁面統一，也可以再用<a href="/zh-tw/tools/fix-page-size">修正 PDF 頁面大小</a>處理。</p>

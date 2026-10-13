@@ -1137,9 +1137,9 @@ export const toolContentEs: Record<string, ToolContent> = {
   },
 
   'reverse-pages': {
-    title: 'Invertir Páginas',
-    metaDescription: 'Invierte el orden de las páginas en documentos PDF.',
-    keywords: ['invertir páginas pdf', 'orden inverso', 'voltear pdf'],
+    title: 'Invertir Orden de Páginas PDF | Revertir PDF Gratis',
+    metaDescription: 'Invierte el orden de las páginas de tu PDF en segundos. 100% gratis, sin marcas de agua, sin registro. Arrastra tu archivo y listo. Pruébalo ahora →',
+    keywords: ['invertir pdf', 'revertir páginas pdf', 'invertir orden pdf', 'pdf al revés', 'reverse pdf pages', 'voltear páginas pdf', 'cambiar orden pdf', 'pdf inverso'],
     description: '<p>Invertir Páginas cambia el orden de las páginas de tu PDF, poniendo la última primero.</p><p>Procesamiento local.</p>',
     howToUse: [
       { step: 1, title: 'Sube tu PDF', description: 'Arrastra y suelta el documento.' },

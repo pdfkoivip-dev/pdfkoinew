@@ -251,9 +251,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'organize-pdf': {
-    title: 'PDFページを整理',
-    metaDescription: 'PDFページの並べ替え、複製、削除。ドラッグ＆ドロップでドキュメントを再編成。',
-    keywords: ['pdf整理', 'pdfページ並べ替え', 'pdf再配置', 'pdfページオーガナイザー'],
+    title: 'PDFページ整理ツール【並び替え・削除・回転】無料で簡単',
+    metaDescription: 'PDFのページを自由に整理。ページの並び替え・削除・回転が直感的にできます。ドラッグ&ドロップで簡単操作、無料・登録不要。今すぐ整理 →',
+    keywords: ['pdf 整理', 'pdf ページ 並び替え', 'pdf ページ 削除', 'pdf ページ 回転', 'pdf 編集', 'pdf organize', 'pdf ページ 入れ替え', 'pdf 順番 変更'],
     description: `
       <p>PDF整理は、PDFドキュメント内のページを再配置するための直感的なドラッグ＆ドロップインターフェースを提供します。ページの並べ替え、重要なセクションの複製、不要なページの削除が簡単にできます。</p>
       <p>ビジュアルページサムネイルにより、コンテンツを識別し、必要に応じてページを正確に配置しやすくなっています。ドキュメントの再構成、カスタムページ順序の作成、スキャンファイルのクリーンアップに最適です。</p>
@@ -613,9 +613,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'png-to-pdf': {
-    title: 'PNGからPDF',
-    metaDescription: 'PNG画像をPDFに変換。透明度を保持し、複数のPNGファイルを結合。',
-    keywords: ['pngからpdf', 'png変換', 'pngコンバーター', '透明画像からpdf'],
+    title: 'PNG→PDF変換ツール【無料・登録不要】複数画像を一括変換',
+    metaDescription: 'PNGをPDFに3秒で変換！一括処理対応、画質劣化なし、完全無料。登録不要でサクッと変換できます。今すぐ試す →',
+    keywords: ['png pdf 変換', 'png to pdf', 'png pdf 化', '画像 pdf 変換', 'png pdf 一括', 'png から pdf', 'png を pdf に', 'png pdf コンバーター'],
     description: '<p>PNG画像を透明度を保持しながらPDFドキュメントに変換します。グラフィックス、ロゴ、スクリーンショット、透明な背景を持つ画像に最適です。</p>',
     howToUse: [
       { step: 1, title: 'PNGファイルをアップロード', description: 'PNG画像をドラッグ＆ドロップするか、クリックしてファイルを選択します。' },
@@ -1409,9 +1409,9 @@ export const toolContentJa: Record<string, ToolContent> = {
 
   // ==================== SECURE PDF ====================
   'encrypt-pdf': {
-    title: 'PDF暗号化',
-    metaDescription: 'PDFファイルをパスワード保護。暗号化を追加し、権限を設定。',
-    keywords: ['pdf暗号化', 'pdfパスワード保護', 'pdfセキュア', 'pdf暗号化'],
+    title: 'PDF暗号化【パスワード保護】無料・安全・簡単',
+    metaDescription: 'PDFにパスワードをかけて機密情報を保護。AES-256暗号化、ブラウザ内処理でサーバーにアップロードなし。完全無料、今すぐ保護 →',
+    keywords: ['pdf パスワード', 'pdf 暗号化', 'pdf ロック', 'pdf セキュリティ', 'pdf 保護', 'pdf encrypt', 'pdf パスワード設定', 'pdf セキュリティ設定'],
     description: '<p>PDFドキュメントにパスワード保護と暗号化を追加します。開くことを防止するユーザーパスワードと、印刷やコピーなどの権限を制御するオーナーパスワードを設定します。</p>',
     howToUse: [
       { step: 1, title: 'PDFをアップロード', description: 'PDFファイルをドラッグ＆ドロップするか、クリックして選択します。' },

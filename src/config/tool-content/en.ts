@@ -144,9 +144,9 @@ export const toolContentEn: Record<string, ToolContent> = {
     ],
   },
   'compress-pdf': {
-    title: 'Compress PDF for Email',
-    metaDescription: 'Compress PDF for email, uploads, and sharing. Reduce PDF file size online while keeping text clear and documents easy to read.',
-    keywords: ['compress pdf for email', 'reduce pdf size for upload', 'make scanned pdf smaller', 'compress pdf for sharing'],
+    title: 'Compress PDF Online Free | Reduce File Size Up to 90%',
+    metaDescription: 'Best PDF compressor: reduce file size by up to 90% while maintaining quality. Free, no watermark, works for email attachments. Compress now in 3 seconds →',
+    keywords: ['compress pdf', 'reduce pdf size', 'pdf compressor', 'compress pdf online', 'make pdf smaller', 'pdf size reducer', 'compress pdf for email', 'shrink pdf file'],
     description:       `
       <p>Compress PDF for email when your file is too large to send, upload, or share. This tool helps you reduce PDF file size online without making the document difficult to read.</p>
       <p>It works well for email attachments, application forms, scanned documents, reports, and client uploads. If you need a smaller PDF for Gmail, Outlook, or online portals, this is the fastest way to make the file easier to handle. If you first need one final file before reducing size, you can <a href="/tools/merge-pdf">merge PDF files before compressing them</a>.</p>
@@ -1739,9 +1739,9 @@ export const toolContentEn: Record<string, ToolContent> = {
   },
 
   'combine-single-page': {
-    title: 'Combine to Single Page',
-    metaDescription: 'Stitch PDF pages into one continuous page. Create scrollable single-page documents.',
-    keywords: ['combine pages', 'single page pdf', 'stitch pages', 'continuous scroll'],
+    title: 'Merge Multiple PDFs into One | Combine PDF Files Free',
+    metaDescription: 'Merge multiple PDFs into a single document in seconds. Drag & drop files, automatic page ordering, 100% free. Perfect for combining scans and reports. Try now →',
+    keywords: ['merge pdf', 'combine pdf', 'join pdf files', 'merge multiple pdfs', 'combine pdf pages', 'pdf merger', 'merge pdf online', 'combine single page pdfs'],
     description: `
       <p>Combine to Single Page stitches all PDF pages into one continuous page. Create scrollable documents perfect for web viewing or continuous reading.</p>
       <p>Pages are joined vertically with customizable spacing. The result is a single long page containing all content.</p>
