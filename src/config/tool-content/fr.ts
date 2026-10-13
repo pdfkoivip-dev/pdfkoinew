@@ -1816,7 +1816,7 @@ export const toolContentFr: Record<string, ToolContent> = {
     ],
   },
 
-  'pdf-to-xlsx': {
+  'pdf-to-excel': {
     title: 'Convertir PDF en Excel Gratuit | Extraction de Tableaux Rapide',
     metaDescription: 'Convertisseur PDF vers Excel 100% gratuit. Extrayez les tableaux en 3 secondes, conservez la mise en forme. Aucune inscription requise. Essayez maintenant →',
     keywords: ['pdf en excel', 'convertir pdf excel', 'pdf vers excel', 'pdf to excel', 'extraire tableau pdf', 'pdf excel gratuit', 'convertisseur pdf excel', 'transformer pdf en excel'],
