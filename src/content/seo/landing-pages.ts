@@ -54,10 +54,10 @@ export interface LandingPageContent {
 export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
   'compress-pdf-for-email': {
     slug: 'compress-pdf-for-email',
-    title: 'Compress PDF for Email Online Without Signup',
+    title: 'Compress PDF for Email Free | Reduce Size for Gmail & Outlook',
     h1: 'Compress PDF for Email Without Signup',
     metaDescription:
-      'Compress PDF for email attachments online without signup. Reduce file size for Gmail, Outlook, and other inbox limits in your browser.',
+      'Compress PDF for email attachments free: reduce file size for Gmail, Outlook, Yahoo Mail. 100% free, no size limit, private in browser. Compress for email now →',
     keywords: [
       'compress pdf for email',
       'reduce pdf size for email',

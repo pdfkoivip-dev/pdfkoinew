@@ -111,9 +111,9 @@ export const toolContentPt: Record<string, ToolContent> = {
   },
 
   'edit-pdf': {
-    title: 'Editar PDF',
-    metaDescription: 'Edite arquivos PDF online. Adicione texto, imagens, anotações e formas aos seus documentos.',
-    keywords: ['editar pdf', 'editor pdf online gratuito', 'escrever no pdf', 'anotar pdf'],
+    title: 'Editar PDF Online Grátis | Adicionar Texto e Imagens',
+    metaDescription: 'Edite PDF gratuitamente: adicione texto, insira imagens, crie anotações. 100% grátis, sem registro, direto no navegador. Edite PDF agora →',
+    keywords: ['editar pdf', 'editar pdf gratis', 'editor pdf', 'adicionar texto pdf', 'modificar pdf', 'edição pdf', 'editar pdf online', 'alterar pdf'],
     description: `
       <p>Nosso editor de PDF oferece ferramentas para modificar e anotar seus documentos sem software caro. Adicione texto, imagens, formas e destaques facilmente.</p>
     `,

@@ -301,9 +301,9 @@ export const toolContentEn: Record<string, ToolContent> = {
   },
 
   'organize-pdf': {
-    title: 'Organize PDF',
-    metaDescription: 'Reorder, duplicate, and delete PDF pages. Drag and drop to reorganize your documents.',
-    keywords: ['organize pdf', 'reorder pdf pages', 'rearrange pdf', 'pdf page organizer'],
+    title: 'Organize PDF Pages | Reorder, Delete, Rotate Pages Free',
+    metaDescription: 'Organize PDF pages easily: reorder, delete, rotate, duplicate pages with drag & drop. 100% free, no watermark, works in browser. Organize now →',
+    keywords: ['organize pdf', 'reorder pdf pages', 'rearrange pdf', 'pdf organizer', 'sort pdf pages', 'reorganize pdf', 'pdf page order', 'arrange pdf pages'],
     description: `
       <p>Organize PDF provides an intuitive drag-and-drop interface for rearranging pages in your PDF documents. Reorder pages, duplicate important sections, or remove unwanted pages with ease.</p>
       <p>The visual page thumbnails make it easy to identify content and arrange pages exactly as you need them. Perfect for restructuring documents, creating custom page orders, or cleaning up scanned files.</p>
@@ -1635,9 +1635,9 @@ export const toolContentEn: Record<string, ToolContent> = {
   },
 
   'add-blank-page': {
-    title: 'Add Blank Page',
-    metaDescription: 'Insert blank pages into PDF documents. Add empty pages at any position.',
-    keywords: ['add blank page', 'insert page', 'empty page', 'pdf page insertion'],
+    title: 'Add Blank Page to PDF | Insert Empty Pages Anywhere Free',
+    metaDescription: 'Add blank pages to PDF: insert empty pages anywhere you need. Perfect for printing, separators, and notes. 100% free, works in browser. Add pages now →',
+    keywords: ['add blank page to pdf', 'insert empty page pdf', 'add page to pdf', 'pdf add blank page', 'insert blank page', 'add empty page pdf', 'pdf blank page', 'insert page pdf'],
     description: `
       <p>Add Blank Page inserts empty pages into your PDF documents at any position. Add pages before, after, or between existing pages with customizable page size.</p>
       <p>Perfect for adding space for notes, creating section dividers, or preparing documents for printing.</p>

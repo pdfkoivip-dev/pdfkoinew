@@ -164,9 +164,9 @@ export const toolContentDe: Record<string, ToolContent> = {
   },
 
   'edit-pdf': {
-    title: 'PDF bearbeiten',
-    metaDescription: 'PDF-Dateien online bearbeiten. Text, Bilder, Anmerkungen und Formen hinzufügen.',
-    keywords: ['pdf bearbeiten', 'pdf editor online', 'pdf beschriften', 'text in pdf einfügen'],
+    title: 'PDF Bearbeiten Online Kostenlos | Text & Bilder Hinzufügen',
+    metaDescription: 'PDF kostenlos bearbeiten: Text hinzufügen, Bilder einfügen, Anmerkungen machen. 100% gratis, keine Registrierung, direkt im Browser. Jetzt bearbeiten →',
+    keywords: ['pdf bearbeiten', 'pdf bearbeiten kostenlos', 'pdf editor', 'pdf text hinzufügen', 'pdf ändern', 'pdf editieren', 'pdf online bearbeiten', 'pdf text ändern'],
     description: `
       <p>Unser PDF-Editor bietet Ihnen Werkzeuge zum Ändern und Kommentieren Ihrer Dokumente – ganz ohne teure Software. Fügen Sie Text, Bilder, Formen und Markierungen hinzu.</p>
     `,
@@ -213,9 +213,9 @@ export const toolContentDe: Record<string, ToolContent> = {
   },
 
   'sign-pdf': {
-    title: 'PDF unterschreiben',
-    metaDescription: 'Elektronische Unterschriften zu PDF-Dokumenten hinzufügen. Zeichnen, tippen oder Signatur hochladen.',
-    keywords: ['pdf unterschreiben', 'elektronische signatur', 'e-signatur', 'pdf signieren online'],
+    title: 'PDF Unterschreiben Online Kostenlos | Digitale Signatur',
+    metaDescription: 'PDF kostenlos unterschreiben: Digitale Signatur erstellen & einfügen. 100% gratis, keine Registrierung, absolut sicher im Browser. Jetzt signieren →',
+    keywords: ['pdf unterschreiben', 'pdf signieren', 'pdf signatur', 'pdf unterschrift hinzufügen', 'pdf digital signieren', 'pdf signieren kostenlos', 'pdf elektronisch unterschreiben', 'pdf signatur erstellen'],
     description: `
       <p>Fügen Sie Ihre Unterschrift sicher und schnell zu PDFs hinzu. Zeichnen Sie Ihre Signatur mit der Maus/Touchpad, tippen Sie sie ein oder laden Sie ein Bild Ihrer Unterschrift hoch.</p>
     `,

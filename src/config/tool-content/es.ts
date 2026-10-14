@@ -1628,4 +1628,29 @@ export const toolContentEs: Record<string, ToolContent> = {
       { question: '¿Se preserva el formato?', answer: 'Los datos se preservan, pero el formato visual complejo puede simplificarse.' },
     ],
   },
+  'pdf-booklet': {
+    title: 'Crear Folleto PDF | Convertir PDF a Formato Libro para Imprimir',
+    metaDescription: 'Crea folletos PDF para imprimir y plegar. Reorganiza páginas automáticamente en formato libro. 100% gratis, sin marcas de agua, listo para imprimir. Crear folleto →',
+    keywords: ['folleto pdf', 'crear folleto pdf', 'pdf libro', 'pdf para imprimir folleto', 'pdf booklet', 'imprimir folleto', 'pdf formato libro', 'folleto doble cara'],
+    description: `
+      <p>PDF Booklet Creator organiza las páginas de tu PDF en formato folleto listo para imprimir, plegar y grapar. Perfecto para catálogos, revistas, programas de eventos y publicaciones.</p>
+      <p>Organización automática de páginas en modo folleto para encuadernación rápida sin programas complicados.</p>
+      <p>Todo el procesamiento se realiza localmente en tu navegador para proteger tu privacidad.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu PDF', description: 'Arrastra y suelta el documento que deseas convertir en folleto.' },
+      { step: 2, title: 'Configura el diseño', description: 'Selecciona el tamaño de papel y las opciones de orientación.' },
+      { step: 3, title: 'Crea y descarga', description: 'Genera el PDF listo para imprimir en modo libro.' },
+    ],
+    useCases: [
+      { title: 'Catálogos y folletos', description: 'Convierte informes o folletos en documentos plegables.', icon: 'book-open' },
+      { title: 'Revistas y zines', description: 'Publica zines con orden de página automático.', icon: 'book' },
+      { title: 'Programas de eventos', description: 'Crea cuadernillos profesionales para conferencias o bodas.', icon: 'calendar' },
+    ],
+    faq: [
+      { question: '¿Qué es el modo folleto (booklet)?', answer: 'Es el diseño donde las páginas se ordenan e imprimen para que al doblar por la mitad queden como un libro encuadernado.' },
+      { question: '¿Es gratuito?', answer: 'Sí, 100% gratuito sin límites ni marcas de agua.' },
+      { question: '¿Mis archivos están seguros?', answer: 'Totalmente. El procesamiento se realiza 100% en tu navegador y tus documentos nunca se suben a ningún servidor.' },
+    ],
+  },
 };

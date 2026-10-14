@@ -145,9 +145,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'jpg-to-pdf': {
-    title: 'JPGをPDFに変換',
-    metaDescription: 'JPG画像をPDFに変換。複数のJPGファイルを1つのPDFドキュメントに結合。',
-    keywords: ['jpgからpdf', 'jpegからpdf', 'jpg変換', '画像からpdf', '写真からpdf'],
+    title: 'JPG→PDF変換【無料・高画質】複数画像を一括変換',
+    metaDescription: 'JPGを高画質PDFに変換！複数ファイル一括処理、ドラッグ&ドロップで簡単。完全無料、登録不要、3秒で完了。今すぐ変換 →',
+    keywords: ['jpg pdf 変換', 'jpg to pdf', 'jpg pdf 化', '画像 pdf', 'jpg から pdf', '写真 pdf 変換', 'jpg を pdf に', 'jpg pdf 一括'],
     description: `
       <p>JPGからPDFは、JPEG画像を素早く簡単にPDFドキュメントに変換します。単一の写真でも複数の画像でも、このツールはプロフェッショナルな見た目のPDFファイルを作成します。</p>
       <p>複数のJPGファイルを1つのPDFに結合し、任意の順序に並べ替え、ページサイズと向きをカスタマイズできます。変換は画像品質を保持しながら、コンパクトで共有可能なPDFファイルを作成します。</p>
@@ -1386,9 +1386,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'repair-pdf': {
-    title: 'PDF修復',
-    metaDescription: '破損したPDFファイルを修正。損傷したドキュメントを回復して修復。',
-    keywords: ['pdf修復', 'pdf修正', 'pdf回復', '破損pdf'],
+    title: 'PDF修復ツール【破損・開けないPDF対応】無料で簡単修復',
+    metaDescription: '破損したPDFを修復。開けないPDF、エラーが出るPDFを無料で復元。ブラウザ内処理で安全、登録不要。今すぐ修復 →',
+    keywords: ['pdf 修復', 'pdf 壊れた', 'pdf 開けない', 'pdf エラー', 'pdf 復元', 'pdf repair', 'pdf 修理', 'pdf 直す'],
     description: '<p>破損または損傷したPDFファイルの修正を試みます。ツールはドキュメント構造を分析し、できるだけ多くのコンテンツを回復するために再構築します。</p>',
     howToUse: [
       { step: 1, title: '損傷したPDFをアップロード', description: '破損したPDFをドラッグ＆ドロップするか、クリックして選択します。' },
