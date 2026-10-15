@@ -1,6 +1,6 @@
 # pdfkoi.com | LLMS Extended Index
 
-Generated (UTC): 2026-04-12T01:05:09.398Z
+Generated (UTC): 2026-10-16T00:00:00.000Z
 Base URL: https://pdfkoi.com
 
 ## Purpose

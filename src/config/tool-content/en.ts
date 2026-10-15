@@ -59,7 +59,7 @@ export const toolContentEn: Record<string, ToolContent> = {
       { title: 'Merge Invoices into One PDF', description: 'Join receipts, invoices, or statements into one PDF for accounting or submission.', icon: 'receipt' },
     ],
     faq: [
-      { question: 'How do I merge PDF files in the right order?', answer: 'Yes. Reordering files before merging lets you control the final document sequence.' },
+      { question: 'How do I merge PDF files in the right order?', answer: 'Upload all your PDF files, then drag them into the order you want before merging. The final document follows the exact sequence shown on screen, and you can download it as one PDF.' },
       { question: 'Does merging PDF files reduce quality?', answer: 'Normally no. Merging should combine files without changing the original page quality.' },
       { question: 'Can I merge multiple PDF files into one?', answer: 'Yes. Most users merge several PDFs at once to create one final document. If you later need only part of that file, you can <a href="/tools/split-pdf">split the merged PDF into smaller sections</a>.' },
     ],
@@ -138,8 +138,8 @@ export const toolContentEn: Record<string, ToolContent> = {
       { title: 'Split PDF for Sharing', description: 'Send only the pages a client, teacher, or colleague actually needs.', icon: 'send' },
     ],
     faq: [
-      { question: 'How do I split a PDF into single pages?', answer: 'Yes. You can save every page as a separate PDF if that is the output you need. If you only need to share a visual copy of a few pages, you can also <a href="/tools/pdf-to-jpg">convert selected PDF pages to JPG</a>.' },
-      { question: 'How do I split a PDF by page range?', answer: 'Yes. You can usually enter ranges like 1-3, 5-7, or select only specific pages.' },
+      { question: 'How do I split a PDF into single pages?', answer: 'Upload your PDF, choose the option to save every page as a separate PDF, then click Split and download the resulting one-page files. If you only need to share a visual copy of a few pages, you can also <a href="/tools/pdf-to-jpg">convert selected PDF pages to JPG</a>.' },
+      { question: 'How do I split a PDF by page range?', answer: 'Enter the page ranges you want to keep, such as 1-3 or 5-7, or select individual pages. The tool extracts those pages into a new PDF that you can download immediately.' },
       { question: 'Is split PDF the same as extract pages from PDF?', answer: 'Split PDF is broader and can create multiple new files, while extract pages usually focuses on pulling selected pages into a new PDF.' },
     ],
   },
@@ -215,7 +215,7 @@ export const toolContentEn: Record<string, ToolContent> = {
       { title: 'Turn Screenshots into One PDF', description: 'Merge several screenshots into a single PDF for reporting, review, or support tickets.', icon: 'images' },
     ],
     faq: [
-      { question: 'How do I combine JPG images into one PDF?', answer: 'Yes. You can upload multiple JPG or JPEG files, put them in order, and export them as a single PDF document.' },
+      { question: 'How do I combine JPG images into one PDF?', answer: 'Upload multiple JPG or JPEG files, drag them into the order you want, and export them as a single PDF document. Each image becomes one page in the order shown on screen.' },
       { question: 'Can I reorder JPG images before converting to PDF?', answer: 'Yes. Reordering your images before conversion lets you control the page sequence in the final PDF.' },
       { question: 'Can I turn document photos into one PDF for submission?', answer: 'Yes. It is one of the easiest ways to package several images into one file for upload, review, and sharing. If the finished file becomes too large, the next step is often to <a href="/tools/compress-pdf">compress the PDF for email or upload</a>.' },
     ],
@@ -1208,7 +1208,7 @@ export const toolContentEn: Record<string, ToolContent> = {
       { title: 'Export PDF Pages for Social Media', description: 'Export brochure or flyer pages as images for websites, social posts, or design handoff.', icon: 'share-2' },
     ],
     faq: [
-      { question: 'How do I convert one PDF page to JPG?', answer: 'Yes. You can export just one page or choose a custom page range instead of converting the entire PDF.' },
+      { question: 'How do I convert one PDF page to JPG?', answer: 'Select the single page you need, or enter its page number as a custom range, instead of converting the entire PDF. The tool exports just that page as a JPG image.' },
       { question: 'Does each PDF page get saved as a separate JPG?', answer: 'Yes. Each converted page is usually exported as its own JPG image file. If you need to regroup those images afterward, you can <a href="/tools/jpg-to-pdf">turn JPG pages back into one PDF</a>.' },
       { question: 'How do I convert PDF to JPG in high quality?', answer: 'Use a higher DPI or image quality setting if available. That usually produces sharper text and cleaner images.' },
     ],
@@ -2213,7 +2213,7 @@ export const toolContentEn: Record<string, ToolContent> = {
       { title: 'Extract PDF Text for Editing', description: 'Pull text from reports or documents into Word without retyping everything from scratch.', icon: 'copy' },
     ],
     faq: [
-      { question: 'How do I convert PDF to editable Word?', answer: 'Yes. The goal is to produce a DOCX file you can open and edit in Word or compatible editors.' },
+      { question: 'How do I convert PDF to editable Word?', answer: 'Upload your PDF and run the conversion to DOCX. The output opens in Word or compatible editors as an editable document, so you can change text, formatting, and layout directly.' },
       { question: 'Can I convert a scanned PDF to editable Word?', answer: 'Scanned PDFs may need OCR for the text to become truly editable. Without OCR, they may convert more like images.' },
       { question: 'Will PDF to Word keep the formatting?', answer: 'Simple layouts usually convert better. Complex tables, spacing, and page breaks may still need some cleanup after export. If you only need page previews or image snippets instead of editable text, you can <a href="/tools/pdf-to-jpg">convert PDF pages to JPG</a>.' },
     ],

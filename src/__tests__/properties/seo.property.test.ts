@@ -422,7 +422,7 @@ describe('SEO Property Tests', () => {
       );
     });
 
-    it('generateToolPageStructuredData omits FAQPage markup for tool pages', () => {
+    it('generateToolPageStructuredData generates FAQPage markup when FAQs are present', () => {
       fc.assert(
         fc.property(
           fc.constantFrom(...locales),
@@ -435,9 +435,12 @@ describe('SEO Property Tests', () => {
             expect(structuredData.softwareApplication).toBeDefined();
             expect(structuredData.softwareApplication['@type']).toBe('SoftwareApplication');
 
-            // FAQPage is intentionally omitted from tool routes to avoid duplicate
-            // schema exposure inside Next.js RSC payloads.
-            expect(structuredData.faqPage).toBeNull();
+            // FAQPage schema should be emitted when the tool content has FAQs,
+            // enabling AI engines to extract Q&A blocks directly from tool pages.
+            expect(structuredData.faqPage).not.toBeNull();
+            expect(structuredData.faqPage?.['@type']).toBe('FAQPage');
+            expect(Array.isArray(structuredData.faqPage?.mainEntity)).toBe(true);
+            expect(structuredData.faqPage?.mainEntity.length).toBe(content.faq.length);
             
             // Breadcrumb should be present
             expect(structuredData.breadcrumb).toBeDefined();
