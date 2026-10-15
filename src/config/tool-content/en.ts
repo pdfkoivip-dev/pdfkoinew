@@ -1635,8 +1635,8 @@ export const toolContentEn: Record<string, ToolContent> = {
   },
 
   'add-blank-page': {
-    title: 'Add Blank Page to PDF | Insert Empty Pages Anywhere Free',
-    metaDescription: 'Add blank pages to PDF: insert empty pages anywhere you need. Perfect for printing, separators, and notes. 100% free, works in browser. Add pages now →',
+    title: 'Add Blank Page to PDF - Insert Empty Pages Anywhere Online',
+    metaDescription: 'Insert blank or empty pages into any position in your PDF document. Perfect for notes, duplex printing alignment, or dividers. 100% free, secure browser processing.',
     keywords: ['add blank page to pdf', 'insert empty page pdf', 'add page to pdf', 'pdf add blank page', 'insert blank page', 'add empty page pdf', 'pdf blank page', 'insert page pdf'],
     description: `
       <p>Add Blank Page inserts empty pages into your PDF documents at any position. Add pages before, after, or between existing pages with customizable page size.</p>
@@ -1739,9 +1739,20 @@ export const toolContentEn: Record<string, ToolContent> = {
   },
 
   'combine-single-page': {
-    title: 'Merge Multiple PDFs into One | Combine PDF Files Free',
-    metaDescription: 'Merge multiple PDFs into a single document in seconds. Drag & drop files, automatic page ordering, 100% free. Perfect for combining scans and reports. Try now →',
-    keywords: ['merge pdf', 'combine pdf', 'join pdf files', 'merge multiple pdfs', 'combine pdf pages', 'pdf merger', 'merge pdf online', 'combine single page pdfs'],
+    title: 'Make PDF One Continuous Page - Combine Pages into Single Page | PDFkoi',
+    metaDescription: 'Easily convert multi-page PDFs into one continuous single page online. Stitch all pages vertically with custom spacing. 100% free, private browser-based tool, no sign-up.',
+    keywords: [
+      'how to make a pdf one continuous page',
+      'pdf continuous page',
+      'continuous pdf file',
+      'how to make continuous pdf file',
+      'continuous pdf',
+      'combine pdf into single page',
+      'stitch pdf pages vertically',
+      'single page continuous pdf',
+      'pdf in single page',
+      'convert pdf pages to single page'
+    ],
     description: `
       <p>Combine to Single Page stitches all PDF pages into one continuous page. Create scrollable documents perfect for web viewing or continuous reading.</p>
       <p>Pages are joined vertically with customizable spacing. The result is a single long page containing all content.</p>

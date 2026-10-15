@@ -78,9 +78,21 @@ export const toolContentZhTw: Record<string, ToolContent> = {
   },
   'jpg-to-pdf': {
     ...toolContentZh['jpg-to-pdf'],
-    title: 'JPG轉PDF線上工具【免費無浮水印】批次轉換超快速',
-    metaDescription: '最強JPG轉PDF工具！支援批次上傳、拖放操作、5秒完成轉換。100%免費無浮水印，無需註冊，保護您的隱私。立即試用 →',
-    keywords: ['jpg轉pdf', 'jpg轉pdf線上', 'jpg轉pdf免費', 'jpg轉pdf無浮水印', 'jpg轉pdf批次', '圖片轉pdf', 'jpg to pdf', '照片轉pdf'],
+    title: 'JPG轉PDF - 多張圖片/照片合併成PDF檔案【免費線上】',
+    metaDescription: '免費線上將多張 JPG、JPEG 圖片與照片快速合併為單一 PDF 檔案。支援自由拖曳排序、調整方向與邊距。瀏覽器本機安全處理，檔案不需上傳伺服器，無浮水印、免註冊。',
+    keywords: [
+      'jpg轉pdf',
+      '圖片合併pdf',
+      'jpg合併',
+      '圖片合併成pdf',
+      '照片合併pdf',
+      '多張照片合併pdf',
+      '多張jpg合併',
+      '照片整合成pdf',
+      'jpg轉pdf線上',
+      '圖片轉pdf',
+      '照片轉pdf'
+    ],
     description: `
       <p>將多張 JPG 圖片合併為一個 PDF，適合把多張照片整理成更方便上傳、提交或分享的單一檔案。</p>
       <p>不論是證件照片、截圖、掃描圖片，還是手機拍攝的紙本資料，都能先排序再匯出成一份 PDF。這比傳送多張零散圖片更方便審核、列印與保存。如果之後還想把 PDF 頁面重新匯出成圖片，也可以繼續<a href="/zh-tw/tools/pdf-to-jpg">把 PDF 頁面轉成 JPG</a>。</p>

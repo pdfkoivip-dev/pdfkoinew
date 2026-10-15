@@ -39,9 +39,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'merge-pdf': {
-    title: 'PDFを結合',
-    metaDescription: '複数のPDFファイルを1つのドキュメントに結合。ドラッグ＆ドロップで並べ替え可能な無料オンラインPDF結合ツール。',
-    keywords: ['pdf結合', 'pdfを結合', 'pdf合併', 'pdfマージャー', 'pdf連結'],
+    title: 'PDF結合 - 複数のPDFファイルを1つに無料結合・順番並べ替え',
+    metaDescription: '複数のPDFファイルをドラッグ＆ドロップで素早く1つのPDFに結合。ページの順番変更も自由自在。ブラウザ上でローカル処理するため情報漏洩の心配がなく安心。登録不要、完全無料。',
+    keywords: ['pdf結合', 'pdf 結合', 'pdfページ結合', 'pdf ページ 結合', 'pdfを結合', 'pdf 連結', 'pdf まとめ', 'pdfマージャー'],
     description: `
       <p>PDF結合を使用すると、複数のPDFドキュメントを素早く簡単に1つのファイルに結合できます。レポートの統合、スキャンしたドキュメントの結合、プレゼンテーションの作成など、このツールでプロセスがシームレスになります。</p>
       <p>ファイルをアップロードし、ドラッグ＆ドロップで希望の順序に並べ替え、1つのまとまったドキュメントに結合するだけです。ツールは元のファイルの品質を保持し、オプションで各ソースドキュメントのブックマークを維持できます。</p>
@@ -92,9 +92,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'compress-pdf': {
-    title: 'PDFを圧縮',
-    metaDescription: '品質を維持しながらPDFファイルサイズを削減。小さなファイルのための無料オンラインPDF圧縮ツール。',
-    keywords: ['pdf圧縮', 'pdfサイズ削減', 'pdf圧縮ツール', 'pdf縮小', 'pdf最適化'],
+    title: 'PDF圧縮 - 画質を保ちながらファイルサイズを軽量化【無料】',
+    metaDescription: '容量が大きすぎるPDFをメール添付やWebアップロード用に素早く圧縮・軽量化。画質をできる限り維持しながらファイルサイズを削減。登録不要、何度でも無料。',
+    keywords: ['pdf圧縮', 'pdf 圧縮', 'pdf 容量 減らす', 'pdfサイズ削減', 'pdf 軽量化', 'pdf 縮小', 'pdf 最適化'],
     description: `
       <p>PDF圧縮は、許容可能な品質を維持しながらPDFドキュメントのファイルサイズを削減します。メール添付、ウェブアップロード、ストレージスペースの節約に不可欠です。</p>
       <p>ツールは、ファイルサイズの削減と品質保持のバランスを取るための複数の圧縮レベルを提供します。最大サイズ削減のための積極的な圧縮、または高品質を維持するための軽い圧縮を選択できます。</p>
@@ -145,9 +145,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'jpg-to-pdf': {
-    title: 'JPG→PDF変換【無料・高画質】複数画像を一括変換',
-    metaDescription: 'JPGを高画質PDFに変換！複数ファイル一括処理、ドラッグ&ドロップで簡単。完全無料、登録不要、3秒で完了。今すぐ変換 →',
-    keywords: ['jpg pdf 変換', 'jpg to pdf', 'jpg pdf 化', '画像 pdf', 'jpg から pdf', '写真 pdf 変換', 'jpg を pdf に', 'jpg pdf 一括'],
+    title: 'JPGをPDFに変換 - 複数の写真・画像をまとめてPDF化【無料】',
+    metaDescription: 'JPGやJPEG画像を高画質なPDFドキュメントに変換。複数の写真の一括変換や並び替え、余白調整にも対応。ブラウザ完結でファイルはサーバーに送信されず安全です。登録不要・無料。',
+    keywords: ['jpg pdf 変換', 'jpgファイル pdf 変換方法', 'jpg to pdf', 'jpg を pdf に 変換', 'jpgファイルをpdfに変換', '写真 pdf 変換', '画像をpdfに変換', 'jpg pdf 一括', 'jpgからpdfを作成'],
     description: `
       <p>JPGからPDFは、JPEG画像を素早く簡単にPDFドキュメントに変換します。単一の写真でも複数の画像でも、このツールはプロフェッショナルな見た目のPDFファイルを作成します。</p>
       <p>複数のJPGファイルを1つのPDFに結合し、任意の順序に並べ替え、ページサイズと向きをカスタマイズできます。変換は画像品質を保持しながら、コンパクトで共有可能なPDFファイルを作成します。</p>
@@ -251,9 +251,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'organize-pdf': {
-    title: 'PDFページ整理ツール【並び替え・削除・回転】無料で簡単',
-    metaDescription: 'PDFのページを自由に整理。ページの並び替え・削除・回転が直感的にできます。ドラッグ&ドロップで簡単操作、無料・登録不要。今すぐ整理 →',
-    keywords: ['pdf 整理', 'pdf ページ 並び替え', 'pdf ページ 削除', 'pdf ページ 回転', 'pdf 編集', 'pdf organize', 'pdf ページ 入れ替え', 'pdf 順番 変更'],
+    title: 'PDFページ整理・並び替え【無料】ページの削除や回転も簡単',
+    metaDescription: 'PDFのページ順序をドラッグ＆ドロップで直感的に並び替え・整理。不要なページの削除や回転も自由自在。ファイルはサーバーに送信されず端末内で安全に処理されます。登録不要・完全無料。',
+    keywords: ['pdf 整理', 'pdf ページ 並び替え', 'pdfページ整理', 'pdf ページ 削除', 'pdf ページ 回転', 'pdf 編集', 'pdf organize', 'pdf ページ 入れ替え', 'pdf 順番 変更', 'pdf ページ 順番'],
     description: `
       <p>PDF整理は、PDFドキュメント内のページを再配置するための直感的なドラッグ＆ドロップインターフェースを提供します。ページの並べ替え、重要なセクションの複製、不要なページの削除が簡単にできます。</p>
       <p>ビジュアルページサムネイルにより、コンテンツを識別し、必要に応じてページを正確に配置しやすくなっています。ドキュメントの再構成、カスタムページ順序の作成、スキャンファイルのクリーンアップに最適です。</p>
@@ -568,9 +568,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'remove-blank-pages': {
-    title: '空白ページ削除',
-    metaDescription: 'PDFドキュメントから空白ページを自動検出して削除。',
-    keywords: ['空白ページ削除', '空ページ削除', 'pdfクリーン', 'pdf空白ページリムーバー'],
+    title: 'PDFの空白ページ削除 - 白紙ページを自動検出して一括削除【無料】',
+    metaDescription: 'スキャン時などに紛れ込んだPDF内の空白ページ・白紙を自動検出してきれいに削除。不要なページを除去してファイルサイズもスリム化。登録不要、完全無料でご利用いただけます。',
+    keywords: ['pdf 空白ページ 削除', 'pdf 空白 ページ 削除', '空白ページ削除', 'pdf 白紙 削除', '空ページ削除', 'pdfクリーン', 'pdf空白ページリムーバー'],
     description: '<p>PDFドキュメントから空のページを自動的に検出して削除します。スキャンしたドキュメントのクリーンアップ、セパレーターページの削除、誤って含まれた空白ページの除去に便利です。</p>',
     howToUse: [
       { step: 1, title: 'PDFをアップロード', description: 'PDFファイルをドラッグ＆ドロップするか、クリックして選択します。' },
@@ -613,9 +613,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'png-to-pdf': {
-    title: 'PNG→PDF変換ツール【無料・登録不要】複数画像を一括変換',
-    metaDescription: 'PNGをPDFに3秒で変換！一括処理対応、画質劣化なし、完全無料。登録不要でサクッと変換できます。今すぐ試す →',
-    keywords: ['png pdf 変換', 'png to pdf', 'png pdf 化', '画像 pdf 変換', 'png pdf 一括', 'png から pdf', 'png を pdf に', 'png pdf コンバーター'],
+    title: 'PNGをPDFに変換 - 透明度を保持して高品質にPDF化【無料】',
+    metaDescription: 'PNG画像の透明背景や高画質を維持したまま綺麗なPDFに変換。複数ファイルの一括結合や順序入れ替えも自由自在。登録不要・完全無料、ファイルは端末内で安全に処理されます。',
+    keywords: ['png pdf 変換', 'pngをpdfに変換', 'pngをpdfにする方法', 'png to pdf', 'png を pdf に 変換', 'pngからpdf', '画像 pdf 変換', 'png pdf 一括', 'pngをpdfとして保存する方法'],
     description: '<p>PNG画像を透明度を保持しながらPDFドキュメントに変換します。グラフィックス、ロゴ、スクリーンショット、透明な背景を持つ画像に最適です。</p>',
     howToUse: [
       { step: 1, title: 'PNGファイルをアップロード', description: 'PNG画像をドラッグ＆ドロップするか、クリックしてファイルを選択します。' },
@@ -812,9 +812,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'pdf-to-png': {
-    title: 'PDFからPNG',
-    metaDescription: 'PDFページをPNG画像に変換。透明度サポート付きのロスレス品質。',
-    keywords: ['pdfからpng', 'pdfをpngに変換', 'pdf画像抽出', 'ロスレスpdf変換'],
+    title: 'PDFをPNG画像に変換 - 高解像度・透過対応で無料変換',
+    metaDescription: 'PDFの各ページを高画質なPNG画像ファイルに素早く変換。文字もグラフィックも劣化なく綺麗に抽出できます。ファイルは端末内で安全に変換されサーバー保存なし。完全無料。',
+    keywords: ['pdfからpngに変換', '無料でpdfをpngに変換', 'pdfをpngに変換', 'pdfからpng', 'pdf png 変換 無料', 'pdf画像抽出', 'pdf png 高画質'],
     description: '<p>PDFドキュメントページをロスレス圧縮の高品質PNG画像に変換します。PNG形式は画像品質を完全に保持し、透明度をサポートします。</p>',
     howToUse: [
       { step: 1, title: 'PDFをアップロード', description: 'PDFファイルをドラッグ＆ドロップするか、クリックして選択します。' },
@@ -1055,9 +1055,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'divide-pages': {
-    title: 'ページ分割',
-    metaDescription: 'PDFページを複数のセクションに分割。ページを水平または垂直に分割。',
-    keywords: ['pdfページ分割', 'ページ分割', 'pdfページカット', 'ページセクション'],
+    title: 'PDFページ分割 - 見開き1ページを2ページに分割・カット【無料】',
+    metaDescription: '見開きのPDFや1つのページを縦・横に均等分割して別々のページに切り分け。スキャンした本やA3見開き資料の閲覧・印刷の最適化に。登録不要、完全無料で安全に処理できます。',
+    keywords: ['pdf 1ページを2ページに分割', 'pdf ページ 分割', 'pdf 見開き 分割', 'pdf 2分割', 'pdfページカット', '見開き pdf 分割'],
     description: '<p>個々のPDFページを複数のセクションに分割します。ページを水平、垂直、またはグリッドにカットして、1つから複数のページを作成します。</p>',
     howToUse: [
       { step: 1, title: 'PDFをアップロード', description: 'PDFファイルをドラッグ＆ドロップするか、クリックして選択します。' },
@@ -1077,9 +1077,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'add-blank-page': {
-    title: '空白ページ追加',
-    metaDescription: 'PDFドキュメントに空白ページを挿入。任意の位置に空のページを追加。',
-    keywords: ['空白ページ追加', 'ページ挿入', '空ページ', 'pdfページ挿入'],
+    title: 'PDFに空白ページを追加・挿入 - 任意の位置に白紙を簡単追加【無料】',
+    metaDescription: 'PDFの先頭・末尾・途中の指定位置に新しい空白ページ（白紙）を簡単に挿入。手書きメモ欄の追加や両面印刷時のページ位置調整に最適。ブラウザ完結で安全・完全無料です。',
+    keywords: ['pdf 空白ページ 挿入', 'pdf 空白ページ追加 フリー', 'pdf 空白ページ追加', '空白ページ追加', 'pdf 白紙 挿入', 'ページ挿入', 'pdfページ挿入'],
     description: '<p>PDFドキュメントの任意の位置に空のページを挿入します。既存のページの前、後、または間にカスタマイズ可能なページサイズでページを追加します。</p>',
     howToUse: [
       { step: 1, title: 'PDFをアップロード', description: 'PDFファイルをドラッグ＆ドロップするか、クリックして選択します。' },
@@ -1099,9 +1099,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'reverse-pages': {
-    title: 'ページ逆順',
-    metaDescription: 'PDFページ順序を逆に。ドキュメントページを最後から最初に反転。',
-    keywords: ['pdf逆順', 'ページ順序反転', 'ページ逆転', 'ドキュメント逆順'],
+    title: 'PDFページの順番を逆順に反転 - ページの並び順を一括反転【無料】',
+    metaDescription: 'スキャン時に逆順になってしまったPDFのページ順序を最後から最初の順へ一発反転。ドラッグ操作不要で一瞬で正しい並び順に直せます。ブラウザ内処理で情報漏洩の心配なし。無料。',
+    keywords: ['pdf 逆順', 'pdf ページ 逆順', 'pdf 順番 反転', 'ページ順序反転', 'pdf ページ 逆', 'スキャン pdf 逆順', 'ドキュメント逆順'],
     description: '<p>PDFドキュメント内のページ順序を反転し、最後のページを最初に、最初のページを最後にします。逆順でスキャンされたドキュメントや特定の印刷ニーズに便利です。</p>',
     howToUse: [
       { step: 1, title: 'PDFをアップロード', description: 'PDFファイルをドラッグ＆ドロップするか、クリックして選択します。' },
@@ -1165,9 +1165,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'combine-single-page': {
-    title: '単一ページに結合',
-    metaDescription: 'PDFページを1つの連続ページに結合。スクロール可能な単一ページドキュメントを作成。',
-    keywords: ['ページ結合', '単一ページpdf', 'ページ結合', '連続スクロール'],
+    title: 'PDFを1ページに結合 - 複数ページを1枚の縦長PDFに連結【無料】',
+    metaDescription: '複数ページのPDFを1つの連続した縦長ページに結合。2ページや複数ページを1枚にまとめ、Web閲覧や連続スクロールに最適なドキュメントを作成します。登録不要、完全無料。',
+    keywords: ['2ページを1ページに結合 pdf オンライン', 'ページ 1つのpdfに結合', 'pdfページ結合', 'pdf 1ページに結合', 'pdf 2ページを1ページに結合', 'pdf ページ 1つに結合', 'pdfページ 1ページ結合', '単一ページに結合', 'pdf 縦長 結合'],
     description: '<p>すべてのPDFページを1つの連続ページに結合します。ウェブ表示や連続読書に最適なスクロール可能なドキュメントを作成します。</p>',
     howToUse: [
       { step: 1, title: 'PDFをアップロード', description: 'PDFファイルをドラッグ＆ドロップするか、クリックして選択します。' },
@@ -1386,9 +1386,9 @@ export const toolContentJa: Record<string, ToolContent> = {
   },
 
   'repair-pdf': {
-    title: 'PDF修復ツール【破損・開けないPDF対応】無料で簡単修復',
-    metaDescription: '破損したPDFを修復。開けないPDF、エラーが出るPDFを無料で復元。ブラウザ内処理で安全、登録不要。今すぐ修復 →',
-    keywords: ['pdf 修復', 'pdf 壊れた', 'pdf 開けない', 'pdf エラー', 'pdf 復元', 'pdf repair', 'pdf 修理', 'pdf 直す'],
+    title: '破損したPDFの修復 - 開けない・壊れたPDFファイルを無料復元',
+    metaDescription: 'エラーで開けなくなった破損PDFや損傷したファイルをオンラインで自動修復・復元。特別なソフトのインストール不要、ブラウザ上で安全に大切なドキュメントを復旧できます。完全無料。',
+    keywords: ['破損したpdf修復', '破損したpdfを修復', 'pdf 修復', 'pdf 壊れた', 'pdf 開けない', 'pdf エラー', 'pdf 復元', 'pdf修復ツール', '破損したpdfファイルを無料でオンライン修復', '破損pdf ファイル'],
     description: '<p>破損または損傷したPDFファイルの修正を試みます。ツールはドキュメント構造を分析し、できるだけ多くのコンテンツを回復するために再構築します。</p>',
     howToUse: [
       { step: 1, title: '損傷したPDFをアップロード', description: '破損したPDFをドラッグ＆ドロップするか、クリックして選択します。' },
@@ -1409,9 +1409,9 @@ export const toolContentJa: Record<string, ToolContent> = {
 
   // ==================== SECURE PDF ====================
   'encrypt-pdf': {
-    title: 'PDF暗号化【パスワード保護】無料・安全・簡単',
-    metaDescription: 'PDFにパスワードをかけて機密情報を保護。AES-256暗号化、ブラウザ内処理でサーバーにアップロードなし。完全無料、今すぐ保護 →',
-    keywords: ['pdf パスワード', 'pdf 暗号化', 'pdf ロック', 'pdf セキュリティ', 'pdf 保護', 'pdf encrypt', 'pdf パスワード設定', 'pdf セキュリティ設定'],
+    title: 'PDFにパスワードを設定・保護 - 暗号化で安全管理【無料】',
+    metaDescription: 'PDFファイルにパスワードを設定して重要書類を暗号化・保護。閲覧制限や印刷制限を簡単にかけられます。ブラウザ内で完結するため機密文書がサーバーに送信される心配がなく安全です。',
+    keywords: ['pdf パスワード 設定', 'pdf パスワード設定', 'pdf パスワード保護 方法', 'pdfファイル暗号化', 'pdf パスワード暗号化', 'pdf 暗号化', 'pdf ロック', 'pdf セキュリティ', 'pdf パスワード追加'],
     description: '<p>PDFドキュメントにパスワード保護と暗号化を追加します。開くことを防止するユーザーパスワードと、印刷やコピーなどの権限を制御するオーナーパスワードを設定します。</p>',
     howToUse: [
       { step: 1, title: 'PDFをアップロード', description: 'PDFファイルをドラッグ＆ドロップするか、クリックして選択します。' },

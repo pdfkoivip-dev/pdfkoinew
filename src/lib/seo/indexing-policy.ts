@@ -26,11 +26,10 @@ export function getCategoryHubIndexableLocales(): Locale[] {
 }
 
 export function shouldIndexStaticPage(locale: Locale, path: string): boolean {
-  // Allow major locales to index static pages (about, privacy, cookies)
-  // This fixes GSC "被noindex标记排除" issue for 20+ static pages
+  // Allow all supported locales to index static pages (about, privacy, cookies)
+  // This fixes GSC "被noindex标记排除" issue and ensures consistent multilingual coverage
   if (path === '/about' || path === '/privacy' || path === '/cookies') {
-    const INDEXED_STATIC_LOCALES: Locale[] = ['en', 'es', 'de', 'fr', 'pt', 'ja'];
-    return INDEXED_STATIC_LOCALES.includes(locale);
+    return locales.includes(locale);
   }
 
   return INDEXABLE_STATIC_PAGE_SET.has(path);

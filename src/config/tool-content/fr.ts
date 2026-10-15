@@ -1817,8 +1817,8 @@ export const toolContentFr: Record<string, ToolContent> = {
   },
 
   'pdf-to-excel': {
-    title: 'Convertir PDF en Excel Gratuit | Extraction de Tableaux Rapide',
-    metaDescription: 'Convertisseur PDF vers Excel 100% gratuit. Extrayez les tableaux en 3 secondes, conservez la mise en forme. Aucune inscription requise. Essayez maintenant →',
+    title: 'Convertir PDF en Excel Gratuit en Ligne - Tableaux XLSX Éditables',
+    metaDescription: 'Convertissez vos fichiers PDF en feuilles de calcul Excel (XLSX) modifiables. Extraction précise des tableaux, respect de la mise en forme. 100% gratuit, sécurisé et sans inscription.',
     keywords: ['pdf en excel', 'convertir pdf excel', 'pdf vers excel', 'pdf to excel', 'extraire tableau pdf', 'pdf excel gratuit', 'convertisseur pdf excel', 'transformer pdf en excel'],
     description: `
       <p>Transformez vos données PDF en feuilles de calcul Excel organisées. Cet outil identifie automatiquement les tableaux dans vos documents et les convertit en cellules XLSX éditables.</p>

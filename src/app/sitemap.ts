@@ -191,12 +191,17 @@ function getLastModifiedForGroup(group: LastModKey): Date {
 }
 
 function buildAlternates(pathname: string, alternateLocales: readonly Locale[]) {
-  const languages = Object.fromEntries(
+  const languages: Record<string, string> = Object.fromEntries(
     alternateLocales.map((locale) => [
       locale,
       `${siteConfig.url}${getPublicPath(pathname || '/', locale)}`,
     ])
   );
+
+  // Add x-default pointing to English (defaultLocale) when included in the indexable alternate set
+  if (alternateLocales.includes(defaultLocale)) {
+    languages['x-default'] = `${siteConfig.url}${getPublicPath(pathname || '/', defaultLocale)}`;
+  }
 
   return { languages };
 }
