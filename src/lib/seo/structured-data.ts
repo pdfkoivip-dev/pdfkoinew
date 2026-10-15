@@ -75,10 +75,6 @@ export interface WebPageSchema {
     '@type': 'Thing';
     name: string;
   };
-  mainEntity?: {
-    '@type': string;
-    name: string;
-  };
 }
 
 /**
@@ -274,10 +270,6 @@ export function generateWebPageSchema(
       '@type': 'Thing',
       name: 'PDF Processing',
     },
-    mainEntity: {
-      '@type': 'SoftwareApplication',
-      name: content.title,
-    },
   };
 }
 
@@ -292,7 +284,7 @@ export function generateCollectionPageSchema(options: {
   about: string;
   mainEntityName: string;
 }): WebPageSchema {
-  const { locale, title, description, path, about, mainEntityName } = options;
+  const { locale, title, description, path, about } = options;
 
   const languageMap: Record<Locale, string> = {
     en: 'en-US',
@@ -321,10 +313,6 @@ export function generateCollectionPageSchema(options: {
     about: {
       '@type': 'Thing',
       name: about,
-    },
-    mainEntity: {
-      '@type': 'ItemList',
-      name: mainEntityName,
     },
   };
 }
