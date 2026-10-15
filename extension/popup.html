@@ -3,64 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PDFkoi</title>
+  <title>PDFkoi - PDF Tools</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
   <div class="container">
+    <!-- Header -->
     <header class="header">
       <img src="icons/icon48.png" alt="PDFkoi" class="logo">
       <div class="title-group">
         <h1>PDFkoi</h1>
         <p class="tagline">72+ Free PDF Tools</p>
       </div>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
     </header>
 
-    <section class="tools-grid">
-      <a href="https://PDFkoi.gitu.net/en/tools/merge-pdf" class="tool-card" data-tool="merge-pdf">
-        <span class="icon">📎</span>
-        <span class="label">Merge</span>
-      </a>
-      <a href="https://PDFkoi.gitu.net/en/tools/split-pdf" class="tool-card" data-tool="split-pdf">
-        <span class="icon">✂️</span>
-        <span class="label">Split</span>
-      </a>
-      <a href="https://PDFkoi.gitu.net/en/tools/compress-pdf" class="tool-card" data-tool="compress-pdf">
-        <span class="icon">📦</span>
-        <span class="label">Compress</span>
-      </a>
-      <a href="https://PDFkoi.gitu.net/en/tools/edit-pdf" class="tool-card" data-tool="edit-pdf">
-        <span class="icon">✏️</span>
-        <span class="label">Edit</span>
-      </a>
-      <a href="https://PDFkoi.gitu.net/en/tools/jpg-to-pdf" class="tool-card" data-tool="jpg-to-pdf">
-        <span class="icon">🖼️</span>
-        <span class="label">JPG→PDF</span>
-      </a>
-      <a href="https://PDFkoi.gitu.net/en/tools/pdf-to-jpg" class="tool-card" data-tool="pdf-to-jpg">
-        <span class="icon">📷</span>
-        <span class="label">PDF→JPG</span>
-      </a>
-      <a href="https://PDFkoi.gitu.net/en/tools/sign-pdf" class="tool-card" data-tool="sign-pdf">
-        <span class="icon">✍️</span>
-        <span class="label">Sign</span>
-      </a>
-      <a href="https://PDFkoi.gitu.net/en/tools/encrypt-pdf" class="tool-card" data-tool="encrypt-pdf">
-        <span class="icon">🔒</span>
-        <span class="label">Encrypt</span>
-      </a>
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="🔍 Search tools..."
+        autocomplete="off"
+      >
+      <div id="searchResults" class="search-results hidden"></div>
+    </div>
+
+    <!-- Recently Used Section -->
+    <section id="recentSection" class="section hidden">
+      <div class="section-header">
+        <h2>⚡ Recently Used</h2>
+      </div>
+      <div id="recentTools" class="tools-grid"></div>
     </section>
 
-    <a href="https://PDFkoi.gitu.net/en" class="open-btn" id="openSite">
-      Open PDFkoi →
+    <!-- Popular Tools Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2>⭐ Popular Tools</h2>
+      </div>
+      <div class="tools-grid">
+        <a href="https://pdfkoi.com/en/tools/merge-pdf" class="tool-card" data-tool="merge-pdf">
+          <span class="icon">📎</span>
+          <span class="label">Merge PDF</span>
+        </a>
+        <a href="https://pdfkoi.com/en/tools/split-pdf" class="tool-card" data-tool="split-pdf">
+          <span class="icon">✂️</span>
+          <span class="label">Split PDF</span>
+        </a>
+        <a href="https://pdfkoi.com/en/tools/compress-pdf" class="tool-card" data-tool="compress-pdf">
+          <span class="icon">📦</span>
+          <span class="label">Compress</span>
+        </a>
+        <a href="https://pdfkoi.com/en/tools/edit-pdf" class="tool-card" data-tool="edit-pdf">
+          <span class="icon">✏️</span>
+          <span class="label">Edit PDF</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Convert Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2>🔄 Convert</h2>
+      </div>
+      <div class="tools-grid tools-grid-small">
+        <a href="https://pdfkoi.com/en/tools/jpg-to-pdf" class="tool-card" data-tool="jpg-to-pdf">
+          <span class="icon">🖼️</span>
+          <span class="label">JPG→PDF</span>
+        </a>
+        <a href="https://pdfkoi.com/en/tools/pdf-to-jpg" class="tool-card" data-tool="pdf-to-jpg">
+          <span class="icon">📷</span>
+          <span class="label">PDF→JPG</span>
+        </a>
+        <a href="https://pdfkoi.com/en/tools/word-to-pdf" class="tool-card" data-tool="word-to-pdf">
+          <span class="icon">📝</span>
+          <span class="label">Word→PDF</span>
+        </a>
+        <a href="https://pdfkoi.com/en/tools/pdf-to-word" class="tool-card" data-tool="pdf-to-word">
+          <span class="icon">📄</span>
+          <span class="label">PDF→Word</span>
+        </a>
+        <a href="https://pdfkoi.com/en/tools/excel-to-pdf" class="tool-card" data-tool="excel-to-pdf">
+          <span class="icon">📊</span>
+          <span class="label">Excel→PDF</span>
+        </a>
+        <a href="https://pdfkoi.com/en/tools/pdf-to-excel" class="tool-card" data-tool="pdf-to-excel">
+          <span class="icon">📈</span>
+          <span class="label">PDF→Excel</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2>🔐 Security</h2>
+      </div>
+      <div class="tools-grid">
+        <a href="https://pdfkoi.com/en/tools/sign-pdf" class="tool-card" data-tool="sign-pdf">
+          <span class="icon">✍️</span>
+          <span class="label">Sign PDF</span>
+        </a>
+        <a href="https://pdfkoi.com/en/tools/encrypt-pdf" class="tool-card" data-tool="encrypt-pdf">
+          <span class="icon">🔒</span>
+          <span class="label">Encrypt</span>
+        </a>
+        <a href="https://pdfkoi.com/en/tools/unlock-pdf" class="tool-card" data-tool="unlock-pdf">
+          <span class="icon">🔓</span>
+          <span class="label">Unlock</span>
+        </a>
+        <a href="https://pdfkoi.com/en/tools/redact-pdf" class="tool-card" data-tool="redact-pdf">
+          <span class="icon">🖍️</span>
+          <span class="label">Redact</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- All Tools Button -->
+    <a href="https://pdfkoi.com/en" class="open-btn" id="openSite">
+      🌟 View All 72+ Tools
     </a>
 
+    <!-- Footer -->
     <footer class="footer">
-      <p>100% Free & Private • No uploads</p>
+      <p>🔒 100% Free & Private • No uploads to servers</p>
+      <p class="footer-links">
+        <a href="https://pdfkoi.com/en/about" target="_blank">About</a>
+        <span>•</span>
+        <a href="https://pdfkoi.com/en/privacy" target="_blank">Privacy</a>
+        <span>•</span>
+        <a href="https://github.com/pdfkoi/pdfkoi" target="_blank">GitHub</a>
+      </p>
     </footer>
   </div>
 
+  <script src="tools-data.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>
-
