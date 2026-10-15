@@ -46,6 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
     { href: getPublicPath('/about', locale), label: t('navigation.about') },
     { href: getPublicPath('/faq', locale), label: t('navigation.faq') },
     { href: getPublicPath('/contact', locale), label: t('navigation.contact') },
+    { href: '/llms.txt', label: 'llms.txt' },
   ];
 
   return (

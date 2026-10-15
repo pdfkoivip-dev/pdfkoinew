@@ -7,8 +7,29 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
+        userAgent: [
+          'GPTBot',
+          'ChatGPT-User',
+          'ClaudeBot',
+          'Claude-Web',
+          'PerplexityBot',
+          'Google-Extended',
+          'Applebot-Extended',
+          'cohere-ai',
+          'meta-externalagent',
+        ],
+        allow: ['/', '/llms.txt', '/llms-full.txt'],
+        disallow: [
+          '/api/',
+          '/manifest.webmanifest',
+          '/*/tools/?q=*',
+          '/tools/?q=*',
+          '/*/tools/?category=*',
+        ],
+      },
+      {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', '/llms.txt', '/llms-full.txt'],
         disallow: [
           '/api/',
           '/manifest.webmanifest',

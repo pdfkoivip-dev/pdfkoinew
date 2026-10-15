@@ -27,6 +27,10 @@ export function RootDocument({
   return (
     <html lang={lang} dir={dir} suppressHydrationWarning>
       <head>
+        {/* LLM & AI Discoverability */}
+        <link rel="alternate" type="text/markdown" title="LLM Summary" href="/llms.txt" />
+        <link rel="alternate" type="text/markdown" title="Full LLM Index" href="/llms-full.txt" />
+        <link rel="help" type="text/markdown" href="/llms.txt" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC0W1F8BTD" />
         <script
           dangerouslySetInnerHTML={{
