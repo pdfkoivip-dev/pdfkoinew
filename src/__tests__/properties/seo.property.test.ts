@@ -587,11 +587,12 @@ describe('SEO Property Tests', () => {
       expect(shouldIndexLocalizedToolPage('pt', 'pdf-booklet')).toBe(true);
     });
 
-    it('keeps the web app manifest out of crawlable page candidates', () => {
+    it('keeps the web app manifest and cloudflare cdn-cgi paths out of crawlable page candidates', () => {
       const rules = robots().rules;
       const firstRule = Array.isArray(rules) ? rules[0] : rules;
 
       expect(firstRule.disallow).toContain('/manifest.webmanifest');
+      expect(firstRule.disallow).toContain('/cdn-cgi/');
     });
 
     it('reported GSC noindex samples keep their intended indexability signals', () => {
