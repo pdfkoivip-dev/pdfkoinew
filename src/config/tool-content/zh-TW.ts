@@ -78,35 +78,37 @@ export const toolContentZhTw: Record<string, ToolContent> = {
   },
   'jpg-to-pdf': {
     ...toolContentZh['jpg-to-pdf'],
-    title: 'JPG轉PDF - 多張圖片/照片合併成PDF檔案【免費線上】',
-    metaDescription: '免費線上將多張 JPG、JPEG 圖片與照片快速合併為單一 PDF 檔案。支援自由拖曳排序、調整方向與邊距。瀏覽器本機安全處理，檔案不需上傳伺服器，無浮水印、免註冊。',
+    title: 'JPG合併PDF - 多張圖片/照片合併成一個PDF檔案【免上傳·完全免費】',
+    metaDescription: '手機照片、證件掃描或多張JPG/PNG圖片一鍵快速合併為單一PDF檔案。支援自由拖曳排序、旋轉方向與自訂A4邊距。100%瀏覽器本機安全轉換，個人隱私資料不傳伺服器，無浮水印、免註冊即刻下載。',
     keywords: [
-      'jpg轉pdf',
-      '圖片合併pdf',
       'jpg合併',
       '圖片合併成pdf',
+      '圖片合併pdf',
       '照片合併pdf',
+      '照片合併成pdf',
+      'jpg轉pdf',
       '多張照片合併pdf',
       '多張jpg合併',
       '照片整合成pdf',
-      'jpg轉pdf線上',
+      'jpg合併pdf線上',
+      '手機照片合併pdf',
       '圖片轉pdf',
-      '照片轉pdf'
     ],
     description: `
-      <p>將多張 JPG 圖片合併為一個 PDF，適合把多張照片整理成更方便上傳、提交或分享的單一檔案。</p>
-      <p>不論是證件照片、截圖、掃描圖片，還是手機拍攝的紙本資料，都能先排序再匯出成一份 PDF。這比傳送多張零散圖片更方便審核、列印與保存。如果之後還想把 PDF 頁面重新匯出成圖片，也可以繼續<a href="/zh-tw/tools/pdf-to-jpg">把 PDF 頁面轉成 JPG</a>。</p>
-      <p>所有轉換都在瀏覽器中完成，圖片不會上傳到伺服器，更適合處理證件、申請文件與私人資料。</p>
+      <p>JPG合併PDF工具能將多張 JPG、JPEG 或 PNG 圖片快速整合成單一高畫質 PDF 文件，非常適合將手機拍攝的多張照片、證件影本或掃描檔彙整成方便審核、列印或線上提交的正式文件。</p>
+      <p>支援在瀏覽器中直覺拖曳重新排序、旋轉圖片方向，並可自由選擇 A4 版面、保持原始比例或自訂頁面邊距。相較於傳送數十張零散圖片，整合成單一 PDF 不僅便於歸檔存檔，更能確保文件接收方依正確順序檢閱。若後續需要重新解出圖片，亦可隨時使用<a href="/zh-tw/tools/pdf-to-jpg">PDF轉JPG工具</a>。</p>
+      <p>所有圖片合併與格式轉換均在您的瀏覽器本機中安全完成，圖片檔案絕不上傳至任何外部伺服器，保護個人隱私與機密資料安全無虞。</p>
     `,
     useCases: [
-      { title: '多張圖片合成 PDF', description: '把零散圖片整理成一份 PDF，提交與分享都更方便。', icon: 'image' },
-      { title: '文件照片轉 PDF', description: '把手機拍攝的紙本資料快速整合成正式 PDF。', icon: 'camera' },
-      { title: '截圖彙整成 PDF', description: '將多張截圖依順序打包成一份 PDF，方便回報與留存。', icon: 'folder' },
+      { title: '多張照片與圖片合成 PDF', description: '將旅遊照片、活動花絮或商品截圖整理成一份完整的 PDF 簡報或手冊。', icon: 'image' },
+      { title: '證件與合約掃描件整合成檔', description: '將手機拍攝的身分證正反面、合約多頁照片按順序組裝成符合審查標準的單一 PDF。', icon: 'camera' },
+      { title: '多張截圖依序彙整', description: '線上教學、系統操作流程截圖依步驟排版，一次性導出為 PDF 說明文件。', icon: 'folder' },
     ],
     faq: [
-      { question: '如何把多張 JPG 合併成一個 PDF？', answer: '上傳多張 JPG 後調整順序，再按下轉換，就能輸出單一 PDF。' },
-      { question: '轉換前可以調整圖片順序嗎？', answer: '可以，你可以先拖曳重新排序，再生成最終的 PDF。' },
-      { question: '手機拍攝的資料照片也能直接轉成 PDF 嗎？', answer: '可以，把 JPG 照片上傳後就能直接合併成一份 PDF。如果生成後的檔案偏大，下一步通常就是<a href="/zh-tw/tools/compress-pdf">壓縮 PDF 方便寄送或上傳</a>。' },
+      { question: '如何把多張 JPG 圖片合併成一個 PDF 檔案？', answer: '點擊上傳或直接將多張 JPG/PNG 圖片拖曳至網頁中，拖曳預覽圖調整理想順序與邊距，點擊「合併轉為PDF」即可秒速下載合成檔案。' },
+      { question: '合併後的 PDF 檔案太大，該如何處理？', answer: '如果照片解析度過高導致 PDF 體積過大，您可以在合併完成後，直接使用我們的<a href="/zh-tw/tools/compress-pdf">免費線上 PDF 壓縮工具</a>將檔案縮小至適合 Email 或平台限制的大小。' },
+      { question: '轉換前可以調整每張圖片的順序與方向嗎？', answer: '可以，PDFkoi 提供直覺的拖曳排序與旋轉按鈕，在導出 PDF 前即可輕鬆修正歪斜或順序錯誤的圖片。' },
+      { question: '上傳的手機照片或證件資料安全嗎？', answer: '絕對安全。PDFkoi 採用先進的瀏覽器端技術（WebAssembly），所有圖片均在您的電腦或手機本地記憶體中處理，完全不經過任何網路伺服器，真正實現零隱私洩漏風險。' },
     ],
   },
   'pdf-to-jpg': {
