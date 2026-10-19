@@ -82,6 +82,11 @@ const preferredTraditionalChineseAnchorText: Record<string, string> = {
   'remove-restrictions': '解除 PDF 限制',
   'sanitize-pdf': '清理 PDF 敏感資訊',
   'change-permissions': '變更 PDF 權限',
+  'posterize-pdf': 'PDF轉海報拼貼列印',
+  'combine-single-page': 'PDF合併為單一長頁',
+  'reverse-pages': '反轉 PDF 頁面順序',
+  'page-dimensions': '查詢 PDF 頁面尺寸規格',
+  'pdf-booklet': '製作 PDF 騎馬釘小冊子',
 };
 
 const preferredSpanishAnchorText: Record<string, string> = {
@@ -102,6 +107,13 @@ const preferredSpanishAnchorText: Record<string, string> = {
   'extract-attachments': 'Extraer archivos adjuntos de PDF',
   'decrypt-pdf': 'Desbloquear y quitar contraseña de PDF',
   'encrypt-pdf': 'Proteger PDF con contraseña',
+  'word-to-pdf': 'Convertir Word a PDF online',
+  'excel-to-pdf': 'Convertir Excel a PDF gratis',
+  'pptx-to-pdf': 'Convertir PowerPoint a PDF',
+  'pdf-to-docx': 'Convertir PDF a Word editable',
+  'deskew-pdf': 'Enderezar PDF escaneado torcido',
+  'extract-tables': 'Extraer tablas de PDF a Excel',
+  'pdf-to-pdfa': 'Convertir PDF a formato PDF/A',
 };
 
 const preferredJapaneseAnchorText: Record<string, string> = {

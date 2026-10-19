@@ -1674,5 +1674,598 @@ export const toolContentEs: Record<string, ToolContent> = {
       { question: '¿Es gratuito?', answer: 'Sí, 100% gratuito sin límites ni marcas de agua.' },
       { question: '¿Mis archivos están seguros?', answer: 'Totalmente. El procesamiento se realiza 100% en tu navegador y tus documentos nunca se suben a ningún servidor.' },
     ],
+  },,
+
+  // ==================== NUEVAS HERRAMIENTAS Y CONVERSIONES ====================
+  'word-to-pdf': {
+    title: 'Convertir Word a PDF Online Gratis - DOCX y DOC a PDF',
+    metaDescription: 'Convierte documentos Word (DOCX y DOC) a PDF manteniendo el diseño, fuentes e imágenes originales. 100% gratis, sin registro y seguro en tu navegador.',
+    keywords: [
+      'word a pdf',
+      'convertir word a pdf',
+      'doc a pdf',
+      'docx a pdf gratis',
+      'pasar de word a pdf',
+      'convertir documento word a pdf',
+      'word to pdf online',
+    ],
+    description: `
+      <p>Convierte documentos de Microsoft Word (.docx y .doc) a formato PDF de forma rápida y sencilla. Esta herramienta preserva con precisión las fuentes, espaciados, tablas, estilos e imágenes de tu documento original.</p>
+      <p>Ideal para enviar currículums (CV), contratos legales, cartas formales y trabajos académicos con un diseño inalterable y profesional en cualquier dispositivo.</p>
+      <p>El procesamiento se realiza en tu navegador: tus documentos confidenciales y personales nunca se almacenan en servidores externos.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu documento Word', description: 'Arrastra y suelta tu archivo .docx o .doc, o elígelo desde tu ordenador o móvil.' },
+      { step: 2, title: 'Conversión automática', description: 'El conversor procesa la maquetación y genera el PDF en segundos.' },
+      { step: 3, title: 'Descarga tu PDF', description: 'Guarda tu nuevo archivo PDF listo para compartir, imprimir o enviar.' },
+    ],
+    useCases: [
+      { title: 'Currículums y candidaturas', description: 'Convierte tu CV en Word a PDF para que no se desconfigure al abrirlo en Recursos Humanos.', icon: 'user' },
+      { title: 'Contratos y propuestas', description: 'Genera versiones finales no editables de propuestas comerciales y contratos.', icon: 'file-text' },
+      { title: 'Informes y trabajos académicos', description: 'Fija el formato de informes escolares o universitarios antes de su entrega.', icon: 'graduation-cap' },
+    ],
+    faq: [
+      { question: '¿Cómo convertir un archivo Word a PDF gratis?', answer: 'Solo tienes que arrastrar tu archivo DOCX a la herramienta. En unos segundos se generará el PDF exacto para descargar sin coste ni límites.' },
+      { question: '¿Se mantiene el formato original de Word?', answer: 'Sí, los textos, imágenes, encabezados, tablas y saltos de página se preservan de manera fiel al documento original.' },
+      { question: '¿Es compatible con archivos DOC antiguos?', answer: 'Sí, soporta tanto el formato moderno .docx como el estándar tradicional .doc.' },
+      { question: '¿Es seguro para contratos privados?', answer: 'Completamente. La conversión se procesa en tu propio navegador sin enviar datos a la nube.' },
+    ],
+  },
+
+  'excel-to-pdf': {
+    title: 'Convertir Excel a PDF Online Gratis - XLSX y XLS a PDF',
+    metaDescription: 'Convierte hojas de cálculo de Excel a PDF con ajuste de página y tablas ordenadas. 100% gratis, privado y sin subir archivos al servidor.',
+    keywords: [
+      'excel a pdf',
+      'convertir excel a pdf',
+      'xlsx a pdf',
+      'pasar excel a pdf',
+      'convertir hoja de calculo a pdf gratis',
+      'excel a pdf ajustar a pagina',
+    ],
+    description: `
+      <p>Convierte tus hojas de cálculo de Excel (.xlsx y .xls) a documentos PDF listos para imprimir y compartir. Olvídate de tablas cortadas o columnas desalineadas.</p>
+      <p>Permite visualizar balances contables, inventarios, facturas y reportes financieros en un formato estándar legible en cualquier pantalla o móvil sin requerir tener instalado Excel.</p>
+      <p>Tus datos financieros y empresariales están 100% protegidos, ya que la conversión se realiza de forma local.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo Excel', description: 'Arrastra tu hoja de cálculo (.xlsx o .xls) al recuadro.' },
+      { step: 2, title: 'Ajuste de contenido', description: 'El sistema organiza las celdas, cuadrículas y columnas automáticamente.' },
+      { step: 3, title: 'Descarga tu documento PDF', description: 'Obtén tu reporte en PDF con un formato limpio y profesional.' },
+    ],
+    useCases: [
+      { title: 'Reportes financieros y balances', description: 'Envía cuentas de resultados y estados contables en formato seguro para auditoría.', icon: 'bar-chart' },
+      { title: 'Facturas y presupuestos', description: 'Transforma presupuestos creados en Excel a documentos PDF limpios para clientes.', icon: 'receipt' },
+      { title: 'Listas de precios e inventarios', description: 'Crea catálogos de precios para consulta rápida en dispositivos móviles.', icon: 'clipboard' },
+    ],
+    faq: [
+      { question: '¿Se cortarán las columnas anchas al pasar a PDF?', answer: 'La herramienta optimiza el escalado para que las tablas encajen en el ancho de página estándar.' },
+      { question: '¿Se convierten todas las hojas del libro?', answer: 'Sí, se procesan las hojas activas con datos para generar un documento completo.' },
+      { question: '¿Se mantienen las fórmulas visibles?', answer: 'El PDF muestra el resultado visual y numérico exacto de los cálculos de tus celdas.' },
+    ],
+  },
+
+  'pptx-to-pdf': {
+    title: 'Convertir PowerPoint a PDF Online Gratis - PPTX y PPT a PDF',
+    metaDescription: 'Convierte presentaciones PowerPoint (.pptx y .ppt) en documentos PDF de alta calidad. Perfecto para diapositivas, sin registro.',
+    keywords: [
+      'powerpoint a pdf',
+      'pptx a pdf',
+      'convertir presentaciones a pdf',
+      'ppt a pdf gratis',
+      'diapositivas a pdf',
+    ],
+    description: `
+      <p>Convierte presentaciones de diapositivas de PowerPoint (.pptx y .ppt) en documentos PDF nítidos. Mantén el orden exacto de tus diapositivas, tipografías y gráficos vectoriales.</p>
+      <p>Ideal para compartir presentaciones de reuniones, conferencias o clases con clientes y estudiantes sin temor a que las fuentes cambien o las imágenes se muevan.</p>
+      <p>Procesamiento 100% privado en tu navegador, sin esperas ni registros.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu presentación', description: 'Arrastra tu archivo .pptx o .ppt al convertidor.' },
+      { step: 2, title: 'Procesa las diapositivas', description: 'Las diapositivas se ordenan y ajustan a páginas individuales.' },
+      { step: 3, title: 'Descarga el PDF', description: 'Guarda tu presentación lista para proyectar o imprimir.' },
+    ],
+    useCases: [
+      { title: 'Ponencias y conferencias', description: 'Distribuye el material de tu charla en PDF para que los asistentes puedan consultarlo.', icon: 'presentation' },
+      { title: 'Material didáctico para alumnos', description: 'Convierte tus clases en apuntes PDF fáciles de leer y subrayar.', icon: 'book-open' },
+      { title: 'Pitches comerciales', description: 'Envía presentaciones de ventas a inversores y prospectos en formato profesional.', icon: 'briefcase' },
+    ],
+    faq: [
+      { question: '¿Se mantiene la resolución de las fotos en las diapositivas?', answer: 'Sí, las imágenes mantienen su nitidez y calidad visual en el PDF exportado.' },
+      { question: '¿Cada diapositiva se convierte en una página PDF?', answer: 'Sí, cada diapositiva de tu presentación corresponderá a una página en el PDF final.' },
+    ],
+  },
+
+  'pdf-to-docx': {
+    title: 'Convertir PDF a Word Editable Gratis - PDF a DOCX Online',
+    metaDescription: 'Convierte archivos PDF a documentos Word (.docx) 100% editables. Conserva texto, tablas y párrafos sin marcas de agua ni registro.',
+    keywords: [
+      'pdf a word',
+      'convertir pdf a word editable',
+      'pdf a docx',
+      'pasar pdf a word gratis',
+      'editar pdf en word',
+      'convertidor pdf a word',
+    ],
+    description: `
+      <p>Convierte documentos PDF a archivos de Microsoft Word (.docx) completamente editables. Podrás modificar textos, corregir párrafos, actualizar fechas y reutilizar contenido sin tener que transcribir nada a mano.</p>
+      <p>Excelente para contratos antiguos, currículums, reportes escaneados y actas de reuniones. El conversor analiza la maquetación y genera un archivo Word limpio y fácil de editar.</p>
+      <p>Tus archivos están completamente seguros: todo se procesa en local sin subir tu información a la nube.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo PDF', description: 'Arrastra el documento PDF que deseas transformar en Word.' },
+      { step: 2, title: 'Conversión a DOCX', description: 'El algoritmo extrae el contenido, estilos y párrafos automáticamente.' },
+      { step: 3, title: 'Descarga y edita en Word', description: 'Abre el archivo descargado en Microsoft Word o LibreOffice para editar libremente.' },
+    ],
+    useCases: [
+      { title: 'Actualizar currículum antiguo', description: 'Modifica tu CV en PDF cuando has perdido el documento original de Word.', icon: 'user' },
+      { title: 'Revisión y enmienda de contratos', description: 'Pasa contratos en PDF a Word para añadir cláusulas o realizar correcciones.', icon: 'file-text' },
+      { title: 'Reutilización de tablas e informes', description: 'Extrae textos y estadísticas de PDFs para integrarlos en nuevos proyectos.', icon: 'copy' },
+    ],
+    faq: [
+      { question: '¿El archivo Word resultante es realmente editable?', answer: 'Sí, obtendrás un archivo .docx nativo donde puedes modificar el texto, cambiar tipografías y reorganizar tablas.' },
+      { question: '¿Se puede convertir un PDF escaneado?', answer: 'Para documentos escaneados que son imágenes puras se recomienda aplicar OCR para un reconocimiento óptimo de caracteres.' },
+      { question: '¿Tiene algún límite de páginas o coste?', answer: 'No, es una herramienta gratuita y de uso ilimitado en PDFkoi.' },
+    ],
+  },
+
+  'deskew-pdf': {
+    title: 'Enderezar PDF Escaneado - Corregir Inclinación de Páginas Gratis',
+    metaDescription: 'Corrige y endereza automáticamente páginas PDF escaneadas torcidas o inclinadas. Detección precisa de ángulo, 100% gratis en tu navegador.',
+    keywords: [
+      'enderezar pdf',
+      'corregir inclinacion pdf',
+      'deskew pdf',
+      'alinear paginas escaneadas',
+      'enderezar pdf torcido',
+      'girar pdf torcido gratis',
+    ],
+    description: `
+      <p>Endereza automáticamente páginas PDF que quedaron torcidas, chuecas o inclinadas al pasar por el escáner o el alimentador de papel (ADF).</p>
+      <p>La herramienta detecta el ángulo exacto de desviación en cada página y la gira con precisión milimétrica para dejarla completamente horizontal y alineada.</p>
+      <p>Indispensable para digitalización de libros, expedientes notariales, facturas y contratos antes de aplicar OCR o archivarlos.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu PDF torcido', description: 'Arrastra el PDF que contiene páginas inclinadas.' },
+      { step: 2, title: 'Detección automática de ángulo', description: 'El sistema analiza el texto y las líneas para calcular la inclinación de cada hoja.' },
+      { step: 3, title: 'Descarga tu PDF recto', description: 'Obtén tu documento perfectamente alineado y ordenado en segundos.' },
+    ],
+    useCases: [
+      { title: 'Escaneos de oficina con ADF', description: 'Endereza lotes de documentos que entraron con ligera desviación en el escáner.', icon: 'scan' },
+      { title: 'Fotos de documentos con móvil', description: 'Corrige la perspectiva y ángulo de recibos o papeles fotografiados.', icon: 'smartphone' },
+      { title: 'Preparación para OCR', description: 'Alinea los textos para que los motores OCR reconozcan los caracteres con 100% de precisión.', icon: 'search' },
+    ],
+    faq: [
+      { question: '¿Qué precisión tiene la detección de inclinación?', answer: 'Puede detectar y corregir desviaciones diminutas desde 0.1 grados hasta varios grados de inclinación.' },
+      { question: '¿Se degrada la calidad del texto?', answer: 'No, la rotación preserva la nitidez y los píxeles originales del documento.' },
+    ],
+  },
+
+  'extract-tables': {
+    title: 'Extraer Tablas de PDF a Excel, CSV y Markdown Gratis',
+    metaDescription: 'Detecta y extrae automáticamente tablas y datos de tus documentos PDF a CSV, Excel o Markdown. Sin registro, rápido y privado.',
+    keywords: [
+      'extraer tablas de pdf',
+      'pdf a excel tablas',
+      'extraer datos de pdf a csv',
+      'convertir tablas pdf',
+      'copiar tabla de pdf a excel',
+    ],
+    description: `
+      <p>Detecta y extrae automáticamente tablas de datos estructurados contenidas en archivos PDF y expórtalas a CSV, Markdown o JSON para su análisis inmediato en Excel o bases de datos.</p>
+      <p>Ahorra horas de trabajo manual evitando copiar y pegar fila por fila estados de cuentas, facturas o listas de precios.</p>
+      <p>Toda la extracción ocurre dentro de tu navegador web sin transferir datos confidenciales por internet.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo PDF', description: 'Arrastra el documento que contiene las tablas a extraer.' },
+      { step: 2, title: 'Detección de estructuras', description: 'El analizador detecta cuadrículas, filas y columnas de datos.' },
+      { step: 3, title: 'Exporta a tu formato favorito', description: 'Descarga en CSV, Excel, Markdown o copia los datos al portapapeles.' },
+    ],
+    useCases: [
+      { title: 'Análisis de estados bancarios', description: 'Convierte extractos bancarios en tablas para conciliación financiera.', icon: 'bar-chart' },
+      { title: 'Auditoría de inventarios y tarifas', description: 'Extrae listas de productos y precios para cruzarlas en hojas de cálculo.', icon: 'file-text' },
+      { title: 'Artículos científicos y papers', description: 'Copia tablas de estudios para integrarlas en notas de Markdown.', icon: 'book' },
+    ],
+    faq: [
+      { question: '¿Qué formatos de exportación están disponibles?', answer: 'Puedes descargar en CSV (compatible con Excel), formato Markdown o JSON para desarrolladores.' },
+      { question: '¿Detecta tablas sin bordes visibles?', answer: 'Sí, el algoritmo analiza la alineación espacial de los textos para identificar columnas incluso sin líneas divisorias.' },
+    ],
+  },
+
+  'pdf-to-pdfa': {
+    title: 'Convertir PDF a PDF/A para Archivo a Largo Plazo (Norma ISO)',
+    metaDescription: 'Convierte tus archivos PDF en documentos certificados PDF/A (PDF/A-1b, 2b). Ideal para administraciones públicas y conservación permanente.',
+    keywords: [
+      'pdf a pdfa',
+      'convertir pdf a pdf/a',
+      'pdf archivo a largo plazo',
+      'iso 19005 pdf',
+      'pdf administracion publica',
+    ],
+    description: `
+      <p>Convierte documentos PDF al estándar internacional ISO PDF/A, diseñado específicamente para la preservación, archivo digital y almacenamiento legal a largo plazo.</p>
+      <p>Incruesta todas las tipografías, metadatos estandarizados y elimina componentes dinámicos para garantizar que el archivo se vea exactamente igual dentro de 50 años.</p>
+      <p>Obligatorio para la presentación de tesis, licitaciones públicas, juzgados y registros de la administración pública.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu documento PDF', description: 'Selecciona el PDF que necesitas certificar como archivo digital.' },
+      { step: 2, title: 'Ajuste de conformidad PDF/A', description: 'El conversor incrusta fuentes y estandariza los perfiles de color.' },
+      { step: 3, title: 'Descarga tu PDF/A', description: 'Guarda tu archivo listo para presentación oficial y archivo permanente.' },
+    ],
+    useCases: [
+      { title: 'Expedientes judiciales y notariales', description: 'Cumple los requisitos legales de formato inalterable a largo plazo.', icon: 'scale' },
+      { title: 'Trámites y registros públicos', description: 'Satisface las exigencias de la administración electrónica de gobiernos.', icon: 'landmark' },
+      { title: 'Tesis universitarias', description: 'Entrega proyectos de fin de carrera y tesis en formato de archivo de biblioteca.', icon: 'graduation-cap' },
+    ],
+    faq: [
+      { question: '¿Qué diferencia hay entre PDF y PDF/A?', answer: 'PDF/A es un subconjunto de PDF normal que prohíbe scripts externos y obliga a incrustar tipografías para que nunca se desconfigure con el paso de los años.' },
+      { question: '¿Se puede abrir con cualquier lector de PDF?', answer: 'Sí, cualquier lector estándar como Adobe Acrobat o el navegador web puede abrirlo normalmente.' },
+    ],
+  },
+
+  'rasterize-pdf': {
+    title: 'Rasterizar PDF - Convertir Páginas PDF en Imágenes de Alta Calidad',
+    metaDescription: 'Rasteriza páginas PDF convirtiéndolas en imágenes PNG, JPEG o WebP de alta resolución (300 DPI). Aplanado total, 100% gratis.',
+    keywords: [
+      'rasterizar pdf',
+      'pdf a imagen alta resolucion',
+      'aplanar vector a mapa de bits pdf',
+      'pdf a png 300 dpi',
+    ],
+    description: `
+      <p>Convierte y rasteriza las páginas de tu PDF en mapas de bits de alta resolución. Elimina capas vectoriales complejas para evitar problemas de fuentes al imprimir o visualizar.</p>
+      <p>Permite configurar la resolución DPI (72 para pantalla, 150 para oficina, 300 para imprenta) y exportar en formatos PNG, JPEG o WebP de forma individual o comprimidos en ZIP.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo PDF', description: 'Selecciona el documento que deseas rasterizar.' },
+      { step: 2, title: 'Elige formato y resolución', description: 'Ajusta la calidad deseada en DPI y selecciona PNG, JPEG o WebP.' },
+      { step: 3, title: 'Descarga tus imágenes', description: 'Guarda las imágenes rasterizadas listas para publicar o imprimir.' },
+    ],
+    useCases: [
+      { title: 'Preparación para imprenta', description: 'Evita errores de separación de color y tipografías en artes finales.', icon: 'printer' },
+      { title: 'Publicación en redes sociales', description: 'Genera diapositivas e imágenes listas para Instagram o LinkedIn.', icon: 'share-2' },
+    ],
+    faq: [
+      { question: '¿Qué resolución DPI debo elegir?', answer: 'Usa 72 o 150 DPI para pantallas y sitios web; elige 300 DPI para impresiones de calidad comercial.' },
+    ],
+  },
+
+  'markdown-to-pdf': {
+    title: 'Convertir Markdown a PDF - Archivos .MD a PDF con Estilo',
+    metaDescription: 'Convierte archivos Markdown (.md) a elegantes documentos PDF con soporte de código resaltado, tablas y temas visuales. Gratis.',
+    keywords: [
+      'markdown a pdf',
+      'convertir md a pdf',
+      'gfm a pdf',
+      'notas markdown a pdf',
+      'exportar markdown',
+    ],
+    description: `
+      <p>Transforma tus notas técnicas, documentación o artículos en Markdown (.md) en documentos PDF con diseño tipográfico impecable.</p>
+      <p>Compatible con la sintaxis GitHub Flavored Markdown (GFM), resaltado de sintaxis en bloques de código para más de 50 lenguajes, listas de tareas y tablas.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo .md', description: 'Arrastra tu archivo Markdown o pega tu texto directamente.' },
+      { step: 2, title: 'Elige el tema visual', description: 'Selecciona entre estilos claro, oscuro o estilo GitHub.' },
+      { step: 3, title: 'Genera y descarga el PDF', description: 'Obtén tu documento perfectamente maquetado y numerado.' },
+    ],
+    useCases: [
+      { title: 'Manuales y READMEs', description: 'Convierte documentación técnica de proyectos en manuales para clientes.', icon: 'file-text' },
+      { title: 'Notas de estudio y artículos', description: 'Exporta tus apuntes de Obsidian o Notion en PDFs limpios para compartir.', icon: 'edit-3' },
+    ],
+    faq: [
+      { question: '¿Se respetan las tablas y el código?', answer: 'Sí, las tablas se renderizan con cuadrículas limpias y el código incluye coloreado de sintaxis.' },
+    ],
+  },
+
+  'email-to-pdf': {
+    title: 'Convertir Email a PDF - Archivos .EML a Documentos PDF Gratis',
+    metaDescription: 'Convierte archivos de correo electrónico (.eml) a formato PDF. Conserva encabezados, imágenes y lista de adjuntos de forma privada.',
+    keywords: [
+      'email a pdf',
+      'eml a pdf',
+      'convertir correo a pdf',
+      'guardar email como pdf',
+      'correo electronico a pdf',
+    ],
+    description: `
+      <p>Convierte correos electrónicos guardados en formato .eml a archivos PDF estándar y permanentes. Preserva los datos clave: remitente, destinatario, fecha, asunto, formato HTML y registro de archivos adjuntos.</p>
+      <p>La mejor solución para auditorías legales, juicios, control contable o archivo de acuerdos comerciales por correo.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo .eml', description: 'Arrastra tu archivo de correo descargado de Outlook, Gmail o Thunderbird.' },
+      { step: 2, title: 'Configura la salida', description: 'Elige el tamaño de página y si deseas incluir campos de copia (CC/CCO).' },
+      { step: 3, title: 'Descarga tu PDF', description: 'Obtén una copia fiel y segura del correo electrónico.' },
+    ],
+    useCases: [
+      { title: 'Pruebas judiciales y legales', description: 'Archiva correos con valor probatorio en formato no editable.', icon: 'scale' },
+      { title: 'Justificantes de compras y acuerdos', description: 'Guarda confirmaciones de pedidos y acuerdos de clientes.', icon: 'briefcase' },
+    ],
+    faq: [
+      { question: '¿Los archivos adjuntos se incluyen?', answer: 'El PDF incluye la lista completa de nombres de adjuntos para su verificación.' },
+    ],
+  },
+
+  'cbz-to-pdf': {
+    title: 'Convertir CBZ a PDF - Archivos de Cómics y Manga a PDF',
+    metaDescription: 'Convierte cómics y mangas en formato CBZ a documentos PDF sin perder calidad ni orden de lectura. Gratis y seguro.',
+    keywords: [
+      'cbz a pdf',
+      'comic a pdf',
+      'convertir manga cbz a pdf',
+      'lector cbz gratis',
+    ],
+    description: `
+      <p>Convierte cómics digitales y mangas en formato Comic Book Archive (.cbz y .zip) a archivos PDF universales legibles en cualquier lector de libros electrónicos, Kindle o tablet.</p>
+      <p>Extrae y ordena automáticamente las páginas respetando la secuencia de lectura y manteniendo la resolución de cada viñeta.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu cómic .cbz', description: 'Arrastra tu archivo CBZ o ZIP de imágenes.' },
+      { step: 2, title: 'Ajuste de página', description: 'Selecciona las opciones de visualización y escala de imagen.' },
+      { step: 3, title: 'Descarga el cómic en PDF', description: 'Disfruta de tu lectura en cualquier lector de PDF.' },
+    ],
+    useCases: [
+      { title: 'Lectura en Kindle y e-Readers', description: 'Lee cómics en lectores electrónicos que solo admiten PDF.', icon: 'book' },
+      { title: 'Colecciones digitales', description: 'Estandariza tu biblioteca gráfica en un formato común.', icon: 'archive' },
+    ],
+    faq: [
+      { question: '¿Se comprimen las imágenes?', answer: 'No, las imágenes se integran en el PDF con su resolución y color originales.' },
+    ],
+  },
+
+  'font-to-outline': {
+    title: 'Convertir Fuentes a Curvas en PDF - Texto a Trazos Vectoriales',
+    metaDescription: 'Convierte todas las fuentes de un PDF en trazados vectoriales (curvas). Evita problemas de fuentes al imprimir o enviar a imprenta.',
+    keywords: [
+      'fuentes a curvas pdf',
+      'convertir texto a curvas pdf',
+      'texto a contorno pdf',
+      'font to outline pdf',
+      'trazar tipografias pdf',
+    ],
+    description: `
+      <p>Transforma todos los textos de tu documento PDF en trazos vectoriales (curvas o contornos). Garantiza que el documento se vea exactamente idéntico en cualquier ordenador o imprenta comercial, incluso si no tienen instaladas las fuentes tipográficas originales.</p>
+      <p>Un paso indispensable antes de enviar archivos a litografía, imprenta digital o rotulación exterior.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu PDF con textos', description: 'Selecciona el documento cuyas fuentes deseas convertir a curvas.' },
+      { step: 2, title: 'Procesamiento vectorial', description: 'El motor convierte cada glifo de texto en trayectorias vectoriales.' },
+      { step: 3, title: 'Descarga tu PDF trazado', description: 'Guarda tu PDF listo para imprenta 100% blindado contra cambios de fuentes.' },
+    ],
+    useCases: [
+      { title: 'Envío a imprentas comerciales', description: 'Cumple el requisito de artes finales con tipografía trazada.', icon: 'printer' },
+      { title: 'Protección de licencias de fuentes', description: 'Evita problemas de distribución de tipografías comerciales protegidas.', icon: 'shield' },
+    ],
+    faq: [
+      { question: '¿El texto seguirá siendo editable?', answer: 'No, al trazar el texto se convierte en dibujo vectorial y ya no se puede modificar como texto normal.' },
+    ],
+  },
+
+  'epub-to-pdf': {
+    title: 'Convertir EPUB a PDF Online Gratis - Libros Electrónicos a PDF',
+    metaDescription: 'Convierte libros y novelas EPUB a PDF con paginación limpia, índices y márgenes optimizados para lectura e impresión. Gratis.',
+    keywords: [
+      'epub a pdf',
+      'convertir epub a pdf',
+      'libro electronico a pdf',
+      'ebook a pdf gratis',
+      'pasar epub a pdf',
+    ],
+    description: `
+      <p>Convierte libros electrónicos en formato EPUB a documentos PDF fáciles de imprimir, anotar y leer en cualquier pantalla o dispositivo.</p>
+      <p>Conserva la jerarquía de capítulos, imágenes incrustadas, saltos de página y tipografías legibles.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu libro .epub', description: 'Arrastra tu archivo EPUB al convertidor.' },
+      { step: 2, title: 'Configura la paginación', description: 'Elige el tamaño de página deseado (A4, A5 o Carta).' },
+      { step: 3, title: 'Descarga tu libro en PDF', description: 'Guarda tu PDF formateado y listo para leer.' },
+    ],
+    useCases: [
+      { title: 'Impresión de libros electrónicos', description: 'Imprime novelas o manuales técnicos comprados en formato EPUB.', icon: 'printer' },
+      { title: 'Anotar y subrayar', description: 'Subraya textos de estudio cómodamente en aplicaciones de PDF.', icon: 'edit-3' },
+    ],
+    faq: [
+      { question: '¿Se mantiene el índice de capítulos?', answer: 'Sí, la estructura de capítulos se organiza en páginas correlativas.' },
+    ],
+  },
+
+  'mobi-to-pdf': {
+    title: 'Convertir MOBI a PDF - Libros Kindle a Documentos PDF Gratis',
+    metaDescription: 'Convierte libros en formato MOBI, AZW y AZW3 a PDF en un clic. Lee tus libros Kindle en cualquier dispositivo sin restricciones.',
+    keywords: [
+      'mobi a pdf',
+      'convertir mobi a pdf gratis',
+      'azw a pdf',
+      'kindle a pdf',
+      'pasar mobi a pdf',
+    ],
+    description: `
+      <p>Convierte archivos de libros Kindle (.mobi, .azw y .azw3) a formato PDF estándar. Desbloquea la posibilidad de leer tus libros en cualquier ordenador, tablet Android o iPhone.</p>
+      <p>Todo el formateo de párrafos e ilustraciones se preserva de forma local y segura en tu navegador.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo .mobi', description: 'Selecciona el libro electrónico de tu dispositivo.' },
+      { step: 2, title: 'Procesamiento de texto', description: 'El conversor maqueta el libro en páginas numeradas.' },
+      { step: 3, title: 'Descarga tu PDF', description: 'Obtén tu copia lista para abrir en cualquier lector de PDF.' },
+    ],
+    useCases: [
+      { title: 'Lectura multiplataforma', description: 'Lee libros fuera del ecosistema cerrado de Amazon Kindle.', icon: 'smartphone' },
+      { title: 'Estudio y citas académicas', description: 'Extrae pasajes y referencias de libros digitales fácilmente.', icon: 'book' },
+    ],
+    faq: [
+      { question: '¿Soporta archivos protegidos con DRM?', answer: 'Solo se pueden convertir archivos sin sistemas de protección anticopia (DRM).' },
+    ],
+  },
+
+  'djvu-to-pdf': {
+    title: 'Convertir DJVU a PDF Online Gratis - Documentos DJVU a PDF',
+    metaDescription: 'Convierte archivos y libros escaneados en formato DJVU a PDF de alta calidad. Rápido, sin límites y privado en tu navegador.',
+    keywords: [
+      'djvu a pdf',
+      'convertir djvu a pdf gratis',
+      'pasar djvu a pdf',
+      'djvu a pdf online',
+    ],
+    description: `
+      <p>Convierte archivos DJVU a PDF para abrirlos fácilmente en cualquier visor moderno sin necesidad de instalar lectores de DJVU especializados.</p>
+      <p>El conversor procesa las capas de texto escaneadas e imágenes comprimidas, asegurando que tus libros antiguos y documentos técnicos sean legibles en cualquier lugar.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo .djvu', description: 'Arrastra tu archivo DJVU a la ventana.' },
+      { step: 2, title: 'Conversión de páginas', description: 'Se procesan todas las hojas escaneadas del documento.' },
+      { step: 3, title: 'Descarga el PDF', description: 'Disfruta de tu archivo convertido en formato estándar.' },
+    ],
+    useCases: [
+      { title: 'Libros científicos y de matemáticas', description: 'Accede a documentos académicos antiguos que solo estaban disponibles en DJVU.', icon: 'book' },
+      { title: 'Archivos históricos y manuales', description: 'Convierte manuales técnicos para compartirlos con colegas.', icon: 'archive' },
+    ],
+    faq: [
+      { question: '¿Por qué convertir DJVU a PDF?', answer: 'PDF es compatible de forma nativa con todos los sistemas operativos y navegadores modernos.' },
+    ],
+  },
+
+  'fb2-to-pdf': {
+    title: 'Convertir FB2 a PDF - Archivos FictionBook a PDF Online Gratis',
+    metaDescription: 'Convierte libros en formato FB2 (FictionBook) a PDF de forma rápida y sencilla. Conserva capítulos e ilustraciones.',
+    keywords: ['fb2 a pdf', 'convertir fb2 a pdf', 'fictionbook a pdf', 'ebook fb2 a pdf'],
+    description: `
+      <p>Convierte archivos FictionBook (.fb2 y .fb2.zip) a documentos PDF perfectamente formateados para una lectura cómoda e impresión.</p>
+      <p>Organiza automáticamente la portada, títulos, capítulos e ilustraciones para ofrecerte la mejor experiencia de lectura digital.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo FB2', description: 'Arrastra tu libro .fb2 o .fb2.zip.' },
+      { step: 2, title: 'Conversión y maquetación', description: 'El motor adapta el contenido al formato de hoja PDF.' },
+      { step: 3, title: 'Descarga tu nuevo PDF', description: 'Guarda tu libro electrónico listo para leer.' },
+    ],
+    useCases: [
+      { title: 'Novelas y literatura clásica', description: 'Pasa libros descargados en FB2 a un formato compatible con tablets.', icon: 'book' },
+    ],
+    faq: [
+      { question: '¿Soporta archivos .fb2.zip comprimidos?', answer: 'Sí, puedes subir directamente el archivo comprimido sin descomprimirlo antes.' },
+    ],
+  },
+
+  'xps-to-pdf': {
+    title: 'Convertir XPS a PDF Online Gratis - Archivos XPS y OXPS a PDF',
+    metaDescription: 'Convierte documentos Microsoft XPS y OXPS a PDF con precisión total de diseño y colores. 100% gratis en tu navegador.',
+    keywords: ['xps a pdf', 'convertir xps a pdf', 'oxps a pdf', 'pasar xps a pdf gratis'],
+    description: `
+      <p>Convierte archivos en formato XML Paper Specification (.xps y .oxps) creados en Windows a documentos PDF universales.</p>
+      <p>Permite abrir y compartir planos, facturas y reportes de impresión de Windows en dispositivos Mac, Linux, iPhone o Android.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo XPS', description: 'Arrastra tu archivo .xps u .oxps.' },
+      { step: 2, title: 'Conversión de diseño', description: 'Los elementos vectoriales y textos se adaptan al estándar PDF.' },
+      { step: 3, title: 'Descarga tu PDF', description: 'Guarda tu documento listo para compartir.' },
+    ],
+    useCases: [
+      { title: 'Documentos impresos a XPS', description: 'Convierte trabajos enviados a la impresora XPS de Windows en PDFs estándar.', icon: 'printer' },
+    ],
+    faq: [
+      { question: '¿Qué es un archivo XPS?', answer: 'Es el formato de documento de página fija creado por Microsoft como alternativa a PDF.' },
+    ],
+  },
+
+  'rtf-to-pdf': {
+    title: 'Convertir RTF a PDF - Archivos de Texto Enriquecido a PDF',
+    metaDescription: 'Convierte documentos RTF (Rich Text Format) a PDF conservando negritas, colores, tipografías e imágenes. Gratis y seguro.',
+    keywords: ['rtf a pdf', 'convertir rtf a pdf gratis', 'texto enriquecido a pdf'],
+    description: `
+      <p>Convierte archivos de texto enriquecido (.rtf) en documentos PDF limpios y profesionales. Ideal para asegurar que los estilos de texto no se alteren al enviarlos por correo electrónico.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo RTF', description: 'Elige tu archivo de texto enriquecido.' },
+      { step: 2, title: 'Procesamiento de formato', description: 'Se aplican los estilos y márgenes.' },
+      { step: 3, title: 'Descarga tu PDF', description: 'Obtén tu documento en formato fijo.' },
+    ],
+    useCases: [
+      { title: 'Documentación legal y notas', description: 'Transforma notas legales guardadas en RTF a PDF no manipulable.', icon: 'file-text' },
+    ],
+    faq: [
+      { question: '¿Conserva las negritas e hipervínculos?', answer: 'Sí, todas las propiedades de texto enriquecido se transfieren al PDF.' },
+    ],
+  },
+
+  'psd-to-pdf': {
+    title: 'Convertir PSD a PDF - Archivos de Photoshop a Documentos PDF',
+    metaDescription: 'Convierte diseños y fotos de Photoshop (.psd) a documentos PDF en alta resolución. Visualiza tus PSD sin Photoshop.',
+    keywords: ['psd a pdf', 'convertir psd a pdf', 'photoshop a pdf gratis', 'abrir psd como pdf'],
+    description: `
+      <p>Convierte archivos de Adobe Photoshop (.psd) a documentos PDF listos para enviar a clientes o imprimir, sin necesidad de tener Photoshop instalado.</p>
+      <p>Acombina capas visuales y genera una vista previa fiel con la máxima fidelidad de color.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo PSD', description: 'Arrastra tu diseño de Photoshop.' },
+      { step: 2, title: 'Generación de vista previa', description: 'El sistema renderiza las capas compuestas en alta resolución.' },
+      { step: 3, title: 'Descarga tu PDF', description: 'Comparte tu propuesta gráfica en formato accesible.' },
+    ],
+    useCases: [
+      { title: 'Aprobación de diseños', description: 'Envía bocetos a clientes que no tienen Photoshop instalado.', icon: 'image' },
+    ],
+    faq: [
+      { question: '¿Se requiere tener instalado Photoshop?', answer: 'No, la herramienta procesa el archivo PSD de forma autónoma en tu navegador.' },
+    ],
+  },
+
+  'pdf-to-svg': {
+    title: 'Convertir PDF a SVG - Extraer Gráficos Vectoriales de PDF',
+    metaDescription: 'Convierte páginas de PDF a gráficos vectoriales SVG escalables sin pérdida de resolución. Ideal para diseño web y edición en Illustrator.',
+    keywords: ['pdf a svg', 'convertir pdf a svg gratis', 'vectorizar pdf a svg', 'extraer vectores de pdf'],
+    description: `
+      <p>Convierte tus documentos PDF en gráficos vectoriales SVG escalables. Conserva trazados de curvas, logotipos, diagramas y tipografías para abrirlos y editarlos en Illustrator, Figma, Inkscape o usarlos en sitios web.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu archivo PDF', description: 'Selecciona el PDF con los gráficos vectoriales.' },
+      { step: 2, title: 'Selección de páginas', description: 'Elige las páginas a convertir en SVG.' },
+      { step: 3, title: 'Descarga tus archivos SVG', description: 'Guarda los gráficos vectoriales listos para editar.' },
+    ],
+    useCases: [
+      { title: 'Logotipos y branding', description: 'Recupera versiones vectoriales de logos incrustados en manuales PDF.', icon: 'layout-grid' },
+      { title: 'Diseño web e infografías', description: 'Usa diagramas de PDF en tu página web con nitidez infinita.', icon: 'globe' },
+    ],
+    faq: [
+      { question: '¿Los vectores mantienen su escalabilidad?', answer: 'Sí, los archivos SVG resultantes pueden ampliarse a cualquier tamaño sin pixelarse.' },
+    ],
+  },
+
+  'ocg-manager': {
+    title: 'Administrador de Capas PDF (OCG) - Gestionar Capas en PDF',
+    metaDescription: 'Gestiona las capas (Grupos de Contenido Opcional - OCG) de tus planos y documentos PDF. Muestra, oculta, añade o elimina capas gratis.',
+    keywords: ['capas pdf', 'gestor de capas pdf', 'ocg pdf', 'ver capas de planos pdf'],
+    description: `
+      <p>Herramienta profesional para visualizar, activar, ocultar o eliminar capas (OCG) en planos arquitectónicos, mapas topográficos y documentos técnicos en PDF.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Sube tu PDF con capas', description: 'Carga tu plano CAD o mapa en formato PDF.' },
+      { step: 2, title: 'Gestiona las capas', description: 'Activa o desactiva la visibilidad de cada capa según necesites.' },
+      { step: 3, title: 'Guarda los cambios', description: 'Descarga el PDF con las capas configuradas.' },
+    ],
+    useCases: [
+      { title: 'Planos de construcción y CAD', description: 'Muestra u oculta instalaciones eléctricas, cotas o mobiliario.', icon: 'ruler' },
+      { title: 'Mapas temáticos', description: 'Alterna capas de topografía, carreteras o límites territoriales.', icon: 'map' },
+    ],
+    faq: [
+      { question: '¿Qué son las capas OCG en un PDF?', answer: 'Son capas independientes que permiten mostrar u ocultar elementos en documentos técnicos complejos.' },
+    ],
+  },
+
+  'pdf-reader': {
+    title: 'Lector de PDF Online Gratis - Visualizador de PDF en el Navegador',
+    metaDescription: 'Lector y visualizador de archivos PDF online gratuito y seguro. Lee, navega, busca y visualiza documentos sin instalar programas.',
+    keywords: ['lector de pdf online', 'abrir pdf en navegador', 'visor pdf gratis', 'leer pdf online'],
+    description: `
+      <p>Visualizador de PDF ligero, rápido y privado. Lee y navega por tus documentos directamente en el navegador con zoom, rotación y visualización a pantalla completa sin instalar ningún software adicional.</p>
+    `,
+    howToUse: [
+      { step: 1, title: 'Abre tu documento PDF', description: 'Arrastra el archivo para visualizarlo al instante.' },
+      { step: 2, title: 'Navega cómodamente', description: 'Usa los controles para cambiar de página, rotar o hacer zoom.' },
+      { step: 3, title: 'Imprime o guarda', description: 'Consulta el archivo con total privacidad.' },
+    ],
+    useCases: [
+      { title: 'Lectura rápida de archivos', description: 'Abre documentos sin esperar a que carguen lectores pesados.', icon: 'book-open' },
+    ],
+    faq: [
+      { question: '¿Mis archivos se suben al servidor?', answer: 'No, el lector procesa los documentos 100% de forma local en tu navegador.' },
+    ],
   },
 };
