@@ -44,6 +44,10 @@
       "convertPdf": "convert PDF",
       "freePdfTools": "free PDF tools",
       "onlinePdfEditor": "online PDF editor"
+    },
+    "cookies": {
+      "title": "Cookies Policy",
+      "description": "PDFkoi Cookies Policy. Learn which cookies and local storage features are used for essential site functionality and preferences."
     }
   },
   "common": {

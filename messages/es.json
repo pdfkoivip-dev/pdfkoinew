@@ -44,6 +44,10 @@
       "convertPdf": "convertir PDF",
       "freePdfTools": "herramientas PDF gratis",
       "onlinePdfEditor": "editor PDF en línea"
+    },
+    "cookies": {
+      "title": "Política de Cookies",
+      "description": "Política de Cookies de PDFkoi. Conozca qué cookies y almacenamiento local se utilizan para las funciones esenciales y preferencias del sitio."
     }
   },
   "common": {

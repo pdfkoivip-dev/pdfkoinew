@@ -44,6 +44,10 @@
       "convertPdf": "convertir PDF",
       "freePdfTools": "outils PDF gratuits",
       "onlinePdfEditor": "éditeur PDF en ligne"
+    },
+    "cookies": {
+      "title": "Politique relative aux Cookies",
+      "description": "Politique de cookies de PDFkoi. Découvrez les cookies et le stockage local utilisés pour les fonctionnalités essentielles et les préférences du site."
     }
   },
   "common": {
@@ -1883,6 +1887,60 @@
     "pdfReader": {
       "uploadLabel": "Open PDF",
       "uploadDescription": "Open PDF to read."
+    }
+  },
+  "aboutPage": {
+    "title": "À propos de {brand}",
+    "description": "{brand} propose des outils PDF gratuits, confidentiels et basés sur navigateur. Avec plus de {count} outils, vous pouvez modifier, convertir, fusionner, diviser et sécuriser vos fichiers PDF sans jamais les envoyer sur un serveur.",
+    "mission": {
+      "title": "Notre Mission",
+      "p1": "Nous pensons que chacun devrait avoir accès à des outils PDF performants sans compromettre sa vie privée ni payer d’abonnements coûteux. C’est pourquoi nous avons créé {brand} – une boîte à outils PDF complète et respectueuse de vos données.",
+      "p2": "Contrairement aux services traditionnels qui exigent l’envoi de vos fichiers vers des serveurs distants, {brand} effectue tous les traitements en local dans votre navigateur. Vos documents confidentiels ne quittent jamais votre appareil.",
+      "p3": "Que vous soyez étudiant, professionnel ou particulier, {brand} met à votre disposition tous les outils nécessaires pour travailler sur vos PDF efficacement et en toute sécurité."
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "privacy": {
+        "title": "Confidentialité d’abord",
+        "description": "Vos fichiers ne quittent jamais votre appareil. Tous les traitements s’exécutent localement dans votre navigateur, garantissant une sécurité totale."
+      },
+      "fast": {
+        "title": "Rapide et Efficace",
+        "description": "Propulsé par des technologies web modernes, PDFkoi offre un traitement PDF ultra-rapide sans temps de transfert."
+      },
+      "accessible": {
+        "title": "Accessible partout",
+        "description": "Disponible en 9 langues et fonctionnant sur tout appareil doté d’un navigateur moderne. Aucune installation requise."
+      },
+      "free": {
+        "title": "100% Gratuit",
+        "description": "PDFkoi est entièrement gratuit, sans frais cachés, sans inscription requise et sans limite d’utilisation."
+      },
+      "openSource": {
+        "title": "Transparence totale",
+        "description": "Conçu avec transparence, notre code permet à chacun de vérifier nos engagements en matière de confidentialité."
+      },
+      "community": {
+        "title": "À l’écoute des utilisateurs",
+        "description": "Amélioré en permanence grâce aux retours d’utilisateurs du monde entier."
+      }
+    },
+    "technology": {
+      "title": "Conçu avec des technologies modernes",
+      "description": "{brand} s’appuie sur les technologies web les plus récentes pour offrir la meilleure expérience possible :",
+      "list": {
+        "wasm": "<strong1>WebAssembly</strong1> - Pour des performances de traitement PDF proches du natif",
+        "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - Bibliothèques éprouvées de manipulation de documents PDF",
+        "workers": "<strong1>Web Workers</strong1> - Pour un traitement fluide en arrière-plan sans bloquer l’interface",
+        "indexeddb": "<strong1>IndexedDB</strong1> - Pour un stockage local sécurisé de vos sessions",
+        "nextjs": "<strong1>Next.js</strong1> - Pour un rendu de page rapide et optimisé pour le référencement"
+      },
+      "summary": "Cette combinaison technologique nous permet d’offrir des fonctionnalités PDF professionnelles s’exécutant intégralement dans votre navigateur, sans aucun serveur tiers."
+    },
+    "cta": {
+      "title": "Prêt à commencer ?",
+      "description": "Découvrez nos plus de {count} outils PDF et simplifiez votre travail avec {brand}.",
+      "button": "Voir tous les outils"
     }
   }
 }

@@ -322,7 +322,7 @@ export function generateFaqMetadata(locale: Locale, translations?: { title: stri
  * Generate metadata for the privacy page
  */
 export function generatePrivacyMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
-  const shouldIndexPage = locale === defaultLocale;
+  const shouldIndexPage = shouldIndexStaticPage(locale, '/privacy');
   const metadata = generateBaseMetadata({
     locale,
     path: '/privacy',
@@ -336,10 +336,7 @@ export function generatePrivacyMetadata(locale: Locale, translations?: { title: 
   if (!shouldIndexPage) {
     metadata.alternates = {
       canonical: getCanonicalUrl(defaultLocale, '/privacy'),
-      languages: {
-        en: getCanonicalUrl(defaultLocale, '/privacy'),
-        'x-default': getCanonicalUrl(defaultLocale, '/privacy'),
-      },
+      languages: getAlternateUrlsForLocales('/privacy', locales.filter((candidateLocale) => shouldIndexStaticPage(candidateLocale, '/privacy'))),
     };
 
     if (metadata.openGraph) {
@@ -357,7 +354,7 @@ export function generatePrivacyMetadata(locale: Locale, translations?: { title: 
  * Generate metadata for the cookies page
  */
 export function generateCookiesMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
-  const shouldIndexPage = locale === defaultLocale;
+  const shouldIndexPage = shouldIndexStaticPage(locale, '/cookies');
   const metadata = generateBaseMetadata({
     locale,
     path: '/cookies',
@@ -371,10 +368,7 @@ export function generateCookiesMetadata(locale: Locale, translations?: { title: 
   if (!shouldIndexPage) {
     metadata.alternates = {
       canonical: getCanonicalUrl(defaultLocale, '/cookies'),
-      languages: {
-        en: getCanonicalUrl(defaultLocale, '/cookies'),
-        'x-default': getCanonicalUrl(defaultLocale, '/cookies'),
-      },
+      languages: getAlternateUrlsForLocales('/cookies', locales.filter((candidateLocale) => shouldIndexStaticPage(candidateLocale, '/cookies'))),
     };
 
     if (metadata.openGraph) {

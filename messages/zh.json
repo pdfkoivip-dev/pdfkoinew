@@ -44,6 +44,10 @@
       "convertPdf": "转换 PDF",
       "freePdfTools": "免费 PDF 工具",
       "onlinePdfEditor": "在线 PDF 编辑器"
+    },
+    "cookies": {
+      "title": "Cookie 政策",
+      "description": "PDFkoi Cookie 政策。了解哪些 Cookie 和本地存储功能用于网站基础功能与用户偏好设置。"
     }
   },
   "common": {

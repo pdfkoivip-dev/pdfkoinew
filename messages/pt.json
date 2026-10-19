@@ -44,6 +44,10 @@
     "terms": {
       "title": "Termos de Serviço",
       "description": "Termos de Serviço do PDFkoi. Leia nossos termos e condições para usar nossas ferramentas PDF gratuitas."
+    },
+    "cookies": {
+      "title": "Política de Cookies",
+      "description": "Política de Cookies do PDFkoi. Saiba quais cookies e armazenamento local são usados para funcionalidades essenciais e preferências do site."
     }
   },
   "common": {
@@ -1883,6 +1887,60 @@
     "pdfReader": {
       "uploadLabel": "Open PDF",
       "uploadDescription": "Open PDF to read."
+    }
+  },
+  "aboutPage": {
+    "title": "Sobre o {brand}",
+    "description": "O {brand} oferece ferramentas de PDF gratuitas, seguras e baseadas no navegador. Com mais de {count} ferramentas, você pode editar, converter, juntar, dividir e proteger seus PDFs sem precisar enviar arquivos para nenhum servidor.",
+    "mission": {
+      "title": "Nossa Missão",
+      "p1": "Acreditamos que todos devem ter acesso a ferramentas de PDF poderosas sem abrir mão da privacidade ou pagar assinaturas caras. Por isso criamos o {brand} – uma suíte completa que coloca sua privacidade em primeiro lugar.",
+      "p2": "Diferente dos serviços tradicionais que exigem o envio de documentos para servidores remotos, o {brand} processa tudo localmente no seu navegador. Seus arquivos confidenciais nunca saem do seu computador ou celular.",
+      "p3": "Seja você estudante, profissional ou usuário casual, o {brand} tem tudo o que você precisa para lidar com PDFs de maneira rápida e segura."
+    },
+    "values": {
+      "title": "Nossos Valores",
+      "privacy": {
+        "title": "Privacidade em Primeiro Lugar",
+        "description": "Seus arquivos nunca saem do seu dispositivo. Todo o processamento ocorre localmente no navegador, garantindo segurança total."
+      },
+      "fast": {
+        "title": "Rápido e Eficiente",
+        "description": "Com tecnologia web moderna, o PDFkoi processa PDFs instantaneamente, sem atrasos de upload ou download."
+      },
+      "accessible": {
+        "title": "Acessível em Qualquer Lugar",
+        "description": "Disponível em 9 idiomas e compatível com qualquer dispositivo com um navegador moderno. Sem instalação."
+      },
+      "free": {
+        "title": "100% Gratuito",
+        "description": "O PDFkoi é totalmente gratuito, sem custos ocultos, sem necessidade de cadastro e sem limites de uso."
+      },
+      "openSource": {
+        "title": "Transparência",
+        "description": "Construído com transparência, permitindo que qualquer pessoa verifique nossos padrões de segurança e privacidade."
+      },
+      "community": {
+        "title": "Foco no Usuário",
+        "description": "Desenvolvido e aprimorado continuamente com base no feedback de usuários do mundo todo."
+      }
+    },
+    "technology": {
+      "title": "Construído com Tecnologia Moderna",
+      "description": "O {brand} utiliza tecnologias web de ponta para garantir a melhor experiência possível:",
+      "list": {
+        "wasm": "<strong1>WebAssembly</strong1> - Desempenho de processamento de PDF próximo ao nativo",
+        "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - Bibliotecas padrão da indústria para manipulação de PDF",
+        "workers": "<strong1>Web Workers</strong1> - Processamento em segundo plano sem travar a interface",
+        "indexeddb": "<strong1>IndexedDB</strong1> - Armazenamento local seguro das suas tarefas no dispositivo",
+        "nextjs": "<strong1>Next.js</strong1> - Renderização de páginas rápida e otimizada para SEO"
+      },
+      "summary": "Essa combinação de tecnologias nos permite entregar ferramentas de PDF profissionais que funcionam inteiramente no seu navegador, sem processamento no servidor."
+    },
+    "cta": {
+      "title": "Pronto para Começar?",
+      "description": "Explore nossas mais de {count} ferramentas e veja tudo o que o {brand} pode fazer por você.",
+      "button": "Ver Todas as Ferramentas"
     }
   }
 }

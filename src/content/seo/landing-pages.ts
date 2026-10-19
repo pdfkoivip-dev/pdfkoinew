@@ -74,9 +74,9 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
     heroBody:
       'Use this page when your PDF is too large for email. Compress files for Gmail, Outlook, and upload forms without signup, while keeping the workflow simple and browser-based.',
     primaryCtaLabel: 'Open PDF Compressor',
-    primaryCtaHref: '/tools/compress-pdf',
+    primaryCtaHref: '/tools/compress-pdf/',
     secondaryCtaLabel: 'Compress Without Upload',
-    secondaryCtaHref: '/compress-pdf-without-upload',
+    secondaryCtaHref: '/compress-pdf-without-upload/',
     sectionTitle: 'Why people search for “compress PDF for email”',
     sectionBody: [
       'Large PDF attachments are one of the most common reasons documents fail to send. Contracts, reports, scanned files, and application packets often cross the attachment limits used by Gmail, Outlook, and other inboxes.',
@@ -100,7 +100,7 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
         title: 'Compression is often the fastest fix before sending',
         body: 'For contracts, scans, and application packets, reducing the final PDF size is usually the simplest way to stay under inbox and upload limits without splitting the file into multiple parts.',
         sourceLabel: 'PDFkoi workflow guidance',
-        sourceHref: '/compress-pdf-for-email',
+        sourceHref: '/compress-pdf-for-email/',
       },
     ],
     stepsTitle: 'How to compress a PDF for email',
@@ -157,17 +157,17 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
     relatedTitle: 'Related pages and tools',
     relatedLinks: [
       {
-        href: '/compress-pdf-without-upload',
+        href: '/compress-pdf-without-upload/',
         label: 'Compress PDF Without Upload',
         description: 'Best follow-up page when privacy and local handling matter as much as file size.',
       },
       {
-        href: '/tools/compress-pdf',
+        href: '/tools/compress-pdf/',
         label: 'Main Compress PDF Tool',
         description: 'Open the compression interface directly if you are ready to process the file.',
       },
       {
-        href: '/merge-pdf-no-signup',
+        href: '/merge-pdf-no-signup/',
         label: 'Merge PDF Without Signup',
         description: 'Useful when you need to combine files before sending one final attachment.',
       },
@@ -193,9 +193,9 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
     heroBody:
       'Use this page when you need to compress a PDF but do not want to send the document to a remote server. It is especially useful for contracts, forms, resumes, IDs, and other private files.',
     primaryCtaLabel: 'Open PDF Compressor',
-    primaryCtaHref: '/tools/compress-pdf',
+    primaryCtaHref: '/tools/compress-pdf/',
     secondaryCtaLabel: 'Compress for Email',
-    secondaryCtaHref: '/compress-pdf-for-email',
+    secondaryCtaHref: '/compress-pdf-for-email/',
     sectionTitle: 'Why “without upload” matters',
     sectionBody: [
       'Some PDF tasks are routine. Others involve files that contain financial details, business documents, application records, or personal information. That is when people stop looking for the biggest PDF brand and start looking for a workflow with more control.',
@@ -219,7 +219,7 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
         title: 'Privacy-sensitive workflows benefit from fewer handoff steps',
         body: 'When a file includes contracts, forms, IDs, or application records, reducing file size in a browser-based workflow gives users a smaller file without adding the friction of account setup and extra document handoff.',
         sourceLabel: 'PDFkoi workflow guidance',
-        sourceHref: '/compress-pdf-without-upload',
+        sourceHref: '/compress-pdf-without-upload/',
       },
     ],
     stepsTitle: 'How to compress a PDF without upload friction',
@@ -313,9 +313,9 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
     heroBody:
       'Use this page when you need to merge PDFs quickly and do not want to stop for registration. It is useful for resumes, cover letters, contracts, appendices, scans, and bundled submission files.',
     primaryCtaLabel: 'Open Merge PDF Tool',
-    primaryCtaHref: '/tools/merge-pdf',
+    primaryCtaHref: '/tools/merge-pdf/',
     secondaryCtaLabel: 'Compress After Merging',
-    secondaryCtaHref: '/compress-pdf-for-email',
+    secondaryCtaHref: '/compress-pdf-for-email/',
     sectionTitle: 'Why this long-tail query matters',
     sectionBody: [
       '“Merge PDF” is highly competitive. “Merge PDF no signup” is much more specific. The user intent is clearer, the friction problem is obvious, and the searcher usually wants to finish the task immediately.',
@@ -339,7 +339,7 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
         title: 'No-signup intent is usually about speed and friction',
         body: 'Users looking for “no signup” workflows typically want to finish a one-off document task immediately, which is why direct merging pages can perform better than broad generic tool indexes for this query.',
         sourceLabel: 'PDFkoi workflow guidance',
-        sourceHref: '/merge-pdf-no-signup',
+        sourceHref: '/merge-pdf-no-signup/',
       },
     ],
     stepsTitle: 'How to merge PDF files without signup',
@@ -397,17 +397,17 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
     relatedTitle: 'Related pages and tools',
     relatedLinks: [
       {
-        href: '/tools/merge-pdf',
+        href: '/tools/merge-pdf/',
         label: 'Main Merge PDF Tool',
         description: 'Open the core merge interface directly when you are ready to combine files.',
       },
       {
-        href: '/compress-pdf-for-email',
+        href: '/compress-pdf-for-email/',
         label: 'Compress PDF for Email',
         description: 'Use this after merging if the final file is too large to send.',
       },
       {
-        href: '/tools/organize-pdf',
+        href: '/tools/organize-pdf/',
         label: 'Organize PDF',
         description: 'Useful when your merge workflow also needs page cleanup or file reordering before delivery.',
       },
@@ -435,9 +435,9 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
     heroBody:
       'When you need a document to scroll seamlessly like a web article, comic, or dashboard infographic instead of jumping between separate page breaks, combine all pages into one continuous vertical page directly in your browser.',
     primaryCtaLabel: 'Open Continuous Page Tool',
-    primaryCtaHref: '/tools/combine-single-page',
+    primaryCtaHref: '/tools/combine-single-page/',
     secondaryCtaLabel: 'Organize PDF Pages',
-    secondaryCtaHref: '/tools/organize-pdf',
+    secondaryCtaHref: '/tools/organize-pdf/',
     sectionTitle: 'Why users search for “how to make a PDF one continuous page”',
     sectionBody: [
       'Standard PDF readers force rigid page divisions (like Letter or A4 boundaries) that interrupt reading flow. For long infographics, continuous forms, web comics (Webtoons), code reviews, and presentations, page cuts create awkward visual breaks across diagrams and charts.',
@@ -455,7 +455,7 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
         title: 'Ideal for long-format visual assets',
         body: 'Webtoons, flowcharts, architectural timelines, and audit logs naturally exist as continuous sequences rather than discrete printed pages.',
         sourceLabel: 'PDFkoi Workflow Studies',
-        sourceHref: '/how-to-make-a-pdf-one-continuous-page',
+        sourceHref: '/how-to-make-a-pdf-one-continuous-page/',
       },
       {
         title: 'Local execution ensures total file privacy',
@@ -518,17 +518,17 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
     relatedTitle: 'Related tools & pages',
     relatedLinks: [
       {
-        href: '/tools/combine-single-page',
+        href: '/tools/combine-single-page/',
         label: 'Combine into Single Page Tool',
         description: 'Launch the primary tool to stitch multi-page PDFs vertically right now.',
       },
       {
-        href: '/tools/organize-pdf',
+        href: '/tools/organize-pdf/',
         label: 'Organize PDF Pages',
         description: 'Reorder, rotate, or delete unwanted pages before stitching them together.',
       },
       {
-        href: '/compress-pdf-for-email',
+        href: '/compress-pdf-for-email/',
         label: 'Compress PDF for Email',
         description: 'Reduce the final file size if your continuous PDF needs to be sent as an attachment.',
       },
@@ -555,9 +555,9 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
     heroBody:
       'Job portals, university application gateways, and government immigration sites frequently enforce strict 100KB file caps. Shrink your document size below 100KB while keeping your text sharp and signatures clearly legible.',
     primaryCtaLabel: 'Open PDF Compressor',
-    primaryCtaHref: '/tools/compress-pdf',
+    primaryCtaHref: '/tools/compress-pdf/',
     secondaryCtaLabel: 'Compress Without Upload',
-    secondaryCtaHref: '/compress-pdf-without-upload',
+    secondaryCtaHref: '/compress-pdf-without-upload/',
     sectionTitle: 'Why users need to compress PDFs below 100KB',
     sectionBody: [
       'Many government systems, civil service registration forms, and visa portals were built with conservative bandwidth limits, rejecting any PDF file that exceeds 100KB. A standard scanner or smartphone photo easily creates a PDF of 3MB to 8MB, causing immediate upload errors.',
@@ -569,13 +569,13 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
         title: 'Strict government and employment upload caps',
         body: 'Many public examination boards, civil service portals, and visa authorities strictly reject document attachments larger than 100KB or 200KB.',
         sourceLabel: 'Government Application Guidelines',
-        sourceHref: '/compress-pdf-to-100kb',
+        sourceHref: '/compress-pdf-to-100kb/',
       },
       {
         title: 'Adaptive compression preserves text readability',
         body: 'Balancing image DPI downscaling with clean vector font preservation ensures forms remain fully readable even under 100KB.',
         sourceLabel: 'PDFkoi Compression Benchmarks',
-        sourceHref: '/tools/compress-pdf',
+        sourceHref: '/tools/compress-pdf/',
       },
       {
         title: 'Zero-upload policy protects personal identity docs',
@@ -639,17 +639,17 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
     relatedTitle: 'Related compression workflows',
     relatedLinks: [
       {
-        href: '/tools/compress-pdf',
+        href: '/tools/compress-pdf/',
         label: 'Main PDF Compressor Tool',
         description: 'Adjust compression levels directly on the main compression workbench.',
       },
       {
-        href: '/compress-pdf-for-email',
+        href: '/compress-pdf-for-email/',
         label: 'Compress PDF for Email',
         description: 'Guidance and workflows for meeting Gmail and Outlook attachment limits.',
       },
       {
-        href: '/compress-pdf-without-upload',
+        href: '/compress-pdf-without-upload/',
         label: 'Compress Without Upload',
         description: 'Privacy-focused guide explaining zero-server file resizing.',
       },

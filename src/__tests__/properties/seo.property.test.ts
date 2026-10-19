@@ -246,25 +246,24 @@ describe('SEO Property Tests', () => {
       expect(languages['x-default']).toBe(`${siteConfig.url}/`);
     });
 
-    it('default privacy and cookies pages are indexable while localized variants canonicalize to english', () => {
-      const privacyCanonical = `${siteConfig.url}/privacy/`;
-      const cookiesCanonical = `${siteConfig.url}/cookies/`;
-
+    it('privacy and cookies pages are indexable with localized canonicals across locales', () => {
       for (const locale of locales) {
         const privacyMetadata = generatePrivacyMetadata(locale);
         const cookiesMetadata = generateCookiesMetadata(locale);
+        const expectedPrivacyCanonical = `${siteConfig.url}${getPublicPath('/privacy', locale)}`;
+        const expectedCookiesCanonical = `${siteConfig.url}${getPublicPath('/cookies', locale)}`;
 
-        if (locale === defaultLocale) {
-          expect(privacyMetadata.robots).toMatchObject({ index: true, follow: true });
-          expect(cookiesMetadata.robots).toMatchObject({ index: true, follow: true });
-          expect(privacyMetadata.alternates?.canonical).toBe(privacyCanonical);
-          expect(cookiesMetadata.alternates?.canonical).toBe(cookiesCanonical);
-        } else {
-          expect(privacyMetadata.robots).toMatchObject({ index: false, follow: true });
-          expect(cookiesMetadata.robots).toMatchObject({ index: false, follow: true });
-          expect(privacyMetadata.alternates?.canonical).toBe(privacyCanonical);
-          expect(cookiesMetadata.alternates?.canonical).toBe(cookiesCanonical);
-        }
+        expect(privacyMetadata.robots).toMatchObject({ index: true, follow: true });
+        expect(cookiesMetadata.robots).toMatchObject({ index: true, follow: true });
+        expect(privacyMetadata.alternates?.canonical).toBe(expectedPrivacyCanonical);
+        expect(cookiesMetadata.alternates?.canonical).toBe(expectedCookiesCanonical);
+
+        const privacyLanguages = privacyMetadata.alternates?.languages as Record<string, string>;
+        const cookiesLanguages = cookiesMetadata.alternates?.languages as Record<string, string>;
+        expect(privacyLanguages.en).toBe(`${siteConfig.url}/privacy/`);
+        expect(cookiesLanguages.en).toBe(`${siteConfig.url}/cookies/`);
+        expect(privacyLanguages['x-default']).toBe(`${siteConfig.url}/privacy/`);
+        expect(cookiesLanguages['x-default']).toBe(`${siteConfig.url}/cookies/`);
       }
     });
 
@@ -278,23 +277,19 @@ describe('SEO Property Tests', () => {
       }
     });
 
-    it('non-english about pages are intentionally noindex with english canonical fallback', () => {
-      const englishCanonical = `${siteConfig.url}/about/`;
-
-      expect(shouldIndexStaticPage('en', '/about')).toBe(true);
-
-      for (const locale of locales.filter((candidate) => candidate !== defaultLocale)) {
+    it('about pages are indexable with localized canonicals across locales', () => {
+      for (const locale of locales) {
         const metadata = generateAboutMetadata(locale);
+        const expectedCanonical = `${siteConfig.url}${getPublicPath('/about', locale)}`;
 
-        expect(shouldIndexStaticPage(locale, '/about')).toBe(false);
-        expect(metadata.robots).toMatchObject({ index: false, follow: true });
-        expect(metadata.alternates?.canonical).toBe(englishCanonical);
-        expect(metadata.openGraph?.url).toBe(englishCanonical);
+        expect(shouldIndexStaticPage(locale, '/about')).toBe(true);
+        expect(metadata.robots).toMatchObject({ index: true, follow: true });
+        expect(metadata.alternates?.canonical).toBe(expectedCanonical);
 
         const languages = metadata.alternates?.languages as Record<string, string>;
-        expect(languages.en).toBe(englishCanonical);
-        expect(languages['x-default']).toBe(englishCanonical);
-        expect(languages[locale]).toBeUndefined();
+        expect(languages.en).toBe(`${siteConfig.url}/about/`);
+        expect(languages['x-default']).toBe(`${siteConfig.url}/about/`);
+        expect(languages[locale]).toBe(expectedCanonical);
       }
     });
 
@@ -632,8 +627,8 @@ describe('SEO Property Tests', () => {
 
       expect(privacyMetadata.robots).toMatchObject({ index: true, follow: true });
       expect(cookiesMetadata.robots).toMatchObject({ index: true, follow: true });
-      expect(localizedCookiesMetadata.robots).toMatchObject({ index: false, follow: true });
-      expect(localizedCookiesMetadata.alternates?.canonical).toBe(`${siteConfig.url}/cookies/`);
+      expect(localizedCookiesMetadata.robots).toMatchObject({ index: true, follow: true });
+      expect(localizedCookiesMetadata.alternates?.canonical).toBe(`${siteConfig.url}/ko/cookies/`);
 
       for (const locale of ['de', 'ko', 'ja'] as const) {
         expect(generateToolsListMetadata(locale).robots).toMatchObject({ index: true, follow: true });
@@ -719,7 +714,7 @@ describe('SEO Property Tests', () => {
 
     it('former redirect-only samples now resolve as indexable self-canonical for high-value locales', () => {
       const cases = [
-        ['zh-TW', 'markdown-to-pdf'],
+        ['ko', 'psd-to-pdf'],
         ['ja', 'markdown-to-pdf'],
         ['ko', 'pdf-to-svg'],
       ] as const satisfies ReadonlyArray<readonly [Locale, string]>;

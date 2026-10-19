@@ -101,11 +101,6 @@ describe('locale redirect helpers', () => {
       ['https://pdfkoi.com/es/compress-pdf-for-email/', '/compress-pdf-for-email/'],
       ['https://pdfkoi.com/ja/merge-pdf-no-signup/', '/merge-pdf-no-signup/'],
       ['https://pdfkoi.com/es/merge-pdf-no-signup?via=gsc', '/merge-pdf-no-signup/?via=gsc'],
-      ['https://pdfkoi.com/ja/privacy/', '/privacy/'],
-      ['https://pdfkoi.com/fr/privacy/', '/privacy/'],
-      ['https://pdfkoi.com/zh/cookies/', '/cookies/'],
-      ['https://pdfkoi.com/pt/cookies/', '/cookies/'],
-      ['https://pdfkoi.com/ko/cookies?via=gsc', '/cookies/?via=gsc'],
     ] as const;
 
     for (const [source, destination] of cases) {

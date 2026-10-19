@@ -2346,5 +2346,187 @@ export const toolContentZh: Record<string, ToolContent> = {
       { question: '支持移动设备吗？', answer: '是的。' },
     ],
   },
+
+  'pdf-booklet': {
+    title: 'PDF小册子制作与打印排版 - 骑马钉折页打印排版【免费】',
+    metaDescription: '快速将 PDF 重新排版为适合双面打印折叠的骑马钉小册子（Booklet）。自动计算折页顺序，支持标准 A4/A3 打印。',
+    keywords: ['pdf小册子', 'pdf折页打印', '骑马钉排版', 'pdf小册子制作', '印书排版', 'pdf折页'],
+    description: `
+      <p>PDF小册子制作工具能将您的 PDF 页面自动重新拼版排列为适合直接打印与对折成册的小册子版面（Booklet）。非常适合印制手册、活动宣传折页、小志（Zine）、产品目录及会议议程手册。</p>
+      <p>支持多种拼版网格（1x2、2x2、2x4、4x4）、纸张大小（A4、A3、Letter）与页面方向设置。系统自动处理骑马钉装订（Saddle-stitch）所需的复杂页码落版顺序，打印后直接对折装订即可。</p>
+      <p>所有处理均在您的浏览器本地端实时运算，机密文件与数据绝不上传服务器，安全且完全免费。</p>
+    `,
+    howToUse: [
+      { step: 1, title: '上传 PDF 文件', description: '将想要制作成小册子的 PDF 文件拖拽至网页中。' },
+      { step: 2, title: '选择小册子排版与纸张', description: '选择拼版模式（如 1x2 骑马钉）与目标纸张规格（A4 或 A3）。' },
+      { step: 3, title: '生成小册子并下载打印', description: '点击生成按钮，即可下载已按折页顺序拼版完成的 PDF，双面打印后对折即可成书。' },
+    ],
+    useCases: [
+      { title: '活动与宣传手册印制', description: '制作展览折页、活动流程表与宣传资料。', icon: 'book' },
+      { title: '自费出版与小志制作', description: '将个人创作、小说或诗集排版为易于自行装订的小册子。', icon: 'printer' },
+      { title: '会议与培训讲义', description: '将多页简报或文件排版为方便翻阅阅读的装订手册。', icon: 'file-text' },
+    ],
+    faq: [
+      { question: '什么是骑马钉小册子拼版？', answer: '骑马钉拼版是一种将文件的页码依折叠顺序重新排列的印刷工艺（例如第 1 页与最后 1 页印在同一张纸的同一面），双面打印对折后，页码即可完美连续。' },
+      { question: '打印时需要注意什么设置？', answer: '请在打印机设置中选择“双面打印（短边翻页）”，并以“实际大小（100%）”无边距打印，即可得到正确的装订效果。' },
+      { question: '总页数不是 4 的倍数怎么办？', answer: '工具会自动在小册子末尾补上必要的空白页，确保装订时封底与内页结构完整。' },
+    ],
+  },
+
+  'deskew-pdf': {
+    title: 'PDF自动倾斜校正 - 修正扫描件歪斜角度【免费】',
+    metaDescription: '自动检测并校正扫描 PDF 文件的倾斜歪斜角度。高精度旋转对齐，100%浏览器本地安全处理，免注册。',
+    keywords: ['pdf倾斜校正', 'pdf歪斜校正', '扫描pdf转正', '自动旋转pdf', 'pdf角度修正'],
+    description: `
+      <p>PDF倾斜校正工具能自动分析并修正扫描文件中倾斜歪斜的页面。特别适合因自动进纸器（ADF）进纸偏差而扫歪的文件、合同与发票。</p>
+      <p>工具运用先进图像分析技术精确计算每页的微小旋转角度并将其转正对齐。所有处理均在浏览器本地端完成，保障文件机密安全。</p>
+    `,
+    howToUse: [
+      { step: 1, title: '上传扫描 PDF', description: '将需要校正的歪斜 PDF 拖拽至上传区域。' },
+      { step: 2, title: '调整灵敏度与分辨率', description: '根据扫描件清晰度微调检测阈值。' },
+      { step: 3, title: '校正并下载', description: '点击校正按钮，下载已自动转正的 PDF 文件。' },
+    ],
+    useCases: [
+      { title: '自动进纸扫描校正', description: '修正复印机或扫描仪因进纸歪斜生成的偏角页面。', icon: 'scan' },
+      { title: '手机翻拍文件转正', description: '修正手机拍照存档时轻微倾斜的证件与文件。', icon: 'smartphone' },
+      { title: '档案数字化整理', description: '大量历史档案数字化前的统一水平校正。', icon: 'archive' },
+    ],
+    faq: [
+      { question: '角度检测有多精准？', answer: '系统可识别并修正低至 0.1 度的细微倾斜。' },
+      { question: '会影响文字画质吗？', answer: '处理过程尽最大可能保持原有文字分辨率与边缘清晰度。' },
+    ],
+  },
+
+  'rasterize-pdf': {
+    title: 'PDF光栅化 - PDF页面转换为高画质位图【免费】',
+    metaDescription: '将 PDF 页面光栅化转换为高画质位图（PNG/JPEG/WebP）。自定义 DPI 分辨率，浏览器本地安全处理。',
+    keywords: ['pdf光栅化', 'pdf转位图', 'pdf高清转图片', 'pdf转png点阵图'],
+    description: `
+      <p>PDF光栅化工具将矢量 PDF 文件转换为高分辨率的位图图片格式（PNG、JPEG 或 WebP）。支持自定义 DPI（72、150、300 DPI）与质量控制。</p>
+      <p>适合制作社交媒体分享缩略图、展示图层或将复杂矢量文件栅格化为兼容性更高的位图图片。本地端离线安全运算，无隐私外泄风险。</p>
+    `,
+    howToUse: [
+      { step: 1, title: '上传 PDF 文件', description: '选择需要光栅化转换的 PDF 文件。' },
+      { step: 2, title: '设置格式与分辨率', description: '选择输出图片格式（PNG/JPEG/WebP）及 DPI。' },
+      { step: 3, title: '转换并下载', description: '点击转换，单独下载或打包为 ZIP 压缩包。' },
+    ],
+    useCases: [
+      { title: '社交与网页展示', description: '将 PDF 幻灯片转为社交平台易于浏览的高清图片。', icon: 'share-2' },
+      { title: '印刷前预检缩略图', description: '以高 DPI 导出位图，检查排版效果。', icon: 'image' },
+    ],
+    faq: [
+      { question: '一般用途推荐使用多少 DPI？', answer: '屏幕浏览建议 72~150 DPI；高品质印刷输出建议 300 DPI。' },
+    ],
+  },
+
+  'markdown-to-pdf': {
+    title: 'Markdown转PDF - MD文件转精美排版PDF【免费】',
+    metaDescription: '将 Markdown (.md) 文件快速转换为排版精美的 PDF 文档。支持 GitHub 风格 Markdown (GFM) 与代码语法高亮。',
+    keywords: ['markdown转pdf', 'md转pdf', 'gfm转pdf', 'markdown转换'],
+    description: `
+      <p>Markdown转PDF工具能将您的 .md 笔记或技术文档直接导出为排版专业的 PDF。完美支持 CommonMark 与 GitHub Flavored Markdown (GFM)，包含表格、任务列表与代码块高亮。</p>
+      <p>支持多种主题样式与页面边距设置。所有运算在浏览器本地端执行，笔记内容绝对私密。</p>
+    `,
+    howToUse: [
+      { step: 1, title: '上传 Markdown 文件', description: '拖拽 .md 或 .markdown 文件，或直接粘贴文本内容。' },
+      { step: 2, title: '选择外观主题', description: '切换浅色、深色或 GitHub 风格排版主题。' },
+      { step: 3, title: '导出并下载 PDF', description: '一键编译生成格式完整的 PDF 文档。' },
+    ],
+    useCases: [
+      { title: '技术文档与 README', description: '将项目说明文档输出为可直接分享与打印的正式手册。', icon: 'file-text' },
+      { title: '学习笔记与文章', description: '将平时整理的 Markdown 笔记转为版面整齐的 PDF 存档。', icon: 'edit-3' },
+    ],
+    faq: [
+      { question: '支持代码高亮吗？', answer: '支持，主流编程语言代码均具备语法着色与等宽字体显示。' },
+    ],
+  },
+
+  'email-to-pdf': {
+    title: 'Email转PDF - 将电子邮件(.eml)转换为PDF文档【免费】',
+    metaDescription: '将电子邮件 (.eml) 文件转换为标准 PDF。完整保留邮件标题、正文、内嵌图片与附件清单。',
+    keywords: ['email转pdf', 'eml转pdf', '电子邮件转pdf', '邮件存为pdf'],
+    description: `
+      <p>Email转PDF工具可将您的电子邮件存档（.eml 格式）转换为格式标准的 PDF 文档。工具会完整保留发件人、收件人、主题、日期等头部信息及正文格式。</p>
+      <p>非常适合法律存证、商务往来归档或重要邮件备份。所有处理都在本地浏览器中完成，邮件机密完全不外泄。</p>
+    `,
+    howToUse: [
+      { step: 1, title: '上传 EML 邮件文件', description: '选择或拖拽 .eml 邮件文件至网页。' },
+      { step: 2, title: '设置导出选项', description: '选择纸张规格及是否包含抄送/密送信息。' },
+      { step: 3, title: '转换并下载', description: '生成并下载永久保存的 PDF 邮件存档。' },
+    ],
+    useCases: [
+      { title: '法律凭证与商务存档', description: '将重要往来信件转为具法律参考价值的防篡改 PDF。', icon: 'scale' },
+      { title: '业务通讯备份', description: '整理客户合同洽谈与授权确认邮件。', icon: 'briefcase' },
+    ],
+    faq: [
+      { question: '邮件中的附件会一起嵌入吗？', answer: 'PDF 中会清楚列出所有附件名称与清单，确保记录完整。' },
+    ],
+  },
+
+  'cbz-to-pdf': {
+    title: 'CBZ转PDF - 漫画压缩包转换为PDF【免费】',
+    metaDescription: '将漫画压缩包 (CBZ/ZIP) 转换为单一 PDF 文件。保持原始画质与正确阅读顺序，免注册。',
+    keywords: ['cbz转pdf', '漫画转pdf', 'cbz转换', '电子书漫画pdf'],
+    description: `
+      <p>CBZ转PDF工具将漫画压缩文件（Comic Book Archive）转换为通用的 PDF 文档。工具会自动解压并按章节顺序将所有漫画页面整合为单一 PDF。</p>
+      <p>便于在仅支持 PDF 的电子书阅读器、平板或电脑上顺畅翻阅。浏览器本地安全处理，不占用服务器带宽。</p>
+    `,
+    howToUse: [
+      { step: 1, title: '上传 CBZ 文件', description: '选择您的 .cbz 或 .zip 漫画文件。' },
+      { step: 2, title: '设置页面尺寸', description: '选择保留原始图片尺寸或适配标准阅读器大小。' },
+      { step: 3, title: '转换并下载', description: '一键导出为高清 PDF 漫画电子书。' },
+    ],
+    useCases: [
+      { title: '电子阅读器兼容', description: '让只支持 PDF 的 Kindle 或电子书阅读器也能轻松阅读 CBZ 漫画。', icon: 'book' },
+      { title: '漫画数字归档', description: '将零散的漫画压缩包整理为标准 PDF 书库。', icon: 'archive' },
+    ],
+    faq: [
+      { question: '会损坏漫画图片画质吗？', answer: '不会，图片会以原始分辨率无损嵌入至 PDF 页面中。' },
+    ],
+  },
+
+  'font-to-outline': {
+    title: 'PDF字体转曲 - 文字转矢量轮廓防止缺字跑版【免费】',
+    metaDescription: '将 PDF 中的文字字体全部转为矢量轮廓（外框）。确保在任何未安装字体的设备或送印时文字不跑版。',
+    keywords: ['pdf字体转曲', 'pdf文字转轮廓', '文字转外框', '印刷字体兼容'],
+    description: `
+      <p>PDF字体转曲工具将文档中的所有文字转换为矢量路径轮廓（Vector Outlines）。即使印刷厂或收件人电脑中没有安装对应字体，文档的字形外观也绝对不会跑版或被系统字体替换。</p>
+      <p>这是印刷排版送印前最关键的防范步骤，避免字体版权纠纷与输出缺失。本地端安全转换，免注册。</p>
+    `,
+    howToUse: [
+      { step: 1, title: '上传 PDF 文件', description: '选择包含特定字体的 PDF 文件。' },
+      { step: 2, title: '确认轮廓化参数', description: '检查需要转曲的页面范围与分辨率。' },
+      { step: 3, title: '转曲并下载', description: '点击处理，下载所有文字已矢量化的印刷级 PDF。' },
+    ],
+    useCases: [
+      { title: '商业印刷与菲林送件', description: '确保送至印刷厂时文字 100% 不变形、不缺字。', icon: 'printer' },
+      { title: '跨平台文件发布', description: '发送给使用不同操作系统的客户，避免对方缺字乱码。', icon: 'share-2' },
+    ],
+    faq: [
+      { question: '转曲后还能搜索或复制文字吗？', answer: '不能。转为轮廓后文字已变成矢量图形，不再具备可编辑文字属性。请务必保留原始备份。' },
+    ],
+  },
+
+  'extract-tables': {
+    title: 'PDF表格提取 - 智能识别并导出表格数据【免费】',
+    metaDescription: '自动识别并提取 PDF 中的表格数据。支持导出为 CSV、Excel、Markdown 或 JSON 格式。',
+    keywords: ['pdf表格提取', 'pdf转表格', 'pdf提取数据', 'pdf转csv', 'pdf表格识别'],
+    description: `
+      <p>PDF表格提取工具能自动扫描并识别 PDF 文档中的表格结构，并将其中的数据导出为结构化的 CSV、Markdown 或 JSON 格式。</p>
+      <p>适合从财务报表、发票收据、统计数据或学术论文中快速提取数值数据，无需人工手动复制粘贴。所有识别在您的浏览器本地进行，机密数据不外泄。</p>
+    `,
+    howToUse: [
+      { step: 1, title: '上传含表格的 PDF', description: '将包含表格数据的 PDF 文件上传。' },
+      { step: 2, title: '设置识别范围', description: '指定页码或调整表格边框检测阈值。' },
+      { step: 3, title: '选择格式并导出', description: '选择 CSV、Markdown 或 JSON 格式下载提取结果。' },
+    ],
+    useCases: [
+      { title: '财务与业务报表分析', description: '将 PDF 财务报表中的数据提取至 Excel 中进一步分析。', icon: 'bar-chart' },
+      { title: '论文与研究资料整理', description: '提取报告中的对比表格至 Markdown 笔记中。', icon: 'file-text' },
+    ],
+    faq: [
+      { question: '支持复杂的合并单元格吗？', answer: '常规网格表格识别效果最佳；极复杂的嵌套表格建议微调识别参数后导出。' },
+    ],
+  },
 };
 
