@@ -1674,7 +1674,7 @@ export const toolContentEs: Record<string, ToolContent> = {
       { question: '¿Es gratuito?', answer: 'Sí, 100% gratuito sin límites ni marcas de agua.' },
       { question: '¿Mis archivos están seguros?', answer: 'Totalmente. El procesamiento se realiza 100% en tu navegador y tus documentos nunca se suben a ningún servidor.' },
     ],
-  },,
+  },
 
   // ==================== NUEVAS HERRAMIENTAS Y CONVERSIONES ====================
   'word-to-pdf': {

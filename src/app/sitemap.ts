@@ -124,6 +124,8 @@ const PAGE_LASTMOD_SOURCES = {
     'src/app/(localized)/[locale]/compress-pdf-for-email',
     'src/app/(localized)/[locale]/compress-pdf-without-upload',
     'src/app/(localized)/[locale]/merge-pdf-no-signup',
+    'src/app/(localized)/[locale]/how-to-make-a-pdf-one-continuous-page',
+    'src/app/(localized)/[locale]/compress-pdf-to-100kb',
     'src/content/seo/landing-pages.ts',
     'src/components/marketing/LongTailLandingPage.tsx',
   ],

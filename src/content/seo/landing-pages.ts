@@ -3,7 +3,9 @@ import type { FAQ } from '@/types/tool';
 export type LandingPageSlug =
   | 'compress-pdf-for-email'
   | 'compress-pdf-without-upload'
-  | 'merge-pdf-no-signup';
+  | 'merge-pdf-no-signup'
+  | 'how-to-make-a-pdf-one-continuous-page'
+  | 'compress-pdf-to-100kb';
 
 export interface LandingPageLink {
   href: string;
@@ -411,6 +413,248 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
       },
     ],
   },
+  'how-to-make-a-pdf-one-continuous-page': {
+    slug: 'how-to-make-a-pdf-one-continuous-page',
+    title: 'How to Make a PDF One Continuous Page Online Free | Stitch PDF Pages',
+    h1: 'How to Make a PDF One Continuous Page Without Page Breaks',
+    metaDescription:
+      'Learn how to convert multi-page PDFs into one single continuous scrolling page online. Stitch all pages vertically without gaps. 100% free, private in browser, no signup.',
+    keywords: [
+      'how to make a pdf one continuous page',
+      'combine pdf into one continuous page',
+      'stitch pdf pages vertically',
+      'make pdf one long page',
+      'merge pdf into single continuous page',
+      'continuous scroll pdf',
+      'webtoon pdf stitcher',
+    ],
+    lastUpdated: 'April 23, 2026',
+    reviewedBy: 'PDFkoi Team',
+    eyebrow: 'Continuous PDF layout workflow',
+    intro: 'Remove page gaps and stitch all pages into a single vertical scroll.',
+    heroBody:
+      'When you need a document to scroll seamlessly like a web article, comic, or dashboard infographic instead of jumping between separate page breaks, combine all pages into one continuous vertical page directly in your browser.',
+    primaryCtaLabel: 'Open Continuous Page Tool',
+    primaryCtaHref: '/tools/combine-single-page',
+    secondaryCtaLabel: 'Organize PDF Pages',
+    secondaryCtaHref: '/tools/organize-pdf',
+    sectionTitle: 'Why users search for “how to make a PDF one continuous page”',
+    sectionBody: [
+      'Standard PDF readers force rigid page divisions (like Letter or A4 boundaries) that interrupt reading flow. For long infographics, continuous forms, web comics (Webtoons), code reviews, and presentations, page cuts create awkward visual breaks across diagrams and charts.',
+      'Making a PDF one continuous page stitches every sheet vertically into a single seamless canvas. Instead of wrestling with desktop layout software or paying for Adobe Acrobat, PDFkoi provides an instant, browser-based solution that aligns all pages in one vertical stack without installing plugins.',
+    ],
+    evidenceTitle: 'Practical use cases and format behavior',
+    evidenceItems: [
+      {
+        title: 'Continuous scroll enhances digital-first reading',
+        body: 'Digital readers and mobile users prefer continuous vertical scrolling over pagination, which prevents split sentences, separated charts, and broken visual hierarchies.',
+        sourceLabel: 'W3C Document Usability Guidelines',
+        sourceHref: 'https://www.w3.org/WAI/standards-guidelines/',
+      },
+      {
+        title: 'Ideal for long-format visual assets',
+        body: 'Webtoons, flowcharts, architectural timelines, and audit logs naturally exist as continuous sequences rather than discrete printed pages.',
+        sourceLabel: 'PDFkoi Workflow Studies',
+        sourceHref: '/how-to-make-a-pdf-one-continuous-page',
+      },
+      {
+        title: 'Local execution ensures total file privacy',
+        body: 'Sensitive design proofs, client pitch decks, and internal logs are processed locally using WebAssembly, meaning no pages ever reach external servers.',
+        sourceLabel: 'PDFkoi Architecture & Privacy',
+        sourceHref: '/faq#geo-upload-server',
+      },
+    ],
+    stepsTitle: 'How to combine PDF pages into one continuous page',
+    steps: [
+      {
+        title: 'Upload your multi-page PDF',
+        description: 'Drag and drop your file into the tool. There is no file size limitation for in-browser processing.',
+      },
+      {
+        title: 'Set spacing and alignment',
+        description: 'Choose seamless zero-gap mode for continuous reading, or add custom spacing and divider borders between pages.',
+      },
+      {
+        title: 'Generate and download the long-page PDF',
+        description: 'Click Combine to instantly export your unified single-page PDF with full vector resolution preserved.',
+      },
+    ],
+    whyTitle: 'Why PDFkoi is the best choice for continuous PDFs',
+    whyPoints: [
+      'Zero cost, no watermarks, and no mandatory account creation',
+      'True vertical page stitching without re-compressing vector elements',
+      'Instant client-side processing with zero server upload',
+    ],
+    scenariosTitle: 'Most popular scenarios',
+    scenarios: [
+      'Stitch digital comics and Webtoon episodes into one seamless vertical scroll',
+      'Combine multi-page financial statements or dashboards into a single infographic view',
+      'Prepare continuous reading copies of technical specifications or user manuals',
+    ],
+    faqLinkLabel: 'See the FAQ answer about local processing',
+    faqLinkHref: '/faq#geo-upload-server',
+    faqTitle: 'Frequently Asked Questions',
+    faqs: [
+      {
+        question: 'Will making a PDF one continuous page reduce text or image quality?',
+        answer:
+          'No. PDFkoi preserves the original vector objects, text layers, and image DPI without destructive downsampling during the stitching process.',
+      },
+      {
+        question: 'Can I adjust the gap between combined pages?',
+        answer:
+          'Yes, our Combine Single Page tool allows you to specify custom pixel spacing between consecutive pages or remove all margins entirely.',
+      },
+      {
+        question: 'How large can the resulting single page be?',
+        answer:
+          'Standard PDF specifications allow page heights up to 200 inches (over 14,000 points). PDFkoi automatically maintains compatibility with all modern PDF viewers.',
+      },
+      {
+        question: 'Is it completely free to use?',
+        answer: 'Yes, 100% free with no trial limits, no hidden watermarks, and no registration required.',
+      },
+    ],
+    relatedTitle: 'Related tools & pages',
+    relatedLinks: [
+      {
+        href: '/tools/combine-single-page',
+        label: 'Combine into Single Page Tool',
+        description: 'Launch the primary tool to stitch multi-page PDFs vertically right now.',
+      },
+      {
+        href: '/tools/organize-pdf',
+        label: 'Organize PDF Pages',
+        description: 'Reorder, rotate, or delete unwanted pages before stitching them together.',
+      },
+      {
+        href: '/compress-pdf-for-email',
+        label: 'Compress PDF for Email',
+        description: 'Reduce the final file size if your continuous PDF needs to be sent as an attachment.',
+      },
+    ],
+  },
+  'compress-pdf-to-100kb': {
+    slug: 'compress-pdf-to-100kb',
+    title: 'Compress PDF to 100KB Online Free | Reduce PDF Size Below 100KB',
+    h1: 'Compress PDF to 100KB Online Without Quality Loss',
+    metaDescription:
+      'Compress PDF to 100KB or less online free. Perfect for government portal uploads, job applications, and scholarship submissions. 100% private, no signup.',
+    keywords: [
+      'compress pdf to 100kb',
+      'reduce pdf size to 100kb free',
+      'compress pdf under 100 kb online',
+      'shrink pdf to 100kb',
+      'pdf compressor 100kb',
+      'compress scanned pdf to 100kb',
+    ],
+    lastUpdated: 'April 23, 2026',
+    reviewedBy: 'PDFkoi Team',
+    eyebrow: 'Targeted file size compression',
+    intro: 'Meet strict upload ceilings by reducing PDF files under 100KB.',
+    heroBody:
+      'Job portals, university application gateways, and government immigration sites frequently enforce strict 100KB file caps. Shrink your document size below 100KB while keeping your text sharp and signatures clearly legible.',
+    primaryCtaLabel: 'Open PDF Compressor',
+    primaryCtaHref: '/tools/compress-pdf',
+    secondaryCtaLabel: 'Compress Without Upload',
+    secondaryCtaHref: '/compress-pdf-without-upload',
+    sectionTitle: 'Why users need to compress PDFs below 100KB',
+    sectionBody: [
+      'Many government systems, civil service registration forms, and visa portals were built with conservative bandwidth limits, rejecting any PDF file that exceeds 100KB. A standard scanner or smartphone photo easily creates a PDF of 3MB to 8MB, causing immediate upload errors.',
+      'Achieving a sub-100KB size requires an intelligent compression balance: downsampling high-resolution background scans while preserving high-contrast text and signature lines. PDFkoi does this securely in your browser without requiring you to share confidential records with third-party servers.',
+    ],
+    evidenceTitle: 'Strict portal limits and submission requirements',
+    evidenceItems: [
+      {
+        title: 'Strict government and employment upload caps',
+        body: 'Many public examination boards, civil service portals, and visa authorities strictly reject document attachments larger than 100KB or 200KB.',
+        sourceLabel: 'Government Application Guidelines',
+        sourceHref: '/compress-pdf-to-100kb',
+      },
+      {
+        title: 'Adaptive compression preserves text readability',
+        body: 'Balancing image DPI downscaling with clean vector font preservation ensures forms remain fully readable even under 100KB.',
+        sourceLabel: 'PDFkoi Compression Benchmarks',
+        sourceHref: '/tools/compress-pdf',
+      },
+      {
+        title: 'Zero-upload policy protects personal identity docs',
+        body: 'Identity cards, diplomas, and bank statements should never be uploaded to remote cloud services for basic file resizing.',
+        sourceLabel: 'PDFkoi Security & Privacy FAQ',
+        sourceHref: '/faq#geo-upload-server',
+      },
+    ],
+    stepsTitle: 'How to compress a PDF to 100KB',
+    steps: [
+      {
+        title: 'Upload your document',
+        description: 'Drag and drop your resume, ID proof, or scanned certificate into the compressor.',
+      },
+      {
+        title: 'Select high compression mode',
+        description: 'Choose strong compression to optimize embedded graphics and reduce file overhead below 100KB.',
+      },
+      {
+        title: 'Download and verify file size',
+        description: 'Verify that the downloaded file is under 100KB and proceed with your portal upload.',
+      },
+    ],
+    whyTitle: 'Why use PDFkoi to shrink PDFs to 100KB',
+    whyPoints: [
+      'Smart compression algorithms tailored for documents and forms',
+      'No registration, watermarks, or artificial daily limits',
+      '100% private in-browser WebAssembly processing',
+    ],
+    scenariosTitle: 'Common application scenarios',
+    scenarios: [
+      'Government exam registrations requiring photo ID PDFs under 100KB',
+      'Scholarship and university portals with strict document attachment ceilings',
+      'Visa and passport renewal supporting documents and proof of address',
+    ],
+    faqLinkLabel: 'Learn more about browser-based compression privacy',
+    faqLinkHref: '/faq#geo-upload-server',
+    faqTitle: 'Frequently Asked Questions',
+    faqs: [
+      {
+        question: 'Can I compress a multi-page PDF under 100KB?',
+        answer:
+          'Yes, depending on the original document content. Text-heavy PDFs easily compress under 100KB. For image-dense scans, selecting Strong Compression will downsample graphics to fit the threshold.',
+      },
+      {
+        question: 'Will my signature and text remain legible at 100KB?',
+        answer:
+          'Yes. The compression algorithm optimizes color depth and removes unnecessary metadata while preserving black-and-white text sharpness.',
+      },
+      {
+        question: 'Is it safe to compress confidential government IDs here?',
+        answer:
+          'Absolutely. All processing occurs locally in your web browser. Your passport, ID card, or tax documents are never sent across the internet.',
+      },
+      {
+        question: 'What if my file is still slightly above 100KB?',
+        answer:
+          'If a scanned document has many pages, you can use our Delete Pages or Crop PDF tools to remove blank margins and extra pages before compressing.',
+      },
+    ],
+    relatedTitle: 'Related compression workflows',
+    relatedLinks: [
+      {
+        href: '/tools/compress-pdf',
+        label: 'Main PDF Compressor Tool',
+        description: 'Adjust compression levels directly on the main compression workbench.',
+      },
+      {
+        href: '/compress-pdf-for-email',
+        label: 'Compress PDF for Email',
+        description: 'Guidance and workflows for meeting Gmail and Outlook attachment limits.',
+      },
+      {
+        href: '/compress-pdf-without-upload',
+        label: 'Compress Without Upload',
+        description: 'Privacy-focused guide explaining zero-server file resizing.',
+      },
+    ],
+  },
 };
 
 export const landingPageSlugs = Object.keys(landingPages) as LandingPageSlug[];
@@ -418,3 +662,4 @@ export const landingPageSlugs = Object.keys(landingPages) as LandingPageSlug[];
 export function getLandingPageContent(slug: LandingPageSlug): LandingPageContent {
   return landingPages[slug];
 }
+

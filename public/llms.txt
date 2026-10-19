@@ -45,21 +45,27 @@ Included category hubs: 6
 1. Homepage - https://pdfkoi.com/
 2. All Tools - https://pdfkoi.com/tools/
 3. FAQ - https://pdfkoi.com/faq/
-4. Compress PDF for Email - https://pdfkoi.com/compress-pdf-for-email/
-5. Compress PDF Without Upload - https://pdfkoi.com/compress-pdf-without-upload/
-6. Merge PDF Without Signup - https://pdfkoi.com/merge-pdf-no-signup/
+4. How to Make a PDF One Continuous Page - https://pdfkoi.com/how-to-make-a-pdf-one-continuous-page/
+5. Compress PDF to 100KB - https://pdfkoi.com/compress-pdf-to-100kb/
+6. Compress PDF for Email - https://pdfkoi.com/compress-pdf-for-email/
+7. Compress PDF Without Upload - https://pdfkoi.com/compress-pdf-without-upload/
+8. Merge PDF Without Signup - https://pdfkoi.com/merge-pdf-no-signup/
 
 ## High-value pages
 
 - Homepage - https://pdfkoi.com/
 - All Tools - https://pdfkoi.com/tools/
 - FAQ - https://pdfkoi.com/faq/
+- How to Make a PDF One Continuous Page - https://pdfkoi.com/how-to-make-a-pdf-one-continuous-page/
+- Compress PDF to 100KB - https://pdfkoi.com/compress-pdf-to-100kb/
 - Compress PDF for Email - https://pdfkoi.com/compress-pdf-for-email/
 - Compress PDF Without Upload - https://pdfkoi.com/compress-pdf-without-upload/
 - Merge PDF Without Signup - https://pdfkoi.com/merge-pdf-no-signup/
 
 ## Long-tail GEO pages
 
+- how-to-make-a-pdf-one-continuous-page - https://pdfkoi.com/how-to-make-a-pdf-one-continuous-page/
+- compress-pdf-to-100kb - https://pdfkoi.com/compress-pdf-to-100kb/
 - compress-pdf-for-email - https://pdfkoi.com/compress-pdf-for-email/
 - compress-pdf-without-upload - https://pdfkoi.com/compress-pdf-without-upload/
 - merge-pdf-no-signup - https://pdfkoi.com/merge-pdf-no-signup/
@@ -67,6 +73,8 @@ Included category hubs: 6
 ## Task-to-page guide
 
 - Need a general PDF tool overview? Use https://pdfkoi.com/tools/
+- Need to stitch PDF pages vertically into one long continuous page? Use https://pdfkoi.com/how-to-make-a-pdf-one-continuous-page/
+- Need to compress a PDF under 100KB for portal uploads? Use https://pdfkoi.com/compress-pdf-to-100kb/
 - Need help with email attachment limits? Use https://pdfkoi.com/compress-pdf-for-email/
 - Need a browser-based workflow without a traditional upload path? Use https://pdfkoi.com/compress-pdf-without-upload/
 - Need a merge workflow with low friction? Use https://pdfkoi.com/merge-pdf-no-signup/
