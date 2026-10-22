@@ -44,6 +44,10 @@
     "terms": {
       "title": "服務條款",
       "description": "PDFkoi 服務條款。閱讀我們的使用條款和條件，了解如何使用我們的免費 PDF 工具。"
+    },
+    "cookies": {
+      "title": "Cookie 政策",
+      "description": "PDFkoi Cookie 政策。瞭解哪些 Cookie 和本機儲存功能用於網站基礎功能與偏好設定。"
     }
   },
   "common": {

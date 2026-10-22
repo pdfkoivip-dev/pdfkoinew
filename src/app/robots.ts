@@ -21,10 +21,8 @@ export default function robots(): MetadataRoute.Robots {
         allow: ['/', '/llms.txt', '/llms-full.txt'],
         disallow: [
           '/api/',
+          '/cdn-cgi/',
           '/manifest.webmanifest',
-          '/*/tools/?q=*',
-          '/tools/?q=*',
-          '/*/tools/?category=*',
         ],
       },
       {
@@ -32,12 +30,8 @@ export default function robots(): MetadataRoute.Robots {
         allow: ['/', '/llms.txt', '/llms-full.txt'],
         disallow: [
           '/api/',
+          '/cdn-cgi/',
           '/manifest.webmanifest',
-          // Block search parameter pages to prevent duplicate content
-          // Fixes GSC "网页会自动重定向" issue
-          '/*/tools/?q=*',
-          '/tools/?q=*',
-          '/*/tools/?category=*',
         ],
       },
     ],

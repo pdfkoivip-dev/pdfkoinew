@@ -21,6 +21,10 @@ const CANONICAL_DEFAULT_LOCALE_PATHS = new Set([
   '/compress-pdf-without-upload/',
   '/merge-pdf-no-signup',
   '/merge-pdf-no-signup/',
+  '/how-to-make-a-pdf-one-continuous-page',
+  '/how-to-make-a-pdf-one-continuous-page/',
+  '/compress-pdf-to-100kb',
+  '/compress-pdf-to-100kb/',
   // Removed from redirect set (have localized content, return 200):
   // - /about, /faq, /privacy, /cookies, /contact, /terms, /workflow, /tools
 ]);
@@ -37,9 +41,6 @@ export function getLocaleRedirectPath(url) {
   const pathname = url.pathname || '/';
   const search = url.search;
 
-  // Does the original request have a trailing slash? (needed for Rule 4)
-  const hadTrailingSlash = pathname.length > 1 && pathname.endsWith('/');
-
   // ------------------------------------------------------------------
   // Rule 1: Strip /en or /en/ → redirect to root canonical URL
   // ------------------------------------------------------------------
@@ -53,13 +54,9 @@ export function getLocaleRedirectPath(url) {
   if (pathname.startsWith('/en/')) {
     let remaining = pathname.slice('/en'.length) || '/';
 
-    // Normalize trailing slash for known page paths
-    if (remaining !== '/' && !remaining.endsWith('/')) {
-      // Multi-segment paths like /tools/merge-pdf always get trailing slash
-      const parts = remaining.split('/').filter(Boolean);
-      if (parts.length >= 2 || CANONICAL_DEFAULT_LOCALE_PATHS.has(remaining)) {
-        remaining += '/';
-      }
+    // Normalize trailing slash for page paths (skip root and asset files with extension)
+    if (remaining !== '/' && !remaining.endsWith('/') && !remaining.includes('.')) {
+      remaining += '/';
     }
 
     return `${remaining}${search}`;
@@ -89,13 +86,14 @@ export function getLocaleRedirectPath(url) {
     const remaining = '/' + parts.slice(1).join('/');
 
     // Check both with and without trailing slash versions
-    const normalizedPath = hadTrailingSlash ? `${remaining}/` : remaining;
-    if (CANONICAL_DEFAULT_LOCALE_PATHS.has(normalizedPath)) {
-      // Return the version from the canonical set to preserve trailing slash
-      return (hadTrailingSlash
-        ? `${normalizedPath}`
-        : normalizedPath
-      ) + search;
+    const normalizedWithSlash = remaining.endsWith('/') ? remaining : `${remaining}/`;
+    const normalizedWithoutSlash = remaining.replace(/\/+$/, '');
+
+    if (
+      CANONICAL_DEFAULT_LOCALE_PATHS.has(normalizedWithSlash) ||
+      CANONICAL_DEFAULT_LOCALE_PATHS.has(normalizedWithoutSlash)
+    ) {
+      return `${normalizedWithSlash}${search}`;
     }
   }
 

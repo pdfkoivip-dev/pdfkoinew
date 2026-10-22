@@ -5,6 +5,7 @@ import { getLandingPageContent } from '@/content/seo/landing-pages';
 import {
   generateBreadcrumbSchema,
   generateCollectionPageSchema,
+  generateFAQPageSchema,
   generateItemListSchema,
   generateLongTailLandingMetadata,
 } from '@/lib/seo';
@@ -63,6 +64,7 @@ export default async function CompressPdfWithoutUploadPage({
         path: link.href,
       })),
     }),
+    ...(content.faqs && content.faqs.length > 0 ? [generateFAQPageSchema(content.faqs)] : []),
   ];
 
   return (

@@ -44,6 +44,10 @@
       "convertPdf": "PDF konvertieren",
       "freePdfTools": "kostenlose PDF-Werkzeuge",
       "onlinePdfEditor": "Online-PDF-Editor"
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "description": "PDFkoi Cookie-Richtlinie. Erfahren Sie, welche Cookies und lokalen Speicherfunktionen für grundlegende Website-Funktionen und Einstellungen verwendet werden."
     }
   },
   "common": {

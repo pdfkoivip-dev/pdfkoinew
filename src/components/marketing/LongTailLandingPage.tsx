@@ -14,6 +14,21 @@ interface LongTailLandingPageProps {
   content: LandingPageContent;
 }
 
+const META_LABELS: Partial<Record<Locale, { lastUpdated: string; reviewedBy: string; source: string }>> = {
+  es: { lastUpdated: 'Actualizado el', reviewedBy: 'Revisado por', source: 'Fuente' },
+  pt: { lastUpdated: 'Atualizado em', reviewedBy: 'Revisado por', source: 'Fonte' },
+  de: { lastUpdated: 'Zuletzt aktualisiert', reviewedBy: 'Überprüft von', source: 'Quelle' },
+  ja: { lastUpdated: '最終更新', reviewedBy: 'レビュー担当', source: '出典' },
+  zh: { lastUpdated: '最后更新', reviewedBy: '审阅者', source: '来源' },
+  'zh-TW': { lastUpdated: '最後更新', reviewedBy: '審閱者', source: '來源' },
+  fr: { lastUpdated: 'Mis à jour le', reviewedBy: 'Vérifié par', source: 'Source' },
+  ko: { lastUpdated: '마지막 업데이트', reviewedBy: '검토자', source: '출처' },
+};
+
+function getMetaLabels(locale: Locale) {
+  return META_LABELS[locale] ?? { lastUpdated: 'Last updated', reviewedBy: 'Reviewed by', source: 'Source' };
+}
+
 export function LongTailLandingPage({ locale, content }: LongTailLandingPageProps) {
   return (
     <div className="min-h-screen flex flex-col bg-[hsl(var(--color-background))]">
@@ -36,9 +51,9 @@ export function LongTailLandingPage({ locale, content }: LongTailLandingPageProp
                 {content.heroBody}
               </p>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center text-sm text-[hsl(var(--color-muted-foreground))] mb-8">
-                <span>Last updated: {content.lastUpdated}</span>
+                <span>{getMetaLabels(locale).lastUpdated}: {content.lastUpdated}</span>
                 <span className="hidden sm:inline" aria-hidden="true">•</span>
-                <span>Reviewed by {content.reviewedBy}</span>
+                <span>{getMetaLabels(locale).reviewedBy}: {content.reviewedBy}</span>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link href={getLocalizedPath(content.primaryCtaHref, locale)}>
@@ -85,7 +100,7 @@ export function LongTailLandingPage({ locale, content }: LongTailLandingPageProp
                       target={item.sourceHref.startsWith('http') ? '_blank' : undefined}
                       rel={item.sourceHref.startsWith('http') ? 'noopener noreferrer' : undefined}
                     >
-                      Source: {item.sourceLabel}
+                      {getMetaLabels(locale).source}: {item.sourceLabel}
                     </Link>
                   </Card>
                 ))}

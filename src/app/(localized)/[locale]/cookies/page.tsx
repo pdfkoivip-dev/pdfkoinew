@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { normalizeLocale, getPublicLocaleParams } from '@/lib/i18n/config';
 import { generateCookiesMetadata } from '@/lib/seo';
 import CookiesPageClient from './CookiesPageClient';
@@ -15,8 +15,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const validLocale = normalizeLocale(locale) || 'en';
+  const t = await getTranslations({ locale: validLocale, namespace: 'metadata' });
 
-  return generateCookiesMetadata(validLocale);
+  return generateCookiesMetadata(validLocale, {
+    title: t('cookies.title'),
+    description: t('cookies.description'),
+  });
 }
 
 interface CookiesPageProps {

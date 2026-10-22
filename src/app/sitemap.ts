@@ -18,7 +18,7 @@ import {
   type Locale,
 } from '@/lib/i18n/config';
 import { getAllTools } from '@/config/tools';
-import { landingPageSlugs } from '@/content/seo/landing-pages';
+import { landingPageSlugs, getLandingPageIndexableLocales } from '@/content/seo/landing-pages';
 import { TOOL_CATEGORIES } from '@/types/tool';
 import {
   getCategoryHubIndexableLocales,
@@ -124,6 +124,8 @@ const PAGE_LASTMOD_SOURCES = {
     'src/app/(localized)/[locale]/compress-pdf-for-email',
     'src/app/(localized)/[locale]/compress-pdf-without-upload',
     'src/app/(localized)/[locale]/merge-pdf-no-signup',
+    'src/app/(localized)/[locale]/how-to-make-a-pdf-one-continuous-page',
+    'src/app/(localized)/[locale]/compress-pdf-to-100kb',
     'src/content/seo/landing-pages.ts',
     'src/components/marketing/LongTailLandingPage.tsx',
   ],
@@ -298,19 +300,25 @@ export function generateLocaleEntries(locale: Locale): MetadataRoute.Sitemap {
     }
   }
 
-  if (locale === defaultLocale) {
-    for (const slug of landingPageSlugs) {
-      entries.push(
-        createSitemapEntry({
-          path: `/${slug}`,
-          locale,
-          alternateLocales: [defaultLocale],
-          lastModified: landingPageLastModified,
-          changeFrequency: CHANGE_FREQUENCY.landingPage,
-          priority: PRIORITY.landingPage,
-        })
-      );
+  // Long-tail landing pages: each locale only when localized content exists
+  // (English is always indexable and acts as the canonical fallback).
+  for (const slug of landingPageSlugs) {
+    const indexableLocales = getLandingPageIndexableLocales(slug);
+
+    if (!indexableLocales.includes(locale)) {
+      continue;
     }
+
+    entries.push(
+      createSitemapEntry({
+        path: `/${slug}`,
+        locale,
+        alternateLocales: indexableLocales,
+        lastModified: landingPageLastModified,
+        changeFrequency: CHANGE_FREQUENCY.landingPage,
+        priority: PRIORITY.landingPage,
+      })
+    );
   }
 
   return entries;

@@ -719,9 +719,10 @@ export const toolContentEn: Record<string, ToolContent> = {
   },
 
   'png-to-pdf': {
-    title: 'PNG to PDF',
-    metaDescription: 'Convert PNG images to PDF. Preserve transparency and combine multiple PNG files.',
-    keywords: ['png to pdf', 'convert png', 'png converter', 'transparent image to pdf'],
+    title: 'PNG to PDF Converter Online Free - Keep Transparency, No Upload',
+    metaDescription: 'Convert PNG to PDF online free. Combine multiple PNG images into one PDF, keep transparency and original quality. No signup, no upload - files stay in your browser.',
+    keywords: ['png to pdf', 'convert png to pdf', 'png to pdf online free', 'png to pdf converter', 'combine png into one pdf', 'png image to pdf', 'png to pdf no upload', 'turn png into pdf'],
+
     description: `
       <p>PNG to PDF converts your PNG images into PDF documents while preserving transparency. Perfect for graphics, logos, screenshots, and images with transparent backgrounds.</p>
       <p>Combine multiple PNG files into a single PDF, arrange them in any order, and customize page settings. The conversion maintains the high quality of your original images.</p>
@@ -953,9 +954,10 @@ export const toolContentEn: Record<string, ToolContent> = {
   },
 
   'word-to-pdf': {
-    title: 'Word to PDF',
-    metaDescription: 'Convert Word documents (DOCX) to PDF. Preserve formatting and layout in your converted documents.',
-    keywords: ['word to pdf', 'docx to pdf', 'convert word', 'word converter', 'microsoft word to pdf'],
+    title: 'Word to PDF Converter Online Free - No Upload, No Watermark',
+    metaDescription: 'Convert Word to PDF online free. Turn DOCX files into clean, print-ready PDFs right in your browser - no upload, no signup, no watermark. Documents never leave your device.',
+    keywords: ['word to pdf', 'word to pdf converter', 'word to pdf online free', 'docx to pdf', 'convert word to pdf', 'word to pdf no watermark', 'word to pdf without uploading', 'word document to pdf'],
+
     description: `
       <p>Word to PDF converts Microsoft Word documents into PDF format while preserving the original formatting, layout, and content structure.</p>
       <p>Upload your DOCX files and get high-quality PDF output suitable for sharing, printing, or archiving. The conversion maintains text formatting, paragraph styles, and basic document structure.</p>
@@ -1880,9 +1882,10 @@ export const toolContentEn: Record<string, ToolContent> = {
   },
 
   'posterize-pdf': {
-    title: 'Posterize PDF',
-    metaDescription: 'Split large PDF pages into printable tiles. Create posters from PDF pages.',
-    keywords: ['posterize pdf', 'tile pdf', 'large format printing', 'pdf poster'],
+    title: 'Posterize PDF - Print Large Pages as Multi-Page Poster Online Free',
+    metaDescription: 'Split a large PDF page into printable tiles you can assemble into a poster. Choose grid size, overlap, and paper. Free, private, no upload, no signup.',
+    keywords: ['posterize pdf', 'pdf poster printing', 'split pdf page into tiles', 'print poster from pdf', 'tile pdf for printing', 'large pdf page printing', 'pdf to poster', 'poster print pdf'],
+
     description: `
       <p>Posterize PDF splits large PDF pages into smaller tiles that can be printed on standard paper and assembled into posters. Perfect for printing large diagrams, maps, or artwork.</p>
       <p>Configure the grid size and overlap for easy assembly. The tool automatically calculates tile dimensions for your target output size.</p>
@@ -2246,9 +2249,10 @@ export const toolContentEn: Record<string, ToolContent> = {
   },
 
   'pdf-booklet': {
-    title: 'PDF Booklet Creator',
-    metaDescription: 'Create booklet layouts from PDF for printing. Arrange pages for saddle-stitch binding with multiple grid options.',
-    keywords: ['pdf booklet', 'booklet creator', 'print booklet', 'saddle stitch', 'imposition'],
+    title: 'PDF to Booklet - Create Print-Ready Booklet Layouts Online Free',
+    metaDescription: 'Turn a PDF into a booklet for print-and-fold in one click. Automatic saddle-stitch page imposition for brochures, zines, and programs. Free, private, in your browser.',
+    keywords: ['pdf to booklet', 'pdf booklet creator', 'create booklet from pdf', 'print booklet from pdf', 'make a booklet from pdf', 'booklet imposition', 'saddle stitch pdf', 'pdf booklet printing', 'fold and staple booklet'],
+
     description: `
       <p>PDF Booklet Creator arranges your PDF pages into booklet layouts ready for print-and-fold production. Perfect for creating brochures, zines, booklets, and saddle-stitched publications.</p>
       <p>Choose from various grid modes (1x2, 2x2, 2x4, 4x4), paper sizes, and orientation options. The tool automatically handles page imposition for proper folding sequence.</p>

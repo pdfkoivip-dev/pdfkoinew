@@ -70,7 +70,7 @@ const preferredTraditionalChineseAnchorText: Record<string, string> = {
   'pdf-to-pdfa': 'PDF 轉 PDF/A',
   'remove-metadata': '刪除 PDF 中繼資料',
   'word-to-pdf': 'Word 轉 PDF',
-  'jpg-to-pdf': '將多張 JPG 圖片合併為一個 PDF',
+  'jpg-to-pdf': 'JPG合併PDF - 多張圖片照片合併為一個PDF',
   'excel-to-pdf': 'Excel 轉 PDF',
   'png-to-pdf': 'PNG 轉 PDF',
   'image-to-pdf': '圖片轉 PDF',
@@ -82,6 +82,55 @@ const preferredTraditionalChineseAnchorText: Record<string, string> = {
   'remove-restrictions': '解除 PDF 限制',
   'sanitize-pdf': '清理 PDF 敏感資訊',
   'change-permissions': '變更 PDF 權限',
+  'posterize-pdf': 'PDF轉海報拼貼列印',
+  'combine-single-page': 'PDF合併為單一長頁',
+  'reverse-pages': '反轉 PDF 頁面順序',
+  'page-dimensions': '查詢 PDF 頁面尺寸規格',
+  'pdf-booklet': '製作 PDF 騎馬釘小冊子',
+};
+
+const preferredSpanishAnchorText: Record<string, string> = {
+  'posterize-pdf': 'Convertir PDF a poster para imprimir',
+  'combine-single-page': 'Combinar PDF en una sola página continua',
+  'reverse-pages': 'Invertir orden de páginas PDF',
+  'pdf-booklet': 'Crear folleto PDF para imprimir',
+  'page-dimensions': 'Consultar dimensiones de página PDF',
+  'compress-pdf': 'Comprimir PDF para enviar por correo',
+  'merge-pdf': 'Unir archivos PDF online gratis',
+  'split-pdf': 'Dividir y separar páginas PDF',
+  'organize-pdf': 'Organizar y reordenar páginas PDF',
+  'rotate-pdf': 'Rotar páginas de PDF',
+  'delete-pages': 'Eliminar páginas de un PDF',
+  'edit-pdf': 'Editar archivos PDF online',
+  'jpg-to-pdf': 'Convertir imágenes JPG a PDF',
+  'pdf-to-jpg': 'Convertir páginas PDF a JPG',
+  'extract-attachments': 'Extraer archivos adjuntos de PDF',
+  'decrypt-pdf': 'Desbloquear y quitar contraseña de PDF',
+  'encrypt-pdf': 'Proteger PDF con contraseña',
+  'word-to-pdf': 'Convertir Word a PDF online',
+  'excel-to-pdf': 'Convertir Excel a PDF gratis',
+  'pptx-to-pdf': 'Convertir PowerPoint a PDF',
+  'pdf-to-docx': 'Convertir PDF a Word editable',
+  'deskew-pdf': 'Enderezar PDF escaneado torcido',
+  'extract-tables': 'Extraer tablas de PDF a Excel',
+  'pdf-to-pdfa': 'Convertir PDF a formato PDF/A',
+};
+
+const preferredJapaneseAnchorText: Record<string, string> = {
+  'organize-pdf': 'PDFページの編成・整理・並び替え',
+  'reverse-pages': 'PDFページ順序の一括反転',
+  'combine-single-page': 'PDFを1枚の縦長ページに結合',
+  'compress-pdf': 'PDFファイルを圧縮・軽量化',
+  'merge-pdf': '複数PDFファイルを結合',
+  'split-pdf': 'PDFページを分割・抽出',
+  'jpg-to-pdf': 'JPG画像をまとめてPDF変換',
+  'pdf-to-jpg': 'PDFページを高画質JPG変換',
+  'delete-pages': 'PDFの不要ページを削除',
+  'rotate-pdf': 'PDFページの向きを回転',
+  'posterize-pdf': 'PDFポスター化・分割印刷',
+  'page-dimensions': 'PDFページ寸法の確認',
+  'encrypt-pdf': 'PDFにパスワード保護を設定',
+  'decrypt-pdf': 'PDFのパスワード保護を解除',
 };
 
 export function getPreferredToolAnchorText(
@@ -99,6 +148,14 @@ export function getPreferredToolAnchorText(
 
   if (locale === 'zh-TW' && preferredTraditionalChineseAnchorText[toolId]) {
     return preferredTraditionalChineseAnchorText[toolId];
+  }
+
+  if (locale === 'es' && preferredSpanishAnchorText[toolId]) {
+    return preferredSpanishAnchorText[toolId];
+  }
+
+  if (locale === 'ja' && preferredJapaneseAnchorText[toolId]) {
+    return preferredJapaneseAnchorText[toolId];
   }
 
   return fallbackTitle;

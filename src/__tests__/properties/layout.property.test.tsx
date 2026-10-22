@@ -163,7 +163,7 @@ describe('Layout Property Tests', () => {
       await waitFor(() => expect(screen.getByText('Flatten PDF')).toBeInTheDocument());
       fireEvent.click(screen.getByText('Flatten PDF'));
 
-      expect(routerPush).toHaveBeenCalledWith('/tools/flatten-pdf/');
+      expect(routerPush).toHaveBeenCalledWith('/de/tools/flatten-pdf/');
     });
   });
 

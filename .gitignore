@@ -71,3 +71,8 @@ comparisons.txt
 # Diagnostic output
 diag-output/
 .workbuddy/
+.workbuddy-ai/
+
+# Build cache backups created during local verification
+.next.bak-*
+out.bak-*

@@ -322,7 +322,7 @@ export function generateFaqMetadata(locale: Locale, translations?: { title: stri
  * Generate metadata for the privacy page
  */
 export function generatePrivacyMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
-  const shouldIndexPage = locale === defaultLocale;
+  const shouldIndexPage = shouldIndexStaticPage(locale, '/privacy');
   const metadata = generateBaseMetadata({
     locale,
     path: '/privacy',
@@ -336,10 +336,7 @@ export function generatePrivacyMetadata(locale: Locale, translations?: { title: 
   if (!shouldIndexPage) {
     metadata.alternates = {
       canonical: getCanonicalUrl(defaultLocale, '/privacy'),
-      languages: {
-        en: getCanonicalUrl(defaultLocale, '/privacy'),
-        'x-default': getCanonicalUrl(defaultLocale, '/privacy'),
-      },
+      languages: getAlternateUrlsForLocales('/privacy', locales.filter((candidateLocale) => shouldIndexStaticPage(candidateLocale, '/privacy'))),
     };
 
     if (metadata.openGraph) {
@@ -357,7 +354,7 @@ export function generatePrivacyMetadata(locale: Locale, translations?: { title: 
  * Generate metadata for the cookies page
  */
 export function generateCookiesMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
-  const shouldIndexPage = locale === defaultLocale;
+  const shouldIndexPage = shouldIndexStaticPage(locale, '/cookies');
   const metadata = generateBaseMetadata({
     locale,
     path: '/cookies',
@@ -371,10 +368,7 @@ export function generateCookiesMetadata(locale: Locale, translations?: { title: 
   if (!shouldIndexPage) {
     metadata.alternates = {
       canonical: getCanonicalUrl(defaultLocale, '/cookies'),
-      languages: {
-        en: getCanonicalUrl(defaultLocale, '/cookies'),
-        'x-default': getCanonicalUrl(defaultLocale, '/cookies'),
-      },
+      languages: getAlternateUrlsForLocales('/cookies', locales.filter((candidateLocale) => shouldIndexStaticPage(candidateLocale, '/cookies'))),
     };
 
     if (metadata.openGraph) {
@@ -470,8 +464,10 @@ export function generateCategoryMetadata(
 }
 
 /**
- * Generate metadata for long-tail landing pages that should only be indexed in English
- * until localized content exists.
+ * Generate metadata for long-tail landing pages.
+ * Locales without localized content stay noindex with an English canonical;
+ * locales included in `indexableLocales` (defaults to English only) are fully
+ * indexable with self-canonical URLs and a complete hreflang set.
  */
 export function generateLongTailLandingMetadata(
   locale: Locale,
@@ -480,9 +476,12 @@ export function generateLongTailLandingMetadata(
     title: string;
     description: string;
     keywords: string[];
+    indexableLocales?: readonly Locale[];
   }
 ): Metadata {
   const { path, title, description, keywords } = options;
+  const indexableLocales = options.indexableLocales ?? [defaultLocale];
+  const isIndexable = indexableLocales.includes(locale);
   const englishCanonical = getCanonicalUrl(defaultLocale, path);
   const metadata = generateBaseMetadata({
     locale,
@@ -491,16 +490,14 @@ export function generateLongTailLandingMetadata(
     description,
     keywords,
     appendDefaultKeywords: false,
-    noIndex: locale !== defaultLocale,
+    noIndex: !isIndexable,
   });
 
-  if (locale === defaultLocale) {
+  if (isIndexable) {
+    const languageAlternates = getAlternateUrlsForLocales(path, indexableLocales);
     metadata.alternates = {
-      canonical: englishCanonical,
-      languages: {
-        en: englishCanonical,
-        'x-default': englishCanonical,
-      },
+      canonical: getCanonicalUrl(locale, path),
+      languages: languageAlternates,
     };
 
     return metadata;

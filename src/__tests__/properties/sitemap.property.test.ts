@@ -117,21 +117,12 @@ describe('Sitemap property tests', () => {
     }
   });
 
-  it('keeps non-english about pages out of localized sitemaps while preserving english about', async () => {
-    const englishEntries = await sitemap({ id: Promise.resolve(getLocaleSlug(defaultLocale)) });
-
-    expect(shouldIndexStaticPage(defaultLocale, '/about')).toBe(true);
-    expect(englishEntries).toContainEqual(
-      expect.objectContaining({
-        url: `${siteConfig.url}/about/`,
-      })
-    );
-
-    for (const locale of locales.filter((candidate) => candidate !== defaultLocale)) {
+  it('includes about pages in every supported locale sitemap', async () => {
+    for (const locale of locales) {
       const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });
 
-      expect(shouldIndexStaticPage(locale, '/about')).toBe(false);
-      expect(entries).not.toContainEqual(
+      expect(shouldIndexStaticPage(locale, '/about')).toBe(true);
+      expect(entries).toContainEqual(
         expect.objectContaining({
           url: `${siteConfig.url}${getPublicPath('/about', locale)}`,
         })
@@ -208,7 +199,7 @@ describe('Sitemap property tests', () => {
     }
   });
 
-  it('keeps reported GSC noindex samples out of sitemaps while preserving fixed indexable samples', async () => {
+  it('keeps reported GSC noindex landing page samples out of sitemaps while preserving fixed indexable samples', async () => {
     const noindexUrls = [
       `${siteConfig.url}/pt/compress-pdf-without-upload/`,
       `${siteConfig.url}/ko/compress-pdf-for-email/`,
@@ -219,7 +210,6 @@ describe('Sitemap property tests', () => {
       `${siteConfig.url}/de/compress-pdf-without-upload/`,
       `${siteConfig.url}/de/merge-pdf-no-signup/`,
       `${siteConfig.url}/fr/merge-pdf-no-signup/`,
-      `${siteConfig.url}/fr/privacy/`,
       `${siteConfig.url}/es/compress-pdf-without-upload/`,
       `${siteConfig.url}/ja/compress-pdf-without-upload/`,
       `${siteConfig.url}/ja/compress-pdf-for-email/`,
@@ -227,9 +217,6 @@ describe('Sitemap property tests', () => {
       `${siteConfig.url}/ja/merge-pdf-no-signup/`,
       `${siteConfig.url}/es/merge-pdf-no-signup/`,
       `${siteConfig.url}/en/tools/?q=(search_term_string}`,
-      `${siteConfig.url}/pt/cookies/`,
-      `${siteConfig.url}/en/cookies/`,
-      `${siteConfig.url}/ko/cookies/`,
     ] as const;
 
     const sitemapUrls = new Set<string>();
@@ -317,20 +304,20 @@ describe('Sitemap property tests', () => {
       { locale: 'ja', toolId: 'ocg-manager', slug: 'ocg-manager' },
       { locale: 'de', toolId: 'edit-attachments', slug: 'edit-attachments' },
       { locale: 'ko', toolId: 'ocg-manager', slug: 'ocg-manager' },
-      { locale: 'es', toolId: 'pdf-to-pdfa', slug: 'pdf-to-pdfa' },
-      { locale: 'es', toolId: 'rtf-to-pdf', slug: 'rtf-to-pdf' },
+      { locale: 'de', toolId: 'pdf-to-pdfa', slug: 'pdf-to-pdfa' },
+      { locale: 'pt', toolId: 'rtf-to-pdf', slug: 'rtf-to-pdf' },
       { locale: 'pt', toolId: 'djvu-to-pdf', slug: 'djvu-to-pdf' },
       { locale: 'ko', toolId: 'pdf-reader', slug: 'pdf-reader' },
       { locale: 'pt', toolId: 'pdf-to-pptx', slug: 'pdf-to-pptx' },
       { locale: 'fr', toolId: 'djvu-to-pdf', slug: 'djvu-to-pdf' },
       { locale: 'pt', toolId: 'jpg-to-pdf', slug: 'jpg-to-pdf' },
-      { locale: 'zh', toolId: 'font-to-outline', slug: 'font-to-outline' },
-      { locale: 'zh', toolId: 'cbz-to-pdf', slug: 'cbz-to-pdf' },
+      { locale: 'ko', toolId: 'font-to-outline', slug: 'font-to-outline' },
+      { locale: 'ko', toolId: 'cbz-to-pdf', slug: 'cbz-to-pdf' },
       { locale: 'ko', toolId: 'compare-pdfs', slug: 'compare-pdfs' },
       { locale: 'ko', toolId: 'rtf-to-pdf', slug: 'rtf-to-pdf' },
       { locale: 'ko', toolId: 'extract-images', slug: 'extract-images' },
       { locale: 'pt', toolId: 'rasterize-pdf', slug: 'rasterize-pdf' },
-      { locale: 'zh-TW', toolId: 'markdown-to-pdf', slug: 'markdown-to-pdf' },
+      { locale: 'ko', toolId: 'psd-to-pdf', slug: 'psd-to-pdf' },
       { locale: 'ko', toolId: 'pdf-to-svg', slug: 'pdf-to-svg' },
       { locale: 'ko', toolId: 'extract-attachments', slug: 'extract-attachments' },
       { locale: 'ja', toolId: 'markdown-to-pdf', slug: 'markdown-to-pdf' },
@@ -481,7 +468,7 @@ describe('Sitemap property tests', () => {
     }
   });
 
-  it('keeps localized privacy, localized cookies, and manifest URLs out of every sitemap while indexing root legal pages', async () => {
+  it('includes localized privacy and cookies while keeping manifest URLs out of every sitemap', async () => {
     const sitemapUrls = new Set<string>();
 
     for (const locale of locales) {
@@ -490,12 +477,18 @@ describe('Sitemap property tests', () => {
       for (const entry of entries) {
         sitemapUrls.add(entry.url);
         expect(entry.url).not.toContain('/manifest.webmanifest');
-
-        if (locale !== defaultLocale) {
-          expect(entry.url).not.toContain(`${getPublicPath('/privacy', locale)}`);
-          expect(entry.url).not.toContain(`${getPublicPath('/cookies', locale)}`);
-        }
       }
+
+      expect(entries).toContainEqual(
+        expect.objectContaining({
+          url: `${siteConfig.url}${getPublicPath('/privacy', locale)}`,
+        })
+      );
+      expect(entries).toContainEqual(
+        expect.objectContaining({
+          url: `${siteConfig.url}${getPublicPath('/cookies', locale)}`,
+        })
+      );
     }
 
     expect(sitemapUrls.has(`${siteConfig.url}/privacy/`)).toBe(true);

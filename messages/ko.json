@@ -44,6 +44,10 @@
     "terms": {
       "title": "서비스 이용약관",
       "description": "PDFkoi 서비스 이용약관. 무료 PDF 도구 사용 약관을 읽어보세요."
+    },
+    "cookies": {
+      "title": "쿠키 정책",
+      "description": "PDFkoi 쿠키 정책. 사이트 필수 기능 및 환경설정 저장을 위해 사용되는 쿠키와 로컬 스토리지에 대해 안내합니다."
     }
   },
   "common": {
@@ -1883,6 +1887,60 @@
     "pdfReader": {
       "uploadLabel": "Open PDF",
       "uploadDescription": "Open PDF to read."
+    }
+  },
+  "aboutPage": {
+    "title": "{brand} 소개",
+    "description": "{brand}는 무료이며 안전한 브라우저 기반 PDF 도구를 제공합니다. {count}개 이상의 도구로 서버 업로드 없이 브라우저에서 직접 PDF 편집, 변환, 병합, 분할 및 보안을 처리할 수 있습니다.",
+    "mission": {
+      "title": "우리의 미션",
+      "p1": "우리는 개인정보를 침해받거나 비싼 구독료를 내지 않고도 누구나 강력한 PDF 도구를 사용할 수 있어야 한다고 믿습니다. 이것이 개인정보 보호를 최우선으로 하는 종합 PDF 도구 {brand}를 개발한 이유입니다.",
+      "p2": "원격 서버에 파일을 업로드해야 하는 기존 서비스와 달리, {brand}는 사용자의 브라우저 내에서 로컬로 모든 작업을 처리합니다. 민감한 문서가 기기를 떠나지 않으므로 완벽한 보안이 보장됩니다.",
+      "p3": "학생, 직장인, 일반 사용자 모두에게 효율적이고 안전한 PDF 작업 환경을 제공합니다."
+    },
+    "values": {
+      "title": "우리의 가치",
+      "privacy": {
+        "title": "개인정보 보호 최우선",
+        "description": "파일이 기기 밖으로 전송되지 않습니다. 모든 처리가 브라우저 로컬에서 이루어져 철저한 보안을 보장합니다."
+      },
+      "fast": {
+        "title": "빠르고 효율적",
+        "description": "최신 웹 기술을 바탕으로 파일 업로드나 다운로드 지연 없이 번개처럼 빠른 PDF 처리를 지원합니다."
+      },
+      "accessible": {
+        "title": "언제 어디서나 접근 가능",
+        "description": "9개 언어를 지원하며 최신 브라우저가 있는 모든 기기에서 별도 설치 없이 즉시 실행됩니다."
+      },
+      "free": {
+        "title": "평생 무료",
+        "description": "숨겨진 비용이나 가입 절차, 사용 횟수 제한 없이 100% 무료로 이용하실 수 있습니다."
+      },
+      "openSource": {
+        "title": "투명한 개발",
+        "description": "투명성을 핵심 원칙으로 하여 누구나 개인정보 보호 정책과 코드를 검증할 수 있습니다."
+      },
+      "community": {
+        "title": "사용자 중심",
+        "description": "전 세계 사용자들의 피드백을 수렴하여 지속적으로 기능을 개선해 나가고 있습니다."
+      }
+    },
+    "technology": {
+      "title": "현대적인 웹 기술 기반",
+      "description": "{brand}는 최적의 성능과 경험을 위해 최첨단 웹 기술을 적용했습니다:",
+      "list": {
+        "wasm": "<strong1>WebAssembly</strong1> - 네이티브에 준하는 초고속 PDF 처리 성능",
+        "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - 전 세계 표준 PDF 처리 및 렌더링 라이브러리",
+        "workers": "<strong1>Web Workers</strong1> - 브라우저 멈춤 없는 비동기 백그라운드 처리",
+        "indexeddb": "<strong1>IndexedDB</strong1> - 사용자 기기 내 안전한 작업 데이터 로컬 저장",
+        "nextjs": "<strong1>Next.js</strong1> - 빠르고 검색 친화적인 최적화 페이지 렌더링"
+      },
+      "summary": "이러한 기술 조합을 통해 서버 전송 없이도 브라우저만으로 전문가 수준의 PDF 편집 및 변환 작업을 수행할 수 있습니다."
+    },
+    "cta": {
+      "title": "지금 시작해 보세요",
+      "description": "{count}개 이상의 다양한 PDF 도구를 살펴보고 {brand}의 편리함을 직접 경험해 보세요.",
+      "button": "모든 도구 둘러보기"
     }
   }
 }

@@ -331,13 +331,13 @@ describe('Tool Page Property Tests', () => {
       );
     });
 
-    it('tool page related tool links fall back to the public locale for untranslated tools', () => {
+    it('tool page related tool links route to the public locale for tools', () => {
       const locale = 'pt' as Locale;
       const tool = tools.find((candidate) => candidate.id === 'extract-attachments');
-      const untranslatedRelatedId = 'pdf-to-zip';
+      const relatedId = 'pdf-to-zip';
 
       expect(tool).toBeDefined();
-      expect(getToolPublicLocale(locale, untranslatedRelatedId)).toBe('en');
+      expect(getToolPublicLocale(locale, relatedId)).toBe('pt');
 
       const content = getToolContent(locale, tool!.id);
       expect(content).toBeDefined();
@@ -348,11 +348,10 @@ describe('Tool Page Property Tests', () => {
         </ToolPage>
       );
 
-      const expectedHref = getPublicPath('/tools/pdf-to-zip', 'en');
+      const expectedHref = getPublicPath('/tools/pdf-to-zip', 'pt');
       const relatedLinks = screen.getAllByRole('link');
 
       expect(relatedLinks.some((link) => link.getAttribute('href') === expectedHref)).toBe(true);
-      expect(relatedLinks.some((link) => link.getAttribute('href') === getPublicPath('/tools/pdf-to-zip', locale))).toBe(false);
     });
 
     it('tool page how-to steps are numbered correctly', () => {
