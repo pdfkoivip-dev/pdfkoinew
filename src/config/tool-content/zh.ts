@@ -1658,28 +1658,29 @@ export const toolContentZh: Record<string, ToolContent> = {
   },
 
   'rotate-pdf': {
-    title: '旋转PDF',
-    metaDescription: '旋转PDF页面。将页面旋转90、180或270度。',
-    keywords: ['旋转pdf', '转动pdf页面', 'pdf旋转', '修复方向'],
+    title: 'PDF旋转 - 横版转竖版、扫描件方向修正【免费·不用上传】',
+    metaDescription: 'PDF页面方向不对？一键把页面旋转90°、180°或270°，修复横躺的扫描件和拍照文件。文件不上传服务器，浏览器本地处理，免费无注册。',
+    keywords: ['pdf旋转', 'pdf 旋转', '旋转pdf', 'pdf页面旋转', 'pdf横版转竖版', 'pdf方向修改', 'pdf倒过来了怎么旋转', '扫描件方向修正', 'pdf页面方向调整', 'pdf转正'],
     description: `
-      <p>旋转PDF将文档中的页面旋转90、180或270度。修复方向不正确的扫描、旋转横向页面或调整页面方向以供查看。</p>
-      <p>统一旋转所有页面或选择特定页面单独旋转。该工具保留所有内容和格式。</p>
-      <p>所有处理都在您的浏览器本地进行，确保您的文档保持私密。</p>
+      <p>PDF旋转工具可以把文档里的页面旋转 90°、180° 或 270°，解决扫描、拍照或导出时页面横躺、倒置的问题。可以统一旋转所有页面，也可以只旋转指定的几页。</p>
+      <p>常见场景包括：扫描仪出来的 PDF 全部横躺、手机拍的资料方向不对、一份文档里横竖页混杂需要统一。上传后点选角度即可完成，几秒钟就能下载修正后的文件。如果扫描件整体还是歪的，可以再用<a href="/zh/tools/rotate-custom">自定义角度旋转</a>做精细校正。</p>
+      <p>所有处理都在浏览器本地完成，文件不会上传到服务器，合同、证件等隐私材料也能放心处理。</p>
     `,
     howToUse: [
-      { step: 1, title: '上传PDF文件', description: '拖放您的PDF文件或点击选择。' },
-      { step: 2, title: '选择旋转', description: '选择旋转角度和要旋转的页面。' },
-      { step: 3, title: '旋转并下载', description: '点击旋转应用更改并下载。' },
+      { step: 1, title: '上传PDF文件', description: '拖放 PDF 文件，或点击选择需要旋转的文档。' },
+      { step: 2, title: '选择旋转角度和页面', description: '选择 90°、180° 或 270°，可应用到全部页面或指定页码。' },
+      { step: 3, title: '旋转并下载', description: '点击旋转按钮，几秒后下载方向修正好的 PDF。' },
     ],
     useCases: [
-      { title: '修复扫描', description: '纠正扫描文档的方向。', icon: 'rotate-cw' },
-      { title: '横向页面', description: '旋转横向页面以正确查看。', icon: 'monitor' },
-      { title: '混合方向', description: '标准化混合文档中的页面方向。', icon: 'layout' },
+      { title: '扫描件横躺转正', description: '把扫描出来的横向页面批量旋转成正常方向。', icon: 'rotate-cw' },
+      { title: '手机拍照方向修正', description: '拍照导出的 PDF 方向不对时，一键转正再分享。', icon: 'smartphone' },
+      { title: '横竖混排统一', description: '把文档里混杂的横页竖页调整成统一方向，方便阅读打印。', icon: 'layout' },
     ],
     faq: [
-      { question: '可以对不同页面进行不同的旋转吗？', answer: '是的，您可以对不同页面应用不同的旋转。' },
-      { question: '旋转会影响打印质量吗？', answer: '不会，旋转保留所有内容质量。' },
-      { question: '可以按自定义角度旋转吗？', answer: '旋转限于90度增量（90、180、270）。' },
+      { question: 'PDF 页面横过来了怎么旋转？', answer: '上传 PDF 后选择 90° 或 270° 旋转即可把横向页面转正。可以只旋转横躺的那几页，其他页面保持不变。' },
+      { question: '能把 PDF 从横版改成竖版吗？', answer: '可以。旋转只改变页面方向，不缩放内容。如果需要连内容一起调整布局，可以先旋转再用其他页面工具处理。' },
+      { question: '旋转后清晰度会下降吗？', answer: '不会。旋转只是改变页面方向，文字和图片的分辨率完全不变。' },
+      { question: '文件会上传到服务器吗？', answer: '不会。PDFkoi 所有处理都在你的浏览器本地完成，文件不经过任何服务器，隐私有保障。' },
     ],
   },
 

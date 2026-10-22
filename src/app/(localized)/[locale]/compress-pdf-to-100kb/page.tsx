@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { LongTailLandingPage } from '@/components/marketing/LongTailLandingPage';
-import { getLandingPageContent } from '@/content/seo/landing-pages';
+import { getLandingPageContent, getLandingPageIndexableLocales } from '@/content/seo/landing-pages';
 import {
   generateBreadcrumbSchema,
   generateCollectionPageSchema,
@@ -11,8 +11,8 @@ import {
 } from '@/lib/seo';
 import { defaultLocale, getPublicLocaleParams, normalizeLocale } from '@/lib/i18n/config';
 
-const content = getLandingPageContent('compress-pdf-to-100kb');
 const pagePath = '/compress-pdf-to-100kb';
+const indexableLocales = getLandingPageIndexableLocales('compress-pdf-to-100kb');
 
 export function generateStaticParams() {
   return getPublicLocaleParams();
@@ -25,12 +25,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const validLocale = normalizeLocale(locale) || defaultLocale;
+  const content = getLandingPageContent('compress-pdf-to-100kb', validLocale);
 
   return generateLongTailLandingMetadata(validLocale, {
     title: content.title,
     description: content.metaDescription,
     path: pagePath,
     keywords: content.keywords,
+    indexableLocales,
   });
 }
 
@@ -41,6 +43,7 @@ export default async function CompressPdfTo100kbPage({
 }) {
   const { locale } = await params;
   const validLocale = normalizeLocale(locale) || defaultLocale;
+  const content = getLandingPageContent('compress-pdf-to-100kb', validLocale);
 
   const schemas = [
     generateCollectionPageSchema({

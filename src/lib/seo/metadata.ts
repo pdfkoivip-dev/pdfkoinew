@@ -464,8 +464,10 @@ export function generateCategoryMetadata(
 }
 
 /**
- * Generate metadata for long-tail landing pages that should only be indexed in English
- * until localized content exists.
+ * Generate metadata for long-tail landing pages.
+ * Locales without localized content stay noindex with an English canonical;
+ * locales included in `indexableLocales` (defaults to English only) are fully
+ * indexable with self-canonical URLs and a complete hreflang set.
  */
 export function generateLongTailLandingMetadata(
   locale: Locale,
@@ -474,9 +476,12 @@ export function generateLongTailLandingMetadata(
     title: string;
     description: string;
     keywords: string[];
+    indexableLocales?: readonly Locale[];
   }
 ): Metadata {
   const { path, title, description, keywords } = options;
+  const indexableLocales = options.indexableLocales ?? [defaultLocale];
+  const isIndexable = indexableLocales.includes(locale);
   const englishCanonical = getCanonicalUrl(defaultLocale, path);
   const metadata = generateBaseMetadata({
     locale,
@@ -485,16 +490,14 @@ export function generateLongTailLandingMetadata(
     description,
     keywords,
     appendDefaultKeywords: false,
-    noIndex: locale !== defaultLocale,
+    noIndex: !isIndexable,
   });
 
-  if (locale === defaultLocale) {
+  if (isIndexable) {
+    const languageAlternates = getAlternateUrlsForLocales(path, indexableLocales);
     metadata.alternates = {
-      canonical: englishCanonical,
-      languages: {
-        en: englishCanonical,
-        'x-default': englishCanonical,
-      },
+      canonical: getCanonicalUrl(locale, path),
+      languages: languageAlternates,
     };
 
     return metadata;

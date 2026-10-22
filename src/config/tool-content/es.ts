@@ -418,24 +418,29 @@ export const toolContentEs: Record<string, ToolContent> = {
   },
 
   'invert-colors': {
-    title: 'Invertir Colores',
-    metaDescription: 'Invierte los colores de documentos PDF para modo oscuro o efectos especiales.',
-    keywords: ['invertir colores pdf', 'modo oscuro pdf', 'negativo pdf'],
-    description: '<p>Invertir Colores cambia los colores de tu PDF a su negativo, útil para modo oscuro o efectos visuales.</p><p>Procesamiento local.</p>',
+    title: 'Invertir Colores PDF Online Gratis - PDF en Modo Oscuro Sin Subir Archivos',
+    metaDescription: 'Invierte los colores de un PDF para leer en modo oscuro o ahorrar tinta al imprimir. Sin subir archivos, 100% en tu navegador, gratis y sin límite de uso.',
+    keywords: ['invertir colores pdf', 'invertir pdf', 'pdf en negativo', 'modo oscuro pdf', 'pdf dark mode', 'invertir colores de un pdf online', 'pdf colores invertidos', 'leer pdf de noche', 'pdf blanco a negro'],
+    description: `
+      <p>Invertir Colores convierte tu PDF a su negativo: el fondo blanco pasa a negro y el texto oscuro pasa a claro. Es la forma más sencilla de crear una versión en modo oscuro de cualquier documento para leer de noche o reducir la fatiga visual.</p>
+      <p>También es útil para ahorrar tinta al imprimir borradores: un PDF con colores invertidos consume mucha menos tinta que el original. Puedes invertir todas las páginas o solo las que elijas.</p>
+      <p>Todo el proceso ocurre localmente en tu navegador: el archivo no se sube a ningún servidor y tu documento permanece privado.</p>
+    `,
     howToUse: [
-      { step: 1, title: 'Sube tu PDF', description: 'Arrastra y suelta o selecciona el documento.' },
-      { step: 2, title: 'Configura Opciones', description: 'Selecciona páginas y opciones de inversión.' },
-      { step: 3, title: 'Invierte y Descarga', description: 'Aplica la inversión y descarga el PDF.' },
+      { step: 1, title: 'Sube tu PDF', description: 'Arrastra y suelta el documento o haz clic para seleccionarlo.' },
+      { step: 2, title: 'Configura la inversión', description: 'Elige invertir todo el contenido o conservar las imágenes originales, y selecciona las páginas.' },
+      { step: 3, title: 'Descarga el PDF invertido', description: 'Haz clic en Invertir y descarga tu documento en modo oscuro o negativo.' },
     ],
     useCases: [
-      { title: 'Modo Oscuro', description: 'Crea versiones de modo oscuro para lectura nocturna.', icon: 'moon' },
-      { title: 'Accesibilidad', description: 'Mejora la legibilidad para usuarios con sensibilidad a la luz.', icon: 'eye' },
-      { title: 'Efectos Visuales', description: 'Crea efectos de negativo para diseño.', icon: 'palette' },
+      { title: 'Lectura nocturna', description: 'Convierte documentos claros en modo oscuro para leer de noche sin deslumbrarte.', icon: 'moon' },
+      { title: 'Menos fatiga visual', description: 'Invierte documentos muy blancos para leerlos más cómodamente durante horas.', icon: 'eye' },
+      { title: 'Ahorrar tinta', description: 'Imprime borradores con colores invertidos para gastar mucha menos tinta.', icon: 'printer' },
     ],
     faq: [
-      { question: '¿Afecta las imágenes?', answer: 'Sí, todos los elementos visuales se invierten.' },
-      { question: '¿Puedo invertir páginas específicas?', answer: 'Sí, selecciona las páginas a invertir.' },
-      { question: '¿Es reversible?', answer: 'Sí, invierte de nuevo para restaurar los colores originales.' },
+      { question: '¿Cómo poner un PDF en modo oscuro?', answer: 'Sube tu PDF a esta herramienta y haz clic en Invertir. El fondo pasará a negro y el texto a claro, creando una versión en modo oscuro que puedes descargar al instante.' },
+      { question: '¿Se pueden invertir solo algunas páginas?', answer: 'Sí, puedes seleccionar las páginas concretas que quieres invertir y dejar el resto con sus colores originales.' },
+      { question: '¿Las imágenes también se invierten?', answer: 'Por defecto sí, pero puedes elegir conservar las imágenes originales e invertir solo el texto y el fondo.' },
+      { question: '¿Puedo volver al PDF original?', answer: 'Sí, aplicando la inversión una segunda vez se obtiene aproximadamente el documento original. Aun así, guarda siempre una copia del archivo inicial.' },
     ],
   },
 
@@ -618,24 +623,29 @@ export const toolContentEs: Record<string, ToolContent> = {
   },
 
   'png-to-pdf': {
-    title: 'PNG a PDF',
-    metaDescription: 'Convierte imágenes PNG a documentos PDF con transparencia preservada.',
-    keywords: ['png a pdf', 'convertir png', 'imagen png pdf'],
-    description: '<p>PNG a PDF convierte imágenes PNG en documentos PDF, preservando la transparencia cuando es posible.</p><p>Conversión local.</p>',
+    title: 'PNG a PDF Online Gratis - Convierte y Une Imágenes PNG Sin Subir Archivos',
+    metaDescription: 'Convierte imágenes PNG a PDF gratis y combina varias en un solo archivo. Conserva la transparencia y la calidad original. Sin registro y sin subir archivos al servidor.',
+    keywords: ['png a pdf', 'convertir png a pdf', 'png a pdf online gratis', 'pasar png a pdf', 'unir png en un pdf', 'convertir imagen png a pdf', 'png a pdf sin subir', 'varias png a un pdf', 'png a pdf sin perder calidad'],
+    description: `
+      <p>PNG a PDF convierte tus imágenes PNG en un documento PDF ordenado en segundos. Puedes subir varias imágenes, arrastrarlas para ordenarlas y unirlas todas en un solo archivo listo para enviar, imprimir o subir a un formulario.</p>
+      <p>Es ideal para capturas de pantalla, logos, gráficos y imágenes con fondo transparente: la transparencia y la calidad original se conservan en el resultado. Puedes elegir el tamaño de página y la orientación antes de convertir.</p>
+      <p>Todo el procesamiento ocurre en tu navegador, así que tus imágenes no se suben a ningún servidor y permanecen completamente privadas.</p>
+    `,
     howToUse: [
-      { step: 1, title: 'Sube Imágenes PNG', description: 'Arrastra y suelta archivos PNG.' },
-      { step: 2, title: 'Configura Opciones', description: 'Selecciona tamaño de página y orientación.' },
-      { step: 3, title: 'Convierte y Descarga', description: 'Crea el PDF y descarga.' },
+      { step: 1, title: 'Sube tus imágenes PNG', description: 'Arrastra y suelta tus archivos PNG o haz clic para seleccionarlos desde tu dispositivo.' },
+      { step: 2, title: 'Ordena y configura', description: 'Arrastra las miniaturas para ordenarlas y elige el tamaño de página y la orientación.' },
+      { step: 3, title: 'Convierte y descarga', description: 'Haz clic en convertir para crear un solo PDF y descárgalo al instante.' },
     ],
     useCases: [
-      { title: 'Gráficos', description: 'Convierte gráficos PNG con transparencia.', icon: 'image' },
-      { title: 'Logos', description: 'Crea PDFs de logos para impresión.', icon: 'star' },
-      { title: 'Capturas', description: 'Convierte capturas de pantalla en PDF.', icon: 'monitor' },
+      { title: 'Capturas de pantalla', description: 'Convierte varias capturas PNG en un único PDF para reportar incidencias o crear tutoriales.', icon: 'monitor' },
+      { title: 'Documentos con imágenes', description: 'Junta fotos y escaneos guardados como PNG en un solo archivo para enviar o imprimir.', icon: 'image' },
+      { title: 'Trámites y formularios', description: 'Prepara un único PDF con las imágenes PNG que piden plataformas y administraciones.', icon: 'clipboard' },
     ],
     faq: [
-      { question: '¿Se preserva la transparencia?', answer: 'La transparencia se preserva en el PDF resultante.' },
-      { question: '¿Puedo convertir múltiples PNGs?', answer: 'Sí, combina múltiples PNGs en un PDF.' },
-      { question: '¿Qué calidad tiene el resultado?', answer: 'Se mantiene la calidad original de las imágenes.' },
+      { question: '¿Cómo convertir PNG a PDF gratis?', answer: 'Sube tus imágenes PNG a esta herramienta, ordénalas como quieras y haz clic en convertir. El PDF se genera en tu navegador y se descarga al instante, sin registro ni marcas de agua.' },
+      { question: '¿Puedo unir varias imágenes PNG en un solo PDF?', answer: 'Sí. Sube todas las imágenes que necesites, arrástralas para ponerlas en orden y conviértelas: cada imagen se convertirá en una página del PDF final.' },
+      { question: '¿La transparencia del PNG se pierde?', answer: 'No. La transparencia de los PNG se conserva en el PDF resultante, y también puedes elegir un color de fondo si lo prefieres.' },
+      { question: '¿Se pierde calidad al convertir?', answer: 'No. Las imágenes se incrustan con su calidad original; el PDF se genera sin compresión adicional salvo que la elijas tú.' },
     ],
   },
 
@@ -1170,24 +1180,29 @@ export const toolContentEs: Record<string, ToolContent> = {
   },
 
   'rotate-pdf': {
-    title: 'Rotar PDF',
-    metaDescription: 'Rota páginas PDF 90, 180 o 270 grados.',
-    keywords: ['rotar pdf', 'girar páginas', 'orientación pdf'],
-    description: '<p>Rotar PDF te permite girar páginas de tu documento 90, 180 o 270 grados.</p><p>Procesamiento local.</p>',
+    title: 'Rotar PDF Online Gratis - Girar Páginas 90°, 180°, 270° Sin Subir Archivos',
+    metaDescription: 'Gira páginas de un PDF al revés o de lado en un clic. Corrige escaneos mal orientados sin subir archivos: procesamiento 100% en tu navegador, gratis y sin registro.',
+    keywords: ['rotar pdf', 'girar pdf', 'rotar páginas pdf', 'girar páginas de un pdf', 'rotar pdf online gratis', 'cambiar orientación pdf', 'pdf vertical a horizontal', 'girar pdf 90 grados', 'rotar pdf sin subir', 'pdf sideways corregir'],
+    description: `
+      <p>Rotar PDF te permite girar las páginas de tu documento 90, 180 o 270 grados directamente en el navegador. Es la forma más rápida de corregir escaneos que quedaron boca abajo, de lado o con orientación mezclada.</p>
+      <p>Puedes rotar todas las páginas a la vez o seleccionar páginas concretas y dar a cada una una orientación distinta. Ideal para documentos escaneados, facturas, contratos y apuntes escaneados con el móvil.</p>
+      <p>Todo el proceso ocurre localmente en tu navegador mediante WebAssembly: tus archivos no se suben a ningún servidor y permanecen completamente privados.</p>
+    `,
     howToUse: [
-      { step: 1, title: 'Sube tu PDF', description: 'Arrastra y suelta el documento.' },
-      { step: 2, title: 'Selecciona Rotación', description: 'Elige el ángulo y las páginas a rotar.' },
-      { step: 3, title: 'Rota y Descarga', description: 'Aplica la rotación y descarga.' },
+      { step: 1, title: 'Sube tu PDF', description: 'Arrastra y suelta el documento o haz clic para seleccionarlo desde tu dispositivo.' },
+      { step: 2, title: 'Elige el giro para cada página', description: 'Selecciona 90°, 180° o 270° y decide si aplicar el giro a todas las páginas o solo a algunas.' },
+      { step: 3, title: 'Descarga el PDF corregido', description: 'Haz clic en Rotar y descarga el documento con la orientación correcta en segundos.' },
     ],
     useCases: [
-      { title: 'Corregir Orientación', description: 'Corrige páginas escaneadas con orientación incorrecta.', icon: 'rotate-cw' },
-      { title: 'Documentos Mixtos', description: 'Unifica orientación en documentos con páginas mixtas.', icon: 'file-text' },
-      { title: 'Presentaciones', description: 'Ajusta orientación para presentaciones.', icon: 'presentation' },
+      { title: 'Corregir escaneos torcidos', description: 'Endereza páginas escaneadas con orientación incorrecta en un clic.', icon: 'rotate-cw' },
+      { title: 'Documentos con orientación mixta', description: 'Unifica páginas verticales y horizontales en un mismo documento.', icon: 'file-text' },
+      { title: 'Apuntes y facturas escaneados', description: 'Gira las fotos de documentos hechas con el móvil antes de compartir o imprimir.', icon: 'smartphone' },
     ],
     faq: [
-      { question: '¿Puedo rotar páginas específicas?', answer: 'Sí, selecciona las páginas a rotar.' },
-      { question: '¿Qué ángulos están disponibles?', answer: '90° (derecha), 180° (invertir), 270° (izquierda).' },
-      { question: '¿Afecta la calidad?', answer: 'No, la rotación no afecta la calidad del contenido.' },
+      { question: '¿Cómo rotar un PDF sin instalar programas?', answer: 'Sube tu PDF a esta herramienta, elige el ángulo de giro y descarga el resultado. No necesitas instalar nada: funciona en cualquier navegador de ordenador o móvil.' },
+      { question: '¿Puedo girar solo algunas páginas del PDF?', answer: 'Sí. Puedes seleccionar páginas concretas y aplicarles un giro distinto a cada una, dejando el resto del documento sin cambios.' },
+      { question: '¿Rotar el PDF reduce la calidad?', answer: 'No. El giro solo cambia la orientación de la página; el texto, las imágenes y la resolución se mantienen exactamente igual.' },
+      { question: '¿Es seguro para documentos confidenciales?', answer: 'Totalmente seguro. El archivo se procesa en tu propio navegador y nunca se envía a ningún servidor externo.' },
     ],
   },
 
