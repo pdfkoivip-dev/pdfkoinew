@@ -177,8 +177,7 @@ describe('Tool Component Property Tests', () => {
 });
 
 
-import { ToolPage } from '@/components/tools/ToolPage';
-import { ToolContent, HowToStep, UseCase, FAQ } from '@/types/tool';
+import type { ToolContent, HowToStep, UseCase, FAQ } from '@/types/tool';
 
 /**
  * Generate valid tool content for testing

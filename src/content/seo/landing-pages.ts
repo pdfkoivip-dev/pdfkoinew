@@ -1170,7 +1170,8 @@ export function hasLocalizedLandingPage(locale: Locale, slug: LandingPageSlug): 
 
 export function getLandingPageIndexableLocales(slug: LandingPageSlug): Locale[] {
   const localizedLocales = locales.filter((locale) => hasLocalizedLandingPage(locale, slug));
-  return [defaultLocale, ...localizedLocales];
+  // Set guards against duplicates if English ever gains an explicit override.
+  return Array.from(new Set<Locale>([defaultLocale, ...localizedLocales]));
 }
 
 export function getLandingPageContent(slug: LandingPageSlug, locale?: Locale): LandingPageContent {
