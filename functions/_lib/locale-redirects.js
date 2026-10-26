@@ -23,10 +23,12 @@ const CANONICAL_DEFAULT_LOCALE_PATHS = new Set([
   '/merge-pdf-no-signup/',
   '/how-to-make-a-pdf-one-continuous-page',
   '/how-to-make-a-pdf-one-continuous-page/',
-  '/compress-pdf-to-100kb',
-  '/compress-pdf-to-100kb/',
+  // Removed: /compress-pdf-to-100kb has localized content for de/es/ja/pt and is
+  // listed in locale sitemaps — a 301 here would redirect sitemap URLs and
+  // surface as GSC "page with redirect" coverage errors.
   // Removed from redirect set (have localized content, return 200):
   // - /about, /faq, /privacy, /cookies, /contact, /terms, /workflow, /tools
+  // - /compress-pdf-to-100kb
 ]);
 
 /**

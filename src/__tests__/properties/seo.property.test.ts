@@ -482,10 +482,9 @@ describe('SEO Property Tests', () => {
       const organization = generateOrganizationSchema();
 
       expect(website.url).toBe(`${siteConfig.url}/`);
-      // WebSite exposes a SearchAction so AI engines and search UIs can query the tool index.
-      expect(website.potentialAction).toBeDefined();
-      expect(website.potentialAction?.['@type']).toBe('SearchAction');
-      expect(website.potentialAction?.target).toBe(`${siteConfig.url}/tools?q={search_term_string}`);
+      // SearchAction removed: Google deprecated sitelinks search box (2024) and the
+      // {search_term_string} placeholder target produced junk URLs in GSC coverage.
+      expect(website.potentialAction).toBeUndefined();
       expect(organization.url).toBe(`${siteConfig.url}`);
       expect(organization.logo).toBe(`${siteConfig.url}/images/logo.png`);
       // Organization carries entity-clarity fields for generative engines.

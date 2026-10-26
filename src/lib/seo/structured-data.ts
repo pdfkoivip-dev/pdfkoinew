@@ -345,11 +345,6 @@ export function generateWebSiteSchema(locale: Locale): WebSiteSchema {
     name: siteConfig.name,
     url: `${siteConfig.url}${getPublicPath('/', locale)}`,
     description: siteConfig.description,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${siteConfig.url}/tools?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Shield, Lock, FileCheck, Github, Twitter, Mail } from 'lucide-react';
-import { getPublicPath, type Locale } from '@/lib/i18n/config';
+import { getPublicPath, locales, localeConfig, type Locale } from '@/lib/i18n/config';
 import { getToolsByCategory } from '@/config/tools';
 import { type ToolCategory } from '@/types/tool';
 
@@ -183,6 +183,20 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             <Link href={getPublicPath('/privacy', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]">Privacy</Link>
             <Link href={getPublicPath('/cookies', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]">Cookies</Link>
           </div>
+        </div>
+
+        {/* Language links for crawlers (locale discovery + internal linking) */}
+        <div className="pt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+          {locales.map((altLocale) => (
+            <a
+              key={altLocale}
+              href={getPublicPath('/', altLocale)}
+              hrefLang={altLocale === 'zh-TW' ? 'zh-TW' : altLocale}
+              className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]"
+            >
+              {localeConfig[altLocale].nativeName}
+            </a>
+          ))}
         </div>
 
         {/* Featured on TinyShelf */}

@@ -12,7 +12,7 @@ import {
 import { TOOL_CATEGORIES } from '@/types/tool';
 import { getAllTools } from '@/config/tools';
 import { hasLocalizedToolContent } from '@/config/tool-content';
-import { landingPageSlugs } from '@/content/seo/landing-pages';
+import { landingPageSlugs, getLandingPageIndexableLocales } from '@/content/seo/landing-pages';
 
 describe('Sitemap property tests', () => {
   it('generates one sitemap id per locale', async () => {
@@ -71,16 +71,16 @@ describe('Sitemap property tests', () => {
     }
   });
 
-  it('non-english sitemaps do not include english-only long-tail landing pages', async () => {
+  it('non-english sitemaps only include long-tail landing pages with localized content', async () => {
     for (const locale of locales.filter((locale) => locale !== defaultLocale)) {
       const entries = await sitemap({ id: Promise.resolve(getLocaleSlug(locale)) });
 
       for (const slug of landingPageSlugs) {
-        expect(entries).not.toContainEqual(
-          expect.objectContaining({
-            url: `${siteConfig.url}${getPublicPath(`/${slug}`, locale)}`,
-          })
-        );
+        const expectedInSitemap = getLandingPageIndexableLocales(slug).includes(locale);
+        const url = `${siteConfig.url}${getPublicPath(`/${slug}`, locale)}`;
+        const isPresent = entries.some((entry) => entry.url === url);
+
+        expect(isPresent, `${url} presence=${isPresent}, expected=${expectedInSitemap}`).toBe(expectedInSitemap);
       }
     }
   });

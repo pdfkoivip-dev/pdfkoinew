@@ -143,4 +143,17 @@ describe('locale redirect helpers', () => {
   it('returns null when no locale redirect is needed', () => {
     expect(getLocaleRedirectPath(new URL('https://pdfkoi.com/ja/tools'))).toBeNull();
   });
+
+  it('does not redirect localized compress-pdf-to-100kb pages that have translated content', () => {
+    const cases = [
+      'https://pdfkoi.com/de/compress-pdf-to-100kb/',
+      'https://pdfkoi.com/es/compress-pdf-to-100kb/',
+      'https://pdfkoi.com/ja/compress-pdf-to-100kb/',
+      'https://pdfkoi.com/pt/compress-pdf-to-100kb/',
+    ] as const;
+
+    for (const source of cases) {
+      expect(getLocaleRedirectPath(new URL(source))).toBeNull();
+    }
+  });
 });
