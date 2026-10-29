@@ -59,7 +59,10 @@
       "about": "소개",
       "faq": "자주 묻는 질문",
       "privacy": "개인정보",
-      "contact": "문의"
+      "contact": "문의",
+      "terms": "이용약관",
+      "cookies": "Cookie",
+      "workflow": "워크플로"
     },
     "buttons": {
       "upload": "파일 업로드",
@@ -101,7 +104,129 @@
       "featuredSectionDescription": "무엇을 해야 할지 이미 알고 있을 때 좋은 시작점입니다.",
       "featuredLabel": "{tool}에 가장 적합",
       "featuredReason": "{tool}가 주요 작업이라면 이 도구를 열어 보세요.",
-      "openTool": "{tool} 열기"
+      "openTool": "{tool} 열기",
+      "categories": {
+        "editAnnotate": {
+          "useCasesSectionTitle": "일반적인 활용 사례",
+          "useCasesSectionItems": {
+            "item1": "주석과 서명을 추가하여 계약서를 검토하고 승인하기",
+            "item2": "신청서, 세금 문서, 등록 서류 작성하기",
+            "item3": "지적 재산 보호 또는 문서 상태 표시를 위해 워터마크 추가하기",
+            "item4": "협업을 위해 연구 논문, 법률 문서, 기술 사양서에 주석 달기",
+            "item5": "배포 전 문서 서식을 완성하기 위해 페이지 번호와 머리글 추가하기"
+          },
+          "precautionsSectionTitle": "중요 사항",
+          "precautionsSectionItems": {
+            "item1": "모든 편집은 브라우저에서 이루어지며 파일이 어떤 서버에도 업로드되지 않습니다",
+            "item2": "여러 번 편집할 때는 변경 사항을 잃지 않도록 자주 저장하세요",
+            "item3": "여기서 추가하는 디지털 서명은 시각적 용도일 뿐입니다. 법적 구속력이 있는 서명에는 인증된 서명 도구를 사용하세요",
+            "item4": "양식 필드 유효성 검사나 JavaScript 동작과 같은 일부 PDF 기능은 편집 후 유지되지 않을 수 있습니다",
+            "item5": "최상의 결과를 얻으려면 암호로 보호되지 않거나 편집 제한이 없는 PDF로 작업하세요"
+          },
+          "metadataTitle": "PDF 편집 및 주석 도구",
+          "metadataDescription": "PDF 문서에 주석을 달고, 작성하고, 서명하고, 다듬는 도구를 살펴보세요. 이 허브에서 파일에 맞는 편집 워크플로를 선택하세요."
+        },
+        "convertToPdf": {
+          "useCasesSectionTitle": "일반적인 활용 사례",
+          "useCasesSectionItems": {
+            "item1": "전문적인 배포와 일관된 서식을 위해 Word 문서를 PDF로 변환하기",
+            "item2": "프레젠테이션이나 사진 앨범용으로 여러 이미지에서 PDF 포트폴리오 만들기",
+            "item3": "이해관계자와 재무 데이터를 공유하기 위해 Excel 보고서를 PDF로 변환하기",
+            "item4": "회의나 교육용 PDF 유인물을 만들기 위해 PowerPoint 프레젠테이션 변환하기",
+            "item5": "쉽게 읽고 보관하기 위해 텍스트 파일과 전자책을 PDF로 변환하기"
+          },
+          "precautionsSectionTitle": "중요 사항",
+          "precautionsSectionItems": {
+            "item1": "모든 변환은 브라우저에서 로컬로 이루어지며 파일이 서버에 업로드되지 않습니다",
+            "item2": "원본 문서의 복잡한 서식은 변환 후 수동 조정이 필요할 수 있습니다",
+            "item3": "출력 PDF의 이미지 품질은 원본 파일의 품질에 따라 달라집니다",
+            "item4": "대용량 파일이나 일괄 변환은 기기 성능에 따라 시간이 더 걸릴 수 있습니다",
+            "item5": "매크로, 애니메이션, 임베디드 미디어와 같은 일부 고급 기능은 PDF로 전달되지 않을 수 있습니다"
+          },
+          "metadataTitle": "파일을 PDF로 변환",
+          "metadataDescription": "이미지, Office 파일, 전자책 등 다양한 형식을 PDF로 변환하는 도구를 살펴보세요. 이 허브에서 올바른 변환 경로를 선택하세요."
+        },
+        "convertFromPdf": {
+          "useCasesSectionTitle": "일반적인 활용 사례",
+          "useCasesSectionItems": {
+            "item1": "계약서 PDF를 Word로 변환하여 조항과 조건을 편집하기",
+            "item2": "프레젠테이션이나 웹 콘텐츠에 사용하기 위해 PDF 페이지를 이미지로 추출하기",
+            "item3": "데이터 분석과 보고를 위해 PDF 표를 Excel로 변환하기",
+            "item4": "슬라이드 데크를 만들기 위해 PDF 문서를 PowerPoint로 내보내기",
+            "item5": "콘텐츠 재사용과 편집을 위해 스캔한 PDF를 텍스트 파일로 변환하기"
+          },
+          "precautionsSectionTitle": "중요 사항",
+          "precautionsSectionItems": {
+            "item1": "모든 변환은 브라우저에서 로컬로 처리되며 파일이 기기를 떠나지 않습니다",
+            "item2": "변환 정확도는 PDF 구조에 따라 달라집니다. 스캔한 PDF는 최상의 결과를 위해 OCR이 필요할 수 있습니다",
+            "item3": "여러 열이나 임베디드 그래픽이 있는 복잡한 레이아웃은 수동 서식 조정이 필요할 수 있습니다",
+            "item4": "암호로 보호되거나 제한된 PDF는 변환 전에 잠금을 해제해야 합니다",
+            "item5": "내보낸 파일의 이미지 품질은 원본 PDF 콘텐츠의 해상도에 따라 달라집니다"
+          },
+          "metadataTitle": "PDF를 다른 형식으로 변환",
+          "metadataDescription": "PDF 파일을 편집 가능한 문서, 이미지, 데이터 형식으로 변환하는 도구를 살펴보세요. 올바른 내보내기 워크플로를 선택하세요."
+        },
+        "organizeManage": {
+          "useCasesSectionTitle": "일반적인 활용 사례",
+          "useCasesSectionItems": {
+            "item1": "여러 계약 섹션이나 부록을 하나의 완전한 문서로 병합하기",
+            "item2": "쉽게 배포할 수 있도록 큰 보고서를 개별 장으로 분할하기",
+            "item3": "프레젠테이션 슬라이드 재정렬 또는 스캔한 문서의 중복 페이지 제거하기",
+            "item4": "긴 매뉴얼이나 참고 자료에서 특정 페이지 추출하기",
+            "item5": "송장, 영수증, 명세서를 정리된 월별 아카이브로 묶기"
+          },
+          "precautionsSectionTitle": "중요 사항",
+          "precautionsSectionItems": {
+            "item1": "모든 작업은 브라우저에서 로컬로 수행되며 파일이 업로드되지 않습니다",
+            "item2": "PDF를 병합할 때는 처리 전에 파일이 올바른 순서인지 확인하세요",
+            "item3": "분할이나 페이지 추출은 새 파일을 만들며 원본 파일은 변경되지 않습니다",
+            "item4": "책갈피와 목차는 페이지를 재구성한 후 다시 만들어야 할 수 있습니다",
+            "item5": "대용량 파일의 경우 메모리를 확보하기 위해 불필요한 브라우저 탭을 닫으세요"
+          },
+          "metadataTitle": "PDF 구성 도구",
+          "metadataDescription": "페이지 정렬, 문서 병합, 파일 분할, PDF 재구성을 위한 도구를 찾아보세요. 올바른 페이지 관리 작업을 선택하세요."
+        },
+        "optimizeRepair": {
+          "useCasesSectionTitle": "일반적인 활용 사례",
+          "useCasesSectionItems": {
+            "item1": "이메일 첨부 크기 제한이나 업로드 제한을 충족하기 위해 큰 PDF 압축하기",
+            "item2": "제대로 열리지 않거나 표시되지 않는 손상된 PDF 복구하기",
+            "item3": "법적 보관과 규제 준수를 위해 PDF를 PDF/A 형식으로 변환하기",
+            "item4": "민감한 문서를 공유하기 전에 메타데이터와 숨겨진 정보 제거하기",
+            "item5": "가독성을 유지하면서 저장 공간을 줄이기 위해 스캔한 문서 최적화하기"
+          },
+          "precautionsSectionTitle": "중요 사항",
+          "precautionsSectionItems": {
+            "item1": "모든 처리는 브라우저에서 이루어지며 파일이 외부 서버에 업로드되지 않습니다",
+            "item2": "압축은 이미지 품질을 낮출 수 있습니다. 원본을 교체하기 전에 결과를 미리 확인하세요",
+            "item3": "복구 도구는 많은 문제를 해결할 수 있지만 심하게 손상된 파일의 내용은 복구할 수 없습니다",
+            "item4": "PDF/A 변환은 양식, JavaScript, 멀티미디어와 같은 대화형 요소를 제거합니다",
+            "item5": "최적화나 복구를 수행하기 전에 중요한 문서의 백업을 항상 유지하세요"
+          },
+          "metadataTitle": "PDF 최적화 및 복구 도구",
+          "metadataDescription": "PDF 파일 압축, 복구, 정리, 개선 도구를 살펴보세요. 올바른 유지보수 워크플로를 선택하세요."
+        },
+        "securePdf": {
+          "useCasesSectionTitle": "일반적인 활용 사례",
+          "useCasesSectionItems": {
+            "item1": "기밀 계약서, 재무 보고서, 개인 문서를 암호로 보호하기",
+            "item2": "암호를 잊었거나 제한이 있어 편집할 수 없는 소유 PDF 잠금 해제하기",
+            "item3": "공개 전에 작성자 정보, 주석, 수정 이력을 제거하기 위해 문서를 새니타이즈하기",
+            "item4": "독점 콘텐츠의 무단 복사, 인쇄, 편집을 방지하기 위해 권한 설정하기",
+            "item5": "최신 워크플로 통합을 위해 오래된 아카이브 파일에서 보안 제거하기"
+          },
+          "precautionsSectionTitle": "중요 사항",
+          "precautionsSectionItems": {
+            "item1": "모든 보안 작업은 로컬에서 수행되며 암호와 파일이 브라우저를 떠나지 않습니다",
+            "item2": "강력한 암호가 필수적입니다. 최상의 보호를 위해 문자, 숫자, 기호를 혼합하세요",
+            "item3": "PDF 잠금 해제에는 올바른 암호가 필요합니다. 알 수 없는 암호를 해독하거나 우회할 수 없습니다",
+            "item4": "새니타이즈는 메타데이터를 영구적으로 제거합니다. 문서 이력을 보존하려면 원본 파일을 유지하세요",
+            "item5": "암호 보호는 암호화가 아닙니다. 매우 민감한 데이터에는 추가 보안 조치를 고려하세요"
+          },
+          "metadataTitle": "PDF 보안 및 보호 도구",
+          "metadataDescription": "PDF 파일 보호, 잠금 해제, 새니타이즈, 권한 관리를 위한 도구를 살펴보세요. 올바른 보안 작업을 선택하세요."
+        }
+      }
     },
     "status": {
       "idle": "준비됨",
@@ -115,7 +240,18 @@
       "copyright": "© {year} PDFkoi. All rights reserved.",
       "privacyBadge": "100% 프라이빗 - 파일이 기기를 떠나지 않습니다",
       "footer": "© 2025 PDFkoi. All rights reserved.",
-      "madeWith": "Made with <Heart /> and <Nextjs />"
+      "madeWith": "Made with <Heart /> and <Nextjs />",
+      "resources": "리소스",
+      "security": "보안",
+      "securityClientSide": "클라이언트 측 처리",
+      "securityClientSideDesc": "파일이 기기를 떠나지 않습니다",
+      "securityNoUploads": "파일 업로드 없음",
+      "securityNoUploadsDesc": "100% 비공개 & 안전",
+      "securityGdpr": "GDPR 준수",
+      "securityGdprDesc": "100% 비공개 - 파일이 기기를 떠나지 않습니다",
+      "terms": "이용약관",
+      "privacy": "개인정보",
+      "cookies": "Cookie"
     },
     "recentFiles": {
       "title": "최근 파일",
@@ -166,103 +302,6 @@
       "placeholder": "도구 검색...",
       "hint": "Enter로 선택, ↑↓로 이동",
       "noResults": "도구를 찾을 수 없습니다"
-    },
-    "faqPage": {
-      "title": "?? ?? ??",
-      "subtitle": "{brand}? ?? ?? ?? ??? ??? ?????",
-      "searchPlaceholder": "FAQ ??...",
-      "noResults": "??? ???? FAQ? ?? ?????.",
-      "expandAll": "?? ???",
-      "collapseAll": "?? ??",
-      "categories": {
-        "all": "??",
-        "general": "??",
-        "privacy": "???? ? ??",
-        "features": "??",
-        "technical": "??",
-        "languages": "??"
-      },
-      "sections": {
-        "general": {
-          "whatIs": {
-            "question": "PDFkoi? ??????",
-            "answer": "PDFkoi는 브라우저에서 완전히 실행되는 무료, 개인 정보 보호, 브라우저 기반 PDF 도구 모음입니다. 95개 이상의 PDF 도구를 제공하며, 파일을 서버에 업로드하지 않고도 편집, 변환, 병합, 분할, 보호 작업을 할 수 있습니다."
-          },
-          "isFree": {
-            "question": "PDFkoi? ?? ??????",
-            "answer": "?, PDFkoi? ??? ?????. ??? ???? ?? ??? ?? ????? ???? ????. ?? ??? ??? ??? ? ????."
-          },
-          "account": {
-            "question": "??? ???? ????",
-            "answer": "???. PDFkoi? ???? ?? ??? ???? ??? ??? ????. ???? ??? ?? ??? ??? ??? ? ????."
-          }
-        },
-        "privacy": {
-          "uploaded": {
-            "question": "??? ??? ???????",
-            "answer": "???. ??? ?? ???? ????? ????. ?? PDF ??? ???? ??? ??? ????? ??? ??? ???? ????."
-          },
-          "safe": {
-            "question": "??? ???? ??????",
-            "answer": "?. PDFkoi? ???? ??? ??? ???????. ?? ??? ???? ??? ?????? ??? ??? ??? ???? ?? ????? ???? ????."
-          },
-          "storage": {
-            "question": "?? ? ??? ??? ????",
-            "answer": "?? ??? ??? ???? ???? ?????? ?????. ?? ??? ???? ???? ?? ???? ???? ????, ??? ???? ????."
-          }
-        },
-        "features": {
-          "operations": {
-            "question": "?? PDF ??? ? ? ????",
-            "answer": "PDFkoi는 병합, 분할, 압축, 변환(이미지·텍스트·JSON 상호 변환), 편집, 주석, 서명, 워터마크 추가, 암호화/복호화, OCR 등 95개 이상의 도구를 제공합니다."
-          },
-          "merge": {
-            "question": "?? PDF ??? ??? ?? ? ????",
-            "answer": "?. PDF ?? ???? ?? ??? ????? ??? ??? ??? ? ???? ??? PDF? ?? ? ????."
-          },
-          "images": {
-            "question": "???? PDF? ??? ? ????",
-            "answer": "?. PDFkoi? JPG, PNG, WebP, BMP, TIFF, SVG, HEIC ? ??? ??? ??? PDF? ??? ? ??? ? ? ?? ?? ?? ? ?? ??? ? ????."
-          },
-          "edit": {
-            "question": "PDF ?? ???? ??? ? ????",
-            "answer": "PDFkoi? ?????, ??? ??, ??, ???, ?? ? ??? ?? ??? ?????. ?? ??? ??? ???? PDF ?? ??? ??? ? ????."
-          }
-        },
-        "technical": {
-          "browsers": {
-            "question": "?? ????? ??????",
-            "answer": "PDFkoi? Chrome, Firefox, Safari, Edge ?? ?? ?????? ?????. ?? ???? ??? ?? ?? ??? ?????."
-          },
-          "sizeLimit": {
-            "question": "?? ?? ??? ????",
-            "answer": "???? ??? ?? 100MB?? ????, ???? ?? ?? ?? ??? ?? 500MB?? ??? ? ????. ?? ?????? ????? ????? ?? ?? ?????."
-          },
-          "slow": {
-            "question": "? ??? ? ?? ??? ?????",
-            "answer": "?? ??? ???? ??? ????? ??? ??? ?? ?? ??? ??? ??? ????. ? ????? ? ?? ???? ??? ?????."
-          },
-          "offline": {
-            "question": "??????? ??????",
-            "answer": "??? ?? ???? ?? ??? ??? ?????. ?? ??? ?? ? PDF ?? ??? ???? ??????."
-          }
-        },
-        "languages": {
-          "supported": {
-            "question": "?? ??? ??????",
-            "answer": "PDFkoi? ??, ???, ???, ????, ????, ???, ???, ?????, ???(RTL ??)?? ? 9? ??? ?????."
-          },
-          "change": {
-            "question": "??? ??? ?????",
-            "answer": "??? ?? ????? ??? ??? ??? ? ???, ??? ??? ?? ???? ?????."
-          }
-        }
-      },
-      "cta": {
-        "title": "?? ??? ?? ????",
-        "description": "??? ?? ?? ???? ???? ??? ???.",
-        "button": "????"
-      }
     },
     "aboutPage": {
       "title": "About {brand}",
@@ -318,96 +357,50 @@
         "button": "Browse All Tools"
       }
     },
-    "contactPage": {
-      "hero": {
-        "title": "문의하기",
-        "description": "질문이나 제안 사항이 있거나 버그를 발견하셨나요? 여러분의 의견을 기다립니다."
-      },
-      "methods": {
-        "email": {
-          "title": "이메일",
-          "description": "이메일을 보내주시면 24-48시간 이내에 답변해 드립니다.",
-          "action": "support@pdfkoi.com"
-        },
-        "github": {
-          "title": "GitHub",
-          "description": "버그 신고, 기능 요청 또는 프로젝트 기여.",
-          "action": "GitHub에서 보기"
-        },
-        "twitter": {
-          "title": "Twitter",
-          "description": "업데이트 및 공지 사항 팔로우.",
-          "action": "@PDFkoi"
-        }
-      },
-      "form": {
-        "title": "메시지 보내기",
-        "description": "아래 양식을 작성해 주시면 가능한 한 빨리 연락드리겠습니다.",
-        "success": {
-          "title": "메시지 전송됨!",
-          "description": "연락해 주셔서 감사합니다. 24-48시간 이내에 답변드리겠습니다.",
-          "button": "새 메시지 보내기"
-        },
-        "fields": {
-          "name": {
-            "label": "이름",
-            "placeholder": "이름 입력"
-          },
-          "email": {
-            "label": "이메일",
-            "placeholder": "your@email.com"
-          },
-          "subject": {
-            "label": "주제",
-            "placeholder": "주제 선택",
-            "options": {
-              "general": "일반 문의",
-              "bug": "버그 신고",
-              "feature": "기능 요청",
-              "feedback": "피드백",
-              "other": "기타"
-            }
-          },
-          "message": {
-            "label": "메시지",
-            "placeholder": "문의 내용에 대해 자세히 알려주세요..."
-          }
-        },
-        "error": "문제가 발생했습니다. 다시 시도하거나 이메일로 직접 문의해 주세요.",
-        "submit": {
-          "loading": "전송 중...",
-          "default": "메시지 보내기"
-        }
-      },
-      "faq": {
-        "title": "빠른 답변을 찾고 계신가요?",
-        "description": "{brand}에 대한 자주 묻는 질문은 FAQ 페이지를 확인하세요.",
-        "button": "FAQ 보기"
-      }
-    },
     "accessibility": {
-      "skipToContent": "Skip to main content",
-      "skipToNavigation": "Skip to navigation",
-      "loading": "Loading, please wait",
-      "menuExpanded": "Menu expanded",
-      "menuCollapsed": "Menu collapsed",
-      "newWindow": "Opens in new window",
-      "externalLink": "External link",
-      "required": "Required field",
-      "optional": "Optional",
-      "selected": "Selected",
-      "notSelected": "Not selected",
-      "pageOf": "Page {current} of {total}",
-      "sortAscending": "Sort ascending",
-      "sortDescending": "Sort descending",
-      "closeDialog": "Close dialog",
-      "expandSection": "Expand section",
-      "collapseSection": "Collapse section"
+      "skipToContent": "주요 콘텐츠로 건너뛰기",
+      "skipToNavigation": "내비게이션으로 건너뛰기",
+      "loading": "로딩 중입니다. 잠시만 기다려 주세요",
+      "menuExpanded": "메뉴 펼침",
+      "menuCollapsed": "메뉴 접힘",
+      "newWindow": "새 창에서 열기",
+      "externalLink": "외부 링크",
+      "required": "필수 항목",
+      "optional": "선택 항목",
+      "selected": "선택됨",
+      "notSelected": "선택 안 됨",
+      "pageOf": "전체 {total} 중 {current} 페이지",
+      "sortAscending": "오름차순 정렬",
+      "sortDescending": "내림차순 정렬",
+      "closeDialog": "대화 상자 닫기",
+      "expandSection": "섹션 펼치기",
+      "collapseSection": "섹션 접기"
     },
     "options": {
-      "auto": "Auto",
-      "portrait": "Portrait",
-      "landscape": "Landscape"
+      "auto": "자동",
+      "portrait": "세로",
+      "landscape": "가로"
+    },
+    "cookieConsent": {
+      "title": "Cookie 설정",
+      "message": "당사는 필수 웹사이트 기능 제공, 사용자 설정 기억, Google AdSense를 통한 관련 광고 표시를 위해 Cookie를 사용합니다. 귀하의 PDF 파일은 광고주와 공유되지 않으며 모든 처리는 브라우저 내에서 로컬로 수행됩니다.",
+      "showDetails": "Cookie 세부 정보 보기",
+      "hideDetails": "세부 정보 숨기기",
+      "essentialTitle": "필수 Cookie",
+      "alwaysActive": "항상 활성",
+      "essentialDesc": "웹사이트가 올바르게 작동하기 위해 필요합니다. 비활성화할 수 없습니다.",
+      "functionalTitle": "기능 Cookie",
+      "optional": "선택 사항",
+      "functionalDesc": "언어 설정 등 사용자 환경을 개선하기 위해 기본 설정을 기억합니다.",
+      "advertisingTitle": "광고 Cookie",
+      "advertisingDesc": "Google AdSense 및 파트너가 관련 광고를 표시하기 위해 사용합니다. 언제든지 아래에서 해제할 수 있습니다.",
+      "googleAdsSettings": "Google 광고 설정",
+      "acceptAll": "모든 Cookie 허용",
+      "acceptEssentialOnly": "필수만 허용",
+      "learnMore": "자세한 내용은",
+      "and": "및",
+      "privacyPolicy": "개인정보 처리방침",
+      "cookiePolicy": "Cookie 정책"
     }
   },
   "errors": {
@@ -520,6 +513,11 @@
           "id": "제출 전 신분증 관련 문서"
         }
       }
+    },
+    "categoryBrowse": {
+      "title": "카테고리별 도구 찾아보기",
+      "description": "정리된 컬렉션에서 작업에 딱 맞는 도구를 찾아보세요.",
+      "viewAll": "전체 보기"
     }
   },
   "workflow": {
@@ -680,7 +678,9 @@
       "warning": "Warning",
       "warningText": "Selected pages will be permanently removed from the PDF. At least one page must remain.",
       "deleteButton": "Delete Pages",
-      "successMessage": "Pages deleted successfully! Click the download button to save your file."
+      "successMessage": "Pages deleted successfully! Click the download button to save your file.",
+      "pageRange": "페이지 범위",
+      "pageRangePlaceholder": "예: 1, 3-5, 8"
     },
     "extractPages": {
       "uploadLabel": "Upload PDF File",
@@ -688,7 +688,9 @@
       "selectTitle": "Select Pages to Extract",
       "selectHint": "Click pages to select them, or enter page numbers/ranges above.",
       "extractButton": "Extract Pages",
-      "successMessage": "Pages extracted successfully! Click the download button to save your file."
+      "successMessage": "Pages extracted successfully! Click the download button to save your file.",
+      "pageRange": "페이지 범위",
+      "pageRangePlaceholder": "예: 1-5, 8, 10-12"
     },
     "posterizePdf": {
       "uploadLabel": "Upload PDF File",
@@ -815,65 +817,76 @@
       }
     },
     "imageToPdf": {
-      "uploadLabel": "??? ???",
-      "uploadDescription": "???? ??? ??? ? ????? ???? ?????. JPG, PNG, WebP, BMP, TIFF, SVG, HEIC? ?????.",
-      "imagesTitle": "???",
-      "reorderHint": "????? ??? ??? ?? ? ????. ??? ???? PDF? ?????.",
-      "convertButton": "PDF? ??",
-      "optionsTitle": "PDF ??",
-      "pageSize": "??? ??",
-      "orientation": "??",
-      "orientationAuto": "??(???? ??)",
-      "orientationPortrait": "??",
-      "orientationLandscape": "??",
-      "margin": "??",
-      "marginNone": "??",
-      "marginSmall": "?? (0.25\")",
-      "marginMedium": "?? (0.5\")",
-      "marginLarge": "?? (1\")",
-      "centerImage": "??? ??? ??? ??",
-      "scaleToFit": "???? ?? ??? ?? ??",
-      "imageQuality": "??? ??",
-      "fitMode": "?? ??",
-      "fitPage": "???? ??",
-      "fillPage": "??? ???",
-      "originalSize": "?? ??",
-      "svgQuality": "SVG ?? ??",
-      "svgQualityLow": "?? (1x - ?? ??)",
-      "svgQualityMedium": "?? (2x - ???)",
-      "svgQualityHigh": "?? (3x - ? ???)",
-      "svgQualityVeryHigh": "?? ?? (4x - ?? ??)",
-      "svgQualityHint": "??? ???? ? ????? ?? ??? ????.",
+      "uploadLabel": "이미지 업로드",
+      "uploadDescription": "이미지를 여기에 끌어다 놓거나 클릭하여 찾아보세요. JPG, PNG, WebP, BMP, TIFF, SVG, HEIC를 지원합니다.",
+      "imagesTitle": "이미지",
+      "reorderHint": "드래그하여 이미지 순서를 변경하세요. 이미지는 표시된 순서대로 PDF에 나타납니다.",
+      "convertButton": "PDF로 변환",
+      "optionsTitle": "PDF 옵션",
+      "pageSize": "페이지 크기",
+      "orientation": "방향",
+      "orientationAuto": "자동(이미지에 맞춤)",
+      "orientationPortrait": "세로",
+      "orientationLandscape": "가로",
+      "margin": "여백",
+      "marginNone": "없음",
+      "marginSmall": "작게 (0.25\")",
+      "marginMedium": "중간 (0.5\")",
+      "marginLarge": "크게 (1\")",
+      "centerImage": "이미지를 페이지 중앙에 배치",
+      "scaleToFit": "이미지를 페이지에 맞게 조정",
+      "imageQuality": "이미지 품질",
+      "fitMode": "맞춤 모드",
+      "fitPage": "페이지에 맞추기",
+      "fillPage": "페이지 채우기",
+      "originalSize": "원본 크기",
+      "svgQuality": "SVG 내보내기 품질",
+      "svgQualityLow": "낮음 (1x - 더 작은 파일)",
+      "svgQualityMedium": "중간 (2x - 균형)",
+      "svgQualityHigh": "높음 (3x - 더 나은 품질)",
+      "svgQualityVeryHigh": "매우 높음 (4x - 최고 품질)",
+      "svgQualityHint": "품질이 높을수록 이미지가 더 선명하지만 파일 크기가 커집니다.",
       "batchMode": "여러 PDF로 분할",
       "imagesPerPdf": "PDF당 이미지 수",
       "batchModeHint": "{pdfCount}개의 PDF 파일이 생성되어 ZIP 아카이브로 패키징됩니다.",
       "batchSuccessMessage": "{imageCount}개의 이미지에서 {pdfCount}개의 PDF 파일을 성공적으로 생성했습니다! 다운로드 버튼을 클릭하여 ZIP 아카이브를 저장하세요.",
-      "successMessage": "???? PDF? ????? ??????! ???? ??? ?? ??? ?????."
+      "successMessage": "이미지가 PDF로 성공적으로 변환되었습니다! 다운로드 버튼을 클릭하여 파일을 저장하세요.",
+      "fitToImage": "이미지에 맞추기"
     },
     "compressPdf": {
-      "uploadLabel": "PDF ?? ???",
-      "uploadDescription": "PDF ??? ??? ??? ? ????? ???? ?????.",
-      "batchUploadDescription": "PDF ??? ??? ??? ? ?????. ? ?? ?? 10??? ??? ? ????.",
-      "filesTitle": "??? ??",
-      "optionsTitle": "?? ??",
-      "qualityLabel": "?? ??",
-      "qualityLow": "??",
-      "qualityLowDesc": "???? ??? ???? ?? ??",
-      "qualityMedium": "??",
-      "qualityMediumDesc": "?? ???? ??? ??? ??",
-      "qualityHigh": "??",
-      "qualityHighDesc": "??? ? ?? ???? ??? ??",
-      "qualityMaximum": "??",
-      "qualityMaximumDesc": "?? ??? ??? ???? ?? ??",
-      "optimizeImages": "??? ??? ???",
-      "removeMetadata": "????? ??(??, ??? ?)",
-      "compressButton": "PDF ??",
-      "successMessage": "PDF ??? ???????!",
-      "batchSuccessMessage": "?? PDF ?? ??? ???????!",
-      "downloadAllZip": "??? ZIP?? ????",
-      "originalSize": "??:",
-      "compressedSize": "?? ?:",
-      "saved": "??:"
+      "uploadLabel": "PDF 파일 업로드",
+      "uploadDescription": "PDF 파일을 여기에 끌어다 놓거나 클릭하여 찾아보세요.",
+      "batchUploadDescription": "PDF 파일을 여기에 끌어다 놓으세요. 한 번에 최대 10개 파일을 압축할 수 있습니다.",
+      "filesTitle": "압축할 파일",
+      "optionsTitle": "압축 옵션",
+      "qualityLabel": "압축 품질",
+      "qualityLow": "낮음",
+      "qualityLowDesc": "개체 스트림 최적화로 최대 압축",
+      "qualityMedium": "중간",
+      "qualityMediumDesc": "구조 최적화로 균형 잡힌 압축",
+      "qualityHigh": "높음",
+      "qualityHighDesc": "더 많은 구조를 유지하는 적절한 압축",
+      "qualityMaximum": "최대",
+      "qualityMaximumDesc": "원본 품질을 유지하는 최소 압축",
+      "optimizeImages": "포함된 이미지 최적화",
+      "removeMetadata": "메타데이터 제거(제목, 작성자 등)",
+      "compressButton": "PDF 압축",
+      "successMessage": "PDF가 성공적으로 압축되었습니다!",
+      "batchSuccessMessage": "모든 PDF 파일이 성공적으로 압축되었습니다!",
+      "downloadAllZip": "모두 ZIP으로 다운로드",
+      "originalSize": "원본:",
+      "compressedSize": "압축 후:",
+      "saved": "절약:",
+      "algorithmLabel": "압축 알고리즘",
+      "algorithmStandard": "표준",
+      "algorithmCondense": "압축(Condense)",
+      "algorithmPhoton": "Photon",
+      "algorithmStandardDesc": "개체 스트림을 사용한 범용 압축",
+      "algorithmCondenseDesc": "인터랙티브 기능을 유지하면서 구조 최적화",
+      "algorithmPhotonDesc": "페이지를 이미지로 변환 — 이미지가 많은 PDF에 최적",
+      "photonWarning": "참고: Photon은 페이지를 이미지로 변환하므로 텍스트 품질이 낮아지고 인터랙티브 기능(링크, 양식)이 손실될 수 있습니다.",
+      "photonDpiLabel": "출력 DPI",
+      "photonDpiDesc": "DPI가 높을수록 품질은 좋아지지만 파일 크기가 커집니다"
     },
     "signPdf": {
       "uploadLabel": "Upload PDF File",
@@ -963,7 +976,10 @@
       "downloadAll": "모두 다운로드",
       "downloadZip": "ZIP으로 다운로드",
       "page": "페이지",
-      "successMessage": "이미지가 성공적으로 추출되었습니다! 개별 이미지를 클릭하여 다운로드하거나 \"ZIP으로 다운로드\"를 사용하세요."
+      "successMessage": "이미지가 성공적으로 추출되었습니다! 개별 이미지를 클릭하여 다운로드하거나 \"ZIP으로 다운로드\"를 사용하세요.",
+      "optionsTitle": "설정",
+      "format": "출력 형식",
+      "minSize": "최소 크기(px)"
     },
     "encryptPdf": {
       "uploadLabel": "Upload PDF File",
@@ -1060,7 +1076,7 @@
       "useMargins": "여백 및 거터 추가",
       "addBorder": "페이지 주위에 테두리 추가",
       "borderColor": "테두리 색상",
-      "previewInfo": "{pages}페이지가 시트당 {perSheet}페이지씩 {sheets}장에 배치됩니다.",
+      "previewInfo": "{pages}페이지가 {sheets}장에 배치됩니다.",
       "layoutDirection": "레이아웃 방향",
       "layoutHorizontal": "가로 (나란히)",
       "layoutVertical": "세로 (위아래)",
@@ -1600,7 +1616,9 @@
       "unsupportedImage": "Unsupported image format. Please use PNG or JPG.",
       "failed": "Failed to add watermark.",
       "addButton": "Add Watermark",
-      "successMessage": "Watermark added successfully!"
+      "successMessage": "Watermark added successfully!",
+      "type": "유형",
+      "textPlaceholder": "예: CONFIDENTIAL"
     },
     "headerFooter": {
       "uploadLabel": "Upload PDF File",
@@ -1611,7 +1629,13 @@
       "preview": "Preview",
       "previewHint": "Enter header or footer text to see preview",
       "addButton": "Add Header & Footer",
-      "successMessage": "Header & footer added successfully!"
+      "successMessage": "Header & footer added successfully!",
+      "headerText": "머리글 텍스트",
+      "headerTextPlaceholder": "머리글 텍스트 입력...",
+      "footerText": "바닥글 텍스트",
+      "footerTextPlaceholder": "바닥글 텍스트 입력...",
+      "fontSize": "글꼴 크기",
+      "fontColor": "글꼴 색상"
     },
     "invertColors": {
       "uploadLabel": "Upload PDF File",
@@ -1717,7 +1741,61 @@
       "fieldLabelPlaceholder": "레이블 텍스트 입력...",
       "labelPosition": "위치",
       "labelAbove": "위",
-      "labelLeft": "왼쪽"
+      "labelLeft": "왼쪽",
+      "formOptions": "양식 옵션",
+      "flattenForm": "양식 평면화",
+      "flattenFormHint": "양식 필드를 편집할 수 없게 만듭니다(정적 콘텐츠로 변환)",
+      "projectManagement": "프로젝트 관리",
+      "saveProject": "프로젝트 저장",
+      "savedProjects": "저장된 프로젝트",
+      "loadProject": "불러오기",
+      "deleteProject": "삭제",
+      "saveProjectTitle": "프로젝트 저장",
+      "projectName": "프로젝트 이름",
+      "projectNamePlaceholder": "프로젝트 이름 입력...",
+      "saveInfo": "{fields}개의 양식 필드가 저장됩니다.",
+      "saveNote": "프로젝트는 브라우저에 로컬로 저장됩니다.",
+      "undo": "실행 취소(Ctrl+Z)",
+      "redo": "다시 실행(Ctrl+Y)",
+      "duplicate": "복제(Ctrl+D)",
+      "align": "정렬",
+      "alignLeft": "왼쪽 정렬",
+      "alignCenter": "가운데 정렬",
+      "alignRight": "오른쪽 정렬",
+      "alignTop": "위쪽 정렬",
+      "alignMiddle": "세로 가운데 정렬",
+      "alignBottom": "아래쪽 정렬",
+      "defaultValue": "기본값",
+      "defaultValuePlaceholder": "기본 텍스트 입력...",
+      "defaultChecked": "기본 선택됨",
+      "defaultSelection": "기본 선택",
+      "noDefault": "-- 없음 --",
+      "required": "필수 필드",
+      "shortcutsHint": "단축키: Ctrl+Z(실행 취소) | Ctrl+Y(다시 실행) | Ctrl+D(복제) | Ctrl+A(전체 선택) | Delete(삭제)",
+      "buttonTool": "버튼",
+      "signatureTool": "서명",
+      "dateTool": "날짜",
+      "listboxTool": "목록 상자",
+      "buttonLabel": "버튼 라벨",
+      "buttonLabelPlaceholder": "제출",
+      "signatureLabel": "서명 라벨",
+      "signatureLabelPlaceholder": "여기에 서명",
+      "dateFormat": "날짜 형식",
+      "defaultDate": "기본 날짜",
+      "multiSelect": "다중 선택 허용",
+      "basicTools": "기본",
+      "advancedTools": "더보기",
+      "properties": "속성",
+      "fieldsTab": "필드",
+      "optionsTab": "옵션",
+      "addField": "추가",
+      "clickToAdd": "PDF를 클릭하여 필드 추가",
+      "pages": "페이지",
+      "processingButton": "처리 중...",
+      "cancelButton": "취소",
+      "saveButton": "저장",
+      "orCreateBlank": "또는",
+      "createBlankPdf": "빈 PDF 만들기"
     },
     "removeBlankPages": {
       "uploadLabel": "Upload PDF File",
@@ -1739,7 +1817,8 @@
       "addBookmark": "Add TOC entry to bookmarks",
       "bookmarkRequired": "This tool generates a clickable table of contents from existing PDF bookmarks. Please ensure your PDF has bookmarks before using this tool. You can add bookmarks using the Edit Bookmarks tool.",
       "generate": "Generate Table of Contents",
-      "success": "Table of contents generated successfully!"
+      "success": "Table of contents generated successfully!",
+      "tocTitlePlaceholder": "목차 제목 입력..."
     },
     "pdfToDocx": {
       "uploadLabel": "Upload PDF File",
@@ -1818,63 +1897,114 @@
       "uploadDescription": "Upload PDFs to straighten.",
       "optionsTitle": "Options",
       "processButton": "Deskew PDF",
-      "successMessage": "PDF deskewed!"
+      "successMessage": "PDF deskewed!",
+      "filesTitle": "기울기 보정할 파일",
+      "thresholdLabel": "감지 임계값",
+      "thresholdDesc": "값이 높을수록 더 미묘한 기울기를 감지합니다. 기본값: 10",
+      "dpiLabel": "분석 DPI",
+      "dpiDesc": "DPI가 높을수록 더 정확하게 감지하지만 시간이 더 걸립니다.",
+      "downloadAllZip": "모두 ZIP으로 다운로드"
     },
     "pdfBooklet": {
       "uploadLabel": "Upload PDF",
       "uploadDescription": "Upload PDF for booklet.",
       "optionsTitle": "Options",
       "createButton": "Create",
-      "successMessage": "Booklet created!"
+      "successMessage": "Booklet created!",
+      "gridModeLabel": "그리드 모드",
+      "gridModeDesc": "1x2는 소책자의 표준입니다. 용지를 절약하려면 더 큰 그리드를 사용하세요.",
+      "paperSizeLabel": "용지 크기",
+      "orientationLabel": "방향",
+      "rotationLabel": "페이지 회전",
+      "paddingLabel": "여백",
+      "previewLabel": "레이아웃 미리보기",
+      "previewDesc": "이 미리보기는 각 시트에 페이지가 어떻게 배치되는지 보여줍니다."
     },
     "rasterizePdf": {
       "uploadLabel": "Upload PDFs",
       "uploadDescription": "Upload to rasterize.",
       "optionsTitle": "Options",
       "rasterizeButton": "Rasterize",
-      "successMessage": "Rasterized!"
+      "successMessage": "Rasterized!",
+      "dpiLabel": "해상도(DPI)",
+      "formatLabel": "출력 형식",
+      "qualityLabel": "품질",
+      "pageRangeLabel": "페이지 범위(선택 사항)",
+      "pageRangeDesc": "비워 두면 모든 페이지를 변환합니다.",
+      "bgColorLabel": "배경색",
+      "convertButton": "이미지로 변환"
     },
     "markdownToPdf": {
       "uploadLabel": "Upload Markdown",
       "uploadDescription": "Upload .md file.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Converted!"
+      "successMessage": "Converted!",
+      "manualInput": "Markdown 작성",
+      "uploadFile": "파일 업로드",
+      "editorLabel": "Markdown 편집기",
+      "previewLabel": "미리보기",
+      "showPreview": "미리보기 표시",
+      "hidePreview": "미리보기 숨기기",
+      "themeLabel": "테마",
+      "pageSizeLabel": "페이지 크기",
+      "gfmLabel": "GitHub Flavored Markdown 활성화(표, 작업 목록 등)",
+      "syntaxHighlightLabel": "코드 블록 구문 강조 활성화"
     },
     "emailToPdf": {
       "uploadLabel": "Upload Email",
       "uploadDescription": "Upload .eml file.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Converted!"
+      "successMessage": "Converted!",
+      "pageSizeLabel": "페이지 크기",
+      "includeCcBccLabel": "CC/BCC 필드 포함",
+      "includeAttachmentsLabel": "첨부 파일 목록 포함",
+      "timezoneLabel": "시간대"
     },
     "cbzToPdf": {
       "uploadLabel": "Upload CBZ",
       "uploadDescription": "Upload comic.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Converted!"
+      "successMessage": "Converted!",
+      "pageSizeLabel": "페이지 크기",
+      "qualityLabel": "이미지 품질",
+      "preserveAspectLabel": "가로세로 비율 유지"
     },
     "pdfToPdfa": {
       "uploadLabel": "Upload PDF",
       "uploadDescription": "Upload for PDF/A.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "PDF/A created!"
+      "successMessage": "PDF/A created!",
+      "filesTitle": "변환할 파일",
+      "levelLabel": "PDF/A 레벨",
+      "embedFontsLabel": "모든 글꼴 포함",
+      "flattenTransparencyLabel": "투명도 평면화(PDF/A-1b에 필요)",
+      "downloadAllZip": "모두 ZIP으로 다운로드"
     },
     "fontToOutline": {
       "uploadLabel": "Upload PDFs",
       "uploadDescription": "Upload to outline fonts.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Fonts outlined!"
+      "successMessage": "Fonts outlined!",
+      "filesTitle": "파일",
+      "dpiLabel": "래스터화 DPI",
+      "downloadAllZip": "모두 ZIP으로 다운로드"
     },
     "extractTables": {
       "uploadLabel": "PDF 업로드",
       "uploadDescription": "표를 추출할 PDF 파일을 업로드하세요.",
       "optionsTitle": "추출 옵션",
       "extractButton": "표 추출",
-      "successMessage": "표 추출이 완료되었습니다!"
+      "successMessage": "표 추출이 완료되었습니다!",
+      "formatLabel": "출력 형식",
+      "pageRangeLabel": "페이지 범위(선택 사항)",
+      "minColumnsLabel": "최소 열 수",
+      "minRowsLabel": "최소 행 수",
+      "includePageNumbersLabel": "출력에 페이지 번호 포함"
     },
     "ocgManager": {
       "uploadLabel": "Upload PDF",
@@ -1887,7 +2017,9 @@
     "pdfReader": {
       "uploadLabel": "Open PDF",
       "uploadDescription": "Open PDF to read."
-    }
+    },
+    "helpLink": "도움말",
+    "feedbackLink": "피드백"
   },
   "aboutPage": {
     "title": "{brand} 소개",
@@ -1941,6 +2073,504 @@
       "title": "지금 시작해 보세요",
       "description": "{count}개 이상의 다양한 PDF 도구를 살펴보고 {brand}의 편리함을 직접 경험해 보세요.",
       "button": "모든 도구 둘러보기"
+    }
+  },
+  "faqPage": {
+    "title": "자주 묻는 질문",
+    "subtitle": "{brand}에 대한 일반적인 질문에 대한 답변을 찾아보세요",
+    "searchPlaceholder": "FAQ 검색...",
+    "noResults": "검색어와 일치하는 FAQ가 없습니다.",
+    "expandAll": "모두 펼치기",
+    "collapseAll": "모두 접기",
+    "categories": {
+      "all": "전체",
+      "general": "일반",
+      "privacy": "개인정보 및 보안",
+      "features": "기능",
+      "technical": "기술",
+      "languages": "언어"
+    },
+    "sections": {
+      "general": {
+        "whatIs": {
+          "question": "PDFkoi란 무엇인가요?",
+          "answer": "PDFkoi는 브라우저에서 완전히 실행되는 무료, 개인 정보 보호 우선의 PDF 도구 모음입니다. 95개 이상의 PDF 도구를 제공하며, 파일을 서버에 업로드하지 않고도 편집, 변환, 병합, 분할, 보호 작업을 할 수 있습니다.\n\n주요 기능:\n• 95개 이상의 전문 PDF 도구로 모든 일반적인 작업 지원\n• 브라우저 기반 처리 - 파일이 기기에 그대로 유지됩니다\n• 가입이나 계정이 필요 없습니다\n• 숨겨진 비용이나 프리미엄 등급 없이 완전 무료\n• 최신 브라우저가 있는 모든 기기에서 작동\n• 9개 언어로 제공\n\n파일 업로드를 요구하는 기존 PDF 서비스와 달리, PDFkoi는 WebAssembly 기술을 사용하여 모든 것을 로컬에서 처리합니다. 따라서 더 빠른 처리, 더 나은 개인 정보 보호, 서버 제한에 따른 파일 크기 제한이 없습니다."
+        },
+        "isFree": {
+          "question": "PDFkoi는 정말 무료인가요?",
+          "answer": "네, PDFkoi는 완전히 무료로 사용할 수 있습니다. 숨겨진 비용, 프리미엄 등급, 가입 요구가 없습니다. 모든 기능을 누구나 이용할 수 있습니다."
+        },
+        "account": {
+          "question": "계정을 만들어야 하나요?",
+          "answer": "아니요, PDFkoi를 사용하기 위해 계정을 만들거나 가입할 필요가 없습니다. 웹사이트를 방문하여 바로 어떤 도구든 사용할 수 있습니다."
+        }
+      },
+      "privacy": {
+        "uploaded": {
+          "question": "제 파일이 서버에 업로드되나요?",
+          "answer": "아니요, 파일은 어떤 서버에도 업로드되지 않습니다. 모든 PDF 처리는 JavaScript와 WebAssembly 기술을 사용하여 브라우저에서 로컬로 이루어집니다. 즉, 더 빠른 처리(업로드/다운로드 대기 없음), 완전한 개인 정보 보호(파일이 기기를 떠나지 않음)가 가능합니다."
+        },
+        "safe": {
+          "question": "민감한 문서에 PDFkoi를 사용해도 안전한가요?",
+          "answer": "네, PDFkoi는 개인 정보 보호를 최우선으로 설계되었습니다. 모든 처리가 브라우저에서 로컬로 이루어지므로 민감한 문서는 기기에 그대로 유지되며 인터넷을 통해 전송되지 않습니다."
+        },
+        "storage": {
+          "question": "처리 후 파일은 어떻게 되나요?",
+          "answer": "파일은 처리 중에 브라우저 메모리에 임시로 저장됩니다. 브라우저 탭을 닫거나 다른 페이지로 이동하면 모든 파일 데이터가 자동으로 삭제됩니다. 당사는 파일을 저장하지 않습니다."
+        }
+      },
+      "features": {
+        "operations": {
+          "question": "어떤 PDF 작업을 할 수 있나요?",
+          "answer": "PDFkoi는 병합, 분할, 압축, 변환(이미지·텍스트·JSON 상호 변환), 편집, 주석, 서명, 워터마크 추가, 암호화/복호화, OCR 등 95개 이상의 도구를 제공합니다."
+        },
+        "merge": {
+          "question": "여러 PDF 파일을 병합할 수 있나요?",
+          "answer": "네, 여러 PDF 파일을 하나로 병합할 수 있습니다. PDF 병합 도구를 사용하여 파일을 업로드하고 원하는 순서로 정렬한 뒤 병합을 클릭하세요."
+        },
+        "images": {
+          "question": "이미지를 PDF로 변환할 수 있나요?",
+          "answer": "네, PDFkoi는 다양한 이미지 형식(JPG, PNG, WebP, BMP, TIFF, SVG, HEIC)을 PDF로 변환할 수 있습니다. 단일 또는 여러 이미지를 한 번에 변환할 수 있습니다."
+        },
+        "edit": {
+          "question": "PDF에서 텍스트를 편집할 수 있나요?",
+          "answer": "PDFkoi는 강조 표시, 텍스트·도형·이미지·서명 추가 등 주석 및 편집 도구를 제공합니다. 전체 텍스트 편집의 경우 PDF 편집기 도구가 포괄적인 주석 기능을 제공합니다."
+        }
+      },
+      "technical": {
+        "browsers": {
+          "question": "지원되는 브라우저는 무엇인가요?",
+          "answer": "PDFkoi는 Chrome, Firefox, Safari, Edge 등 모든 최신 브라우저에서 작동합니다. 최상의 경험을 위해 최신 버전 사용을 권장합니다."
+        },
+        "sizeLimit": {
+          "question": "파일 크기 제한이 있나요?",
+          "answer": "대부분의 도구는 최대 100MB 파일을 지원하며, 병합·압축 같은 일부 도구는 최대 500MB까지 지원합니다. 이러한 제한은 브라우저에서 원활한 성능을 보장하기 위한 것입니다."
+        },
+        "slow": {
+          "question": "큰 파일 처리 속도가 느린 이유는 무엇인가요?",
+          "answer": "모든 처리가 브라우저에서 이루어지므로 성능은 기기의 성능에 따라 달라집니다. 큰 파일은 더 많은 메모리와 처리 능력이 필요합니다. 최상의 결과를 위해 다른 브라우저 탭을 닫고 애플리케이션을 종료하세요."
+        },
+        "offline": {
+          "question": "PDFkoi는 오프라인에서 작동하나요?",
+          "answer": "현재 PDFkoi는 애플리케이션을 로드하기 위해 인터넷 연결이 필요합니다. 하지만 일단 로드되면 PDF 처리 자체는 로컬에서 이루어지며 연결이 필요하지 않습니다."
+        }
+      },
+      "languages": {
+        "supported": {
+          "question": "어떤 언어가 지원되나요?",
+          "answer": "PDFkoi는 영어, 일본어, 한국어, 스페인어, 프랑스어, 독일어, 중국어, 포르투갈어, 아랍어(RTL 지원) 등 9개 언어로 제공됩니다."
+        },
+        "change": {
+          "question": "언어를 변경하려면 어떻게 하나요?",
+          "answer": "헤더의 언어 선택기를 사용하여 언어를 변경할 수 있습니다. 선택한 언어는 향후 방문 시에도 저장됩니다."
+        }
+      }
+    },
+    "cta": {
+      "title": "아직 질문이 있으신가요?",
+      "description": "찾으시는 답변을 찾지 못하셨나요? 언제든지 문의해 주세요.",
+      "button": "문의하기"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "문의하기",
+      "description": "질문이나 제안 사항이 있거나 버그를 발견하셨나요? 여러분의 의견을 기다립니다."
+    },
+    "methods": {
+      "email": {
+        "title": "이메일",
+        "description": "이메일을 보내주시면 24-48시간 이내에 답변해 드립니다.",
+        "action": "support@pdfkoi.com"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "버그 신고, 기능 요청 또는 프로젝트 기여.",
+        "action": "GitHub에서 보기"
+      },
+      "twitter": {
+        "title": "Twitter",
+        "description": "업데이트 및 공지 사항 팔로우.",
+        "action": "@PDFkoi"
+      }
+    },
+    "form": {
+      "title": "메시지 보내기",
+      "description": "아래 양식을 작성해 주시면 가능한 한 빨리 연락드리겠습니다.",
+      "success": {
+        "title": "메시지 전송됨!",
+        "description": "연락해 주셔서 감사합니다. 24-48시간 이내에 답변드리겠습니다.",
+        "button": "새 메시지 보내기"
+      },
+      "fields": {
+        "name": {
+          "label": "이름",
+          "placeholder": "이름 입력"
+        },
+        "email": {
+          "label": "이메일",
+          "placeholder": "your@email.com"
+        },
+        "subject": {
+          "label": "주제",
+          "placeholder": "주제 선택",
+          "options": {
+            "general": "일반 문의",
+            "bug": "버그 신고",
+            "feature": "기능 요청",
+            "feedback": "피드백",
+            "other": "기타"
+          }
+        },
+        "message": {
+          "label": "메시지",
+          "placeholder": "문의 내용에 대해 자세히 알려주세요..."
+        }
+      },
+      "error": "문제가 발생했습니다. 다시 시도하거나 이메일로 직접 문의해 주세요.",
+      "submit": {
+        "loading": "전송 중...",
+        "default": "메시지 보내기"
+      }
+    },
+    "faq": {
+      "title": "빠른 답변을 찾고 계신가요?",
+      "description": "{brand}에 대한 자주 묻는 질문은 FAQ 페이지를 확인하세요.",
+      "button": "FAQ 보기"
+    }
+  },
+  "privacyPage": {
+    "metaTitle": "개인정보 처리방침",
+    "heroTitle": "개인정보 처리방침",
+    "heroSubtitle": "고객님의 개인정보 보호는 저희의 최우선 과제입니다. {brand}은 데이터를 보호하도록 처음부터 설계되었습니다.",
+    "highlights": {
+      "noUpload": {
+        "title": "서버 업로드 없음",
+        "description": "파일이 어떤 서버에도 업로드되지 않습니다. 모든 처리는 브라우저에서 로컬로 이루어집니다."
+      },
+      "localProcessing": {
+        "title": "로컬 처리",
+        "description": "PDF 작업은 기기에서 JavaScript와 WebAssembly를 사용하여 직접 수행됩니다."
+      },
+      "cleanup": {
+        "title": "자동 정리",
+        "description": "브라우저 탭을 닫거나 다른 페이지로 이동하면 모든 파일 데이터가 자동으로 삭제됩니다."
+      },
+      "noTracking": {
+        "title": "추적 없음",
+        "description": "파일 내용이나 개인정보를 추적하지 않습니다. 문서는 비공개로 유지됩니다."
+      }
+    },
+    "lastUpdated": "최종 업데이트: 2026년 7월",
+    "badgeTitle": "문서는 브라우저에서 안전하게 처리됩니다",
+    "sections": {
+      "intro": {
+        "heading": "1. 소개",
+        "body": "{brand}(이하 \"저희\")는 고객님의 개인정보를 보호하기 위해 최선을 다하고 있습니다. 본 개인정보 처리방침은 PDF 도구를 사용할 때 정보를 어떻게 처리하는지 설명합니다."
+      },
+      "howItWorks": {
+        "heading": "2. 서비스 작동 방식",
+        "body": "{brand}은 클라이언트 측 애플리케이션입니다. 즉:",
+        "items": {
+          "item1": "모든 PDF 처리는 웹 브라우저에서 직접 이루어집니다",
+          "item2": "파일이 저희 서버나 타사 서버에 업로드되지 않습니다",
+          "item3": "저희는 고객님의 문서를 보거나 접근하거나 저장할 수 없습니다",
+          "item4": "파일은 항상 기기에 남아 있습니다"
+        }
+      },
+      "infoCollected": {
+        "heading": "3. 수집하는 정보",
+        "filesHeading": "3.1 고객님의 파일",
+        "filesBody": "저희는 고객님의 파일을 수집하지 않습니다. PDF 도구를 사용할 때 파일은 완전히 브라우저 내에서 처리되며 저희 서버로 전송되지 않습니다.",
+        "usageHeading": "3.2 사용 데이터",
+        "usageBody": "서비스 개선을 위해 익명의 사용 통계를 수집할 수 있습니다. 예:",
+        "usageItems": {
+          "item1": "가장 인기 있는 도구",
+          "item2": "일반적인 지리적 지역(국가 수준)",
+          "item3": "브라우저 종류 및 버전",
+          "item4": "기기 유형(데스크톱, 모바일, 태블릿)"
+        },
+        "usageFooter": "이 데이터는 집계되고 익명화되므로 개인을 식별하는 데 사용할 수 없습니다."
+      },
+      "localStorage": {
+        "heading": "4. 로컬 저장소",
+        "body": "{brand}은 다음을 위해 브라우저의 로컬 저장소를 사용할 수 있습니다:",
+        "items": {
+          "item1": "언어 기본 설정 기억",
+          "item2": "최근 도구 기록 저장",
+          "item3": "중단된 세션의 진행 중 작업 저장"
+        },
+        "footer": "이 데이터는 기기에만 저장되며 저희에게 전송되지 않습니다."
+      },
+      "cookies": {
+        "heading": "5. 쿠키",
+        "body": "저희는 다음 유형의 쿠키를 사용합니다:",
+        "essential": "필수 쿠키",
+        "essentialDesc": "웹사이트가 제대로 작동하는 데 필요합니다",
+        "preference": "환경설정 쿠키",
+        "preferenceDesc": "언어 기본 설정과 같은 설정을 기억합니다",
+        "advertising": "광고 쿠키",
+        "advertisingDesc": "Google AdSense와 파트너가 관련 광고를 표시하는 데 사용합니다(아래 광고 섹션 참조)"
+      },
+      "advertising": {
+        "heading": "6. 광고",
+        "body1": "저희는 웹사이트에 광고를 표시하기 위해 Google AdSense를 사용합니다. Google AdSense와 광고 파트너는 이 웹사이트 및 인터넷의 다른 웹사이트에 대한 이전 방문을 기반으로 광고를 제공하기 위해 쿠키와 웹 비콘을 사용할 수 있습니다.",
+        "body2": "이 광고 쿠키를 통해 Google과 파트너가 관심사에 기반한 광고를 표시할 수 있습니다. www.aboutads.info/choices/ 또는 Google 광고 설정에서 개인 맞춤 광고를 거부할 수 있습니다.",
+        "important": "중요",
+        "importantBody": "고객님의 PDF 파일은 Google이나 광고 네트워크와 절대 공유되지 않습니다. 모든 파일 처리는 브라우저에서 로컬로 이루어집니다. 광고 쿠키는 광고 제공에만 관련되며 문서에 접근할 수 없습니다."
+      },
+      "thirdParty": {
+        "heading": "7. 타사 서비스",
+        "body": "위에 언급된 광고 서비스를 제외하고, {brand}은 파일 데이터를 제3자와 공유하지 않습니다. 다음은 사용하지 않습니다:",
+        "items": {
+          "item1": "개별 사용자를 추적하는 타사 분석",
+          "item2": "소셜 미디어 추적 픽셀",
+          "item3": "외부 파일 처리 서비스"
+        }
+      },
+      "security": {
+        "heading": "8. 데이터 보안",
+        "body": "파일이 기기를 떠나지 않으므로 기기 자체의 보안 조치로 보호됩니다. 다음을 권장합니다:",
+        "items": {
+          "item1": "최신 브라우저 사용",
+          "item2": "운영 체제를 최신 상태로 유지",
+          "item3": "민감한 문서를 처리할 때 보안 네트워크 사용"
+        }
+      },
+      "rights": {
+        "heading": "9. 고객님의 권리",
+        "body": "저희는 개인 데이터를 수집하지 않으므로 접근, 정정 또는 삭제할 개인 데이터가 없습니다. 브라우저의 로컬 저장소를 언제든지 지워 {brand}이 저장한 모든 환경설정을 제거할 수 있습니다."
+      },
+      "children": {
+        "heading": "10. 아동의 개인정보",
+        "body": "{brand}은 13세 미만의 아동을 대상으로 하지 않습니다. 저희는 고의로 아동으로부터 정보를 수집하지 않습니다."
+      },
+      "changes": {
+        "heading": "11. 본 방침의 변경",
+        "body": "저희는 본 개인정보 처리방침을 수시로 업데이트할 수 있습니다. 변경 사항이 있으면 본 페이지에 새 개인정보 처리방침을 게시하고 \"최종 업데이트\" 날짜를 갱신하여 알려드립니다."
+      },
+      "contact": {
+        "heading": "12. 문의하기",
+        "body": "본 개인정보 처리방침에 대해 질문이 있으시면 문의 페이지를 통해 연락해 주세요."
+      }
+    }
+  },
+  "termsPage": {
+    "metaTitle": "서비스 이용약관",
+    "heroTitle": "서비스 이용약관",
+    "heroSubtitle": "{brand}을 사용하기 전에 본 약관을 주의 깊게 읽어 주세요.",
+    "highlights": {
+      "clientSide": {
+        "title": "100% 클라이언트 측",
+        "description": "파일은 브라우저에서 로컬로 처리되며 어떤 서버에도 업로드되지 않습니다."
+      },
+      "privacyFirst": {
+        "title": "개인정보 우선",
+        "description": "저희는 문서에 접근, 저장 또는 전송하지 않습니다. 데이터는 기기에 남아 있습니다."
+      },
+      "free": {
+        "title": "무료 사용",
+        "description": "모든 PDF 도구는 무료입니다. 등록 불필요, 숨겨진 수수료 없음, 프리미엄 등급 없음."
+      },
+      "fairUse": {
+        "title": "공정한 사용",
+        "description": "서비스를 책임감 있게 사용하고 불법적인 목적으로 사용하지 않기를 부탁드립니다."
+      }
+    },
+    "lastUpdated": "최종 업데이트: 2026년 3월 24일",
+    "contactBadgeTitle": "질문이 있으신가요?",
+    "contactBadgeDesc": "본 약관에 대해 질문이 있으면 문의해 주세요",
+    "sections": {
+      "acceptance": {
+        "heading": "1. 약관 동의",
+        "body": "{brand}(이하 \"서비스\")에 접근하고 사용함으로써 귀하는 본 서비스 이용약관의 구속을 받는 데 동의하게 됩니다. 본 약관에 동의하지 않으면 서비스를 사용하지 마십시오."
+      },
+      "serviceDesc": {
+        "heading": "2. 서비스 설명",
+        "body": "{brand}은 사용자가 PDF 파일을 병합, 분할, 압축, 변환, 편집하고 다양한 작업을 수행할 수 있는 브라우저 기반 무료 PDF 도구 모음입니다. 서비스는 WebAssembly 기술을 사용하여 모든 파일을 완전히 클라이언트 측에서 처리합니다."
+      },
+      "privacy": {
+        "heading": "3. 개인정보 및 데이터 처리",
+        "processingHeading": "3.1 클라이언트 측 처리",
+        "processingItems": {
+          "item1": "모든 파일 처리는 브라우저에서 로컬로 이루어집니다. 문서가 외부 서버에 업로드되지 않습니다.",
+          "item2": "저희는 파일에 접근, 저장 또는 전송하지 않습니다.",
+          "item3": "브라우저 탭을 닫거나 새로고침하면 데이터는 메모리에서 영구적으로 삭제됩니다."
+        },
+        "collectedHeading": "3.2 수집하는 정보",
+        "collectedBody": "분석 목적으로 최소한의 사용 데이터(예: 사용된 도구)를 수집할 수 있습니다. PDF 파일의 내용을 수집, 저장 또는 처리하지 않습니다.",
+        "cookiesHeading": "3.3 쿠키",
+        "cookiesBody": "세션 기능을 유지하기 위해 필수 쿠키를 사용합니다. 타사 추적 또는 광고 쿠키는 사용하지 않습니다."
+      },
+      "responsibilities": {
+        "heading": "4. 사용자 책임",
+        "body": "귀하는 다음을 하지 않기로 동의합니다:",
+        "items": {
+          "item1": "서비스를 불법적인 목적으로 사용",
+          "item2": "악성 콘텐츠가 포함된 파일 업로드 또는 처리",
+          "item3": "서비스를 리버스 엔지니어링하거나 악용 시도",
+          "item4": "정상적인 인간 사용을 초과하여 서비스에 접근하기 위해 자동화 도구 사용"
+        }
+      },
+      "ip": {
+        "heading": "5. 지적 재산권",
+        "items": {
+          "item1": "{brand}: 서비스는 디자인, 코드, 브랜딩을 포함하여 {brand}의 재산이며 AGPL-3.0에 따라 라이선스가 부여됩니다.",
+          "item2": "귀하의 파일: 서비스를 통해 처리한 모든 파일의 완전한 소유권은 귀하가 보유합니다.",
+          "item3": "타사 라이브러리: 서비스는 각각의 라이선스에 따라 오픈소스 라이브러리(PDF.js, pdf-lib, PyMuPDF)를 사용합니다."
+        }
+      },
+      "disclaimer": {
+        "heading": "6. 보증의 부인",
+        "body": "서비스는 어떠한 종류의 보증도 없이 \"있는 그대로\" 제공됩니다. 다음을 보증하지 않습니다:",
+        "items": {
+          "item1": "서비스가 중단 없이 오류 없이 제공될 것",
+          "item2": "서비스 사용 결과가 정확하거나 신뢰할 수 있을 것",
+          "item3": "서비스를 통해 얻은 제품이나 서비스의 품질이 기대에 부합할 것"
+        }
+      },
+      "liability": {
+        "heading": "7. 책임의 제한",
+        "body": "어떠한 경우에도 {brand}은 서비스 사용과 관련하여 발생하는 간접적, 부수적, 특별 또는 결과적 손해에 대해 책임을 지지 않습니다."
+      },
+      "changes": {
+        "heading": "8. 서비스 변경",
+        "body": "저희는 다음 권리를 보유합니다:",
+        "items": {
+          "item1": "언제든지 서비스의 일부를 수정하거나 중단",
+          "item2": "언제든지 본 약관을 업데이트. 계속 사용하면 변경에 동의한 것으로 간주됩니다."
+        }
+      },
+      "beta": {
+        "heading": "9. 베타 기능",
+        "body": "일부 기능(예: 워크플로 편집기)은 \"베타\" 또는 \"초기 개발\"로 표시될 수 있습니다. 이러한 기능은 불안정할 수 있으며, 사용으로 인해 발생하는 문제에 대해 저희는 책임을 지지 않습니다."
+      },
+      "governingLaw": {
+        "heading": "10. 준거법",
+        "body": "본 약관은 법률 충돌 조항에 관계없이 해당 법률에 따라 규율되고 해석됩니다."
+      },
+      "contact": {
+        "heading": "11. 문의",
+        "body": "본 약관에 대한 질문은 {contactLink} 또는 support@pdfkoi.com 이메일을 통해 문의해 주세요.",
+        "contactLink": "문의 페이지"
+      }
+    }
+  },
+  "cookiesPage": {
+    "metaTitle": "쿠키 정책",
+    "heroTitle": "쿠키 정책",
+    "heroSubtitle": "이 페이지는 {brand}이 필수 사이트 기능을 지원하기 위해 쿠키와 브라우저 저장소를 어떻게 사용하는지 설명합니다.",
+    "highlights": {
+      "minimal": {
+        "title": "최소한의 사용",
+        "description": "사이트 작동과 기본 설정 기억에 필요한 저장소만 사용하는 것을 목표로 합니다."
+      },
+      "noTracking": {
+        "title": "광고 추적 없음",
+        "description": "본 정책은 PDF 콘텐츠에 대한 광고 쿠키나 교차 사이트 추적을 허용하지 않습니다."
+      },
+      "onDevice": {
+        "title": "기기에 저장",
+        "description": "환경설정 데이터는 일반적으로 파일과 함께 업로드되지 않고 브라우저에 저장됩니다."
+      },
+      "privacyFirst": {
+        "title": "개인정보 우선 설계",
+        "description": "PDF 처리가 브라우저에서 이루어지므로 서버 측 식별자의 필요성이 줄어듭니다."
+      }
+    },
+    "lastUpdated": "최종 업데이트: 2026년 3월 28일",
+    "table": {
+      "item": "항목",
+      "purpose": "목적",
+      "technology": "기술",
+      "duration": "기간",
+      "rows": {
+        "language": {
+          "name": "언어 기본 설정",
+          "purpose": "선택한 언어를 기억하여 사이트가 원하는 로케일로 열리게 합니다.",
+          "storage": "로컬 저장소",
+          "duration": "브라우저 데이터를 지울 때까지"
+        },
+        "recent": {
+          "name": "최근 파일 및 저장된 작업",
+          "purpose": "편의를 위해 최근 활동과 진행 중 항목을 기기에 보관합니다.",
+          "storage": "로컬 저장소",
+          "duration": "브라우저 데이터를 지울 때까지"
+        },
+        "state": {
+          "name": "필수 사이트 상태",
+          "purpose": "도구 상태, 대화 상자, 사용자 환경설정과 같은 핵심 인터페이스 동작을 지원합니다.",
+          "storage": "세션 저장소 또는 로컬 저장소",
+          "duration": "세션 중 또는 브라우저 데이터를 지울 때까지"
+        }
+      }
+    },
+    "sections": {
+      "covers": {
+        "heading": "1. 본 정책이 다루는 범위",
+        "p1": "본 쿠키 정책은 사이트를 방문하거나 PDF 도구를 사용할 때 {brand}이 쿠키, 로컬 저장소, 세션 저장소 및 유사한 브라우저 기술을 어떻게 사용하는지 설명합니다.",
+        "p2": "당사 제품은 브라우저에서 파일을 처리하도록 설계되었으므로, 저장소 사용을 필수 기능, 환경설정, 제품 사용성에 한정하려고 노력합니다."
+      },
+      "means": {
+        "heading": "2. 쿠키 및 유사 기술의 의미",
+        "p1": "쿠키는 브라우저에 배치되는 작은 텍스트 파일입니다. 유사 기술에는 로컬 저장소, 세션 저장소, 브라우저가 관리하는 환경설정 데이터가 포함됩니다. 실제로 일부 사이트 기능은 기존 쿠키 대신 브라우저 저장소에 의존할 수 있습니다.",
+        "p2": "명확성을 위해 본 정책은 별도로 명시되지 않는 한 이러한 모든 기술을 통틀어 \"쿠키 및 브라우저 저장소\"라는 표현을 사용합니다."
+      },
+      "uses": {
+        "heading": "3. {brand}이 쿠키와 브라우저 저장소를 사용하는 방법"
+      },
+      "categories": {
+        "heading": "4. 사용 범주",
+        "essential": {
+          "heading": "필수 기능",
+          "body": "이러한 항목은 사이트가 안정적으로 작동하고, 인터페이스 상태를 일관되게 유지하며, 사용자가 브라우저 기반 도구에서 합리적으로 기대하는 기능을 지원하는 데 도움이 됩니다."
+        },
+        "preference": {
+          "heading": "환경설정 저장소",
+          "body": "환경설정 저장소는 언어 선택과 같은 설정을 기억하여 매번 사이트를 다시 구성할 필요가 없게 합니다."
+        },
+        "local": {
+          "heading": "로컬 생산성 기능",
+          "body": "일부 도구는 새로고침 후나 중단된 세션 후의 사용성을 개선하기 위해 최근 작업이나 진행 중 정보를 기기에 보존할 수 있습니다."
+        }
+      },
+      "notUsed": {
+        "heading": "5. 이러한 기술을 사용하지 않는 목적",
+        "items": {
+          "item1": "PDF 파일의 내용을 업로드하거나 검사하기 위해 쿠키를 사용하지 않습니다.",
+          "item2": "문서 활동에서 행동 광고 프로필을 구축하기 위해 광고 쿠키를 사용하지 않습니다.",
+          "item3": "파일을 타사 PDF 처리 서비스로 옮기기 위해 쿠키에 의존하지 않습니다.",
+          "item4": "귀하가 실행하도록 선택한 도구 외부에서 문서를 읽기 위해 브라우저 저장소를 사용할 권리를 주장하지 않습니다."
+        }
+      },
+      "thirdParty": {
+        "heading": "6. 타사 서비스",
+        "p1": "사이트가 GitHub나 X와 같은 서비스로 연결되는 경우, 해당 플랫폼은 방문 시 자체 쿠키를 설정할 수 있습니다. 해당 쿠키 동작은 이 페이지가 아니라 각 플랫폼의 정책에 따라 규율됩니다.",
+        "p2": "본 정책은 {brand} 사이트 경험 자체에 사용되는 쿠키와 브라우저 저장소를 다룹니다."
+      },
+      "control": {
+        "heading": "7. 쿠키와 로컬 저장소를 제어하거나 삭제하는 방법",
+        "p1": "브라우저 설정을 통해 쿠키와 브라우저 저장소를 제어할 수 있습니다.",
+        "items": {
+          "item1": "브라우저 개인정보 설정에서 기존 쿠키와 사이트 저장소를 삭제합니다.",
+          "item2": "브라우저가 해당 옵션을 제공하면 일부 또는 모든 쿠키를 차단합니다.",
+          "item3": "기억된 환경설정을 제거하려면 {brand}의 로컬 저장소나 사이트 데이터를 지웁니다."
+        },
+        "p2": "모든 쿠키나 사이트 저장소를 비활성화하면 저장된 환경설정과 편의 기능을 포함하여 사이트 기능에 영향을 줄 수 있습니다."
+      },
+      "changes": {
+        "heading": "8. 본 쿠키 정책의 변경",
+        "body": "사이트 기능, 법적 요구 사항 또는 제품 설계의 변경을 반영하기 위해 본 정책을 수시로 업데이트할 수 있습니다. 업데이트 시 본 페이지 상단의 날짜를 갱신합니다."
+      },
+      "contact": {
+        "heading": "9. 문의",
+        "body": "본 정책에 대해 질문이 있으시면 사이트 푸터에 링크된 문의 페이지를 이용해 주세요."
+      }
+    },
+    "summary": {
+      "heading": "실용적인 요약",
+      "body": "{brand}은 대부분의 작업을 브라우저에서 수행하도록 구축되었습니다. 즉, 사이트는 일반적으로 침습적인 추적 인프라가 아니라 환경설정과 사용성을 위한 제한된 저장소만 필요로 합니다.",
+      "note": "저장된 환경설정을 지우려면 언제든지 브라우저의 사이트 설정을 검토하세요."
     }
   }
 }

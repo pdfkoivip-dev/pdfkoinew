@@ -13,12 +13,12 @@
       }
     },
     "tools": {
-      "title": "Ferramentas de PDF gr?tis, privadas e no navegador | PDFkoi",
-      "description": "Ferramentas de PDF gr?tis, privadas e no navegador para converter, mesclar, dividir e compactar PDFs online. Sem cadastro."
+      "title": "Ferramentas de PDF grátis, privadas e no navegador | PDFkoi",
+      "description": "Ferramentas de PDF grátis, privadas e no navegador para converter, mesclar, dividir e compactar PDFs online. Sem cadastro."
     },
     "about": {
       "title": "Sobre Nós",
-      "description": "Conhe?a o PDFkoi e nossas ferramentas de PDF gr?tis, privadas e no navegador. Todo o processamento acontece no seu navegador."
+      "description": "Conheça o PDFkoi e nossas ferramentas de PDF grátis, privadas e no navegador. Todo o processamento acontece no seu navegador."
     },
     "faq": {
       "title": "Perguntas Frequentes",
@@ -52,14 +52,17 @@
   },
   "common": {
     "brand": "PDFkoi",
-    "tagline": "Ferramentas de PDF gr?tis, privadas e no navegador",
+    "tagline": "Ferramentas de PDF grátis, privadas e no navegador",
     "navigation": {
       "home": "Início",
       "tools": "Ferramentas",
       "about": "Sobre",
       "faq": "Perguntas Frequentes",
       "privacy": "Privacidade",
-      "contact": "Contato"
+      "contact": "Contato",
+      "terms": "Termos",
+      "cookies": "Cookies",
+      "workflow": "Fluxo de trabalho"
     },
     "buttons": {
       "upload": "Enviar Arquivos",
@@ -101,7 +104,129 @@
       "featuredSectionDescription": "Estes sao bons pontos de partida quando voce ja sabe o que precisa fazer.",
       "featuredLabel": "Ideal para {tool}",
       "featuredReason": "Abra esta ferramenta quando {tool} for a sua tarefa principal.",
-      "openTool": "Abrir {tool}"
+      "openTool": "Abrir {tool}",
+      "categories": {
+        "editAnnotate": {
+          "useCasesSectionTitle": "Casos de uso comuns",
+          "useCasesSectionItems": {
+            "item1": "Revisar e aprovar contratos com comentários e assinaturas",
+            "item2": "Preencher formulários de inscrição, documentos fiscais ou registros",
+            "item3": "Adicionar marcas d’água para proteger propriedade intelectual ou marcar o status",
+            "item4": "Anotar artigos de pesquisa, petições legais ou especificações técnicas para colaboração",
+            "item5": "Adicionar números de página e cabeçalhos para finalizar a formatação antes da distribuição"
+          },
+          "precautionsSectionTitle": "Notas importantes",
+          "precautionsSectionItems": {
+            "item1": "Toda a edição acontece no seu navegador: os arquivos nunca são enviados a nenhum servidor",
+            "item2": "Salve com frequência ao fazer várias edições para não perder alterações",
+            "item3": "Assinaturas digitais adicionadas aqui são apenas visuais: para assinaturas juridicamente vinculantes, use ferramentas certificadas",
+            "item4": "Alguns recursos de PDF, como validação de campos ou ações JavaScript, podem não ser preservados após a edição",
+            "item5": "Para melhores resultados, trabalhe com PDFs sem proteção por senha ou restrições de edição"
+          },
+          "metadataTitle": "Ferramentas de edição e anotação de PDF",
+          "metadataDescription": "Explore ferramentas para anotar, preencher, assinar e refinar documentos PDF. Use este hub para escolher o fluxo de edição certo."
+        },
+        "convertToPdf": {
+          "useCasesSectionTitle": "Casos de uso comuns",
+          "useCasesSectionItems": {
+            "item1": "Converter documentos do Word em PDF para distribuição profissional e formatação consistente",
+            "item2": "Criar portfólios PDF a partir de várias imagens para apresentações ou álbuns",
+            "item3": "Converter relatórios do Excel em PDF para compartilhar dados financeiros",
+            "item4": "Transformar apresentações do PowerPoint em apostilas PDF para reuniões ou treinamentos",
+            "item5": "Converter arquivos de texto e e-books em PDF para leitura e arquivamento fáceis"
+          },
+          "precautionsSectionTitle": "Notas importantes",
+          "precautionsSectionItems": {
+            "item1": "Todas as conversões acontecem localmente no seu navegador: nenhum arquivo é enviado a servidores",
+            "item2": "Formatações complexas nos documentos de origem podem exigir ajustes manuais após a conversão",
+            "item3": "A qualidade da imagem no PDF de saída depende da qualidade dos seus arquivos de origem",
+            "item4": "Arquivos grandes ou conversões em lote podem demorar mais, dependendo do desempenho do dispositivo",
+            "item5": "Alguns recursos avançados, como macros, animações ou mídia incorporada, podem não ser transferidos para o PDF"
+          },
+          "metadataTitle": "Converter arquivos em PDF",
+          "metadataDescription": "Explore ferramentas para converter imagens, arquivos do Office, e-books e outros formatos em PDF. Escolha o caminho de conversão certo."
+        },
+        "convertFromPdf": {
+          "useCasesSectionTitle": "Casos de uso comuns",
+          "useCasesSectionItems": {
+            "item1": "Converter contratos PDF em Word para editar termos e cláusulas",
+            "item2": "Extrair páginas PDF como imagens para apresentações ou conteúdo web",
+            "item3": "Converter tabelas PDF em Excel para análise de dados e relatórios",
+            "item4": "Exportar documentos PDF para PowerPoint para criar apresentações de slides",
+            "item5": "Converter PDFs digitalizados em arquivos de texto para reutilizar e editar o conteúdo"
+          },
+          "precautionsSectionTitle": "Notas importantes",
+          "precautionsSectionItems": {
+            "item1": "Todas as conversões são processadas localmente no seu navegador: os arquivos nunca saem do seu dispositivo",
+            "item2": "A precisão depende da estrutura do PDF: PDFs digitalizados podem exigir OCR",
+            "item3": "Layouts complexos com várias colunas ou gráficos podem exigir ajustes manuais de formatação",
+            "item4": "PDFs protegidos por senha ou restritos devem ser desbloqueados antes da conversão",
+            "item5": "A qualidade da imagem nos arquivos exportados depende da resolução do PDF original"
+          },
+          "metadataTitle": "Converter PDF para outros formatos",
+          "metadataDescription": "Explore ferramentas para transformar PDFs em documentos editáveis, imagens e formatos de dados. Escolha o fluxo de exportação certo."
+        },
+        "organizeManage": {
+          "useCasesSectionTitle": "Casos de uso comuns",
+          "useCasesSectionItems": {
+            "item1": "Combinar várias seções ou anexos de contrato em um único documento completo",
+            "item2": "Dividir relatórios grandes em capítulos individuais para facilitar a distribuição",
+            "item3": "Reordenar slides de apresentação ou remover páginas duplicadas de documentos digitalizados",
+            "item4": "Extrair páginas específicas de manuais longos ou materiais de referência",
+            "item5": "Combinar faturas, recibos ou extratos em arquivos mensais organizados"
+          },
+          "precautionsSectionTitle": "Notas importantes",
+          "precautionsSectionItems": {
+            "item1": "Todas as operações são realizadas localmente no seu navegador: nenhum arquivo é enviado",
+            "item2": "Ao mesclar PDFs, verifique se os arquivos estão na ordem correta antes do processamento",
+            "item3": "Dividir ou extrair páginas cria novos arquivos: os originais permanecem inalterados",
+            "item4": "Marcadores e sumário podem precisar ser recriados após reorganizar as páginas",
+            "item5": "Com arquivos grandes, feche abas desnecessárias do navegador para liberar memória"
+          },
+          "metadataTitle": "Ferramentas de organização de PDF",
+          "metadataDescription": "Encontre ferramentas para organizar páginas, combinar documentos, dividir arquivos e reestruturar PDFs. Escolha a tarefa certa."
+        },
+        "optimizeRepair": {
+          "useCasesSectionTitle": "Casos de uso comuns",
+          "useCasesSectionItems": {
+            "item1": "Compactar PDFs grandes para atender aos limites de tamanho de anexos de e-mail",
+            "item2": "Reparar PDFs corrompidos que não abrem ou não são exibidos corretamente",
+            "item3": "Converter PDFs para o formato PDF/A para arquivamento legal e conformidade",
+            "item4": "Remover metadados e informações ocultas antes de compartilhar documentos confidenciais",
+            "item5": "Otimizar documentos digitalizados para reduzir espaço mantendo a legibilidade"
+          },
+          "precautionsSectionTitle": "Notas importantes",
+          "precautionsSectionItems": {
+            "item1": "Todo o processamento acontece no seu navegador: os arquivos nunca são enviados a servidores externos",
+            "item2": "A compactação pode reduzir a qualidade da imagem: visualize antes de substituir o original",
+            "item3": "As ferramentas de reparo corrigem muitos problemas, mas não recuperam arquivos muito danificados",
+            "item4": "A conversão para PDF/A remove elementos interativos como formulários, JavaScript e multimídia",
+            "item5": "Sempre faça backup de documentos importantes antes de otimizar ou reparar"
+          },
+          "metadataTitle": "Ferramentas de otimização e reparo de PDF",
+          "metadataDescription": "Explore ferramentas para compactar, reparar, limpar e melhorar PDFs. Escolha o fluxo de manutenção certo."
+        },
+        "securePdf": {
+          "useCasesSectionTitle": "Casos de uso comuns",
+          "useCasesSectionItems": {
+            "item1": "Proteger com senha contratos confidenciais, relatórios financeiros ou documentos pessoais",
+            "item2": "Desbloquear PDFs que você possui, mas não consegue editar devido a senhas esquecidas ou restrições",
+            "item3": "Sanear documentos para remover autor, comentários e histórico antes da publicação",
+            "item4": "Definir permissões para impedir cópia, impressão ou edição não autorizadas de conteúdo proprietário",
+            "item5": "Remover a segurança de arquivos antigos para permitir a integração com fluxos modernos"
+          },
+          "precautionsSectionTitle": "Notas importantes",
+          "precautionsSectionItems": {
+            "item1": "Todas as operações de segurança são locais: senhas e arquivos nunca saem do seu navegador",
+            "item2": "Senhas fortes são essenciais: use uma combinação de letras, números e símbolos",
+            "item3": "Desbloquear PDFs exige a senha correta: essas ferramentas não conseguem decifrar senhas desconhecidas",
+            "item4": "A sanitização remove metadados permanentemente: mantenha os originais se precisar preservar o histórico",
+            "item5": "A proteção por senha não é criptografia: para dados muito sensíveis, considere medidas adicionais"
+          },
+          "metadataTitle": "Ferramentas de segurança e proteção de PDF",
+          "metadataDescription": "Explore ferramentas para proteger, desbloquear, higienizar e gerenciar permissões de PDF. Escolha a tarefa de segurança certa."
+        }
+      }
     },
     "status": {
       "idle": "Pronto",
@@ -115,7 +240,18 @@
       "copyright": "© {year} PDFkoi. Todos os direitos reservados.",
       "privacyBadge": "100% Privado - Os arquivos nunca saem do seu dispositivo",
       "footer": "© 2025 PDFkoi. All rights reserved.",
-      "madeWith": "Made with <Heart /> and <Nextjs />"
+      "madeWith": "Made with <Heart /> and <Nextjs />",
+      "resources": "Recursos",
+      "security": "Segurança",
+      "securityClientSide": "Processamento local",
+      "securityClientSideDesc": "Os arquivos nunca saem do seu dispositivo",
+      "securityNoUploads": "Sem envio de arquivos",
+      "securityNoUploadsDesc": "100% privado e seguro",
+      "securityGdpr": "Em conformidade com o RGPD",
+      "securityGdprDesc": "100% privado — os arquivos nunca saem do seu dispositivo",
+      "terms": "Termos",
+      "privacy": "Privacidade",
+      "cookies": "Cookies"
     },
     "recentFiles": {
       "title": "Arquivos Recentes",
@@ -167,106 +303,9 @@
       "hint": "Enter para selecionar, ↑↓ para navegar",
       "noResults": "Nenhuma ferramenta encontrada"
     },
-    "faqPage": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Find answers to common questions about {brand}",
-      "searchPlaceholder": "Search FAQs...",
-      "noResults": "No FAQs found matching your search.",
-      "expandAll": "Expand All",
-      "collapseAll": "Collapse All",
-      "categories": {
-        "all": "All",
-        "general": "General",
-        "privacy": "Privacy & Security",
-        "features": "Features",
-        "technical": "Technical",
-        "languages": "Languages"
-      },
-      "sections": {
-        "general": {
-          "whatIs": {
-            "question": "What is PDFkoi?",
-            "answer": "PDFkoi ? um kit de ferramentas de PDF gr?tis, privado e no navegador, que funciona totalmente no seu navegador. Ele oferece mais de 95 ferramentas de PDF para editar, converter, mesclar, dividir e proteger arquivos PDF sem envi?-los para nenhum servidor."
-          },
-          "isFree": {
-            "question": "Is PDFkoi really free?",
-            "answer": "Yes, PDFkoi is completely free to use. There are no hidden costs, no premium tiers, and no registration required. All features are available to everyone."
-          },
-          "account": {
-            "question": "Do I need to create an account?",
-            "answer": "No, you don't need to create an account or register to use PDFkoi. Simply visit the website and start using any tool immediately."
-          }
-        },
-        "privacy": {
-          "uploaded": {
-            "question": "Are my files uploaded to a server?",
-            "answer": "No, your files are never uploaded to any server. All PDF processing happens locally in your browser using JavaScript and WebAssembly. Your files never leave your device."
-          },
-          "safe": {
-            "question": "Is it safe to use PDFkoi with sensitive documents?",
-            "answer": "Yes, PDFkoi is designed with privacy in mind. Since all processing happens locally in your browser, your sensitive documents remain on your device and are never transmitted over the internet."
-          },
-          "storage": {
-            "question": "What happens to my files after processing?",
-            "answer": "Your files are stored temporarily in your browser's memory during processing. Once you close the browser tab or navigate away, all file data is automatically cleared. We don't store any of your files."
-          }
-        },
-        "features": {
-          "operations": {
-            "question": "What PDF operations can I perform?",
-            "answer": "PDFkoi oferece mais de 95 ferramentas, incluindo: mesclar, dividir, compactar, converter (de/para imagens, texto e JSON), editar, anotar, assinar, adicionar marcas d'?gua, criptografar/descriptografar, OCR e muito mais."
-          },
-          "merge": {
-            "question": "Can I merge multiple PDF files?",
-            "answer": "Yes, you can merge multiple PDF files into one. Simply use the Merge PDF tool, upload your files, arrange them in the desired order, and click merge."
-          },
-          "images": {
-            "question": "Can I convert images to PDF?",
-            "answer": "Yes, PDFkoi supports converting various image formats (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) to PDF. You can convert single or multiple images at once."
-          },
-          "edit": {
-            "question": "Can I edit text in a PDF?",
-            "answer": "PDFkoi provides annotation and editing tools including highlighting, adding text, shapes, images, and signatures. For full text editing, the PDF Editor tool offers comprehensive annotation capabilities."
-          }
-        },
-        "technical": {
-          "browsers": {
-            "question": "What browsers are supported?",
-            "answer": "PDFkoi works on all modern browsers including Chrome, Firefox, Safari, and Edge. We recommend using the latest version of your browser for the best experience."
-          },
-          "sizeLimit": {
-            "question": "Is there a file size limit?",
-            "answer": "Most tools support files up to 100MB, with some tools like merge and compress supporting up to 500MB. These limits are in place to ensure smooth performance in your browser."
-          },
-          "slow": {
-            "question": "Why is processing slow for large files?",
-            "answer": "Since all processing happens in your browser, performance depends on your device's capabilities. Large files require more memory and processing power. For best results, close other browser tabs and applications."
-          },
-          "offline": {
-            "question": "Does PDFkoi work offline?",
-            "answer": "Currently, PDFkoi requires an internet connection to load the application. However, once loaded, the PDF processing itself happens locally and doesn't require a connection."
-          }
-        },
-        "languages": {
-          "supported": {
-            "question": "What languages are supported?",
-            "answer": "PDFkoi is available in 9 languages: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
-          },
-          "change": {
-            "question": "How do I change the language?",
-            "answer": "You can change the language using the language selector in the header. Your preference will be saved for future visits."
-          }
-        }
-      },
-      "cta": {
-        "title": "Still have questions?",
-        "description": "Can't find the answer you're looking for? Feel free to reach out to us.",
-        "button": "Contact Us"
-      }
-    },
     "aboutPage": {
       "title": "About {brand}",
-      "description": "{brand} oferece ferramentas de PDF gr?tis, privadas e no navegador. Com {count}+ ferramentas, voc? pode editar, converter, mesclar, dividir e proteger arquivos PDF sem envi?-los para um servidor.",
+      "description": "{brand} oferece ferramentas de PDF grátis, privadas e no navegador. Com {count}+ ferramentas, você pode editar, converter, mesclar, dividir e proteger arquivos PDF sem enviá-los para um servidor.",
       "mission": {
         "title": "Our Mission",
         "p1": "We believe that everyone should have access to powerful PDF tools without compromising their privacy or paying expensive subscription fees. That's why we created {brand} – a comprehensive PDF toolkit that puts your privacy first.",
@@ -318,96 +357,50 @@
         "button": "Browse All Tools"
       }
     },
-    "contactPage": {
-      "hero": {
-        "title": "Contacte-nos",
-        "description": "Tem alguma dúvida, sugestão ou encontrou um erro? Gostaríamos de ouvir de você."
-      },
-      "methods": {
-        "email": {
-          "title": "Email",
-          "description": "Envie-nos um email e responderemos dentro de 24-48 horas.",
-          "action": "support@pdfkoi.com"
-        },
-        "github": {
-          "title": "GitHub",
-          "description": "Reportar erros, solicitar recursos ou contribuir para o projeto.",
-          "action": "Ver no GitHub"
-        },
-        "twitter": {
-          "title": "Twitter",
-          "description": "Siga-nos para atualizações e anúncios.",
-          "action": "@PDFkoi"
-        }
-      },
-      "form": {
-        "title": "Envie-nos uma mensagem",
-        "description": "Preencha o formulário abaixo e entraremos em contato o mais breve possível.",
-        "success": {
-          "title": "Mensagem Enviada!",
-          "description": "Obrigado por nos contactar. Responderemos dentro de 24-48 horas.",
-          "button": "Enviar outra mensagem"
-        },
-        "fields": {
-          "name": {
-            "label": "Nome",
-            "placeholder": "Seu nome"
-          },
-          "email": {
-            "label": "Email",
-            "placeholder": "seu@email.com"
-          },
-          "subject": {
-            "label": "Assunto",
-            "placeholder": "Selecione um assunto",
-            "options": {
-              "general": "Consulta Geral",
-              "bug": "Relatório de Erro",
-              "feature": "Solicitação de Recurso",
-              "feedback": "Feedback",
-              "other": "Outro"
-            }
-          },
-          "message": {
-            "label": "Mensagem",
-            "placeholder": "Conte-nos mais sobre sua consulta..."
-          }
-        },
-        "error": "Algo deu errado. Por favor, tente novamente ou contacte-nos diretamente por email.",
-        "submit": {
-          "loading": "Enviando...",
-          "default": "Enviar Mensagem"
-        }
-      },
-      "faq": {
-        "title": "Procurando respostas rápidas?",
-        "description": "Confira nossa página de perguntas frequentes para respostas sobre {brand}.",
-        "button": "Ver FAQ"
-      }
-    },
     "accessibility": {
-      "skipToContent": "Skip to main content",
-      "skipToNavigation": "Skip to navigation",
-      "loading": "Loading, please wait",
-      "menuExpanded": "Menu expanded",
-      "menuCollapsed": "Menu collapsed",
-      "newWindow": "Opens in new window",
-      "externalLink": "External link",
-      "required": "Required field",
-      "optional": "Optional",
-      "selected": "Selected",
-      "notSelected": "Not selected",
-      "pageOf": "Page {current} of {total}",
-      "sortAscending": "Sort ascending",
-      "sortDescending": "Sort descending",
-      "closeDialog": "Close dialog",
-      "expandSection": "Expand section",
-      "collapseSection": "Collapse section"
+      "skipToContent": "Ir para o conteúdo principal",
+      "skipToNavigation": "Ir para a navegação",
+      "loading": "Carregando, aguarde",
+      "menuExpanded": "Menu expandido",
+      "menuCollapsed": "Menu recolhido",
+      "newWindow": "Abre em uma nova janela",
+      "externalLink": "Link externo",
+      "required": "Campo obrigatório",
+      "optional": "Opcional",
+      "selected": "Selecionado",
+      "notSelected": "Não selecionado",
+      "pageOf": "Página {current} de {total}",
+      "sortAscending": "Classificar em ordem crescente",
+      "sortDescending": "Classificar em ordem decrescente",
+      "closeDialog": "Fechar caixa de diálogo",
+      "expandSection": "Expandir seção",
+      "collapseSection": "Recolher seção"
     },
     "options": {
-      "auto": "Auto",
-      "portrait": "Portrait",
-      "landscape": "Landscape"
+      "auto": "Automático",
+      "portrait": "Retrato",
+      "landscape": "Paisagem"
+    },
+    "cookieConsent": {
+      "title": "Configurações de cookies",
+      "message": "Utilizamos cookies para fornecer a funcionalidade essencial do site, lembrar suas preferências e exibir anúncios relevantes por meio do Google AdSense. Seus arquivos PDF nunca são compartilhados com anunciantes — todo o processamento ocorre localmente no seu navegador.",
+      "showDetails": "Mostrar detalhes dos cookies",
+      "hideDetails": "Ocultar detalhes",
+      "essentialTitle": "Cookies essenciais",
+      "alwaysActive": "Sempre ativos",
+      "essentialDesc": "Necessários para o funcionamento adequado do site. Não podem ser desativados.",
+      "functionalTitle": "Cookies funcionais",
+      "optional": "Opcional",
+      "functionalDesc": "Lembram sua preferência de idioma e outras configurações para melhorar sua experiência.",
+      "advertisingTitle": "Cookies de publicidade",
+      "advertisingDesc": "Usados pelo Google AdSense e parceiros para exibir anúncios relevantes. Você pode desativá-los a qualquer momento em",
+      "googleAdsSettings": "Configurações de anúncios do Google",
+      "acceptAll": "Aceitar todos os cookies",
+      "acceptEssentialOnly": "Aceitar somente os essenciais",
+      "learnMore": "Saiba mais em nossa",
+      "and": "e",
+      "privacyPolicy": "Política de privacidade",
+      "cookiePolicy": "Política de cookies"
     }
   },
   "errors": {
@@ -520,6 +513,11 @@
           "id": "Documentos de identificação antes do envio"
         }
       }
+    },
+    "categoryBrowse": {
+      "title": "Navegar por ferramentas por categoria",
+      "description": "Encontre a ferramenta perfeita para sua tarefa em nossa coleção organizada.",
+      "viewAll": "Ver todas"
     }
   },
   "workflow": {
@@ -590,7 +588,7 @@
     "library": "Biblioteca"
   },
   "toolsPage": {
-    "title": "Ferramentas de PDF gr?tis, privadas e no navegador",
+    "title": "Ferramentas de PDF grátis, privadas e no navegador",
     "subtitle": "Descubra {count}+ ferramentas de PDF para mesclar, dividir, converter e muito mais.",
     "filters": "Filters",
     "allTools": "All Tools",
@@ -601,7 +599,7 @@
     "forQuery": "for \"{query}\"",
     "inCategory": "in {category}",
     "noToolsFound": "No tools found",
-    "description": "Ferramentas de PDF gr?tis, privadas e no navegador para converter, mesclar, dividir e compactar PDFs online. Sem cadastro.",
+    "description": "Ferramentas de PDF grátis, privadas e no navegador para converter, mesclar, dividir e compactar PDFs online. Sem cadastro.",
     "categoriesIntro": "Navegue por ferramentas gratuitas de edição e conversão de PDF por categoria funcional:"
   },
   "tools": {
@@ -680,7 +678,9 @@
       "warning": "Warning",
       "warningText": "Selected pages will be permanently removed from the PDF. At least one page must remain.",
       "deleteButton": "Delete Pages",
-      "successMessage": "Pages deleted successfully! Click the download button to save your file."
+      "successMessage": "Pages deleted successfully! Click the download button to save your file.",
+      "pageRange": "Intervalo de páginas",
+      "pageRangePlaceholder": "ex.: 1, 3-5, 8"
     },
     "extractPages": {
       "uploadLabel": "Upload PDF File",
@@ -688,7 +688,9 @@
       "selectTitle": "Select Pages to Extract",
       "selectHint": "Click pages to select them, or enter page numbers/ranges above.",
       "extractButton": "Extract Pages",
-      "successMessage": "Pages extracted successfully! Click the download button to save your file."
+      "successMessage": "Pages extracted successfully! Click the download button to save your file.",
+      "pageRange": "Intervalo de páginas",
+      "pageRangePlaceholder": "ex.: 1-5, 8, 10-12"
     },
     "posterizePdf": {
       "uploadLabel": "Upload PDF File",
@@ -848,7 +850,8 @@
       "imagesPerPdf": "Imagens por PDF",
       "batchModeHint": "Serão criados {pdfCount} arquivo(s) PDF, empacotados como um arquivo ZIP.",
       "batchSuccessMessage": "Criados com sucesso {pdfCount} arquivos PDF a partir de {imageCount} imagens! Clique no botão de download para salvar seu arquivo ZIP.",
-      "successMessage": "Images converted to PDF successfully! Click the download button to save your file."
+      "successMessage": "Images converted to PDF successfully! Click the download button to save your file.",
+      "fitToImage": "Ajustar à imagem"
     },
     "compressPdf": {
       "uploadLabel": "Upload PDF Files",
@@ -873,7 +876,17 @@
       "downloadAllZip": "Download All as ZIP",
       "originalSize": "Original:",
       "compressedSize": "Compressed:",
-      "saved": "Saved:"
+      "saved": "Saved:",
+      "algorithmLabel": "Algoritmo de compressão",
+      "algorithmStandard": "Padrão",
+      "algorithmCondense": "Condensar",
+      "algorithmPhoton": "Photon",
+      "algorithmStandardDesc": "Compressão de uso geral usando fluxos de objetos",
+      "algorithmCondenseDesc": "Otimiza a estrutura preservando a interatividade",
+      "algorithmPhotonDesc": "Rasteriza páginas — ideal para PDFs com muitas imagens",
+      "photonWarning": "Nota: o Photon converte páginas em imagens, o que pode reduzir a qualidade do texto e perder interatividade (links, formulários).",
+      "photonDpiLabel": "DPI de saída",
+      "photonDpiDesc": "DPI mais alto = melhor qualidade, arquivo maior"
     },
     "signPdf": {
       "uploadLabel": "Upload PDF File",
@@ -963,7 +976,10 @@
       "downloadAll": "Baixar tudo",
       "downloadZip": "Baixar como ZIP",
       "page": "Página",
-      "successMessage": "Imagens extraídas com sucesso! Clique para baixar imagens individuais ou use \"Baixar como ZIP\"."
+      "successMessage": "Imagens extraídas com sucesso! Clique para baixar imagens individuais ou use \"Baixar como ZIP\".",
+      "optionsTitle": "Configurações",
+      "format": "Formato de saída",
+      "minSize": "Tamanho mínimo (px)"
     },
     "encryptPdf": {
       "uploadLabel": "Upload PDF File",
@@ -1060,7 +1076,7 @@
       "useMargins": "Adicionar margens e espaçamento",
       "addBorder": "Adicionar borda ao redor das páginas",
       "borderColor": "Cor da borda",
-      "previewInfo": "{pages} páginas serão organizadas em {sheets} folha(s) com {perSheet} páginas por folha.",
+      "previewInfo": "{pages} páginas serão organizadas em {sheets} folha(s).",
       "layoutDirection": "Direção do layout",
       "layoutHorizontal": "Horizontal (lado a lado)",
       "layoutVertical": "Vertical (empilhado)",
@@ -1600,7 +1616,9 @@
       "unsupportedImage": "Unsupported image format. Please use PNG or JPG.",
       "failed": "Failed to add watermark.",
       "addButton": "Add Watermark",
-      "successMessage": "Watermark added successfully!"
+      "successMessage": "Watermark added successfully!",
+      "type": "Tipo",
+      "textPlaceholder": "ex.: CONFIDENCIAL"
     },
     "headerFooter": {
       "uploadLabel": "Upload PDF File",
@@ -1611,7 +1629,13 @@
       "preview": "Preview",
       "previewHint": "Enter header or footer text to see preview",
       "addButton": "Add Header & Footer",
-      "successMessage": "Header & footer added successfully!"
+      "successMessage": "Header & footer added successfully!",
+      "headerText": "Texto do cabeçalho",
+      "headerTextPlaceholder": "Insira o texto do cabeçalho...",
+      "footerText": "Texto do rodapé",
+      "footerTextPlaceholder": "Insira o texto do rodapé...",
+      "fontSize": "Tamanho da fonte",
+      "fontColor": "Cor da fonte"
     },
     "invertColors": {
       "uploadLabel": "Upload PDF File",
@@ -1717,7 +1741,61 @@
       "fieldLabelPlaceholder": "Digite o texto do rótulo...",
       "labelPosition": "Posição",
       "labelAbove": "Acima",
-      "labelLeft": "Esquerda"
+      "labelLeft": "Esquerda",
+      "formOptions": "Opções de formulário",
+      "flattenForm": "Achatar formulário",
+      "flattenFormHint": "Torna os campos do formulário não editáveis (converte em conteúdo estático)",
+      "projectManagement": "Gerenciamento de projetos",
+      "saveProject": "Salvar projeto",
+      "savedProjects": "Projetos salvos",
+      "loadProject": "Carregar",
+      "deleteProject": "Excluir",
+      "saveProjectTitle": "Salvar projeto",
+      "projectName": "Nome do projeto",
+      "projectNamePlaceholder": "Insira o nome do projeto...",
+      "saveInfo": "{fields} campo(s) de formulário serão salvos.",
+      "saveNote": "Os projetos são salvos localmente no seu navegador.",
+      "undo": "Desfazer (Ctrl+Z)",
+      "redo": "Refazer (Ctrl+Y)",
+      "duplicate": "Duplicar (Ctrl+D)",
+      "align": "Alinhar",
+      "alignLeft": "Alinhar à esquerda",
+      "alignCenter": "Centralizar",
+      "alignRight": "Alinhar à direita",
+      "alignTop": "Alinhar ao topo",
+      "alignMiddle": "Centralizar verticalmente",
+      "alignBottom": "Alinhar embaixo",
+      "defaultValue": "Valor padrão",
+      "defaultValuePlaceholder": "Insira o texto padrão...",
+      "defaultChecked": "Marcado por padrão",
+      "defaultSelection": "Seleção padrão",
+      "noDefault": "-- Nenhum --",
+      "required": "Campo obrigatório",
+      "shortcutsHint": "Atalhos: Ctrl+Z (Desfazer) | Ctrl+Y (Refazer) | Ctrl+D (Duplicar) | Ctrl+A (Selecionar tudo) | Delete (Excluir)",
+      "buttonTool": "Botão",
+      "signatureTool": "Assinatura",
+      "dateTool": "Data",
+      "listboxTool": "Caixa de lista",
+      "buttonLabel": "Rótulo do botão",
+      "buttonLabelPlaceholder": "Enviar",
+      "signatureLabel": "Rótulo da assinatura",
+      "signatureLabelPlaceholder": "Assine aqui",
+      "dateFormat": "Formato da data",
+      "defaultDate": "Data padrão",
+      "multiSelect": "Permitir seleção múltipla",
+      "basicTools": "Básico",
+      "advancedTools": "Mais",
+      "properties": "Propriedades",
+      "fieldsTab": "Campos",
+      "optionsTab": "Opções",
+      "addField": "Adicionar",
+      "clickToAdd": "Clique no PDF para adicionar um campo",
+      "pages": "páginas",
+      "processingButton": "Processando...",
+      "cancelButton": "Cancelar",
+      "saveButton": "Salvar",
+      "orCreateBlank": "Ou",
+      "createBlankPdf": "Criar PDF em branco"
     },
     "removeBlankPages": {
       "uploadLabel": "Upload PDF File",
@@ -1739,7 +1817,8 @@
       "addBookmark": "Add TOC entry to bookmarks",
       "bookmarkRequired": "This tool generates a clickable table of contents from existing PDF bookmarks. Please ensure your PDF has bookmarks before using this tool. You can add bookmarks using the Edit Bookmarks tool.",
       "generate": "Generate Table of Contents",
-      "success": "Table of contents generated successfully!"
+      "success": "Table of contents generated successfully!",
+      "tocTitlePlaceholder": "Insira o título do sumário..."
     },
     "pdfToDocx": {
       "uploadLabel": "Upload PDF File",
@@ -1818,63 +1897,114 @@
       "uploadDescription": "Upload PDFs to straighten.",
       "optionsTitle": "Options",
       "processButton": "Deskew PDF",
-      "successMessage": "PDF deskewed!"
+      "successMessage": "PDF deskewed!",
+      "filesTitle": "Arquivos para endireitar",
+      "thresholdLabel": "Limiar de detecção",
+      "thresholdDesc": "Valores mais altos detectam ângulos de inclinação mais sutis. Padrão: 10",
+      "dpiLabel": "DPI de análise",
+      "dpiDesc": "Um DPI mais alto proporciona detecção mais precisa, mas leva mais tempo.",
+      "downloadAllZip": "Baixar tudo como ZIP"
     },
     "pdfBooklet": {
       "uploadLabel": "Upload PDF",
       "uploadDescription": "Upload PDF for booklet.",
       "optionsTitle": "Options",
       "createButton": "Create",
-      "successMessage": "Booklet created!"
+      "successMessage": "Booklet created!",
+      "gridModeLabel": "Modo de grade",
+      "gridModeDesc": "1x2 é o padrão para folhetos. Use grades maiores para economizar papel.",
+      "paperSizeLabel": "Tamanho do papel",
+      "orientationLabel": "Orientação",
+      "rotationLabel": "Rotação da página",
+      "paddingLabel": "Preenchimento",
+      "previewLabel": "Pré-visualização do layout",
+      "previewDesc": "Esta pré-visualização mostra como as páginas serão organizadas em cada folha."
     },
     "rasterizePdf": {
       "uploadLabel": "Upload PDFs",
       "uploadDescription": "Upload to rasterize.",
       "optionsTitle": "Options",
       "rasterizeButton": "Rasterize",
-      "successMessage": "Rasterized!"
+      "successMessage": "Rasterized!",
+      "dpiLabel": "Resolução (DPI)",
+      "formatLabel": "Formato de saída",
+      "qualityLabel": "Qualidade",
+      "pageRangeLabel": "Intervalo de páginas (opcional)",
+      "pageRangeDesc": "Deixe vazio para converter todas as páginas.",
+      "bgColorLabel": "Cor de fundo",
+      "convertButton": "Converter em imagens"
     },
     "markdownToPdf": {
       "uploadLabel": "Upload Markdown",
       "uploadDescription": "Upload .md file.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Converted!"
+      "successMessage": "Converted!",
+      "manualInput": "Escrever Markdown",
+      "uploadFile": "Enviar arquivo",
+      "editorLabel": "Editor de Markdown",
+      "previewLabel": "Pré-visualização",
+      "showPreview": "Mostrar pré-visualização",
+      "hidePreview": "Ocultar pré-visualização",
+      "themeLabel": "Tema",
+      "pageSizeLabel": "Tamanho da página",
+      "gfmLabel": "Habilitar Markdown com sabor do GitHub (tabelas, listas de tarefas etc.)",
+      "syntaxHighlightLabel": "Habilitar realce de sintaxe para blocos de código"
     },
     "emailToPdf": {
       "uploadLabel": "Upload Email",
       "uploadDescription": "Upload .eml file.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Converted!"
+      "successMessage": "Converted!",
+      "pageSizeLabel": "Tamanho da página",
+      "includeCcBccLabel": "Incluir campos CC/CCO",
+      "includeAttachmentsLabel": "Incluir lista de anexos",
+      "timezoneLabel": "Fuso horário"
     },
     "cbzToPdf": {
       "uploadLabel": "Upload CBZ",
       "uploadDescription": "Upload comic.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Converted!"
+      "successMessage": "Converted!",
+      "pageSizeLabel": "Tamanho da página",
+      "qualityLabel": "Qualidade da imagem",
+      "preserveAspectLabel": "Preservar proporção"
     },
     "pdfToPdfa": {
       "uploadLabel": "Upload PDF",
       "uploadDescription": "Upload for PDF/A.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "PDF/A created!"
+      "successMessage": "PDF/A created!",
+      "filesTitle": "Arquivos para converter",
+      "levelLabel": "Nível PDF/A",
+      "embedFontsLabel": "Incorporar todas as fontes",
+      "flattenTransparencyLabel": "Achatar transparência (necessário para PDF/A-1b)",
+      "downloadAllZip": "Baixar tudo como ZIP"
     },
     "fontToOutline": {
       "uploadLabel": "Upload PDFs",
       "uploadDescription": "Upload to outline fonts.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Fonts outlined!"
+      "successMessage": "Fonts outlined!",
+      "filesTitle": "Arquivos",
+      "dpiLabel": "DPI de rasterização",
+      "downloadAllZip": "Baixar tudo como ZIP"
     },
     "extractTables": {
       "uploadLabel": "Upload PDF",
       "uploadDescription": "Upload to extract tables.",
       "optionsTitle": "Options",
       "extractButton": "Extract",
-      "successMessage": "Extracted!"
+      "successMessage": "Extracted!",
+      "formatLabel": "Formato de saída",
+      "pageRangeLabel": "Intervalo de páginas (opcional)",
+      "minColumnsLabel": "Colunas mínimas",
+      "minRowsLabel": "Linhas mínimas",
+      "includePageNumbersLabel": "Incluir números de página na saída"
     },
     "ocgManager": {
       "uploadLabel": "Upload PDF",
@@ -1887,7 +2017,9 @@
     "pdfReader": {
       "uploadLabel": "Open PDF",
       "uploadDescription": "Open PDF to read."
-    }
+    },
+    "helpLink": "Ajuda",
+    "feedbackLink": "Feedback"
   },
   "aboutPage": {
     "title": "Sobre o {brand}",
@@ -1941,6 +2073,504 @@
       "title": "Pronto para Começar?",
       "description": "Explore nossas mais de {count} ferramentas e veja tudo o que o {brand} pode fazer por você.",
       "button": "Ver Todas as Ferramentas"
+    }
+  },
+  "faqPage": {
+    "title": "Perguntas frequentes",
+    "subtitle": "Encontre respostas para perguntas comuns sobre o {brand}",
+    "searchPlaceholder": "Pesquisar nas FAQs...",
+    "noResults": "Nenhuma FAQ encontrada para sua pesquisa.",
+    "expandAll": "Expandir tudo",
+    "collapseAll": "Recolher tudo",
+    "categories": {
+      "all": "Todas",
+      "general": "Geral",
+      "privacy": "Privacidade e segurança",
+      "features": "Recursos",
+      "technical": "Técnico",
+      "languages": "Idiomas"
+    },
+    "sections": {
+      "general": {
+        "whatIs": {
+          "question": "O que é o PDFkoi?",
+          "answer": "PDFkoi é um kit de ferramentas de PDF grátis, privado e no navegador, que funciona totalmente no seu navegador. Ele oferece mais de 95 ferramentas de PDF para editar, converter, mesclar, dividir e proteger arquivos PDF sem enviá-los para nenhum servidor."
+        },
+        "isFree": {
+          "question": "O PDFkoi é realmente gratuito?",
+          "answer": "Yes, PDFkoi is completely free to use. There are no hidden costs, no premium tiers, and no registration required. All features are available to everyone."
+        },
+        "account": {
+          "question": "Preciso criar uma conta?",
+          "answer": "No, you don't need to create an account or register to use PDFkoi. Simply visit the website and start using any tool immediately."
+        }
+      },
+      "privacy": {
+        "uploaded": {
+          "question": "Meus arquivos são enviados para um servidor?",
+          "answer": "No, your files are never uploaded to any server. All PDF processing happens locally in your browser using JavaScript and WebAssembly. Your files never leave your device."
+        },
+        "safe": {
+          "question": "É seguro usar o PDFkoi com documentos confidenciais?",
+          "answer": "Yes, PDFkoi is designed with privacy in mind. Since all processing happens locally in your browser, your sensitive documents remain on your device and are never transmitted over the internet."
+        },
+        "storage": {
+          "question": "O que acontece com meus arquivos após o processamento?",
+          "answer": "Your files are stored temporarily in your browser's memory during processing. Once you close the browser tab or navigate away, all file data is automatically cleared. We don't store any of your files."
+        }
+      },
+      "features": {
+        "operations": {
+          "question": "Quais operações de PDF posso realizar?",
+          "answer": "PDFkoi oferece mais de 95 ferramentas, incluindo: mesclar, dividir, compactar, converter (de/para imagens, texto e JSON), editar, anotar, assinar, adicionar marcas d'?gua, criptografar/descriptografar, OCR e muito mais."
+        },
+        "merge": {
+          "question": "Posso mesclar vários arquivos PDF?",
+          "answer": "Yes, you can merge multiple PDF files into one. Simply use the Merge PDF tool, upload your files, arrange them in the desired order, and click merge."
+        },
+        "images": {
+          "question": "Posso converter imagens em PDF?",
+          "answer": "Yes, PDFkoi supports converting various image formats (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) to PDF. You can convert single or multiple images at once."
+        },
+        "edit": {
+          "question": "Posso editar texto em um PDF?",
+          "answer": "PDFkoi provides annotation and editing tools including highlighting, adding text, shapes, images, and signatures. For full text editing, the PDF Editor tool offers comprehensive annotation capabilities."
+        }
+      },
+      "technical": {
+        "browsers": {
+          "question": "Quais navegadores são compatíveis?",
+          "answer": "PDFkoi works on all modern browsers including Chrome, Firefox, Safari, and Edge. We recommend using the latest version of your browser for the best experience."
+        },
+        "sizeLimit": {
+          "question": "Existe limite de tamanho de arquivo?",
+          "answer": "Most tools support files up to 100MB, with some tools like merge and compress supporting up to 500MB. These limits are in place to ensure smooth performance in your browser."
+        },
+        "slow": {
+          "question": "Por que o processamento é lento para arquivos grandes?",
+          "answer": "Since all processing happens in your browser, performance depends on your device's capabilities. Large files require more memory and processing power. For best results, close other browser tabs and applications."
+        },
+        "offline": {
+          "question": "O PDFkoi funciona offline?",
+          "answer": "Currently, PDFkoi requires an internet connection to load the application. However, once loaded, the PDF processing itself happens locally and doesn't require a connection."
+        }
+      },
+      "languages": {
+        "supported": {
+          "question": "Quais idiomas são compatíveis?",
+          "answer": "PDFkoi is available in 9 languages: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
+        },
+        "change": {
+          "question": "Como altero o idioma?",
+          "answer": "You can change the language using the language selector in the header. Your preference will be saved for future visits."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ainda tem dúvidas?",
+      "description": "Não encontrou a resposta que procura? Fique à vontade para nos contatar.",
+      "button": "Fale conosco"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Contacte-nos",
+      "description": "Tem alguma dúvida, sugestão ou encontrou um erro? Gostaríamos de ouvir de você."
+    },
+    "methods": {
+      "email": {
+        "title": "Email",
+        "description": "Envie-nos um email e responderemos dentro de 24-48 horas.",
+        "action": "support@pdfkoi.com"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Reportar erros, solicitar recursos ou contribuir para o projeto.",
+        "action": "Ver no GitHub"
+      },
+      "twitter": {
+        "title": "Twitter",
+        "description": "Siga-nos para atualizações e anúncios.",
+        "action": "@PDFkoi"
+      }
+    },
+    "form": {
+      "title": "Envie-nos uma mensagem",
+      "description": "Preencha o formulário abaixo e entraremos em contato o mais breve possível.",
+      "success": {
+        "title": "Mensagem Enviada!",
+        "description": "Obrigado por nos contactar. Responderemos dentro de 24-48 horas.",
+        "button": "Enviar outra mensagem"
+      },
+      "fields": {
+        "name": {
+          "label": "Nome",
+          "placeholder": "Seu nome"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "seu@email.com"
+        },
+        "subject": {
+          "label": "Assunto",
+          "placeholder": "Selecione um assunto",
+          "options": {
+            "general": "Consulta Geral",
+            "bug": "Relatório de Erro",
+            "feature": "Solicitação de Recurso",
+            "feedback": "Feedback",
+            "other": "Outro"
+          }
+        },
+        "message": {
+          "label": "Mensagem",
+          "placeholder": "Conte-nos mais sobre sua consulta..."
+        }
+      },
+      "error": "Algo deu errado. Por favor, tente novamente ou contacte-nos diretamente por email.",
+      "submit": {
+        "loading": "Enviando...",
+        "default": "Enviar Mensagem"
+      }
+    },
+    "faq": {
+      "title": "Procurando respostas rápidas?",
+      "description": "Confira nossa página de perguntas frequentes para respostas sobre {brand}.",
+      "button": "Ver FAQ"
+    }
+  },
+  "privacyPage": {
+    "metaTitle": "Política de Privacidade",
+    "heroTitle": "Política de Privacidade",
+    "heroSubtitle": "Sua privacidade é nossa principal prioridade. O {brand} foi projetado desde o início para proteger seus dados.",
+    "highlights": {
+      "noUpload": {
+        "title": "Sem upload para servidores",
+        "description": "Seus arquivos nunca são enviados a nenhum servidor. Todo o processamento ocorre localmente no seu navegador."
+      },
+      "localProcessing": {
+        "title": "Processamento local",
+        "description": "As operações de PDF são realizadas com JavaScript e WebAssembly diretamente no seu dispositivo."
+      },
+      "cleanup": {
+        "title": "Limpeza automática",
+        "description": "Todos os dados dos arquivos são apagados automaticamente quando você fecha a aba do navegador ou sai da página."
+      },
+      "noTracking": {
+        "title": "Sem rastreamento",
+        "description": "Não rastreamos o conteúdo dos seus arquivos nem suas informações pessoais. Seus documentos permanecem privados."
+      }
+    },
+    "lastUpdated": "Última atualização: julho de 2026",
+    "badgeTitle": "Seus documentos são processados com segurança no seu navegador",
+    "sections": {
+      "intro": {
+        "heading": "1. Introdução",
+        "body": "O {brand} (\"nós\") está comprometido em proteger sua privacidade. Esta Política de Privacidade explica como tratamos suas informações quando você usa nossas ferramentas de PDF."
+      },
+      "howItWorks": {
+        "heading": "2. Como nosso serviço funciona",
+        "body": "O {brand} é uma aplicação do lado do cliente. Isso significa:",
+        "items": {
+          "item1": "Todo o processamento de PDF ocorre diretamente no seu navegador",
+          "item2": "Seus arquivos nunca são enviados aos nossos servidores nem a servidores de terceiros",
+          "item3": "Não podemos ver, acessar ou armazenar seus documentos",
+          "item4": "Seus arquivos permanecem no seu dispositivo o tempo todo"
+        }
+      },
+      "infoCollected": {
+        "heading": "3. Informações que coletamos",
+        "filesHeading": "3.1 Seus arquivos",
+        "filesBody": "Não coletamos seus arquivos. Ao usar nossas ferramentas de PDF, seus arquivos são processados inteiramente no seu navegador. Eles nunca são transmitidos aos nossos servidores.",
+        "usageHeading": "3.2 Dados de uso",
+        "usageBody": "Podemos coletar estatísticas de uso anônimas para melhorar nosso serviço, como:",
+        "usageItems": {
+          "item1": "Quais ferramentas são mais populares",
+          "item2": "Região geográfica geral (nível de país)",
+          "item3": "Tipo e versão do navegador",
+          "item4": "Tipo de dispositivo (desktop, celular, tablet)"
+        },
+        "usageFooter": "Esses dados são agregados e anonimizados. Eles não podem ser usados para identificá-lo pessoalmente."
+      },
+      "localStorage": {
+        "heading": "4. Armazenamento local",
+        "body": "O {brand} pode usar o armazenamento local do seu navegador para:",
+        "items": {
+          "item1": "Lembrar sua preferência de idioma",
+          "item2": "Armazenar seu histórico recente de ferramentas",
+          "item3": "Salvar trabalhos em andamento de sessões interrompidas"
+        },
+        "footer": "Esses dados são armazenados apenas no seu dispositivo e não são transmitidos para nós."
+      },
+      "cookies": {
+        "heading": "5. Cookies",
+        "body": "Usamos os seguintes tipos de cookies:",
+        "essential": "Cookies essenciais",
+        "essentialDesc": "Necessários para que o site funcione corretamente",
+        "preference": "Cookies de preferência",
+        "preferenceDesc": "Lembram suas configurações, como a preferência de idioma",
+        "advertising": "Cookies de publicidade",
+        "advertisingDesc": "Usados pelo Google AdSense e seus parceiros para exibir anúncios relevantes (veja a seção Publicidade abaixo)"
+      },
+      "advertising": {
+        "heading": "6. Publicidade",
+        "body1": "Usamos o Google AdSense para exibir anúncios em nosso site. O Google AdSense e seus parceiros de publicidade podem usar cookies e web beacons para veicular anúncios com base em suas visitas anteriores a este site e a outros sites na Internet.",
+        "body2": "Esses cookies de publicidade permitem que o Google e seus parceiros mostrem anúncios com base nos seus interesses. Você pode desativar a publicidade personalizada visitando www.aboutads.info/choices/ ou as Configurações de anúncios do Google.",
+        "important": "Importante",
+        "importantBody": "Seus arquivos PDF nunca são compartilhados com o Google nem com qualquer rede de publicidade. Todo o processamento de arquivos ocorre localmente no seu navegador. Os cookies de publicidade referem-se apenas à entrega de anúncios e não têm acesso aos seus documentos."
+      },
+      "thirdParty": {
+        "heading": "7. Serviços de terceiros",
+        "body": "Além dos serviços de publicidade mencionados acima, o {brand} não compartilha os dados dos seus arquivos com terceiros. Não usamos:",
+        "items": {
+          "item1": "Análises de terceiros que rastreiam usuários individuais",
+          "item2": "Pixels de rastreamento de redes sociais",
+          "item3": "Serviços externos de processamento de arquivos"
+        }
+      },
+      "security": {
+        "heading": "8. Segurança dos dados",
+        "body": "Como seus arquivos nunca saem do seu dispositivo, eles são protegidos pelas medidas de segurança do seu próprio dispositivo. Recomendamos:",
+        "items": {
+          "item1": "Usar um navegador atualizado",
+          "item2": "Manter seu sistema operacional atualizado",
+          "item3": "Usar redes seguras ao lidar com documentos confidenciais"
+        }
+      },
+      "rights": {
+        "heading": "9. Seus direitos",
+        "body": "Como não coletamos dados pessoais, não há dados pessoais para acessar, corrigir ou excluir. Você pode limpar o armazenamento local do seu navegador a qualquer momento para remover as preferências salvas pelo {brand}."
+      },
+      "children": {
+        "heading": "10. Privacidade das crianças",
+        "body": "O {brand} não é direcionado a crianças menores de 13 anos. Não coletamos intencionalmente informações de crianças."
+      },
+      "changes": {
+        "heading": "11. Alterações nesta política",
+        "body": "Podemos atualizar esta Política de Privacidade de tempos em tempos. Notificaremos você sobre quaisquer alterações publicando a nova Política de Privacidade nesta página e atualizando a data de \"Última atualização\"."
+      },
+      "contact": {
+        "heading": "12. Fale conosco",
+        "body": "Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco pela nossa página de contato."
+      }
+    }
+  },
+  "termsPage": {
+    "metaTitle": "Termos de Serviço",
+    "heroTitle": "Termos de Serviço",
+    "heroSubtitle": "Leia atentamente estes termos antes de usar o {brand}.",
+    "highlights": {
+      "clientSide": {
+        "title": "100% do lado do cliente",
+        "description": "Seus arquivos são processados localmente no seu navegador e nunca enviados a nenhum servidor."
+      },
+      "privacyFirst": {
+        "title": "Privacidade em primeiro lugar",
+        "description": "Não acessamos, armazenamos nem transmitimos seus documentos. Seus dados permanecem no seu dispositivo."
+      },
+      "free": {
+        "title": "Grátis para usar",
+        "description": "Todas as ferramentas de PDF são gratuitas. Sem registro, sem taxas ocultas, sem planos premium."
+      },
+      "fairUse": {
+        "title": "Uso justo",
+        "description": "Pedimos que você use nosso serviço de forma responsável e não para fins ilegais."
+      }
+    },
+    "lastUpdated": "Última atualização: 24 de março de 2026",
+    "contactBadgeTitle": "Dúvidas?",
+    "contactBadgeDesc": "Entre em contato se tiver dúvidas sobre estes Termos",
+    "sections": {
+      "acceptance": {
+        "heading": "1. Aceitação dos termos",
+        "body": "Ao acessar e usar o {brand} (\"o Serviço\"), você concorda em ficar vinculado a estes Termos de Serviço. Se você não concordar com estes termos, não use o Serviço."
+      },
+      "serviceDesc": {
+        "heading": "2. Descrição do serviço",
+        "body": "O {brand} é um conjunto gratuito de ferramentas de PDF baseado em navegador que permite aos usuários mesclar, dividir, compactar, converter, editar e realizar diversas operações em arquivos PDF. O Serviço processa todos os arquivos inteiramente do lado do cliente usando a tecnologia WebAssembly."
+      },
+      "privacy": {
+        "heading": "3. Privacidade e tratamento de dados",
+        "processingHeading": "3.1 Processamento do lado do cliente",
+        "processingItems": {
+          "item1": "Todo o processamento de arquivos ocorre localmente no seu navegador. Seus documentos nunca são enviados a nenhum servidor externo.",
+          "item2": "Não temos acesso aos seus arquivos, nem os armazenamos ou transmitimos.",
+          "item3": "Assim que você fecha ou atualiza a aba do navegador, seus dados são excluídos permanentemente da memória."
+        },
+        "collectedHeading": "3.2 Informações que coletamos",
+        "collectedBody": "Podemos coletar dados mínimos de uso (por exemplo, quais ferramentas são usadas) para fins de análise. Não coletamos, armazenamos ou processamos o conteúdo dos seus arquivos PDF.",
+        "cookiesHeading": "3.3 Cookies",
+        "cookiesBody": "Usamos cookies essenciais para manter a funcionalidade da sessão. Nenhum cookie de rastreamento ou publicidade de terceiros é usado."
+      },
+      "responsibilities": {
+        "heading": "4. Responsabilidades do usuário",
+        "body": "Você concorda em não:",
+        "items": {
+          "item1": "Usar o Serviço para qualquer finalidade ilegal",
+          "item2": "Enviar ou processar arquivos com conteúdo malicioso",
+          "item3": "Tentar fazer engenharia reversa ou explorar o Serviço",
+          "item4": "Usar ferramentas automatizadas para acessar o Serviço além do uso humano normal"
+        }
+      },
+      "ip": {
+        "heading": "5. Propriedade intelectual",
+        "items": {
+          "item1": "{brand}: O Serviço, incluindo seu design, código e marca, é propriedade do {brand} e está licenciado sob AGPL-3.0.",
+          "item2": "Seus arquivos: Você mantém a propriedade total de todos os arquivos que processar através do Serviço.",
+          "item3": "Bibliotecas de terceiros: O Serviço usa bibliotecas de código aberto (PDF.js, pdf-lib, PyMuPDF) sob suas respectivas licenças."
+        }
+      },
+      "disclaimer": {
+        "heading": "6. Isenção de garantias",
+        "body": "O SERVIÇO É FORNECIDO \"COMO ESTÁ\", SEM GARANTIA DE QUALQUER TIPO. NÃO GARANTIMOS:",
+        "items": {
+          "item1": "Que o Serviço será ininterrupto ou livre de erros",
+          "item2": "Que os resultados do uso do Serviço serão precisos ou confiáveis",
+          "item3": "Que a qualidade de quaisquer produtos ou serviços obtidos através do Serviço atenderá às suas expectativas"
+        }
+      },
+      "liability": {
+        "heading": "7. Limitação de responsabilidade",
+        "body": "EM NENHUMA HIPÓTESE O {brand} SERÁ RESPONSÁVEL POR QUAISQUER DANOS INDIRETOS, INCIDENTAIS, ESPECIAIS OU CONSEQUENTES DECORRENTES DE OU RELACIONADOS AO SEU USO DO SERVIÇO."
+      },
+      "changes": {
+        "heading": "8. Alterações no serviço",
+        "body": "Reservamo-nos o direito de:",
+        "items": {
+          "item1": "Modificar ou descontinuar qualquer parte do Serviço a qualquer momento",
+          "item2": "Atualizar estes Termos a qualquer momento. O uso continuado constitui aceitação das alterações."
+        }
+      },
+      "beta": {
+        "heading": "9. Recursos beta",
+        "body": "Certos recursos (por exemplo, o Editor de fluxo de trabalho) podem ser rotulados como \"Beta\" ou \"Desenvolvimento inicial\". Esses recursos podem ser instáveis, e nos isentamos de responsabilidade por problemas decorrentes do seu uso."
+      },
+      "governingLaw": {
+        "heading": "10. Lei aplicável",
+        "body": "Estes Termos serão regidos e interpretados de acordo com as leis aplicáveis, sem considerar suas disposições sobre conflito de leis."
+      },
+      "contact": {
+        "heading": "11. Contato",
+        "body": "Para dúvidas sobre estes Termos, entre em contato conosco pela nossa {contactLink} ou por e-mail: support@pdfkoi.com",
+        "contactLink": "página de contato"
+      }
+    }
+  },
+  "cookiesPage": {
+    "metaTitle": "Política de Cookies",
+    "heroTitle": "Política de Cookies",
+    "heroSubtitle": "Esta página explica como o {brand} usa cookies e armazenamento do navegador para dar suporte aos recursos essenciais do site.",
+    "highlights": {
+      "minimal": {
+        "title": "Uso mínimo",
+        "description": "Buscamos usar apenas o armazenamento necessário para que o site funcione e lembre suas preferências."
+      },
+      "noTracking": {
+        "title": "Sem rastreamento de anúncios",
+        "description": "Esta política não permite cookies de publicidade nem rastreamento entre sites para conteúdo PDF."
+      },
+      "onDevice": {
+        "title": "Armazenado no seu dispositivo",
+        "description": "Os dados de preferência normalmente são armazenados no seu próprio navegador, não enviados junto com seus arquivos."
+      },
+      "privacyFirst": {
+        "title": "Design com privacidade em primeiro lugar",
+        "description": "O processamento de PDF permanece no seu navegador, o que reduz a necessidade de identificadores no servidor."
+      }
+    },
+    "lastUpdated": "Última atualização: 28 de março de 2026",
+    "table": {
+      "item": "Item",
+      "purpose": "Finalidade",
+      "technology": "Tecnologia",
+      "duration": "Duração",
+      "rows": {
+        "language": {
+          "name": "Preferência de idioma",
+          "purpose": "Lembra o idioma que você selecionou para que o site abra na sua localidade preferida.",
+          "storage": "Armazenamento local",
+          "duration": "Até você limpar os dados do navegador"
+        },
+        "recent": {
+          "name": "Arquivos recentes e trabalho salvo",
+          "purpose": "Mantém atividades recentes e itens em andamento no seu próprio dispositivo por conveniência.",
+          "storage": "Armazenamento local",
+          "duration": "Até você limpar os dados do navegador"
+        },
+        "state": {
+          "name": "Estado essencial do site",
+          "purpose": "Dá suporte ao comportamento central da interface, como estado das ferramentas, diálogos e preferências do usuário.",
+          "storage": "Armazenamento de sessão ou local",
+          "duration": "Durante a sessão ou até você limpar os dados do navegador"
+        }
+      }
+    },
+    "sections": {
+      "covers": {
+        "heading": "1. O que esta política abrange",
+        "p1": "Esta Política de Cookies explica como o {brand} usa cookies, armazenamento local, armazenamento de sessão e tecnologias de navegador semelhantes quando você visita o site ou usa nossas ferramentas de PDF.",
+        "p2": "Como nosso produto foi projetado para processar arquivos no navegador, tentamos manter o uso de armazenamento limitado à funcionalidade essencial, às preferências e à usabilidade do produto."
+      },
+      "means": {
+        "heading": "2. O que entendemos por cookies e tecnologias semelhantes",
+        "p1": "Cookies são pequenos arquivos de texto colocados no seu navegador. Tecnologias semelhantes incluem armazenamento local, armazenamento de sessão e dados de preferência gerenciados pelo navegador. Na prática, alguns recursos do site podem depender do armazenamento do navegador em vez dos cookies clássicos.",
+        "p2": "Para maior clareza, esta política usa a expressão \"cookies e armazenamento do navegador\" para cobrir todas essas tecnologias em conjunto, salvo indicação em contrário em uma seção."
+      },
+      "uses": {
+        "heading": "3. Como o {brand} usa cookies e armazenamento do navegador"
+      },
+      "categories": {
+        "heading": "4. Categorias de uso",
+        "essential": {
+          "heading": "Funcionalidade essencial",
+          "body": "Esses itens ajudam o site a operar de forma confiável, mantêm o estado da interface consistente e dão suporte a recursos que os usuários razoavelmente esperam de uma ferramenta baseada em navegador."
+        },
+        "preference": {
+          "heading": "Armazenamento de preferências",
+          "body": "O armazenamento de preferências ajuda a lembrar configurações como a escolha de idioma ou outras preferências não sensíveis do produto, para que você não precise reconfigurar o site a cada visita."
+        },
+        "local": {
+          "heading": "Recursos locais de produtividade",
+          "body": "Algumas ferramentas podem preservar ações recentes ou informações em andamento no seu próprio dispositivo para melhorar a usabilidade após atualizações ou sessões interrompidas."
+        }
+      },
+      "notUsed": {
+        "heading": "5. Para que não usamos essas tecnologias",
+        "items": {
+          "item1": "Não usamos cookies para enviar ou inspecionar o conteúdo dos seus arquivos PDF.",
+          "item2": "Não usamos cookies de publicidade para criar perfis de anúncios comportamentais a partir da atividade dos seus documentos.",
+          "item3": "Não dependemos de cookies para mover seus arquivos para serviços de processamento de PDF de terceiros.",
+          "item4": "Não reivindicamos o direito de usar o armazenamento do navegador para ler documentos fora das ferramentas que você escolhe executar."
+        }
+      },
+      "thirdParty": {
+        "heading": "6. Serviços de terceiros",
+        "p1": "Se o site vincular a serviços como GitHub ou X, essas plataformas podem definir seus próprios cookies quando você os visita. O comportamento de cookies deles é regido por suas próprias políticas, não por esta página.",
+        "p2": "Esta política abrange cookies e armazenamento do navegador usados para a experiência do próprio site {brand}."
+      },
+      "control": {
+        "heading": "7. Como controlar ou excluir cookies e armazenamento local",
+        "p1": "Você pode controlar cookies e armazenamento do navegador pelas configurações do seu navegador.",
+        "items": {
+          "item1": "Exclua cookies e armazenamento de site existentes nas configurações de privacidade do seu navegador.",
+          "item2": "Bloqueie alguns ou todos os cookies se o seu navegador oferecer essa opção.",
+          "item3": "Limpe o armazenamento local ou os dados do site do {brand} se quiser remover preferências lembradas."
+        },
+        "p2": "Observe que desativar todos os cookies ou o armazenamento do site pode afetar a funcionalidade do site, incluindo suas preferências salvas e recursos de conveniência."
+      },
+      "changes": {
+        "heading": "8. Alterações nesta Política de Cookies",
+        "body": "Podemos atualizar esta política de tempos em tempos para refletir mudanças na funcionalidade do site, requisitos legais ou design do produto. Quando o fizermos, atualizaremos a data exibida no topo desta página."
+      },
+      "contact": {
+        "heading": "9. Contato",
+        "body": "Se você tiver dúvidas sobre esta política, use a página de Contato vinculada no rodapé do site."
+      }
+    },
+    "summary": {
+      "heading": "Resumo prático",
+      "body": "O {brand} foi criado para fazer a maior parte do seu trabalho no navegador. Isso significa que o site geralmente precisa apenas de armazenamento limitado para preferências e usabilidade, em vez de infraestrutura de rastreamento invasiva.",
+      "note": "Revise as configurações de site do seu navegador a qualquer momento se quiser limpar as preferências salvas."
     }
   }
 }

@@ -480,7 +480,7 @@ export function NUpPDFTool({ className = '' }: NUpPDFToolProps) {
 
                 {/* Orientation indicator */}
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-2 py-0.5 text-[10px] font-medium bg-[hsl(var(--color-muted))] text-[hsl(var(--color-muted-foreground))] rounded-full border border-[hsl(var(--color-border))]">
-                  {orientation === 'landscape' ? '横向' : orientation === 'portrait' ? '纵向' : '自动'}
+                  {orientation === 'landscape' ? t('options.landscape') : orientation === 'portrait' ? t('options.portrait') : t('options.auto')}
                 </div>
               </div>
 

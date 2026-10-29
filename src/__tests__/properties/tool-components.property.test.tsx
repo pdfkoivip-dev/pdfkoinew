@@ -24,6 +24,7 @@ vi.mock('next-intl', () => ({
 
     return key;
   },
+  useLocale: () => 'en',
 }));
 
 vi.mock('@/components/ui/FavoriteButton', () => ({
@@ -336,7 +337,9 @@ describe('Tool Page Property Tests', () => {
       const relatedId = 'pdf-to-zip';
 
       expect(tool).toBeDefined();
-      expect(getToolPublicLocale(locale, relatedId)).toBe('pt');
+      // pdf-to-zip has no Portuguese localized content, so its public locale
+      // falls back to English (noindex + English canonical strategy).
+      expect(getToolPublicLocale(locale, relatedId)).toBe('en');
 
       const content = getToolContent(locale, tool!.id);
       expect(content).toBeDefined();
@@ -347,7 +350,7 @@ describe('Tool Page Property Tests', () => {
         </ToolPage>
       );
 
-      const expectedHref = getPublicPath('/tools/pdf-to-zip', 'pt');
+      const expectedHref = getPublicPath('/tools/pdf-to-zip', 'en');
       const relatedLinks = screen.getAllByRole('link');
 
       expect(relatedLinks.some((link) => link.getAttribute('href') === expectedHref)).toBe(true);

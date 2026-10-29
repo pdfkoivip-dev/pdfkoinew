@@ -193,7 +193,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
   const navItems: HeaderNavItem[] = [
     { href: homePath, label: t('navigation.home') },
     { href: getPublicPath('/tools', locale), label: t('navigation.tools') },
-    { href: getPublicPath('/workflow', locale), label: t('navigation.workflow') || 'Workflow' },
+    { href: getPublicPath('/workflow', locale), label: t('navigation.workflow') },
     { href: getPublicPath('/about', locale), label: t('navigation.about') },
     { href: getPublicPath('/faq', locale), label: t('navigation.faq') },
   ];

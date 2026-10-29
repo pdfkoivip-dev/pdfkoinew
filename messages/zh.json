@@ -60,7 +60,9 @@
       "about": "关于",
       "faq": "常见问题",
       "privacy": "隐私",
-      "contact": "联系我们"
+      "contact": "联系我们",
+      "terms": "条款",
+      "cookies": "Cookie"
     },
     "buttons": {
       "upload": "上传文件",
@@ -102,7 +104,129 @@
       "featuredSectionDescription": "当你的目标已经很明确时，优先从这些入口开始通常最快。",
       "featuredLabel": "{tool} 直达入口",
       "featuredReason": "如果你当前要做的核心操作是 {tool}，直接打开这个工具就可以开始。",
-      "openTool": "打开 {tool}"
+      "openTool": "打开 {tool}",
+      "categories": {
+        "editAnnotate": {
+          "useCasesSectionTitle": "常见使用场景",
+          "useCasesSectionItems": {
+            "item1": "用批注和签名审阅、批准合同",
+            "item2": "填写申请表、税务文件或注册资料",
+            "item3": "添加水印以保护知识产权或标记文档状态",
+            "item4": "为协作批注研究论文、法律文书或技术规范",
+            "item5": "添加页码和页眉，在分发前完成文档排版"
+          },
+          "precautionsSectionTitle": "重要提示",
+          "precautionsSectionItems": {
+            "item1": "所有编辑都在浏览器中进行，文件绝不会上传到任何服务器",
+            "item2": "多次编辑时请频繁保存，以免丢失更改",
+            "item3": "此处添加的数字签名仅为可视化用途，具有法律约束力的签名请使用认证签名工具",
+            "item4": "表单字段校验或 JavaScript 动作等部分 PDF 功能编辑后可能无法保留",
+            "item5": "为获得最佳效果，请使用未加密或无编辑限制的 PDF"
+          },
+          "metadataTitle": "PDF 编辑与批注工具",
+          "metadataDescription": "浏览用于批注、填写、签名和精修 PDF 文档的工具，选择最适合您文件的编辑流程。"
+        },
+        "convertToPdf": {
+          "useCasesSectionTitle": "常见使用场景",
+          "useCasesSectionItems": {
+            "item1": "将 Word 文档转为 PDF，便于专业分发和统一格式",
+            "item2": "用多张图片制作 PDF 作品集，用于演示或相册",
+            "item3": "将 Excel 报表转为 PDF，与相关方共享财务数据",
+            "item4": "将 PowerPoint 演示文稿转为 PDF 讲义，用于会议或培训",
+            "item5": "将文本文件和电子书转为 PDF，便于阅读和归档"
+          },
+          "precautionsSectionTitle": "重要提示",
+          "precautionsSectionItems": {
+            "item1": "所有转换都在浏览器本地完成，文件不会上传到服务器",
+            "item2": "源文档的复杂格式转换后可能需要手动调整",
+            "item3": "输出 PDF 的图片质量取决于源文件的质量",
+            "item4": "大文件或批量转换可能因设备性能而耗时更长",
+            "item5": "宏、动画或嵌入媒体等部分高级功能可能无法转入 PDF"
+          },
+          "metadataTitle": "将文件转为 PDF",
+          "metadataDescription": "浏览将图片、Office 文件、电子书等格式转为 PDF 的工具，选择最合适的转换路径。"
+        },
+        "convertFromPdf": {
+          "useCasesSectionTitle": "常见使用场景",
+          "useCasesSectionItems": {
+            "item1": "将 PDF 合同转为 Word，便于编辑条款",
+            "item2": "将 PDF 页面提取为图片，用于演示或网页内容",
+            "item3": "将 PDF 表格转为 Excel，用于数据分析和报表",
+            "item4": "将 PDF 文档导出为 PowerPoint，用于制作幻灯片",
+            "item5": "将扫描 PDF 转为文本文件，便于内容复用和编辑"
+          },
+          "precautionsSectionTitle": "重要提示",
+          "precautionsSectionItems": {
+            "item1": "所有转换都在浏览器本地处理，文件不会离开您的设备",
+            "item2": "转换精度取决于 PDF 结构，扫描 PDF 可能需要 OCR 才能获得最佳效果",
+            "item3": "多栏或嵌入图形的复杂版式可能需要手动调整格式",
+            "item4": "加密或受限的 PDF 需先解锁才能转换",
+            "item5": "导出文件的图片质量取决于原 PDF 内容的分辨率"
+          },
+          "metadataTitle": "将 PDF 转为其他格式",
+          "metadataDescription": "浏览将 PDF 转为可编辑文档、图片和数据格式的工具，选择最合适的导出流程。"
+        },
+        "organizeManage": {
+          "useCasesSectionTitle": "常见使用场景",
+          "useCasesSectionItems": {
+            "item1": "将多个合同章节或附录合并为一份完整文档",
+            "item2": "将大型报告拆分为独立章节，便于分发",
+            "item3": "重新排列演示文稿幻灯片，或删除扫描文档中的重复页面",
+            "item4": "从长篇手册或参考资料中提取特定页面",
+            "item5": "将发票、收据或账单整理成井井有条的月度归档"
+          },
+          "precautionsSectionTitle": "重要提示",
+          "precautionsSectionItems": {
+            "item1": "所有操作都在浏览器本地执行，文件不会上传",
+            "item2": "合并 PDF 时，请确保处理前文件顺序正确",
+            "item3": "拆分或提取页面会生成新文件，原文件保持不变",
+            "item4": "重新整理页面后，书签和目录可能需要重建",
+            "item5": "处理大文件时，请关闭不必要的浏览器标签页以释放内存"
+          },
+          "metadataTitle": "PDF 整理工具",
+          "metadataDescription": "查找用于页面排序、文档合并、文件拆分和 PDF 重构的工具，选择最合适的页面管理任务。"
+        },
+        "optimizeRepair": {
+          "useCasesSectionTitle": "常见使用场景",
+          "useCasesSectionItems": {
+            "item1": "压缩大 PDF 以满足邮件附件大小限制或上传限制",
+            "item2": "修复无法正常打开或显示的损坏 PDF",
+            "item3": "将 PDF 转为 PDF/A 格式，用于法律归档和合规",
+            "item4": "在共享敏感文档前删除元数据和隐藏信息",
+            "item5": "优化扫描文档，在保持可读性的同时减少存储空间"
+          },
+          "precautionsSectionTitle": "重要提示",
+          "precautionsSectionItems": {
+            "item1": "所有处理都在浏览器中进行，文件不会上传到外部服务器",
+            "item2": "压缩可能降低图片质量，替换原文件前请先预览结果",
+            "item3": "修复工具能解决许多问题，但无法恢复严重损坏文件的内容",
+            "item4": "PDF/A 转换会移除表单、JavaScript 和多媒体等交互元素",
+            "item5": "执行优化或修复前，请务必备份重要文档"
+          },
+          "metadataTitle": "PDF 优化与修复工具",
+          "metadataDescription": "浏览用于压缩、修复、清理和改善 PDF 文件的工具，选择最合适的维护流程。"
+        },
+        "securePdf": {
+          "useCasesSectionTitle": "常见使用场景",
+          "useCasesSectionItems": {
+            "item1": "为机密合同、财务报告或个人文档添加密码保护",
+            "item2": "解锁因忘记密码或受限而无法编辑的、属于您自己的 PDF",
+            "item3": "清理文档，在公开发布前移除作者信息、批注和修订历史",
+            "item4": "设置权限，防止专有内容被擅自复制、打印或编辑",
+            "item5": "移除旧归档文件的安全限制，以接入现代工作流"
+          },
+          "precautionsSectionTitle": "重要提示",
+          "precautionsSectionItems": {
+            "item1": "所有安全操作都在本地完成，密码和文件不会离开浏览器",
+            "item2": "强密码至关重要，请组合使用字母、数字和符号以获得最佳保护",
+            "item3": "解锁 PDF 需要正确的密码，这些工具无法破解或绕过未知密码",
+            "item4": "清理会永久删除元数据，如需保留文档历史请保留原文件",
+            "item5": "密码保护不等于加密，对高度敏感数据请考虑额外的安全措施"
+          },
+          "metadataTitle": "PDF 安全与保护工具",
+          "metadataDescription": "浏览用于保护、解锁、清理和权限管理 PDF 文件的工具，选择最合适的安全任务。"
+        }
+      }
     },
     "status": {
       "idle": "就绪",
@@ -116,7 +240,18 @@
       "footer": "© 2025 PDFkoi. 保留所有权利。",
       "copyright": "© {year} PDFkoi. 保留所有权利。",
       "privacyBadge": "100% 私密 - 文件永不离开您的设备",
-      "madeWith": "Made with <Heart /> and <Nextjs />"
+      "madeWith": "Made with <Heart /> and <Nextjs />",
+      "resources": "资源",
+      "security": "安全",
+      "securityClientSide": "本地处理",
+      "securityClientSideDesc": "文件绝不会离开您的设备",
+      "securityNoUploads": "无需上传文件",
+      "securityNoUploadsDesc": "100% 私密且安全",
+      "securityGdpr": "符合 GDPR",
+      "securityGdprDesc": "100% 私密——文件绝不会离开您的设备",
+      "terms": "条款",
+      "privacy": "隐私",
+      "cookies": "Cookie"
     },
     "recentFiles": {
       "title": "最近文件",
@@ -191,6 +326,27 @@
       "auto": "自动",
       "portrait": "纵向",
       "landscape": "横向"
+    },
+    "cookieConsent": {
+      "title": "Cookie 设置",
+      "message": "我们使用 Cookie 来提供网站基本功能、记住您的偏好，并通过 Google AdSense 展示相关广告。您的 PDF 文件绝不会与广告商共享——所有处理均在您的浏览器本地完成。",
+      "showDetails": "查看 Cookie 详情",
+      "hideDetails": "隐藏详情",
+      "essentialTitle": "必要 Cookie",
+      "alwaysActive": "始终启用",
+      "essentialDesc": "网站正常运行所必需，无法禁用。",
+      "functionalTitle": "功能 Cookie",
+      "optional": "可选",
+      "functionalDesc": "记住您的语言偏好和其他设置，以改善您的体验。",
+      "advertisingTitle": "广告 Cookie",
+      "advertisingDesc": "由 Google AdSense 及其合作伙伴用于展示相关广告。您可随时通过",
+      "googleAdsSettings": "Google 广告设置",
+      "acceptAll": "接受所有 Cookie",
+      "acceptEssentialOnly": "仅接受必要项",
+      "learnMore": "更多信息请参阅我们的",
+      "and": "和",
+      "privacyPolicy": "隐私政策",
+      "cookiePolicy": "Cookie 政策"
     }
   },
   "toolsPage": {
@@ -536,6 +692,11 @@
           "id": "提交前的证件相关文件"
         }
       }
+    },
+    "categoryBrowse": {
+      "title": "按分类浏览工具",
+      "description": "从我们整理好的工具集合中，找到最适合你任务的工具。",
+      "viewAll": "查看全部"
     }
   },
   "workflow": {
@@ -1046,7 +1207,17 @@
       "downloadAllZip": "全部下载为ZIP",
       "originalSize": "原始：",
       "compressedSize": "压缩后：",
-      "saved": "节省："
+      "saved": "节省：",
+      "algorithmLabel": "压缩算法",
+      "algorithmStandard": "标准",
+      "algorithmCondense": "浓缩",
+      "algorithmPhoton": "Photon",
+      "algorithmStandardDesc": "使用对象流的通用压缩",
+      "algorithmCondenseDesc": "保留交互性的同时优化结构",
+      "algorithmPhotonDesc": "将页面栅格化 — 最适合图片较多的 PDF",
+      "photonWarning": "注意：Photon 会将页面转换为图片，可能降低文字质量并丢失交互性（链接、表单）。",
+      "photonDpiLabel": "输出 DPI",
+      "photonDpiDesc": "DPI 越高品质越好，但文件越大"
     },
     "signPdf": {
       "uploadLabel": "上传PDF文件",
@@ -2108,6 +2279,342 @@
     "pdfReader": {
       "uploadLabel": "打开PDF文件",
       "uploadDescription": "打开PDF文件进行阅读和查看。"
+    },
+    "helpLink": "帮助",
+    "feedbackLink": "反馈"
+  },
+  "privacyPage": {
+    "metaTitle": "隐私政策",
+    "heroTitle": "隐私政策",
+    "heroSubtitle": "您的隐私是我们的首要任务。{brand} 从设计之初就致力于保护您的数据。",
+    "highlights": {
+      "noUpload": {
+        "title": "不上传服务器",
+        "description": "您的文件绝不会上传到任何服务器，所有处理都在浏览器本地完成。"
+      },
+      "localProcessing": {
+        "title": "本地处理",
+        "description": "PDF 操作通过 JavaScript 和 WebAssembly 直接在您的设备上执行。"
+      },
+      "cleanup": {
+        "title": "自动清理",
+        "description": "关闭浏览器标签页或离开页面时，所有文件数据都会自动清除。"
+      },
+      "noTracking": {
+        "title": "无跟踪",
+        "description": "我们不会跟踪您的文件内容或个人信息，您的文档始终私密。"
+      }
+    },
+    "lastUpdated": "最后更新：2026 年 7 月",
+    "badgeTitle": "您的文档在浏览器中安全处理",
+    "sections": {
+      "intro": {
+        "heading": "1. 引言",
+        "body": "{brand}（“我们”）致力于保护您的隐私。本隐私政策说明了您使用我们的 PDF 工具时，我们如何处理您的信息。"
+      },
+      "howItWorks": {
+        "heading": "2. 我们的服务如何运作",
+        "body": "{brand} 是一个纯客户端应用，这意味着：",
+        "items": {
+          "item1": "所有 PDF 处理都在您的网页浏览器中直接完成",
+          "item2": "您的文件绝不会上传到我们的服务器或任何第三方服务器",
+          "item3": "我们无法查看、访问或存储您的文档",
+          "item4": "您的文件始终保留在您的设备上"
+        }
+      },
+      "infoCollected": {
+        "heading": "3. 我们收集的信息",
+        "filesHeading": "3.1 您的文件",
+        "filesBody": "我们不会收集您的文件。使用我们的 PDF 工具时，文件完全在浏览器内处理，绝不会传输到我们的服务器。",
+        "usageHeading": "3.2 使用数据",
+        "usageBody": "为改进服务，我们可能收集匿名使用统计，例如：",
+        "usageItems": {
+          "item1": "哪些工具最受欢迎",
+          "item2": "大致地理区域（国家级）",
+          "item3": "浏览器类型和版本",
+          "item4": "设备类型（桌面、移动、平板）"
+        },
+        "usageFooter": "这些数据经过聚合和匿名化处理，无法用于识别您的个人身份。"
+      },
+      "localStorage": {
+        "heading": "4. 本地存储",
+        "body": "{brand} 可能使用您浏览器的本地存储来：",
+        "items": {
+          "item1": "记住您的语言偏好",
+          "item2": "保存您最近使用的工具历史",
+          "item3": "保存中断会话的未完成工作"
+        },
+        "footer": "这些数据仅存储在您的设备上，不会传输给我们。"
+      },
+      "cookies": {
+        "heading": "5. Cookie",
+        "body": "我们使用以下类型的 Cookie：",
+        "essential": "必要 Cookie",
+        "essentialDesc": "网站正常运行所必需",
+        "preference": "偏好 Cookie",
+        "preferenceDesc": "记住语言偏好等设置",
+        "advertising": "广告 Cookie",
+        "advertisingDesc": "由 Google AdSense 及其合作伙伴用于展示相关广告（见下方广告章节）"
+      },
+      "advertising": {
+        "heading": "6. 广告",
+        "body1": "我们使用 Google AdSense 在我们的网站上展示广告。Google AdSense 及其广告合作伙伴可能使用 Cookie 和网络信标，根据您此前访问本网站及互联网上其他网站的情况投放广告。",
+        "body2": "这些广告 Cookie 使 Google 及其合作伙伴能够根据您的兴趣向您展示广告。您可以通过访问 www.aboutads.info/choices/ 或 Google 广告设置来选择退出个性化广告。",
+        "important": "重要提示",
+        "importantBody": "您的 PDF 文件绝不会与 Google 或任何广告网络共享。所有文件处理都在浏览器本地完成。广告 Cookie 仅与广告投放相关，无法访问您的文档。"
+      },
+      "thirdParty": {
+        "heading": "7. 第三方服务",
+        "body": "除上述广告服务外，{brand} 不会与任何第三方共享您的文件数据。我们不使用：",
+        "items": {
+          "item1": "跟踪个人用户的第三方分析",
+          "item2": "社交媒体跟踪像素",
+          "item3": "外部文件处理服务"
+        }
+      },
+      "security": {
+        "heading": "8. 数据安全",
+        "body": "由于您的文件不会离开设备，它们受到您设备自身安全措施的保护。我们建议：",
+        "items": {
+          "item1": "使用最新版本的浏览器",
+          "item2": "保持操作系统更新",
+          "item3": "处理敏感文档时使用安全网络"
+        }
+      },
+      "rights": {
+        "heading": "9. 您的权利",
+        "body": "由于我们不收集个人数据，因此没有需要访问、更正或删除的个人数据。您可以随时清除浏览器本地存储，删除 {brand} 保存的任何偏好设置。"
+      },
+      "children": {
+        "heading": "10. 儿童隐私",
+        "body": "{brand} 不面向 13 岁以下的儿童，我们不会故意收集儿童的任何信息。"
+      },
+      "changes": {
+        "heading": "11. 本政策的变更",
+        "body": "我们可能不时更新本隐私政策。如有变更，我们会在本页发布新的隐私政策并更新“最后更新”日期。"
+      },
+      "contact": {
+        "heading": "12. 联系我们",
+        "body": "如果您对本隐私政策有任何疑问，请通过我们的联系页面与我们联系。"
+      }
+    }
+  },
+  "termsPage": {
+    "metaTitle": "服务条款",
+    "heroTitle": "服务条款",
+    "heroSubtitle": "使用 {brand} 前，请仔细阅读这些条款。",
+    "highlights": {
+      "clientSide": {
+        "title": "100% 纯客户端",
+        "description": "您的文件在浏览器本地处理，绝不会上传到任何服务器。"
+      },
+      "privacyFirst": {
+        "title": "隐私优先",
+        "description": "我们不访问、存储或传输您的文档，数据始终留在您的设备上。"
+      },
+      "free": {
+        "title": "免费使用",
+        "description": "所有 PDF 工具均免费，无需注册，无隐藏费用，无高级付费层级。"
+      },
+      "fairUse": {
+        "title": "合理使用",
+        "description": "我们希望您负责任地使用我们的服务，不将其用于任何非法目的。"
+      }
+    },
+    "lastUpdated": "最后更新：2026 年 3 月 24 日",
+    "contactBadgeTitle": "有疑问？",
+    "contactBadgeDesc": "如果您对这些条款有疑问，请联系我们",
+    "sections": {
+      "acceptance": {
+        "heading": "1. 接受条款",
+        "body": "访问和使用 {brand}（“本服务”）即表示您同意受这些服务条款的约束。如果您不同意这些条款，请勿使用本服务。"
+      },
+      "serviceDesc": {
+        "heading": "2. 服务说明",
+        "body": "{brand} 是一套基于浏览器的免费 PDF 工具，允许用户合并、拆分、压缩、转换、编辑 PDF 文件并执行各种操作。本服务使用 WebAssembly 技术完全在客户端处理所有文件。"
+      },
+      "privacy": {
+        "heading": "3. 隐私与数据处理",
+        "processingHeading": "3.1 客户端处理",
+        "processingItems": {
+          "item1": "所有文件处理都在浏览器本地完成，您的文档绝不会上传到任何外部服务器。",
+          "item2": "我们无法访问、存储或传输您的文件。",
+          "item3": "一旦关闭或刷新浏览器标签页，您的数据将从内存中永久删除。"
+        },
+        "collectedHeading": "3.2 我们收集的信息",
+        "collectedBody": "我们可能收集最少的使用数据（例如使用了哪些工具）用于分析目的。我们不收集、存储或处理您的 PDF 文件内容。",
+        "cookiesHeading": "3.3 Cookie",
+        "cookiesBody": "我们使用必要 Cookie 来维持会话功能，不使用第三方跟踪或广告 Cookie。"
+      },
+      "responsibilities": {
+        "heading": "4. 用户责任",
+        "body": "您同意不进行以下行为：",
+        "items": {
+          "item1": "将本服务用于任何非法目的",
+          "item2": "上传或处理包含恶意内容的文件",
+          "item3": "尝试对本服务进行逆向工程或利用漏洞",
+          "item4": "使用自动化工具以超出正常人工使用的方式访问本服务"
+        }
+      },
+      "ip": {
+        "heading": "5. 知识产权",
+        "items": {
+          "item1": "{brand}：本服务（包括其设计、代码和品牌）是 {brand} 的财产，依据 AGPL-3.0 许可。",
+          "item2": "您的文件：您保留通过本服务处理的所有文件的完整所有权。",
+          "item3": "第三方库：本服务依据各自的许可证使用开源库（PDF.js、pdf-lib、PyMuPDF）。"
+        }
+      },
+      "disclaimer": {
+        "heading": "6. 免责声明",
+        "body": "本服务“按原样”提供，不附带任何形式的保证。我们不保证：",
+        "items": {
+          "item1": "本服务不会中断或没有错误",
+          "item2": "使用本服务的结果准确或可靠",
+          "item3": "通过本服务获得的产品或服务的质量符合您的期望"
+        }
+      },
+      "liability": {
+        "heading": "7. 责任限制",
+        "body": "在任何情况下，{brand} 均不对因使用本服务而产生或与之相关的任何间接、附带、特殊或后果性损害承担责任。"
+      },
+      "changes": {
+        "heading": "8. 服务变更",
+        "body": "我们保留以下权利：",
+        "items": {
+          "item1": "随时修改或终止本服务的任何部分",
+          "item2": "随时更新这些条款。继续使用即表示接受变更。"
+        }
+      },
+      "beta": {
+        "heading": "9. Beta 功能",
+        "body": "某些功能（例如工作流编辑器）可能被标记为“Beta”或“早期开发”。这些功能可能不稳定，我们对因使用这些功能而产生的问题不承担责任。"
+      },
+      "governingLaw": {
+        "heading": "10. 适用法律",
+        "body": "这些条款应受适用法律管辖并依其解释，不受法律冲突条款的影响。"
+      },
+      "contact": {
+        "heading": "11. 联系方式",
+        "body": "如对这些条款有疑问，请通过我们的{contactLink}联系我们，或发送邮件至：support@pdfkoi.com",
+        "contactLink": "联系页面"
+      }
+    }
+  },
+  "cookiesPage": {
+    "metaTitle": "Cookie 政策",
+    "heroTitle": "Cookie 政策",
+    "heroSubtitle": "本页面说明 {brand} 如何使用 Cookie 和浏览器存储来支持网站的基本功能。",
+    "highlights": {
+      "minimal": {
+        "title": "最小化使用",
+        "description": "我们力求仅使用让网站正常运行和记住您偏好所必需的存储。"
+      },
+      "noTracking": {
+        "title": "无广告跟踪",
+        "description": "本政策不允许针对 PDF 内容使用广告 Cookie 或跨站跟踪。"
+      },
+      "onDevice": {
+        "title": "存储在您的设备上",
+        "description": "偏好数据通常存储在您自己的浏览器中，不会随文件一起上传。"
+      },
+      "privacyFirst": {
+        "title": "隐私优先的设计",
+        "description": "PDF 处理在您的浏览器中完成，减少了对服务器端标识符的需求。"
+      }
+    },
+    "lastUpdated": "最后更新：2026 年 3 月 28 日",
+    "table": {
+      "item": "项目",
+      "purpose": "用途",
+      "technology": "技术",
+      "duration": "时长",
+      "rows": {
+        "language": {
+          "name": "语言偏好",
+          "purpose": "记住您选择的语言，使网站以您偏好的语言打开。",
+          "storage": "本地存储",
+          "duration": "直到您清除浏览器数据"
+        },
+        "recent": {
+          "name": "最近的文件和已保存的工作",
+          "purpose": "为方便起见，将最近的活动和进行中的项目保留在您的设备上。",
+          "storage": "本地存储",
+          "duration": "直到您清除浏览器数据"
+        },
+        "state": {
+          "name": "网站基本状态",
+          "purpose": "支持工具状态、对话框和用户偏好等核心界面行为。",
+          "storage": "会话存储或本地存储",
+          "duration": "会话期间或直到您清除浏览器数据"
+        }
+      }
+    },
+    "sections": {
+      "covers": {
+        "heading": "1. 本政策的适用范围",
+        "p1": "本 Cookie 政策说明了当您访问网站或使用我们的 PDF 工具时，{brand} 如何使用 Cookie、本地存储、会话存储及类似的浏览器技术。",
+        "p2": "由于我们的产品设计为在浏览器中处理文件，我们努力将存储使用限制在基本功能、偏好和产品易用性上。"
+      },
+      "means": {
+        "heading": "2. 我们对 Cookie 及类似技术的定义",
+        "p1": "Cookie 是放置在浏览器中的小型文本文件。类似技术包括本地存储、会话存储和浏览器管理的偏好数据。实际上，某些网站功能可能依赖浏览器存储而非传统 Cookie。",
+        "p2": "为清晰起见，除非某章节另有说明，本政策使用“Cookie 和浏览器存储”这一表述统称所有这些技术。"
+      },
+      "uses": {
+        "heading": "3. {brand} 如何使用 Cookie 和浏览器存储"
+      },
+      "categories": {
+        "heading": "4. 使用类别",
+        "essential": {
+          "heading": "基本功能",
+          "body": "这些项目有助于网站可靠运行、保持界面状态一致，并支持用户对基于浏览器的工具合理预期的功能。"
+        },
+        "preference": {
+          "heading": "偏好存储",
+          "body": "偏好存储帮助记住语言选择或其他非敏感的产品偏好，使您无需每次访问都重新配置网站。"
+        },
+        "local": {
+          "heading": "本地效率功能",
+          "body": "某些工具可能会将最近的操作或进行中的信息保留在您的设备上，以改善刷新或会话中断后的易用性。"
+        }
+      },
+      "notUsed": {
+        "heading": "5. 我们不使用这些技术的目的",
+        "items": {
+          "item1": "我们不使用 Cookie 上传或检查您的 PDF 文件内容。",
+          "item2": "我们不使用广告 Cookie 根据您的文档活动构建行为广告画像。",
+          "item3": "我们不依赖 Cookie 将您的文件转移到第三方 PDF 处理服务。",
+          "item4": "我们不主张使用浏览器存储在您选择运行的工具之外读取文档的权利。"
+        }
+      },
+      "thirdParty": {
+        "heading": "6. 第三方服务",
+        "p1": "如果网站链接到 GitHub 或 X 等服务，这些平台在您访问时可能会设置自己的 Cookie。它们的 Cookie 行为受其各自政策约束，而非本页面。",
+        "p2": "本政策涵盖用于 {brand} 网站体验本身的 Cookie 和浏览器存储。"
+      },
+      "control": {
+        "heading": "7. 如何控制或删除 Cookie 和本地存储",
+        "p1": "您可以通过浏览器设置控制 Cookie 和浏览器存储。",
+        "items": {
+          "item1": "从浏览器隐私设置中删除现有的 Cookie 和网站存储。",
+          "item2": "如果浏览器提供该选项，可阻止部分或全部 Cookie。",
+          "item3": "如需删除已记住的偏好，可清除 {brand} 的本地存储或网站数据。"
+        },
+        "p2": "请注意，禁用所有 Cookie 或网站存储可能会影响网站功能，包括您已保存的偏好和便捷功能。"
+      },
+      "changes": {
+        "heading": "8. 本 Cookie 政策的变更",
+        "body": "我们可能不时更新本政策，以反映网站功能、法律要求或产品设计的变更。更新时，我们会更新本页顶部显示的日期。"
+      },
+      "contact": {
+        "heading": "9. 联系方式",
+        "body": "如对本政策有疑问，请使用网站页脚中链接的联系页面。"
+      }
+    },
+    "summary": {
+      "heading": "实用总结",
+      "body": "{brand} 的设计使其大部分工作都在浏览器中完成。这意味着网站通常只需要有限的存储用于偏好和易用性，而不是侵入性的跟踪基础设施。",
+      "note": "如需清除已保存的偏好，可随时查看浏览器中的网站设置。"
     }
   }
 }

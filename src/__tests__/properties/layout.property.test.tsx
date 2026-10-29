@@ -163,7 +163,9 @@ describe('Layout Property Tests', () => {
       await waitFor(() => expect(screen.getByText('Flatten PDF')).toBeInTheDocument());
       fireEvent.click(screen.getByText('Flatten PDF'));
 
-      expect(routerPush).toHaveBeenCalledWith('/de/tools/flatten-pdf/');
+      // flatten-pdf has no German localized content, so it falls back to the
+      // English canonical URL (noindex + English canonical fallback strategy).
+      expect(routerPush).toHaveBeenCalledWith('/tools/flatten-pdf/');
     });
   });
 

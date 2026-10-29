@@ -60,7 +60,9 @@
       "about": "About",
       "faq": "FAQ",
       "privacy": "Privacy",
-      "contact": "Contact"
+      "contact": "Contact",
+      "terms": "Terms",
+      "cookies": "Cookies"
     },
     "buttons": {
       "upload": "Upload Files",
@@ -102,7 +104,129 @@
       "featuredSectionDescription": "These are strong starting points when you already know what you need to do.",
       "featuredLabel": "Best for {tool}",
       "featuredReason": "Open this tool when {tool} is your main task.",
-      "openTool": "Open {tool}"
+      "openTool": "Open {tool}",
+      "categories": {
+        "editAnnotate": {
+          "useCasesSectionTitle": "Common use cases",
+          "useCasesSectionItems": {
+            "item1": "Reviewing and approving contracts with comments and signatures",
+            "item2": "Filling out application forms, tax documents, or registration paperwork",
+            "item3": "Adding watermarks to protect intellectual property or mark document status",
+            "item4": "Annotating research papers, legal briefs, or technical specifications for collaboration",
+            "item5": "Adding page numbers and headers to finalize document formatting before distribution"
+          },
+          "precautionsSectionTitle": "Important notes",
+          "precautionsSectionItems": {
+            "item1": "All editing happens in your browser - files are never uploaded to any server",
+            "item2": "Save your work frequently when making multiple edits to avoid losing changes",
+            "item3": "Digital signatures added here are visual only - for legally binding signatures, use certified signature tools",
+            "item4": "Some PDF features like form field validation or JavaScript actions may not be preserved after editing",
+            "item5": "For best results, work with PDFs that are not password-protected or have editing restrictions"
+          },
+          "metadataTitle": "PDF Editing and Annotation Tools",
+          "metadataDescription": "Explore tools for annotating, filling, signing, and refining PDF documents. Use this hub to choose the right editing workflow for your file."
+        },
+        "convertToPdf": {
+          "useCasesSectionTitle": "Common use cases",
+          "useCasesSectionItems": {
+            "item1": "Converting Word documents to PDF for professional distribution and consistent formatting",
+            "item2": "Creating PDF portfolios from multiple images for presentations or photo albums",
+            "item3": "Converting Excel reports to PDF for sharing financial data with stakeholders",
+            "item4": "Turning PowerPoint presentations into PDF handouts for meetings or training",
+            "item5": "Converting text files and ebooks to PDF for easier reading and archiving"
+          },
+          "precautionsSectionTitle": "Important notes",
+          "precautionsSectionItems": {
+            "item1": "All conversions happen locally in your browser - no files are uploaded to servers",
+            "item2": "Complex formatting in source documents may require manual adjustment after conversion",
+            "item3": "Image quality in the output PDF depends on the quality of your source files",
+            "item4": "Large files or batch conversions may take longer depending on your device performance",
+            "item5": "Some advanced features like macros, animations, or embedded media may not transfer to PDF"
+          },
+          "metadataTitle": "Convert Files to PDF",
+          "metadataDescription": "Browse tools for turning images, Office files, ebooks, and other formats into PDF. Use this hub to pick the right conversion path."
+        },
+        "convertFromPdf": {
+          "useCasesSectionTitle": "Common use cases",
+          "useCasesSectionItems": {
+            "item1": "Converting PDF contracts to Word for editing terms and clauses",
+            "item2": "Extracting PDF pages as images for use in presentations or web content",
+            "item3": "Converting PDF tables to Excel for data analysis and reporting",
+            "item4": "Exporting PDF documents to PowerPoint for creating slide decks",
+            "item5": "Converting scanned PDFs to text files for content reuse and editing"
+          },
+          "precautionsSectionTitle": "Important notes",
+          "precautionsSectionItems": {
+            "item1": "All conversions are processed locally in your browser - files never leave your device",
+            "item2": "Conversion accuracy depends on the PDF structure - scanned PDFs may require OCR for best results",
+            "item3": "Complex layouts with multiple columns or embedded graphics may need manual formatting adjustments",
+            "item4": "Password-protected or restricted PDFs must be unlocked before conversion",
+            "item5": "Image quality in exported files depends on the resolution of content in the original PDF"
+          },
+          "metadataTitle": "Convert PDF to Other Formats",
+          "metadataDescription": "Browse tools for turning PDF files into editable documents, images, and data formats. Use this hub to choose the right export workflow."
+        },
+        "organizeManage": {
+          "useCasesSectionTitle": "Common use cases",
+          "useCasesSectionItems": {
+            "item1": "Merging multiple contract sections or appendices into one complete document",
+            "item2": "Splitting large reports into individual chapters for easier distribution",
+            "item3": "Reordering presentation slides or removing duplicate pages from scanned documents",
+            "item4": "Extracting specific pages from lengthy manuals or reference materials",
+            "item5": "Combining invoices, receipts, or statements into organized monthly archives"
+          },
+          "precautionsSectionTitle": "Important notes",
+          "precautionsSectionItems": {
+            "item1": "All operations are performed locally in your browser - no files are uploaded",
+            "item2": "When merging PDFs, ensure files are in the correct order before processing",
+            "item3": "Splitting or extracting pages creates new files - original files remain unchanged",
+            "item4": "Bookmarks and table of contents may need to be recreated after reorganizing pages",
+            "item5": "For best results with large files, close unnecessary browser tabs to free up memory"
+          },
+          "metadataTitle": "PDF Organization Tools",
+          "metadataDescription": "Find tools for arranging pages, combining documents, splitting files, and restructuring PDFs. Use this hub to choose the right page-management task."
+        },
+        "optimizeRepair": {
+          "useCasesSectionTitle": "Common use cases",
+          "useCasesSectionItems": {
+            "item1": "Compressing large PDFs to meet email attachment size limits or upload restrictions",
+            "item2": "Repairing corrupted PDFs that won't open or display correctly",
+            "item3": "Converting PDFs to PDF/A format for legal archiving and regulatory compliance",
+            "item4": "Removing metadata and hidden information before sharing sensitive documents",
+            "item5": "Optimizing scanned documents to reduce storage space while maintaining readability"
+          },
+          "precautionsSectionTitle": "Important notes",
+          "precautionsSectionItems": {
+            "item1": "All processing happens in your browser - files are never uploaded to external servers",
+            "item2": "Compression may reduce image quality - preview the result before replacing your original",
+            "item3": "Repair tools can fix many issues but cannot recover content from severely damaged files",
+            "item4": "PDF/A conversion removes interactive elements like forms, JavaScript, and multimedia",
+            "item5": "Always keep a backup of important documents before performing optimization or repair"
+          },
+          "metadataTitle": "PDF Optimization and Repair Tools",
+          "metadataDescription": "Explore tools for compressing, repairing, cleaning, and improving PDF files. Use this hub to choose the right maintenance workflow."
+        },
+        "securePdf": {
+          "useCasesSectionTitle": "Common use cases",
+          "useCasesSectionItems": {
+            "item1": "Password-protecting confidential contracts, financial reports, or personal documents",
+            "item2": "Unlocking PDFs you own but can't edit due to forgotten passwords or restrictions",
+            "item3": "Sanitizing documents to remove author information, comments, and revision history before public release",
+            "item4": "Setting permissions to prevent unauthorized copying, printing, or editing of proprietary content",
+            "item5": "Removing security from old archived files to enable modern workflow integration"
+          },
+          "precautionsSectionTitle": "Important notes",
+          "precautionsSectionItems": {
+            "item1": "All security operations are performed locally - passwords and files never leave your browser",
+            "item2": "Strong passwords are essential - use a mix of letters, numbers, and symbols for best protection",
+            "item3": "Unlocking PDFs requires the correct password - these tools cannot crack or bypass unknown passwords",
+            "item4": "Sanitization removes metadata permanently - keep original files if you need to preserve document history",
+            "item5": "Password protection is not encryption - for highly sensitive data, consider additional security measures"
+          },
+          "metadataTitle": "PDF Security and Protection Tools",
+          "metadataDescription": "Browse tools for protecting, unlocking, sanitizing, and permission-managing PDF files. Use this hub to choose the right security task."
+        }
+      }
     },
     "status": {
       "idle": "Ready",
@@ -116,7 +240,18 @@
       "footer": "© 2025 PDFkoi. All rights reserved.",
       "copyright": "© {year} PDFkoi. All rights reserved.",
       "privacyBadge": "100% Private - Files never leave your device",
-      "madeWith": "Made with <Heart /> and <Nextjs />"
+      "madeWith": "Made with <Heart /> and <Nextjs />",
+      "resources": "Resources",
+      "security": "Security",
+      "securityClientSide": "Client-side processing",
+      "securityClientSideDesc": "Files never leave your device",
+      "securityNoUploads": "No file uploads",
+      "securityNoUploadsDesc": "100% private & secure",
+      "securityGdpr": "GDPR Compliant",
+      "securityGdprDesc": "100% Private - Files never leave your device",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "cookies": "Cookies"
     },
     "recentFiles": {
       "title": "Recent Files",
@@ -191,6 +326,27 @@
       "auto": "Auto",
       "portrait": "Portrait",
       "landscape": "Landscape"
+    },
+    "cookieConsent": {
+      "title": "Cookie Settings",
+      "message": "We use cookies to provide essential website functionality, remember your preferences, and display relevant advertisements through Google AdSense. Your PDF files are never shared with advertisers - all processing happens locally in your browser.",
+      "showDetails": "Show cookie details",
+      "hideDetails": "Hide details",
+      "essentialTitle": "Essential Cookies",
+      "alwaysActive": "Always Active",
+      "essentialDesc": "Required for the website to function properly. These cannot be disabled.",
+      "functionalTitle": "Functional Cookies",
+      "optional": "Optional",
+      "functionalDesc": "Remember your language preference and other settings to improve your experience.",
+      "advertisingTitle": "Advertising Cookies",
+      "advertisingDesc": "Used by Google AdSense and partners to show relevant ads. You can opt out anytime via",
+      "googleAdsSettings": "Google Ads Settings",
+      "acceptAll": "Accept All Cookies",
+      "acceptEssentialOnly": "Accept Essential Only",
+      "learnMore": "Learn more in our",
+      "and": "and",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy"
     }
   },
   "toolsPage": {
@@ -2124,6 +2280,340 @@
     "pdfReader": {
       "uploadLabel": "Open PDF File",
       "uploadDescription": "Open a PDF file to read and view."
+    }
+  },
+  "privacyPage": {
+    "metaTitle": "Privacy Policy",
+    "heroTitle": "Privacy Policy",
+    "heroSubtitle": "Your privacy is our top priority. {brand} is designed from the ground up to protect your data.",
+    "highlights": {
+      "noUpload": {
+        "title": "No Server Uploads",
+        "description": "Your files are never uploaded to any server. All processing happens locally in your browser."
+      },
+      "localProcessing": {
+        "title": "Local Processing",
+        "description": "PDF operations are performed using JavaScript and WebAssembly directly on your device."
+      },
+      "cleanup": {
+        "title": "Automatic Cleanup",
+        "description": "All file data is automatically cleared when you close the browser tab or navigate away."
+      },
+      "noTracking": {
+        "title": "No Tracking",
+        "description": "We don't track your file contents or personal information. Your documents remain private."
+      }
+    },
+    "lastUpdated": "Last updated: July 2026",
+    "badgeTitle": "Your documents are processed securely in your browser",
+    "sections": {
+      "intro": {
+        "heading": "1. Introduction",
+        "body": "{brand} (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use our PDF tools."
+      },
+      "howItWorks": {
+        "heading": "2. How Our Service Works",
+        "body": "{brand} is a client-side application. This means:",
+        "items": {
+          "item1": "All PDF processing happens directly in your web browser",
+          "item2": "Your files are never uploaded to our servers or any third-party servers",
+          "item3": "We cannot see, access, or store your documents",
+          "item4": "Your files remain on your device at all times"
+        }
+      },
+      "infoCollected": {
+        "heading": "3. Information We Collect",
+        "filesHeading": "3.1 Your Files",
+        "filesBody": "We do not collect your files. When you use our PDF tools, your files are processed entirely within your browser. They are never transmitted to our servers.",
+        "usageHeading": "3.2 Usage Data",
+        "usageBody": "We may collect anonymous usage statistics to improve our service, such as:",
+        "usageItems": {
+          "item1": "Which tools are most popular",
+          "item2": "General geographic region (country level)",
+          "item3": "Browser type and version",
+          "item4": "Device type (desktop, mobile, tablet)"
+        },
+        "usageFooter": "This data is aggregated and anonymized. It cannot be used to identify you personally."
+      },
+      "localStorage": {
+        "heading": "4. Local Storage",
+        "body": "{brand} may use your browser's local storage to:",
+        "items": {
+          "item1": "Remember your language preference",
+          "item2": "Store your recent tool history",
+          "item3": "Save work-in-progress for interrupted sessions"
+        },
+        "footer": "This data is stored only on your device and is not transmitted to us."
+      },
+      "cookies": {
+        "heading": "5. Cookies",
+        "body": "We use the following types of cookies:",
+        "essential": "Essential cookies",
+        "essentialDesc": "Required for the website to function properly",
+        "preference": "Preference cookies",
+        "preferenceDesc": "Remember your settings like language preference",
+        "advertising": "Advertising cookies",
+        "advertisingDesc": "Used by Google AdSense and its partners to display relevant advertisements (see Advertising section below)"
+      },
+      "advertising": {
+        "heading": "6. Advertising",
+        "body1": "We use Google AdSense to display advertisements on our website. Google AdSense and its advertising partners may use cookies and web beacons to serve ads based on your prior visits to this website and other websites on the Internet.",
+        "body2": "These advertising cookies allow Google and its partners to show you ads based on your interests. You can opt out of personalized advertising by visiting www.aboutads.info/choices/ or Google Ads Settings.",
+        "important": "Important",
+        "importantBody": "Your PDF files are never shared with Google or any advertising network. All file processing happens locally in your browser. Advertising cookies only relate to ad delivery and do not have access to your documents."
+      },
+      "thirdParty": {
+        "heading": "7. Third-Party Services",
+        "body": "Beyond the advertising services mentioned above, {brand} does not share your file data with any third parties. We do not use:",
+        "items": {
+          "item1": "Third-party analytics that track individual users",
+          "item2": "Social media tracking pixels",
+          "item3": "External file processing services"
+        }
+      },
+      "security": {
+        "heading": "8. Data Security",
+        "body": "Since your files never leave your device, they are protected by your own device's security measures. We recommend:",
+        "items": {
+          "item1": "Using an up-to-date browser",
+          "item2": "Keeping your operating system updated",
+          "item3": "Using secure networks when handling sensitive documents"
+        }
+      },
+      "rights": {
+        "heading": "9. Your Rights",
+        "body": "Since we don't collect personal data, there is no personal data to access, correct, or delete. You can clear your browser's local storage at any time to remove any preferences stored by {brand}."
+      },
+      "children": {
+        "heading": "10. Children's Privacy",
+        "body": "{brand} is not directed at children under 13. We do not knowingly collect any information from children."
+      },
+      "changes": {
+        "heading": "11. Changes to This Policy",
+        "body": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the \"Last updated\" date."
+      },
+      "contact": {
+        "heading": "12. Contact Us",
+        "body": "If you have any questions about this Privacy Policy, please contact us through our contact page."
+      }
+    }
+  },
+  "termsPage": {
+    "metaTitle": "Terms of Service",
+    "heroTitle": "Terms of Service",
+    "heroSubtitle": "Please read these terms carefully before using {brand}.",
+    "highlights": {
+      "clientSide": {
+        "title": "100% Client-Side",
+        "description": "Your files are processed locally in your browser and never uploaded to any server."
+      },
+      "privacyFirst": {
+        "title": "Privacy First",
+        "description": "We do not access, store, or transmit your documents. Your data stays on your device."
+      },
+      "free": {
+        "title": "Free to Use",
+        "description": "All PDF tools are free. No registration required, no hidden fees, no premium tiers."
+      },
+      "fairUse": {
+        "title": "Fair Use",
+        "description": "We ask that you use our service responsibly and not for any illegal purposes."
+      }
+    },
+    "lastUpdated": "Last updated: March 24, 2026",
+    "contactBadgeTitle": "Questions?",
+    "contactBadgeDesc": "Contact us if you have any questions about these Terms",
+    "sections": {
+      "acceptance": {
+        "heading": "1. Acceptance of Terms",
+        "body": "By accessing and using {brand} (\"the Service\"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Service."
+      },
+      "serviceDesc": {
+        "heading": "2. Service Description",
+        "body": "{brand} is a free, browser-based suite of PDF tools that allows users to merge, split, compress, convert, edit, and perform various operations on PDF files. The Service processes all files entirely client-side using WebAssembly technology."
+      },
+      "privacy": {
+        "heading": "3. Privacy & Data Handling",
+        "processingHeading": "3.1 Client-Side Processing",
+        "processingItems": {
+          "item1": "All file processing occurs locally in your browser. Your documents are never uploaded to any external server.",
+          "item2": "We do not have access to, store, or transmit your files.",
+          "item3": "Once you close or refresh the browser tab, your data is permanently deleted from memory."
+        },
+        "collectedHeading": "3.2 Information We Collect",
+        "collectedBody": "We may collect minimal usage data (e.g., which tools are used) for analytics purposes. We do not collect, store, or process the content of your PDF files.",
+        "cookiesHeading": "3.3 Cookies",
+        "cookiesBody": "We use essential cookies to maintain session functionality. No third-party tracking or advertising cookies are used."
+      },
+      "responsibilities": {
+        "heading": "4. User Responsibilities",
+        "body": "You agree not to:",
+        "items": {
+          "item1": "Use the Service for any illegal purpose",
+          "item2": "Upload or process files containing malicious content",
+          "item3": "Attempt to reverse engineer or exploit the Service",
+          "item4": "Use automated tools to access the Service beyond normal human usage"
+        }
+      },
+      "ip": {
+        "heading": "5. Intellectual Property",
+        "items": {
+          "item1": "{brand}: The Service, including its design, code, and branding, is the property of {brand} and is licensed under AGPL-3.0.",
+          "item2": "Your Files: You retain full ownership of any files you process through the Service.",
+          "item3": "Third-Party Libraries: The Service uses open-source libraries (PDF.js, pdf-lib, PyMuPDF) under their respective licenses."
+        }
+      },
+      "disclaimer": {
+        "heading": "6. Disclaimer of Warranties",
+        "body": "THE SERVICE IS PROVIDED \"AS IS\" WITHOUT WARRANTY OF ANY KIND. WE DO NOT GUARANTEE:",
+        "items": {
+          "item1": "The Service will be uninterrupted or error-free",
+          "item2": "The results from using the Service will be accurate or reliable",
+          "item3": "The quality of any products or services obtained through the Service will meet your expectations"
+        }
+      },
+      "liability": {
+        "heading": "7. Limitation of Liability",
+        "body": "IN NO EVENT SHALL {brand} BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SERVICE."
+      },
+      "changes": {
+        "heading": "8. Service Changes",
+        "body": "We reserve the right to:",
+        "items": {
+          "item1": "Modify or discontinue any part of the Service at any time",
+          "item2": "Update these Terms at any time. Continued use constitutes acceptance of changes."
+        }
+      },
+      "beta": {
+        "heading": "9. Beta Features",
+        "body": "Certain features (e.g., Workflow Editor) may be labeled as \"Beta\" or \"Early Development.\" These features may be unstable, and we disclaim liability for issues arising from their use."
+      },
+      "governingLaw": {
+        "heading": "10. Governing Law",
+        "body": "These Terms shall be governed by and construed in accordance with applicable laws, without regard to its conflict of law provisions."
+      },
+      "contact": {
+        "heading": "11. Contact",
+        "body": "For questions about these Terms, please contact us through our {contactLink} or email: support@pdfkoi.com",
+        "contactLink": "contact page"
+      }
+    }
+  },
+  "cookiesPage": {
+    "metaTitle": "Cookies Policy",
+    "heroTitle": "Cookies Policy",
+    "heroSubtitle": "This page explains how {brand} uses cookies and browser storage to support essential site features.",
+    "highlights": {
+      "minimal": {
+        "title": "Minimal usage",
+        "description": "We aim to use only the storage needed to make the site work and remember your preferences."
+      },
+      "noTracking": {
+        "title": "No ad tracking",
+        "description": "This policy does not permit advertising cookies or cross-site tracking for PDF content."
+      },
+      "onDevice": {
+        "title": "Stored on your device",
+        "description": "Preference data is typically stored in your own browser, not uploaded with your files."
+      },
+      "privacyFirst": {
+        "title": "Privacy-first design",
+        "description": "PDF processing stays in your browser, which reduces the need for server-side identifiers."
+      }
+    },
+    "lastUpdated": "Last updated: March 28, 2026",
+    "table": {
+      "item": "Item",
+      "purpose": "Purpose",
+      "technology": "Technology",
+      "duration": "Duration",
+      "rows": {
+        "language": {
+          "name": "Language preference",
+          "purpose": "Remembers the language you selected so the site opens in your preferred locale.",
+          "storage": "Local storage",
+          "duration": "Until you clear browser data"
+        },
+        "recent": {
+          "name": "Recent files and saved work",
+          "purpose": "Keeps recent activity and in-progress items on your own device for convenience.",
+          "storage": "Local storage",
+          "duration": "Until you clear browser data"
+        },
+        "state": {
+          "name": "Essential site state",
+          "purpose": "Supports core interface behavior such as tool state, dialogs, and user preferences.",
+          "storage": "Session storage or local storage",
+          "duration": "Session or until you clear browser data"
+        }
+      }
+    },
+    "sections": {
+      "covers": {
+        "heading": "1. What this policy covers",
+        "p1": "This Cookies Policy explains how {brand} uses cookies, local storage, session storage, and similar browser technologies when you visit the site or use our PDF tools.",
+        "p2": "Because our product is designed to process files in the browser, we try to keep storage usage limited to essential functionality, preferences, and product usability."
+      },
+      "means": {
+        "heading": "2. What we mean by cookies and similar technologies",
+        "p1": "Cookies are small text files placed in your browser. Similar technologies include local storage, session storage, and browser-managed preference data. In practice, some site features may rely on browser storage instead of classic cookies.",
+        "p2": "For clarity, this policy uses the phrase \"cookies and browser storage\" to cover all of these technologies together unless a section says otherwise."
+      },
+      "uses": {
+        "heading": "3. How {brand} uses cookies and browser storage"
+      },
+      "categories": {
+        "heading": "4. Categories of usage",
+        "essential": {
+          "heading": "Essential functionality",
+          "body": "These items help the site operate reliably, keep interface state consistent, and support features that users reasonably expect from a browser-based tool."
+        },
+        "preference": {
+          "heading": "Preference storage",
+          "body": "Preference storage helps remember settings such as language choice or other non-sensitive product preferences so that you do not need to reconfigure the site every visit."
+        },
+        "local": {
+          "heading": "Local productivity features",
+          "body": "Some tools may preserve recent actions or in-progress information on your own device to improve usability after refreshes or interrupted sessions."
+        }
+      },
+      "notUsed": {
+        "heading": "5. What we do not use these technologies for",
+        "items": {
+          "item1": "We do not use cookies to upload or inspect the contents of your PDF files.",
+          "item2": "We do not use advertising cookies to build behavioral ad profiles from your document activity.",
+          "item3": "We do not rely on cookies to move your files to third-party PDF processing services.",
+          "item4": "We do not claim a right to use browser storage to read documents outside the tools you choose to run."
+        }
+      },
+      "thirdParty": {
+        "heading": "6. Third-party services",
+        "p1": "If the site links out to services such as GitHub or X, those platforms may set their own cookies when you visit them. Their cookie behavior is governed by their own policies, not this page.",
+        "p2": "This policy covers cookies and browser storage used for the {brand} site experience itself."
+      },
+      "control": {
+        "heading": "7. How to control or delete cookies and local storage",
+        "p1": "You can control cookies and browser storage through your browser settings.",
+        "items": {
+          "item1": "Delete existing cookies and site storage from your browser privacy settings.",
+          "item2": "Block some or all cookies if your browser offers that option.",
+          "item3": "Clear local storage or site data for {brand} if you want to remove remembered preferences."
+        },
+        "p2": "Please note that disabling all cookies or site storage may affect site functionality, including your saved preferences and convenience features."
+      },
+      "changes": {
+        "heading": "8. Changes to this Cookies Policy",
+        "body": "We may update this policy from time to time to reflect changes in site functionality, legal requirements, or product design. When we do, we will update the date shown at the top of this page."
+      },
+      "contact": {
+        "heading": "9. Contact",
+        "body": "If you have questions about this policy, please use the Contact page linked in the site footer."
+      }
+    },
+    "summary": {
+      "heading": "Practical summary",
+      "body": "{brand} is built to do most of its work in the browser. That means the site generally needs only limited storage for preferences and usability, rather than invasive tracking infrastructure.",
+      "note": "Review your browser site settings any time if you want to clear saved preferences."
     }
   }
 }

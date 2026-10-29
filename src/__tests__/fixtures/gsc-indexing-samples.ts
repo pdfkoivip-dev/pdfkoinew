@@ -15,7 +15,7 @@ export const gscIndexingSamples: readonly GscIndexingSample[] = [
   // Failed samples
   { url: `${siteConfig.url}/tools/rasterize-pdf/`, category: 'indexable_200' },
 
-  // Pending: indexable pages (including high-value locales without localized content after Option C)
+  // Indexable: locales with real localized tool content
   { url: `${siteConfig.url}/zh/tools/add-attachments/`, category: 'indexable_200' },
   { url: `${siteConfig.url}/zh-tw/tools/merge-pdf/`, category: 'indexable_200' },
   { url: `${siteConfig.url}/zh-tw/tools/alternate-merge/`, category: 'indexable_200' },
@@ -26,11 +26,13 @@ export const gscIndexingSamples: readonly GscIndexingSample[] = [
   { url: `${siteConfig.url}/es/tools/pdf-to-bmp/`, category: 'indexable_200' },
   { url: `${siteConfig.url}/ko/tools/pdf-to-greyscale/`, category: 'indexable_200' },
   { url: `${siteConfig.url}/zh-tw/`, category: 'indexable_200' },
-  { url: `${siteConfig.url}/pt/tools/rasterize-pdf/`, category: 'indexable_200' },
-  { url: `${siteConfig.url}/ko/tools/sanitize-pdf/`, category: 'indexable_200' },
   { url: `${siteConfig.url}/es/tools/rtf-to-pdf/`, category: 'indexable_200' },
-  { url: `${siteConfig.url}/ko/tools/markdown-to-pdf/`, category: 'indexable_200' },
   { url: `${siteConfig.url}/zh-tw/tools/font-to-outline/`, category: 'indexable_200' },
+
+  // Non-indexable: locales without localized tool content now noindex + English canonical
+  { url: `${siteConfig.url}/pt/tools/rasterize-pdf/`, category: 'intentional_404' },
+  { url: `${siteConfig.url}/ko/tools/sanitize-pdf/`, category: 'intentional_404' },
+  { url: `${siteConfig.url}/ko/tools/markdown-to-pdf/`, category: 'intentional_404' },
 
   // Pending: canonical redirects (only /en/* and locale normalization remain)
   { url: `${siteConfig.url}/en/tools/jpg-to-pdf`, category: 'canonical_redirect' },

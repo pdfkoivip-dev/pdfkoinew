@@ -59,7 +59,10 @@
       "about": "概要",
       "faq": "よくある質問",
       "privacy": "プライバシー",
-      "contact": "お問い合わせ"
+      "contact": "お問い合わせ",
+      "terms": "利用規約",
+      "cookies": "Cookie",
+      "workflow": "ワークフロー"
     },
     "buttons": {
       "upload": "ファイルをアップロード",
@@ -69,7 +72,6 @@
       "reset": "リセット",
       "selectLanguage": "言語を選択",
       "close": "閉じる",
-      "save": "保存",
       "delete": "削除",
       "edit": "編集",
       "back": "戻る",
@@ -87,7 +89,8 @@
       "rotateAllLeft": "Rotate All Left",
       "rotateAllRight": "Rotate All Right",
       "confirm": "確認",
-      "add": "追加"
+      "add": "追加",
+      "save": "保存"
     },
     "categoryPage": {
       "helperText": "このハブから、いまの作業に最も合ったツールページへすぐ移動できます。",
@@ -101,7 +104,129 @@
       "featuredSectionDescription": "やることが既に決まっているときの有力な出発点です。",
       "featuredLabel": "{tool} に最適",
       "featuredReason": "{tool} が主な作業なら、このツールを開いてください。",
-      "openTool": "{tool} を開く"
+      "openTool": "{tool} を開く",
+      "categories": {
+        "editAnnotate": {
+          "useCasesSectionTitle": "よくある利用シーン",
+          "useCasesSectionItems": {
+            "item1": "コメントや署名を付けて契約書を確認・承認する",
+            "item2": "申込書、税務書類、登録書類に記入する",
+            "item3": "知的財産の保護や文書ステータスの明示のために透かしを追加する",
+            "item4": "研究論文や法的文書、技術仕様書に注釈を付けて共同作業する",
+            "item5": "配布前にページ番号やヘッダーを追加して文書の体裁を整える"
+          },
+          "precautionsSectionTitle": "注意事項",
+          "precautionsSectionItems": {
+            "item1": "すべての編集はブラウザ内で行われ、ファイルがサーバーにアップロードされることはありません",
+            "item2": "複数の編集を行う際は、変更を失わないようこまめに保存してください",
+            "item3": "ここで追加する電子署名は表示上のものです。法的拘束力のある署名には認定署名ツールを使用してください",
+            "item4": "フォームフィールドの検証やJavaScriptアクションなど、一部のPDF機能は編集後に保持されない場合があります",
+            "item5": "最良の結果を得るには、パスワード保護や編集制限のないPDFで作業してください"
+          },
+          "metadataTitle": "PDF編集・注釈ツール",
+          "metadataDescription": "PDF文書の注釈、入力、署名、仕上げを行うツールを紹介します。このハブから最適な編集ワークフローを選びましょう。"
+        },
+        "convertToPdf": {
+          "useCasesSectionTitle": "よくある利用シーン",
+          "useCasesSectionItems": {
+            "item1": "プロ向け配布や統一された書式のためにWord文書をPDFに変換する",
+            "item2": "複数の画像からプレゼンやアルバム用のPDFポートフォリオを作成する",
+            "item3": "ExcelレポートをPDFに変換して関係者と財務データを共有する",
+            "item4": "PowerPointプレゼンを会議や研修用のPDF配布資料に変換する",
+            "item5": "テキストファイルや電子書籍をPDFに変換して読みやすくし、アーカイブする"
+          },
+          "precautionsSectionTitle": "注意事項",
+          "precautionsSectionItems": {
+            "item1": "すべての変換はブラウザ内でローカルに行われ、ファイルがサーバーにアップロードされることはありません",
+            "item2": "ソース文書の複雑な書式は、変換後に手動調整が必要になる場合があります",
+            "item3": "出力PDFの画質はソースファイルの品質に依存します",
+            "item4": "大きなファイルや一括変換は、デバイスの性能によって時間がかかる場合があります",
+            "item5": "マクロ、アニメーション、埋め込みメディアなどの一部の高度な機能はPDFに引き継がれない場合があります"
+          },
+          "metadataTitle": "ファイルをPDFに変換",
+          "metadataDescription": "画像、Officeファイル、電子書籍などの形式をPDFに変換するツールを紹介します。最適な変換経路を選びましょう。"
+        },
+        "convertFromPdf": {
+          "useCasesSectionTitle": "よくある利用シーン",
+          "useCasesSectionItems": {
+            "item1": "契約書PDFをWordに変換して条項を編集する",
+            "item2": "PDFページを画像として抽出し、プレゼンやWebコンテンツに使用する",
+            "item3": "PDFの表をExcelに変換してデータ分析やレポート作成を行う",
+            "item4": "PDF文書をPowerPointにエクスポートしてスライド資料を作成する",
+            "item5": "スキャンしたPDFをテキストファイルに変換して内容を再利用・編集する"
+          },
+          "precautionsSectionTitle": "注意事項",
+          "precautionsSectionItems": {
+            "item1": "すべての変換はブラウザ内でローカルに処理され、ファイルがデバイスから出ることはありません",
+            "item2": "変換精度はPDFの構造に依存します。スキャンPDFは最良の結果を得るためにOCRが必要な場合があります",
+            "item3": "複数列や埋め込みグラフィックを含む複雑なレイアウトは、手動の書式調整が必要な場合があります",
+            "item4": "パスワード保護や制限付きのPDFは、変換前にロックを解除する必要があります",
+            "item5": "エクスポートしたファイルの画質は、元のPDF内コンテンツの解像度に依存します"
+          },
+          "metadataTitle": "PDFを他の形式に変換",
+          "metadataDescription": "PDFを編集可能な文書、画像、データ形式に変換するツールを紹介します。最適な書き出しワークフローを選びましょう。"
+        },
+        "organizeManage": {
+          "useCasesSectionTitle": "よくある利用シーン",
+          "useCasesSectionItems": {
+            "item1": "複数の契約セクションや付録を1つの完全な文書に統合する",
+            "item2": "大きなレポートを章ごとに分割して配布しやすくする",
+            "item3": "プレゼンのスライドを並べ替えたり、スキャン文書の重複ページを削除する",
+            "item4": "長いマニュアルや参考資料から特定のページを抽出する",
+            "item5": "請求書や領収書、明細を整理された月次アーカイブにまとめる"
+          },
+          "precautionsSectionTitle": "注意事項",
+          "precautionsSectionItems": {
+            "item1": "すべての操作はブラウザ内でローカルに実行され、ファイルがアップロードされることはありません",
+            "item2": "PDFを結合する際は、処理前にファイルが正しい順序であることを確認してください",
+            "item3": "分割やページ抽出は新しいファイルを作成し、元のファイルは変更されません",
+            "item4": "しおりや目次は、ページを整理した後に再作成が必要な場合があります",
+            "item5": "大きなファイルを扱う際は、メモリを解放するために不要なブラウザタブを閉じてください"
+          },
+          "metadataTitle": "PDF整理ツール",
+          "metadataDescription": "ページの並べ替え、文書の結合、ファイル分割、PDFの再構成を行うツールを紹介します。最適なページ管理タスクを選びましょう。"
+        },
+        "optimizeRepair": {
+          "useCasesSectionTitle": "よくある利用シーン",
+          "useCasesSectionItems": {
+            "item1": "メール添付のサイズ制限やアップロード制限を満たすために大きなPDFを圧縮する",
+            "item2": "正しく開けない、または表示できない破損したPDFを修復する",
+            "item3": "法的アーカイブや規制対応のためにPDFをPDF/A形式に変換する",
+            "item4": "機密文書を共有する前にメタデータや隠し情報を削除する",
+            "item5": "可読性を保ちながら保存容量を減らすためにスキャン文書を最適化する"
+          },
+          "precautionsSectionTitle": "注意事項",
+          "precautionsSectionItems": {
+            "item1": "すべての処理はブラウザ内で行われ、ファイルが外部サーバーにアップロードされることはありません",
+            "item2": "圧縮により画質が低下する場合があります。元のファイルを置き換える前に結果を確認してください",
+            "item3": "修復ツールは多くの問題を修正できますが、深刻に損傷したファイルの内容は復元できません",
+            "item4": "PDF/A変換では、フォーム、JavaScript、マルチメディアなどのインタラクティブ要素が削除されます",
+            "item5": "最適化や修復を行う前に、重要な文書のバックアップを必ず取ってください"
+          },
+          "metadataTitle": "PDF最適化・修復ツール",
+          "metadataDescription": "PDFの圧縮、修復、クリーニング、品質向上を行うツールを紹介します。最適なメンテナンスワークフローを選びましょう。"
+        },
+        "securePdf": {
+          "useCasesSectionTitle": "よくある利用シーン",
+          "useCasesSectionItems": {
+            "item1": "機密の契約書、財務レポート、個人文書をパスワードで保護する",
+            "item2": "パスワードを忘れたり制限があったりして編集できない、自分が所有するPDFのロックを解除する",
+            "item3": "公開前に著者情報、コメント、変更履歴を削除するために文書をサニタイズする",
+            "item4": "専有コンテンツの不正なコピー、印刷、編集を防ぐために権限を設定する",
+            "item5": "古いアーカイブファイルからセキュリティを解除して最新のワークフロー連携を可能にする"
+          },
+          "precautionsSectionTitle": "注意事項",
+          "precautionsSectionItems": {
+            "item1": "すべてのセキュリティ操作はローカルで行われ、パスワードやファイルがブラウザから出ることはありません",
+            "item2": "強力なパスワードが不可欠です。最良の保護のために文字、数字、記号を組み合わせてください",
+            "item3": "PDFのロック解除には正しいパスワードが必要です。未知のパスワードを解読したり回避したりすることはできません",
+            "item4": "サニタイズはメタデータを恒久的に削除します。文書履歴を残す必要がある場合は元のファイルを保管してください",
+            "item5": "パスワード保護は暗号化ではありません。機密性の高いデータには追加のセキュリティ対策を検討してください"
+          },
+          "metadataTitle": "PDFセキュリティ・保護ツール",
+          "metadataDescription": "PDFの保護、ロック解除、サニタイズ、権限管理を行うツールを紹介します。最適なセキュリティタスクを選びましょう。"
+        }
+      }
     },
     "status": {
       "idle": "準備完了",
@@ -115,7 +240,18 @@
       "copyright": "© {year} PDFkoi. All rights reserved.",
       "privacyBadge": "100%プライベート - ファイルはデバイスから離れません",
       "footer": "© 2025 PDFkoi. All rights reserved.",
-      "madeWith": "Made with <Heart /> and <Nextjs />"
+      "madeWith": "Made with <Heart /> and <Nextjs />",
+      "resources": "リソース",
+      "security": "セキュリティ",
+      "securityClientSide": "クライアント側での処理",
+      "securityClientSideDesc": "ファイルが端末から出ることはありません",
+      "securityNoUploads": "アップロード不要",
+      "securityNoUploadsDesc": "100% プライベート & 安全",
+      "securityGdpr": "GDPR 準拠",
+      "securityGdprDesc": "100% プライベート - ファイルは端末から出ません",
+      "terms": "利用規約",
+      "privacy": "プライバシー",
+      "cookies": "Cookie"
     },
     "recentFiles": {
       "title": "最近のファイル",
@@ -166,103 +302,6 @@
       "placeholder": "ツールを検索...",
       "hint": "Enterで選択、↑↓で移動",
       "noResults": "ツールが見つかりません"
-    },
-    "faqPage": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Find answers to common questions about {brand}",
-      "searchPlaceholder": "Search FAQs...",
-      "noResults": "No FAQs found matching your search.",
-      "expandAll": "Expand All",
-      "collapseAll": "Collapse All",
-      "categories": {
-        "all": "All",
-        "general": "General",
-        "privacy": "Privacy & Security",
-        "features": "Features",
-        "technical": "Technical",
-        "languages": "Languages"
-      },
-      "sections": {
-        "general": {
-          "whatIs": {
-            "question": "What is PDFkoi?",
-            "answer": "PDFkoi は、ブラウザ内で完結する無料・プライベートなPDFツールキットです。95+ のPDFツールを備え、ファイルをサーバーへアップロードせずに、編集、変換、結合、分割、保護を行えます。"
-          },
-          "isFree": {
-            "question": "Is PDFkoi really free?",
-            "answer": "Yes, PDFkoi is completely free to use. There are no hidden costs, no premium tiers, and no registration required. All features are available to everyone."
-          },
-          "account": {
-            "question": "Do I need to create an account?",
-            "answer": "No, you don't need to create an account or register to use PDFkoi. Simply visit the website and start using any tool immediately."
-          }
-        },
-        "privacy": {
-          "uploaded": {
-            "question": "Are my files uploaded to a server?",
-            "answer": "No, your files are never uploaded to any server. All PDF processing happens locally in your browser using JavaScript and WebAssembly. Your files never leave your device."
-          },
-          "safe": {
-            "question": "Is it safe to use PDFkoi with sensitive documents?",
-            "answer": "Yes, PDFkoi is designed with privacy in mind. Since all processing happens locally in your browser, your sensitive documents remain on your device and are never transmitted over the internet."
-          },
-          "storage": {
-            "question": "What happens to my files after processing?",
-            "answer": "Your files are stored temporarily in your browser's memory during processing. Once you close the browser tab or navigate away, all file data is automatically cleared. We don't store any of your files."
-          }
-        },
-        "features": {
-          "operations": {
-            "question": "What PDF operations can I perform?",
-            "answer": "PDFkoi では、結合、分割、圧縮、変換（画像・テキスト・JSONとの相互変換）、編集、注釈、署名、透かし追加、暗号化/復号化、OCR など 95+ のツールを利用できます。"
-          },
-          "merge": {
-            "question": "Can I merge multiple PDF files?",
-            "answer": "Yes, you can merge multiple PDF files into one. Simply use the Merge PDF tool, upload your files, arrange them in the desired order, and click merge."
-          },
-          "images": {
-            "question": "Can I convert images to PDF?",
-            "answer": "Yes, PDFkoi supports converting various image formats (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) to PDF. You can convert single or multiple images at once."
-          },
-          "edit": {
-            "question": "Can I edit text in a PDF?",
-            "answer": "PDFkoi provides annotation and editing tools including highlighting, adding text, shapes, images, and signatures. For full text editing, the PDF Editor tool offers comprehensive annotation capabilities."
-          }
-        },
-        "technical": {
-          "browsers": {
-            "question": "What browsers are supported?",
-            "answer": "PDFkoi works on all modern browsers including Chrome, Firefox, Safari, and Edge. We recommend using the latest version of your browser for the best experience."
-          },
-          "sizeLimit": {
-            "question": "Is there a file size limit?",
-            "answer": "Most tools support files up to 100MB, with some tools like merge and compress supporting up to 500MB. These limits are in place to ensure smooth performance in your browser."
-          },
-          "slow": {
-            "question": "Why is processing slow for large files?",
-            "answer": "Since all processing happens in your browser, performance depends on your device's capabilities. Large files require more memory and processing power. For best results, close other browser tabs and applications."
-          },
-          "offline": {
-            "question": "Does PDFkoi work offline?",
-            "answer": "Currently, PDFkoi requires an internet connection to load the application. However, once loaded, the PDF processing itself happens locally and doesn't require a connection."
-          }
-        },
-        "languages": {
-          "supported": {
-            "question": "What languages are supported?",
-            "answer": "PDFkoi is available in 9 languages: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
-          },
-          "change": {
-            "question": "How do I change the language?",
-            "answer": "You can change the language using the language selector in the header. Your preference will be saved for future visits."
-          }
-        }
-      },
-      "cta": {
-        "title": "Still have questions?",
-        "description": "Can't find the answer you're looking for? Feel free to reach out to us.",
-        "button": "Contact Us"
-      }
     },
     "aboutPage": {
       "title": "About {brand}",
@@ -318,96 +357,50 @@
         "button": "Browse All Tools"
       }
     },
-    "contactPage": {
-      "hero": {
-        "title": "お問い合わせ",
-        "description": "ご質問、ご提案、不具合のご報告はございませんか？ご連絡をお待ちしております。"
-      },
-      "methods": {
-        "email": {
-          "title": "メール",
-          "description": "メールをお送りください。24〜48時間以内に返信いたします。",
-          "action": "support@pdfkoi.com"
-        },
-        "github": {
-          "title": "GitHub",
-          "description": "バグの報告、機能のリクエスト、プロジェクトへの貢献はこちら。",
-          "action": "GitHubで見る"
-        },
-        "twitter": {
-          "title": "Twitter",
-          "description": "最新情報やお知らせはこちらでフォロー。",
-          "action": "@PDFkoi"
-        }
-      },
-      "form": {
-        "title": "メッセージを送る",
-        "description": "以下のフォームにご記入ください。できるだけ早くご連絡いたします。",
-        "success": {
-          "title": "送信完了！",
-          "description": "ご連絡ありがとうございます。24〜48時間以内にご連絡いたします。",
-          "button": "別のメッセージを送る"
-        },
-        "fields": {
-          "name": {
-            "label": "お名前",
-            "placeholder": "お名前"
-          },
-          "email": {
-            "label": "メールアドレス",
-            "placeholder": "your@email.com"
-          },
-          "subject": {
-            "label": "件名",
-            "placeholder": "件名を選択",
-            "options": {
-              "general": "一般的なお問い合わせ",
-              "bug": "バグ報告",
-              "feature": "機能リクエスト",
-              "feedback": "フィードバック",
-              "other": "その他"
-            }
-          },
-          "message": {
-            "label": "メッセージ",
-            "placeholder": "お問い合わせの詳細をご記入ください..."
-          }
-        },
-        "error": "エラーが発生しました。もう一度お試しいただくか、メールで直接お問い合わせください。",
-        "submit": {
-          "loading": "送信中...",
-          "default": "メッセージを送信"
-        }
-      },
-      "faq": {
-        "title": "よくある質問をお探しですか？",
-        "description": "{brand}に関するよくある質問は、FAQページをご覧ください。",
-        "button": "FAQを見る"
-      }
-    },
     "accessibility": {
-      "skipToContent": "Skip to main content",
-      "skipToNavigation": "Skip to navigation",
-      "loading": "Loading, please wait",
-      "menuExpanded": "Menu expanded",
-      "menuCollapsed": "Menu collapsed",
-      "newWindow": "Opens in new window",
-      "externalLink": "External link",
-      "required": "Required field",
-      "optional": "Optional",
-      "selected": "Selected",
-      "notSelected": "Not selected",
-      "pageOf": "Page {current} of {total}",
-      "sortAscending": "Sort ascending",
-      "sortDescending": "Sort descending",
-      "closeDialog": "Close dialog",
-      "expandSection": "Expand section",
-      "collapseSection": "Collapse section"
+      "skipToContent": "メインコンテンツへスキップ",
+      "skipToNavigation": "ナビゲーションへスキップ",
+      "loading": "読み込み中です。お待ちください",
+      "menuExpanded": "メニュー展開済み",
+      "menuCollapsed": "メニュー折りたたみ済み",
+      "newWindow": "新しいウィンドウで開きます",
+      "externalLink": "外部リンク",
+      "required": "必須項目",
+      "optional": "任意項目",
+      "selected": "選択済み",
+      "notSelected": "未選択",
+      "pageOf": "{total} ページ中 {current} ページ",
+      "sortAscending": "昇順で並べ替え",
+      "sortDescending": "降順で並べ替え",
+      "closeDialog": "ダイアログを閉じる",
+      "expandSection": "セクションを展開",
+      "collapseSection": "セクションを折りたたむ"
     },
     "options": {
-      "auto": "Auto",
-      "portrait": "Portrait",
-      "landscape": "Landscape"
+      "auto": "自動",
+      "portrait": "縦向き",
+      "landscape": "横向き"
+    },
+    "cookieConsent": {
+      "title": "Cookie 設定",
+      "message": "当サイトでは、必要不可欠なウェブサイト機能の提供、設定の記憶、Google AdSense による関連広告の表示のために Cookie を使用しています。お客様の PDF ファイルが広告主と共有されることは一切なく、すべての処理はブラウザ内でローカルに行われます。",
+      "showDetails": "Cookie の詳細を表示",
+      "hideDetails": "詳細を非表示",
+      "essentialTitle": "必須 Cookie",
+      "alwaysActive": "常に有効",
+      "essentialDesc": "ウェブサイトが正しく機能するために必要です。無効にすることはできません。",
+      "functionalTitle": "機能 Cookie",
+      "optional": "任意",
+      "functionalDesc": "言語設定などの好みを記憶し、利便性を向上させます。",
+      "advertisingTitle": "広告 Cookie",
+      "advertisingDesc": "Google AdSense とそのパートナーが関連広告を表示するために使用します。いつでも以下から無効にできます。",
+      "googleAdsSettings": "Google 広告設定",
+      "acceptAll": "すべての Cookie を受け入れる",
+      "acceptEssentialOnly": "必須のみ受け入れる",
+      "learnMore": "詳しくは",
+      "and": "および",
+      "privacyPolicy": "プライバシーポリシー",
+      "cookiePolicy": "Cookie ポリシー"
     }
   },
   "errors": {
@@ -685,7 +678,9 @@
       "warning": "Warning",
       "warningText": "Selected pages will be permanently removed from the PDF. At least one page must remain.",
       "deleteButton": "Delete Pages",
-      "successMessage": "Pages deleted successfully! Click the download button to save your file."
+      "successMessage": "Pages deleted successfully! Click the download button to save your file.",
+      "pageRange": "ページ範囲",
+      "pageRangePlaceholder": "例：1, 3-5, 8"
     },
     "extractPages": {
       "uploadLabel": "Upload PDF File",
@@ -693,7 +688,9 @@
       "selectTitle": "Select Pages to Extract",
       "selectHint": "Click pages to select them, or enter page numbers/ranges above.",
       "extractButton": "Extract Pages",
-      "successMessage": "Pages extracted successfully! Click the download button to save your file."
+      "successMessage": "Pages extracted successfully! Click the download button to save your file.",
+      "pageRange": "ページ範囲",
+      "pageRangePlaceholder": "例：1-5, 8, 10-12"
     },
     "posterizePdf": {
       "uploadLabel": "Upload PDF File",
@@ -853,7 +850,8 @@
       "imagesPerPdf": "1つのPDFあたりの画像数",
       "batchModeHint": "{pdfCount}個のPDFファイルが作成され、ZIPアーカイブとしてパッケージされます。",
       "batchSuccessMessage": "{imageCount}枚の画像から{pdfCount}個のPDFファイルを正常に作成しました！ダウンロードボタンをクリックしてZIPアーカイブを保存してください。",
-      "successMessage": "Images converted to PDF successfully! Click the download button to save your file."
+      "successMessage": "Images converted to PDF successfully! Click the download button to save your file.",
+      "fitToImage": "画像に合わせる"
     },
     "compressPdf": {
       "uploadLabel": "Upload PDF Files",
@@ -878,7 +876,17 @@
       "downloadAllZip": "Download All as ZIP",
       "originalSize": "Original:",
       "compressedSize": "Compressed:",
-      "saved": "Saved:"
+      "saved": "Saved:",
+      "algorithmLabel": "圧縮アルゴリズム",
+      "algorithmStandard": "標準",
+      "algorithmCondense": "圧縮（Condense）",
+      "algorithmPhoton": "Photon",
+      "algorithmStandardDesc": "オブジェクトストリームを使用した汎用圧縮",
+      "algorithmCondenseDesc": "インタラクティブ性を保ちながら構造を最適化",
+      "algorithmPhotonDesc": "ページを画像化 — 画像の多いPDFに最適",
+      "photonWarning": "注意：Photonはページを画像に変換するため、テキスト品質が低下し、インタラクティブ性（リンク、フォーム）が失われる場合があります。",
+      "photonDpiLabel": "出力DPI",
+      "photonDpiDesc": "DPIが高いほど品質が向上しますが、ファイルサイズが大きくなります"
     },
     "signPdf": {
       "uploadLabel": "Upload PDF File",
@@ -968,7 +976,10 @@
       "downloadAll": "すべてダウンロード",
       "downloadZip": "ZIPでダウンロード",
       "page": "ページ",
-      "successMessage": "画像の抽出に成功しました！個別の画像をクリックしてダウンロードするか、「ZIPでダウンロード」を使用してください。"
+      "successMessage": "画像の抽出に成功しました！個別の画像をクリックしてダウンロードするか、「ZIPでダウンロード」を使用してください。",
+      "optionsTitle": "設定",
+      "format": "出力形式",
+      "minSize": "最小サイズ（px）"
     },
     "encryptPdf": {
       "uploadLabel": "Upload PDF File",
@@ -1065,7 +1076,7 @@
       "useMargins": "余白とガターを追加",
       "addBorder": "ページの周りに枠線を追加",
       "borderColor": "枠線の色",
-      "previewInfo": "{pages}ページが{sheets}シートに{perSheet}ページずつ配置されます。",
+      "previewInfo": "{pages}ページが{sheets}シートに配置されます。",
       "layoutDirection": "レイアウト方向",
       "layoutHorizontal": "横並び（左から右）",
       "layoutVertical": "縦並び（上から下）",
@@ -1605,7 +1616,9 @@
       "unsupportedImage": "Unsupported image format. Please use PNG or JPG.",
       "failed": "Failed to add watermark.",
       "addButton": "Add Watermark",
-      "successMessage": "Watermark added successfully!"
+      "successMessage": "Watermark added successfully!",
+      "type": "種類",
+      "textPlaceholder": "例：CONFIDENTIAL"
     },
     "headerFooter": {
       "uploadLabel": "Upload PDF File",
@@ -1616,7 +1629,13 @@
       "preview": "Preview",
       "previewHint": "Enter header or footer text to see preview",
       "addButton": "Add Header & Footer",
-      "successMessage": "Header & footer added successfully!"
+      "successMessage": "Header & footer added successfully!",
+      "headerText": "ヘッダーテキスト",
+      "headerTextPlaceholder": "ヘッダーテキストを入力...",
+      "footerText": "フッターテキスト",
+      "footerTextPlaceholder": "フッターテキストを入力...",
+      "fontSize": "フォントサイズ",
+      "fontColor": "フォントカラー"
     },
     "invertColors": {
       "uploadLabel": "Upload PDF File",
@@ -1722,7 +1741,61 @@
       "fieldLabelPlaceholder": "ラベルテキストを入力...",
       "labelPosition": "位置",
       "labelAbove": "上",
-      "labelLeft": "左"
+      "labelLeft": "左",
+      "formOptions": "フォームオプション",
+      "flattenForm": "フォームをフラット化",
+      "flattenFormHint": "フォームフィールドを編集不可にする（静的コンテンツに変換）",
+      "projectManagement": "プロジェクト管理",
+      "saveProject": "プロジェクトを保存",
+      "savedProjects": "保存済みプロジェクト",
+      "loadProject": "読み込む",
+      "deleteProject": "削除",
+      "saveProjectTitle": "プロジェクトを保存",
+      "projectName": "プロジェクト名",
+      "projectNamePlaceholder": "プロジェクト名を入力...",
+      "saveInfo": "{fields}個のフォームフィールドが保存されます。",
+      "saveNote": "プロジェクトはブラウザ内にローカル保存されます。",
+      "undo": "元に戻す（Ctrl+Z）",
+      "redo": "やり直す（Ctrl+Y）",
+      "duplicate": "複製（Ctrl+D）",
+      "align": "整列",
+      "alignLeft": "左揃え",
+      "alignCenter": "中央揃え",
+      "alignRight": "右揃え",
+      "alignTop": "上揃え",
+      "alignMiddle": "上下中央揃え",
+      "alignBottom": "下揃え",
+      "defaultValue": "デフォルト値",
+      "defaultValuePlaceholder": "デフォルトテキストを入力...",
+      "defaultChecked": "デフォルトでチェック",
+      "defaultSelection": "デフォルト選択",
+      "noDefault": "-- なし --",
+      "required": "必須フィールド",
+      "shortcutsHint": "ショートカット：Ctrl+Z（元に戻す）| Ctrl+Y（やり直す）| Ctrl+D（複製）| Ctrl+A（全選択）| Delete（削除）",
+      "buttonTool": "ボタン",
+      "signatureTool": "署名",
+      "dateTool": "日付",
+      "listboxTool": "リストボックス",
+      "buttonLabel": "ボタンラベル",
+      "buttonLabelPlaceholder": "送信",
+      "signatureLabel": "署名ラベル",
+      "signatureLabelPlaceholder": "ここに署名",
+      "dateFormat": "日付形式",
+      "defaultDate": "デフォルト日付",
+      "multiSelect": "複数選択を許可",
+      "basicTools": "基本",
+      "advancedTools": "その他",
+      "properties": "プロパティ",
+      "fieldsTab": "フィールド",
+      "optionsTab": "オプション",
+      "addField": "追加",
+      "clickToAdd": "PDFをクリックしてフィールドを追加",
+      "pages": "ページ",
+      "processingButton": "処理中...",
+      "cancelButton": "キャンセル",
+      "saveButton": "保存",
+      "orCreateBlank": "または",
+      "createBlankPdf": "空のPDFを作成"
     },
     "removeBlankPages": {
       "uploadLabel": "Upload PDF File",
@@ -1744,7 +1817,8 @@
       "addBookmark": "Add TOC entry to bookmarks",
       "bookmarkRequired": "This tool generates a clickable table of contents from existing PDF bookmarks. Please ensure your PDF has bookmarks before using this tool. You can add bookmarks using the Edit Bookmarks tool.",
       "generate": "Generate Table of Contents",
-      "success": "Table of contents generated successfully!"
+      "success": "Table of contents generated successfully!",
+      "tocTitlePlaceholder": "目次タイトルを入力..."
     },
     "pdfToDocx": {
       "uploadLabel": "Upload PDF File",
@@ -1823,63 +1897,114 @@
       "uploadDescription": "Upload PDFs to straighten.",
       "optionsTitle": "Options",
       "processButton": "Deskew PDF",
-      "successMessage": "PDF deskewed!"
+      "successMessage": "PDF deskewed!",
+      "filesTitle": "傾き補正するファイル",
+      "thresholdLabel": "検出しきい値",
+      "thresholdDesc": "値が高いほど微妙な傾きを検出します。デフォルト：10",
+      "dpiLabel": "解析DPI",
+      "dpiDesc": "DPIが高いほど正確に検出できますが、時間がかかります。",
+      "downloadAllZip": "すべてZIPでダウンロード"
     },
     "pdfBooklet": {
       "uploadLabel": "Upload PDF",
       "uploadDescription": "Upload PDF for booklet.",
       "optionsTitle": "Options",
       "createButton": "Create",
-      "successMessage": "Booklet created!"
+      "successMessage": "Booklet created!",
+      "gridModeLabel": "グリッドモード",
+      "gridModeDesc": "1x2は小冊子の標準です。紙を節約するには大きなグリッドを使用してください。",
+      "paperSizeLabel": "用紙サイズ",
+      "orientationLabel": "向き",
+      "rotationLabel": "ページ回転",
+      "paddingLabel": "余白",
+      "previewLabel": "レイアウトプレビュー",
+      "previewDesc": "このプレビューは各シートにページがどのように配置されるかを示します。"
     },
     "rasterizePdf": {
       "uploadLabel": "Upload PDFs",
       "uploadDescription": "Upload to rasterize.",
       "optionsTitle": "Options",
       "rasterizeButton": "Rasterize",
-      "successMessage": "Rasterized!"
+      "successMessage": "Rasterized!",
+      "dpiLabel": "解像度（DPI）",
+      "formatLabel": "出力形式",
+      "qualityLabel": "品質",
+      "pageRangeLabel": "ページ範囲（任意）",
+      "pageRangeDesc": "空のままにすると全ページを変換します。",
+      "bgColorLabel": "背景色",
+      "convertButton": "画像に変換"
     },
     "markdownToPdf": {
       "uploadLabel": "Upload Markdown",
       "uploadDescription": "Upload .md file.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Converted!"
+      "successMessage": "Converted!",
+      "manualInput": "Markdownを書く",
+      "uploadFile": "ファイルをアップロード",
+      "editorLabel": "Markdownエディタ",
+      "previewLabel": "プレビュー",
+      "showPreview": "プレビューを表示",
+      "hidePreview": "プレビューを非表示",
+      "themeLabel": "テーマ",
+      "pageSizeLabel": "ページサイズ",
+      "gfmLabel": "GitHub Flavored Markdownを有効化（表、タスクリストなど）",
+      "syntaxHighlightLabel": "コードブロックの構文ハイライトを有効化"
     },
     "emailToPdf": {
       "uploadLabel": "Upload Email",
       "uploadDescription": "Upload .eml file.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Converted!"
+      "successMessage": "Converted!",
+      "pageSizeLabel": "ページサイズ",
+      "includeCcBccLabel": "CC/BCCフィールドを含める",
+      "includeAttachmentsLabel": "添付ファイルリストを含める",
+      "timezoneLabel": "タイムゾーン"
     },
     "cbzToPdf": {
       "uploadLabel": "Upload CBZ",
       "uploadDescription": "Upload comic.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Converted!"
+      "successMessage": "Converted!",
+      "pageSizeLabel": "ページサイズ",
+      "qualityLabel": "画像品質",
+      "preserveAspectLabel": "アスペクト比を保持"
     },
     "pdfToPdfa": {
       "uploadLabel": "Upload PDF",
       "uploadDescription": "Upload for PDF/A.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "PDF/A created!"
+      "successMessage": "PDF/A created!",
+      "filesTitle": "変換するファイル",
+      "levelLabel": "PDF/Aレベル",
+      "embedFontsLabel": "すべてのフォントを埋め込む",
+      "flattenTransparencyLabel": "透過をフラット化（PDF/A-1bに必要）",
+      "downloadAllZip": "すべてZIPでダウンロード"
     },
     "fontToOutline": {
       "uploadLabel": "Upload PDFs",
       "uploadDescription": "Upload to outline fonts.",
       "optionsTitle": "Options",
       "convertButton": "Convert",
-      "successMessage": "Fonts outlined!"
+      "successMessage": "Fonts outlined!",
+      "filesTitle": "ファイル",
+      "dpiLabel": "ラスタライズDPI",
+      "downloadAllZip": "すべてZIPでダウンロード"
     },
     "extractTables": {
       "uploadLabel": "Upload PDF",
       "uploadDescription": "Upload to extract tables.",
       "optionsTitle": "Options",
       "extractButton": "Extract",
-      "successMessage": "Extracted!"
+      "successMessage": "Extracted!",
+      "formatLabel": "出力形式",
+      "pageRangeLabel": "ページ範囲（任意）",
+      "minColumnsLabel": "最小列数",
+      "minRowsLabel": "最小行数",
+      "includePageNumbersLabel": "出力にページ番号を含める"
     },
     "ocgManager": {
       "uploadLabel": "Upload PDF",
@@ -1892,7 +2017,9 @@
     "pdfReader": {
       "uploadLabel": "Open PDF",
       "uploadDescription": "Open PDF to read."
-    }
+    },
+    "helpLink": "ヘルプ",
+    "feedbackLink": "フィードバック"
   },
   "aboutPage": {
     "title": "{brand} について",
@@ -1946,6 +2073,504 @@
       "title": "さあ、始めましょう",
       "description": "{count}+以上のPDFツールを探索し、{brand} の利便性を体験してください。",
       "button": "すべてのツールを見る"
+    }
+  },
+  "faqPage": {
+    "title": "よくある質問",
+    "subtitle": "{brand}に関するよくある質問への回答",
+    "searchPlaceholder": "FAQを検索...",
+    "noResults": "検索条件に一致するFAQが見つかりませんでした。",
+    "expandAll": "すべて展開",
+    "collapseAll": "すべて折りたたむ",
+    "categories": {
+      "all": "すべて",
+      "general": "一般",
+      "privacy": "プライバシーとセキュリティ",
+      "features": "機能",
+      "technical": "技術",
+      "languages": "言語"
+    },
+    "sections": {
+      "general": {
+        "whatIs": {
+          "question": "PDFkoiとは何ですか？",
+          "answer": "PDFkoi は、ブラウザ内で完結する無料・プライベートなPDFツールキットです。95+ のPDFツールを備え、ファイルをサーバーへアップロードせずに、編集、変換、結合、分割、保護を行えます。"
+        },
+        "isFree": {
+          "question": "PDFkoiは本当に無料ですか？",
+          "answer": "Yes, PDFkoi is completely free to use. There are no hidden costs, no premium tiers, and no registration required. All features are available to everyone."
+        },
+        "account": {
+          "question": "アカウントを作成する必要がありますか？",
+          "answer": "No, you don't need to create an account or register to use PDFkoi. Simply visit the website and start using any tool immediately."
+        }
+      },
+      "privacy": {
+        "uploaded": {
+          "question": "ファイルはサーバーにアップロードされますか？",
+          "answer": "No, your files are never uploaded to any server. All PDF processing happens locally in your browser using JavaScript and WebAssembly. Your files never leave your device."
+        },
+        "safe": {
+          "question": "機密文書にPDFkoiを使用しても安全ですか？",
+          "answer": "Yes, PDFkoi is designed with privacy in mind. Since all processing happens locally in your browser, your sensitive documents remain on your device and are never transmitted over the internet."
+        },
+        "storage": {
+          "question": "処理後、ファイルはどうなりますか？",
+          "answer": "Your files are stored temporarily in your browser's memory during processing. Once you close the browser tab or navigate away, all file data is automatically cleared. We don't store any of your files."
+        }
+      },
+      "features": {
+        "operations": {
+          "question": "どのようなPDF操作ができますか？",
+          "answer": "PDFkoi では、結合、分割、圧縮、変換（画像・テキスト・JSONとの相互変換）、編集、注釈、署名、透かし追加、暗号化/復号化、OCR など 95+ のツールを利用できます。"
+        },
+        "merge": {
+          "question": "複数のPDFファイルを結合できますか？",
+          "answer": "Yes, you can merge multiple PDF files into one. Simply use the Merge PDF tool, upload your files, arrange them in the desired order, and click merge."
+        },
+        "images": {
+          "question": "画像をPDFに変換できますか？",
+          "answer": "Yes, PDFkoi supports converting various image formats (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) to PDF. You can convert single or multiple images at once."
+        },
+        "edit": {
+          "question": "PDF内のテキストを編集できますか？",
+          "answer": "PDFkoi provides annotation and editing tools including highlighting, adding text, shapes, images, and signatures. For full text editing, the PDF Editor tool offers comprehensive annotation capabilities."
+        }
+      },
+      "technical": {
+        "browsers": {
+          "question": "対応ブラウザは何ですか？",
+          "answer": "PDFkoi works on all modern browsers including Chrome, Firefox, Safari, and Edge. We recommend using the latest version of your browser for the best experience."
+        },
+        "sizeLimit": {
+          "question": "ファイルサイズの制限はありますか？",
+          "answer": "Most tools support files up to 100MB, with some tools like merge and compress supporting up to 500MB. These limits are in place to ensure smooth performance in your browser."
+        },
+        "slow": {
+          "question": "大きなファイルの処理が遅いのはなぜですか？",
+          "answer": "Since all processing happens in your browser, performance depends on your device's capabilities. Large files require more memory and processing power. For best results, close other browser tabs and applications."
+        },
+        "offline": {
+          "question": "PDFkoiはオフラインで動作しますか？",
+          "answer": "Currently, PDFkoi requires an internet connection to load the application. However, once loaded, the PDF processing itself happens locally and doesn't require a connection."
+        }
+      },
+      "languages": {
+        "supported": {
+          "question": "対応言語は何ですか？",
+          "answer": "PDFkoi is available in 9 languages: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
+        },
+        "change": {
+          "question": "言語を変更するにはどうすればよいですか？",
+          "answer": "You can change the language using the language selector in the header. Your preference will be saved for future visits."
+        }
+      }
+    },
+    "cta": {
+      "title": "まだ質問がありますか？",
+      "description": "お探しの回答が見つかりませんか？お気軽にお問い合わせください。",
+      "button": "お問い合わせ"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "お問い合わせ",
+      "description": "ご質問、ご提案、不具合のご報告はございませんか？ご連絡をお待ちしております。"
+    },
+    "methods": {
+      "email": {
+        "title": "メール",
+        "description": "メールをお送りください。24〜48時間以内に返信いたします。",
+        "action": "support@pdfkoi.com"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "バグの報告、機能のリクエスト、プロジェクトへの貢献はこちら。",
+        "action": "GitHubで見る"
+      },
+      "twitter": {
+        "title": "Twitter",
+        "description": "最新情報やお知らせはこちらでフォロー。",
+        "action": "@PDFkoi"
+      }
+    },
+    "form": {
+      "title": "メッセージを送る",
+      "description": "以下のフォームにご記入ください。できるだけ早くご連絡いたします。",
+      "success": {
+        "title": "送信完了！",
+        "description": "ご連絡ありがとうございます。24〜48時間以内にご連絡いたします。",
+        "button": "別のメッセージを送る"
+      },
+      "fields": {
+        "name": {
+          "label": "お名前",
+          "placeholder": "お名前"
+        },
+        "email": {
+          "label": "メールアドレス",
+          "placeholder": "your@email.com"
+        },
+        "subject": {
+          "label": "件名",
+          "placeholder": "件名を選択",
+          "options": {
+            "general": "一般的なお問い合わせ",
+            "bug": "バグ報告",
+            "feature": "機能リクエスト",
+            "feedback": "フィードバック",
+            "other": "その他"
+          }
+        },
+        "message": {
+          "label": "メッセージ",
+          "placeholder": "お問い合わせの詳細をご記入ください..."
+        }
+      },
+      "error": "エラーが発生しました。もう一度お試しいただくか、メールで直接お問い合わせください。",
+      "submit": {
+        "loading": "送信中...",
+        "default": "メッセージを送信"
+      }
+    },
+    "faq": {
+      "title": "よくある質問をお探しですか？",
+      "description": "{brand}に関するよくある質問は、FAQページをご覧ください。",
+      "button": "FAQを見る"
+    }
+  },
+  "privacyPage": {
+    "metaTitle": "プライバシーポリシー",
+    "heroTitle": "プライバシーポリシー",
+    "heroSubtitle": "お客様のプライバシーは当社の最優先事項です。{brand}は、お客様のデータを保護することを第一に設計されています。",
+    "highlights": {
+      "noUpload": {
+        "title": "サーバーへアップロードしません",
+        "description": "ファイルがサーバーにアップロードされることは一切ありません。すべての処理はお使いのブラウザ内で行われます。"
+      },
+      "localProcessing": {
+        "title": "ローカル処理",
+        "description": "PDFの操作は、お使いのデバイス上でJavaScriptとWebAssemblyを使用して直接実行されます。"
+      },
+      "cleanup": {
+        "title": "自動クリーンアップ",
+        "description": "ブラウザのタブを閉じるか、ページを離れると、すべてのファイルデータが自動的に消去されます。"
+      },
+      "noTracking": {
+        "title": "トラッキングなし",
+        "description": "ファイルの内容や個人情報を追跡することはありません。ドキュメントはプライベートなまま保たれます。"
+      }
+    },
+    "lastUpdated": "最終更新日：2026年7月",
+    "badgeTitle": "ドキュメントはブラウザ内で安全に処理されます",
+    "sections": {
+      "intro": {
+        "heading": "1. はじめに",
+        "body": "{brand}（以下「当社」）は、お客様のプライバシー保護に努めています。本プライバシーポリシーでは、当社のPDFツールをご利用いただく際の情報の取り扱いについて説明します。"
+      },
+      "howItWorks": {
+        "heading": "2. 当サービスの仕組み",
+        "body": "{brand}はクライアントサイドのアプリケーションです。つまり：",
+        "items": {
+          "item1": "すべてのPDF処理はお使いのブラウザ内で直接行われます",
+          "item2": "ファイルが当社のサーバーや第三者のサーバーにアップロードされることはありません",
+          "item3": "当社がお客様のドキュメントを閲覧・アクセス・保存することはできません",
+          "item4": "ファイルは常にお客様のデバイス上に保持されます"
+        }
+      },
+      "infoCollected": {
+        "heading": "3. 収集する情報",
+        "filesHeading": "3.1 お客様のファイル",
+        "filesBody": "当社はお客様のファイルを収集しません。PDFツールをご利用の際、ファイルは完全にブラウザ内で処理され、当社のサーバーに送信されることはありません。",
+        "usageHeading": "3.2 利用データ",
+        "usageBody": "サービス改善のため、匿名の利用統計を収集する場合があります。例：",
+        "usageItems": {
+          "item1": "どのツールが人気か",
+          "item2": "おおよその地理的地域（国レベル）",
+          "item3": "ブラウザの種類とバージョン",
+          "item4": "デバイスの種類（デスクトップ、モバイル、タブレット）"
+        },
+        "usageFooter": "このデータは集計・匿名化されており、個人を特定することはできません。"
+      },
+      "localStorage": {
+        "heading": "4. ローカルストレージ",
+        "body": "{brand}は、以下の目的でお使いのブラウザのローカルストレージを使用する場合があります：",
+        "items": {
+          "item1": "言語設定の記憶",
+          "item2": "最近使用したツール履歴の保存",
+          "item3": "中断されたセッションの作業途中データの保存"
+        },
+        "footer": "このデータはお客様のデバイス上にのみ保存され、当社には送信されません。"
+      },
+      "cookies": {
+        "heading": "5. Cookie",
+        "body": "当社は以下の種類のCookieを使用します：",
+        "essential": "必須Cookie",
+        "essentialDesc": "ウェブサイトが正常に機能するために必要です",
+        "preference": "設定Cookie",
+        "preferenceDesc": "言語設定などの設定を記憶します",
+        "advertising": "広告Cookie",
+        "advertisingDesc": "Google AdSenseとそのパートナーが関連する広告を表示するために使用します（下記の「広告」セクション参照）"
+      },
+      "advertising": {
+        "heading": "6. 広告",
+        "body1": "当社はウェブサイトに広告を表示するためにGoogle AdSenseを使用しています。Google AdSenseとその広告パートナーは、このウェブサイトやインターネット上の他のウェブサイトへの過去の訪問に基づいて広告を配信するために、Cookieやウェブビーコンを使用する場合があります。",
+        "body2": "これらの広告Cookieにより、Googleとそのパートナーはお客様の興味に基づいた広告を表示できます。パーソナライズ広告は、www.aboutads.info/choices/ またはGoogle広告設定からオプトアウトできます。",
+        "important": "重要",
+        "importantBody": "お客様のPDFファイルがGoogleや広告ネットワークと共有されることは一切ありません。すべてのファイル処理はブラウザ内で行われます。広告Cookieは広告配信にのみ関係し、お客様のドキュメントにはアクセスしません。"
+      },
+      "thirdParty": {
+        "heading": "7. 第三者サービス",
+        "body": "上記の広告サービスを除き、{brand}はお客様のファイルデータを第三者と共有しません。以下のものは使用しません：",
+        "items": {
+          "item1": "個々のユーザーを追跡する第三者アナリティクス",
+          "item2": "ソーシャルメディアのトラッキングピクセル",
+          "item3": "外部のファイル処理サービス"
+        }
+      },
+      "security": {
+        "heading": "8. データセキュリティ",
+        "body": "ファイルがデバイスから出ることはないため、お客様のデバイス自身のセキュリティ対策によって保護されます。以下を推奨します：",
+        "items": {
+          "item1": "最新のブラウザを使用する",
+          "item2": "OSを最新の状態に保つ",
+          "item3": "機密文書を扱う際は安全なネットワークを使用する"
+        }
+      },
+      "rights": {
+        "heading": "9. お客様の権利",
+        "body": "当社は個人データを収集しないため、アクセス・訂正・削除すべき個人データは存在しません。ブラウザのローカルストレージをいつでも消去して、{brand}が保存した設定を削除できます。"
+      },
+      "children": {
+        "heading": "10. 子どものプライバシー",
+        "body": "{brand}は13歳未満の子どもを対象としていません。当社が意図的に子どもから情報を収集することはありません。"
+      },
+      "changes": {
+        "heading": "11. 本ポリシーの変更",
+        "body": "当社は本プライバシーポリシーを随時更新する場合があります。変更があった場合は、本ページに新しいプライバシーポリシーを掲載し、「最終更新日」を更新してお知らせします。"
+      },
+      "contact": {
+        "heading": "12. お問い合わせ",
+        "body": "本プライバシーポリシーについてご不明な点がある場合は、お問い合わせページからご連絡ください。"
+      }
+    }
+  },
+  "termsPage": {
+    "metaTitle": "利用規約",
+    "heroTitle": "利用規約",
+    "heroSubtitle": "{brand}をご利用になる前に、本規約をよくお読みください。",
+    "highlights": {
+      "clientSide": {
+        "title": "100%クライアントサイド",
+        "description": "ファイルはブラウザ内でローカルに処理され、サーバーにアップロードされることはありません。"
+      },
+      "privacyFirst": {
+        "title": "プライバシー最優先",
+        "description": "当社はお客様のドキュメントにアクセス・保存・送信しません。データはお客様のデバイス上に残ります。"
+      },
+      "free": {
+        "title": "無料で利用可能",
+        "description": "すべてのPDFツールは無料です。登録不要、隠れた料金なし、プレミアム階層なし。"
+      },
+      "fairUse": {
+        "title": "公正な利用",
+        "description": "当社は、お客様が責任を持って本サービスを利用し、違法な目的に使用しないことをお願いします。"
+      }
+    },
+    "lastUpdated": "最終更新日：2026年3月24日",
+    "contactBadgeTitle": "ご質問がありますか？",
+    "contactBadgeDesc": "本規約についてご不明な点がある場合はお問い合わせください",
+    "sections": {
+      "acceptance": {
+        "heading": "1. 規約への同意",
+        "body": "{brand}（以下「本サービス」）にアクセスし利用することにより、お客様は本利用規約に拘束されることに同意したものとみなされます。本規約に同意しない場合は、本サービスを利用しないでください。"
+      },
+      "serviceDesc": {
+        "heading": "2. サービスの説明",
+        "body": "{brand}は、ユーザーがPDFファイルの結合、分割、圧縮、変換、編集、およびさまざまな操作を実行できる、ブラウザベースの無料PDFツール群です。本サービスは、WebAssembly技術を使用してすべてのファイルを完全にクライアントサイドで処理します。"
+      },
+      "privacy": {
+        "heading": "3. プライバシーとデータの取り扱い",
+        "processingHeading": "3.1 クライアントサイド処理",
+        "processingItems": {
+          "item1": "すべてのファイル処理はブラウザ内でローカルに行われます。ドキュメントが外部サーバーにアップロードされることはありません。",
+          "item2": "当社はお客様のファイルにアクセス、保存、送信しません。",
+          "item3": "ブラウザのタブを閉じるか更新すると、データはメモリから完全に削除されます。"
+        },
+        "collectedHeading": "3.2 収集する情報",
+        "collectedBody": "分析目的で最小限の利用データ（例：どのツールが使用されたか）を収集する場合があります。お客様のPDFファイルの内容を収集・保存・処理することはありません。",
+        "cookiesHeading": "3.3 Cookie",
+        "cookiesBody": "セッション機能を維持するために必須Cookieを使用します。第三者のトラッキングCookieや広告Cookieは使用しません。"
+      },
+      "responsibilities": {
+        "heading": "4. ユーザーの責任",
+        "body": "お客様は以下を行わないことに同意するものとします：",
+        "items": {
+          "item1": "本サービスを違法な目的で使用すること",
+          "item2": "悪意のあるコンテンツを含むファイルをアップロードまたは処理すること",
+          "item3": "本サービスをリバースエンジニアリングまたは悪用しようとすること",
+          "item4": "通常の人間の利用を超えて本サービスにアクセスするために自動化ツールを使用すること"
+        }
+      },
+      "ip": {
+        "heading": "5. 知的財産",
+        "items": {
+          "item1": "{brand}：本サービスは、そのデザイン、コード、ブランディングを含め、{brand}の財産であり、AGPL-3.0の下でライセンスされています。",
+          "item2": "お客様のファイル：本サービスで処理したファイルの完全な所有権はお客様が保持します。",
+          "item3": "サードパーティライブラリ：本サービスは、それぞれのライセンスの下でオープンソースライブラリ（PDF.js、pdf-lib、PyMuPDF）を使用しています。"
+        }
+      },
+      "disclaimer": {
+        "heading": "6. 保証の否認",
+        "body": "本サービスは「現状有姿」で提供され、いかなる種類の保証もありません。以下を保証するものではありません：",
+        "items": {
+          "item1": "本サービスが中断されず、エラーがないこと",
+          "item2": "本サービスの利用結果が正確または信頼できること",
+          "item3": "本サービスを通じて取得した製品やサービスの品質が期待に沿うこと"
+        }
+      },
+      "liability": {
+        "heading": "7. 責任の制限",
+        "body": "いかなる場合も、{brand}は、本サービスの利用に関連して生じる間接的、偶発的、特別、または結果的な損害について責任を負いません。"
+      },
+      "changes": {
+        "heading": "8. サービスの変更",
+        "body": "当社は以下の権利を留保します：",
+        "items": {
+          "item1": "いつでも本サービスの一部を変更または中止すること",
+          "item2": "いつでも本規約を更新すること。継続的な利用は変更への同意を意味します。"
+        }
+      },
+      "beta": {
+        "heading": "9. ベータ機能",
+        "body": "一部の機能（例：ワークフローエディタ）は「ベータ」または「開発初期」と表示される場合があります。これらの機能は不安定な場合があり、その利用から生じる問題について当社は責任を負いません。"
+      },
+      "governingLaw": {
+        "heading": "10. 準拠法",
+        "body": "本規約は、抵触法の規定にかかわらず、適用される法律に準拠して解釈されます。"
+      },
+      "contact": {
+        "heading": "11. お問い合わせ",
+        "body": "本規約についてのご質問は、{contactLink}から、または support@pdfkoi.com までメールでお問い合わせください。",
+        "contactLink": "お問い合わせページ"
+      }
+    }
+  },
+  "cookiesPage": {
+    "metaTitle": "Cookieポリシー",
+    "heroTitle": "Cookieポリシー",
+    "heroSubtitle": "このページでは、{brand}が必須のサイト機能をサポートするためにCookieとブラウザストレージをどのように使用するかを説明します。",
+    "highlights": {
+      "minimal": {
+        "title": "最小限の使用",
+        "description": "サイトの動作と設定の記憶に必要なストレージのみを使用するよう努めています。"
+      },
+      "noTracking": {
+        "title": "広告トラッキングなし",
+        "description": "本ポリシーは、PDFコンテンツに対する広告Cookieやクロスサイトトラッキングを許可しません。"
+      },
+      "onDevice": {
+        "title": "デバイス上に保存",
+        "description": "設定データは通常お客様のブラウザ内に保存され、ファイルと一緒にアップロードされることはありません。"
+      },
+      "privacyFirst": {
+        "title": "プライバシー最優先の設計",
+        "description": "PDF処理はブラウザ内で行われるため、サーバー側の識別子の必要性が低減されます。"
+      }
+    },
+    "lastUpdated": "最終更新日：2026年3月28日",
+    "table": {
+      "item": "項目",
+      "purpose": "目的",
+      "technology": "技術",
+      "duration": "期間",
+      "rows": {
+        "language": {
+          "name": "言語設定",
+          "purpose": "選択した言語を記憶し、サイトが希望のロケールで開くようにします。",
+          "storage": "ローカルストレージ",
+          "duration": "ブラウザデータを消去するまで"
+        },
+        "recent": {
+          "name": "最近のファイルと保存した作業",
+          "purpose": "利便性のため、最近のアクティビティと進行中の項目をデバイス上に保持します。",
+          "storage": "ローカルストレージ",
+          "duration": "ブラウザデータを消去するまで"
+        },
+        "state": {
+          "name": "必須のサイト状態",
+          "purpose": "ツールの状態、ダイアログ、ユーザー設定など、コアなインターフェース動作をサポートします。",
+          "storage": "セッションストレージまたはローカルストレージ",
+          "duration": "セッション中、またはブラウザデータを消去するまで"
+        }
+      }
+    },
+    "sections": {
+      "covers": {
+        "heading": "1. 本ポリシーの対象",
+        "p1": "本Cookieポリシーは、サイトを訪問したりPDFツールを使用する際に、{brand}がCookie、ローカルストレージ、セッションストレージ、および類似のブラウザ技術をどのように使用するかを説明します。",
+        "p2": "当社の製品はブラウザ内でファイルを処理するように設計されているため、ストレージの使用を必須機能、設定、製品の使いやすさに限定するよう努めています。"
+      },
+      "means": {
+        "heading": "2. Cookieと類似技術の意味",
+        "p1": "Cookieはブラウザに配置される小さなテキストファイルです。類似の技術には、ローカルストレージ、セッションストレージ、ブラウザが管理する設定データが含まれます。実際には、一部のサイト機能は従来のCookieではなくブラウザストレージに依存する場合があります。",
+        "p2": "明確にするため、本ポリシーでは、別途記載がない限り、これらの技術をすべて「Cookieとブラウザストレージ」という表現で総称します。"
+      },
+      "uses": {
+        "heading": "3. {brand}によるCookieとブラウザストレージの使用方法"
+      },
+      "categories": {
+        "heading": "4. 使用のカテゴリ",
+        "essential": {
+          "heading": "必須機能",
+          "body": "これらの項目は、サイトの信頼性の高い動作、インターフェース状態の一貫性の維持、ブラウザベースのツールにユーザーが当然期待する機能のサポートに役立ちます。"
+        },
+        "preference": {
+          "heading": "設定ストレージ",
+          "body": "設定ストレージは、言語の選択などの設定を記憶し、毎回サイトを再設定する必要がないようにします。"
+        },
+        "local": {
+          "heading": "ローカル生産性機能",
+          "body": "一部のツールは、更新後や中断されたセッション後の使いやすさを向上させるため、最近の操作や進行中の情報をデバイス上に保持する場合があります。"
+        }
+      },
+      "notUsed": {
+        "heading": "5. これらの技術を使用しない目的",
+        "items": {
+          "item1": "PDFファイルの内容をアップロードまたは検査するためにCookieを使用しません。",
+          "item2": "ドキュメントのアクティビティから行動広告プロファイルを構築するために広告Cookieを使用しません。",
+          "item3": "ファイルを第三者のPDF処理サービスに移動するためにCookieに依存しません。",
+          "item4": "お客様が実行を選択したツールの外でドキュメントを読み取るためにブラウザストレージを使用する権利を主張しません。"
+        }
+      },
+      "thirdParty": {
+        "heading": "6. 第三者サービス",
+        "p1": "サイトがGitHubやXなどのサービスにリンクしている場合、それらのプラットフォームは訪問時に独自のCookieを設定する場合があります。それらのCookieの動作は、本ページではなく各社のポリシーに準拠します。",
+        "p2": "本ポリシーは、{brand}のサイト体験自体に使用されるCookieとブラウザストレージを対象としています。"
+      },
+      "control": {
+        "heading": "7. Cookieとローカルストレージの制御・削除方法",
+        "p1": "ブラウザの設定からCookieとブラウザストレージを制御できます。",
+        "items": {
+          "item1": "ブラウザのプライバシー設定から既存のCookieとサイトストレージを削除します。",
+          "item2": "ブラウザにそのオプションがある場合は、一部またはすべてのCookieをブロックします。",
+          "item3": "記憶された設定を削除したい場合は、{brand}のローカルストレージまたはサイトデータを消去します。"
+        },
+        "p2": "すべてのCookieまたはサイトストレージを無効にすると、保存された設定や利便性機能を含め、サイトの機能に影響する場合があることにご注意ください。"
+      },
+      "changes": {
+        "heading": "8. 本Cookieポリシーの変更",
+        "body": "サイト機能、法的要件、または製品設計の変更を反映するため、本ポリシーを随時更新する場合があります。更新時は、本ページ上部の日付を更新します。"
+      },
+      "contact": {
+        "heading": "9. お問い合わせ",
+        "body": "本ポリシーについてご質問がある場合は、サイトのフッターにリンクされているお問い合わせページをご利用ください。"
+      }
+    },
+    "summary": {
+      "heading": "実用的なまとめ",
+      "body": "{brand}は作業の大半をブラウザ内で行うように構築されています。つまり、サイトは通常、侵襲的なトラッキング基盤ではなく、設定と使いやすさのための限られたストレージのみを必要とします。",
+      "note": "保存された設定を消去したい場合は、いつでもブラウザのサイト設定を確認してください。"
     }
   }
 }

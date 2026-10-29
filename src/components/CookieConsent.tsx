@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
 import { X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { getPublicPath, type Locale } from '@/lib/i18n/config';
 
 const CONSENT_COOKIE_NAME = 'pdfkoi_cookie_consent';
 const CONSENT_VERSION = '1.0';
@@ -16,6 +18,8 @@ interface ConsentPreferences {
 }
 
 export function CookieConsent() {
+  const t = useTranslations('common.cookieConsent');
+  const locale = useLocale() as Locale;
   const [showBanner, setShowBanner] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
@@ -83,12 +87,12 @@ export function CookieConsent() {
           {/* Header */}
           <div className="flex items-start justify-between mb-4">
             <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">
-              Cookie Settings
+              {t('title')}
             </h2>
             <button
               onClick={acceptEssentialOnly}
               className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
-              aria-label="Close and accept essential only"
+              aria-label={t('acceptEssentialOnly')}
             >
               <X className="h-5 w-5" />
             </button>
@@ -96,9 +100,7 @@ export function CookieConsent() {
 
           {/* Main message */}
           <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-            We use cookies to provide essential website functionality, remember your preferences,
-            and display relevant advertisements through Google AdSense. Your PDF files are
-            never shared with advertisers - all processing happens locally in your browser.
+            {t('message')}
           </p>
 
           {/* Details toggle */}
@@ -107,51 +109,50 @@ export function CookieConsent() {
               onClick={() => setShowDetails(true)}
               className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 underline mb-4"
             >
-              Show cookie details
+              {t('showDetails')}
             </button>
           ) : (
             <div className="mb-4 space-y-3 text-sm">
               <div className="p-3 bg-gray-50 dark:bg-gray-700/50 rounded">
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-semibold text-gray-900 dark:text-gray-100">
-                    Essential Cookies
+                    {t('essentialTitle')}
                   </span>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">Always Active</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">{t('alwaysActive')}</span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Required for the website to function properly. These cannot be disabled.
+                  {t('essentialDesc')}
                 </p>
               </div>
 
               <div className="p-3 bg-gray-50 dark:bg-gray-700/50 rounded">
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-semibold text-gray-900 dark:text-gray-100">
-                    Functional Cookies
+                    {t('functionalTitle')}
                   </span>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">Optional</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">{t('optional')}</span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Remember your language preference and other settings to improve your experience.
+                  {t('functionalDesc')}
                 </p>
               </div>
 
               <div className="p-3 bg-gray-50 dark:bg-gray-700/50 rounded">
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-semibold text-gray-900 dark:text-gray-100">
-                    Advertising Cookies
+                    {t('advertisingTitle')}
                   </span>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">Optional</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">{t('optional')}</span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Used by Google AdSense and partners to show relevant ads. You can opt out anytime
-                  via{' '}
+                  {t('advertisingDesc')}{' '}
                   <a
                     href="https://adssettings.google.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 dark:text-blue-400 hover:underline"
                   >
-                    Google Ads Settings
+                    {t('googleAdsSettings')}
                   </a>
                   .
                 </p>
@@ -161,7 +162,7 @@ export function CookieConsent() {
                 onClick={() => setShowDetails(false)}
                 className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 underline"
               >
-                Hide details
+                {t('hideDetails')}
               </button>
             </div>
           )}
@@ -172,32 +173,32 @@ export function CookieConsent() {
               onClick={acceptAll}
               className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
             >
-              Accept All Cookies
+              {t('acceptAll')}
             </Button>
             <Button
               onClick={acceptEssentialOnly}
               variant="outline"
               className="flex-1"
             >
-              Accept Essential Only
+              {t('acceptEssentialOnly')}
             </Button>
           </div>
 
           {/* Privacy policy link */}
           <p className="mt-4 text-xs text-center text-gray-500 dark:text-gray-400">
-            Learn more in our{' '}
+            {t('learnMore')}{' '}
             <a
-              href="/privacy"
+              href={getPublicPath('/privacy', locale)}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              Privacy Policy
+              {t('privacyPolicy')}
             </a>
-            {' '}and{' '}
+            {' '}{t('and')}{' '}
             <a
-              href="/cookies"
+              href={getPublicPath('/cookies', locale)}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              Cookie Policy
+              {t('cookiePolicy')}
             </a>
           </p>
         </div>

@@ -3,13 +3,11 @@ import { hasLocalizedToolContent } from '@/config/tool-content';
 
 export const INDEXABLE_STATIC_PAGE_PATHS = ['/', '/workflow', '/faq', '/contact', '/terms', '/privacy', '/cookies'] as const;
 
-/**
- * High-value locales that are allowed to index tool pages even without localized content.
- * These locales have significant traffic potential and justify the SEO investment.
- * Static pages (about/privacy/cookies) remain English-only regardless of this list.
- */
-const HIGH_VALUE_TOOL_LOCALES = new Set<Locale>(['es', 'de', 'fr', 'pt', 'ja', 'ko', 'zh', 'zh-TW']);
-
+// Locales whose category hub content is fully localized (useCases/precautions
+// sections + localized metadata). A locale is only indexable for the category
+// hub when its content is complete — otherwise the page would mix English
+// sections into a localized shell, which is exactly the mixed-language
+// problem this guard prevents. English is always complete.
 const CATEGORY_HUB_INDEXABLE_LOCALES = new Set<Locale>(locales);
 const INDEXABLE_STATIC_PAGE_SET = new Set<string>(INDEXABLE_STATIC_PAGE_PATHS);
 
@@ -18,6 +16,10 @@ export function shouldIndexToolsDirectory(): boolean {
 }
 
 export function shouldIndexCategoryHub(locale: Locale): boolean {
+  // Category hub content is fully localized for every supported locale.
+  // If a future locale is added without complete category hub translations,
+  // remove it from CATEGORY_HUB_INDEXABLE_LOCALES to keep it out of the index
+  // until the content is complete.
   return CATEGORY_HUB_INDEXABLE_LOCALES.has(locale);
 }
 
@@ -50,13 +52,9 @@ export function shouldIndexLocalizedToolPage(locale: Locale, toolId: string): bo
     return true;
   }
 
-  // High-value locales can index tool pages even without localized content
-  // to capture international traffic while canonical still points to English
-  if (HIGH_VALUE_TOOL_LOCALES.has(locale)) {
-    return true;
-  }
-
-  // Other locales require localized content to be indexable
+  // Non-English locales require real localized content to be indexable.
+  // Missing-localization variants stay 200 with English fallback content but
+  // are served as noindex,follow with an English canonical (see getToolPublicLocale).
   return hasLocalizedToolContent(locale, toolId);
 }
 
@@ -65,12 +63,11 @@ export function getToolIndexableLocales(toolId: string): Locale[] {
 }
 
 export function getToolPublicLocale(locale: Locale, toolId: string): Locale {
-  // For high-value locales, keep them as the public locale even without localized content
-  // This allows them to be indexed while still providing canonical guidance
-  if (locale === defaultLocale || HIGH_VALUE_TOOL_LOCALES.has(locale)) {
+  // Keep the current locale as the public/canonical locale only when real
+  // localized content exists; otherwise fall back to English.
+  if (locale === defaultLocale) {
     return locale;
   }
 
-  // For other locales, fall back to English if no localized content exists
   return hasLocalizedToolContent(locale, toolId) ? locale : defaultLocale;
 }

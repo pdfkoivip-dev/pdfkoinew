@@ -715,19 +715,14 @@ export async function generateMetadata({
     }
 
     const tHome = await getTranslations({ locale: validLocale, namespace: 'home' });
+    const tCategoryMeta = await getTranslations({ locale: validLocale, namespace: 'common.categoryPage.categories' });
     const categoryKey = categoryTranslationKeys[categoryId];
     const categoryName = tHome(`categories.${categoryKey}`);
     const categoryDescription = tHome(`categoriesDescription.${categoryKey}`);
-    const metadataCopy =
-        validLocale === 'en'
-            ? {
-                  title: englishCategoryHubCopy[categoryId].metadataTitle,
-                  description: englishCategoryHubCopy[categoryId].metadataDescription,
-              }
-            : {
-                  title: `${categoryName} Tools`,
-                  description: `Browse free online ${categoryName} PDF tools. ${categoryDescription}.`,
-              };
+    const metadataCopy = {
+        title: tCategoryMeta(`${categoryKey}.metadataTitle`),
+        description: tCategoryMeta(`${categoryKey}.metadataDescription`),
+    };
 
     return generateCategoryMetadata(validLocale, category, metadataCopy, {
         noIndex: !shouldIndexCategoryHub(validLocale),
@@ -800,10 +795,14 @@ export default async function CategoryPage({ params }: { params: Promise<{ local
                   anchorSectionTitle: localizedCategoryCopy?.anchorSectionTitle ?? tCategoryPage('anchorSectionTitle'),
                   anchorSectionDescription:
                       localizedCategoryCopy?.anchorSectionDescription ?? tCategoryPage('anchorSectionDescription'),
-                  useCasesSectionTitle: englishHubCopy.useCasesSectionTitle,
-                  useCasesSectionItems: englishHubCopy.useCasesSectionItems,
-                  precautionsSectionTitle: englishHubCopy.precautionsSectionTitle,
-                  precautionsSectionItems: englishHubCopy.precautionsSectionItems,
+                  useCasesSectionTitle: tCategoryPage(`categories.${categoryKey}.useCasesSectionTitle`),
+                  useCasesSectionItems: Object.values(
+                      tCategoryPage.raw(`categories.${categoryKey}.useCasesSectionItems`) as Record<string, string>
+                  ),
+                  precautionsSectionTitle: tCategoryPage(`categories.${categoryKey}.precautionsSectionTitle`),
+                  precautionsSectionItems: Object.values(
+                      tCategoryPage.raw(`categories.${categoryKey}.precautionsSectionItems`) as Record<string, string>
+                  ),
                   anchorTargets: englishHubCopy.anchorTargets.map((target) => {
                       const toolLabel = getToolLabel(target.toolId, target.anchorText);
 

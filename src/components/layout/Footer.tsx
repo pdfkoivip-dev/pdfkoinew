@@ -16,6 +16,7 @@ export interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ locale }) => {
   const t = useTranslations('common');
   const tHome = useTranslations('home');
+  const tFooter = useTranslations('common.footer');
   const currentYear = new Date().getFullYear();
   const homePath = getPublicPath('/', locale);
   const categoryTranslationKeys: Record<ToolCategory, string> = {
@@ -42,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
 
   const footerLinks = [
     { href: getPublicPath('/tools', locale), label: t('navigation.tools') },
-    { href: getPublicPath('/workflow', locale), label: t('navigation.workflow') || 'Workflow' },
+    { href: getPublicPath('/workflow', locale), label: t('navigation.workflow') },
     { href: getPublicPath('/about', locale), label: t('navigation.about') },
     { href: getPublicPath('/faq', locale), label: t('navigation.faq') },
     { href: getPublicPath('/contact', locale), label: t('navigation.contact') },
@@ -73,7 +74,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
               <span data-testid="footer-brand-name">{t('brand')}</span>
             </Link>
             <p className="text-sm text-[hsl(var(--color-muted-foreground))] leading-relaxed max-w-xs">
-              {t('tagline') || 'Professional, secure, and free PDF tools for everyone. No installation required.'}
+              {t('tagline')}
             </p>
 
             <div className="flex gap-4">
@@ -119,7 +120,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
           {/* Quick Links */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-[hsl(var(--color-foreground))] mb-6">
-              Resources
+              {tFooter('resources')}
             </h3>
             <ul className="flex flex-col gap-3">
               {footerLinks.map((link) => (
@@ -139,7 +140,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
           {/* Security Features */}
           <div className="flex flex-col justify-start">
             <h3 className="text-sm font-bold uppercase tracking-wider text-[hsl(var(--color-foreground))] mb-6">
-              Security
+              {tFooter('security')}
             </h3>
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
@@ -147,8 +148,8 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                   <Lock className="h-3 w-3" />
                 </div>
                 <div>
-                  <span className="block text-sm font-medium text-[hsl(var(--color-foreground))]">Client-side processing</span>
-                  <span className="text-xs text-[hsl(var(--color-muted-foreground))]">Files never leave your device</span>
+                  <span className="block text-sm font-medium text-[hsl(var(--color-foreground))]">{tFooter('securityClientSide')}</span>
+                  <span className="text-xs text-[hsl(var(--color-muted-foreground))]">{tFooter('securityClientSideDesc')}</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -156,8 +157,8 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                   <FileCheck className="h-3 w-3" />
                 </div>
                 <div>
-                  <span className="block text-sm font-medium text-[hsl(var(--color-foreground))]">No file uploads</span>
-                  <span className="text-xs text-[hsl(var(--color-muted-foreground))]">100% private & secure</span>
+                  <span className="block text-sm font-medium text-[hsl(var(--color-foreground))]">{tFooter('securityNoUploads')}</span>
+                  <span className="text-xs text-[hsl(var(--color-muted-foreground))]">{tFooter('securityNoUploadsDesc')}</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -165,8 +166,8 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                   <Shield className="h-3 w-3" />
                 </div>
                 <div>
-                  <span className="block text-sm font-medium text-[hsl(var(--color-foreground))]">GDPR Compliant</span>
-                  <span className="text-xs text-[hsl(var(--color-muted-foreground))]">{t('footer.privacyBadge')}</span>
+                  <span className="block text-sm font-medium text-[hsl(var(--color-foreground))]">{tFooter('securityGdpr')}</span>
+                  <span className="text-xs text-[hsl(var(--color-muted-foreground))]">{tFooter('securityGdprDesc')}</span>
                 </div>
               </li>
             </ul>
@@ -179,9 +180,9 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             &copy; {currentYear} {t('brand')}. {t('footer.copyright', { year: '' }).replace(/^\d{4}\s*/, '')}
           </p>
           <div className="flex items-center gap-6">
-            <Link href={getPublicPath('/terms', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]">Terms</Link>
-            <Link href={getPublicPath('/privacy', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]">Privacy</Link>
-            <Link href={getPublicPath('/cookies', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]">Cookies</Link>
+            <Link href={getPublicPath('/terms', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]">{tFooter('terms')}</Link>
+            <Link href={getPublicPath('/privacy', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]">{tFooter('privacy')}</Link>
+            <Link href={getPublicPath('/cookies', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]">{tFooter('cookies')}</Link>
           </div>
         </div>
 

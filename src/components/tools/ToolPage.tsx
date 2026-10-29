@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Tool, ToolContent, HowToStep, UseCase, FAQ, ToolCategory } from '@/types/tool';
 import { Card } from '@/components/ui/Card';
 import { getToolById } from '@/config/tools';
@@ -231,6 +231,7 @@ function ToolHeader({ tool, content }: ToolHeaderProps) {
 
   const IconComponent = getToolIcon(tool.icon);
   const t = useTranslations();
+  const locale = useLocale() as Locale;
 
   return (
     <header className="text-center" data-testid="tool-page-header">
@@ -257,14 +258,14 @@ function ToolHeader({ tool, content }: ToolHeaderProps) {
       </div>
       <div className="flex items-center justify-center gap-3">
         <Link
-          href={getPublicPath('/faq', 'en' as Locale)}
+          href={getPublicPath('/faq', locale)}
           className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-primary))] transition-colors rounded-lg hover:bg-[hsl(var(--color-muted)/0.3)]"
         >
           <HelpCircle className="w-4 h-4" />
           <span>{t('tools.helpLink')}</span>
         </Link>
         <Link
-          href={getPublicPath('/contact', 'en' as Locale)}
+          href={getPublicPath('/contact', locale)}
           className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-primary))] transition-colors rounded-lg hover:bg-[hsl(var(--color-muted)/0.3)]"
         >
           <MessageSquare className="w-4 h-4" />

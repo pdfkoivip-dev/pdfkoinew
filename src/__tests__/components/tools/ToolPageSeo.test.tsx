@@ -41,6 +41,8 @@ const messages = {
     useCases: 'Use cases',
     faq: 'FAQ',
     relatedTools: 'Related tools',
+    helpLink: 'Help',
+    feedbackLink: 'Feedback',
   },
 };
 

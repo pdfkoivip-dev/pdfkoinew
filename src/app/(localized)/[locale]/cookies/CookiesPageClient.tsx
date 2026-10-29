@@ -11,50 +11,55 @@ interface CookiesPageClientProps {
   locale: Locale;
 }
 
-const storageItems = [
-  {
-    name: 'Language preference',
-    purpose: 'Remembers the language you selected so the site opens in your preferred locale.',
-    storage: 'Local storage',
-    duration: 'Until you clear browser data',
-  },
-  {
-    name: 'Recent files and saved work',
-    purpose: 'Keeps recent activity and in-progress items on your own device for convenience.',
-    storage: 'Local storage',
-    duration: 'Until you clear browser data',
-  },
-  {
-    name: 'Essential site state',
-    purpose: 'Supports core interface behavior such as tool state, dialogs, and user preferences.',
-    storage: 'Session storage or local storage',
-    duration: 'Session or until you clear browser data',
-  },
-];
-
 export default function CookiesPageClient({ locale }: CookiesPageClientProps) {
-  const t = useTranslations('common');
+  const t = useTranslations('cookiesPage');
+  const tc = useTranslations('common');
+
+  // Read item lists stored as {item1, item2, ...} objects.
+  const items = (path: string): string[] =>
+    Object.values(t.raw(path) as Record<string, string>);
+
+  const storageItems = [
+    {
+      name: t('table.rows.language.name'),
+      purpose: t('table.rows.language.purpose'),
+      storage: t('table.rows.language.storage'),
+      duration: t('table.rows.language.duration'),
+    },
+    {
+      name: t('table.rows.recent.name'),
+      purpose: t('table.rows.recent.purpose'),
+      storage: t('table.rows.recent.storage'),
+      duration: t('table.rows.recent.duration'),
+    },
+    {
+      name: t('table.rows.state.name'),
+      purpose: t('table.rows.state.purpose'),
+      storage: t('table.rows.state.storage'),
+      duration: t('table.rows.state.duration'),
+    },
+  ];
 
   const highlights = [
     {
       icon: Cookie,
-      title: 'Minimal usage',
-      description: 'We aim to use only the storage needed to make the site work and remember your preferences.',
+      title: t('highlights.minimal.title'),
+      description: t('highlights.minimal.description'),
     },
     {
       icon: Shield,
-      title: 'No ad tracking',
-      description: 'This policy does not permit advertising cookies or cross-site tracking for PDF content.',
+      title: t('highlights.noTracking.title'),
+      description: t('highlights.noTracking.description'),
     },
     {
       icon: HardDrive,
-      title: 'Stored on your device',
-      description: 'Preference data is typically stored in your own browser, not uploaded with your files.',
+      title: t('highlights.onDevice.title'),
+      description: t('highlights.onDevice.description'),
     },
     {
       icon: Lock,
-      title: 'Privacy-first design',
-      description: 'PDF processing stays in your browser, which reduces the need for server-side identifiers.',
+      title: t('highlights.privacyFirst.title'),
+      description: t('highlights.privacyFirst.description'),
     },
   ];
 
@@ -70,10 +75,10 @@ export default function CookiesPageClient({ locale }: CookiesPageClientProps) {
                 <Cookie className="h-8 w-8 text-amber-700" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-[hsl(var(--color-foreground))] mb-6">
-                Cookies Policy
+                {t('heroTitle')}
               </h1>
               <p className="text-lg text-[hsl(var(--color-muted-foreground))]">
-                This page explains how {t('brand')} uses cookies and browser storage to support essential site features.
+                {t('heroSubtitle', { brand: tc('brand') })}
               </p>
             </div>
           </div>
@@ -106,55 +111,42 @@ export default function CookiesPageClient({ locale }: CookiesPageClientProps) {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <p className="text-sm text-[hsl(var(--color-muted-foreground))] mb-8">
-                Last updated: March 28, 2026
+                {t('lastUpdated')}
               </p>
 
               <div className="space-y-10">
                 <section>
                   <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                    1. What this policy covers
+                    {t('sections.covers.heading')}
                   </h2>
                   <div className="space-y-4 text-[hsl(var(--color-muted-foreground))]">
-                    <p>
-                      This Cookies Policy explains how {t('brand')} uses cookies, local storage, session storage,
-                      and similar browser technologies when you visit the site or use our PDF tools.
-                    </p>
-                    <p>
-                      Because our product is designed to process files in the browser, we try to keep storage usage
-                      limited to essential functionality, preferences, and product usability.
-                    </p>
+                    <p>{t('sections.covers.p1', { brand: tc('brand') })}</p>
+                    <p>{t('sections.covers.p2')}</p>
                   </div>
                 </section>
 
                 <section>
                   <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                    2. What we mean by cookies and similar technologies
+                    {t('sections.means.heading')}
                   </h2>
                   <div className="space-y-4 text-[hsl(var(--color-muted-foreground))]">
-                    <p>
-                      Cookies are small text files placed in your browser. Similar technologies include local storage,
-                      session storage, and browser-managed preference data. In practice, some site features may rely on
-                      browser storage instead of classic cookies.
-                    </p>
-                    <p>
-                      For clarity, this policy uses the phrase &quot;cookies and browser storage&quot; to cover all of these
-                      technologies together unless a section says otherwise.
-                    </p>
+                    <p>{t('sections.means.p1')}</p>
+                    <p>{t('sections.means.p2')}</p>
                   </div>
                 </section>
 
                 <section>
                   <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                    3. How {t('brand')} uses cookies and browser storage
+                    {t('sections.uses.heading', { brand: tc('brand') })}
                   </h2>
                   <div className="overflow-x-auto rounded-xl border border-[hsl(var(--color-border))]">
                     <table className="w-full text-sm">
                       <thead className="bg-[hsl(var(--color-muted)/0.5)]">
                         <tr>
-                          <th className="px-4 py-3 text-left font-semibold text-[hsl(var(--color-foreground))]">Item</th>
-                          <th className="px-4 py-3 text-left font-semibold text-[hsl(var(--color-foreground))]">Purpose</th>
-                          <th className="px-4 py-3 text-left font-semibold text-[hsl(var(--color-foreground))]">Technology</th>
-                          <th className="px-4 py-3 text-left font-semibold text-[hsl(var(--color-foreground))]">Duration</th>
+                          <th className="px-4 py-3 text-left font-semibold text-[hsl(var(--color-foreground))]">{t('table.item')}</th>
+                          <th className="px-4 py-3 text-left font-semibold text-[hsl(var(--color-foreground))]">{t('table.purpose')}</th>
+                          <th className="px-4 py-3 text-left font-semibold text-[hsl(var(--color-foreground))]">{t('table.technology')}</th>
+                          <th className="px-4 py-3 text-left font-semibold text-[hsl(var(--color-foreground))]">{t('table.duration')}</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -173,34 +165,31 @@ export default function CookiesPageClient({ locale }: CookiesPageClientProps) {
 
                 <section>
                   <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                    4. Categories of usage
+                    {t('sections.categories.heading')}
                   </h2>
                   <div className="space-y-6">
                     <Card className="p-6">
                       <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))] mb-2">
-                        Essential functionality
+                        {t('sections.categories.essential.heading')}
                       </h3>
                       <p className="text-[hsl(var(--color-muted-foreground))]">
-                        These items help the site operate reliably, keep interface state consistent, and support
-                        features that users reasonably expect from a browser-based tool.
+                        {t('sections.categories.essential.body')}
                       </p>
                     </Card>
                     <Card className="p-6">
                       <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))] mb-2">
-                        Preference storage
+                        {t('sections.categories.preference.heading')}
                       </h3>
                       <p className="text-[hsl(var(--color-muted-foreground))]">
-                        Preference storage helps remember settings such as language choice or other non-sensitive
-                        product preferences so that you do not need to reconfigure the site every visit.
+                        {t('sections.categories.preference.body')}
                       </p>
                     </Card>
                     <Card className="p-6">
                       <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))] mb-2">
-                        Local productivity features
+                        {t('sections.categories.local.heading')}
                       </h3>
                       <p className="text-[hsl(var(--color-muted-foreground))]">
-                        Some tools may preserve recent actions or in-progress information on your own device to improve
-                        usability after refreshes or interrupted sessions.
+                        {t('sections.categories.local.body')}
                       </p>
                     </Card>
                   </div>
@@ -208,65 +197,55 @@ export default function CookiesPageClient({ locale }: CookiesPageClientProps) {
 
                 <section>
                   <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                    5. What we do not use these technologies for
+                    {t('sections.notUsed.heading')}
                   </h2>
                   <ul className="list-disc pl-6 space-y-2 text-[hsl(var(--color-muted-foreground))]">
-                    <li>We do not use cookies to upload or inspect the contents of your PDF files.</li>
-                    <li>We do not use advertising cookies to build behavioral ad profiles from your document activity.</li>
-                    <li>We do not rely on cookies to move your files to third-party PDF processing services.</li>
-                    <li>We do not claim a right to use browser storage to read documents outside the tools you choose to run.</li>
+                    {items('sections.notUsed.items').map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
                   </ul>
                 </section>
 
                 <section>
                   <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                    6. Third-party services
+                    {t('sections.thirdParty.heading')}
                   </h2>
                   <div className="space-y-4 text-[hsl(var(--color-muted-foreground))]">
-                    <p>
-                      If the site links out to services such as GitHub or X, those platforms may set their own cookies
-                      when you visit them. Their cookie behavior is governed by their own policies, not this page.
-                    </p>
-                    <p>
-                      This policy covers cookies and browser storage used for the {t('brand')} site experience itself.
-                    </p>
+                    <p>{t('sections.thirdParty.p1')}</p>
+                    <p>{t('sections.thirdParty.p2', { brand: tc('brand') })}</p>
                   </div>
                 </section>
 
                 <section>
                   <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                    7. How to control or delete cookies and local storage
+                    {t('sections.control.heading')}
                   </h2>
                   <div className="space-y-4 text-[hsl(var(--color-muted-foreground))]">
-                    <p>You can control cookies and browser storage through your browser settings.</p>
+                    <p>{t('sections.control.p1')}</p>
                     <ul className="list-disc pl-6 space-y-2">
-                      <li>Delete existing cookies and site storage from your browser privacy settings.</li>
-                      <li>Block some or all cookies if your browser offers that option.</li>
-                      <li>Clear local storage or site data for {t('brand')} if you want to remove remembered preferences.</li>
+                      {items('sections.control.items').map((item) => (
+                        <li key={item}>{item.replace('{brand}', tc('brand'))}</li>
+                      ))}
                     </ul>
-                    <p>
-                      Please note that disabling all cookies or site storage may affect site functionality, including
-                      your saved preferences and convenience features.
-                    </p>
+                    <p>{t('sections.control.p2')}</p>
                   </div>
                 </section>
 
                 <section>
                   <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                    8. Changes to this Cookies Policy
+                    {t('sections.changes.heading')}
                   </h2>
                   <p className="text-[hsl(var(--color-muted-foreground))]">
-                    We may update this policy from time to time to reflect changes in site functionality, legal
-                    requirements, or product design. When we do, we will update the date shown at the top of this page.
+                    {t('sections.changes.body')}
                   </p>
                 </section>
 
                 <section>
                   <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                    9. Contact
+                    {t('sections.contact.heading')}
                   </h2>
                   <p className="text-[hsl(var(--color-muted-foreground))]">
-                    If you have questions about this policy, please use the Contact page linked in the site footer.
+                    {t('sections.contact.body')}
                   </p>
                 </section>
               </div>
@@ -284,15 +263,14 @@ export default function CookiesPageClient({ locale }: CookiesPageClientProps) {
                   </div>
                   <div>
                     <h2 className="text-xl font-semibold text-[hsl(var(--color-foreground))] mb-2">
-                      Practical summary
+                      {t('summary.heading')}
                     </h2>
                     <p className="text-[hsl(var(--color-muted-foreground))] mb-3">
-                      {t('brand')} is built to do most of its work in the browser. That means the site generally needs
-                      only limited storage for preferences and usability, rather than invasive tracking infrastructure.
+                      {t('summary.body', { brand: tc('brand') })}
                     </p>
                     <div className="flex items-center gap-2 text-sm text-[hsl(var(--color-muted-foreground))]">
                       <Settings className="h-4 w-4" />
-                      Review your browser site settings any time if you want to clear saved preferences.
+                      {t('summary.note')}
                     </div>
                   </div>
                 </div>

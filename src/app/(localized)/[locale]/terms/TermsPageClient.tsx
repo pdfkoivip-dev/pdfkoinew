@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { FileText, Shield, Lock, AlertTriangle, Scale, Globe, Mail } from 'lucide-react';
+import { FileText, Shield, Lock, AlertTriangle, Scale, Mail } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
@@ -12,35 +12,40 @@ interface TermsPageClientProps {
 }
 
 export default function TermsPageClient({ locale }: TermsPageClientProps) {
-  const t = useTranslations();
+  const t = useTranslations('termsPage');
+  const tc = useTranslations('common');
+
+  // Read item lists stored as {item1, item2, ...} objects.
+  const items = (path: string): string[] =>
+    Object.values(t.raw(path) as Record<string, string>);
 
   const termsHighlights = [
     {
       icon: Shield,
-      title: '100% Client-Side',
-      description: 'Your files are processed locally in your browser and never uploaded to any server.',
+      title: t('highlights.clientSide.title'),
+      description: t('highlights.clientSide.description'),
     },
     {
       icon: Lock,
-      title: 'Privacy First',
-      description: 'We do not access, store, or transmit your documents. Your data stays on your device.',
+      title: t('highlights.privacyFirst.title'),
+      description: t('highlights.privacyFirst.description'),
     },
     {
       icon: FileText,
-      title: 'Free to Use',
-      description: 'All PDF tools are free. No registration required, no hidden fees, no premium tiers.',
+      title: t('highlights.free.title'),
+      description: t('highlights.free.description'),
     },
     {
       icon: Scale,
-      title: 'Fair Use',
-      description: 'We ask that you use our service responsibly and not for any illegal purposes.',
+      title: t('highlights.fairUse.title'),
+      description: t('highlights.fairUse.description'),
     },
   ];
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header locale={locale} />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-[hsl(var(--color-primary)/0.1)] via-[hsl(var(--color-background))] to-[hsl(var(--color-secondary)/0.1)] py-16">
@@ -50,10 +55,10 @@ export default function TermsPageClient({ locale }: TermsPageClientProps) {
                 <FileText className="h-8 w-8 text-blue-600" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-[hsl(var(--color-foreground))] mb-6">
-                Terms of Service
+                {t('heroTitle')}
               </h1>
               <p className="text-lg text-[hsl(var(--color-muted-foreground))]">
-                Please read these terms carefully before using {t('common.brand')}.
+                {t('heroSubtitle', { brand: tc('brand') })}
               </p>
             </div>
           </div>
@@ -88,144 +93,133 @@ export default function TermsPageClient({ locale }: TermsPageClientProps) {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto prose prose-lg">
               <p className="text-sm text-[hsl(var(--color-muted-foreground))] mb-8">
-                Last updated: March 24, 2026
+                {t('lastUpdated')}
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                1. Acceptance of Terms
+                {t('sections.acceptance.heading')}
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                By accessing and using {t('common.brand')} (&quot;the Service&quot;), you agree to be bound 
-                by these Terms of Service. If you do not agree to these terms, please do not use the Service.
+                {t('sections.acceptance.body', { brand: tc('brand') })}
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                2. Service Description
+                {t('sections.serviceDesc.heading')}
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                {t('common.brand')} is a free, browser-based suite of PDF tools that allows users to 
-                merge, split, compress, convert, edit, and perform various operations on PDF files. 
-                The Service processes all files entirely client-side using WebAssembly technology.
+                {t('sections.serviceDesc.body', { brand: tc('brand') })}
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                3. Privacy & Data Handling
+                {t('sections.privacy.heading')}
               </h2>
               <h3 className="text-xl font-semibold text-[hsl(var(--color-foreground))] mt-6 mb-3">
-                3.1 Client-Side Processing
+                {t('sections.privacy.processingHeading')}
               </h3>
               <ul className="list-disc pl-6 space-y-2 text-[hsl(var(--color-muted-foreground))] mb-4">
-                <li><strong>All file processing occurs locally in your browser.</strong> Your documents are never uploaded to any external server.</li>
-                <li>We do not have access to, store, or transmit your files.</li>
-                <li>Once you close or refresh the browser tab, your data is permanently deleted from memory.</li>
+                {items('sections.privacy.processingItems').map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
 
               <h3 className="text-xl font-semibold text-[hsl(var(--color-foreground))] mt-6 mb-3">
-                3.2 Information We Collect
+                {t('sections.privacy.collectedHeading')}
               </h3>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                We may collect minimal usage data (e.g., which tools are used) for analytics purposes. 
-                We do not collect, store, or process the content of your PDF files.
+                {t('sections.privacy.collectedBody')}
               </p>
 
               <h3 className="text-xl font-semibold text-[hsl(var(--color-foreground))] mt-6 mb-3">
-                3.3 Cookies
+                {t('sections.privacy.cookiesHeading')}
               </h3>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                We use essential cookies to maintain session functionality. No third-party tracking 
-                or advertising cookies are used.
+                {t('sections.privacy.cookiesBody')}
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                4. User Responsibilities
+                {t('sections.responsibilities.heading')}
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                You agree not to:
+                {t('sections.responsibilities.body')}
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[hsl(var(--color-muted-foreground))] mb-4">
-                <li>Use the Service for any illegal purpose</li>
-                <li>Upload or process files containing malicious content</li>
-                <li>Attempt to reverse engineer or exploit the Service</li>
-                <li>Use automated tools to access the Service beyond normal human usage</li>
+                {items('sections.responsibilities.items').map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                5. Intellectual Property
+                {t('sections.ip.heading')}
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-[hsl(var(--color-muted-foreground))] mb-4">
-                <li><strong>{t('common.brand')}:</strong> The Service, including its design, code, and branding, 
-                    is the property of {t('common.brand')} and is licensed under AGPL-3.0.</li>
-                <li><strong>Your Files:</strong> You retain full ownership of any files you process through the Service.</li>
-                <li><strong>Third-Party Libraries:</strong> The Service uses open-source libraries (PDF.js, 
-                    pdf-lib, PyMuPDF) under their respective licenses.</li>
+                {items('sections.ip.items').map((item) => (
+                  <li key={item}>{item.replace('{brand}', tc('brand'))}</li>
+                ))}
               </ul>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                6. Disclaimer of Warranties
+                {t('sections.disclaimer.heading')}
               </h2>
               <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4">
                 <p className="text-[hsl(var(--color-muted-foreground))] mb-2">
-                  <strong>THE SERVICE IS PROVIDED &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND.</strong> 
-                  WE DO NOT GUARANTEE:
+                  <strong>{t('sections.disclaimer.body')}</strong>
                 </p>
                 <ul className="list-disc pl-6 space-y-1 text-[hsl(var(--color-muted-foreground))]">
-                  <li>The Service will be uninterrupted or error-free</li>
-                  <li>The results from using the Service will be accurate or reliable</li>
-                  <li>The quality of any products or services obtained through the Service will meet your expectations</li>
+                  {items('sections.disclaimer.items').map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
                 </ul>
               </div>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                7. Limitation of Liability
+                {t('sections.liability.heading')}
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                <strong>IN NO EVENT SHALL {t('common.brand').toUpperCase()} BE LIABLE FOR ANY INDIRECT, 
-                INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR IN CONNECTION WITH 
-                YOUR USE OF THE SERVICE.</strong>
+                <strong>{t('sections.liability.body', { brand: tc('brand') })}</strong>
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                8. Service Changes
+                {t('sections.changes.heading')}
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                We reserve the right to:
+                {t('sections.changes.body')}
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[hsl(var(--color-muted-foreground))] mb-4">
-                <li>Modify or discontinue any part of the Service at any time</li>
-                <li>Update these Terms at any time. Continued use constitutes acceptance of changes.</li>
+                {items('sections.changes.items').map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                9. Beta Features
+                {t('sections.beta.heading')}
               </h2>
               <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-4">
                 <div className="flex items-start gap-3">
                   <AlertTriangle className="h-5 w-5 text-orange-600 flex-shrink-0 mt-0.5" />
                   <p className="text-[hsl(var(--color-muted-foreground))]">
-                    Certain features (e.g., Workflow Editor) may be labeled as &quot;Beta&quot; or 
-                    &quot;Early Development.&quot; These features may be unstable, and we disclaim 
-                    liability for issues arising from their use.
+                    {t('sections.beta.body')}
                   </p>
                 </div>
               </div>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                10. Governing Law
+                {t('sections.governingLaw.heading')}
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                These Terms shall be governed by and construed in accordance with applicable laws, 
-                without regard to its conflict of law provisions.
+                {t('sections.governingLaw.body')}
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">
-                11. Contact
+                {t('sections.contact.heading')}
               </h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                For questions about these Terms, please contact us through our{' '}
-                <a href={getLocalizedPath('/contact', locale)} className="text-[hsl(var(--color-primary))] hover:underline">
-                  contact page
-                </a>{' '}
-                 or email: support@pdfkoi.com
+                {t.rich('sections.contact.body', {
+                  contactLink: () => (
+                    <a href={getLocalizedPath('/contact', locale)} className="text-[hsl(var(--color-primary))] hover:underline">
+                      {t('sections.contact.contactLink')}
+                    </a>
+                  ),
+                })}
               </p>
             </div>
           </div>
@@ -239,10 +233,10 @@ export default function TermsPageClient({ locale }: TermsPageClientProps) {
                 <Mail className="h-8 w-8 text-blue-600" />
                 <div className="text-left">
                   <p className="font-semibold text-blue-800">
-                    Questions?
+                    {t('contactBadgeTitle')}
                   </p>
                   <p className="text-sm text-blue-600">
-                    Contact us if you have any questions about these Terms
+                    {t('contactBadgeDesc')}
                   </p>
                 </div>
               </div>

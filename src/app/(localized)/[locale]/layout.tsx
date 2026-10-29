@@ -1,6 +1,6 @@
 import type { Viewport } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { localeConfig, locales, normalizeLocale, getPublicLocaleParams } from '@/lib/i18n/config';
 import { baseMetadata, RootDocument } from '@/app/document';
@@ -40,6 +40,7 @@ export default async function LocaleLayout({
   setRequestLocale(normalizedLocale);
 
   const messages = await getMessages();
+  const t = await getTranslations('common');
   const direction = localeConfig[normalizedLocale]?.direction || 'ltr';
 
   return (
@@ -54,7 +55,7 @@ export default async function LocaleLayout({
             <div className="absolute inset-0 bg-[linear-gradient(rgba(0,82,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,82,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
           </div>
 
-          <SkipLink targetId="main-content">Skip to main content</SkipLink>
+          <SkipLink targetId="main-content">{t('accessibility.skipToContent')}</SkipLink>
           {children}
           <CookieConsent />
         </div>
