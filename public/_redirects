@@ -1,6 +1,39 @@
+# ============================================================
+# TRAILING SLASH NORMALIZATION (CRITICAL FIX)
+# Next.js static export adds trailing slashes in production.
+# These rules redirect old URLs without slashes to canonical versions.
+# ============================================================
+
+# Traditional Chinese locale case normalization (zh-TW → zh-tw)
+/zh-TW             /zh-tw/             301!
+/zh-TW/            /zh-tw/             301!
+/zh-TW/*           /zh-tw/:splat       301!
+
+# Tools pages - catch missing trailing slashes
+/tools/:tool               /tools/:tool/              301!
+/:locale/tools/:tool       /:locale/tools/:tool/      301!
+
+# Category pages
+/tools/category/:category  /tools/category/:category/ 301!
+/:locale/tools/category/:category  /:locale/tools/category/:category/ 301!
+
+# Catch-all trailing slash enforcement for all other pages
+# Must come last to avoid overriding specific rules
+/:locale/:path             /:locale/:path/            301!
+/:path                     /:path/                    301!
+
+# ============================================================
+# PROTOCOL AND DOMAIN REDIRECTS (EXISTING - KEEP)
+# ============================================================
+
 http://www.pdfkoi.com/*   https://pdfkoi.com/:splat   301!
 https://www.pdfkoi.com/*  https://pdfkoi.com/:splat   301!
 http://pdfkoi.com/*       https://pdfkoi.com/:splat   301!
+
+# ============================================================
+# OTHER REDIRECTS (EXISTING - KEEP)
+# ============================================================
+
 /?ref=producthunt        /                  301!
 /tools?q={search_term_string} /tools/       301!
 /*/tools?q={search_term_string} /:splat/tools/ 301!
